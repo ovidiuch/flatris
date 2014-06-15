@@ -1,0 +1,21 @@
+{
+  "name": "flatris",
+  "version": "0.0.1",
+  "description": "Web-based Tetris clone in Cosmos/React",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/skidding/flatris.git"
+  },
+  "dependencies": {
+    "cosmos-js": "~0.1.1"
+  },
+  "devDependencies": {
+    "gulp": "~3.6.2",
+    "gulp-concat": "~2.2.0",
+    "gulp-rename": "~1.2.0",
+    "gulp-uglify": "~0.3.0",
+    "gulp-react": "~0.3.3",
+    "gulp-less": "~1.2.3"
+  },
+  "main": "build/flatris.js"
+}
