@@ -7,6 +7,9 @@ body {
   color: #34495f;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 14px;
+  /* Flatris can't get out of viewport bounds */
+  min-width: 480px;
+  min-height: 600px;
 }
 ul {
   list-style-type: none;
@@ -18,7 +21,7 @@ a {
   color: #34495f;
   font-weight: bold;
   text-decoration: none;
-  
+
   &:hover {
     text-decoration: underline;
   }
