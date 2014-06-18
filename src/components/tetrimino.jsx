@@ -34,6 +34,10 @@ Cosmos.components.Tetrimino = React.createClass({
     }
     return matrix;
   },
+  getNumberOfCells: function() {
+    // TODO: Count actual cells (so far all Tetriminos have 4 cells)
+    return 4;
+  },
   render: function() {
     return (
       <ul className="tetrimino">

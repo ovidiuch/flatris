@@ -19,11 +19,6 @@ Cosmos.components.Well = React.createClass({
   },
   getInitialState: function() {
     return {
-      grid: this.generateEmptyMatrix(),
-      // Grid blocks need unique IDs to be used as React keys in order to tie
-      // them to DOM nodes and prevent reusing them between rows when clearing
-      // lines. DOM nodes need to stay the same to animate them when "falling"
-      gridBlockCount: 0,
       activeTetrimino: null,
       // The active Tetrimino position will be reset whenever a new Tetrimino
       // is inserted in the Well, using the getInitialPositionForTetriminoType
@@ -34,6 +29,11 @@ Cosmos.components.Well = React.createClass({
     };
   },
   children: {
+    wellGrid: function() {
+      return {
+        component: 'WellGrid'
+      };
+    },
     activeTetrimino: function() {
       if (!this.state.activeTetrimino) {
         return;
@@ -46,9 +46,9 @@ Cosmos.components.Well = React.createClass({
   },
   reset: function() {
     this.setState({
-      grid: this.generateEmptyMatrix(),
       dropFrames: Flatris.DROP_FRAMES_DEFAULT
     });
+    this.refs.wellGrid.reset();
     this.loadTetrimino(null);
   },
   loadTetrimino: function(type) {
@@ -104,6 +104,7 @@ Cosmos.components.Well = React.createClass({
     var tetriminoGrid = this.refs.activeTetrimino.state.grid,
         tetriminoPosition = _.clone(this.state.activeTetriminoPosition),
         drop = {
+          cells: this.refs.activeTetrimino.getNumberOfCells(),
           hardDrop: this.state.dropAcceleration
         };
     tetriminoPosition.y += this.getDropStepForFrames(frames);
@@ -115,16 +116,25 @@ Cosmos.components.Well = React.createClass({
       // A big frame skip could cause the Tetrimino to jump more than one row.
       // We need to ensure it ends up in the bottom-most one in case the jump
       // caused the Tetrimino to land
-      this.setState({activeTetriminoPosition:
+      tetriminoPosition =
         this.getBottomMostPositionForTetriminoGrid(tetriminoGrid,
-                                                   tetriminoPosition)});
-      // This is when the active Tetrimino hit the bottom of the Well and can
+                                                   tetriminoPosition);
+      this.setState({activeTetriminoPosition: tetriminoPosition});
+      // This is when the active Tetrimino hits the bottom of the Well and can
       // no longer be controlled
-      drop.cells = this.transferActiveTetriminoBlocksToGrid();
+      drop.lines = this.refs.wellGrid.transferTetriminoBlocksToGrid(
+        this.refs.activeTetrimino,
+        this.getGridPosition(this.state.activeTetriminoPosition)
+      );
       // Unload Tetrimino after landing it
       this.loadTetrimino(null);
-      // Clear lines created after landing this Tetrimino
-      drop.lines = this.clearLines();
+      // Notify any listening parent when Well is full, it should stop
+      // inserting any new Tetriminos from this point on (until the Well is
+      // reset at least)
+      if (tetriminoPosition.y < 0 &&
+          typeof(this.props.onFullWell) == 'function') {
+        this.props.onFullWell();
+      }
       // Notify any listening parent about Tetrimino drops, with regard to the
       // one or more possible resulting line clears
       if (typeof(this.props.onTetriminoLanding) == 'function') {
@@ -151,53 +161,9 @@ Cosmos.components.Well = React.createClass({
                              this.getActiveTetriminoCSSPosition())}>
           {this.loadChild('activeTetrimino')}
         </div>
-        <ul className="well-grid">
-          {this.renderGridBlocks()}
-        </ul>
+        {this.loadChild('wellGrid')}
       </div>
     );
-  },
-  renderGridBlocks: function() {
-    var blocks = [],
-        widthPercent = 100 / this.props.cols,
-        heightPercent = 100 / this.props.rows,
-        row,
-        col,
-        blockValue;
-    for (row = 0; row < this.props.rows; row++) {
-      for (col = 0; col < this.props.cols; col++) {
-        if (!this.state.grid[row][col]) {
-          continue;
-        }
-        blockValue = this.state.grid[row][col];
-        blocks.push(
-          <li className="grid-square-block"
-              key={this.getIdFromBlockValue(blockValue)}
-              style={{
-                width: widthPercent + '%',
-                height: heightPercent + '%',
-                top: (row * heightPercent) + '%',
-                left: (col * widthPercent) + '%'
-              }}>
-            <Cosmos component="SquareBlock"
-                    color={this.getColorFromBlockValue(blockValue)} />
-          </li>
-        );
-      }
-    }
-    return blocks;
-  },
-  generateEmptyMatrix: function() {
-    var matrix = [],
-        row,
-        col;
-    for (row = 0; row < this.props.rows; row++) {
-      matrix[row] = [];
-      for (col = 0; col < this.props.cols; col++) {
-        matrix[row][col] = null;
-      }
-    }
-    return matrix;
   },
   getTetriminoCSSSize: function() {
     return {
@@ -271,7 +237,7 @@ Cosmos.components.Well = React.createClass({
           return false;
         }
         // Then if the position is not already taken inside the grid
-        if (this.state.grid[relativeRow][relativeCol]) {
+        if (this.refs.wellGrid.state.grid[relativeRow][relativeCol]) {
           return false;
         }
       }
@@ -311,99 +277,5 @@ Cosmos.components.Well = React.createClass({
       position.y -= 1;
     }
     return position;
-  },
-  transferActiveTetriminoBlocksToGrid: function() {
-    var tetrimino = this.refs.activeTetrimino,
-        tetriminoPositionInGrid =
-          this.getGridPosition(this.state.activeTetriminoPosition),
-        rows = tetrimino.state.grid.length,
-        cols = tetrimino.state.grid[0].length,
-        row,
-        col,
-        relativeRow,
-        relativeCol,
-        blockCount = this.state.gridBlockCount,
-        droppedCells = 0,
-        tetriminoLandedOutsideWell = false;
-    for (row = 0; row < rows; row++) {
-      for (col = 0; col < cols; col++) {
-        // Ignore blank squares from the Tetrimino grid
-        if (!tetrimino.state.grid[row][col]) {
-          continue;
-        }
-        relativeRow = tetriminoPositionInGrid.y + row;
-        relativeCol = tetriminoPositionInGrid.x + col;
-        // When the Well is full the Tetrimino will land before it enters the
-        // top of the Well
-        if (!this.state.grid[relativeRow]) {
-          tetriminoLandedOutsideWell = true;
-        } else {
-          this.state.grid[relativeRow][relativeCol] =
-            ++blockCount + tetrimino.props.color;
-          droppedCells++;
-        }
-      }
-    }
-    // Push grid updates reactively
-    this.setState({
-      grid: this.state.grid,
-      gridBlockCount: blockCount
-    });
-    // Notify any listening parent when Well is full, it should stop
-    // inserting any new Tetriminos from this point on (until the Well is
-    // reset at least)
-    if (tetriminoLandedOutsideWell) {
-      if (typeof(this.props.onFullWell) == 'function') {
-        this.props.onFullWell();
-      }
-    }
-    return droppedCells;
-  },
-  clearLines: function() {
-    /**
-     * Clear all rows that form a complete line, from one left to right, inside
-     * the Well grid. Gravity is applied to fill in the cleared lines with the
-     * ones above, thus freeing up the Well for more Tetriminos to enter.
-     */
-    var linesCleared = 0,
-        isLine,
-        row,
-        col;
-    for (row = this.props.rows - 1; row >= 0; row--) {
-      isLine = true;
-      for (col = this.props.cols - 1; col >= 0; col--) {
-        if (!this.state.grid[row][col]) {
-          isLine = false;
-        }
-      }
-      if (isLine) {
-        this.removeGridRow(row);
-        linesCleared++;
-        // Go once more through the same row
-        row++;
-      }
-    }
-    // Push grid updates reactively
-    this.setState({grid: this.state.grid});
-    return linesCleared;
-  },
-  removeGridRow: function(rowToRemove) {
-    /**
-     * Remove a row from the Well grid by descending all rows above, thus
-     * overriding it with the previous row.
-     */
-    var row,
-        col;
-    for (row = rowToRemove; row >= 0; row--) {
-      for (col = this.props.cols - 1; col >= 0; col--) {
-        this.state.grid[row][col] = row ? this.state.grid[row - 1][col] : null;
-      }
-    }
-  },
-  getIdFromBlockValue: function(blockValue) {
-    return blockValue.split('#')[0];
-  },
-  getColorFromBlockValue: function(blockValue) {
-    return '#' + blockValue.split('#')[1];
   }
 });
