@@ -58,5 +58,22 @@ var Flatris = {
     DOWN: 40,
     LEFT: 37,
     RIGHT: 39
+  },
+  attachPointerDownEvent: function(eventHandler) {
+    if (this.isMobileDevice()) {
+      return {onTouchStart: eventHandler};
+    } else {
+      return {onMouseDown: eventHandler};
+    }
+  },
+  attachPointerUpEvent: function(eventHandler) {
+    if (this.isMobileDevice()) {
+      return {onTouchEnd: eventHandler};
+    } else {
+      return {onMouseUp: eventHandler};
+    }
+  },
+  isMobileDevice: function() {
+    return 'ontouchstart' in window;
   }
 };

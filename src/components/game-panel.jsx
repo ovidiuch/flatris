@@ -46,14 +46,19 @@ Cosmos.components.GamePanel = React.createClass({
     );
   },
   renderGameButton: function() {
+    var eventHandler,
+        label;
     if (!this.props.playing) {
-      return <button onClick={this.props.onPressStart}>New game</button>;
-    }
-    if (this.props.paused) {
-      return <button onClick={this.props.onPressResume}>Resume</button>;
+      eventHandler = this.props.onPressStart;
+      label = 'New game';
+    } else if (this.props.paused) {
+      eventHandler = this.props.onPressResume;
+      label = 'Resume';
     } else {
-      return <button onClick={this.props.onPressPause}>Pause</button>;
+      eventHandler = this.props.onPressPause;
+      label = 'Pause';
     }
+    return React.DOM.button(Flatris.attachPointerDownEvent(eventHandler), label);
   },
   getNextTetriminoClass: function() {
     var classes = ['next-tetrimino'];

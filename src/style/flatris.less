@@ -1,11 +1,11 @@
-/* Flatris expects a 480x600px viewport */
+/* Flatris expects a 480 width viewport */
 .flatris {
   position: relative;
   top: 50%;
   left: 50%;
   width: 480px;
-  height: 600px;
-  margin: -300px 0 0 -240px;
+  height: 680px;
+  margin: -340px 0 0 -240px;
   font-weight: 300;
 
   .well {
@@ -13,14 +13,15 @@
     top: 0;
     left: 0;
     width: 300px;
+    height: 600px;
     background: #ecf0f1;
   }
   .game-panel {
     position: absolute;
     top: 0;
+    bottom: 80px;
+    left: 300px;
     right: 0;
-    width: 120px;
-    height: 100%;
     padding: 0 30px;
 
     p {
@@ -63,18 +64,22 @@
       bottom: 30px;
       left: 30px;
       right: 30px;
-      display: block;
       width: 120px;
-      height: 30px;
-      padding: 0 10px;
-      border: 0;
-      background: #34495f;
-      color: #fff;
-      font-family: Helvetica, Arial, sans-serif;
-      font-size: 14px;
-      font-weight: 300;
-      line-height: 30px;
-      outline: none;
+    }
+  }
+  .controls {
+    position: absolute;
+    top: 600px;
+    left: 0;
+    height: 80px;
+
+    button {
+      float: left;
+      width: 60px;
+      margin: 20px 20px 0 0;
+      background: #ecf0f1;
+      color: #34495f;
+      font-size: 24px;
     }
   }
 }
