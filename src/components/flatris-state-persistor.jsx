@@ -6,7 +6,7 @@ Cosmos.components.FlatrisStatePersistor = React.createClass({
    */
   mixins: [Cosmos.mixins.PersistState],
   children: {
-    flatris: function() {
+    flatrisStatePreview: function() {
       // Unload previous state from local storage if present, otherwise
       // generate a blank Flatris instance
       var prevState = localStorage.getItem('flatrisState');
@@ -14,7 +14,7 @@ Cosmos.components.FlatrisStatePersistor = React.createClass({
         return JSON.parse(prevState);
       } else {
         return {
-          component: 'Flatris'
+          component: 'FlatrisStatePreview'
         };
       }
     }
@@ -26,10 +26,10 @@ Cosmos.components.FlatrisStatePersistor = React.createClass({
     $(window).off('unload', this.onUnload);
   },
   render: function() {
-    return this.loadChild('flatris');
+    return this.loadChild('flatrisStatePreview');
   },
   onUnload: function() {
-    var snapshot = this.refs.flatris.generateSnapshot(true);
+    var snapshot = this.refs.flatrisStatePreview.generateSnapshot(true);
     localStorage.setItem('flatrisState', JSON.stringify(snapshot));
   }
 });
