@@ -1,24 +1,22 @@
 (function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module
-    define(['react', 'lodash'], factory);
+    define(['react', 'lodash', 'jquery'], factory);
   } else if (typeof exports === 'object') {
     // Node. Does not work with strict CommonJS, but only CommonJS-like
     // environments that support module.exports, like Node
-    module.exports = factory(require('react'), require('lodash'));
+    module.exports = factory(require('react'),
+                             require('lodash'),
+                             require('jquery'));
   } else {
     // Browser globals (root is window)
-    root.Cosmos = factory(root.React, root._);
+    root.Cosmos = factory(root.React, root._, root.$);
   }
-}(this, function(React, _) {
+}(this, function(React, _, $) {
 
 var Cosmos = function(props) {
-  var component = Cosmos.getComponentByName(props.component);
-  if (!component) {
-    throw new Error('Invalid component: ' + props.component);
-  }
-  // Preserive received props object
-  return component(_.cloneDeep(props));
+  // XXX: Deprecated, remove in future versions
+  return Cosmos.createElement(props);
 };
 
 _.extend(Cosmos, {
@@ -29,14 +27,28 @@ _.extend(Cosmos, {
     return new this.Router(options);
   },
   render: function(props, container, callback) {
-    var componentInstance = this(props);
+    var componentInstance = this.createElement(props);
     if (container) {
-      return React.renderComponent(componentInstance, container, callback);
+      return React.render(componentInstance, container, callback);
     } else {
-      return React.renderComponentToString(componentInstance);
+      return React.renderToString(componentInstance);
     }
   },
-  getComponentByName: function(name) {
+  createElement: function(props) {
+    var ComponentClass = this.getComponentByName(props.component,
+                                                 props.componentLookup);
+    if (!ComponentClass) {
+      throw new Error('Invalid component: ' + props.component);
+    }
+    // Preserve received props object
+    var clonedProps = _.cloneDeep(props);
+
+    return React.createElement(ComponentClass, clonedProps);
+  },
+  getComponentByName: function(name, componentLookup) {
+    if (typeof(componentLookup) == 'function') {
+      return componentLookup(name);
+    }
     return this.components[name];
   }
 });
@@ -263,7 +275,7 @@ var cancelAnimationFrame =
     window.clearTimeout(requestId);
   };
 
-})(Cosmos, window);
+})(Cosmos, this);
 
 Cosmos.mixins.ClassName = {
   getClassName: function() {
@@ -289,10 +301,6 @@ Cosmos.mixins.DataFetch = {
    *   - pollInterval: An interval in milliseconds for polling the data URL.
    *                   Defaults to 0, which means no polling.
    *
-   * Context properties:
-   *  - initialData: The initial value of state.data, before receiving and data
-   *                 from the server (see dataUrl prop.) Defaults to an empty
-   *                 object `{}` - TODO: make this a method with props at hand
    * Context methods:
    *  - getDataUrl: The data URL can be generated dynamically by composing it
    *                using other props, inside a custom method that receives
@@ -301,41 +309,56 @@ Cosmos.mixins.DataFetch = {
    *                dataUrl prop when implemented.
    */
   fetchDataFromServer: function(url, onSuccess) {
+    this.setState({
+      isFetchingData: true
+    });
+
     var request = $.ajax({
       url: url,
+      // Even though not recommended, some $.ajaxSettings might default to POST
+      // requests. See http://api.jquery.com/jquery.ajaxsetup/
+      type: 'GET',
       dataType: 'json',
       complete: function() {
         this.xhrRequests = _.without(this.xhrRequests, request);
       }.bind(this),
       success: onSuccess,
       error: function(xhr, status, err) {
+        if (this._ignoreXhrRequestCallbacks) {
+          return;
+        };
+        this.setState({
+          isFetchingData: false
+        });
         console.error(url, status, err.toString());
       }.bind(this)
     });
     this.xhrRequests.push(request);
   },
   receiveDataFromServer: function(data) {
-    this.setState({data: data});
+    this.setState({
+      isFetchingData: false,
+      data: data
+    });
   },
-  getInitialData: function() {
-    // The default data object is an empty Object. A List Component would
-    // override initialData with an empty Array and other Components might want
-    // some defaults inside the initial data
-    return this.initialData !== undefined ? this.initialData : {};
-  },
-  resetData: function(props) {
-    // Previous data must be cleared before new one arrives
-    this.setState({data: this.getInitialData()});
-    // The data URL can be generated dynamically by composing it through other
-    // props, inside a custom method that receives the next props as arguments
-    // and returns the data URL. The expected method name is "getDataUrl" and
-    // overrides the dataUrl prop when implemented
+  _resetData: function(props) {
+    /**
+     * Hit the dataUrl and fetch data.
+     *
+     * Before starting to fetch data we reset any ongoing requests. We also
+     * reset the polling interval.
+     *
+     * @param {Object} props
+     * @param {String} props.dataUrl The URL that will be hit for data. The URL
+     *     can be generated dynamically by composing it through other props,
+     *     inside a custom method that receives the next props as arguments and
+     *     returns the data URL. The expected method name is "getDataUrl" and
+     *     overrides the dataUrl prop when implemented
+     */
+
     var dataUrl = typeof(this.getDataUrl) == 'function' ?
-                  this.getDataUrl(props) : this.props.dataUrl;
-    if (dataUrl == this.dataUrl) {
-      return;
-    }
-    this.dataUrl = dataUrl;
+                  this.getDataUrl(props) : props.dataUrl;
+
     // Clear any on-going polling when data is reset. Even if polling is still
     // enabled, we need to reset the interval to start from now
     this.clearDataRequests();
@@ -347,6 +370,13 @@ Cosmos.mixins.DataFetch = {
         }.bind(this), props.pollInterval);
       }
     }
+  },
+  refreshData: function() {
+    /**
+     * Hit the same data URL again.
+     */
+
+    this._resetData(this.props);
   },
   clearDataRequests: function() {
     // Cancel any on-going request and future polling
@@ -367,13 +397,26 @@ Cosmos.mixins.DataFetch = {
     this.xhrRequests = [];
     // The dataUrl prop points to a source of data than will extend the initial
     // state of the component, once it will be fetched
-    this.resetData(this.props);
+    this._resetData(this.props);
   },
   componentWillReceiveProps: function(nextProps) {
-    // A Component can have its configuration replaced at any time
-    this.resetData(nextProps);
+    /**
+     * A Component can have its configuration replaced at any time so we need to
+     * fetch data again.
+     *
+     * Only fetch data if the dataUrl has changed.
+     */
+
+    if (this.props.dataUrl !== nextProps.dataUrl) {
+      this._resetData(nextProps);
+    }
   },
   componentWillUnmount: function() {
+    // We abort any on-going requests when unmounting to make sure their
+    // callbacks will no longer be called. The error callback will still be
+    // called because of the abort action itself, so we use this flag to know
+    // to ignore it altogether from this point on
+    this._ignoreXhrRequestCallbacks = true;
     this.clearDataRequests();
   }
 };
@@ -393,8 +436,7 @@ Cosmos.mixins.PersistState = {
      * It excludes internal props set by React during run-time and props with
      * default values.
      */
-    var defaultProps = this.getDefaultProps ? this.getDefaultProps() : {},
-        props = {},
+    var props = {},
         value,
         state,
         children = {};
@@ -406,10 +448,6 @@ Cosmos.mixins.PersistState = {
         key == 'state' ||
         // No reason to include parent reference
         key == 'ref') {
-        continue;
-      }
-      // No point in embedding default props
-      if (defaultProps.hasOwnProperty(key) && defaultProps[key] == value) {
         continue;
       }
       props[key] = value;
@@ -431,16 +469,28 @@ Cosmos.mixins.PersistState = {
     }
     return props;
   },
-  loadChild: function(ref) {
-    var childProps = this.getChildProps(ref);
+  loadChild: function() {
+    var childProps = this.getChildProps.apply(this, arguments);
     // Children are optional
-    return childProps ? Cosmos(childProps) : null;
+    return childProps ? Cosmos.createElement(childProps) : null;
   },
-  getChildProps: function(ref) {
+  /**
+   * @param {string} name - Key that corresponds to the child Component we want
+   *                        to get the props for
+   * @param {...*} [arguments] - Optional extra arguments get passed to the
+   *                             function that returns the Component props
+   */
+  getChildProps: function(name) {
     // The .children object on a Component class contains a hash of functions.
-    // Keys in this hash correspond with *refs* of child Components and their
+    // Keys in this hash represent the name and by default the *refs* of child
+    // Components (unless changed via optional arguments passed in) and their
     // values are functions that return props for each of those child Components.
-    var props = this.children[ref].call(this);
+    var args = [];
+    for (var i = 1; i < arguments.length; ++i) {
+      args[i - 1] = arguments[i];
+    }
+
+    var props = this.children[name].apply(this, args);
     if (!props) {
       return;
     }
@@ -449,13 +499,18 @@ Cosmos.mixins.PersistState = {
     // are set inside the .children key of the parent Component's state, as a
     // hash with keys corresponding to Component *refs*. These preset states
     // will be overriden with those generated at run-time.
-    if (this._childSnapshots && this._childSnapshots[ref]) {
-      props.state = this._childSnapshots[ref];
+    if (!props.ref) {
+      props.ref = name;
+    }
+    if (this._childSnapshots && this._childSnapshots[name]) {
+      props.state = this._childSnapshots[name];
       // Child snapshots are only used for first render after which organic
       // states are formed
-      delete this._childSnapshots[ref];
+      delete this._childSnapshots[name];
     }
-    props.ref = ref;
+    if (this.props.componentLookup) {
+      props.componentLookup = this.props.componentLookup;
+    }
     return props;
   },
   loadStateSnapshot: function(state) {
@@ -520,7 +575,9 @@ Cosmos.components.List = React.createClass({displayName: 'List',
            Cosmos.mixins.DataFetch,
            Cosmos.mixins.PersistState],
   defaultClass: 'list',
-  initialData: [],
+  getInitialState: function() {
+    return {data: []};
+  },
   render: function() {
     return (
       React.DOM.ul( {className:this.getClassName()}, 
