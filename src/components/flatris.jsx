@@ -6,6 +6,8 @@ Cosmos.components.Flatris = React.createClass({
    * It was released on June 6, 1984 and has since become a world-wide
    * phenomenon. Read more about the game at http://en.wikipedia.org/wiki/Tetris
    */
+  mixins: [Cosmos.mixins.PersistState],
+
   getInitialState: function() {
     return _.extend(this.getNewGameDefaults(), {
       // Game is stopped by default and there's no Tetrimino to follow
@@ -13,6 +15,7 @@ Cosmos.components.Flatris = React.createClass({
       nextTetrimino: null
     });
   },
+
   getNewGameDefaults: function() {
     return {
       playing: true,
@@ -22,7 +25,7 @@ Cosmos.components.Flatris = React.createClass({
       nextTetrimino: this.getRandomTetriminoType()
     };
   },
-  mixins: [Cosmos.mixins.PersistState],
+
   children: {
     well: function() {
       return {
@@ -31,6 +34,7 @@ Cosmos.components.Flatris = React.createClass({
         onFullWell: this.onFullWell
       };
     },
+
     gamePanel: function() {
       return {
         component: 'GamePanel',
@@ -44,34 +48,14 @@ Cosmos.components.Flatris = React.createClass({
         onPressResume: this.resume
       };
     },
+    
     infoPanel: function() {
       return {
         component: 'InfoPanel'
       };
     }
   },
-  start: function() {
-    /**
-     * Start or restart a Flatris session from scratch.
-     */
-    var newGameDefaults = this.getNewGameDefaults();
-    this.setState(newGameDefaults);
-    this.refs.well.reset();
-    // setState is always synchronous so we can't read the next Tetrimino from
-    // .state.nextTetrimino at this point
-    this.insertNextTetriminoInWell(newGameDefaults.nextTetrimino);
-    this.resume();
-  },
-  pause: function() {
-    this.setState({paused: true});
-    this.refs.well.stopAnimationLoop();
-    // Stop any on-going acceleration inside the Well
-    this.refs.well.setState({dropAcceleration: false});
-  },
-  resume: function() {
-    this.setState({paused: false});
-    this.refs.well.startAnimationLoop();
-  },
+
   render: function() {
     return (
       <div className="flatris">
@@ -93,19 +77,48 @@ Cosmos.components.Flatris = React.createClass({
       </div>
     );
   },
+
   renderInfoPanel: function() {
     if (!this.state.playing || this.state.paused) {
       return this.loadChild('infoPanel');
     }
   },
+
   componentDidMount: function() {
     $(window).on('keydown', this.onKeyDown);
     $(window).on('keyup', this.onKeyUp);
   },
+
   componentWillUnmount: function() {
     $(window).off('keydown', this.onKeyDown);
     $(window).off('keyup', this.onKeyUp);
   },
+
+  start: function() {
+    /**
+    * Start or restart a Flatris session from scratch.
+    */
+    var newGameDefaults = this.getNewGameDefaults();
+    this.setState(newGameDefaults);
+    this.refs.well.reset();
+    // setState is always synchronous so we can't read the next Tetrimino from
+    // .state.nextTetrimino at this point
+    this.insertNextTetriminoInWell(newGameDefaults.nextTetrimino);
+    this.resume();
+  },
+
+  pause: function() {
+    this.setState({paused: true});
+    this.refs.well.stopAnimationLoop();
+    // Stop any on-going acceleration inside the Well
+    this.refs.well.setState({dropAcceleration: false});
+  },
+
+  resume: function() {
+    this.setState({paused: false});
+    this.refs.well.startAnimationLoop();
+  },
+
   onKeyDown: function(e) {
     // Prevent page from scrolling when pressing arrow keys
     if (_.values(Flatris.KEYS).indexOf(e.keyCode) != -1) {
@@ -129,6 +142,7 @@ Cosmos.components.Flatris = React.createClass({
       this.refs.well.moveTetriminoToRight();
     }
   },
+
   onKeyUp: function(e) {
     // Ignore user events when game is stopped or paused
     if (!this.state.playing || this.state.paused) {
@@ -138,6 +152,7 @@ Cosmos.components.Flatris = React.createClass({
       this.refs.well.setState({dropAcceleration: false});
     }
   },
+
   onRotatePress: function(e) {
     // Ignore user events when game is stopped or paused
     if (!this.state.playing || this.state.paused) {
@@ -146,6 +161,7 @@ Cosmos.components.Flatris = React.createClass({
     e.preventDefault();
     this.refs.well.rotateTetrimino();
   },
+
   onLeftPress: function(e) {
     // Ignore user events when game is stopped or paused
     if (!this.state.playing || this.state.paused) {
@@ -154,6 +170,7 @@ Cosmos.components.Flatris = React.createClass({
     e.preventDefault();
     this.refs.well.moveTetriminoToLeft();
   },
+
   onRightPress: function(e) {
     // Ignore user events when game is stopped or paused
     if (!this.state.playing || this.state.paused) {
@@ -162,6 +179,7 @@ Cosmos.components.Flatris = React.createClass({
     e.preventDefault();
     this.refs.well.moveTetriminoToRight();
   },
+
   onPullPress: function(e) {
     // Ignore user events when game is stopped or paused
     if (!this.state.playing || this.state.paused) {
@@ -170,6 +188,7 @@ Cosmos.components.Flatris = React.createClass({
     e.preventDefault();
     this.refs.well.setState({dropAcceleration: true});
   },
+
   onPullRelease: function(e) {
     // Ignore user events when game is stopped or paused
     if (!this.state.playing || this.state.paused) {
@@ -178,6 +197,7 @@ Cosmos.components.Flatris = React.createClass({
     e.preventDefault();
     this.refs.well.setState({dropAcceleration: false});
   },
+
   onTetriminoLanding: function(drop) {
     // Stop inserting Tetriminos and awarding bonuses after game is over
     if (!this.state.playing) {
@@ -207,6 +227,7 @@ Cosmos.components.Flatris = React.createClass({
     });
     this.insertNextTetriminoInWell(this.state.nextTetrimino);
   },
+
   onFullWell: function() {
     this.pause();
     this.setState({
@@ -215,10 +236,12 @@ Cosmos.components.Flatris = React.createClass({
       nextTetrimino: null
     });
   },
+
   insertNextTetriminoInWell: function(nextTetrimino) {
     this.refs.well.loadTetrimino(nextTetrimino);
     this.setState({nextTetrimino: this.getRandomTetriminoType()});
   },
+
   getRandomTetriminoType: function() {
     return _.sample(_.keys(Flatris.SHAPES));
   }

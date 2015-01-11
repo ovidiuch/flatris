@@ -10,6 +10,7 @@ Cosmos.components.SquareBlock = React.createClass({
       color: Flatris.COLORS.L
     };
   },
+  
   render: function() {
     return (
       <div className="square-block"

@@ -11,12 +11,14 @@ Cosmos.components.Well = React.createClass({
    */
   mixins: [Cosmos.mixins.PersistState,
            Cosmos.mixins.AnimationLoop],
+
   getDefaultProps: function() {
     return {
       rows: Flatris.WELL_ROWS,
       cols: Flatris.WELL_COLS
     };
   },
+
   getInitialState: function() {
     return {
       activeTetrimino: null,
@@ -28,12 +30,14 @@ Cosmos.components.Well = React.createClass({
       dropAcceleration: null
     };
   },
+
   children: {
     wellGrid: function() {
       return {
         component: 'WellGrid'
       };
     },
+
     activeTetrimino: function() {
       if (!this.state.activeTetrimino) {
         return;
@@ -44,6 +48,32 @@ Cosmos.components.Well = React.createClass({
       };
     }
   },
+
+  render: function() {
+    return (
+      <div className="well">
+        <div className="active-tetrimino"
+             style={_.extend(this.getTetriminoCSSSize(),
+                    this.getActiveTetriminoCSSPosition())}>
+          {this.loadChild('activeTetrimino')}
+        </div>
+        {this.loadChild('wellGrid')}
+      </div>
+    );
+  },
+
+  componentDidUpdate: function(prevProps, prevState) {
+    // Populate grid of active Tetrimino only after a new one has been set
+    if (this.state.activeTetrimino &&
+      this.state.activeTetrimino != prevState.activeTetrimino) {
+      // Child state should only be touched imperatively, it is managed
+      // internally inside Tetrimino Component afterwards
+      this.refs.activeTetrimino.setState({
+        grid: Flatris.SHAPES[this.state.activeTetrimino]
+      });
+    }
+  },
+
   reset: function() {
     this.setState({
       dropFrames: Flatris.DROP_FRAMES_DEFAULT
@@ -51,6 +81,7 @@ Cosmos.components.Well = React.createClass({
     this.refs.wellGrid.reset();
     this.loadTetrimino(null);
   },
+
   loadTetrimino: function(type) {
     this.setState({
       activeTetrimino: type,
@@ -58,6 +89,7 @@ Cosmos.components.Well = React.createClass({
       activeTetriminoPosition: this.getInitialPositionForTetriminoType(type)
     });
   },
+
   rotateTetrimino: function() {
     if (this.state.activeTetrimino) {
       var tetriminoGrid = this.refs.activeTetrimino.getRotatedGrid(),
@@ -73,12 +105,15 @@ Cosmos.components.Well = React.createClass({
       }
     }
   },
+
   moveTetriminoToLeft: function() {
     this.moveTetrimino(-1);
   },
+
   moveTetriminoToRight: function() {
     this.moveTetrimino(1);
   },
+
   moveTetrimino: function(offset) {
     if (!this.state.activeTetrimino) {
       return;
@@ -93,10 +128,12 @@ Cosmos.components.Well = React.createClass({
       this.setState({activeTetriminoPosition: tetriminoPosition});
     }
   },
+
   increaseSpeed: function() {
     this.setState({dropFrames: this.state.dropFrames -
                                Flatris.DROP_FRAMES_DECREMENT});
   },
+
   onFrame: function(frames) {
     if (!this.state.activeTetrimino) {
       return;
@@ -142,35 +179,14 @@ Cosmos.components.Well = React.createClass({
       }
     }
   },
-  componentDidUpdate: function(prevProps, prevState) {
-    // Populate grid of active Tetrimino only after a new one has been set
-    if (this.state.activeTetrimino &&
-        this.state.activeTetrimino != prevState.activeTetrimino) {
-      // Child state should only be touched imperatively, it is managed
-      // internally inside Tetrimino Component afterwards
-      this.refs.activeTetrimino.setState({
-        grid: Flatris.SHAPES[this.state.activeTetrimino]
-      });
-    }
-  },
-  render: function() {
-    return (
-      <div className="well">
-        <div className="active-tetrimino"
-             style={_.extend(this.getTetriminoCSSSize(),
-                             this.getActiveTetriminoCSSPosition())}>
-          {this.loadChild('activeTetrimino')}
-        </div>
-        {this.loadChild('wellGrid')}
-      </div>
-    );
-  },
+
   getTetriminoCSSSize: function() {
     return {
       width: 100 / this.props.cols * 4 + '%',
       height: 100 / this.props.rows * 4 + '%'
     };
   },
+
   getActiveTetriminoCSSPosition: function() {
     var position =
       this.getGridPosition(this.state.activeTetriminoPosition);
@@ -179,6 +195,7 @@ Cosmos.components.Well = React.createClass({
       left: 100 / this.props.cols * position.x + '%'
     }
   },
+
   getGridPosition: function(floatingPosition) {
     // The position has floating numbers because of how gravity is incremented
     // with each frame
@@ -187,6 +204,7 @@ Cosmos.components.Well = React.createClass({
       y: Math.floor(floatingPosition.y)
     };
   },
+
   getInitialPositionForTetriminoType: function(type) {
     /**
      * Generates positions a Tetrimino entering the Well. The I Tetrimino
@@ -203,11 +221,13 @@ Cosmos.components.Well = React.createClass({
       y: -2
     };
   },
+
   getDropStepForFrames: function(frames) {
     var dropFrames = this.state.dropAcceleration ?
                      Flatris.DROP_FRAMES_ACCELERATED : this.state.dropFrames;
     return frames / dropFrames;
   },
+
   isPositionAvailableForTetriminoGrid: function(tetriminoGrid, position) {
     var tetriminoPositionInGrid = this.getGridPosition(position),
         tetriminoRows = tetriminoGrid.length,
@@ -244,6 +264,7 @@ Cosmos.components.Well = React.createClass({
     }
     return true;
   },
+
   fitTetriminoGridPositionInWellBounds: function(tetriminoGrid, position) {
     var tetriminoRows = tetriminoGrid.length,
         tetriminoCols = tetriminoGrid[0].length,
@@ -270,6 +291,7 @@ Cosmos.components.Well = React.createClass({
     }
     return position;
   },
+
   getBottomMostPositionForTetriminoGrid: function(tetriminoGrid, position) {
     // Snap vertical position to grid
     position.y = Math.floor(position.y);

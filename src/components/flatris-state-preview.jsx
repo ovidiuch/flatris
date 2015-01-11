@@ -5,11 +5,13 @@ Cosmos.components.FlatrisStatePreview = React.createClass({
    * Render a Flatris instance next to its prettified, serialized state
    */
   mixins: [Cosmos.mixins.PersistState],
+
   getInitialState: function() {
     return {
       shapshot: '{}'
     };
   },
+
   children: {
     flatris: function() {
       return {
@@ -17,6 +19,7 @@ Cosmos.components.FlatrisStatePreview = React.createClass({
       };
     }
   },
+
   render: function() {
     return (
       <div className="flatris-state-preview">
@@ -25,22 +28,27 @@ Cosmos.components.FlatrisStatePreview = React.createClass({
       </div>
     );
   },
+
   componentDidMount: function() {
     this.refreshSnapshot();
     this._intervalId = setInterval(this.refreshSnapshot, 200);
   },
-  componentWillUnmount: function() {
-    clearInterval(this._intervalId);
-  },
+
   shouldComponentUpdate: function(nextProps, nextState) {
     // No need to render for an identical snapshot
     return nextState.snapshot != this.state.snapshot;
   },
+
+  componentWillUnmount: function() {
+    clearInterval(this._intervalId);
+  },
+
   refreshSnapshot: function() {
     this.setState({
       snapshot: this.serializeState(this.refs.flatris.generateSnapshot(true))
     });
   },
+
   serializeState: function(snapshot) {
     /**
      * This ugly method styles the indenting of the stringified state JSON.
