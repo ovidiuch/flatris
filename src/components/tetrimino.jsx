@@ -38,6 +38,15 @@ Cosmos.components.Tetrimino = React.createClass({
     // TODO: Count actual cells (so far all Tetriminos have 4 cells)
     return 4;
   },
+  children: {
+    squareBlock: function(col, row) {
+      return {
+        component: 'SquareBlock',
+        ref: 'c' + col + 'r' + row,
+        color: this.props.color
+      };
+    }
+  },
   render: function() {
     return (
       <ul className="tetrimino">
@@ -61,8 +70,7 @@ Cosmos.components.Tetrimino = React.createClass({
                   top: (row * 25) + '%',
                   left: (col * 25) + '%'
                 }}>
-              <Cosmos component="SquareBlock"
-                      color={this.props.color} />
+              {this.loadChild('squareBlock', col, row)}
             </li>
           );
         }

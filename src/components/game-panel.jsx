@@ -7,6 +7,7 @@ Cosmos.components.GamePanel = React.createClass({
    * - the score and lines cleared
    * - start or pause/resume controls
    */
+  mixins: [Cosmos.mixins.PersistState],
   getDefaultProps: function() {
     return {
       playing: false,
@@ -15,6 +16,17 @@ Cosmos.components.GamePanel = React.createClass({
       lines: 0,
       nextTetrimino: null
     };
+  },
+  children: {
+    nextTetrimino: function(tetrimino) {
+      return {
+        component: 'Tetrimino',
+        color: Flatris.COLORS[tetrimino],
+        state: {
+          grid: Flatris.SHAPES[tetrimino]
+        }
+      };
+    }
   },
   render: function() {
     return (
@@ -37,13 +49,7 @@ Cosmos.components.GamePanel = React.createClass({
     if (!nextTetrimino) {
       return;
     }
-    return (
-      <Cosmos component="Tetrimino"
-              color={Flatris.COLORS[nextTetrimino]}
-              state={{
-                 grid: Flatris.SHAPES[nextTetrimino]
-              }} />
-    );
+    return this.loadChild('nextTetrimino', nextTetrimino);
   },
   renderGameButton: function() {
     var eventHandler,

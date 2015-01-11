@@ -30,6 +30,24 @@ Cosmos.components.Flatris = React.createClass({
         onTetriminoLanding: this.onTetriminoLanding,
         onFullWell: this.onFullWell
       };
+    },
+    gamePanel: function() {
+      return {
+        component: 'GamePanel',
+        playing: this.state.playing,
+        paused: this.state.paused,
+        score: this.state.score,
+        lines: this.state.lines,
+        nextTetrimino: this.state.nextTetrimino,
+        onPressStart: this.start,
+        onPressPause: this.pause,
+        onPressResume: this.resume
+      };
+    },
+    infoPanel: function() {
+      return {
+        component: 'InfoPanel'
+      };
     }
   },
   start: function() {
@@ -59,7 +77,7 @@ Cosmos.components.Flatris = React.createClass({
       <div className="flatris">
         {this.loadChild('well')}
         {this.renderInfoPanel()}
-        {Cosmos(this.getGamePanelProps())}
+        {this.loadChild('gamePanel')}
         <div className="controls">
           {React.DOM.button(
             Flatris.attachPointerDownEvent(this.onRotatePress), '↻')}
@@ -75,22 +93,9 @@ Cosmos.components.Flatris = React.createClass({
       </div>
     );
   },
-  getGamePanelProps: function() {
-    return {
-      component: 'GamePanel',
-      playing: this.state.playing,
-      paused: this.state.paused,
-      score: this.state.score,
-      lines: this.state.lines,
-      nextTetrimino: this.state.nextTetrimino,
-      onPressStart: this.start,
-      onPressPause: this.pause,
-      onPressResume: this.resume
-    };
-  },
   renderInfoPanel: function() {
     if (!this.state.playing || this.state.paused) {
-      return <Cosmos component="InfoPanel" />;
+      return this.loadChild('infoPanel');
     }
   },
   componentDidMount: function() {

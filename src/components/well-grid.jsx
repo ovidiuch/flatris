@@ -73,6 +73,15 @@ Cosmos.components.WellGrid = React.createClass({
     // changes
     return false;
   },
+  children: {
+    squareBlock: function(col, row, color) {
+      return {
+        component: 'SquareBlock',
+        ref: 'c' + col + 'r' + row,
+        color: color
+      };
+    }
+  },
   render: function() {
     return (
       <ul className="well-grid">
@@ -102,8 +111,10 @@ Cosmos.components.WellGrid = React.createClass({
                 top: (row * heightPercent) + '%',
                 left: (col * widthPercent) + '%'
               }}>
-            <Cosmos component="SquareBlock"
-                    color={this.getColorFromBlockValue(blockValue)} />
+            {this.loadChild('squareBlock',
+                            col,
+                            row,
+                            this.getColorFromBlockValue(blockValue))}
           </li>
         );
       }
