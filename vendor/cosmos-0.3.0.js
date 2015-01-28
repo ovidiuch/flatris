@@ -5,7 +5,7 @@
   } else if (typeof exports === 'object') {
     // Node. Does not work with strict CommonJS, but only CommonJS-like
     // environments that support module.exports, like Node
-    module.exports = factory(require('react'),
+    module.exports = factory(require('react/addons'),
                              require('lodash'),
                              require('jquery'));
   } else {
@@ -40,10 +40,7 @@ _.extend(Cosmos, {
     if (!ComponentClass) {
       throw new Error('Invalid component: ' + props.component);
     }
-    // Preserve received props object
-    var clonedProps = _.cloneDeep(props);
-
-    return React.createElement(ComponentClass, clonedProps);
+    return React.createElement(ComponentClass, props);
   },
   getComponentByName: function(name, componentLookup) {
     if (typeof(componentLookup) == 'function') {
@@ -53,62 +50,55 @@ _.extend(Cosmos, {
   }
 });
 
-Cosmos.Router = function(options) {
-  // The Router defaults are dynamic values they must be read whenever an
-  // instance is created, thus they are not embedded in the Class prototype
-  this.options = _.extend({
-    props: Cosmos.url.getParams(),
-    container: document.body
-  }, options);
-  // defaultsProps is not applied when props are missing, but when they are
-  // empty (regardless if they come from options or the default Rotuer props)
-  if (_.isEmpty(this.options.props) && this.options.defaultProps) {
-    this.options.props = this.options.defaultProps;
-  }
-  this.container = this.options.container;
-  this._onPopState = this._onPopState.bind(this);
+Cosmos.Router = function(defaultProps, container) {
+  this._defaultProps = defaultProps || {};
+  this._container = container || document.body;
+
+  this.onPopState = this.onPopState.bind(this);
   this._bindPopStateEvent();
-  // The initial render is done when the Router is instantiated
-  this._load(this.options.props, window.location.href);
+
+  // The initial render is done instantly when the Router instance is created
+  this._load(Cosmos.url.getParams(), window.location.href);
 };
+
 _.extend(Cosmos.Router, {
   prototype: {
     stop: function() {
       this._unbindPopStateEvent();
     },
+
     goTo: function(href) {
       // Old-school refreshes are made when pushState isn't supported
       if (!Cosmos.url.isPushStateSupported()) {
         window.location = href;
         return;
       }
-      // The history entry for the previous Component is updated with its
+
+      // The history entry for the previous component is updated with its
       // lastest props and state, so that we resume it its exact form when/if
       // going back
       if (this.rootComponent) {
-        this._replaceHistoryState(
-          this.rootComponent.generateSnapshot(),
-          this._currentHref);
+        var snapshot = this.rootComponent.generateSnapshot();
+        this._replaceHistoryState(this._excludeDefaultProps(snapshot),
+                                  this._currentHref);
       }
+
       var queryString = href.split('?').pop(),
           props = Cosmos.serialize.getPropsFromQueryString(queryString);
-      // Calling pushState doesn't trigger the onpopstate event, so push state
-      // events and programatic Router calls are individually handled
-      // https://developer.mozilla.org/en-US/docs/Web/API/window.onpopstate
-      this._load(props, href);
-      this._pushHistoryState(props, href);
+
+      // The callback has the component as the context
+      var _this = this;
+      this._load(props, href, function() {
+        // Calling pushState programatically doesn't trigger the onpopstate
+        // event, only a browser page change does. Otherwise this would've
+        // triggered an infinite loop.
+        // https://developer.mozilla.org/en-US/docs/Web/API/window.onpopstate
+        var snapshot = this.generateSnapshot();
+        _this._pushHistoryState(_this._excludeDefaultProps(snapshot), href);
+      });
     },
-    _load: function(props, href) {
-      this.rootComponent = Cosmos.render(props, this.container);
-      this._currentHref = href;
-    },
-    _bindPopStateEvent: function() {
-      window.addEventListener('popstate', this._onPopState);
-    },
-    _unbindPopStateEvent: function() {
-      window.removeEventListener('popstate', this._onPopState);
-    },
-    _onPopState: function(e) {
+
+    onPopState: function(e) {
       // Chrome & Safari trigger an empty popState event initially, while
       // Firefox doesn't, we choose to ignore that event altogether
       if (!e.state) {
@@ -116,11 +106,55 @@ _.extend(Cosmos.Router, {
       }
       this._load(e.state, window.location.href);
     },
-    _replaceHistoryState: function(props, url) {
-      window.history.replaceState(props, '', url);
+
+    _load: function(newProps, href, callback) {
+      // Always send the components a reference to the router. This makes it
+      // possible for a component to change the page through the router and
+      // not have to rely on any sort of globals
+      var props = _.extend({router: this}, this._defaultProps, newProps);
+
+      // The router exposes the instance of the currently rendered component
+      this.rootComponent = Cosmos.render(props, this._container, callback);
+
+      // We use the current href when updating the current history entry
+      this._currentHref = href;
     },
+
+    _bindPopStateEvent: function() {
+      window.addEventListener('popstate', this.onPopState);
+    },
+
+    _unbindPopStateEvent: function() {
+      window.removeEventListener('popstate', this.onPopState);
+    },
+
+    _replaceHistoryState: function(state, url) {
+      window.history.replaceState(state, '', url);
+    },
+
     _pushHistoryState: function(state, url) {
       window.history.pushState(state, '', url);
+    },
+
+    _excludeDefaultProps: function(props) {
+      var newProps = {},
+          value;
+
+      for (var key in props) {
+        // Ignore the Router reference because it gets attached automatically
+        // when sending new props to a component
+        if (key === 'router') {
+          continue;
+        }
+
+        value = props[key];
+
+        if (value !== this._defaultProps[key]) {
+          newProps[key] = value;
+        }
+      }
+
+      return newProps;
     }
   }
 });
@@ -128,31 +162,41 @@ _.extend(Cosmos.Router, {
 Cosmos.serialize = {
   getPropsFromQueryString: function(queryString) {
     var props = {};
-    if (queryString.length) {
-      var pairs = queryString.split('&'),
-          parts,
-          key,
-          value;
-      for (var i = 0; i < pairs.length; i++) {
-        parts = pairs[i].split('=');
-        key = parts[0];
-        value = decodeURIComponent(parts[1]);
-        try {
-          value = JSON.parse(value);
-        } catch(e) {
-          // If the prop was a simple type and not a stringified JSON it will
-          // keep its original value
-        }
-        props[key] = value;
-      }
+
+    if (!queryString.length) {
+      return props;
     }
+
+    var pairs = queryString.split('&'),
+        parts,
+        key,
+        value;
+
+    for (var i = 0; i < pairs.length; i++) {
+      parts = pairs[i].split('=');
+      key = parts[0];
+      value = decodeURIComponent(parts[1]);
+
+      try {
+        value = JSON.parse(value);
+      } catch(e) {
+        // If the prop was a simple type and not a stringified JSON it will
+        // keep its original value
+      }
+
+      props[key] = value;
+    }
+
     return props;
   },
+
   getQueryStringFromProps: function(props) {
     var parts = [],
         value;
+
     for (var key in props) {
       value = props[key];
+
       // Objects can be embedded in a query string as well
       if (typeof value == 'object') {
         try {
@@ -162,8 +206,10 @@ Cosmos.serialize = {
           continue;
         }
       }
+
       parts.push(key + '=' + encodeURIComponent(value));
     }
+
     return parts.join('&');
   }
 };
@@ -173,6 +219,7 @@ Cosmos.url = {
     return Cosmos.serialize.getPropsFromQueryString(
       window.location.search.substr(1));
   },
+  
   isPushStateSupported: function() {
     return !!window.history.pushState;
   }
@@ -278,15 +325,11 @@ var cancelAnimationFrame =
 })(Cosmos, this);
 
 Cosmos.mixins.ClassName = {
-  getClassName: function() {
-    var classes = [];
-    if (this.defaultClass) {
-      classes.push(this.defaultClass);
+  getClassName: function(defaultClassName) {
+    if (this.props.className !== undefined) {
+      return this.props.className;
     }
-    if (this.props.class) {
-      classes.push(this.props.class);
-    }
-    return classes.length ? classes.join(' ') : null;
+    return defaultClassName;
   }
 };
 
@@ -550,47 +593,205 @@ Cosmos.mixins.Url = {
      */
     return '?' + Cosmos.serialize.getQueryStringFromProps(props);
   },
-  routeLink: function(e) {
+
+  routeLink: function(event) {
     /**
      * Any <a> tag can have this method bound to its onClick event to have
      * their corresponding href location picked up by the built-in Router
      * implementation, which uses pushState to switch between Components
      * instead of reloading pages.
      */
-    e.preventDefault();
-    App.router.goTo(e.currentTarget.getAttribute('href'));
+    event.preventDefault();
+    this.props.router.goTo(event.currentTarget.getAttribute('href'));
   }
 };
 
 /** @jsx React.DOM */
+var classSet = React.addons.classSet;
 
-Cosmos.components.List = React.createClass({displayName: 'List',
-  /**
-   * {
-   *   component: 'List',
-   *   dataUrl: 'http://localhost/static/users.json'
-   * }
-   */
-  mixins: [Cosmos.mixins.ClassName,
-           Cosmos.mixins.DataFetch,
-           Cosmos.mixins.PersistState],
-  defaultClass: 'list',
-  getInitialState: function() {
-    return {data: []};
+Cosmos.components.ComponentPlayground = React.createClass({
+  mixins: [Cosmos.mixins.PersistState,
+           Cosmos.mixins.Url],
+
+  displayName: 'ComponentPlayground',
+
+  propTypes: {
+    fixtures: React.PropTypes.object.isRequired,
+    fixturePath: React.PropTypes.string,
+    fullScreen: React.PropTypes.bool,
+    containerClassName: React.PropTypes.string
   },
+
+  getInitialState: function() {
+    var expandedComponents = [];
+
+    // Expand the relevant component when a fixture is selected
+    if (this.props.fixturePath) {
+      expandedComponents.push(
+        this._getComponentNameFromPath(this.props.fixturePath));
+    }
+
+    return {
+      expandedComponents: expandedComponents
+    };
+  },
+
+  children: {
+    preview: function() {
+      var props = {
+        component: this._getComponentNameFromPath(this.props.fixturePath)
+      };
+
+      if (this.props.router) {
+        props.router = this.props.router;
+      }
+
+      var fixture = this._getFixtureContentsFromPath(this.props.fixturePath);
+      return _.extend(props, fixture);
+    }
+  },
+
   render: function() {
+    var classes = classSet({
+      'component-playground': true,
+      'full-screen': this.props.fullScreen
+    });
+
     return (
-      React.DOM.ul( {className:this.getClassName()}, 
-        this.state.data.map(function(item, index) {
-          var itemComponent = Cosmos.getComponentByName(
-            this._getComponentClassForItem(item));
-          return React.DOM.li( {key:index}, itemComponent(_.clone(item)))
-        }.bind(this))
+      React.DOM.div( {className:classes}, 
+        React.DOM.div( {className:"header"}, 
+          this.renderFullScreenButton(),
+          React.DOM.h1(null, 
+            React.DOM.a( {href:"?", onClick:this.routeLink}, 
+              React.DOM.span( {className:"react"}, "React"), " Component Playground"
+            )
+          )
+        ),
+        React.DOM.div( {className:"fixtures"}, 
+          this.renderFixtures()
+        ),
+        React.DOM.div( {ref:"preview", className:this._getPreviewClasses()}, 
+          this.props.fixturePath ? this.loadChild('preview') : null
+        )
       )
     );
   },
-  _getComponentClassForItem: function(itemProps) {
-      return itemProps.component || this.props.itemComponent || 'Item';
+
+  renderFixtures: function() {
+    return React.DOM.ul( {className:"components"}, 
+      _.map(this.props.fixtures, function(fixtures, componentName) {
+
+        var classes = classSet({
+          'component': true,
+          'expanded':
+            this.state.expandedComponents.indexOf(componentName) !== -1
+        });
+
+        return React.DOM.li( {className:classes, key:componentName}, 
+          React.DOM.p( {className:"component-name"}, 
+            React.DOM.a( {href:"#toggle-component",
+               onClick:_.partial(this.handleComponentClick, componentName),
+               ref:componentName + "Button"}, 
+              componentName
+            )
+          ),
+          this.renderComponentFixtures(componentName, fixtures)
+        );
+
+      }.bind(this))
+    )
+  },
+
+  renderComponentFixtures: function(componentName, fixtures) {
+    return React.DOM.ul( {className:"component-fixtures"}, 
+      _.map(fixtures, function(props, fixtureName) {
+
+        var url = this.getUrlFromProps({
+          fixturePath: componentName + '/' + fixtureName
+        });
+
+        return React.DOM.li( {className:this._getFixtureClasses(fixtureName),
+                   key:fixtureName}, 
+          React.DOM.a( {href:url, onClick:this.routeLink}, 
+            fixtureName.replace(/-/g, ' ')
+          )
+        );
+
+      }.bind(this))
+    );
+  },
+
+  renderFullScreenButton: function() {
+    if (!this.props.fixturePath) {
+      return;
+    }
+
+    var fullScreenUrl = this.getUrlFromProps({
+      fixturePath: this.props.fixturePath,
+      fullScreen: true
+    });
+
+    return React.DOM.a( {href:fullScreenUrl,
+              className:"full-screen-button",
+              ref:"fullScreenButton"}, "Fullscreen");
+  },
+
+  handleComponentClick: function(componentName, event) {
+    event.preventDefault();
+
+    var currentlyExpanded = this.state.expandedComponents,
+        componentIndex = currentlyExpanded.indexOf(componentName),
+        toBeExpanded;
+
+    if (componentIndex !== -1) {
+      toBeExpanded = _.clone(currentlyExpanded);
+      toBeExpanded.splice(componentIndex, 1);
+    } else {
+      toBeExpanded = currentlyExpanded.concat(componentName);
+    }
+
+    this.setState({expandedComponents: toBeExpanded});
+  },
+
+  _getPreviewClasses: function() {
+    var classes = {
+      'preview': true
+    };
+
+    if (this.props.containerClassName) {
+      classes[this.props.containerClassName] = true;
+    }
+
+    return classSet(classes);
+  },
+
+  _getFixtureClasses: function(fixtureName) {
+    var classes = {
+      'component-fixture': true
+    };
+
+    var fixturePath = this.props.fixturePath;
+    if (fixturePath) {
+      var selectedFixtureName = this._getFixtureNameFromPath(fixturePath);
+      classes['selected'] = fixtureName === selectedFixtureName;
+    }
+
+    return classSet(classes);
+  },
+
+  _getFixtureContentsFromPath: function(fixturePath) {
+    var componentName = this._getComponentNameFromPath(fixturePath),
+        fixtureName = this._getFixtureNameFromPath(fixturePath);
+
+    return this.props.fixtures[componentName][fixtureName];
+  },
+
+  _getComponentNameFromPath: function(fixturePath) {
+    return fixturePath.split('/')[0];
+  },
+
+  _getFixtureNameFromPath: function(fixturePath) {
+    return fixturePath.substr(fixturePath.indexOf('/') + 1);
   }
 });
 
