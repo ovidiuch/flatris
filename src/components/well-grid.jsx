@@ -1,6 +1,6 @@
 /** @jsx React.DOM */
 
-Cosmos.components.WellGrid = React.createClass({
+Flatris.components.WellGrid = React.createClass({
   /**
    * Matrix for the landed Tetriminos inside the Flatris Well. Isolated from
    * the Well component because it needs to update it state as

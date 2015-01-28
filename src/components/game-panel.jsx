@@ -1,6 +1,6 @@
 /** @jsx React.DOM */
 
-Cosmos.components.GamePanel = React.createClass({
+Flatris.components.GamePanel = React.createClass({
   /**
    * The game panel contains
    * - the next Tetrimono to be inserted
@@ -71,7 +71,7 @@ Cosmos.components.GamePanel = React.createClass({
     }
     return React.DOM.button(Flatris.attachPointerDownEvent(eventHandler), label);
   },
-  
+
   getNextTetriminoClass: function() {
     var classes = ['next-tetrimino'];
     // We use this extra class to position tetriminos differently from CSS

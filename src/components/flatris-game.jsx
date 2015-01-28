@@ -1,6 +1,6 @@
 /** @jsx React.DOM */
 
-Cosmos.components.Flatris = React.createClass({
+Flatris.components.FlatrisGame = React.createClass({
   /**
    * The Tetris game was originally designed and programmed by Alexey Pajitnov.
    * It was released on June 6, 1984 and has since become a world-wide
@@ -48,7 +48,7 @@ Cosmos.components.Flatris = React.createClass({
         onPressResume: this.resume
       };
     },
-    
+
     infoPanel: function() {
       return {
         component: 'InfoPanel'
@@ -58,7 +58,7 @@ Cosmos.components.Flatris = React.createClass({
 
   render: function() {
     return (
-      <div className="flatris">
+      <div className="flatris-game">
         {this.loadChild('well')}
         {this.renderInfoPanel()}
         {this.loadChild('gamePanel')}

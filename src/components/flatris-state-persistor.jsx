@@ -1,6 +1,6 @@
 /** @jsx React.DOM */
 
-Cosmos.components.FlatrisStatePersistor = React.createClass({
+Flatris.components.FlatrisStatePersistor = React.createClass({
   /**
    * Persist Flatris state with local storage.
    */

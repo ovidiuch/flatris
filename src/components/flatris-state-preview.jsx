@@ -1,6 +1,6 @@
 /** @jsx React.DOM */
 
-Cosmos.components.FlatrisStatePreview = React.createClass({
+Flatris.components.FlatrisStatePreview = React.createClass({
   /**
    * Render a Flatris instance next to its prettified, serialized state
    */
@@ -15,7 +15,7 @@ Cosmos.components.FlatrisStatePreview = React.createClass({
   children: {
     flatris: function() {
       return {
-        component: 'Flatris'
+        component: 'FlatrisGame'
       };
     }
   },
