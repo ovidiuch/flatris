@@ -23,36 +23,52 @@ _.extend(Cosmos, {
   mixins: {},
   components: {},
   transitions: {},
-  start: function(options) {
-    return new this.Router(options);
+
+  start: function(defaultProps, options) {
+    return new this.Router(defaultProps, options);
   },
+
   render: function(props, container, callback) {
     var componentInstance = this.createElement(props);
+
     if (container) {
       return React.render(componentInstance, container, callback);
     } else {
       return React.renderToString(componentInstance);
     }
   },
+
   createElement: function(props) {
     var ComponentClass = this.getComponentByName(props.component,
                                                  props.componentLookup);
-    if (!ComponentClass) {
+
+    if (!_.isFunction(ComponentClass)) {
       throw new Error('Invalid component: ' + props.component);
     }
+
     return React.createElement(ComponentClass, props);
   },
+
   getComponentByName: function(name, componentLookup) {
-    if (typeof(componentLookup) == 'function') {
-      return componentLookup(name);
+    if (_.isFunction(componentLookup)) {
+      var ComponentClass = componentLookup(name);
+
+      // Fall back to the Cosmos.components namespace if the lookup doesn't
+      // return anything. Needed for exposing built-in components in Cosmos
+      if (ComponentClass) {
+        return ComponentClass;
+      };
     }
+
     return this.components[name];
   }
 });
 
-Cosmos.Router = function(defaultProps, container) {
+Cosmos.Router = function(defaultProps, options) {
   this._defaultProps = defaultProps || {};
-  this._container = container || document.body;
+  this._options = _.extend({
+    container: document.body
+  }, options);
 
   this.onPopState = this.onPopState.bind(this);
   this._bindPopStateEvent();
@@ -114,10 +130,16 @@ _.extend(Cosmos.Router, {
       var props = _.extend({router: this}, this._defaultProps, newProps);
 
       // The router exposes the instance of the currently rendered component
-      this.rootComponent = Cosmos.render(props, this._container, callback);
+      this.rootComponent = Cosmos.render(props,
+                                         this._options.container,
+                                         callback);
 
       // We use the current href when updating the current history entry
       this._currentHref = href;
+
+      if (_.isFunction(this._options.onChange)) {
+        this._options.onChange.call(this, newProps);
+      }
     },
 
     _bindPopStateEvent: function() {
@@ -467,15 +489,15 @@ Cosmos.mixins.DataFetch = {
 Cosmos.mixins.PersistState = {
   /**
    * Heart of the Cosmos framework. Enables dumping a state object into a
-   * Component and exporting the current state.
+   * component and exporting the current state.
    *
    * Props:
-   *   - state: An object that will be poured inside the initial Component
+   *   - state: An object that will be poured inside the initial component
    *            state as soon as it loads (replacing any default state.)
    */
   generateSnapshot: function(recursive) {
     /**
-     * Generate a snapshot of the Component props (including current state.)
+     * Generate a snapshot of the component props (including current state.)
      * It excludes internal props set by React during run-time and props with
      * default values.
      */
@@ -483,19 +505,22 @@ Cosmos.mixins.PersistState = {
         value,
         state,
         children = {};
+
     for (var key in this.props) {
       value = this.props[key];
+
       // Ignore "system" props
       if (key == '__owner__' ||
-        // Current state should be used instead of initial one
-        key == 'state' ||
-        // No reason to include parent reference
-        key == 'ref') {
+          // Current state should be used instead of initial one
+          key == 'state') {
         continue;
       }
+
       props[key] = value;
     }
+
     props.state = _.cloneDeep(this.state) || {};
+
     if (recursive) {
       _.each(this.refs, function(instance, ref) {
         // The child component needs to implement the PeristState mixin to be
@@ -506,72 +531,95 @@ Cosmos.mixins.PersistState = {
           children[ref] = _.cloneDeep(instance.state) || {};
         }
       });
+
       if (!_.isEmpty(children)) {
         props.state.children = children;
       }
     }
+
     return props;
   },
+
   loadChild: function() {
     var childProps = this.getChildProps.apply(this, arguments);
-    // Children are optional
-    return childProps ? Cosmos.createElement(childProps) : null;
+
+    if (childProps) {
+      try {
+        return Cosmos.createElement(childProps);
+      } catch (e) {
+        console.error(e);
+      }
+    }
+
+    // Return null won't render any node
+    return null;
   },
-  /**
-   * @param {string} name - Key that corresponds to the child Component we want
-   *                        to get the props for
-   * @param {...*} [arguments] - Optional extra arguments get passed to the
-   *                             function that returns the Component props
-   */
+
   getChildProps: function(name) {
-    // The .children object on a Component class contains a hash of functions.
-    // Keys in this hash represent the name and by default the *refs* of child
-    // Components (unless changed via optional arguments passed in) and their
-    // values are functions that return props for each of those child Components.
+    /**
+     * @param {String} name Key that corresponds to the child component we want
+     *                      to get the props for
+     * @param {...*} [arguments] Optional extra arguments get passed to the
+     *                           function that returns the component props
+     */
     var args = [];
     for (var i = 1; i < arguments.length; ++i) {
       args[i - 1] = arguments[i];
     }
 
+    // The .children object on a component class contains a hash of functions.
+    // Keys in this hash represent the name and by default the *refs* of child
+    // components (unless changed via optional arguments passed in) and their
+    // values are functions that return props for each of those child
+    // components.
     var props = this.children[name].apply(this, args);
     if (!props) {
       return;
     }
-    // A tree of states can be embeded inside a single (root) Component input,
-    // trickling down recursively all the way to the tree leaves. Child states
-    // are set inside the .children key of the parent Component's state, as a
-    // hash with keys corresponding to Component *refs*. These preset states
-    // will be overriden with those generated at run-time.
+
     if (!props.ref) {
       props.ref = name;
     }
+
+    // A tree of states can be embeded inside a single (root) component input,
+    // trickling down recursively all the way to the tree leaves. Child states
+    // are set inside the .children key of the parent component's state, as a
+    // hash with keys corresponding to component *refs*. These preset states
+    // will be overriden with those generated at run-time.
     if (this._childSnapshots && this._childSnapshots[name]) {
       props.state = this._childSnapshots[name];
+
       // Child snapshots are only used for first render after which organic
       // states are formed
       delete this._childSnapshots[name];
     }
+
     if (this.props.componentLookup) {
       props.componentLookup = this.props.componentLookup;
     }
+
     return props;
   },
+
   loadStateSnapshot: function(state) {
     if (state.children) {
       this._childSnapshots = state.children;
       delete state.children;
     }
+
     // Don't alter initial state object when changing state in the future
     this.replaceState(_.cloneDeep(state));
   },
+
   componentWillMount: function() {
     // Allow passing a serialized snapshot of a state through the props
     if (this.props.state) {
       this.loadStateSnapshot(this.props.state);
     }
   },
+
   componentWillReceiveProps: function(nextProps) {
-    // A Component can have its configuration replaced at any time
+    // A component can have its configuration replaced at any time
     if (nextProps.state) {
       this.loadStateSnapshot(nextProps.state);
     }
@@ -606,10 +654,14 @@ Cosmos.mixins.Url = {
   }
 };
 
-/** @jsx React.DOM */
 var classSet = React.addons.classSet;
 
 Cosmos.components.ComponentPlayground = React.createClass({
+  /**
+   * The Component Playground provides a minimal frame for loading React
+   * components in isolation. It can either render the component full-screen or
+   * with the navigation pane on the side.
+   */
   mixins: [Cosmos.mixins.PersistState,
            Cosmos.mixins.Url],
 
@@ -658,19 +710,19 @@ Cosmos.components.ComponentPlayground = React.createClass({
     });
 
     return (
-      React.DOM.div( {className:classes}, 
-        React.DOM.div( {className:"header"}, 
-          this.renderFullScreenButton(),
-          React.DOM.h1(null, 
-            React.DOM.a( {href:"?", onClick:this.routeLink}, 
-              React.DOM.span( {className:"react"}, "React"), " Component Playground"
+      React.createElement("div", {className: classes}, 
+        React.createElement("div", {className: "header"}, 
+          this.renderFullScreenButton(), 
+          React.createElement("h1", null, 
+            React.createElement("a", {href: "?", onClick: this.routeLink}, 
+              React.createElement("span", {className: "react"}, "React"), " Component Playground"
             )
           )
-        ),
-        React.DOM.div( {className:"fixtures"}, 
+        ), 
+        React.createElement("div", {className: "fixtures"}, 
           this.renderFixtures()
-        ),
-        React.DOM.div( {ref:"preview", className:this._getPreviewClasses()}, 
+        ), 
+        React.createElement("div", {ref: "preview", className: this._getPreviewClasses()}, 
           this.props.fixturePath ? this.loadChild('preview') : null
         )
       )
@@ -678,7 +730,7 @@ Cosmos.components.ComponentPlayground = React.createClass({
   },
 
   renderFixtures: function() {
-    return React.DOM.ul( {className:"components"}, 
+    return React.createElement("ul", {className: "components"}, 
       _.map(this.props.fixtures, function(fixtures, componentName) {
 
         var classes = classSet({
@@ -687,14 +739,14 @@ Cosmos.components.ComponentPlayground = React.createClass({
             this.state.expandedComponents.indexOf(componentName) !== -1
         });
 
-        return React.DOM.li( {className:classes, key:componentName}, 
-          React.DOM.p( {className:"component-name"}, 
-            React.DOM.a( {href:"#toggle-component",
-               onClick:_.partial(this.handleComponentClick, componentName),
-               ref:componentName + "Button"}, 
+        return React.createElement("li", {className: classes, key: componentName}, 
+          React.createElement("p", {className: "component-name"}, 
+            React.createElement("a", {href: "#toggle-component", 
+               onClick: _.partial(this.handleComponentClick, componentName), 
+               ref: componentName + "Button"}, 
               componentName
             )
-          ),
+          ), 
           this.renderComponentFixtures(componentName, fixtures)
         );
 
@@ -703,16 +755,16 @@ Cosmos.components.ComponentPlayground = React.createClass({
   },
 
   renderComponentFixtures: function(componentName, fixtures) {
-    return React.DOM.ul( {className:"component-fixtures"}, 
+    return React.createElement("ul", {className: "component-fixtures"}, 
       _.map(fixtures, function(props, fixtureName) {
 
         var url = this.getUrlFromProps({
           fixturePath: componentName + '/' + fixtureName
         });
 
-        return React.DOM.li( {className:this._getFixtureClasses(fixtureName),
-                   key:fixtureName}, 
-          React.DOM.a( {href:url, onClick:this.routeLink}, 
+        return React.createElement("li", {className: this._getFixtureClasses(fixtureName), 
+                   key: fixtureName}, 
+          React.createElement("a", {href: url, onClick: this.routeLink}, 
             fixtureName.replace(/-/g, ' ')
           )
         );
@@ -731,9 +783,9 @@ Cosmos.components.ComponentPlayground = React.createClass({
       fullScreen: true
     });
 
-    return React.DOM.a( {href:fullScreenUrl,
-              className:"full-screen-button",
-              ref:"fullScreenButton"}, "Fullscreen");
+    return React.createElement("a", {href: fullScreenUrl, 
+              className: "full-screen-button", 
+              ref: "fullScreenButton"}, "Fullscreen");
   },
 
   handleComponentClick: function(componentName, event) {
