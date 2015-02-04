@@ -5,7 +5,7 @@ Flatris.components.Tetrimino = React.createClass({
    * A tetromino is a geometric shape composed of four squares, connected
    * orthogonally. Read more at http://en.wikipedia.org/wiki/Tetromino
    */
-  mixins: [Cosmos.mixins.PersistState],
+  mixins: [Cosmos.mixins.ComponentTree],
 
   getDefaultProps: function() {
     return {

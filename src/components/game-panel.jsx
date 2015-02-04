@@ -7,7 +7,7 @@ Flatris.components.GamePanel = React.createClass({
    * - the score and lines cleared
    * - start or pause/resume controls
    */
-  mixins: [Cosmos.mixins.PersistState],
+  mixins: [Cosmos.mixins.ComponentTree],
 
   getDefaultProps: function() {
     return {

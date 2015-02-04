@@ -6,7 +6,7 @@ Flatris.components.FlatrisGame = React.createClass({
    * It was released on June 6, 1984 and has since become a world-wide
    * phenomenon. Read more about the game at http://en.wikipedia.org/wiki/Tetris
    */
-  mixins: [Cosmos.mixins.PersistState],
+  mixins: [Cosmos.mixins.ComponentTree],
 
   getInitialState: function() {
     return _.extend(this.getNewGameDefaults(), {

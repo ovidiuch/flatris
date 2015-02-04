@@ -9,7 +9,7 @@ Flatris.components.Well = React.createClass({
    * line it will be cleared, emptying up space and allowing more pieces to
    * enter afterwards.
    */
-  mixins: [Cosmos.mixins.PersistState,
+  mixins: [Cosmos.mixins.ComponentTree,
            Cosmos.mixins.AnimationLoop],
 
   getDefaultProps: function() {

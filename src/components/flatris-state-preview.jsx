@@ -4,7 +4,7 @@ Flatris.components.FlatrisStatePreview = React.createClass({
   /**
    * Render a Flatris instance next to its prettified, serialized state
    */
-  mixins: [Cosmos.mixins.PersistState],
+  mixins: [Cosmos.mixins.ComponentTree],
 
   getInitialState: function() {
     return {

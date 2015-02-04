@@ -4,7 +4,7 @@ Flatris.components.FlatrisStatePersistor = React.createClass({
   /**
    * Persist Flatris state with local storage.
    */
-  mixins: [Cosmos.mixins.PersistState],
+  mixins: [Cosmos.mixins.ComponentTree],
 
   children: {
     flatrisStatePreview: function() {
