@@ -34,7 +34,7 @@ Flatris.components.FlatrisStatePersistor = React.createClass({
   },
 
   onUnload: function() {
-    var snapshot = this.refs.flatrisStatePreview.generateSnapshot(true);
+    var snapshot = this.refs.flatrisStatePreview.serialize(true);
     localStorage.setItem('flatrisState', JSON.stringify(snapshot));
   }
 });

@@ -45,7 +45,7 @@ Flatris.components.FlatrisStatePreview = React.createClass({
 
   refreshSnapshot: function() {
     this.setState({
-      snapshot: this.serializeState(this.refs.flatris.generateSnapshot(true))
+      snapshot: this.serializeState(this.refs.flatris.serialize(true))
     });
   },
 
