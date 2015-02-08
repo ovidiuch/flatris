@@ -15,6 +15,9 @@ game is built.
 For more insights check out the source code and the
 [Cosmos](https://github.com/skidding/cosmos) project.
 
+Thanks [@paulgergely](https://twitter.com/paulgergely) for the flat Tetris
+design!
+
 ## Development
 
 ```bash
