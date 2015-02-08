@@ -60,6 +60,14 @@ The Tetris game was originally designed and programmed by Alexey Pajitnov.
 It was released on June 6, 1984 and has since become a world-wide phenomenon.
 Read more about the game at http://en.wikipedia.org/wiki/Tetris
 
+### FlatrisStatePreview
+
+Render a Flatris instance next to its prettified, serialized state.
+
+### FlatrisStatePersistor
+
+Persist Flatris state with local storage.
+
 ## Development
 
 ```bash
