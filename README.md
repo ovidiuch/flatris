@@ -25,14 +25,23 @@ design!
 Building block for Tetriminos and the grid of the Well, occupying a 1x1 square
 block. The only configurable property square blocks have is their color.
 
+- [Check out code](src/components/square-block.jsx)
+- [Explore in Component Playground](http://skidding.github.io/flatris/component-playground.html?fixturePath=SquareBlock%2Fcolor-of-the-I-tetrimino)
+
 ### Tetrimino
 
 A Tetromino is a geometric shape composed of four squares, connected
 orthogonally. Read more at http://en.wikipedia.org/wiki/Tetromino
 
+- [Check out code](src/components/tetrimino.jsx)
+- [Explore in Component Playground](http://skidding.github.io/flatris/component-playground.html?fixturePath=Tetrimino%2FZ-tetrimino)
+
 ### WellGrid
 
 Isolated matrix for the landed Tetriminos inside the Well.
+
+- [Check out code](src/components/well-grid.jsx)
+- [Explore in Component Playground](http://skidding.github.io/flatris/component-playground.html?fixturePath=WellGrid%2F3x3%20grid)
 
 ### Well
 
@@ -42,6 +51,9 @@ inside the well and they will fall until they hit the bottom, and eventually
 fill it. Whenever the pieces form a straight horizontal line it will be
 cleared, emptying up space and allowing more pieces to enter afterwards.
 
+- [Check out code](src/components/well.jsx)
+- [Explore in Component Playground](http://skidding.github.io/flatris/component-playground.html?fixturePath=Well%2Fpaused)
+
 ### GamePanel
 
 The game panel contains:
@@ -49,10 +61,14 @@ The game panel contains:
 - The score and lines cleared
 - Start or pause/resume controls
 
+- [Check out code](src/components/game-panel.jsx)
+
 ### InfoPanel
 
 Information panel for the Flatris game/Cosmos demo, shown in between game
 states.
+
+- [Check out code](src/components/info-panel.jsx)
 
 ### FlatrisGame
 
@@ -60,13 +76,20 @@ The Tetris game was originally designed and programmed by Alexey Pajitnov.
 It was released on June 6, 1984 and has since become a world-wide phenomenon.
 Read more about the game at http://en.wikipedia.org/wiki/Tetris
 
+- [Check out code](src/components/flatris-game.jsx)
+- [Explore in Component Playground](http://skidding.github.io/flatris/component-playground.html?fixturePath=FlatrisGame%2Fnew%20game%20running)
+
 ### FlatrisStatePreview
 
 Render a Flatris instance next to its prettified, serialized state.
 
+- [Check out code](src/components/flatris-state-preview.jsx)
+
 ### FlatrisStatePersistor
 
 Persist Flatris state with local storage.
+
+- [Check out code](src/components/flatris-state-persistor.jsx)
 
 ## Development
 
