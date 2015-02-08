@@ -36,7 +36,7 @@ body {
 .component-playground .header .full-screen-button {
   position: absolute;
   top: 0;
-  right: 0;
+  right: 150px;
   height: 50px;
   padding: 0 10px;
   color: #aaa;
