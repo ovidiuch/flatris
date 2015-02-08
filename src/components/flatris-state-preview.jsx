@@ -8,7 +8,7 @@ Flatris.components.FlatrisStatePreview = React.createClass({
 
   getInitialState: function() {
     return {
-      shapshot: '{}'
+      snapshot: '{}'
     };
   },
 
