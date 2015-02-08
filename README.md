@@ -57,9 +57,12 @@ cleared, emptying up space and allowing more pieces to enter afterwards.
 ### GamePanel
 
 The game panel contains:
+
 - The next Tetrimono to be inserted
 - The score and lines cleared
 - Start or pause/resume controls
+
+It is displayed on the right side of the game.
 
 - [Check out code](src/components/game-panel.jsx)
 
