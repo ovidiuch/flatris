@@ -1,98 +1,39 @@
-/* Flatris expects a 480 width viewport */
 .flatris {
-  position: relative;
-  width: 480px;
-  height: 680px;
-  margin: 30px auto 30px auto;
+  background: #fff;
+  color: #34495f;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
 
-  .well {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 300px;
-    height: 600px;
-    background: #ecf0f1;
+  ul {
+    list-style-type: none;
   }
-  .info-panel {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 270px;
-    height: 600px;
-    padding: 0 15px;
-    background: rgba(236, 240, 241, 0.8);
 
-    .headline {
-      margin-bottom: 30px;
-      font-size: 18px;
-      line-height: 26px;
+  p {
+    margin: 15px 0;
+    line-height: 20px;
+  }
+
+  a {
+    color: #34495f;
+    font-weight: bold;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
     }
   }
-  .game-panel {
-    position: absolute;
-    top: 0;
-    bottom: 80px;
-    left: 300px;
-    right: 0;
-    padding: 0 30px;
 
-    p {
-      line-height: 1em;
-    }
-    .title {
-      margin: 30px 0 0 0;
-      color: #34495f;
-      font-size: 40px;
-      font-weight: normal;
-      line-height: 60px;
-    }
-    .label {
-      margin: 30px 0 0 0;
-      color: #bdc3c7;
-      font-weight: 300;
-    }
-    .count {
-      margin: 5px 0 0 0;
-      color: #3993d0;
-      font-size: 30px;
-      font-weight: normal;
-    }
-    .next-tetrimino {
-      width: 120px;
-      height: 120px;
-      margin: 10px 0 0 0;
-
-      .square-block {
-        /* Override any color the next Tetrimino has for a gray shape */
-        background-color: #ecf0f1 !important;
-      }
-      /* The I Tetrimino needs to be lifted a bit because it has an empty row
-      in its default position */
-      &.next-tetrimino-I {
-        margin-top: -20px;
-      }
-    }
-    button {
-      position: absolute;
-      bottom: 30px;
-      left: 30px;
-      right: 30px;
-      width: 120px;
-    }
-  }
-  .controls {
-    position: absolute;
-    top: 600px;
-    left: 0;
-    height: 80px;
-
-    button {
-      float: left;
-      width: 60px;
-      margin: 20px 20px 0 0;
-      background: #ecf0f1;
-      color: #34495f;
-      font-size: 24px;
-    }
+  button {
+    display: block;
+    border: 0;
+    height: 60px;
+    background: #34495f;
+    color: #fff;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 60px;
+    outline: none;
+    cursor: pointer;
   }
 }

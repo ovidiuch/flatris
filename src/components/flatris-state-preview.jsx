@@ -1,21 +1,21 @@
 /** @jsx React.DOM */
 
-Cosmos.components.FlatrisStatePreview = React.createClass({
+Flatris.components.FlatrisStatePreview = React.createClass({
   /**
    * Render a Flatris instance next to its prettified, serialized state
    */
-  mixins: [Cosmos.mixins.PersistState],
+  mixins: [Cosmos.mixins.ComponentTree],
 
   getInitialState: function() {
     return {
-      shapshot: '{}'
+      snapshot: '{}'
     };
   },
 
   children: {
     flatris: function() {
       return {
-        component: 'Flatris'
+        component: 'FlatrisGame'
       };
     }
   },
@@ -45,7 +45,7 @@ Cosmos.components.FlatrisStatePreview = React.createClass({
 
   refreshSnapshot: function() {
     this.setState({
-      snapshot: this.serializeState(this.refs.flatris.generateSnapshot(true))
+      snapshot: this.serializeState(this.refs.flatris.serialize(true))
     });
   },
 

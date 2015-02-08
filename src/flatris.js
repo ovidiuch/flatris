@@ -59,6 +59,7 @@ var Flatris = {
     LEFT: 37,
     RIGHT: 39
   },
+  components: {},
   attachPointerDownEvent: function(eventHandler) {
     if (this.isMobileDevice()) {
       return {onTouchStart: eventHandler};

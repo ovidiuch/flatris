@@ -1,10 +1,10 @@
 /** @jsx React.DOM */
 
-Cosmos.components.FlatrisStatePersistor = React.createClass({
+Flatris.components.FlatrisStatePersistor = React.createClass({
   /**
    * Persist Flatris state with local storage.
    */
-  mixins: [Cosmos.mixins.PersistState],
+  mixins: [Cosmos.mixins.ComponentTree],
 
   children: {
     flatrisStatePreview: function() {
@@ -34,7 +34,7 @@ Cosmos.components.FlatrisStatePersistor = React.createClass({
   },
 
   onUnload: function() {
-    var snapshot = this.refs.flatrisStatePreview.generateSnapshot(true);
+    var snapshot = this.refs.flatrisStatePreview.serialize(true);
     localStorage.setItem('flatrisState', JSON.stringify(snapshot));
   }
 });

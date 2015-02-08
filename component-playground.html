@@ -1,0 +1,45 @@
+<html>
+<head>
+  <title>React Component Playground</title>
+
+  <meta charset="utf-8">
+  <meta name="description" content="A foundation for maintainable web applications. Powered by React.">
+
+  <link href="component-playground.css" rel="stylesheet" type="text/css">
+  <link href="build/flatris.css" rel="stylesheet" type="text/css">
+
+  <script src="vendor/react-with-addons-0.12.2.js"></script>
+  <script src="vendor/lodash-2.4.1.js"></script>
+  <script src="vendor/jquery-1.11.0.js"></script>
+  <script src="vendor/cosmos-0.4.0.js"></script>
+  <script src="build/flatris.js"></script>
+  <script src="fixtures.js"></script>
+</head>
+<body>
+  <script>
+
+var props = {
+  component: 'ComponentPlayground',
+  componentLookup: function(name) {
+    return Flatris.components[name];
+  },
+  fixtures: fixtures,
+  containerClassName: 'flatris'
+};
+
+var router = Cosmos.start(props, {
+  onChange: function(props) {
+    var title = 'React Component Playground';
+
+    // Set document title to the name of the selected fixture
+    if (props.fixturePath) {
+      title = props.fixturePath + ' – ' + title;
+    }
+
+    document.title = title;
+  }
+});
+
+  </script>
+</body>
+</html>

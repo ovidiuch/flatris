@@ -1,13 +1,13 @@
 /** @jsx React.DOM */
 
-Cosmos.components.GamePanel = React.createClass({
+Flatris.components.GamePanel = React.createClass({
   /**
    * The game panel contains
    * - the next Tetrimono to be inserted
    * - the score and lines cleared
    * - start or pause/resume controls
    */
-  mixins: [Cosmos.mixins.PersistState],
+  mixins: [Cosmos.mixins.ComponentTree],
 
   getDefaultProps: function() {
     return {
@@ -23,6 +23,7 @@ Cosmos.components.GamePanel = React.createClass({
     nextTetrimino: function(tetrimino) {
       return {
         component: 'Tetrimino',
+        key: tetrimino,
         color: Flatris.COLORS[tetrimino],
         state: {
           grid: Flatris.SHAPES[tetrimino]
@@ -71,7 +72,7 @@ Cosmos.components.GamePanel = React.createClass({
     }
     return React.DOM.button(Flatris.attachPointerDownEvent(eventHandler), label);
   },
-  
+
   getNextTetriminoClass: function() {
     var classes = ['next-tetrimino'];
     // We use this extra class to position tetriminos differently from CSS

@@ -1,6 +1,6 @@
 /** @jsx React.DOM */
 
-Cosmos.components.InfoPanel = React.createClass({
+Flatris.components.InfoPanel = React.createClass({
   /**
    * Information panel for the Flatris game/Cosmos demo, shown in between game
    * states.
