@@ -94,7 +94,7 @@ _.extend(Cosmos.Router, {
       // lastest props and state, so that we resume it its exact form when/if
       // going back
       if (this.rootComponent) {
-        var snapshot = this.rootComponent.serialize();
+        var snapshot = this.rootComponent.serialize(true);
         this._replaceHistoryState(this._excludeDefaultProps(snapshot),
                                   this._currentHref);
       }
@@ -109,7 +109,7 @@ _.extend(Cosmos.Router, {
         // event, only a browser page change does. Otherwise this would've
         // triggered an infinite loop.
         // https://developer.mozilla.org/en-US/docs/Web/API/window.onpopstate
-        var snapshot = this.serialize();
+        var snapshot = this.serialize(true);
         _this._pushHistoryState(_this._excludeDefaultProps(snapshot), href);
       });
     },
@@ -124,10 +124,19 @@ _.extend(Cosmos.Router, {
     },
 
     _load: function(newProps, href, callback) {
-      // Always send the components a reference to the router. This makes it
-      // possible for a component to change the page through the router and
-      // not have to rely on any sort of globals
-      var props = _.extend({router: this}, this._defaultProps, newProps);
+      var baseProps = {
+        // Always send the components a reference to the router. This makes it
+        // possible for a component to change the page through the router and
+        // not have to rely on any sort of globals
+        router: this,
+        // Use the href as an identifier for the component. This is useful when
+        // browsing between more instances of the same component after the
+        // router cached state for each. Without the unique key prop the
+        // component would be updated through componentWillReceiveProps and the
+        // cached state would be ignored
+        key: href
+      };
+      var props = _.extend(baseProps, this._defaultProps, newProps);
 
       // The router exposes the instance of the currently rendered component
       this.rootComponent = Cosmos.render(props,
@@ -366,21 +375,10 @@ Cosmos.mixins.ComponentTree = {
      * Generate a snapshot with the the props and state of a component
      * combined, including the state of all nested child components.
      */
-    var snapshot = {},
-        value;
-
-    for (var key in this.props) {
-      value = this.props[key];
-
-      // Current state should be used instead of initial one
-      if (key == 'state') {
-        continue;
-      }
-
-      snapshot[key] = value;
-    }
-
-    var state = _.clone(this.state) || {},
+    // Current state should be used instead of initial one
+    var snapshot = _.omit(this.props, 'state'),
+        // Omit any child state that was previously passed through props
+        state = _.omit(this.state, 'children'),
         children = {},
         childSnapshot;
 
@@ -662,7 +660,7 @@ Cosmos.mixins.Url = {
      * instead of reloading pages.
      */
     event.preventDefault();
-    this.props.router.goTo(event.currentTarget.getAttribute('href'));
+    this.props.router.goTo(event.currentTarget.href);
   }
 };
 
