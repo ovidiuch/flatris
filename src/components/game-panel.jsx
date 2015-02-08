@@ -23,6 +23,7 @@ Flatris.components.GamePanel = React.createClass({
     nextTetrimino: function(tetrimino) {
       return {
         component: 'Tetrimino',
+        key: tetrimino,
         color: Flatris.COLORS[tetrimino],
         state: {
           grid: Flatris.SHAPES[tetrimino]
