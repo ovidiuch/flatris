@@ -3,11 +3,11 @@
 Flatris.components.Well = React.createClass({
   /**
    * A rectangular vertical shaft, where Tetriminos fall into during a Flatris
-   * game. The Well has configurable size, speed. Tetrimino pieces can be
-   * inserted inside the well and they will fall until they hit the bottom,
-   * continuously filling it. Whenever the pieces form a straight horizontal
-   * line it will be cleared, emptying up space and allowing more pieces to
-   * enter afterwards.
+   * game. The Well has configurable size and speed. Tetrimino pieces can be
+   * inserted inside the well and they will fall until they hit the bottom, and
+   * eventually fill it. Whenever the pieces form a straight horizontal line it
+   * will be cleared, emptying up space and allowing more pieces to enter
+   * afterwards.
    */
   mixins: [Cosmos.mixins.ComponentTree,
            Cosmos.mixins.AnimationLoop],

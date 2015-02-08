@@ -2,10 +2,10 @@
 
 Flatris.components.GamePanel = React.createClass({
   /**
-   * The game panel contains
-   * - the next Tetrimono to be inserted
-   * - the score and lines cleared
-   * - start or pause/resume controls
+   * The game panel contains:
+   * - The next Tetrimono to be inserted
+   * - The score and lines cleared
+   * - Start or pause/resume controls
    */
   mixins: [Cosmos.mixins.ComponentTree],
 

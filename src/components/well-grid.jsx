@@ -2,8 +2,7 @@
 
 Flatris.components.WellGrid = React.createClass({
   /**
-   * Matrix for the landed Tetriminos inside the Flatris Well. Isolated from
-   * the Well component because it needs to update it state as
+   * Isolated matrix for the landed Tetriminos inside the Well.
    */
   mixins: [Cosmos.mixins.ComponentTree],
 
