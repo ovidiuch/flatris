@@ -271,6 +271,25 @@ var fixtures = {
     }
   },
 
+  GamePanel: {
+    'on-stopped-game': {},
+    'on-playing-game': {
+      playing: true,
+      nextTetrimino: 'S'
+    },
+    'on-paused-game': {
+      playing: true,
+      paused: true,
+      nextTetrimino: 'I',
+      score: 999,
+      lines: 123
+    }
+  },
+
+  InfoPanel: {
+    'static-panel': {}
+  },
+
   FlatrisGame: {
     'new game': {},
     'new game running': {

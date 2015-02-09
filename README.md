@@ -65,6 +65,7 @@ The game panel contains:
 It is displayed on the right side of the game.
 
 - [Check out code](src/components/game-panel.jsx)
+- [Explore in Component Playground](http://skidding.github.io/flatris/component-playground.html?fixturePath=GamePanel%2Fon-paused-game)
 
 ### InfoPanel
 
@@ -72,6 +73,7 @@ Information panel for the Flatris game/Cosmos demo, shown in between game
 states.
 
 - [Check out code](src/components/info-panel.jsx)
+- [Explore in Component Playground](http://skidding.github.io/flatris/component-playground.html?fixturePath=InfoPanel%2Fstatic-panel)
 
 ### FlatrisGame
 
