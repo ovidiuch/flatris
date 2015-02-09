@@ -2,8 +2,9 @@
 
 Flatris.components.SquareBlock = React.createClass({
   /**
-   * Building block for Tetriminos, occupying a 1x1 square block. The only
-   * configurable property square blocks have is their color.
+   * Building block for Tetriminos and the grid of the Well, occupying a 1x1
+   * square block. The only configurable property square blocks have is their
+   * color.
    */
   getDefaultProps: function() {
     return {

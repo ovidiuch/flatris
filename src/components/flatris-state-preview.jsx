@@ -2,7 +2,7 @@
 
 Flatris.components.FlatrisStatePreview = React.createClass({
   /**
-   * Render a Flatris instance next to its prettified, serialized state
+   * Render a Flatris instance next to its prettified, serialized state.
    */
   mixins: [Cosmos.mixins.ComponentTree],
 
