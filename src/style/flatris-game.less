@@ -20,14 +20,7 @@
     left: 0;
     width: 270px;
     height: 600px;
-    padding: 0 15px;
     background: rgba(236, 240, 241, 0.85);
-
-    .large-text {
-      margin-bottom: 30px;
-      font-size: 18px;
-      line-height: 26px;
-    }
   }
 
   .game-panel {
@@ -36,57 +29,6 @@
     bottom: 80px;
     left: 300px;
     right: 0;
-    padding: 0 30px;
-
-    p {
-      line-height: 1em;
-    }
-
-    .title {
-      margin: 30px 0 0 0;
-      color: #34495f;
-      font-size: 40px;
-      font-weight: normal;
-      line-height: 60px;
-    }
-
-    .label {
-      margin: 30px 0 0 0;
-      color: #bdc3c7;
-      font-weight: 300;
-    }
-
-    .count {
-      margin: 5px 0 0 0;
-      color: #3993d0;
-      font-size: 30px;
-      font-weight: normal;
-    }
-
-    .next-tetrimino {
-      width: 120px;
-      height: 120px;
-      margin: 10px 0 0 0;
-
-      .square-block {
-        /* Override any color the next Tetrimino has for a gray shape */
-        background-color: #ecf0f1 !important;
-      }
-
-      /* The I Tetrimino needs to be lifted a bit because it has an empty row
-      in its default position */
-      &.next-tetrimino-I {
-        margin-top: -20px;
-      }
-    }
-
-    button {
-      position: absolute;
-      bottom: 30px;
-      left: 30px;
-      right: 30px;
-      width: 120px;
-    }
   }
 
   .controls {
