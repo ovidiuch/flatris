@@ -1,10 +1,10 @@
-Flatris
-===
-Demo app for the [Cosmos](https://github.com/skidding/cosmos) JavaScript user
-interface framework, built using [React](https://github.com/facebook/react)
-components.
+[![Flatris](https://cloud.githubusercontent.com/assets/250750/6101303/f1de45b4-afef-11e4-9040-7a4b99c08a7c.png)](http://skidding.github.io/flatris/)
 
 Take a trip down memory lane with one the classics and [**play some Flatris!**](http://skidding.github.io/flatris/)
+
+Flatris is a demo app for the [Cosmos](https://github.com/skidding/cosmos)
+JavaScript user interface framework, built using
+[React](https://github.com/facebook/react) components.
 
 The purpose of this demo is to prove that data can drive a user interface, even
 one as complex as a game. A snapshot of the game state can be generated at any
