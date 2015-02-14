@@ -20,6 +20,9 @@ design!
 
 ## Components
 
+**Explore the components of Flatris in the 
+[Component Playground.](http://skidding.github.io/flatris/component-playground.html)**
+
 ### SquareBlock
 
 Building block for Tetriminos and the grid of the Well, occupying a 1x1 square
