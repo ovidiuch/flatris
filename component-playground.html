@@ -5,13 +5,12 @@
   <meta charset="utf-8">
   <meta name="description" content="A foundation for maintainable web applications. Powered by React.">
 
-  <link href="component-playground.css" rel="stylesheet" type="text/css">
   <link href="build/flatris.css" rel="stylesheet" type="text/css">
 
   <script src="vendor/react-with-addons-0.12.2.js"></script>
   <script src="vendor/lodash-2.4.1.js"></script>
   <script src="vendor/jquery-1.11.0.js"></script>
-  <script src="vendor/cosmos-0.4.0.js"></script>
+  <script src="vendor/cosmos-0.5.0.js"></script>
   <script src="vendor/animation-loop-mixin-0.1.1.js"></script>
   <script src="build/flatris.js"></script>
   <script src="fixtures.js"></script>
@@ -30,7 +29,8 @@ var props = {
   containerClassName: 'flatris'
 };
 
-var router = Cosmos.start(props, {
+var router = Cosmos.start({
+  defaultProps: props,
   container: document.getElementById('component-playground'),
   onChange: function(props) {
     var title = 'React Component Playground';
