@@ -1,0 +1,12 @@
+{
+  "excludeFiles": [
+    ".git/**",
+    "build/**",
+    "node_modules/**",
+    "fixtures.js"
+  ],
+  "fileExtensions": [".js", ".jsx"],
+  "preset": "google",
+
+  "disallowMultipleVarDecl": null
+}
