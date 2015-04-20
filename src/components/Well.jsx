@@ -59,7 +59,7 @@ module.exports = React.createClass({
     return (
       <div className="well">
         <div className="active-tetrimino"
-             style={_.extend(this._getTetriminoCSSSize(),
+             style={_.assign(this._getTetriminoCSSSize(),
                     this._getActiveTetriminoCSSPosition())}>
           {this.state.activeTetrimino ? this.loadChild('activeTetrimino')
                                       : null}

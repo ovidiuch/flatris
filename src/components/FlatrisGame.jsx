@@ -32,7 +32,7 @@ class FlatrisGame extends ComponentTree.Component {
     this.pause = this.pause.bind(this);
     this.resume = this.resume.bind(this);
 
-    this.state = _.extend(this._getNewGameDefaults(), {
+    this.state = _.assign(this._getNewGameDefaults(), {
       // Game is stopped by default and there's no Tetrimino to follow
       playing: false,
       nextTetrimino: null
@@ -91,7 +91,7 @@ class FlatrisGame extends ComponentTree.Component {
       {React.DOM.button(
         events.attachPointerDownEvent(this.onRightPress), '→')}
       {React.DOM.button(
-        _.extend(
+        _.assign(
           events.attachPointerDownEvent(this.onPullPress),
           events.attachPointerUpEvent(this.onPullRelease)), '↓')}
     </div>;
