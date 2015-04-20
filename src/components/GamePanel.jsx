@@ -46,7 +46,7 @@ class GamePanel extends ComponentTree.Component {
 
   componentDidUpdate(prevProps, prevState) {
     if (this.props.nextTetrimino &&
-      this.props.nextTetrimino != prevProps.nextTetrimino) {
+        this.props.nextTetrimino != prevProps.nextTetrimino) {
       this.refs.nextTetrimino.setState({
         grid: constants.SHAPES[this.props.nextTetrimino]
       });

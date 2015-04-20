@@ -72,7 +72,7 @@ module.exports = React.createClass({
   componentDidUpdate: function(prevProps, prevState) {
     // Populate grid of active Tetrimino only after a new one has been set
     if (this.state.activeTetrimino &&
-      this.state.activeTetrimino != prevState.activeTetrimino) {
+        this.state.activeTetrimino != prevState.activeTetrimino) {
       // Child state should only be touched imperatively, it is managed
       // internally inside Tetrimino Component afterwards
       this.refs.activeTetrimino.setState({
