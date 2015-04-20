@@ -4,8 +4,6 @@ var React = require('react'),
     ComponentTree = require('react-component-tree'),
     FlatrisStatePreview = require('./FlatrisStatePreview.jsx');
 
-require('../style/Flatris.less');
-
 class FlatrisStatePersistor extends ComponentTree.Component {
   /**
    * Persist Flatris state with local storage.

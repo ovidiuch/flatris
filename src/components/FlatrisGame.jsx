@@ -8,7 +8,7 @@ var React = require('react'),
     GamePanel = require('./GamePanel.jsx'),
     InfoPanel = require('./InfoPanel.jsx');
 
-require('../style/FlatrisGame.less');
+require('../style/components/FlatrisGame.less');
 
 class FlatrisGame extends ComponentTree.Component {
   /**
@@ -164,7 +164,7 @@ class FlatrisGame extends ComponentTree.Component {
     if (!this.state.playing || this.state.paused) {
       return;
     }
-    
+
     if (e.keyCode == constants.KEYS.DOWN) {
       this.refs.well.setState({dropAcceleration: false});
     }

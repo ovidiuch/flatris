@@ -1,7 +1,7 @@
 var React = require('react'),
     ComponentTree = require('react-component-tree');
 
-require('../style/InfoPanel.less');
+require('../style/components/InfoPanel.less');
 
 class InfoPanel extends ComponentTree.Component {
   /**

@@ -3,7 +3,7 @@ var React = require('react'),
     constants = require('../constants.js'),
     SquareBlock = require('./SquareBlock.jsx');
 
-require('../style/Tetrimino.less');
+require('../style/components/Tetrimino.less');
 
 class Tetrimino extends ComponentTree.Component {
   /**

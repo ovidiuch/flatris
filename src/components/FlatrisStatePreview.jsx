@@ -2,7 +2,7 @@ var React = require('react'),
     ComponentTree = require('react-component-tree'),
     FlatrisGame = require('./FlatrisGame.jsx');
 
-require('../style/FlatrisStatePreview.less');
+require('../style/components/FlatrisStatePreview.less');
 
 class FlatrisStatePreview extends ComponentTree.Component {
   /**
