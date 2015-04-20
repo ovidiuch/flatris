@@ -164,6 +164,7 @@ class FlatrisGame extends ComponentTree.Component {
     if (!this.state.playing || this.state.paused) {
       return;
     }
+    
     if (e.keyCode == constants.KEYS.DOWN) {
       this.refs.well.setState({dropAcceleration: false});
     }
