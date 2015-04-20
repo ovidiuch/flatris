@@ -1,40 +1,53 @@
-/** @jsx React.DOM */
+var React = require('react'),
+    _ = require('lodash'),
+    $ = require('jquery'),
+    ComponentTree = require('react-component-tree'),
+    FlatrisStatePreview = require('./FlatrisStatePreview.jsx');
 
-Flatris.components.FlatrisStatePersistor = React.createClass({
+require('../style/Flatris.less');
+
+class FlatrisStatePersistor extends ComponentTree.Component {
   /**
    * Persist Flatris state with local storage.
    */
-  mixins: [Cosmos.mixins.ComponentTree],
+  constructor() {
+    super();
 
-  children: {
-    flatrisStatePreview: function() {
-      // Unload previous state from local storage if present, otherwise
-      // generate a blank Flatris instance
-      var prevState = localStorage.getItem('flatrisState');
-      if (prevState) {
-        return JSON.parse(prevState);
-      } else {
+    this.onUnload = this.onUnload.bind(this);
+
+    this.children = {
+      flatrisStatePreview: function() {
         return {
-          component: 'FlatrisStatePreview'
+          component: FlatrisStatePreview
         };
       }
-    }
-  },
-
-  render: function() {
-    return this.loadChild('flatrisStatePreview');
-  },
-
-  componentDidMount: function() {
-    $(window).on('unload', this.onUnload);
-  },
-
-  componentWillUnmount: function() {
-    $(window).off('unload', this.onUnload);
-  },
-
-  onUnload: function() {
-    var snapshot = this.refs.flatrisStatePreview.serialize(true);
-    localStorage.setItem('flatrisState', JSON.stringify(snapshot));
+    };
   }
-});
+
+  render() {
+    return this.loadChild('flatrisStatePreview');
+  }
+
+  componentDidMount() {
+    $(window).on('unload', this.onUnload);
+
+    // Unload previous state from local storage if present, otherwise
+    // a blank Flatris instance will be rendered
+    var prevState = localStorage.getItem('flatrisState');
+    if (prevState) {
+      ComponentTree.injectState(this.refs.flatrisStatePreview,
+                                JSON.parse(prevState));
+    }
+  }
+
+  componentWillUnmount() {
+    $(window).off('unload', this.onUnload);
+  }
+
+  onUnload() {
+    var snapshot = ComponentTree.serialize(this.refs.flatrisStatePreview);
+    localStorage.setItem('flatrisState', JSON.stringify(snapshot.state));
+  }
+}
+
+module.exports = FlatrisStatePersistor;

@@ -1,55 +1,60 @@
-/** @jsx React.DOM */
+var React = require('react'),
+    ComponentTree = require('react-component-tree'),
+    FlatrisGame = require('./FlatrisGame.jsx');
 
-Flatris.components.FlatrisStatePreview = React.createClass({
+require('../style/FlatrisStatePreview.less');
+
+class FlatrisStatePreview extends ComponentTree.Component {
   /**
    * Render a Flatris instance next to its prettified, serialized state.
    */
-  mixins: [Cosmos.mixins.ComponentTree],
+  constructor() {
+    super();
 
-  getInitialState: function() {
-    return {
+    this.refreshSnapshot = this.refreshSnapshot.bind(this);
+
+    this.state = {
       snapshot: '{}'
     };
-  },
 
-  children: {
-    flatris: function() {
-      return {
-        component: 'FlatrisGame'
-      };
-    }
-  },
+    this.children = {
+      flatris: function() {
+        return {
+          component: FlatrisGame
+        };
+      }
+    };
+  }
 
-  render: function() {
-    return (
-      <div className="flatris-state-preview">
-        {this.loadChild('flatris')}
-        <pre className="state-preview">{this.state.snapshot}</pre>
-      </div>
-    );
-  },
+  render() {
+    return <div className="flatris-state-preview">
+      {this.loadChild('flatris')}
+      <pre className="state-preview">{this.state.snapshot}</pre>
+    </div>;
+  }
 
-  componentDidMount: function() {
+  componentDidMount() {
     this.refreshSnapshot();
     this._intervalId = setInterval(this.refreshSnapshot, 200);
-  },
+  }
 
-  shouldComponentUpdate: function(nextProps, nextState) {
+  shouldComponentUpdate(nextProps, nextState) {
     // No need to render for an identical snapshot
     return nextState.snapshot != this.state.snapshot;
-  },
+  }
 
-  componentWillUnmount: function() {
+  componentWillUnmount() {
     clearInterval(this._intervalId);
-  },
+  }
 
-  refreshSnapshot: function() {
+  refreshSnapshot() {
     this.setState({
-      snapshot: this.serializeState(this.refs.flatris.serialize(true))
+      snapshot: this._serializeState(
+          ComponentTree.serialize(this.refs.flatris))
     });
-  },
+  }
 
-  serializeState: function(snapshot) {
+  _serializeState(snapshot) {
     /**
      * This ugly method styles the indenting of the stringified state JSON.
      */
@@ -65,4 +70,6 @@ Flatris.components.FlatrisStatePreview = React.createClass({
     );
     return snapshot;
   }
-});
+}
+
+module.exports = FlatrisStatePreview;

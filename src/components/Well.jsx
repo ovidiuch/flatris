@@ -1,6 +1,15 @@
-/** @jsx React.DOM */
+var React = require('react'),
+    _ = require('lodash'),
+    ComponentTree = require('react-component-tree'),
+    AnimationLoopMixin = require('react-animation-loop'),
+    constants = require('../constants.js'),
+    WellGrid = require('./WellGrid.jsx'),
+    Tetrimino = require('./Tetrimino.jsx');
 
-Flatris.components.Well = React.createClass({
+require('../style/Well.less');
+
+// Keeping this a React class because we want to use the AnimationLoop mixin
+module.exports = React.createClass({
   /**
    * A rectangular vertical shaft, where Tetriminos fall into during a Flatris
    * game. The Well has configurable size and speed. Tetrimino pieces can be
@@ -9,13 +18,13 @@ Flatris.components.Well = React.createClass({
    * will be cleared, emptying up space and allowing more pieces to enter
    * afterwards.
    */
-  mixins: [Cosmos.mixins.ComponentTree,
+  mixins: [ComponentTree.Mixin,
            AnimationLoopMixin],
 
   getDefaultProps: function() {
     return {
-      rows: Flatris.WELL_ROWS,
-      cols: Flatris.WELL_COLS
+      rows: constants.WELL_ROWS,
+      cols: constants.WELL_COLS
     };
   },
 
@@ -23,10 +32,10 @@ Flatris.components.Well = React.createClass({
     return {
       activeTetrimino: null,
       // The active Tetrimino position will be reset whenever a new Tetrimino
-      // is inserted in the Well, using the getInitialPositionForTetriminoType
+      // is inserted in the Well, using the _getInitialPositionForTetriminoType
       // method
       activeTetriminoPosition: {x: 0, y: 0},
-      dropFrames: Flatris.DROP_FRAMES_DEFAULT,
+      dropFrames: constants.DROP_FRAMES_DEFAULT,
       dropAcceleration: null
     };
   },
@@ -34,17 +43,14 @@ Flatris.components.Well = React.createClass({
   children: {
     wellGrid: function() {
       return {
-        component: 'WellGrid'
+        component: WellGrid
       };
     },
 
     activeTetrimino: function() {
-      if (!this.state.activeTetrimino) {
-        return;
-      }
       return {
-        component: 'Tetrimino',
-        color: Flatris.COLORS[this.state.activeTetrimino]
+        component: Tetrimino,
+        color: constants.COLORS[this.state.activeTetrimino]
       };
     }
   },
@@ -53,9 +59,10 @@ Flatris.components.Well = React.createClass({
     return (
       <div className="well">
         <div className="active-tetrimino"
-             style={_.extend(this.getTetriminoCSSSize(),
-                    this.getActiveTetriminoCSSPosition())}>
-          {this.loadChild('activeTetrimino')}
+             style={_.extend(this._getTetriminoCSSSize(),
+                    this._getActiveTetriminoCSSPosition())}>
+          {this.state.activeTetrimino ? this.loadChild('activeTetrimino')
+                                      : null}
         </div>
         {this.loadChild('wellGrid')}
       </div>
@@ -69,14 +76,21 @@ Flatris.components.Well = React.createClass({
       // Child state should only be touched imperatively, it is managed
       // internally inside Tetrimino Component afterwards
       this.refs.activeTetrimino.setState({
-        grid: Flatris.SHAPES[this.state.activeTetrimino]
+        grid: constants.SHAPES[this.state.activeTetrimino]
       });
+    }
+
+    // XXX: The animation loop mixin still expects the state on mount (the old
+    // Cosmos behavior)
+    if (this.state.animationLoopRunning === true &&
+        this._animationRequestId === undefined) {
+      this.startAnimationLoop();
     }
   },
 
   reset: function() {
     this.setState({
-      dropFrames: Flatris.DROP_FRAMES_DEFAULT
+      dropFrames: constants.DROP_FRAMES_DEFAULT
     });
     this.refs.wellGrid.reset();
     this.loadTetrimino(null);
@@ -86,7 +100,7 @@ Flatris.components.Well = React.createClass({
     this.setState({
       activeTetrimino: type,
       // Reset position to place new Tetrimino at the top entrance point
-      activeTetriminoPosition: this.getInitialPositionForTetriminoType(type)
+      activeTetriminoPosition: this._getInitialPositionForTetriminoType(type)
     });
   },
 
@@ -95,12 +109,12 @@ Flatris.components.Well = React.createClass({
       var tetriminoGrid = this.refs.activeTetrimino.getRotatedGrid(),
           // If the rotation causes the active Tetrimino to go outside of the
           // Well bounds, its position will be adjusted to fit inside
-          tetriminoPosition = this.fitTetriminoGridPositionInWellBounds(
+          tetriminoPosition = this._fitTetriminoGridPositionInWellBounds(
             tetriminoGrid, this.state.activeTetriminoPosition);
       // If the rotation causes a collision with landed Tetriminos than it won't
       // be applied
-      if (this.isPositionAvailableForTetriminoGrid(tetriminoGrid,
-                                                   tetriminoPosition)) {
+      if (this._isPositionAvailableForTetriminoGrid(tetriminoGrid,
+                                                    tetriminoPosition)) {
         this.refs.activeTetrimino.setState({grid: tetriminoGrid});
       }
     }
@@ -123,45 +137,47 @@ Flatris.components.Well = React.createClass({
     tetriminoPosition.x += offset;
     // Attempting to move the Tetrimino outside the Well bounds or over landed
     // Tetriminos will be ignored
-    if (this.isPositionAvailableForTetriminoGrid(tetriminoGrid,
-                                                 tetriminoPosition)) {
+    if (this._isPositionAvailableForTetriminoGrid(tetriminoGrid,
+                                                  tetriminoPosition)) {
       this.setState({activeTetriminoPosition: tetriminoPosition});
     }
   },
 
   increaseSpeed: function() {
     this.setState({dropFrames: this.state.dropFrames -
-                               Flatris.DROP_FRAMES_DECREMENT});
+                               constants.DROP_FRAMES_DECREMENT});
   },
 
   onFrame: function(frames) {
     if (!this.state.activeTetrimino) {
       return;
     }
+
     var tetriminoGrid = this.refs.activeTetrimino.state.grid,
         tetriminoPosition = _.clone(this.state.activeTetriminoPosition),
         drop = {
           cells: this.refs.activeTetrimino.getNumberOfCells(),
           hardDrop: this.state.dropAcceleration
         };
-    tetriminoPosition.y += this.getDropStepForFrames(frames);
+
+    tetriminoPosition.y += this._getDropStepForFrames(frames);
     // The active Tetrimino keeps falling down until it hits something
-    if (this.isPositionAvailableForTetriminoGrid(tetriminoGrid,
-                                                 tetriminoPosition)) {
+    if (this._isPositionAvailableForTetriminoGrid(tetriminoGrid,
+                                                  tetriminoPosition)) {
       this.setState({activeTetriminoPosition: tetriminoPosition});
     } else {
       // A big frame skip could cause the Tetrimino to jump more than one row.
       // We need to ensure it ends up in the bottom-most one in case the jump
       // caused the Tetrimino to land
       tetriminoPosition =
-        this.getBottomMostPositionForTetriminoGrid(tetriminoGrid,
-                                                   tetriminoPosition);
+        this._getBottomMostPositionForTetriminoGrid(tetriminoGrid,
+                                                    tetriminoPosition);
       this.setState({activeTetriminoPosition: tetriminoPosition});
       // This is when the active Tetrimino hits the bottom of the Well and can
       // no longer be controlled
       drop.lines = this.refs.wellGrid.transferTetriminoBlocksToGrid(
         this.refs.activeTetrimino,
-        this.getGridPosition(this.state.activeTetriminoPosition)
+        this._getGridPosition(this.state.activeTetriminoPosition)
       );
       // Unload Tetrimino after landing it
       this.loadTetrimino(null);
@@ -180,23 +196,24 @@ Flatris.components.Well = React.createClass({
     }
   },
 
-  getTetriminoCSSSize: function() {
+  _getTetriminoCSSSize: function() {
     return {
       width: 100 / this.props.cols * 4 + '%',
       height: 100 / this.props.rows * 4 + '%'
     };
   },
 
-  getActiveTetriminoCSSPosition: function() {
+  _getActiveTetriminoCSSPosition: function() {
     var position =
-      this.getGridPosition(this.state.activeTetriminoPosition);
+      this._getGridPosition(this.state.activeTetriminoPosition);
+
     return {
       top: 100 / this.props.rows * position.y + '%',
       left: 100 / this.props.cols * position.x + '%'
     }
   },
 
-  getGridPosition: function(floatingPosition) {
+  _getGridPosition: function(floatingPosition) {
     // The position has floating numbers because of how gravity is incremented
     // with each frame
     return {
@@ -205,7 +222,7 @@ Flatris.components.Well = React.createClass({
     };
   },
 
-  getInitialPositionForTetriminoType: function(type) {
+  _getInitialPositionForTetriminoType: function(type) {
     /**
      * Generates positions a Tetrimino entering the Well. The I Tetrimino
      * occupies columns 4, 5, 6 and 7, the O Tetrimino occupies columns 5 and
@@ -215,27 +232,29 @@ Flatris.components.Well = React.createClass({
     if (!type) {
       return {x: 0, y: 0};
     }
-    var grid = Flatris.SHAPES[type];
+
+    var grid = constants.SHAPES[type];
     return {
       x: Math.round(this.props.cols / 2) - Math.round(grid[0].length / 2),
       y: -2
     };
   },
 
-  getDropStepForFrames: function(frames) {
+  _getDropStepForFrames: function(frames) {
     var dropFrames = this.state.dropAcceleration ?
-                     Flatris.DROP_FRAMES_ACCELERATED : this.state.dropFrames;
+                     constants.DROP_FRAMES_ACCELERATED : this.state.dropFrames;
     return frames / dropFrames;
   },
 
-  isPositionAvailableForTetriminoGrid: function(tetriminoGrid, position) {
-    var tetriminoPositionInGrid = this.getGridPosition(position),
+  _isPositionAvailableForTetriminoGrid: function(tetriminoGrid, position) {
+    var tetriminoPositionInGrid = this._getGridPosition(position),
         tetriminoRows = tetriminoGrid.length,
         tetriminoCols = tetriminoGrid[0].length,
         row,
         col,
         relativeRow,
         relativeCol;
+
     for (row = 0; row < tetriminoRows; row++) {
       for (col = 0; col < tetriminoCols; col++) {
         // Ignore blank squares from the Tetrimino grid
@@ -262,16 +281,18 @@ Flatris.components.Well = React.createClass({
         }
       }
     }
+
     return true;
   },
 
-  fitTetriminoGridPositionInWellBounds: function(tetriminoGrid, position) {
+  _fitTetriminoGridPositionInWellBounds: function(tetriminoGrid, position) {
     var tetriminoRows = tetriminoGrid.length,
         tetriminoCols = tetriminoGrid[0].length,
         row,
         col,
         relativeRow,
         relativeCol;
+
     for (row = 0; row < tetriminoRows; row++) {
       for (col = 0; col < tetriminoCols; col++) {
         // Ignore blank squares from the Tetrimino grid
@@ -285,19 +306,22 @@ Flatris.components.Well = React.createClass({
         if (relativeCol < 0) {
           position.x -= relativeCol;
         } else if (relativeCol >= this.props.cols) {
-          position.x -= relativeCol-this.props.cols+1;
+          position.x -= relativeCol - this.props.cols + 1;
         }
       }
     }
+
     return position;
   },
 
-  getBottomMostPositionForTetriminoGrid: function(tetriminoGrid, position) {
+  _getBottomMostPositionForTetriminoGrid: function(tetriminoGrid, position) {
     // Snap vertical position to grid
     position.y = Math.floor(position.y);
-    while (!this.isPositionAvailableForTetriminoGrid(tetriminoGrid, position)) {
+    while (!this._isPositionAvailableForTetriminoGrid(tetriminoGrid,
+                                                      position)) {
       position.y -= 1;
     }
+
     return position;
   }
 });

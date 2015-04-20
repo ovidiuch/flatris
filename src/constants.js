@@ -1,4 +1,4 @@
-var Flatris = {
+module.exports = {
   COLORS: {
     I: '#3cc7d6',
     O: '#fbb414',
@@ -58,23 +58,5 @@ var Flatris = {
     DOWN: 40,
     LEFT: 37,
     RIGHT: 39
-  },
-  components: {},
-  attachPointerDownEvent: function(eventHandler) {
-    if (this.isMobileDevice()) {
-      return {onTouchStart: eventHandler};
-    } else {
-      return {onMouseDown: eventHandler};
-    }
-  },
-  attachPointerUpEvent: function(eventHandler) {
-    if (this.isMobileDevice()) {
-      return {onTouchEnd: eventHandler};
-    } else {
-      return {onMouseUp: eventHandler};
-    }
-  },
-  isMobileDevice: function() {
-    return 'ontouchstart' in window;
   }
 };

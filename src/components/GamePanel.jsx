@@ -1,65 +1,62 @@
-/** @jsx React.DOM */
+var React = require('react'),
+    ComponentTree = require('react-component-tree'),
+    constants = require('../constants.js'),
+    events = require('../lib/events.js'),
+    Tetrimino = require('./Tetrimino.jsx');
 
-Flatris.components.GamePanel = React.createClass({
+require('../style/GamePanel.less');
+
+class GamePanel extends ComponentTree.Component {
   /**
    * The game panel contains:
-   * - The next Tetrimono to be inserted
+   * - The next Tetrimino to be inserted
    * - The score and lines cleared
    * - Start or pause/resume controls
    */
-  mixins: [Cosmos.mixins.ComponentTree],
+  constructor() {
+    super();
 
-  getDefaultProps: function() {
-    return {
-      playing: false,
-      paused: false,
-      score: 0,
-      lines: 0,
-      nextTetrimino: null
+    this.children = {
+      nextTetrimino: function() {
+        var tetrimino = this.props.nextTetrimino;
+
+        return {
+          component: Tetrimino,
+          key: tetrimino,
+          color: constants.COLORS[tetrimino]
+        };
+      }
     };
-  },
+  }
 
-  children: {
-    nextTetrimino: function(tetrimino) {
-      return {
-        component: 'Tetrimino',
-        key: tetrimino,
-        color: Flatris.COLORS[tetrimino],
-        state: {
-          grid: Flatris.SHAPES[tetrimino]
-        }
-      };
-    }
-  },
-
-  render: function() {
-    return (
-      <div className="game-panel">
-        <p className="title">Flatris</p>
-        <p className="label">Score</p>
-        <p className="count">{this.props.score}</p>
-        <p className="label">Lines Cleared</p>
-        <p className="count">{this.props.lines}</p>
-        <p className="label">Next Shape</p>
-        <div className={this.getNextTetriminoClass()}>
-          {this.renderNextTetrimino()}
-        </div>
-        {this.renderGameButton()}
+  render() {
+    return <div className="game-panel">
+      <p className="title">Flatris</p>
+      <p className="label">Score</p>
+      <p className="count">{this.props.score}</p>
+      <p className="label">Lines Cleared</p>
+      <p className="count">{this.props.lines}</p>
+      <p className="label">Next Shape</p>
+      <div className={this._getNextTetriminoClass()}>
+        {this.props.nextTetrimino ? this.loadChild('nextTetrimino') : null}
       </div>
-    );
-  },
+      {this._renderGameButton()}
+    </div>;
+  }
 
-  renderNextTetrimino: function() {
-    var nextTetrimino = this.props.nextTetrimino;
-    if (!nextTetrimino) {
-      return;
+  componentDidUpdate(prevProps, prevState) {
+    if (this.props.nextTetrimino &&
+      this.props.nextTetrimino != prevProps.nextTetrimino) {
+      this.refs.nextTetrimino.setState({
+        grid: constants.SHAPES[this.props.nextTetrimino]
+      });
     }
-    return this.loadChild('nextTetrimino', nextTetrimino);
-  },
+  }
 
-  renderGameButton: function() {
+  _renderGameButton() {
     var eventHandler,
         label;
+
     if (!this.props.playing) {
       eventHandler = this.props.onPressStart;
       label = 'New game';
@@ -70,10 +67,11 @@ Flatris.components.GamePanel = React.createClass({
       eventHandler = this.props.onPressPause;
       label = 'Pause';
     }
-    return React.DOM.button(Flatris.attachPointerDownEvent(eventHandler), label);
-  },
 
-  getNextTetriminoClass: function() {
+    return React.DOM.button(events.attachPointerDownEvent(eventHandler), label);
+  }
+
+  _getNextTetriminoClass() {
     var classes = ['next-tetrimino'];
     // We use this extra class to position tetriminos differently from CSS
     // based on their type
@@ -82,4 +80,14 @@ Flatris.components.GamePanel = React.createClass({
     }
     return classes.join(' ');
   }
-});
+}
+
+GamePanel.defaultProps = {
+  playing: false,
+  paused: false,
+  score: 0,
+  lines: 0,
+  nextTetrimino: null
+};
+
+module.exports = GamePanel;

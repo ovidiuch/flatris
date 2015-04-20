@@ -1,21 +1,23 @@
-/** @jsx React.DOM */
+var React = require('react'),
+    ComponentTree = require('react-component-tree'),
+    constants = require('../constants.js');
 
-Flatris.components.SquareBlock = React.createClass({
+require('../style/SquareBlock.less');
+
+class SquareBlock extends ComponentTree.Component {
   /**
    * Building block for Tetriminos and the grid of the Well, occupying a 1x1
    * square block. The only configurable property square blocks have is their
    * color.
    */
-  getDefaultProps: function() {
-    return {
-      color: Flatris.COLORS.L
-    };
-  },
-
-  render: function() {
-    return (
-      <div className="square-block"
-           style={{backgroundColor: this.props.color}}></div>
-    );
+  render() {
+    return <div className="square-block"
+                style={{backgroundColor: this.props.color}}></div>;
   }
-});
+}
+
+SquareBlock.defaultProp = {
+  color: constants.COLORS.L
+};
+
+module.exports = SquareBlock;
