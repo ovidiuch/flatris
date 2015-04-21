@@ -3,7 +3,7 @@
     ".git/**",
     "build/**",
     "node_modules/**",
-    "fixtures.js"
+    "fixtures/**"
   ],
   "fileExtensions": [".js", ".jsx"],
   "preset": "google",
