@@ -7,9 +7,8 @@ project, built using [React](https://github.com/facebook/react) components.
 
 The purpose of this demo is to prove that data can drive a user interface, even
 one as complex as a game. A snapshot of the game state can be generated at any
-time by calling `Flatris.rootComponent.serialize(true)` in the browser console
-of the demo page. This will reveal the data structures on top of which the
-game is built.
+time by calling `Flatris.serialize()` in the browser console of the demo page.
+This will reveal the data structures on top of which the game is built.
 
 For more insights check out the source code and
 [Cosmos](https://github.com/skidding/cosmos).
