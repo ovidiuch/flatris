@@ -24,20 +24,20 @@ design!
 Building block for Tetriminos and the grid of the Well, occupying a 1x1 square
 block. The only configurable property square blocks have is their color.
 
-- [Check out code](src/components/square-block.jsx)
+- [Check out code](src/components/SquareBlock.jsx)
 
 ### Tetrimino
 
 A Tetromino is a geometric shape composed of four squares, connected
 orthogonally. Read more at http://en.wikipedia.org/wiki/Tetromino
 
-- [Check out code](src/components/tetrimino.jsx)
+- [Check out code](src/components/Tetrimino.jsx)
 
 ### WellGrid
 
 Isolated matrix for the landed Tetriminos inside the Well.
 
-- [Check out code](src/components/well-grid.jsx)
+- [Check out code](src/components/WellGrid.jsx)
 
 ### Well
 
@@ -47,7 +47,7 @@ inside the well and they will fall until they hit the bottom, and eventually
 fill it. Whenever the pieces form a straight horizontal line it will be
 cleared, emptying up space and allowing more pieces to enter afterwards.
 
-- [Check out code](src/components/well.jsx)
+- [Check out code](src/components/Well.jsx)
 
 ### GamePanel
 
@@ -59,14 +59,14 @@ The game panel contains:
 
 It is displayed on the right side of the game.
 
-- [Check out code](src/components/game-panel.jsx)
+- [Check out code](src/components/GamePanel.jsx)
 
 ### InfoPanel
 
 Information panel for the Flatris game/Cosmos demo, shown in between game
 states.
 
-- [Check out code](src/components/info-panel.jsx)
+- [Check out code](src/components/InfoPanel.jsx)
 
 ### FlatrisGame
 
@@ -74,26 +74,23 @@ The Tetris game was originally designed and programmed by Alexey Pajitnov.
 It was released on June 6, 1984 and has since become a world-wide phenomenon.
 Read more about the game at http://en.wikipedia.org/wiki/Tetris
 
-- [Check out code](src/components/flatris-game.jsx)
+- [Check out code](src/components/FlatrisGame.jsx)
 
 ### FlatrisStatePreview
 
 Render a Flatris instance next to its prettified, serialized state.
 
-- [Check out code](src/components/flatris-state-preview.jsx)
+- [Check out code](src/components/FlatrisStatePreview.jsx)
 
 ### FlatrisStatePersistor
 
 Persist Flatris state with local storage.
 
-- [Check out code](src/components/flatris-state-persistor.jsx)
+- [Check out code](src/components/FlatrisStatePersistor.jsx)
 
 ## Development
 
 ```bash
 npm install
-# Build once
-node_modules/.bin/gulp build
-# Continuous build
-node_modules/.bin/gulp
+node_modules/.bin/webpack
 ```
