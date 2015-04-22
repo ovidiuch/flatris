@@ -30,11 +30,11 @@ class Tetrimino extends ComponentTree.Component {
 
   render() {
     return <ul className="tetrimino">
-      {this.renderGridBlocks()}
+      {this._renderGridBlocks()}
     </ul>;
   }
 
-  renderGridBlocks() {
+  _renderGridBlocks() {
     var blocks = [],
         rows = this.state.grid.length,
         cols = this.state.grid[0].length,
