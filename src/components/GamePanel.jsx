@@ -44,12 +44,13 @@ class GamePanel extends ComponentTree.Component {
     </div>;
   }
 
+  componentDidMount() {
+    this._updateNextTetriminoGrid();
+  }
+
   componentDidUpdate(prevProps, prevState) {
-    if (this.props.nextTetrimino &&
-        this.props.nextTetrimino != prevProps.nextTetrimino) {
-      this.refs.nextTetrimino.setState({
-        grid: constants.SHAPES[this.props.nextTetrimino]
-      });
+    if (this.props.nextTetrimino != prevProps.nextTetrimino) {
+      this._updateNextTetriminoGrid();
     }
   }
 
@@ -69,6 +70,16 @@ class GamePanel extends ComponentTree.Component {
     }
 
     return React.DOM.button(events.attachPointerDownEvent(eventHandler), label);
+  }
+
+  _updateNextTetriminoGrid() {
+    if (!this.props.nextTetrimino) {
+      return;
+    }
+
+    this.refs.nextTetrimino.setState({
+      grid: constants.SHAPES[this.props.nextTetrimino]
+    });
   }
 
   _getNextTetriminoClass() {
