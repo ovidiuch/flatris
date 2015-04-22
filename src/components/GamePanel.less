@@ -1,7 +1,16 @@
+@import '../lib/clear-spacing.less';
+@import '../lib/font.less';
+@import '../lib/paragraph.less';
+@import '../lib/button.less';
+
 .game-panel {
+  .font();
+
   padding: 0 30px;
 
   p {
+    .paragraph();
+
     line-height: 1em;
   }
 
@@ -44,6 +53,9 @@
   }
 
   button {
+    .clear-spacing();
+    .button();
+
     position: absolute;
     bottom: 30px;
     left: 30px;

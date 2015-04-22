@@ -1,3 +1,6 @@
+@import '../lib/clear-spacing.less';
+@import '../lib/button.less';
+
 /* Flatris expects a 480 width viewport */
 .flatris-game {
   position: relative;
@@ -38,6 +41,9 @@
     height: 80px;
 
     button {
+      .clear-spacing();
+      .button();
+
       float: left;
       width: 60px;
       margin: 20px 20px 0 0;

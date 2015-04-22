@@ -1,5 +1,19 @@
+@import '../lib/font.less';
+@import '../lib/paragraph.less';
+@import '../lib/link.less';
+
 .info-panel {
+  .font();
+
   padding: 0 15px;
+
+  p {
+    .paragraph();
+  }
+
+  a {
+    .link();
+  }
 
   .large-text {
     margin: 30px 0;

@@ -3,6 +3,8 @@ var React = require('react'),
     constants = require('../constants.js'),
     SquareBlock = require('./SquareBlock.jsx');
 
+require('./WellGrid.less');
+
 class WellGrid extends ComponentTree.Component {
   /**
    * Isolated matrix for the landed Tetriminos inside the Well.
