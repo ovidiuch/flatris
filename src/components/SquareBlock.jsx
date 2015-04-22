@@ -2,7 +2,7 @@ var React = require('react'),
     ComponentTree = require('react-component-tree'),
     constants = require('../constants.js');
 
-require('../style/components/SquareBlock.less');
+require('./SquareBlock.less');
 
 class SquareBlock extends ComponentTree.Component {
   /**

@@ -8,7 +8,7 @@ var React = require('react'),
     GamePanel = require('./GamePanel.jsx'),
     InfoPanel = require('./InfoPanel.jsx');
 
-require('../style/components/FlatrisGame.less');
+require('./FlatrisGame.less');
 
 class FlatrisGame extends ComponentTree.Component {
   /**

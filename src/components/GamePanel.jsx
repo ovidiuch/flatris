@@ -4,7 +4,7 @@ var React = require('react'),
     events = require('../lib/events.js'),
     Tetrimino = require('./Tetrimino.jsx');
 
-require('../style/components/GamePanel.less');
+require('./GamePanel.less');
 
 class GamePanel extends ComponentTree.Component {
   /**

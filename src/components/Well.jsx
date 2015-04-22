@@ -6,7 +6,7 @@ var React = require('react'),
     WellGrid = require('./WellGrid.jsx'),
     Tetrimino = require('./Tetrimino.jsx');
 
-require('../style/components/Well.less');
+require('./Well.less');
 
 // Keeping this a React class because we want to use the AnimationLoop mixin
 module.exports = React.createClass({
