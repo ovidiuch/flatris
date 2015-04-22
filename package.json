@@ -1,7 +1,7 @@
 {
   "name": "flatris",
   "version": "0.2.0",
-  "description": "Web-based Tetris clone in Cosmos/React",
+  "description": "Web-based Tetris clone in React",
   "repository": {
     "type": "git",
     "url": "https://github.com/skidding/flatris.git"
