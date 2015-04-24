@@ -124,14 +124,16 @@ class FlatrisGame extends ComponentTree.Component {
 
   pause() {
     this.setState({paused: true});
-    this.refs.well.stopAnimationLoop();
     // Stop any on-going acceleration inside the Well
-    this.refs.well.setState({dropAcceleration: false});
+    this.refs.well.setState({
+      animationLoopRunning: false,
+      dropAcceleration: false
+    });
   }
 
   resume() {
     this.setState({paused: false});
-    this.refs.well.startAnimationLoop();
+    this.refs.well.setState({animationLoopRunning: true});
   }
 
   onKeyDown(e) {
