@@ -36,7 +36,8 @@ module.exports = React.createClass({
       // method
       activeTetriminoPosition: {x: 0, y: 0},
       dropFrames: constants.DROP_FRAMES_DEFAULT,
-      dropAcceleration: null
+      dropAcceleration: false,
+      animationLoopRunning: true
     };
   },
 
@@ -78,13 +79,6 @@ module.exports = React.createClass({
       this.refs.activeTetrimino.setState({
         grid: constants.SHAPES[this.state.activeTetrimino]
       });
-    }
-
-    // XXX: The animation loop mixin still expects the state on mount (the old
-    // Cosmos behavior)
-    if (this.state.animationLoopRunning === true &&
-        this._animationRequestId === undefined) {
-      this.startAnimationLoop();
     }
   },
 

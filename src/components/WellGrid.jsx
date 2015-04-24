@@ -73,17 +73,16 @@ class WellGrid extends ComponentTree.Component {
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    return !_.isEqual(this.props, nextProps) ||
-           !_.isEqual(this.state, nextState);
+    return nextState.gridBlockCount !== this.state.gridBlockCount;
   }
 
   reset() {
     // This Component doesn't update after state changes by default, see
     // shouldComponentUpdate method
     this.setState({
-      grid: this._generateEmptyMatrix()
+      grid: this._generateEmptyMatrix(),
+      gridBlockCount: 0
     });
-    this.forceUpdate();
   }
 
   transferTetriminoBlocksToGrid(tetrimino, tetriminoPositionInGrid) {
@@ -122,7 +121,6 @@ class WellGrid extends ComponentTree.Component {
       grid: this.state.grid,
       gridBlockCount: blockCount
     });
-    this.forceUpdate();
 
     // Return lines cleared to measure success of Tetrimino landing :)
     return lines;
