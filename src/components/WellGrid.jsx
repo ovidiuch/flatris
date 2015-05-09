@@ -1,6 +1,7 @@
 var React = require('react'),
     ComponentTree = require('react-component-tree'),
     constants = require('../constants.js'),
+    grid = require('../lib/grid.js'),
     SquareBlock = require('./SquareBlock.jsx');
 
 require('./WellGrid.less');
@@ -13,7 +14,7 @@ class WellGrid extends ComponentTree.Component {
     super(props);
 
     this.state = {
-      grid: this._generateEmptyMatrix(),
+      grid: grid.generateEmptyMatrix(props.rows, props.cols),
       // Grid blocks need unique IDs to be used as React keys in order to tie
       // them to DOM nodes and prevent reusing them between rows when clearing
       // lines. DOM nodes need to stay the same to animate them when "falling"
@@ -80,7 +81,7 @@ class WellGrid extends ComponentTree.Component {
     // This Component doesn't update after state changes by default, see
     // shouldComponentUpdate method
     this.setState({
-      grid: this._generateEmptyMatrix(),
+      grid: grid.generateEmptyMatrix(this.props.rows, this.props.cols),
       gridBlockCount: 0
     });
   }
@@ -124,21 +125,6 @@ class WellGrid extends ComponentTree.Component {
 
     // Return lines cleared to measure success of Tetrimino landing :)
     return lines;
-  }
-
-  _generateEmptyMatrix() {
-    var matrix = [],
-        row,
-        col;
-
-    for (row = 0; row < this.props.rows; row++) {
-      matrix[row] = [];
-      for (col = 0; col < this.props.cols; col++) {
-        matrix[row][col] = null;
-      }
-    }
-
-    return matrix;
   }
 
   _clearLinesFromGrid(grid) {

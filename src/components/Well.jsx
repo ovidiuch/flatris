@@ -3,7 +3,7 @@ var React = require('react'),
     ComponentTree = require('react-component-tree'),
     AnimationLoopMixin = require('react-animation-loop'),
     constants = require('../constants.js'),
-    tetriminoGridLib = require('../lib/tetrimino-grid.js'),
+    grid = require('../lib/grid.js'),
     WellGrid = require('./WellGrid.jsx'),
     Tetrimino = require('./Tetrimino.jsx');
 
@@ -92,8 +92,7 @@ module.exports = React.createClass({
 
   rotateTetrimino: function() {
     if (this.state.activeTetrimino) {
-      var tetriminoGrid =
-            tetriminoGridLib.rotate(this.state.activeTetriminoGrid),
+      var tetriminoGrid = grid.rotate(this.state.activeTetriminoGrid),
           // If the rotation causes the active Tetrimino to go outside of the
           // Well bounds, its position will be adjusted to fit inside
           tetriminoPosition = this._fitTetriminoGridPositionInWellBounds(
