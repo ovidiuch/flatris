@@ -3,6 +3,12 @@ var constants = require('../../src/constants.js');
 module.exports = {
   state: {
     activeTetrimino: "I",
+    activeTetriminoGrid: [
+      [0,0,1,0],
+      [0,0,1,0],
+      [0,0,1,0],
+      [0,0,1,0]
+    ],
     activeTetriminoPosition: {
       x: 1,
       y: 2.3896774193548396
@@ -10,14 +16,6 @@ module.exports = {
     animationLoopRunning: true,
     dropAcceleration: true,
     children: {
-      activeTetrimino: {
-        grid: [
-          [0,0,1,0],
-          [0,0,1,0],
-          [0,0,1,0],
-          [0,0,1,0]
-        ]
-      },
       wellGrid: {
         grid: [
           [null,null,null,null,null,null,null,null,null,null],

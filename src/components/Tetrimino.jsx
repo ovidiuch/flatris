@@ -13,10 +13,6 @@ class Tetrimino extends ComponentTree.Component {
   constructor() {
     super();
 
-    this.state = {
-      grid: constants.SHAPES.T
-    };
-
     this.children = {
       squareBlock: function(col, row) {
         return {
@@ -36,14 +32,14 @@ class Tetrimino extends ComponentTree.Component {
 
   _renderGridBlocks() {
     var blocks = [],
-        rows = this.state.grid.length,
-        cols = this.state.grid[0].length,
+        rows = this.props.grid.length,
+        cols = this.props.grid[0].length,
         row,
         col;
 
     for (row = 0; row < rows; row++) {
       for (col = 0; col < cols; col++) {
-        if (this.state.grid[row][col]) {
+        if (this.props.grid[row][col]) {
           blocks.push(
             <li className="grid-square-block"
                 key={row + '-' + col}
@@ -68,7 +64,8 @@ class Tetrimino extends ComponentTree.Component {
 }
 
 Tetrimino.defaultProps = {
-  color: constants.COLORS.T
+  color: constants.COLORS.T,
+  grid: constants.SHAPES.T
 };
 
 module.exports = Tetrimino;

@@ -86,8 +86,8 @@ class WellGrid extends ComponentTree.Component {
   }
 
   transferTetriminoBlocksToGrid(tetrimino, tetriminoPositionInGrid) {
-    var rows = tetrimino.state.grid.length,
-               cols = tetrimino.state.grid[0].length,
+    var rows = tetrimino.props.grid.length,
+               cols = tetrimino.props.grid[0].length,
                row,
                col,
                relativeRow,
@@ -98,7 +98,7 @@ class WellGrid extends ComponentTree.Component {
     for (row = 0; row < rows; row++) {
       for (col = 0; col < cols; col++) {
         // Ignore blank squares from the Tetrimino grid
-        if (!tetrimino.state.grid[row][col]) {
+        if (!tetrimino.props.grid[row][col]) {
           continue;
         }
         relativeRow = tetriminoPositionInGrid.y + row;
