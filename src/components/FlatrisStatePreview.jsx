@@ -60,16 +60,19 @@ class FlatrisStatePreview extends ComponentTree.Component {
      */
     var snapshot = JSON.stringify(snapshot, null, '  ');
     // Style the Well and the active Tetrimino grid with one row per line
-    snapshot = snapshot.replace(/\n([\s]+)"grid"\: ([\s\S]+?)\]([\s]+)\]/g,
-      function(match, indent, grid, after) {
+    snapshot = snapshot.replace(gridPattern,
+      function(match, indent, key, grid, after) {
         grid = grid.replace(new RegExp('\\[\n' + indent + '    ', 'g'), '[');
         grid = grid.replace(new RegExp(',\n' + indent + '    ', 'g'), ', ');
         grid = grid.replace(new RegExp('\n' + indent + '  (\\]|$)', 'g'), '$1');
-        return '\n' + indent + '"grid": ' + grid + ']' + after + ']';
+        return '\n' + indent + '"' + key + '": ' + grid + ']' + after + ']';
       }
     );
     return snapshot;
   }
 }
+
+var gridPattern =
+    /\n([\s]+)"(grid|activeTetriminoGrid)"\: ([\s\S]+?)\]([\s]+)\]/g;
 
 module.exports = FlatrisStatePreview;
