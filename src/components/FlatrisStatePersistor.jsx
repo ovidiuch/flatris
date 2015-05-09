@@ -46,14 +46,14 @@ class FlatrisStatePersistor extends ComponentTree.Component {
   componentDidMount() {
     $(window).on('unload', this.onUnload);
 
+    this._refreshInterval = setInterval(this.refreshSnapshot, 200);
+
     // Unload previous state from local storage if present, otherwise
     // a blank Flatris instance will be rendered
     var prevState = localStorage.getItem('flatrisState1');
     if (prevState) {
       ComponentTree.injectState(this.refs.flatris, JSON.parse(prevState));
     }
-
-    this._refreshInterval = setInterval(this.refreshSnapshot, 200);
   }
 
   componentWillUnmount() {
