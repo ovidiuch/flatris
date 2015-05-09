@@ -1,60 +1,18 @@
-var React = require('react'),
-    ComponentTree = require('react-component-tree'),
-    FlatrisGame = require('./FlatrisGame.jsx');
+var React = require('react');
 
 require('./FlatrisStatePreview.less');
 
-class FlatrisStatePreview extends ComponentTree.Component {
+class FlatrisStatePreview extends React.Component {
   /**
-   * Render a Flatris instance next to its prettified, serialized state.
+   * Render the prettified, serialized state of a Flatris instance.
    */
-  constructor() {
-    super();
-
-    this.refreshSnapshot = this.refreshSnapshot.bind(this);
-
-    this.state = {
-      snapshot: '{}'
-    };
-
-    this.children = {
-      flatris: function() {
-        return {
-          component: FlatrisGame
-        };
-      }
-    };
-  }
-
   render() {
-    return <div className="flatris-state-preview">
-      {this.loadChild('flatris')}
-      <pre className="state-preview">{this.state.snapshot}</pre>
-    </div>;
+    return <pre className="flatris-state-preview">
+      {this._prettifyState(this.props.snapshot)}
+    </pre>;
   }
 
-  componentDidMount() {
-    this.refreshSnapshot();
-    this._intervalId = setInterval(this.refreshSnapshot, 200);
-  }
-
-  shouldComponentUpdate(nextProps, nextState) {
-    // No need to render for an identical snapshot
-    return nextState.snapshot != this.state.snapshot;
-  }
-
-  componentWillUnmount() {
-    clearInterval(this._intervalId);
-  }
-
-  refreshSnapshot() {
-    this.setState({
-      snapshot: this._serializeState(
-          ComponentTree.serialize(this.refs.flatris))
-    });
-  }
-
-  _serializeState(snapshot) {
+  _prettifyState(snapshot) {
     /**
      * This ugly method styles the indenting of the stringified state JSON.
      */
