@@ -61,28 +61,6 @@ class Tetrimino extends ComponentTree.Component {
     return blocks;
   }
 
-  rotate() {
-    this.setState({grid: this.getRotatedGrid()});
-  }
-
-  getRotatedGrid() {
-    // Function inspired by http://stackoverflow.com/a/2800033/128816
-    var matrix = [],
-        rows = this.state.grid.length,
-        cols = this.state.grid[0].length,
-        row,
-        col;
-
-    for (row = 0; row < rows; row++) {
-      matrix[row] = [];
-      for (col = 0; col < cols; col++) {
-        matrix[row][col] = this.state.grid[cols - 1 - col][row];
-      }
-    }
-
-    return matrix;
-  }
-
   getNumberOfCells() {
     // TODO: Count actual cells (so far all Tetriminos have 4 cells)
     return 4;
