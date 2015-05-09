@@ -42,6 +42,8 @@ class FlatrisGame extends ComponentTree.Component {
       well: function() {
         return {
           component: Well,
+          rows: constants.WELL_ROWS,
+          cols: constants.WELL_COLS,
           onTetriminoLanding: this.onTetriminoLanding,
           onFullWell: this.onFullWell
         };

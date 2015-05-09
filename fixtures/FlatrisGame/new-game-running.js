@@ -9,14 +9,9 @@ module.exports = {
     children: {
       well: {
         activeTetrimino: 'J',
+        activeTetriminoGrid: constants.SHAPES.J,
         activeTetriminoPosition: {x: 4, y: -2},
-        animationLoopRunning: true,
-
-        children: {
-          activeTetrimino: {
-            grid: constants.SHAPES.J
-          }
-        }
+        animationLoopRunning: true
       }
     }
   }
