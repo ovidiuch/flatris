@@ -1,12 +1,8 @@
 module.exports = {
-  cols: 3,
-  rows: 3,
-  state: {
-    grid: [
-      [null,"5#fbb414","6#fbb414"],
-      [null,"4#3993d0","7#fbb414"],
-      ["1#3993d0","2#3993d0","3#3993d0"]
-    ],
-    gridBlockCount: 10
-  }
+  grid: [
+    [null,"5#fbb414","6#fbb414"],
+    [null,"4#3993d0","7#fbb414"],
+    ["1#3993d0","2#3993d0","3#3993d0"]
+  ],
+  gridBlockCount: 10
 };
