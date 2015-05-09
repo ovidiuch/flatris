@@ -31,7 +31,7 @@ class FlatrisStatePersistor extends ComponentTree.Component {
 
     // Unload previous state from local storage if present, otherwise
     // a blank Flatris instance will be rendered
-    var prevState = localStorage.getItem('flatrisState');
+    var prevState = localStorage.getItem('flatrisState1');
     if (prevState) {
       ComponentTree.injectState(this.refs.flatrisStatePreview,
                                 JSON.parse(prevState));
@@ -44,7 +44,7 @@ class FlatrisStatePersistor extends ComponentTree.Component {
 
   onUnload() {
     var snapshot = ComponentTree.serialize(this.refs.flatrisStatePreview);
-    localStorage.setItem('flatrisState', JSON.stringify(snapshot.state));
+    localStorage.setItem('flatrisState1', JSON.stringify(snapshot.state));
   }
 }
 
