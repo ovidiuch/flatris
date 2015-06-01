@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "css-loader": "^0.10.1",
-    "cosmos-js": "^0.6.3",
+    "cosmos-js": "^0.6.4",
     "esprima-fb": "^14001.1.0-dev-harmony-fb",
     "extract-text-webpack-plugin": "^0.5.0",
     "jscs": "^1.12.0",
