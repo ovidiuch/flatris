@@ -4,7 +4,7 @@ var React = require('react'),
 
 exports.rootComponent = React.render(
     React.createElement(FlatrisStatePersistor, {}),
-    document.getElementById('flatris'));
+    document.getElementById('root'));
 
 exports.serialize = function() {
   return ComponentTree.serialize(exports.rootComponent);
