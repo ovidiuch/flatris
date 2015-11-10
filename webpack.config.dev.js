@@ -25,7 +25,8 @@ module.exports = {
       include: path.join(__dirname, 'src')
     }, {
       test: /\.less$/,
-      loader: 'style-loader!css-loader!less-loader'
+      loader: 'style-loader!css-loader!less-loader',
+      include: path.join(__dirname, 'src')
     }]
   }
 };
