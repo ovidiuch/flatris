@@ -4,7 +4,7 @@ module.exports = {
   rows: constants.WELL_ROWS,
   cols: constants.WELL_COLS,
   state: {
-    activeTetrimino: "T",
+    activeTetrimino: 'T',
     activeTetriminoGrid: constants.SHAPES.T,
     activeTetriminoPosition: {
       x: 2,
@@ -31,8 +31,8 @@ module.exports = {
       [null,null,null,null,null,null,null,null,null,null],
       [null,null,null,null,null,null,null,null,null,null],
       [null,null,null,null,null,null,null,null,null,null],
-      [null,"1196#b04497",null,null,null,null,null,null,null,null],
-      ["1197#b04497","1198#b04497","1199#b04497",null,null,null,null,null,null,null]
+      [null,'1196#b04497',null,null,null,null,null,null,null,null],
+      ['1197#b04497','1198#b04497','1199#b04497',null,null,null,null,null,null,null]
     ]
   }
 };
