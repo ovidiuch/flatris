@@ -232,7 +232,7 @@ class FlatrisGame extends ComponentTree.Component {
 
     var score = this.state.score,
         lines = this.state.lines,
-        level = Math.floor(lines / 10) + 1;
+        level = lines + 1;
 
     // Rudimentary scoring logic, no T-Spin and combo bonuses. Read more at
     // http://tetris.wikia.com/wiki/Scoring
@@ -240,11 +240,8 @@ class FlatrisGame extends ComponentTree.Component {
     if (drop.lines) {
       score += constants.LINE_CLEAR_BONUSES[drop.lines - 1] * level;
       lines += drop.lines;
-    }
 
-    // Increase speed with every ten lines cleared (aka level)
-    if (Math.floor(lines / 10) + 1 > level &&
-        this.refs.well.state.dropFrames > constants.DROP_FRAMES_ACCELERATED) {
+      // Increase speed whenever a line is cleared (fast game)
       this.refs.well.increaseSpeed();
     }
 
