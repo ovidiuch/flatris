@@ -5,13 +5,26 @@ import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import flatrisReducer from './reducer';
 import FlatrisGame from './components/FlatrisGame.jsx';
+import FlatrisStatePreview from './components/FlatrisStatePreview.jsx';
 import newGame from './components/__fixtures__/FlatrisGame/new-game';
 
-const store = createStore(flatrisReducer, newGame.reduxState, applyMiddleware(thunk));
+// Unload previous state from local storage if present, otherwise
+// a blank Flatris instance will be rendered
+const prevState = localStorage.getItem('flatrisState');
+const initialState = prevState ? JSON.parse(prevState) : newGame.reduxState;
+
+const store = createStore(flatrisReducer, initialState, applyMiddleware(thunk));
 
 ReactDOM.render(
   <Provider store={store}>
-    <FlatrisGame />
+    <div>
+      <FlatrisGame />
+      <FlatrisStatePreview />
+    </div>
   </Provider>,
   document.getElementById('root')
 );
+
+window.addEventListener('unload', () => {
+  localStorage.setItem('flatrisState', JSON.stringify(store.getState()));
+});
