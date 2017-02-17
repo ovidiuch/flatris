@@ -1,23 +1,21 @@
-var React = require('react'),
-    ComponentTree = require('react-component-tree'),
-    constants = require('../constants.js');
+import React from 'react';
 
-require('./SquareBlock.less');
+import './SquareBlock.css';
 
-class SquareBlock extends ComponentTree.Component {
-  /**
-   * Building block for Tetriminos and the grid of the Well, occupying a 1x1
-   * square block. The only configurable property square blocks have is their
-   * color.
-   */
-  render() {
-    return <div className="square-block"
-                style={{backgroundColor: this.props.color}}></div>;
-  }
-}
+/**
+ * Building block for Tetriminos and the grid of the Well, occupying a 1x1
+ * square block. The only configurable property square blocks have is their
+ * color.
+ */
+const SquareBlock = ({ color }) => (
+  <div
+    className="square-block"
+    style={{ backgroundColor: color }}
+  />
+);
 
-SquareBlock.defaultProp = {
-  color: constants.COLORS.L
+SquareBlock.propTypes = {
+  color: React.PropTypes.string.isRequired,
 };
 
-module.exports = SquareBlock;
+export default SquareBlock;

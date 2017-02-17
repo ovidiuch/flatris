@@ -1,12 +1,17 @@
-var React = require('react'),
-    ReactDOM = require('react-dom'),
-    ComponentTree = require('react-component-tree'),
-    FlatrisStatePersistor = require('./components/FlatrisStatePersistor.jsx');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux'
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import flatrisReducer from './reducer';
+import FlatrisGame from './components/FlatrisGame.jsx';
+import newGame from './components/__fixtures__/FlatrisGame/new-game';
 
-exports.rootComponent = ReactDOM.render(
-    React.createElement(FlatrisStatePersistor, {}),
-    document.getElementById('root'));
+const store = createStore(flatrisReducer, newGame.reduxState, applyMiddleware(thunk));
 
-exports.serialize = function() {
-  return ComponentTree.serialize(exports.rootComponent);
-};
+ReactDOM.render(
+  <Provider store={store}>
+    <FlatrisGame />
+  </Provider>,
+  document.getElementById('root')
+);
