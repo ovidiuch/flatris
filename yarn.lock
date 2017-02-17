@@ -4795,6 +4795,15 @@ react-cosmos-redux-proxy@^2.0.0-beta.6:
     lodash.omit "^4.5.0"
     redux "^3.6.0"
 
+react-cosmos-telescope@^2.0.0-beta.7:
+  version "2.0.0-beta.7"
+  resolved "https://registry.yarnpkg.com/react-cosmos-telescope/-/react-cosmos-telescope-2.0.0-beta.7.tgz#8bd8898cbd516718df8170e777928275f9724f33"
+  dependencies:
+    react-cosmos "^2.0.0-beta.7"
+    react-cosmos-config "^2.0.0-beta.7"
+    react-cosmos-voyager "^2.0.0-beta.7"
+    react-test-renderer "^15.4.2"
+
 react-cosmos-utils@^2.0.0-beta.6:
   version "2.0.0-beta.6"
   resolved "https://registry.yarnpkg.com/react-cosmos-utils/-/react-cosmos-utils-2.0.0-beta.6.tgz#7a34077b03770b97dde53c8398988a37226acc92"
@@ -4938,6 +4947,13 @@ react-scripts@0.9.0:
 react-style-proptype@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/react-style-proptype/-/react-style-proptype-1.4.0.tgz#d82c4093b73767e3efaacba013cea22a50e7b5ee"
+
+react-test-renderer@^15.4.2:
+  version "15.4.2"
+  resolved "https://registry.yarnpkg.com/react-test-renderer/-/react-test-renderer-15.4.2.tgz#27e1dff5d26d0e830f99614c487622bc831416f3"
+  dependencies:
+    fbjs "^0.8.4"
+    object-assign "^4.1.0"
 
 react@^15.4.2:
   version "15.4.2"
