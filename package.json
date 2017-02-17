@@ -35,7 +35,7 @@
     "start": "npm-run-all -p watch-css start-js",
     "build": "npm run build-css && react-scripts build",
     "format": "prettier --write 'src/**/*.js' '*.js' 'cosmos/**/*.js' --single-quote",
-    "test": "npm run format && react-scripts test --env=jsdom",
+    "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "cosmos": "NODE_ENV=development cosmos"
   },
