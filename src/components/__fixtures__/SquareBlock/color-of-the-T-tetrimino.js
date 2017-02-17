@@ -1,5 +1,5 @@
 import { COLORS } from '../../../constants/tetrimino';
 
 export default {
-  color: COLORS.T,
+  color: COLORS.T
 };

@@ -7,5 +7,5 @@ export default {
   nextTetrimino: 'I',
   onStart: () => console.log('Start'),
   onPause: () => console.log('Pause'),
-  onResume: () => console.log('Resume'),
+  onResume: () => console.log('Resume')
 };

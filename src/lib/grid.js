@@ -31,7 +31,7 @@ export function getExactPosition({ x, y }) {
   // with each frame
   return {
     x: Math.floor(x),
-    y: Math.floor(y),
+    y: Math.floor(y)
   };
 }
 
@@ -87,7 +87,7 @@ export function getBottomMostPosition(grid, tetriminoGrid, position) {
 }
 
 const getMaxIdFromLine = line =>
-  Math.max(...line.map(cell => (cell ? cell[0] : 0)));
+  Math.max(...line.map(cell => cell ? cell[0] : 0));
 
 const getMaxIdFromGrid = grid =>
   Math.max(...grid.map(line => getMaxIdFromLine(line)));
@@ -138,7 +138,9 @@ export function clearLines(grid) {
   for (let row = rows - 1; row >= 0; row--) {
     if (isLine(clearedGrid[row])) {
       for (let row2 = row; row2 >= 0; row2--) {
-        clearedGrid[row2] = row2 > 0 ? clearedGrid[row2 - 1] : createEmptyLine(cols);
+        clearedGrid[row2] = row2 > 0
+          ? clearedGrid[row2 - 1]
+          : createEmptyLine(cols);
       }
 
       linesCleared++;
@@ -150,11 +152,15 @@ export function clearLines(grid) {
 
   return {
     clearedGrid,
-    linesCleared,
+    linesCleared
   };
 }
 
-export function fitTetriminoPositionInWellBounds(grid, tetriminoGrid, { x, y }) {
+export function fitTetriminoPositionInWellBounds(
+  grid,
+  tetriminoGrid,
+  { x, y }
+) {
   const cols = grid[0].length;
   const tetriminoRows = tetriminoGrid.length;
   const tetriminoCols = tetriminoGrid[0].length;
@@ -172,7 +178,7 @@ export function fitTetriminoPositionInWellBounds(grid, tetriminoGrid, { x, y }) 
         if (relativeCol < 0) {
           newX -= relativeCol;
         } else if (relativeCol >= cols) {
-          newX -= (relativeCol - cols) + 1;
+          newX -= relativeCol - cols + 1;
         }
       }
     }
@@ -180,6 +186,6 @@ export function fitTetriminoPositionInWellBounds(grid, tetriminoGrid, { x, y }) 
 
   return {
     x: newX,
-    y,
+    y
   };
 }

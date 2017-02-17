@@ -2,12 +2,10 @@ import { PLAYING } from '../../../constants/states';
 import {
   WELL_ROWS,
   WELL_COLS,
-  DROP_FRAMES_DEFAULT,
+  DROP_FRAMES_DEFAULT
 } from '../../../constants/grid';
 import { SHAPES } from '../../../constants/tetrimino';
-import {
-  generateEmptyGrid,
-} from '../../../lib/grid';
+import { generateEmptyGrid } from '../../../lib/grid';
 
 export default {
   reduxState: {
@@ -20,6 +18,6 @@ export default {
     activeTetriminoGrid: SHAPES.J,
     activeTetriminoPosition: { x: 4, y: -2 },
     dropFrames: DROP_FRAMES_DEFAULT,
-    dropAcceleration: false,
-  },
+    dropAcceleration: false
+  }
 };

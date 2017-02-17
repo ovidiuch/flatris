@@ -21,6 +21,7 @@
   "devDependencies": {
     "node-sass": "^4.5.0",
     "npm-run-all": "^4.0.1",
+    "prettier": "^0.18.0",
     "react-cosmos-redux-proxy": "^2.0.0-beta.6",
     "react-cosmos-telescope": "^2.0.0-beta.7",
     "react-cosmos-webpack": "^2.0.0-beta.7",
@@ -33,7 +34,8 @@
     "start-js": "react-scripts start",
     "start": "npm-run-all -p watch-css start-js",
     "build": "npm run build-css && react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "format": "prettier --write 'src/**/*.js' --single-quote",
+    "test": "npm run format && react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "cosmos": "NODE_ENV=development cosmos"
   },

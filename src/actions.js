@@ -1,9 +1,7 @@
 import raf from 'raf';
 
 import { STOPPED, PLAYING } from './constants/states';
-import {
-  DROP_FRAMES_ACCELERATED,
-} from './constants/grid';
+import { DROP_FRAMES_ACCELERATED } from './constants/grid';
 
 const FPS = 60;
 const frameDuration = 1000 / FPS;
@@ -31,7 +29,7 @@ export const advance = () => (dispatch, getState) => {
     const {
       gameState,
       dropAcceleration,
-      dropFrames,
+      dropFrames
     } = getState();
 
     // Stop animation when game ended
@@ -39,13 +37,15 @@ export const advance = () => (dispatch, getState) => {
       return;
     }
 
-    const framesPerDrop = (dropAcceleration ? DROP_FRAMES_ACCELERATED : dropFrames);
+    const framesPerDrop = dropAcceleration
+      ? DROP_FRAMES_ACCELERATED
+      : dropFrames;
 
     yProgress += frames / framesPerDrop;
     if (yProgress > 1) {
       dispatch({
         type: 'ADVANCE',
-        payload: { rows: Math.floor(yProgress) },
+        payload: { rows: Math.floor(yProgress) }
       });
       yProgress %= 1;
     }
@@ -78,22 +78,22 @@ export const resume = () => dispatch => {
 
 export const moveLeft = () => ({
   type: 'MOVE',
-  payload: { direction: -1 },
+  payload: { direction: -1 }
 });
 
 export const moveRight = () => ({
   type: 'MOVE',
-  payload: { direction: 1 },
+  payload: { direction: 1 }
 });
 
 export const rotate = () => ({
-  type: 'ROTATE',
+  type: 'ROTATE'
 });
 
 export const enableAcceleration = () => ({
-  type: 'ENABLE_ACCELERATION',
+  type: 'ENABLE_ACCELERATION'
 });
 
 export const disableAcceleration = () => ({
-  type: 'DISABLE_ACCELERATION',
+  type: 'DISABLE_ACCELERATION'
 });
