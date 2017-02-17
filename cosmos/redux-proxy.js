@@ -7,6 +7,6 @@ import flatrisReducer from '../src/reducer';
 export default () => {
   return createReduxProxy({
     createStore: initialState =>
-      createStore(flatrisReducer, initialState, applyMiddleware(thunk)),
+      createStore(flatrisReducer, initialState, applyMiddleware(thunk))
   });
 };
