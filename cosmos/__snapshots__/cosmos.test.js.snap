@@ -1,3 +1,10 @@
+exports[`test Button:hello-world 1`] = `
+<button
+  className="gFbxOF">
+  Hello world!
+</button>
+`;
+
 exports[`test FlatrisGame:hallelujah 1`] = `
 <div
   className="flatris-game">
@@ -1910,6 +1917,7 @@ exports[`test FlatrisGame:hallelujah 1`] = `
       </ul>
     </div>
     <button
+      className="gFbxOF"
       onMouseDown={[Function]}>
       Pause
     </button>
@@ -1917,18 +1925,22 @@ exports[`test FlatrisGame:hallelujah 1`] = `
   <div
     className="controls">
     <button
+      className="gFbxOF"
       onMouseDown={[Function]}>
       ↻
     </button>
     <button
+      className="gFbxOF"
       onMouseDown={[Function]}>
       ←
     </button>
     <button
+      className="gFbxOF"
       onMouseDown={[Function]}>
       →
     </button>
     <button
+      className="gFbxOF"
       onMouseDown={[Function]}
       onMouseUp={[Function]}>
       ↓
@@ -4266,6 +4278,7 @@ exports[`test FlatrisGame:mission-impossible 1`] = `
       </ul>
     </div>
     <button
+      className="gFbxOF"
       onMouseDown={[Function]}>
       Resume
     </button>
@@ -4273,18 +4286,22 @@ exports[`test FlatrisGame:mission-impossible 1`] = `
   <div
     className="controls">
     <button
+      className="gFbxOF"
       onMouseDown={[Function]}>
       ↻
     </button>
     <button
+      className="gFbxOF"
       onMouseDown={[Function]}>
       ←
     </button>
     <button
+      className="gFbxOF"
       onMouseDown={[Function]}>
       →
     </button>
     <button
+      className="gFbxOF"
       onMouseDown={[Function]}
       onMouseUp={[Function]}>
       ↓
@@ -4346,6 +4363,7 @@ exports[`test FlatrisGame:new-game 1`] = `
     <div
       className="next-tetrimino" />
     <button
+      className="gFbxOF"
       onMouseDown={[Function]}>
       New game
     </button>
@@ -4353,18 +4371,22 @@ exports[`test FlatrisGame:new-game 1`] = `
   <div
     className="controls">
     <button
+      className="gFbxOF"
       onMouseDown={[Function]}>
       ↻
     </button>
     <button
+      className="gFbxOF"
       onMouseDown={[Function]}>
       ←
     </button>
     <button
+      className="gFbxOF"
       onMouseDown={[Function]}>
       →
     </button>
     <button
+      className="gFbxOF"
       onMouseDown={[Function]}
       onMouseUp={[Function]}>
       ↓
@@ -4556,6 +4578,7 @@ exports[`test FlatrisGame:new-game-running 1`] = `
       </ul>
     </div>
     <button
+      className="gFbxOF"
       onMouseDown={[Function]}>
       Pause
     </button>
@@ -4563,18 +4586,22 @@ exports[`test FlatrisGame:new-game-running 1`] = `
   <div
     className="controls">
     <button
+      className="gFbxOF"
       onMouseDown={[Function]}>
       ↻
     </button>
     <button
+      className="gFbxOF"
       onMouseDown={[Function]}>
       ←
     </button>
     <button
+      className="gFbxOF"
       onMouseDown={[Function]}>
       →
     </button>
     <button
+      className="gFbxOF"
       onMouseDown={[Function]}
       onMouseUp={[Function]}>
       ↓
@@ -4738,6 +4765,7 @@ exports[`test GamePanel:on-paused-game 1`] = `
     </ul>
   </div>
   <button
+    className="gFbxOF"
     onMouseDown={[Function]}>
     Resume
   </button>
@@ -4842,6 +4870,7 @@ exports[`test GamePanel:on-playing-game 1`] = `
     </ul>
   </div>
   <button
+    className="gFbxOF"
     onMouseDown={[Function]}>
     Pause
   </button>
@@ -4878,6 +4907,7 @@ exports[`test GamePanel:on-stopped-game 1`] = `
   <div
     className="next-tetrimino" />
   <button
+    className="gFbxOF"
     onMouseDown={[Function]}>
     New game
   </button>
