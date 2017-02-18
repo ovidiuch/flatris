@@ -8,7 +8,7 @@ const gridPattern = /\n([\s]+)"(grid|activeTetrominoGrid)": ([\s\S]+?)(\]([\s]+)
 const prettifyGrid = (grid, indent) => {
   return grid
     // Smoke & mirrors!
-    .replace(new RegExp('[[\\s]+([0-9]+),[\\s\\n]+("#[a-z0-9]{6}")[\\s\\n]+]', 'g'), ' $2')
+    .replace(new RegExp('\\[[\\s]+([0-9]+),[\\s\\n]+("#[a-z0-9]{6}")[\\s\\n]+\\]', 'g'), '$2')
     .replace(new RegExp('\\[\n' + indent + '    ', 'g'), '[ ')
     .replace(new RegExp(',\n' + indent + '    ', 'g'), ', ')
     .replace(new RegExp('\n' + indent + '  (\\]|$)', 'g'), ' $1');
