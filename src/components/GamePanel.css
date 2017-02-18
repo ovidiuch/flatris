@@ -2,51 +2,57 @@
   color: #34495f;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 14px;
-  padding: 0 30px; }
-  .game-panel p {
-    margin: 15px 0;
-    line-height: 1em; }
-  .game-panel .title {
-    margin: 30px 0 0 0;
-    color: #34495f;
-    font-size: 40px;
-    font-weight: normal;
-    line-height: 60px; }
-  .game-panel .label {
-    margin: 30px 0 0 0;
-    color: #bdc3c7;
-    font-weight: 300; }
-  .game-panel .count {
-    margin: 5px 0 0 0;
-    color: #3993d0;
-    font-size: 30px;
-    font-weight: normal; }
-  .game-panel .next-tetrimino {
-    width: 120px;
-    height: 120px;
-    margin: 10px 0 0 0;
-    /* The I Tetrimino needs to be lifted a bit because it has an empty row
-    in its default position */ }
-    .game-panel .next-tetrimino .square-block {
-      /* Override any color the next Tetrimino has for a gray shape */
-      background-color: #ecf0f1 !important; }
-    .game-panel .next-tetrimino.next-tetrimino-I {
-      margin-top: -20px; }
-  .game-panel button {
-    margin: 0;
-    padding: 0;
-    display: block;
-    border: 0;
-    height: 60px;
-    background: #34495f;
-    color: #fff;
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 18px;
-    font-weight: 300;
-    line-height: 60px;
-    outline: none;
-    cursor: pointer;
-    position: absolute;
-    bottom: 30px;
-    left: 30px;
-    width: 120px; }
+  padding: 0 30px;
+}
+
+.game-panel p {
+  margin: 15px 0;
+  line-height: 1em;
+}
+
+.game-panel .title {
+  margin: 30px 0 0 0;
+  color: #34495f;
+  font-size: 40px;
+  font-weight: normal;
+  line-height: 60px;
+}
+
+.game-panel .label {
+  margin: 30px 0 0 0;
+  color: #bdc3c7;
+  font-weight: 300;
+}
+
+.game-panel .count {
+  margin: 5px 0 0 0;
+  color: #3993d0;
+  font-size: 30px;
+  font-weight: normal;
+}
+
+.game-panel .next-tetrimino {
+  width: 120px;
+  height: 120px;
+  margin: 10px 0 0 0;
+}
+
+.game-panel .next-tetrimino .square-block {
+  /* Override any color the next Tetrimino has for a gray shape */
+  background-color: #ecf0f1 !important;
+}
+
+/* The I Tetrimino needs to be lifted a bit because it has an empty row
+in its default position */
+.game-panel .next-tetrimino.next-tetrimino-I {
+  margin-top: -20px;
+}
+
+.game-panel button {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  width: 120px;
+  margin: 0;
+  padding: 0;
+}

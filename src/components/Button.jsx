@@ -1,5 +1,9 @@
-@mixin button() {
+import styled from 'styled-components';
+
+export default styled.button`
   display: block;
+  margin: 0;
+  padding: 0;
   border: 0;
   height: 60px;
   background: #34495f;
@@ -10,4 +14,4 @@
   line-height: 60px;
   outline: none;
   cursor: pointer;
-}
+`;

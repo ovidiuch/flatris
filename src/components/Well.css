@@ -2,10 +2,15 @@
   position: relative;
   width: 100%;
   height: 100%;
-  overflow: hidden; }
-  .well .well-grid {
-    position: relative;
-    width: 100%;
-    height: 100%; }
-  .well .active-tetrimino {
-    position: absolute; }
+  overflow: hidden;
+}
+
+.well .well-grid {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.well .active-tetrimino {
+  position: absolute;
+}

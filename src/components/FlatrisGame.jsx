@@ -19,6 +19,7 @@ import {
 import Well from './Well';
 import GamePanel from './GamePanel';
 import InfoPanel from './InfoPanel';
+import Button from './Button';
 
 import './FlatrisGame.css';
 
@@ -156,13 +157,13 @@ class FlatrisGame extends React.Component {
   renderControls() {
     return (
       <div className="controls">
-        {React.DOM.button(
+        {React.createElement(Button,
           attachPointerDownEvent(this.onRotatePress), '↻')}
-        {React.DOM.button(
+        {React.createElement(Button,
           attachPointerDownEvent(this.onLeftPress), '←')}
-        {React.DOM.button(
+        {React.createElement(Button,
           attachPointerDownEvent(this.onRightPress), '→')}
-        {React.DOM.button(
+        {React.createElement(Button,
           _.assign(
             attachPointerDownEvent(this.onPullPress),
             attachPointerUpEvent(this.onPullRelease)), '↓')}

@@ -3,6 +3,7 @@ import { STOPPED, PLAYING, PAUSED } from '../constants/states';
 import { SHAPES, COLORS } from '../constants/tetrimino';
 import { attachPointerDownEvent } from '../lib/events';
 import Tetrimino from './Tetrimino';
+import Button from './Button';
 
 import './GamePanel.css';
 
@@ -50,7 +51,7 @@ class GamePanel extends React.Component {
         label = 'New game';
     }
 
-    return React.DOM.button(attachPointerDownEvent(eventHandler), label);
+    return React.createElement(Button, attachPointerDownEvent(eventHandler), label);
   }
 
   render() {

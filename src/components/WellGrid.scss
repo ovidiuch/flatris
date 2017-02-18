@@ -1,7 +1,0 @@
-@import '../lib/clear-spacing.scss';
-@import '../lib/list-no-bullet.scss';
-
-.well-grid {
-  @include clear-spacing();
-  @include list-no-bullet();
-}
