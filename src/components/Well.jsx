@@ -1,15 +1,15 @@
 import React from 'react';
-import { COLORS } from '../constants/tetrimino';
+import { COLORS } from '../constants/tetromino';
 import { getExactPosition } from '../lib/grid';
 import WellGrid from './WellGrid';
-import Tetrimino from './Tetrimino';
+import Tetromino from './Tetromino';
 
 import './Well.css';
 
 class Well extends React.Component {
   /**
-   * A rectangular vertical shaft, where Tetriminos fall into during a Flatris
-   * game. The Well has configurable size and speed. Tetrimino pieces can be
+   * A rectangular vertical shaft, where Tetrominoes fall into during a Flatris
+   * game. The Well has configurable size and speed. Tetromino pieces can be
    * inserted inside the well and they will fall until they hit the bottom, and
    * eventually fill it. Whenever the pieces form a straight horizontal line it
    * will be cleared, emptying up space and allowing more pieces to enter
@@ -18,9 +18,9 @@ class Well extends React.Component {
   shouldComponentUpdate(nextProps) {
     return (
       nextProps.grid !== this.props.grid ||
-      nextProps.activeTetrimino !== this.props.activeTetrimino ||
-      nextProps.activeTetriminoGrid !== this.props.activeTetriminoGrid ||
-      nextProps.activeTetriminoPosition !== this.props.activeTetriminoPosition
+      nextProps.activeTetromino !== this.props.activeTetromino ||
+      nextProps.activeTetrominoGrid !== this.props.activeTetrominoGrid ||
+      nextProps.activeTetrominoPosition !== this.props.activeTetrominoPosition
     );
   }
 
@@ -32,10 +32,10 @@ class Well extends React.Component {
     return this.props.grid[0].length;
   }
 
-  getActiveTetriminoStyles() {
+  getActiveTetrominoestyles() {
     const rows = this.getNumberOfRows();
     const cols = this.getNumberOfCols();
-    const { x, y } = getExactPosition(this.props.activeTetriminoPosition);
+    const { x, y } = getExactPosition(this.props.activeTetrominoPosition);
 
     return {
       top: `${(100 / rows) * y}%`,
@@ -48,14 +48,14 @@ class Well extends React.Component {
   render() {
     return (
       <div className="well">
-        {this.props.activeTetrimino ? (
+        {this.props.activeTetromino ? (
           <div
-            className="active-tetrimino"
-            style={this.getActiveTetriminoStyles()}
+            className="active-tetromino"
+            style={this.getActiveTetrominoestyles()}
           >
-            <Tetrimino
-              color={COLORS[this.props.activeTetrimino]}
-              grid={this.props.activeTetriminoGrid}
+            <Tetromino
+              color={COLORS[this.props.activeTetromino]}
+              grid={this.props.activeTetrominoGrid}
             />
           </div>
         ) : null}
@@ -71,20 +71,20 @@ Well.propTypes = {
   grid: React.PropTypes.arrayOf(
     React.PropTypes.arrayOf(React.PropTypes.array),
   ).isRequired,
-  activeTetrimino: React.PropTypes.string,
-  activeTetriminoGrid: React.PropTypes.arrayOf(
+  activeTetromino: React.PropTypes.string,
+  activeTetrominoGrid: React.PropTypes.arrayOf(
     React.PropTypes.arrayOf(React.PropTypes.number),
   ),
-  activeTetriminoPosition: React.PropTypes.shape({
+  activeTetrominoPosition: React.PropTypes.shape({
     x: React.PropTypes.number,
     y: React.PropTypes.number,
   }),
 };
 
 Well.defaultProps = {
-  activeTetrimino: null,
-  activeTetriminoGrid: null,
-  activeTetriminoPosition: null,
+  activeTetromino: null,
+  activeTetrominoGrid: null,
+  activeTetrominoPosition: null,
 };
 
 export default Well;

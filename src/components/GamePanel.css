@@ -31,20 +31,20 @@
   font-weight: normal;
 }
 
-.game-panel .next-tetrimino {
+.game-panel .next-tetromino {
   width: 120px;
   height: 120px;
   margin: 10px 0 0 0;
 }
 
-.game-panel .next-tetrimino .square-block {
-  /* Override any color the next Tetrimino has for a gray shape */
+.game-panel .next-tetromino .square-block {
+  /* Override any color the next Tetromino has for a gray shape */
   background-color: #ecf0f1 !important;
 }
 
-/* The I Tetrimino needs to be lifted a bit because it has an empty row
+/* The I Tetromino needs to be lifted a bit because it has an empty row
 in its default position */
-.game-panel .next-tetrimino.next-tetrimino-I {
+.game-panel .next-tetromino.next-tetromino-I {
   margin-top: -20px;
 }
 

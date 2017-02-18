@@ -4,7 +4,7 @@ export default {
   gameState: PAUSED,
   score: 999,
   lines: 123,
-  nextTetrimino: 'I',
+  nextTetromino: 'I',
   onStart: () => console.log('Start'),
   onPause: () => console.log('Pause'),
   onResume: () => console.log('Resume')

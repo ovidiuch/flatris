@@ -1,8 +1,8 @@
 import React from 'react';
 import { STOPPED, PLAYING, PAUSED } from '../constants/states';
-import { SHAPES, COLORS } from '../constants/tetrimino';
+import { SHAPES, COLORS } from '../constants/tetromino';
 import { attachPointerDownEvent } from '../lib/events';
-import Tetrimino from './Tetrimino';
+import Tetromino from './Tetromino';
 import Button from './Button';
 
 import './GamePanel.css';
@@ -10,17 +10,17 @@ import './GamePanel.css';
 class GamePanel extends React.Component {
   /**
    * The game panel contains:
-   * - The next Tetrimino to be inserted
+   * - The next Tetromino to be inserted
    * - The score and lines cleared
    * - Start or pause/resume controls
    */
-  getNextTetriminoClass() {
-    const classes = ['next-tetrimino'];
+  getNextTetrominoClass() {
+    const classes = ['next-tetromino'];
 
-    // We use this extra class to position tetriminos differently from CSS
+    // We use this extra class to position tetrominoes differently from CSS
     // based on their type
-    if (this.props.nextTetrimino) {
-      classes.push(`next-tetrimino-${this.props.nextTetrimino}`);
+    if (this.props.nextTetromino) {
+      classes.push(`next-tetromino-${this.props.nextTetromino}`);
     }
 
     return classes.join(' ');
@@ -58,7 +58,7 @@ class GamePanel extends React.Component {
     const {
       score,
       lines,
-      nextTetrimino,
+      nextTetromino,
     } = this.props;
 
     return (
@@ -69,12 +69,12 @@ class GamePanel extends React.Component {
         <p className="label">Lines Cleared</p>
         <p className="count">{lines}</p>
         <p className="label">Next Shape</p>
-        <div className={this.getNextTetriminoClass()}>
-          {nextTetrimino ? (
-            <Tetrimino
-              key={nextTetrimino}
-              color={COLORS[nextTetrimino]}
-              grid={SHAPES[nextTetrimino]}
+        <div className={this.getNextTetrominoClass()}>
+          {nextTetromino ? (
+            <Tetromino
+              key={nextTetromino}
+              color={COLORS[nextTetromino]}
+              grid={SHAPES[nextTetromino]}
             />
           ) : null}
         </div>
@@ -88,14 +88,14 @@ GamePanel.propTypes = {
   gameState: React.PropTypes.oneOf([STOPPED, PLAYING, PAUSED]).isRequired,
   score: React.PropTypes.number.isRequired,
   lines: React.PropTypes.number.isRequired,
-  nextTetrimino: React.PropTypes.string,
+  nextTetromino: React.PropTypes.string,
   onStart: React.PropTypes.func.isRequired,
   onPause: React.PropTypes.func.isRequired,
   onResume: React.PropTypes.func.isRequired,
 };
 
 GamePanel.defaultProps = {
-  nextTetrimino: null,
+  nextTetromino: null,
 };
 
 export default GamePanel;

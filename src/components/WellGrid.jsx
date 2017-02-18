@@ -5,7 +5,7 @@ import './WellGrid.css';
 
 class WellGrid extends React.Component {
   /**
-   * Grid rendering for the Tetriminos that landed inside the Well.
+   * Grid rendering for the Tetrominoes that landed inside the Well.
    */
   shouldComponentUpdate(nextProps) {
     return nextProps.grid !== this.props.grid;

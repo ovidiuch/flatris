@@ -4,7 +4,7 @@ import {
   WELL_COLS,
   DROP_FRAMES_DEFAULT
 } from '../../../constants/grid';
-import { SHAPES } from '../../../constants/tetrimino';
+import { SHAPES } from '../../../constants/tetromino';
 import { generateEmptyGrid } from '../../../lib/grid';
 
 export default {
@@ -12,11 +12,11 @@ export default {
     gameState: PLAYING,
     score: 0,
     lines: 0,
-    nextTetrimino: 'I',
+    nextTetromino: 'I',
     grid: generateEmptyGrid(WELL_ROWS, WELL_COLS),
-    activeTetrimino: 'J',
-    activeTetriminoGrid: SHAPES.J,
-    activeTetriminoPosition: { x: 4, y: -2 },
+    activeTetromino: 'J',
+    activeTetrominoGrid: SHAPES.J,
+    activeTetrominoPosition: { x: 4, y: -2 },
     dropFrames: DROP_FRAMES_DEFAULT,
     dropAcceleration: false
   }

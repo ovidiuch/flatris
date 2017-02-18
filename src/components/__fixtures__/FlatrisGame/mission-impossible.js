@@ -1,12 +1,12 @@
 import { PAUSED } from '../../../constants/states';
-import { SHAPES } from '../../../constants/tetrimino';
+import { SHAPES } from '../../../constants/tetromino';
 
 export default {
   reduxState: {
     gameState: PAUSED,
     score: 352,
     lines: 1,
-    nextTetrimino: 'S',
+    nextTetromino: 'S',
     grid: [
       [null, null, null, null, null, null, null, null, null, null],
       [null, null, null, null, null, null, null, null, null, null],
@@ -205,9 +205,9 @@ export default {
         null
       ]
     ],
-    activeTetrimino: 'T',
-    activeTetriminoGrid: SHAPES.T,
-    activeTetriminoPosition: { x: 7, y: 1.4775000000000023 },
+    activeTetromino: 'T',
+    activeTetrominoGrid: SHAPES.T,
+    activeTetrominoPosition: { x: 7, y: 1.4775000000000023 },
     dropFrames: 30,
     dropAcceleration: false
   }

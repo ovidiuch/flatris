@@ -5,7 +5,7 @@ export default {
     gameState: PLAYING,
     score: 184,
     lines: 0,
-    nextTetrimino: 'S',
+    nextTetromino: 'S',
     grid: [
       [null, null, null, null, null, null, null, null, null, null],
       [null, null, null, null, null, null, null, null, null, null],
@@ -204,14 +204,14 @@ export default {
         null
       ]
     ],
-    activeTetrimino: 'I',
-    activeTetriminoGrid: [
+    activeTetromino: 'I',
+    activeTetrominoGrid: [
       [0, 0, 1, 0],
       [0, 0, 1, 0],
       [0, 0, 1, 0],
       [0, 0, 1, 0]
     ],
-    activeTetriminoPosition: { x: 7, y: 8.716249999999997 },
+    activeTetrominoPosition: { x: 7, y: 8.716249999999997 },
     dropFrames: 30,
     dropAcceleration: false
   }

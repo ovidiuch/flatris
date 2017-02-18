@@ -6,19 +6,19 @@ import {
   DROP_FRAMES_DECREMENT,
   LINE_CLEAR_BONUSES
 } from './constants/grid';
-import { SHAPES, COLORS } from './constants/tetrimino';
+import { SHAPES, COLORS } from './constants/tetromino';
 import {
-  getRandomTetrimino,
-  getInitialPositionForTetrimino
-} from './lib/tetrimino';
+  getRandomTetromino,
+  getInitialPositionForTetromino
+} from './lib/tetromino';
 import {
   generateEmptyGrid,
   rotate,
   isPositionAvailable,
   getBottomMostPosition,
-  transferTetriminoToGrid,
+  transferTetrominoToGrid,
   clearLines,
-  fitTetriminoPositionInWellBounds
+  fitTetrominoPositionInWellBounds
 } from './lib/grid';
 
 const reducers = {
@@ -26,45 +26,45 @@ const reducers = {
     const {
       score,
       lines,
-      nextTetrimino,
+      nextTetromino,
       grid,
-      activeTetrimino,
-      activeTetriminoGrid,
-      activeTetriminoPosition,
+      activeTetromino,
+      activeTetrominoGrid,
+      activeTetrominoPosition,
       dropAcceleration,
       dropFrames
     } = state;
     const { rows } = action.payload;
 
-    let newPosition = Object.assign({}, activeTetriminoPosition, {
-      y: activeTetriminoPosition.y + rows
+    let newPosition = Object.assign({}, activeTetrominoPosition, {
+      y: activeTetrominoPosition.y + rows
     });
 
-    // The active Tetrimino keeps falling down until it hits something
-    if (isPositionAvailable(grid, activeTetriminoGrid, newPosition)) {
+    // The active Tetromino keeps falling down until it hits something
+    if (isPositionAvailable(grid, activeTetrominoGrid, newPosition)) {
       return Object.assign({}, state, {
-        activeTetriminoPosition: newPosition
+        activeTetrominoPosition: newPosition
       });
     }
 
-    // A big frame skip could cause the Tetrimino to jump more than one row.
+    // A big frame skip could cause the Tetromino to jump more than one row.
     // We need to ensure it ends up in the bottom-most one in case the jump
-    // caused the Tetrimino to land
-    newPosition = getBottomMostPosition(grid, activeTetriminoGrid, newPosition);
+    // caused the Tetromino to land
+    newPosition = getBottomMostPosition(grid, activeTetrominoGrid, newPosition);
 
-    // This is when the active Tetrimino hits the bottom of the Well and can
+    // This is when the active Tetromino hits the bottom of the Well and can
     // no longer be controlled
-    const newGrid = transferTetriminoToGrid(
+    const newGrid = transferTetrominoToGrid(
       grid,
-      activeTetriminoGrid,
+      activeTetrominoGrid,
       newPosition,
-      COLORS[activeTetrimino]
+      COLORS[activeTetromino]
     );
 
-    // Clear lines created after landing and transfering a Tetrimino
+    // Clear lines created after landing and transfering a Tetromino
     const { clearedGrid, linesCleared } = clearLines(newGrid);
 
-    // TODO: Calculate cells in Tetrimino. All current Tetriminos have 4 cells
+    // TODO: Calculate cells in Tetromino. All current Tetrominoes have 4 cells
     const cells = 4;
 
     // Rudimentary scoring logic, no T-Spin and combo bonuses. Read more at
@@ -75,19 +75,19 @@ const reducers = {
     }
 
     // Game over when well is full& and it should stop inserting any new
-    // Tetriminos from this point on (until the Well is reset)
+    // Tetrominoes from this point on (until the Well is reset)
     const gameState = newPosition.y < 0 ? STOPPED : PLAYING;
 
     return Object.assign({}, state, {
       gameState,
       score: score + points,
       lines: lines + linesCleared,
-      nextTetrimino: getRandomTetrimino(),
+      nextTetromino: getRandomTetromino(),
       grid: clearedGrid,
-      activeTetrimino: nextTetrimino,
-      activeTetriminoGrid: SHAPES[nextTetrimino],
-      activeTetriminoPosition: getInitialPositionForTetrimino(
-        nextTetrimino,
+      activeTetromino: nextTetromino,
+      activeTetrominoGrid: SHAPES[nextTetromino],
+      activeTetrominoPosition: getInitialPositionForTetromino(
+        nextTetromino,
         WELL_COLS
       ),
       // Increase speed whenever a line is cleared (fast game)
@@ -96,11 +96,11 @@ const reducers = {
   },
 
   START: state => {
-    const nextTetrimino = getRandomTetrimino();
-    const activeTetrimino = getRandomTetrimino();
-    const activeTetriminoGrid = SHAPES[activeTetrimino];
-    const activeTetriminoPosition = getInitialPositionForTetrimino(
-      activeTetrimino,
+    const nextTetromino = getRandomTetromino();
+    const activeTetromino = getRandomTetromino();
+    const activeTetrominoGrid = SHAPES[activeTetromino];
+    const activeTetrominoPosition = getInitialPositionForTetromino(
+      activeTetromino,
       WELL_COLS
     );
 
@@ -108,11 +108,11 @@ const reducers = {
       gameState: PLAYING,
       score: 0,
       lines: 0,
-      nextTetrimino,
+      nextTetromino,
       grid: generateEmptyGrid(WELL_ROWS, WELL_COLS),
-      activeTetrimino,
-      activeTetriminoGrid,
-      activeTetriminoPosition,
+      activeTetromino,
+      activeTetrominoGrid,
+      activeTetrominoPosition,
       dropFrames: DROP_FRAMES_DEFAULT,
       dropAcceleration: false
     });
@@ -129,52 +129,52 @@ const reducers = {
   MOVE: (state, action) => {
     const {
       grid,
-      activeTetriminoGrid,
-      activeTetriminoPosition
+      activeTetrominoGrid,
+      activeTetrominoPosition
     } = state;
     const { direction } = action.payload;
 
-    const newPosition = Object.assign({}, activeTetriminoPosition, {
-      x: activeTetriminoPosition.x + direction
+    const newPosition = Object.assign({}, activeTetrominoPosition, {
+      x: activeTetrominoPosition.x + direction
     });
 
-    // Attempting to move the Tetrimino outside the Well bounds or over landed
-    // Tetriminos will be ignored
-    if (!isPositionAvailable(grid, activeTetriminoGrid, newPosition)) {
+    // Attempting to move the Tetromino outside the Well bounds or over landed
+    // Tetrominoes will be ignored
+    if (!isPositionAvailable(grid, activeTetrominoGrid, newPosition)) {
       return state;
     }
 
     return Object.assign({}, state, {
-      activeTetriminoPosition: newPosition
+      activeTetrominoPosition: newPosition
     });
   },
 
   ROTATE: state => {
     const {
       grid,
-      activeTetriminoGrid,
-      activeTetriminoPosition
+      activeTetrominoGrid,
+      activeTetrominoPosition
     } = state;
 
-    const newGrid = rotate(activeTetriminoGrid);
+    const newGrid = rotate(activeTetrominoGrid);
 
-    // If the rotation causes the active Tetrimino to go outside of the
+    // If the rotation causes the active Tetromino to go outside of the
     // Well bounds, its position will be adjusted to fit inside
-    const newPosition = fitTetriminoPositionInWellBounds(
+    const newPosition = fitTetrominoPositionInWellBounds(
       grid,
       newGrid,
-      activeTetriminoPosition
+      activeTetrominoPosition
     );
 
-    // If the rotation causes a collision with landed Tetriminos than it won't
+    // If the rotation causes a collision with landed Tetrominoes than it won't
     // be applied
     if (!isPositionAvailable(grid, newGrid, newPosition)) {
       return state;
     }
 
     return Object.assign({}, state, {
-      activeTetriminoGrid: newGrid,
-      activeTetriminoPosition: newPosition
+      activeTetrominoGrid: newGrid,
+      activeTetrominoPosition: newPosition
     });
   },
 

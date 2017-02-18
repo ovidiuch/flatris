@@ -1,4 +1,4 @@
-import { SHAPES } from '../../../constants/tetrimino';
+import { SHAPES } from '../../../constants/tetromino';
 
 export default {
   grid: [
@@ -67,9 +67,9 @@ export default {
       [1214, '#3cc7d6']
     ]
   ],
-  activeTetrimino: 'S',
-  activeTetriminoGrid: SHAPES.S,
-  activeTetriminoPosition: {
+  activeTetromino: 'S',
+  activeTetrominoGrid: SHAPES.S,
+  activeTetrominoPosition: {
     x: 4,
     y: 6.834999999999979
   }

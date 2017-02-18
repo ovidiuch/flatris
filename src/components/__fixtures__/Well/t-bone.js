@@ -1,4 +1,4 @@
-import { SHAPES } from '../../../constants/tetrimino';
+import { SHAPES } from '../../../constants/tetromino';
 
 export default {
   grid: [
@@ -34,9 +34,9 @@ export default {
       null
     ]
   ],
-  activeTetrimino: 'T',
-  activeTetriminoGrid: SHAPES.T,
-  activeTetriminoPosition: {
+  activeTetromino: 'T',
+  activeTetrominoGrid: SHAPES.T,
+  activeTetrominoPosition: {
     x: 2,
     y: 13.508750000000028
   }

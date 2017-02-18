@@ -1,52 +1,41 @@
-> Check out [this React Cosmos example](https://github.com/react-cosmos/react-cosmos/tree/master/examples/flatris) for a newer, Redux version of Flatris.
-
 [![Flatris](https://cloud.githubusercontent.com/assets/250750/6101303/f1de45b4-afef-11e4-9040-7a4b99c08a7c.png)](http://skidding.github.io/flatris/)
 
-Take a trip down memory lane with one the classics and [**play some Flatris!**](http://skidding.github.io/flatris/)
-
-Flatris is a demo app for the [Cosmos](https://github.com/skidding/cosmos)
-project, built using [React](https://github.com/facebook/react) components.
-
-The purpose of this demo is to prove that data can drive a user interface, even
-one as complex as a game. A snapshot of the game state can be generated at any
-time by calling `Flatris.serialize()` in the browser console of the demo page.
-This will reveal the data structures on top of which the game is built.
-
-For more insights check out the source code and
-[Cosmos](https://github.com/skidding/cosmos).
+Take a trip down memory lane and [**play some Flatris!**](http://skidding.github.io/flatris/)
 
 Thanks [@paulgergely](https://twitter.com/paulgergely) for the flat Tetris
 design!
+
+> New documentation in progress!
 
 ## Components
 
 ### SquareBlock
 
-Building block for Tetriminos and the grid of the Well, occupying a 1x1 square
+Building block for Tetrominoes and the grid of the Well, occupying a 1x1 square
 block. The only configurable property square blocks have is their color.
 
 - [Check out code](src/components/SquareBlock.jsx)
 
-### Tetrimino
+### Tetromino
 
 A Tetromino is a geometric shape composed of four squares, connected
 orthogonally. Read more at http://en.wikipedia.org/wiki/Tetromino
 
-- [Check out code](src/components/Tetrimino.jsx)
+- [Check out code](src/components/Tetromino.jsx)
 
 ### WellGrid
 
-Isolated matrix for the landed Tetriminos inside the Well.
+Isolated matrix for the landed Tetrominoes inside the Well.
 
 - [Check out code](src/components/WellGrid.jsx)
 
 ### Well
 
-A rectangular vertical shaft, where Tetriminos fall into during a Flatris game.
-The Well has configurable size and speed. Tetrimino pieces can be inserted
-inside the well and they will fall until they hit the bottom, and eventually
-fill it. Whenever the pieces form a straight horizontal line it will be
-cleared, emptying up space and allowing more pieces to enter afterwards.
+A rectangular vertical shaft where Tetrominoes fall into during a Flatris game.
+The Well has configurable size and speed. Tetromino pieces can be inserted
+inside the well and they will fall until they hit the bottom, eventually
+fill the well. Whenever pieces form a straight horizontal line it will be
+cleared, emptying up space and allowing more pieces to enter.
 
 - [Check out code](src/components/Well.jsx)
 
@@ -54,9 +43,9 @@ cleared, emptying up space and allowing more pieces to enter afterwards.
 
 The game panel contains:
 
-- The next Tetrimono to be inserted
-- The score and lines cleared
-- Start or pause/resume controls
+- The next Tetromino to be inserted
+- The score and number of lines cleared
+- Start, pause or resume control
 
 It is displayed on the right side of the game.
 
@@ -64,8 +53,7 @@ It is displayed on the right side of the game.
 
 ### InfoPanel
 
-Information panel for the Flatris game/Cosmos demo, shown in between game
-states.
+Information panel shown when game is paused or stopped.
 
 - [Check out code](src/components/InfoPanel.jsx)
 
@@ -79,19 +67,14 @@ Read more about the game at http://en.wikipedia.org/wiki/Tetris
 
 ### FlatrisStatePreview
 
-Render a Flatris instance next to its prettified, serialized state.
+Prettified app state preview.
 
 - [Check out code](src/components/FlatrisStatePreview.jsx)
-
-### FlatrisStatePersistor
-
-Persist Flatris state with local storage.
-
-- [Check out code](src/components/FlatrisStatePersistor.jsx)
 
 ## Development
 
 ```bash
-npm install
-node_modules/.bin/webpack
+yarn install
+yarn start
+yarn run cosmos
 ```

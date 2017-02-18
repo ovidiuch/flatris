@@ -11,7 +11,7 @@ exports[`test FlatrisGame:hallelujah 1`] = `
   <div
     className="well">
     <div
-      className="active-tetrimino"
+      className="active-tetromino"
       style={
         Object {
           "height": "20%",
@@ -21,7 +21,7 @@ exports[`test FlatrisGame:hallelujah 1`] = `
         }
       }>
       <ul
-        className="tetrimino">
+        className="tetromino">
         <li
           className="grid-square-block"
           style={
@@ -1847,9 +1847,9 @@ exports[`test FlatrisGame:hallelujah 1`] = `
       Next Shape
     </p>
     <div
-      className="next-tetrimino next-tetrimino-S">
+      className="next-tetromino next-tetromino-S">
       <ul
-        className="tetrimino">
+        className="tetromino">
         <li
           className="grid-square-block"
           style={
@@ -1955,7 +1955,7 @@ exports[`test FlatrisGame:mission-impossible 1`] = `
   <div
     className="well">
     <div
-      className="active-tetrimino"
+      className="active-tetromino"
       style={
         Object {
           "height": "20%",
@@ -1965,7 +1965,7 @@ exports[`test FlatrisGame:mission-impossible 1`] = `
         }
       }>
       <ul
-        className="tetrimino">
+        className="tetromino">
         <li
           className="grid-square-block"
           style={
@@ -4208,9 +4208,9 @@ exports[`test FlatrisGame:mission-impossible 1`] = `
       Next Shape
     </p>
     <div
-      className="next-tetrimino next-tetrimino-S">
+      className="next-tetromino next-tetromino-S">
       <ul
-        className="tetrimino">
+        className="tetromino">
         <li
           className="grid-square-block"
           style={
@@ -4361,7 +4361,7 @@ exports[`test FlatrisGame:new-game 1`] = `
       Next Shape
     </p>
     <div
-      className="next-tetrimino" />
+      className="next-tetromino" />
     <button
       className="gFbxOF"
       onMouseDown={[Function]}>
@@ -4401,7 +4401,7 @@ exports[`test FlatrisGame:new-game-running 1`] = `
   <div
     className="well">
     <div
-      className="active-tetrimino"
+      className="active-tetromino"
       style={
         Object {
           "height": "20%",
@@ -4411,7 +4411,7 @@ exports[`test FlatrisGame:new-game-running 1`] = `
         }
       }>
       <ul
-        className="tetrimino">
+        className="tetromino">
         <li
           className="grid-square-block"
           style={
@@ -4508,9 +4508,9 @@ exports[`test FlatrisGame:new-game-running 1`] = `
       Next Shape
     </p>
     <div
-      className="next-tetrimino next-tetrimino-I">
+      className="next-tetromino next-tetromino-I">
       <ul
-        className="tetrimino">
+        className="tetromino">
         <li
           className="grid-square-block"
           style={
@@ -4628,7 +4628,7 @@ exports[`test FlatrisStatePreview:new-game-running 1`] = `
     \"gameState\": \"PLAYING\",
     \"score\": 0,
     \"lines\": 0,
-    \"nextTetrimino\": \"I\",
+    \"nextTetromino\": \"I\",
     \"grid\": [
       [ null, null, null, null, null, null, null, null, null, null ],
       [ null, null, null, null, null, null, null, null, null, null ],
@@ -4651,13 +4651,13 @@ exports[`test FlatrisStatePreview:new-game-running 1`] = `
       [ null, null, null, null, null, null, null, null, null, null ],
       [ null, null, null, null, null, null, null, null, null, null ]
     ],
-    \"activeTetrimino\": \"J\",
-    \"activeTetriminoGrid\": [
+    \"activeTetromino\": \"J\",
+    \"activeTetrominoGrid\": [
       [ 1, 0, 0 ],
       [ 1, 1, 1 ],
       [ 0, 0, 0 ]
     ],
-    \"activeTetriminoPosition\": {
+    \"activeTetrominoPosition\": {
       \"x\": 4,
       \"y\": -2
     },
@@ -4695,9 +4695,9 @@ exports[`test GamePanel:on-paused-game 1`] = `
     Next Shape
   </p>
   <div
-    className="next-tetrimino next-tetrimino-I">
+    className="next-tetromino next-tetromino-I">
     <ul
-      className="tetrimino">
+      className="tetromino">
       <li
         className="grid-square-block"
         style={
@@ -4800,9 +4800,9 @@ exports[`test GamePanel:on-playing-game 1`] = `
     Next Shape
   </p>
   <div
-    className="next-tetrimino next-tetrimino-S">
+    className="next-tetromino next-tetromino-S">
     <ul
-      className="tetrimino">
+      className="tetromino">
       <li
         className="grid-square-block"
         style={
@@ -4905,7 +4905,7 @@ exports[`test GamePanel:on-stopped-game 1`] = `
     Next Shape
   </p>
   <div
-    className="next-tetrimino" />
+    className="next-tetromino" />
   <button
     className="gFbxOF"
     onMouseDown={[Function]}>
@@ -4938,7 +4938,7 @@ exports[`test InfoPanel:static-panel 1`] = `
 </div>
 `;
 
-exports[`test SquareBlock:color-of-the-I-tetrimino 1`] = `
+exports[`test SquareBlock:color-of-the-I-tetromino 1`] = `
 <div
   className="square-block"
   style={
@@ -4948,7 +4948,7 @@ exports[`test SquareBlock:color-of-the-I-tetrimino 1`] = `
   } />
 `;
 
-exports[`test SquareBlock:color-of-the-J-tetrimino 1`] = `
+exports[`test SquareBlock:color-of-the-J-tetromino 1`] = `
 <div
   className="square-block"
   style={
@@ -4958,7 +4958,7 @@ exports[`test SquareBlock:color-of-the-J-tetrimino 1`] = `
   } />
 `;
 
-exports[`test SquareBlock:color-of-the-L-tetrimino 1`] = `
+exports[`test SquareBlock:color-of-the-L-tetromino 1`] = `
 <div
   className="square-block"
   style={
@@ -4968,7 +4968,7 @@ exports[`test SquareBlock:color-of-the-L-tetrimino 1`] = `
   } />
 `;
 
-exports[`test SquareBlock:color-of-the-O-tetrimino 1`] = `
+exports[`test SquareBlock:color-of-the-O-tetromino 1`] = `
 <div
   className="square-block"
   style={
@@ -4978,7 +4978,7 @@ exports[`test SquareBlock:color-of-the-O-tetrimino 1`] = `
   } />
 `;
 
-exports[`test SquareBlock:color-of-the-S-tetrimino 1`] = `
+exports[`test SquareBlock:color-of-the-S-tetromino 1`] = `
 <div
   className="square-block"
   style={
@@ -4988,7 +4988,7 @@ exports[`test SquareBlock:color-of-the-S-tetrimino 1`] = `
   } />
 `;
 
-exports[`test SquareBlock:color-of-the-T-tetrimino 1`] = `
+exports[`test SquareBlock:color-of-the-T-tetromino 1`] = `
 <div
   className="square-block"
   style={
@@ -4998,7 +4998,7 @@ exports[`test SquareBlock:color-of-the-T-tetrimino 1`] = `
   } />
 `;
 
-exports[`test SquareBlock:color-of-the-Z-tetrimino 1`] = `
+exports[`test SquareBlock:color-of-the-Z-tetromino 1`] = `
 <div
   className="square-block"
   style={
@@ -5008,9 +5008,9 @@ exports[`test SquareBlock:color-of-the-Z-tetrimino 1`] = `
   } />
 `;
 
-exports[`test Tetrimino:I-tetrimino 1`] = `
+exports[`test Tetromino:I-tetromino 1`] = `
 <ul
-  className="tetrimino">
+  className="tetromino">
   <li
     className="grid-square-block"
     style={
@@ -5078,9 +5078,9 @@ exports[`test Tetrimino:I-tetrimino 1`] = `
 </ul>
 `;
 
-exports[`test Tetrimino:J-tetrimino 1`] = `
+exports[`test Tetromino:J-tetromino 1`] = `
 <ul
-  className="tetrimino">
+  className="tetromino">
   <li
     className="grid-square-block"
     style={
@@ -5148,9 +5148,9 @@ exports[`test Tetrimino:J-tetrimino 1`] = `
 </ul>
 `;
 
-exports[`test Tetrimino:L-tetrimino 1`] = `
+exports[`test Tetromino:L-tetromino 1`] = `
 <ul
-  className="tetrimino">
+  className="tetromino">
   <li
     className="grid-square-block"
     style={
@@ -5218,9 +5218,9 @@ exports[`test Tetrimino:L-tetrimino 1`] = `
 </ul>
 `;
 
-exports[`test Tetrimino:O-tetrimino 1`] = `
+exports[`test Tetromino:O-tetromino 1`] = `
 <ul
-  className="tetrimino">
+  className="tetromino">
   <li
     className="grid-square-block"
     style={
@@ -5288,9 +5288,9 @@ exports[`test Tetrimino:O-tetrimino 1`] = `
 </ul>
 `;
 
-exports[`test Tetrimino:S-tetrimino 1`] = `
+exports[`test Tetromino:S-tetromino 1`] = `
 <ul
-  className="tetrimino">
+  className="tetromino">
   <li
     className="grid-square-block"
     style={
@@ -5358,9 +5358,9 @@ exports[`test Tetrimino:S-tetrimino 1`] = `
 </ul>
 `;
 
-exports[`test Tetrimino:T-tetrimino 1`] = `
+exports[`test Tetromino:T-tetromino 1`] = `
 <ul
-  className="tetrimino">
+  className="tetromino">
   <li
     className="grid-square-block"
     style={
@@ -5428,9 +5428,9 @@ exports[`test Tetrimino:T-tetrimino 1`] = `
 </ul>
 `;
 
-exports[`test Tetrimino:Z-tetrimino 1`] = `
+exports[`test Tetromino:Z-tetromino 1`] = `
 <ul
-  className="tetrimino">
+  className="tetromino">
   <li
     className="grid-square-block"
     style={
@@ -5498,9 +5498,9 @@ exports[`test Tetrimino:Z-tetrimino 1`] = `
 </ul>
 `;
 
-exports[`test Tetrimino:rotated-Z-tetrimino-1 1`] = `
+exports[`test Tetromino:rotated-Z-tetromino-1 1`] = `
 <ul
-  className="tetrimino">
+  className="tetromino">
   <li
     className="grid-square-block"
     style={
@@ -5568,9 +5568,9 @@ exports[`test Tetrimino:rotated-Z-tetrimino-1 1`] = `
 </ul>
 `;
 
-exports[`test Tetrimino:rotated-Z-tetrimino-2 1`] = `
+exports[`test Tetromino:rotated-Z-tetromino-2 1`] = `
 <ul
-  className="tetrimino">
+  className="tetromino">
   <li
     className="grid-square-block"
     style={
@@ -5638,9 +5638,9 @@ exports[`test Tetrimino:rotated-Z-tetrimino-2 1`] = `
 </ul>
 `;
 
-exports[`test Tetrimino:rotated-Z-tetrimino-3 1`] = `
+exports[`test Tetromino:rotated-Z-tetromino-3 1`] = `
 <ul
-  className="tetrimino">
+  className="tetromino">
   <li
     className="grid-square-block"
     style={
@@ -5712,7 +5712,7 @@ exports[`test Well:s-coming-atcha 1`] = `
 <div
   className="well">
   <div
-    className="active-tetrimino"
+    className="active-tetromino"
     style={
       Object {
         "height": "20%",
@@ -5722,7 +5722,7 @@ exports[`test Well:s-coming-atcha 1`] = `
       }
     }>
     <ul
-      className="tetrimino">
+      className="tetromino">
       <li
         className="grid-square-block"
         style={
@@ -6267,7 +6267,7 @@ exports[`test Well:t-bone 1`] = `
 <div
   className="well">
   <div
-    className="active-tetrimino"
+    className="active-tetromino"
     style={
       Object {
         "height": "20%",
@@ -6277,7 +6277,7 @@ exports[`test Well:t-bone 1`] = `
       }
     }>
     <ul
-      className="tetrimino">
+      className="tetromino">
       <li
         className="grid-square-block"
         style={

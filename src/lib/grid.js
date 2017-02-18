@@ -35,33 +35,33 @@ export function getExactPosition({ x, y }) {
   };
 }
 
-export function isPositionAvailable(grid, tetriminoGrid, position) {
+export function isPositionAvailable(grid, tetrominoGrid, position) {
   const rows = grid.length;
   const cols = grid[0].length;
-  const tetriminoRows = tetriminoGrid.length;
-  const tetriminoCols = tetriminoGrid[0].length;
-  const tetriminoPositionInGrid = getExactPosition(position);
+  const tetrominoRows = tetrominoGrid.length;
+  const tetrominoCols = tetrominoGrid[0].length;
+  const tetrominoPositionInGrid = getExactPosition(position);
   let relativeRow;
   let relativeCol;
 
-  for (let row = 0; row < tetriminoRows; row++) {
-    for (let col = 0; col < tetriminoCols; col++) {
-      // Ignore blank squares from the Tetrimino grid
-      if (tetriminoGrid[row][col]) {
-        relativeRow = tetriminoPositionInGrid.y + row;
-        relativeCol = tetriminoPositionInGrid.x + col;
+  for (let row = 0; row < tetrominoRows; row++) {
+    for (let col = 0; col < tetrominoCols; col++) {
+      // Ignore blank squares from the Tetromino grid
+      if (tetrominoGrid[row][col]) {
+        relativeRow = tetrominoPositionInGrid.y + row;
+        relativeCol = tetrominoPositionInGrid.x + col;
 
-        // Ensure Tetrimino block is within the horizontal bounds
+        // Ensure Tetromino block is within the horizontal bounds
         if (relativeCol < 0 || relativeCol >= cols) {
           return false;
         }
 
-        // Check check if Tetrimino hit the bottom of the Well
+        // Check check if Tetromino hit the bottom of the Well
         if (relativeRow >= rows) {
           return false;
         }
 
-        // Tetriminos are accepted on top of the Well (it's how they enter)
+        // Tetrominoes are accepted on top of the Well (it's how they enter)
         if (relativeRow >= 0) {
           // Then if the position is not already taken inside the grid
           if (grid[relativeRow][relativeCol]) {
@@ -75,11 +75,11 @@ export function isPositionAvailable(grid, tetriminoGrid, position) {
   return true;
 }
 
-export function getBottomMostPosition(grid, tetriminoGrid, position) {
+export function getBottomMostPosition(grid, tetrominoGrid, position) {
   // Snap vertical position to grid
   let y = Math.floor(position.y);
 
-  while (!isPositionAvailable(grid, tetriminoGrid, { x: position.x, y })) {
+  while (!isPositionAvailable(grid, tetrominoGrid, { x: position.x, y })) {
     y -= 1;
   }
 
@@ -92,10 +92,10 @@ const getMaxIdFromLine = line =>
 const getMaxIdFromGrid = grid =>
   Math.max(...grid.map(line => getMaxIdFromLine(line)));
 
-export function transferTetriminoToGrid(grid, tetriminoGrid, position, color) {
-  const rows = tetriminoGrid.length;
-  const cols = tetriminoGrid[0].length;
-  const tetriminoPositionInGrid = getExactPosition(position);
+export function transferTetrominoToGrid(grid, tetrominoGrid, position, color) {
+  const rows = tetrominoGrid.length;
+  const cols = tetrominoGrid[0].length;
+  const tetrominoPositionInGrid = getExactPosition(position);
   const newGrid = grid.map(l => l.map(c => c));
   let relativeRow;
   let relativeCol;
@@ -103,12 +103,12 @@ export function transferTetriminoToGrid(grid, tetriminoGrid, position, color) {
 
   for (let row = 0; row < rows; row++) {
     for (let col = 0; col < cols; col++) {
-      // Ignore blank squares from the Tetrimino grid
-      if (tetriminoGrid[row][col]) {
-        relativeCol = tetriminoPositionInGrid.x + col;
-        relativeRow = tetriminoPositionInGrid.y + row;
+      // Ignore blank squares from the Tetromino grid
+      if (tetrominoGrid[row][col]) {
+        relativeCol = tetrominoPositionInGrid.x + col;
+        relativeRow = tetrominoPositionInGrid.y + row;
 
-        // When the Well is full the Tetrimino will land before it enters the
+        // When the Well is full the Tetromino will land before it enters the
         // top of the Well
         if (newGrid[relativeRow]) {
           newGrid[relativeRow][relativeCol] = [++cellId, color];
@@ -128,7 +128,7 @@ export function clearLines(grid) {
   /**
    * Clear all rows that form a complete line, from one left to right, inside
    * the Well grid. Gravity is applied to fill in the cleared lines with the
-   * ones above, thus freeing up the Well for more Tetriminos to enter.
+   * ones above, thus freeing up the Well for more Tetrominoes to enter.
    */
   const rows = grid.length;
   const cols = grid[0].length;
@@ -156,24 +156,24 @@ export function clearLines(grid) {
   };
 }
 
-export function fitTetriminoPositionInWellBounds(
+export function fitTetrominoPositionInWellBounds(
   grid,
-  tetriminoGrid,
+  tetrominoGrid,
   { x, y }
 ) {
   const cols = grid[0].length;
-  const tetriminoRows = tetriminoGrid.length;
-  const tetriminoCols = tetriminoGrid[0].length;
+  const tetrominoRows = tetrominoGrid.length;
+  const tetrominoCols = tetrominoGrid[0].length;
   let newX = x;
   let relativeCol;
 
-  for (let row = 0; row < tetriminoRows; row++) {
-    for (let col = 0; col < tetriminoCols; col++) {
-      // Ignore blank squares from the Tetrimino grid
-      if (tetriminoGrid[row][col]) {
+  for (let row = 0; row < tetrominoRows; row++) {
+    for (let col = 0; col < tetrominoCols; col++) {
+      // Ignore blank squares from the Tetromino grid
+      if (tetrominoGrid[row][col]) {
         relativeCol = newX + col;
 
-        // Wall kick: A Tetrimino grid that steps outside of the Well grid will
+        // Wall kick: A Tetromino grid that steps outside of the Well grid will
         // be shifted slightly to slide back inside the Well grid
         if (relativeCol < 0) {
           newX -= relativeCol;

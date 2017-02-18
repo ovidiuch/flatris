@@ -1,9 +1,9 @@
 import React from 'react';
 import SquareBlock from './SquareBlock';
 
-import './Tetrimino.css';
+import './Tetromino.css';
 
-class Tetrimino extends React.Component {
+class Tetromino extends React.Component {
   /**
    * A Tetromino is a geometric shape composed of four squares, connected
    * orthogonally. Read more at http://en.wikipedia.org/wiki/Tetromino
@@ -39,18 +39,18 @@ class Tetrimino extends React.Component {
 
   render() {
     return (
-      <ul className="tetrimino">
+      <ul className="tetromino">
         {this.renderGridBlocks()}
       </ul>
     );
   }
 }
 
-Tetrimino.propTypes = {
+Tetromino.propTypes = {
   color: React.PropTypes.string.isRequired,
   grid: React.PropTypes.arrayOf(
     React.PropTypes.arrayOf(React.PropTypes.number),
   ).isRequired,
 };
 
-export default Tetrimino;
+export default Tetromino;

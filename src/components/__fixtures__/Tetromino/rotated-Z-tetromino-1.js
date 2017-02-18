@@ -1,4 +1,4 @@
-import { COLORS } from '../../../constants/tetrimino';
+import { COLORS } from '../../../constants/tetromino';
 
 export default {
   color: COLORS.Z,

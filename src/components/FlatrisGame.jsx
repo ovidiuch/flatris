@@ -176,11 +176,11 @@ class FlatrisGame extends React.Component {
       gameState,
       score,
       lines,
-      nextTetrimino,
+      nextTetromino,
       grid,
-      activeTetrimino,
-      activeTetriminoGrid,
-      activeTetriminoPosition,
+      activeTetromino,
+      activeTetrominoGrid,
+      activeTetrominoPosition,
       onStart,
       onPause,
       onResume,
@@ -191,9 +191,9 @@ class FlatrisGame extends React.Component {
         {grid ? (
           <Well
             grid={grid}
-            activeTetrimino={activeTetrimino}
-            activeTetriminoGrid={activeTetriminoGrid}
-            activeTetriminoPosition={activeTetriminoPosition}
+            activeTetromino={activeTetromino}
+            activeTetrominoGrid={activeTetrominoGrid}
+            activeTetrominoPosition={activeTetrominoPosition}
           />
         ) : null}
         {this.renderInfoPanel()}
@@ -201,7 +201,7 @@ class FlatrisGame extends React.Component {
           gameState={gameState}
           score={score}
           lines={lines}
-          nextTetrimino={nextTetrimino}
+          nextTetromino={nextTetromino}
           onStart={onStart}
           onPause={onPause}
           onResume={onResume}
@@ -216,15 +216,15 @@ FlatrisGame.propTypes = {
   gameState: React.PropTypes.oneOf([STOPPED, PLAYING, PAUSED]).isRequired,
   score: React.PropTypes.number.isRequired,
   lines: React.PropTypes.number.isRequired,
-  nextTetrimino: React.PropTypes.string,
+  nextTetromino: React.PropTypes.string,
   grid: React.PropTypes.arrayOf(
     React.PropTypes.arrayOf(React.PropTypes.array),
   ),
-  activeTetrimino: React.PropTypes.string,
-  activeTetriminoGrid: React.PropTypes.arrayOf(
+  activeTetromino: React.PropTypes.string,
+  activeTetrominoGrid: React.PropTypes.arrayOf(
     React.PropTypes.arrayOf(React.PropTypes.number),
   ),
-  activeTetriminoPosition: React.PropTypes.shape({
+  activeTetrominoPosition: React.PropTypes.shape({
     x: React.PropTypes.number,
     y: React.PropTypes.number,
   }),
@@ -240,11 +240,11 @@ FlatrisGame.propTypes = {
 };
 
 FlatrisGame.defaultProps = {
-  nextTetrimino: null,
+  nextTetromino: null,
   grid: null,
-  activeTetrimino: null,
-  activeTetriminoGrid: null,
-  activeTetriminoPosition: null,
+  activeTetromino: null,
+  activeTetrominoGrid: null,
+  activeTetrominoPosition: null,
 };
 
 const mapStateToProps = state => state;

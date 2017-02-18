@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import './FlatrisStatePreview.css';
 
-const gridPattern = /\n([\s]+)"(grid|activeTetriminoGrid)": ([\s\S]+?)(\]([\s]+)\],[\s]+")/g;
+const gridPattern = /\n([\s]+)"(grid|activeTetrominoGrid)": ([\s\S]+?)(\]([\s]+)\],[\s]+")/g;
 
 const prettifyGrid = (grid, indent) => {
   return grid
@@ -18,7 +18,7 @@ const prettifyState = state => {
   /**
    * This ugly method styles the indenting of the stringified state JSON.
    */
-  // Style the Well and the active Tetrimino grid with one row per line
+  // Style the Well and the active Tetromino grid with one row per line
   return JSON.stringify(state, null, '  ').replace(gridPattern,
     (match, indent, key, grid, after) => (
       `\n${indent}"${key}": ${prettifyGrid(grid, indent)}${after}`
