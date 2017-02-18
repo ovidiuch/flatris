@@ -1,36 +1,42 @@
-var React = require('react');
+import React from 'react';
+import { connect } from 'react-redux';
 
-require('./FlatrisStatePreview.less');
+import './FlatrisStatePreview.css';
 
-class FlatrisStatePreview extends React.Component {
+const gridPattern = /\n([\s]+)"(grid|activeTetrominoGrid)": ([\s\S]+?)(\]([\s]+)\],[\s]+")/g;
+
+const prettifyGrid = (grid, indent) => {
+  return grid
+    // Smoke & mirrors!
+    .replace(new RegExp('\\[[\\s]+([0-9]+),[\\s\\n]+("#[a-z0-9]{6}")[\\s\\n]+\\]', 'g'), '$2')
+    .replace(new RegExp('\\[\n' + indent + '    ', 'g'), '[ ')
+    .replace(new RegExp(',\n' + indent + '    ', 'g'), ', ')
+    .replace(new RegExp('\n' + indent + '  (\\]|$)', 'g'), ' $1');
+};
+
+const prettifyState = state => {
   /**
-   * Render the prettified, serialized state of a Flatris instance.
+   * This ugly method styles the indenting of the stringified state JSON.
    */
-  render() {
-    return <pre className="flatris-state-preview">
-      {this._prettifyState(this.props.snapshot)}
-    </pre>;
-  }
-
-  _prettifyState(snapshot) {
-    /**
-     * This ugly method styles the indenting of the stringified state JSON.
-     */
-    var snapshot = JSON.stringify(snapshot, null, '  ');
-    // Style the Well and the active Tetrimino grid with one row per line
-    snapshot = snapshot.replace(gridPattern,
-      function(match, indent, key, grid, after) {
-        grid = grid.replace(new RegExp('\\[\n' + indent + '    ', 'g'), '[');
-        grid = grid.replace(new RegExp(',\n' + indent + '    ', 'g'), ', ');
-        grid = grid.replace(new RegExp('\n' + indent + '  (\\]|$)', 'g'), '$1');
-        return '\n' + indent + '"' + key + '": ' + grid + ']' + after + ']';
-      }
-    );
-    return snapshot;
-  }
+  // Style the Well and the active Tetromino grid with one row per line
+  return JSON.stringify(state, null, '  ').replace(gridPattern,
+    (match, indent, key, grid, after) => (
+      `\n${indent}"${key}": ${prettifyGrid(grid, indent)}${after}`
+    )
+  );
 }
 
-var gridPattern =
-    /\n([\s]+)"(grid|activeTetriminoGrid)"\: ([\s\S]+?)\]([\s]+)\]/g;
+/**
+ * Render the prettified, serialized state of a Flatris instance.
+ */
+const FlatrisStatePreview = ({ state }) => (
+  <pre className="flatris-state-preview">
+    {prettifyState(state)}
+  </pre>
+);
 
-module.exports = FlatrisStatePreview;
+const mapStateToProps = state => ({ state });
+
+export default connect(
+  mapStateToProps
+)(FlatrisStatePreview);

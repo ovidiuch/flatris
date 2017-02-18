@@ -1,85 +1,101 @@
-var React = require('react'),
-    ComponentTree = require('react-component-tree'),
-    constants = require('../constants.js'),
-    events = require('../lib/events.js'),
-    Tetrimino = require('./Tetrimino.jsx');
+import React from 'react';
+import { STOPPED, PLAYING, PAUSED } from '../constants/states';
+import { SHAPES, COLORS } from '../constants/tetromino';
+import { attachPointerDownEvent } from '../lib/events';
+import Tetromino from './Tetromino';
+import Button from './Button';
 
-require('./GamePanel.less');
+import './GamePanel.css';
 
-class GamePanel extends ComponentTree.Component {
+class GamePanel extends React.Component {
   /**
    * The game panel contains:
-   * - The next Tetrimino to be inserted
+   * - The next Tetromino to be inserted
    * - The score and lines cleared
    * - Start or pause/resume controls
    */
-  constructor() {
-    super();
+  getNextTetrominoClass() {
+    const classes = ['next-tetromino'];
 
-    this.children = {
-      nextTetrimino: function() {
-        var tetrimino = this.props.nextTetrimino;
+    // We use this extra class to position tetrominoes differently from CSS
+    // based on their type
+    if (this.props.nextTetromino) {
+      classes.push(`next-tetromino-${this.props.nextTetromino}`);
+    }
 
-        return {
-          component: Tetrimino,
-          key: tetrimino,
-          color: constants.COLORS[tetrimino],
-          grid: constants.SHAPES[tetrimino]
-        };
-      }
-    };
+    return classes.join(' ');
+  }
+
+  renderGameButton() {
+    const {
+      gameState,
+      onStart,
+      onPause,
+      onResume,
+    } = this.props;
+
+    let eventHandler;
+    let label;
+
+    switch (gameState) {
+      case PLAYING:
+        eventHandler = onPause;
+        label = 'Pause';
+        break;
+      case PAUSED:
+        eventHandler = onResume;
+        label = 'Resume';
+        break;
+      default:
+        eventHandler = onStart;
+        label = 'New game';
+    }
+
+    return React.createElement(Button, attachPointerDownEvent(eventHandler), label);
   }
 
   render() {
-    return <div className="game-panel">
-      <p className="title">Flatris</p>
-      <p className="label">Score</p>
-      <p className="count">{this.props.score}</p>
-      <p className="label">Lines Cleared</p>
-      <p className="count">{this.props.lines}</p>
-      <p className="label">Next Shape</p>
-      <div className={this._getNextTetriminoClass()}>
-        {this.props.nextTetrimino ? this.loadChild('nextTetrimino') : null}
+    const {
+      score,
+      lines,
+      nextTetromino,
+    } = this.props;
+
+    return (
+      <div className="game-panel">
+        <p className="title">Flatris</p>
+        <p className="label">Score</p>
+        <p className="count">{score}</p>
+        <p className="label">Lines Cleared</p>
+        <p className="count">{lines}</p>
+        <p className="label">Next Shape</p>
+        <div className={this.getNextTetrominoClass()}>
+          {nextTetromino ? (
+            <Tetromino
+              key={nextTetromino}
+              color={COLORS[nextTetromino]}
+              grid={SHAPES[nextTetromino]}
+            />
+          ) : null}
+        </div>
+        {this.renderGameButton()}
       </div>
-      {this._renderGameButton()}
-    </div>;
-  }
-
-  _renderGameButton() {
-    var eventHandler,
-        label;
-
-    if (!this.props.playing) {
-      eventHandler = this.props.onPressStart;
-      label = 'New game';
-    } else if (this.props.paused) {
-      eventHandler = this.props.onPressResume;
-      label = 'Resume';
-    } else {
-      eventHandler = this.props.onPressPause;
-      label = 'Pause';
-    }
-
-    return React.DOM.button(events.attachPointerDownEvent(eventHandler), label);
-  }
-
-  _getNextTetriminoClass() {
-    var classes = ['next-tetrimino'];
-    // We use this extra class to position tetriminos differently from CSS
-    // based on their type
-    if (this.props.nextTetrimino) {
-      classes.push('next-tetrimino-' + this.props.nextTetrimino);
-    }
-    return classes.join(' ');
+    );
   }
 }
 
-GamePanel.defaultProps = {
-  playing: false,
-  paused: false,
-  score: 0,
-  lines: 0,
-  nextTetrimino: null
+GamePanel.propTypes = {
+  gameState: React.PropTypes.oneOf([STOPPED, PLAYING, PAUSED]).isRequired,
+  score: React.PropTypes.number.isRequired,
+  lines: React.PropTypes.number.isRequired,
+  nextTetromino: React.PropTypes.string,
+  onStart: React.PropTypes.func.isRequired,
+  onPause: React.PropTypes.func.isRequired,
+  onResume: React.PropTypes.func.isRequired,
 };
 
-module.exports = GamePanel;
+GamePanel.defaultProps = {
+  nextTetromino: null,
+};
+
+export default GamePanel;

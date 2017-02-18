@@ -1,12 +1,30 @@
-var React = require('react'),
-    ReactDOM = require('react-dom'),
-    ComponentTree = require('react-component-tree'),
-    FlatrisStatePersistor = require('./components/FlatrisStatePersistor.jsx');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import flatrisReducer from './reducer';
+import FlatrisGame from './components/FlatrisGame.jsx';
+import FlatrisStatePreview from './components/FlatrisStatePreview.jsx';
+import newGame from './components/__fixtures__/FlatrisGame/new-game';
 
-exports.rootComponent = ReactDOM.render(
-    React.createElement(FlatrisStatePersistor, {}),
-    document.getElementById('root'));
+// Unload previous state from local storage if present, otherwise
+// a blank Flatris instance will be rendered
+const prevState = localStorage.getItem('flatrisState');
+const initialState = prevState ? JSON.parse(prevState) : newGame.reduxState;
 
-exports.serialize = function() {
-  return ComponentTree.serialize(exports.rootComponent);
-};
+const store = createStore(flatrisReducer, initialState, applyMiddleware(thunk));
+
+ReactDOM.render(
+  <Provider store={store}>
+    <div>
+      <FlatrisGame />
+      <FlatrisStatePreview />
+    </div>
+  </Provider>,
+  document.getElementById('root')
+);
+
+window.addEventListener('unload', () => {
+  localStorage.setItem('flatrisState', JSON.stringify(store.getState()));
+});
