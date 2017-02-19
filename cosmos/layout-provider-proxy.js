@@ -12,7 +12,7 @@ class LayoutProviderProxy extends React.Component {
       <LayoutProvider computeLayout={computeLayout}>
         {React.createElement(nextProxy.value, {
           ...this.props,
-          nextProxy: nextProxy.next(),
+          nextProxy: nextProxy.next()
         })}
       </LayoutProvider>
     );
@@ -22,8 +22,8 @@ class LayoutProviderProxy extends React.Component {
 LayoutProviderProxy.propTypes = {
   nextProxy: React.PropTypes.shape({
     value: React.PropTypes.func,
-    next: React.PropTypes.func,
-  }).isRequired,
+    next: React.PropTypes.func
+  }).isRequired
 };
 
 export default () => LayoutProviderProxy;

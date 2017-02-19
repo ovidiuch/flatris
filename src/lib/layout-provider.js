@@ -2,7 +2,7 @@ import React from 'react';
 
 const getWindowSize = () => ({
   width: document.body.clientWidth || window.innerHeight, // fallback for jsdom
-  height: window.innerHeight,
+  height: window.innerHeight
 });
 
 export default class LayoutProvider extends React.Component {
@@ -28,7 +28,7 @@ export default class LayoutProvider extends React.Component {
 
   getChildContext() {
     return {
-      layout: this.layout,
+      layout: this.layout
     };
   }
 

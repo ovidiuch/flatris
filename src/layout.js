@@ -18,7 +18,7 @@ export default ({ width, height }) => {
 
   const controls = {
     size: blockSize * 2,
-    padding: getRelSize(20),
+    padding: getRelSize(20)
   };
 
   return {
@@ -31,15 +31,15 @@ export default ({ width, height }) => {
       button: getRelSize(18, 2),
       control: getRelSize(24),
       title: getRelSize(40, 2),
-      count: getRelSize(30, 2),
+      count: getRelSize(30, 2)
     },
     root: {
       width: blockSize * GAME_COLS,
-      height: blockSize * WELL_ROWS + (2 * blockSize) + (2 * controls.padding),
+      height: blockSize * WELL_ROWS + 2 * blockSize + 2 * controls.padding
     },
     well: {
       width: blockSize * WELL_COLS,
-      height: blockSize * WELL_ROWS,
+      height: blockSize * WELL_ROWS
     },
     side: {
       width: blockSize * SIDE_COLS,
@@ -47,6 +47,6 @@ export default ({ width, height }) => {
       padding: getRelSize(30)
     },
     controls,
-    codePadding: getRelSize(15),
-  }
+    codePadding: getRelSize(15)
+  };
 };
