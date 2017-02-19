@@ -16,6 +16,7 @@ import {
   enableAcceleration,
   disableAcceleration,
 } from '../actions';
+import connectLayout from '../lib/layout-connect';
 import Well from './Well';
 import GamePanel from './GamePanel';
 import InfoPanel from './InfoPanel';
@@ -149,24 +150,39 @@ class FlatrisGame extends React.Component {
   renderInfoPanel() {
     const {
       gameState,
+      styles,
     } = this.props;
 
-    return gameState === PLAYING ? null : <InfoPanel />;
+    return gameState === PLAYING ? null : (
+      <div className="info-panel-container" style={styles.infoPanel}>
+        <InfoPanel />
+      </div>
+    );
   }
 
   renderControls() {
+    const {
+      styles,
+    } = this.props;
     return (
-      <div className="controls">
-        {React.createElement(Button,
-          attachPointerDownEvent(this.onRotatePress), '↻')}
-        {React.createElement(Button,
-          attachPointerDownEvent(this.onLeftPress), '←')}
-        {React.createElement(Button,
-          attachPointerDownEvent(this.onRightPress), '→')}
-        {React.createElement(Button,
-          _.assign(
-            attachPointerDownEvent(this.onPullPress),
-            attachPointerUpEvent(this.onPullRelease)), '↓')}
+      <div className="controls" style={styles.controls}>
+        {React.createElement(Button, {
+          ...attachPointerDownEvent(this.onRotatePress),
+          style: styles.control
+        }, '↻')}
+        {React.createElement(Button, {
+          ...attachPointerDownEvent(this.onLeftPress),
+          style: styles.control
+        }, '←')}
+        {React.createElement(Button, {
+          ...attachPointerDownEvent(this.onRightPress),
+          style: styles.control
+        }, '→')}
+        {React.createElement(Button, {
+          ...attachPointerDownEvent(this.onPullPress),
+          ...attachPointerUpEvent(this.onPullRelease),
+          style: _.omit(styles.control, 'marginRight')
+        }, '↓')}
       </div>
     );
   }
@@ -184,28 +200,33 @@ class FlatrisGame extends React.Component {
       onStart,
       onPause,
       onResume,
+      styles,
     } = this.props;
 
     return (
-      <div className="flatris-game">
+      <div className="flatris-game" style={styles.root}>
         {grid ? (
-          <Well
-            grid={grid}
-            activeTetromino={activeTetromino}
-            activeTetrominoGrid={activeTetrominoGrid}
-            activeTetrominoPosition={activeTetrominoPosition}
-          />
+          <div className="well-container" style={styles.well}>
+            <Well
+              grid={grid}
+              activeTetromino={activeTetromino}
+              activeTetrominoGrid={activeTetrominoGrid}
+              activeTetrominoPosition={activeTetrominoPosition}
+            />
+          </div>
         ) : null}
         {this.renderInfoPanel()}
-        <GamePanel
-          gameState={gameState}
-          score={score}
-          lines={lines}
-          nextTetromino={nextTetromino}
-          onStart={onStart}
-          onPause={onPause}
-          onResume={onResume}
-        />
+        <div className="game-panel-container" style={styles.gamePanel}>
+          <GamePanel
+            gameState={gameState}
+            score={score}
+            lines={lines}
+            nextTetromino={nextTetromino}
+            onStart={onStart}
+            onPause={onPause}
+            onResume={onResume}
+          />
+        </div>
         {this.renderControls()}
       </div>
     );
@@ -260,7 +281,42 @@ const mapDispatchToProps = dispatch => ({
   onDisableAcceleration: () => dispatch(disableAcceleration()),
 });
 
-export default connect(
+const getStyles = ({
+  fontSize,
+  root,
+  well,
+  side,
+  controls
+}) => ({
+  root: {
+    width: root.width,
+    height: root.height,
+    fontSize: fontSize.default,
+  },
+  well,
+  controls: {
+    top: well.height,
+    width: well.width,
+    height: controls.size,
+    marginTop: controls.padding,
+  },
+  control: {
+    width: controls.size,
+    height: controls.size,
+    fontSize: fontSize.control,
+    lineHeight: `${controls.size}px`,
+  },
+  infoPanel: well,
+  gamePanel: {
+    width: side.width,
+    height: side.height,
+    left: well.width,
+  }
+});
+
+const container = connect(
   mapStateToProps,
   mapDispatchToProps,
 )(FlatrisGame);
+
+export default connectLayout(container, { getStyles });

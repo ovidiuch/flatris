@@ -2,6 +2,7 @@ import React from 'react';
 import { STOPPED, PLAYING, PAUSED } from '../constants/states';
 import { SHAPES, COLORS } from '../constants/tetromino';
 import { attachPointerDownEvent } from '../lib/events';
+import connectLayout from '../lib/layout-connect';
 import Tetromino from './Tetromino';
 import Button from './Button';
 
@@ -32,6 +33,7 @@ class GamePanel extends React.Component {
       onStart,
       onPause,
       onResume,
+      styles,
     } = this.props;
 
     let eventHandler;
@@ -51,7 +53,10 @@ class GamePanel extends React.Component {
         label = 'New game';
     }
 
-    return React.createElement(Button, attachPointerDownEvent(eventHandler), label);
+    return React.createElement(Button, {
+      ...attachPointerDownEvent(eventHandler),
+      style: styles.button
+    }, label);
   }
 
   render() {
@@ -59,17 +64,18 @@ class GamePanel extends React.Component {
       score,
       lines,
       nextTetromino,
+      styles,
     } = this.props;
 
     return (
-      <div className="game-panel">
-        <p className="title">Flatris</p>
-        <p className="label">Score</p>
-        <p className="count">{score}</p>
-        <p className="label">Lines Cleared</p>
-        <p className="count">{lines}</p>
-        <p className="label">Next Shape</p>
-        <div className={this.getNextTetrominoClass()}>
+      <div className="game-panel" style={styles.root}>
+        <p className="title" style={styles.title}>Flatris</p>
+        <p className="label" style={styles.label}>Score</p>
+        <p className="count" style={styles.count}>{score}</p>
+        <p className="label" style={styles.label}>Lines Cleared</p>
+        <p className="count" style={styles.count}>{lines}</p>
+        <p className="label" style={styles.label}>Next Shape</p>
+        <div className={this.getNextTetrominoClass()} style={styles.nextTetrimino}>
           {nextTetromino ? (
             <Tetromino
               key={nextTetromino}
@@ -98,4 +104,34 @@ GamePanel.defaultProps = {
   nextTetromino: null,
 };
 
-export default GamePanel;
+export default connectLayout(GamePanel, {
+  getStyles: ({ blockSize, fontSize, side, controls }) => ({
+    root: {
+      padding: `0 ${side.padding}px`
+    },
+    title: {
+      fontSize: fontSize.title,
+      paddingTop: side.padding
+    },
+    label: {
+      fontSize: fontSize.default,
+      paddingTop: side.padding
+    },
+    count: {
+      fontSize: fontSize.count,
+    },
+    nextTetrimino: {
+      width: blockSize * 4,
+      height: blockSize * 4,
+      marginTop: side.padding / 3
+    },
+    button: {
+      bottom: side.padding,
+      left: side.padding,
+      width: blockSize * 4,
+      height: blockSize * 2,
+      fontSize: fontSize.button,
+      lineHeight: `${blockSize * 2}px`
+    }
+  })
+});

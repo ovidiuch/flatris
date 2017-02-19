@@ -46,21 +46,27 @@ class Well extends React.Component {
   }
 
   render() {
+    const {
+      grid,
+      activeTetromino,
+      activeTetrominoGrid,
+    } = this.props;
+
     return (
       <div className="well">
-        {this.props.activeTetromino ? (
+        {activeTetromino ? (
           <div
             className="active-tetromino"
             style={this.getActiveTetrominoestyles()}
           >
             <Tetromino
-              color={COLORS[this.props.activeTetromino]}
-              grid={this.props.activeTetrominoGrid}
+              color={COLORS[activeTetromino]}
+              grid={activeTetrominoGrid}
             />
           </div>
         ) : null}
         <WellGrid
-          grid={this.props.grid}
+          grid={grid}
         />
       </div>
     );

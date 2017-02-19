@@ -4,6 +4,8 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import flatrisReducer from './reducer';
+import computeLayout from './layout';
+import LayoutProvider from './lib/layout-provider';
 import FlatrisGame from './components/FlatrisGame.jsx';
 import FlatrisStatePreview from './components/FlatrisStatePreview.jsx';
 import newGame from './components/__fixtures__/FlatrisGame/new-game';
@@ -17,10 +19,10 @@ const store = createStore(flatrisReducer, initialState, applyMiddleware(thunk));
 
 ReactDOM.render(
   <Provider store={store}>
-    <div>
+    <LayoutProvider computeLayout={computeLayout}>
       <FlatrisGame />
       <FlatrisStatePreview />
-    </div>
+    </LayoutProvider>
   </Provider>,
   document.getElementById('root')
 );

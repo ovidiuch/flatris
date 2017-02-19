@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import connectLayout from '../lib/layout-connect';
 
 import './FlatrisStatePreview.css';
 
@@ -29,14 +30,23 @@ const prettifyState = state => {
 /**
  * Render the prettified, serialized state of a Flatris instance.
  */
-const FlatrisStatePreview = ({ state }) => (
-  <pre className="flatris-state-preview">
+const FlatrisStatePreview = ({ state, styles }) => (
+  <pre className="flatris-state-preview" style={styles.root}>
     {prettifyState(state)}
   </pre>
 );
 
 const mapStateToProps = state => ({ state });
 
-export default connect(
+const container = connect(
   mapStateToProps
 )(FlatrisStatePreview);
+
+export default connectLayout(container, {
+  getStyles: ({ fontSize, codePadding }) => ({
+    root: {
+      fontSize: fontSize.default,
+      padding: codePadding
+    }
+  })
+});

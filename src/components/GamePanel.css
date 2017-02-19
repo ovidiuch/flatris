@@ -1,41 +1,30 @@
 .game-panel {
   color: #34495f;
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  padding: 0 30px;
 }
 
 .game-panel p {
-  margin: 15px 0;
+  margin: 0;
   line-height: 1em;
 }
 
 .game-panel .title {
-  margin: 30px 0 0 0;
   color: #34495f;
-  font-size: 40px;
   font-weight: normal;
-  line-height: 60px;
+  line-height: 1.5em;
 }
 
 .game-panel .label {
-  margin: 30px 0 0 0;
   color: #bdc3c7;
   font-weight: 300;
 }
 
 .game-panel .count {
-  margin: 5px 0 0 0;
+  margin: 0.16em 0 0 0;
   color: #3993d0;
-  font-size: 30px;
   font-weight: normal;
 }
 
-.game-panel .next-tetromino {
-  width: 120px;
-  height: 120px;
-  margin: 10px 0 0 0;
-}
+.game-panel .next-tetromino {}
 
 .game-panel .next-tetromino .square-block {
   /* Override any color the next Tetromino has for a gray shape */
@@ -45,14 +34,11 @@
 /* The I Tetromino needs to be lifted a bit because it has an empty row
 in its default position */
 .game-panel .next-tetromino.next-tetromino-I {
-  margin-top: -20px;
+  transform: translate(0, -25%);
 }
 
 .game-panel button {
   position: absolute;
-  bottom: 30px;
-  left: 30px;
-  width: 120px;
   margin: 0;
   padding: 0;
 }
