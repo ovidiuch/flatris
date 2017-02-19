@@ -2,7 +2,7 @@
   "name": "Flatris",
   "short_name": "Flatris",
   "description": "Progressive Web Tetris",
-  "start_url": "./?state=false",
+  "start_url": "./?app=true",
   "display": "fullscreen",
   "orientation": "portrait",
   "background_color": "#fff",
