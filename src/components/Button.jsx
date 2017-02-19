@@ -11,4 +11,5 @@ export default styled.button`
   font-weight: 300;
   outline: none;
   cursor: pointer;
+  user-select: none;
 `;

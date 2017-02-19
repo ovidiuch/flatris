@@ -1,6 +1,6 @@
 exports[`test Button:hello-world 1`] = `
 <button
-  className="gxZAVC">
+  className="czUFFg">
   Hello world!
 </button>
 `;
@@ -1988,7 +1988,7 @@ exports[`test FlatrisGame:hallelujah 1`] = `
         </ul>
       </div>
       <button
-        className="gxZAVC"
+        className="czUFFg"
         onMouseDown={[Function]}
         style={
           Object {
@@ -2015,7 +2015,7 @@ exports[`test FlatrisGame:hallelujah 1`] = `
       }
     }>
     <button
-      className="gxZAVC"
+      className="czUFFg"
       onMouseDown={[Function]}
       style={
         Object {
@@ -2028,7 +2028,7 @@ exports[`test FlatrisGame:hallelujah 1`] = `
       ↻
     </button>
     <button
-      className="gxZAVC"
+      className="czUFFg"
       onMouseDown={[Function]}
       style={
         Object {
@@ -2041,7 +2041,7 @@ exports[`test FlatrisGame:hallelujah 1`] = `
       ←
     </button>
     <button
-      className="gxZAVC"
+      className="czUFFg"
       onMouseDown={[Function]}
       style={
         Object {
@@ -2054,7 +2054,7 @@ exports[`test FlatrisGame:hallelujah 1`] = `
       →
     </button>
     <button
-      className="gxZAVC"
+      className="czUFFg"
       onMouseDown={[Function]}
       onMouseUp={[Function]}
       style={
@@ -4487,7 +4487,7 @@ exports[`test FlatrisGame:mission-impossible 1`] = `
         </ul>
       </div>
       <button
-        className="gxZAVC"
+        className="czUFFg"
         onMouseDown={[Function]}
         style={
           Object {
@@ -4514,7 +4514,7 @@ exports[`test FlatrisGame:mission-impossible 1`] = `
       }
     }>
     <button
-      className="gxZAVC"
+      className="czUFFg"
       onMouseDown={[Function]}
       style={
         Object {
@@ -4527,7 +4527,7 @@ exports[`test FlatrisGame:mission-impossible 1`] = `
       ↻
     </button>
     <button
-      className="gxZAVC"
+      className="czUFFg"
       onMouseDown={[Function]}
       style={
         Object {
@@ -4540,7 +4540,7 @@ exports[`test FlatrisGame:mission-impossible 1`] = `
       ←
     </button>
     <button
-      className="gxZAVC"
+      className="czUFFg"
       onMouseDown={[Function]}
       style={
         Object {
@@ -4553,7 +4553,7 @@ exports[`test FlatrisGame:mission-impossible 1`] = `
       →
     </button>
     <button
-      className="gxZAVC"
+      className="czUFFg"
       onMouseDown={[Function]}
       onMouseUp={[Function]}
       style={
@@ -4701,7 +4701,7 @@ exports[`test FlatrisGame:new-game 1`] = `
           }
         } />
       <button
-        className="gxZAVC"
+        className="czUFFg"
         onMouseDown={[Function]}
         style={
           Object {
@@ -4728,7 +4728,7 @@ exports[`test FlatrisGame:new-game 1`] = `
       }
     }>
     <button
-      className="gxZAVC"
+      className="czUFFg"
       onMouseDown={[Function]}
       style={
         Object {
@@ -4741,7 +4741,7 @@ exports[`test FlatrisGame:new-game 1`] = `
       ↻
     </button>
     <button
-      className="gxZAVC"
+      className="czUFFg"
       onMouseDown={[Function]}
       style={
         Object {
@@ -4754,7 +4754,7 @@ exports[`test FlatrisGame:new-game 1`] = `
       ←
     </button>
     <button
-      className="gxZAVC"
+      className="czUFFg"
       onMouseDown={[Function]}
       style={
         Object {
@@ -4767,7 +4767,7 @@ exports[`test FlatrisGame:new-game 1`] = `
       →
     </button>
     <button
-      className="gxZAVC"
+      className="czUFFg"
       onMouseDown={[Function]}
       onMouseUp={[Function]}
       style={
@@ -5038,7 +5038,7 @@ exports[`test FlatrisGame:new-game-running 1`] = `
         </ul>
       </div>
       <button
-        className="gxZAVC"
+        className="czUFFg"
         onMouseDown={[Function]}
         style={
           Object {
@@ -5065,7 +5065,7 @@ exports[`test FlatrisGame:new-game-running 1`] = `
       }
     }>
     <button
-      className="gxZAVC"
+      className="czUFFg"
       onMouseDown={[Function]}
       style={
         Object {
@@ -5078,7 +5078,7 @@ exports[`test FlatrisGame:new-game-running 1`] = `
       ↻
     </button>
     <button
-      className="gxZAVC"
+      className="czUFFg"
       onMouseDown={[Function]}
       style={
         Object {
@@ -5091,7 +5091,7 @@ exports[`test FlatrisGame:new-game-running 1`] = `
       ←
     </button>
     <button
-      className="gxZAVC"
+      className="czUFFg"
       onMouseDown={[Function]}
       style={
         Object {
@@ -5104,7 +5104,7 @@ exports[`test FlatrisGame:new-game-running 1`] = `
       →
     </button>
     <button
-      className="gxZAVC"
+      className="czUFFg"
       onMouseDown={[Function]}
       onMouseUp={[Function]}
       style={
@@ -5334,7 +5334,7 @@ exports[`test GamePanel:on-paused-game 1`] = `
     </ul>
   </div>
   <button
-    className="gxZAVC"
+    className="czUFFg"
     onMouseDown={[Function]}
     style={
       Object {
@@ -5495,7 +5495,7 @@ exports[`test GamePanel:on-playing-game 1`] = `
     </ul>
   </div>
   <button
-    className="gxZAVC"
+    className="czUFFg"
     onMouseDown={[Function]}
     style={
       Object {
@@ -5588,7 +5588,7 @@ exports[`test GamePanel:on-stopped-game 1`] = `
       }
     } />
   <button
-    className="gxZAVC"
+    className="czUFFg"
     onMouseDown={[Function]}
     style={
       Object {
