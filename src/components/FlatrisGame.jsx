@@ -160,10 +160,21 @@ class FlatrisGame extends React.Component {
         </div>;
   }
 
+  renderControlIcon(path) {
+    const { styles } = this.props;
+
+    return (
+      <svg style={styles.controlIcon} viewBox="0 0 24 24">
+        <path d={path} />
+      </svg>
+    );
+  }
+
   renderControls() {
     const {
       styles
     } = this.props;
+
     return (
       <div className="controls" style={styles.controls}>
         {React.createElement(
@@ -172,7 +183,9 @@ class FlatrisGame extends React.Component {
             ...attachPointerDownEvent(this.onRotatePress),
             style: styles.control
           },
-          '↻'
+          this.renderControlIcon(
+            'M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z'
+          )
         )}
         {React.createElement(
           Button,
@@ -180,7 +193,9 @@ class FlatrisGame extends React.Component {
             ...attachPointerDownEvent(this.onLeftPress),
             style: styles.control
           },
-          '←'
+          this.renderControlIcon(
+            'M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z'
+          )
         )}
         {React.createElement(
           Button,
@@ -188,7 +203,9 @@ class FlatrisGame extends React.Component {
             ...attachPointerDownEvent(this.onRightPress),
             style: styles.control
           },
-          '→'
+          this.renderControlIcon(
+            'M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z'
+          )
         )}
         {React.createElement(
           Button,
@@ -197,7 +214,9 @@ class FlatrisGame extends React.Component {
             ...attachPointerUpEvent(this.onPullRelease),
             style: _.omit(styles.control, 'marginRight')
           },
-          '↓'
+          this.renderControlIcon(
+            'M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z'
+          )
         )}
       </div>
     );
@@ -295,6 +314,19 @@ const mapDispatchToProps = dispatch => ({
   onDisableAcceleration: () => dispatch(disableAcceleration())
 });
 
+const { round } = Math;
+
+const getControlIconStyle = ({ size }) => {
+  const iconSize = round(size * 0.8);
+  const padding = round((size - iconSize) / 2);
+
+  return {
+    marginTop: padding,
+    width: iconSize,
+    height: iconSize
+  };
+};
+
 const getStyles = (
   {
     fontSize,
@@ -322,6 +354,7 @@ const getStyles = (
     fontSize: fontSize.control,
     lineHeight: `${controls.size}px`
   },
+  controlIcon: getControlIconStyle(controls),
   infoPanel: well,
   gamePanel: {
     width: side.width,

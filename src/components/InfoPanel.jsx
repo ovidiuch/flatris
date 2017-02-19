@@ -17,7 +17,8 @@ const InfoPanel = ({ styles }) => (
     <p>
       Inspired by the classic{' '}
       <a href="http://en.wikipedia.org/wiki/Tetris">Tetris</a>
-      {' '}game, the game can be played both with a keyboard using the arrow keys, and on mobile devices using the buttons below.
+      {' '}
+      game, the game can be played both with a keyboard using the arrow keys, and on mobile devices using the buttons below.
     </p>
   </div>
 );

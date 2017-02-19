@@ -39,8 +39,17 @@
   color: #34495f;
 }
 
+.flatris-game .controls button svg {
+  fill: #34495f;
+}
+
 .flatris-game .controls button:nth-child(1) {
   left: 0;
+}
+
+.flatris-game .controls button:nth-child(1) svg {
+  transform-origin: 50% 50%;
+  transform: scale(-1,1);
 }
 
 .flatris-game .controls button:nth-child(2) {
