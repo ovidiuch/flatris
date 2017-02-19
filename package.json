@@ -29,7 +29,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "format": "prettier --write 'src/**/*.js' '*.js' 'cosmos/**/*.js' --single-quote",
-    "test": "react-scripts test --env=jsdom",
+    "test": "CI=y react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "cosmos": "NODE_ENV=development cosmos"
   },
