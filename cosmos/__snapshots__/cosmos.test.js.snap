@@ -4314,20 +4314,24 @@ exports[`test FlatrisGame:mission-impossible 1`] = `
         }
       }>
       <p>
-        Flatris is demo app for the 
+        Flatris is demo app for the
+         
         <a
           href="https://github.com/react-cosmos/react-cosmos">
           React Cosmos
         </a>
-         project.
+         
+        project.
       </p>
       <p>
-        Inspired by the classic 
+        Inspired by the classic
+         
         <a
           href="http://en.wikipedia.org/wiki/Tetris">
           Tetris
         </a>
-         game, the game can be played both with a keyboard using the arrow keys, and on mobile devices using the buttons below.
+         
+        game, the game can be played both with a keyboard using the arrow keys, and on mobile devices using the buttons below.
       </p>
     </div>
   </div>
@@ -4592,20 +4596,24 @@ exports[`test FlatrisGame:new-game 1`] = `
         }
       }>
       <p>
-        Flatris is demo app for the 
+        Flatris is demo app for the
+         
         <a
           href="https://github.com/react-cosmos/react-cosmos">
           React Cosmos
         </a>
-         project.
+         
+        project.
       </p>
       <p>
-        Inspired by the classic 
+        Inspired by the classic
+         
         <a
           href="http://en.wikipedia.org/wiki/Tetris">
           Tetris
         </a>
-         game, the game can be played both with a keyboard using the arrow keys, and on mobile devices using the buttons below.
+         
+        game, the game can be played both with a keyboard using the arrow keys, and on mobile devices using the buttons below.
       </p>
     </div>
   </div>
@@ -5118,7 +5126,7 @@ exports[`test FlatrisStatePreview:new-game 1`] = `
   className="flatris-state-preview"
   style={
     Object {
-      "fontSize": 16,
+      "fontSize": 14,
       "padding": 17,
     }
   }>
@@ -5135,7 +5143,7 @@ exports[`test FlatrisStatePreview:new-game-running 1`] = `
   className="flatris-state-preview"
   style={
     Object {
-      "fontSize": 16,
+      "fontSize": 14,
       "padding": 17,
     }
   }>
@@ -5606,20 +5614,24 @@ exports[`test InfoPanel:static-panel 1`] = `
     }
   }>
   <p>
-    Flatris is demo app for the 
+    Flatris is demo app for the
+     
     <a
       href="https://github.com/react-cosmos/react-cosmos">
       React Cosmos
     </a>
-     project.
+     
+    project.
   </p>
   <p>
-    Inspired by the classic 
+    Inspired by the classic
+     
     <a
       href="http://en.wikipedia.org/wiki/Tetris">
       Tetris
     </a>
-     game, the game can be played both with a keyboard using the arrow keys, and on mobile devices using the buttons below.
+     
+    game, the game can be played both with a keyboard using the arrow keys, and on mobile devices using the buttons below.
   </p>
 </div>
 `;
