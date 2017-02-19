@@ -1,13 +1,9 @@
 .info-panel {
   color: #34495f;
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  padding: 0 15px;
 }
 
 .info-panel p {
-  margin: 30px 0;
-  font-size: 16px;
+  margin: 1em;
   line-height: 1.5em;
 }
 
@@ -19,8 +15,4 @@
 
 .info-panel a:hover {
   text-decoration: underline;
-}
-
-.info-panel .large-text {
-  font-size: 18px;
 }
