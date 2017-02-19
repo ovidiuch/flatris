@@ -9,7 +9,13 @@ const gridPattern = /\n([\s]+)"(grid|activeTetrominoGrid)": ([\s\S]+?)(\]([\s]+)
 const prettifyGrid = (grid, indent) => {
   return grid
     // Smoke & mirrors!
-    .replace(new RegExp('\\[[\\s]+([0-9]+),[\\s\\n]+("#[a-z0-9]{6}")[\\s\\n]+\\]', 'g'), '$2')
+    .replace(
+      new RegExp(
+        '\\[[\\s]+([0-9]+),[\\s\\n]+("#[a-z0-9]{6}")[\\s\\n]+\\]',
+        'g'
+      ),
+      '$2'
+    )
     .replace(new RegExp('\\[\n' + indent + '    ', 'g'), '[ ')
     .replace(new RegExp(',\n' + indent + '    ', 'g'), ', ')
     .replace(new RegExp('\n' + indent + '  (\\]|$)', 'g'), ' $1');
@@ -20,12 +26,13 @@ const prettifyState = state => {
    * This ugly method styles the indenting of the stringified state JSON.
    */
   // Style the Well and the active Tetromino grid with one row per line
-  return JSON.stringify(state, null, '  ').replace(gridPattern,
-    (match, indent, key, grid, after) => (
-      `\n${indent}"${key}": ${prettifyGrid(grid, indent)}${after}`
-    )
-  );
-}
+  return JSON.stringify(state, null, '  ')
+    .replace(
+      gridPattern,
+      (match, indent, key, grid, after) =>
+        `\n${indent}"${key}": ${prettifyGrid(grid, indent)}${after}`
+    );
+};
 
 /**
  * Render the prettified, serialized state of a Flatris instance.
@@ -38,15 +45,13 @@ const FlatrisStatePreview = ({ state, styles }) => (
 
 const mapStateToProps = state => ({ state });
 
-const container = connect(
-  mapStateToProps
-)(FlatrisStatePreview);
+const container = connect(mapStateToProps)(FlatrisStatePreview);
 
 export default connectLayout(container, {
-  getStyles: ({ fontSize, codePadding }) => ({
+  getStyles: ({ code }) => ({
     root: {
-      fontSize: fontSize.default,
-      padding: codePadding
+      fontSize: code.fontSize,
+      padding: code.padding
     }
   })
 });

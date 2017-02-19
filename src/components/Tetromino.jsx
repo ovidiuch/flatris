@@ -21,14 +21,12 @@ class Tetromino extends React.Component {
               className="grid-square-block"
               key={`${row}-${col}`}
               style={{
-                top: `${(row * 25)}%`,
-                left: `${(col * 25)}%`,
+                top: `${row * 25}%`,
+                left: `${col * 25}%`
               }}
             >
-              <SquareBlock
-                color={this.props.color}
-              />
-            </li>,
+              <SquareBlock color={this.props.color} />
+            </li>
           );
         }
       }
@@ -49,8 +47,8 @@ class Tetromino extends React.Component {
 Tetromino.propTypes = {
   color: React.PropTypes.string.isRequired,
   grid: React.PropTypes.arrayOf(
-    React.PropTypes.arrayOf(React.PropTypes.number),
-  ).isRequired,
+    React.PropTypes.arrayOf(React.PropTypes.number)
+  ).isRequired
 };
 
 export default Tetromino;

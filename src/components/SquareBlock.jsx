@@ -8,14 +8,11 @@ import './SquareBlock.css';
  * color.
  */
 const SquareBlock = ({ color }) => (
-  <div
-    className="square-block"
-    style={{ backgroundColor: color }}
-  />
+  <div className="square-block" style={{ backgroundColor: color }} />
 );
 
 SquareBlock.propTypes = {
-  color: React.PropTypes.string.isRequired,
+  color: React.PropTypes.string.isRequired
 };
 
 export default SquareBlock;

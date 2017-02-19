@@ -1,8 +1,6 @@
 .flatris-state-preview {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background: #34495f;
-  color: #ecf0f1;
   font-family: Monaco, "Lucida Console", monospace;
-  overflow: scroll;
 }

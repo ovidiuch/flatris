@@ -30,14 +30,12 @@ class WellGrid extends React.Component {
               style={{
                 width: `${widthPercent}%`,
                 height: `${heightPercent}%`,
-                top: `${(row * heightPercent)}%`,
-                left: `${(col * widthPercent)}%`,
+                top: `${row * heightPercent}%`,
+                left: `${col * widthPercent}%`
               }}
             >
-              <SquareBlock
-                color={blockValue[1]}
-              />
-            </li>,
+              <SquareBlock color={blockValue[1]} />
+            </li>
           );
         }
       }
@@ -57,8 +55,8 @@ class WellGrid extends React.Component {
 
 WellGrid.propTypes = {
   grid: React.PropTypes.arrayOf(
-    React.PropTypes.arrayOf(React.PropTypes.array),
-  ).isRequired,
+    React.PropTypes.arrayOf(React.PropTypes.array)
+  ).isRequired
 };
 
 export default WellGrid;

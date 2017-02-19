@@ -10,7 +10,17 @@ const roundToMultiOf = (value, multiOf) =>
 
 export default ({ width, height }) => {
   // TODO: Also fit game into viewport width (wide ratios)
-  const blockSize = floor(height / (WELL_ROWS + 3));
+  let blockSize = floor(height / (WELL_ROWS + 3));
+  let gameWidth = blockSize * GAME_COLS;
+
+  // Make sure the width of the game fits on wide screens
+  if (gameWidth > width) {
+    blockSize = floor(width / GAME_COLS);
+    gameWidth = blockSize * GAME_COLS;
+  }
+
+  // Show preview alongside game in landscape mode
+  const landscape = width >= gameWidth * 2;
 
   // Values relative to a block size of 30px
   const getRelSize = (relValue, multiOf = 1) =>
@@ -25,6 +35,7 @@ export default ({ width, height }) => {
     width,
     height,
     blockSize,
+    landscape,
     fontSize: {
       default: getRelSize(14, 2),
       text: getRelSize(20, 2),
@@ -34,7 +45,7 @@ export default ({ width, height }) => {
       count: getRelSize(30, 2)
     },
     root: {
-      width: blockSize * GAME_COLS,
+      width: gameWidth,
       height: blockSize * WELL_ROWS + 2 * blockSize + 2 * controls.padding
     },
     well: {
@@ -47,6 +58,9 @@ export default ({ width, height }) => {
       padding: getRelSize(30)
     },
     controls,
-    codePadding: getRelSize(15)
+    code: {
+      padding: getRelSize(15),
+      fontSize: getRelSize(12, 2)
+    }
   };
 };

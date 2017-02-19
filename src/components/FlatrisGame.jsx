@@ -14,7 +14,7 @@ import {
   moveRight,
   rotate,
   enableAcceleration,
-  disableAcceleration,
+  disableAcceleration
 } from '../actions';
 import connectLayout from '../lib/layout-connect';
 import Well from './Well';
@@ -68,7 +68,7 @@ class FlatrisGame extends React.Component {
       onEnableAcceleration,
       onRotate,
       onMoveLeft,
-      onMoveRight,
+      onMoveRight
     } = this.props;
 
     switch (e.keyCode) {
@@ -150,39 +150,55 @@ class FlatrisGame extends React.Component {
   renderInfoPanel() {
     const {
       gameState,
-      styles,
+      styles
     } = this.props;
 
-    return gameState === PLAYING ? null : (
-      <div className="info-panel-container" style={styles.infoPanel}>
-        <InfoPanel />
-      </div>
-    );
+    return gameState === PLAYING
+      ? null
+      : <div className="info-panel-container" style={styles.infoPanel}>
+          <InfoPanel />
+        </div>;
   }
 
   renderControls() {
     const {
-      styles,
+      styles
     } = this.props;
     return (
       <div className="controls" style={styles.controls}>
-        {React.createElement(Button, {
-          ...attachPointerDownEvent(this.onRotatePress),
-          style: styles.control
-        }, '↻')}
-        {React.createElement(Button, {
-          ...attachPointerDownEvent(this.onLeftPress),
-          style: styles.control
-        }, '←')}
-        {React.createElement(Button, {
-          ...attachPointerDownEvent(this.onRightPress),
-          style: styles.control
-        }, '→')}
-        {React.createElement(Button, {
-          ...attachPointerDownEvent(this.onPullPress),
-          ...attachPointerUpEvent(this.onPullRelease),
-          style: _.omit(styles.control, 'marginRight')
-        }, '↓')}
+        {React.createElement(
+          Button,
+          {
+            ...attachPointerDownEvent(this.onRotatePress),
+            style: styles.control
+          },
+          '↻'
+        )}
+        {React.createElement(
+          Button,
+          {
+            ...attachPointerDownEvent(this.onLeftPress),
+            style: styles.control
+          },
+          '←'
+        )}
+        {React.createElement(
+          Button,
+          {
+            ...attachPointerDownEvent(this.onRightPress),
+            style: styles.control
+          },
+          '→'
+        )}
+        {React.createElement(
+          Button,
+          {
+            ...attachPointerDownEvent(this.onPullPress),
+            ...attachPointerUpEvent(this.onPullRelease),
+            style: _.omit(styles.control, 'marginRight')
+          },
+          '↓'
+        )}
       </div>
     );
   }
@@ -200,21 +216,21 @@ class FlatrisGame extends React.Component {
       onStart,
       onPause,
       onResume,
-      styles,
+      styles
     } = this.props;
 
     return (
       <div className="flatris-game" style={styles.root}>
-        {grid ? (
-          <div className="well-container" style={styles.well}>
-            <Well
-              grid={grid}
-              activeTetromino={activeTetromino}
-              activeTetrominoGrid={activeTetrominoGrid}
-              activeTetrominoPosition={activeTetrominoPosition}
-            />
-          </div>
-        ) : null}
+        {grid
+          ? <div className="well-container" style={styles.well}>
+              <Well
+                grid={grid}
+                activeTetromino={activeTetromino}
+                activeTetrominoGrid={activeTetrominoGrid}
+                activeTetrominoPosition={activeTetrominoPosition}
+              />
+            </div>
+          : null}
         {this.renderInfoPanel()}
         <div className="game-panel-container" style={styles.gamePanel}>
           <GamePanel
@@ -238,16 +254,14 @@ FlatrisGame.propTypes = {
   score: React.PropTypes.number.isRequired,
   lines: React.PropTypes.number.isRequired,
   nextTetromino: React.PropTypes.string,
-  grid: React.PropTypes.arrayOf(
-    React.PropTypes.arrayOf(React.PropTypes.array),
-  ),
+  grid: React.PropTypes.arrayOf(React.PropTypes.arrayOf(React.PropTypes.array)),
   activeTetromino: React.PropTypes.string,
   activeTetrominoGrid: React.PropTypes.arrayOf(
-    React.PropTypes.arrayOf(React.PropTypes.number),
+    React.PropTypes.arrayOf(React.PropTypes.number)
   ),
   activeTetrominoPosition: React.PropTypes.shape({
     x: React.PropTypes.number,
-    y: React.PropTypes.number,
+    y: React.PropTypes.number
   }),
   onLoad: React.PropTypes.func.isRequired,
   onStart: React.PropTypes.func.isRequired,
@@ -257,7 +271,7 @@ FlatrisGame.propTypes = {
   onMoveRight: React.PropTypes.func.isRequired,
   onRotate: React.PropTypes.func.isRequired,
   onEnableAcceleration: React.PropTypes.func.isRequired,
-  onDisableAcceleration: React.PropTypes.func.isRequired,
+  onDisableAcceleration: React.PropTypes.func.isRequired
 };
 
 FlatrisGame.defaultProps = {
@@ -265,7 +279,7 @@ FlatrisGame.defaultProps = {
   grid: null,
   activeTetromino: null,
   activeTetrominoGrid: null,
-  activeTetrominoPosition: null,
+  activeTetrominoPosition: null
 };
 
 const mapStateToProps = state => state;
@@ -278,45 +292,44 @@ const mapDispatchToProps = dispatch => ({
   onMoveRight: () => dispatch(moveRight()),
   onRotate: () => dispatch(rotate()),
   onEnableAcceleration: () => dispatch(enableAcceleration()),
-  onDisableAcceleration: () => dispatch(disableAcceleration()),
+  onDisableAcceleration: () => dispatch(disableAcceleration())
 });
 
-const getStyles = ({
-  fontSize,
-  root,
-  well,
-  side,
-  controls
-}) => ({
+const getStyles = (
+  {
+    fontSize,
+    root,
+    well,
+    side,
+    controls
+  }
+) => ({
   root: {
     width: root.width,
     height: root.height,
-    fontSize: fontSize.default,
+    fontSize: fontSize.default
   },
   well,
   controls: {
     top: well.height,
     width: well.width,
     height: controls.size,
-    marginTop: controls.padding,
+    marginTop: controls.padding
   },
   control: {
     width: controls.size,
     height: controls.size,
     fontSize: fontSize.control,
-    lineHeight: `${controls.size}px`,
+    lineHeight: `${controls.size}px`
   },
   infoPanel: well,
   gamePanel: {
     width: side.width,
     height: side.height,
-    left: well.width,
+    left: well.width
   }
 });
 
-const container = connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(FlatrisGame);
+const container = connect(mapStateToProps, mapDispatchToProps)(FlatrisGame);
 
 export default connectLayout(container, { getStyles });

@@ -6,8 +6,7 @@ import thunk from 'redux-thunk';
 import flatrisReducer from './reducer';
 import computeLayout from './layout';
 import LayoutProvider from './lib/layout-provider';
-import FlatrisGame from './components/FlatrisGame.jsx';
-import FlatrisStatePreview from './components/FlatrisStatePreview.jsx';
+import App from './App.jsx';
 import newGame from './components/__fixtures__/FlatrisGame/new-game';
 
 // Unload previous state from local storage if present, otherwise
@@ -20,8 +19,7 @@ const store = createStore(flatrisReducer, initialState, applyMiddleware(thunk));
 ReactDOM.render(
   <Provider store={store}>
     <LayoutProvider computeLayout={computeLayout}>
-      <FlatrisGame />
-      <FlatrisStatePreview />
+      <App />
     </LayoutProvider>
   </Provider>,
   document.getElementById('root')

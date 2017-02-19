@@ -33,7 +33,7 @@ class GamePanel extends React.Component {
       onStart,
       onPause,
       onResume,
-      styles,
+      styles
     } = this.props;
 
     let eventHandler;
@@ -53,10 +53,14 @@ class GamePanel extends React.Component {
         label = 'New game';
     }
 
-    return React.createElement(Button, {
-      ...attachPointerDownEvent(eventHandler),
-      style: styles.button
-    }, label);
+    return React.createElement(
+      Button,
+      {
+        ...attachPointerDownEvent(eventHandler),
+        style: styles.button
+      },
+      label
+    );
   }
 
   render() {
@@ -64,7 +68,7 @@ class GamePanel extends React.Component {
       score,
       lines,
       nextTetromino,
-      styles,
+      styles
     } = this.props;
 
     return (
@@ -75,14 +79,17 @@ class GamePanel extends React.Component {
         <p className="label" style={styles.label}>Lines Cleared</p>
         <p className="count" style={styles.count}>{lines}</p>
         <p className="label" style={styles.label}>Next Shape</p>
-        <div className={this.getNextTetrominoClass()} style={styles.nextTetrimino}>
-          {nextTetromino ? (
-            <Tetromino
-              key={nextTetromino}
-              color={COLORS[nextTetromino]}
-              grid={SHAPES[nextTetromino]}
-            />
-          ) : null}
+        <div
+          className={this.getNextTetrominoClass()}
+          style={styles.nextTetrimino}
+        >
+          {nextTetromino
+            ? <Tetromino
+                key={nextTetromino}
+                color={COLORS[nextTetromino]}
+                grid={SHAPES[nextTetromino]}
+              />
+            : null}
         </div>
         {this.renderGameButton()}
       </div>
@@ -97,11 +104,11 @@ GamePanel.propTypes = {
   nextTetromino: React.PropTypes.string,
   onStart: React.PropTypes.func.isRequired,
   onPause: React.PropTypes.func.isRequired,
-  onResume: React.PropTypes.func.isRequired,
+  onResume: React.PropTypes.func.isRequired
 };
 
 GamePanel.defaultProps = {
-  nextTetromino: null,
+  nextTetromino: null
 };
 
 export default connectLayout(GamePanel, {
@@ -118,7 +125,7 @@ export default connectLayout(GamePanel, {
       paddingTop: side.padding
     },
     count: {
-      fontSize: fontSize.count,
+      fontSize: fontSize.count
     },
     nextTetrimino: {
       width: blockSize * 4,

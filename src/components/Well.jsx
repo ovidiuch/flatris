@@ -16,12 +16,10 @@ class Well extends React.Component {
    * afterwards.
    */
   shouldComponentUpdate(nextProps) {
-    return (
-      nextProps.grid !== this.props.grid ||
+    return nextProps.grid !== this.props.grid ||
       nextProps.activeTetromino !== this.props.activeTetromino ||
       nextProps.activeTetrominoGrid !== this.props.activeTetrominoGrid ||
-      nextProps.activeTetrominoPosition !== this.props.activeTetrominoPosition
-    );
+      nextProps.activeTetrominoPosition !== this.props.activeTetrominoPosition;
   }
 
   getNumberOfRows() {
@@ -38,10 +36,10 @@ class Well extends React.Component {
     const { x, y } = getExactPosition(this.props.activeTetrominoPosition);
 
     return {
-      top: `${(100 / rows) * y}%`,
-      left: `${(100 / cols) * x}%`,
-      width: `${(100 / cols) * 4}%`,
-      height: `${(100 / rows) * 4}%`,
+      top: `${100 / rows * y}%`,
+      left: `${100 / cols * x}%`,
+      width: `${100 / cols * 4}%`,
+      height: `${100 / rows * 4}%`
     };
   }
 
@@ -49,25 +47,23 @@ class Well extends React.Component {
     const {
       grid,
       activeTetromino,
-      activeTetrominoGrid,
+      activeTetrominoGrid
     } = this.props;
 
     return (
       <div className="well">
-        {activeTetromino ? (
-          <div
-            className="active-tetromino"
-            style={this.getActiveTetrominoestyles()}
-          >
-            <Tetromino
-              color={COLORS[activeTetromino]}
-              grid={activeTetrominoGrid}
-            />
-          </div>
-        ) : null}
-        <WellGrid
-          grid={grid}
-        />
+        {activeTetromino
+          ? <div
+              className="active-tetromino"
+              style={this.getActiveTetrominoestyles()}
+            >
+              <Tetromino
+                color={COLORS[activeTetromino]}
+                grid={activeTetrominoGrid}
+              />
+            </div>
+          : null}
+        <WellGrid grid={grid} />
       </div>
     );
   }
@@ -75,22 +71,22 @@ class Well extends React.Component {
 
 Well.propTypes = {
   grid: React.PropTypes.arrayOf(
-    React.PropTypes.arrayOf(React.PropTypes.array),
+    React.PropTypes.arrayOf(React.PropTypes.array)
   ).isRequired,
   activeTetromino: React.PropTypes.string,
   activeTetrominoGrid: React.PropTypes.arrayOf(
-    React.PropTypes.arrayOf(React.PropTypes.number),
+    React.PropTypes.arrayOf(React.PropTypes.number)
   ),
   activeTetrominoPosition: React.PropTypes.shape({
     x: React.PropTypes.number,
-    y: React.PropTypes.number,
-  }),
+    y: React.PropTypes.number
+  })
 };
 
 Well.defaultProps = {
   activeTetromino: null,
   activeTetrominoGrid: null,
-  activeTetrominoPosition: null,
+  activeTetrominoPosition: null
 };
 
 export default Well;

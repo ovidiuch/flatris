@@ -28,7 +28,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "format": "prettier --write 'src/**/*.js' '*.js' 'cosmos/**/*.js' --single-quote",
+    "format": "prettier --write 'src/**/*.{js,jsx}' '*.{js,jsx}' 'cosmos/**/*.{js,jsx}' --single-quote",
     "test": "CI=y react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "cosmos": "NODE_ENV=development cosmos"
