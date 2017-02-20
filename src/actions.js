@@ -13,8 +13,10 @@ const cancelFrame = () => {
   raf.cancel(animationHandle);
 };
 
-const now = typeof performance !== 'undefined' && typeof performance.now === 'function' ?
-  () => performance.now() : () => Date.now();
+const now = typeof performance !== 'undefined' &&
+  typeof performance.now === 'function'
+  ? () => performance.now()
+  : () => Date.now();
 
 const scheduleFrame = cb => {
   timeBegin = now();
