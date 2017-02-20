@@ -13,10 +13,15 @@ const cancelFrame = () => {
   raf.cancel(animationHandle);
 };
 
+const now = typeof performance !== 'undefined' &&
+  typeof performance.now === 'function'
+  ? () => performance.now()
+  : () => Date.now();
+
 const scheduleFrame = cb => {
-  timeBegin = Date.now();
+  timeBegin = now();
   animationHandle = raf(() => {
-    const timeEnd = Date.now();
+    const timeEnd = now();
     cb((timeEnd - timeBegin) / frameDuration);
   });
 };

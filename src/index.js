@@ -16,6 +16,10 @@ const initialState = prevState ? JSON.parse(prevState) : newGame.reduxState;
 
 const store = createStore(flatrisReducer, initialState, applyMiddleware(thunk));
 
+store.subscribe(() => {
+  localStorage.setItem('flatrisState', JSON.stringify(store.getState()));
+});
+
 ReactDOM.render(
   <Provider store={store}>
     <LayoutProvider computeLayout={computeLayout}>
@@ -24,11 +28,6 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root')
 );
-
-// TODO: Update when store changes instead
-window.addEventListener('unload', () => {
-  localStorage.setItem('flatrisState', JSON.stringify(store.getState()));
-});
 
 if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
   window.addEventListener('load', function() {
