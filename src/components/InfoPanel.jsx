@@ -21,7 +21,7 @@ const InfoPanel = ({ styles }) => (
       The game state is preserved between visits, so you can safely kill this tab when your employer is approaching and resume afterwards!
     </p>
     <p>
-      Check out{' '}
+      Check out the{' '}
       <a href="https://github.com/skidding/flatris">source code</a>
       {' '}when you're done playing.
     </p>

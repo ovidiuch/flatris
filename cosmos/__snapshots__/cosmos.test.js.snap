@@ -4372,7 +4372,7 @@ exports[`test FlatrisGame:mission-impossible 1`] = `
         The game state is preserved between visits, so you can safely kill this tab when your employer is approaching and resume afterwards!
       </p>
       <p>
-        Check out
+        Check out the
          
         <a
           href="https://github.com/skidding/flatris">
@@ -4710,7 +4710,7 @@ exports[`test FlatrisGame:new-game 1`] = `
         The game state is preserved between visits, so you can safely kill this tab when your employer is approaching and resume afterwards!
       </p>
       <p>
-        Check out
+        Check out the
          
         <a
           href="https://github.com/skidding/flatris">
@@ -5828,7 +5828,7 @@ exports[`test InfoPanel:static-panel 1`] = `
     The game state is preserved between visits, so you can safely kill this tab when your employer is approaching and resume afterwards!
   </p>
   <p>
-    Check out
+    Check out the
      
     <a
       href="https://github.com/skidding/flatris">
