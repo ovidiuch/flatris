@@ -1,7 +1,7 @@
 import React from 'react';
 
 const getWindowSize = () => ({
-  width: document.body.clientWidth || window.innerHeight, // fallback for jsdom
+  width: document.body.clientWidth || window.innerWidth, // fallback for jsdom
   height: window.innerHeight
 });
 
