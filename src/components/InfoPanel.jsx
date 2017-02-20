@@ -10,15 +10,14 @@ import './InfoPanel.css';
 const InfoPanel = ({ styles }) => (
   <div className="info-panel" style={styles.root}>
     <p>
-      Flatris is demo app for the{' '}
-      <a href="https://github.com/react-cosmos/react-cosmos">React Cosmos</a>
-      {' '}project.
+      <a href="https://github.com/skidding/flatris">Flatris</a>
+      {' '}is a mobile-friendly implementation of Tetris, built using React & Redux.
     </p>
     <p>
-      Inspired by the classic{' '}
-      <a href="http://en.wikipedia.org/wiki/Tetris">Tetris</a>
-      {' '}
-      game, the game can be played both with a keyboard using the arrow keys, and on mobile devices using the buttons below.
+      Use the arrow keys or buttons below to play.
+    </p>
+    <p>
+      The game state is preserved between visits, so you can safely kill this tab when your employer is approaching and resume afterwards!
     </p>
   </div>
 );
