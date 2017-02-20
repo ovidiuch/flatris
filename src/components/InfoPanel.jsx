@@ -11,13 +11,22 @@ const InfoPanel = ({ styles }) => (
   <div className="info-panel" style={styles.root}>
     <p>
       <a href="https://github.com/skidding/flatris">Flatris</a>
-      {' '}is a mobile-friendly implementation of Tetris, built using React & Redux.
+      {' '}
+      is a mobile-friendly implementation of Tetris, built using React & Redux.
     </p>
     <p>
       Use the arrow keys or buttons below to play.
     </p>
     <p>
       The game state is preserved between visits, so you can safely kill this tab when your employer is approaching and resume afterwards!
+    </p>
+    <p>
+      Check out{' '}
+      <a href="https://github.com/skidding/flatris">source code</a>
+      {' '}when you're done playing.
+    </p>
+    <p>
+      Built by <a href="https://twitter.com/skidding">@skidding</a>.
     </p>
   </div>
 );
