@@ -2,6 +2,7 @@
 
 Besides a beautiful, mobile-friendly implementation of Tetris, this project is a playground for
 integrating and experimenting with technologies from the React ecosystem.
+
 In this repo you will find:
 
 - A React/Redux architecture
