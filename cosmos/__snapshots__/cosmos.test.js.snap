@@ -4358,24 +4358,36 @@ exports[`test FlatrisGame:mission-impossible 1`] = `
         }
       }>
       <p>
-        Flatris is demo app for the
-         
         <a
-          href="https://github.com/react-cosmos/react-cosmos">
-          React Cosmos
+          href="https://github.com/skidding/flatris">
+          Flatris
         </a>
          
-        project.
+        is a mobile-friendly implementation of Tetris, built using React & Redux.
       </p>
       <p>
-        Inspired by the classic
+        Use the arrow keys or buttons below to play.
+      </p>
+      <p>
+        The game state is preserved between visits, so you can safely kill this tab when your employer is approaching and resume afterwards!
+      </p>
+      <p>
+        Check out
          
         <a
-          href="http://en.wikipedia.org/wiki/Tetris">
-          Tetris
+          href="https://github.com/skidding/flatris">
+          source code
         </a>
          
-        game, the game can be played both with a keyboard using the arrow keys, and on mobile devices using the buttons below.
+        when you\'re done playing.
+      </p>
+      <p>
+        Built by 
+        <a
+          href="https://twitter.com/skidding">
+          @skidding
+        </a>
+        .
       </p>
     </div>
   </div>
@@ -4684,24 +4696,36 @@ exports[`test FlatrisGame:new-game 1`] = `
         }
       }>
       <p>
-        Flatris is demo app for the
-         
         <a
-          href="https://github.com/react-cosmos/react-cosmos">
-          React Cosmos
+          href="https://github.com/skidding/flatris">
+          Flatris
         </a>
          
-        project.
+        is a mobile-friendly implementation of Tetris, built using React & Redux.
       </p>
       <p>
-        Inspired by the classic
+        Use the arrow keys or buttons below to play.
+      </p>
+      <p>
+        The game state is preserved between visits, so you can safely kill this tab when your employer is approaching and resume afterwards!
+      </p>
+      <p>
+        Check out
          
         <a
-          href="http://en.wikipedia.org/wiki/Tetris">
-          Tetris
+          href="https://github.com/skidding/flatris">
+          source code
         </a>
          
-        game, the game can be played both with a keyboard using the arrow keys, and on mobile devices using the buttons below.
+        when you\'re done playing.
+      </p>
+      <p>
+        Built by 
+        <a
+          href="https://twitter.com/skidding">
+          @skidding
+        </a>
+        .
       </p>
     </div>
   </div>
@@ -5790,24 +5814,36 @@ exports[`test InfoPanel:static-panel 1`] = `
     }
   }>
   <p>
-    Flatris is demo app for the
-     
     <a
-      href="https://github.com/react-cosmos/react-cosmos">
-      React Cosmos
+      href="https://github.com/skidding/flatris">
+      Flatris
     </a>
      
-    project.
+    is a mobile-friendly implementation of Tetris, built using React & Redux.
   </p>
   <p>
-    Inspired by the classic
+    Use the arrow keys or buttons below to play.
+  </p>
+  <p>
+    The game state is preserved between visits, so you can safely kill this tab when your employer is approaching and resume afterwards!
+  </p>
+  <p>
+    Check out
      
     <a
-      href="http://en.wikipedia.org/wiki/Tetris">
-      Tetris
+      href="https://github.com/skidding/flatris">
+      source code
     </a>
      
-    game, the game can be played both with a keyboard using the arrow keys, and on mobile devices using the buttons below.
+    when you\'re done playing.
+  </p>
+  <p>
+    Built by 
+    <a
+      href="https://twitter.com/skidding">
+      @skidding
+    </a>
+    .
   </p>
 </div>
 `;
