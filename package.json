@@ -15,10 +15,12 @@
     "react-redux": "^5.0.2",
     "redux": "^3.6.0",
     "redux-thunk": "^2.2.0",
-    "styled-components": "^1.4.3"
+    "styled-components": "^1.4.3",
+    "sw-precache": "^5.0.0"
   },
   "devDependencies": {
     "prettier": "^0.18.0",
+    "pushstate-server": "^2.2.1",
     "react-cosmos-redux-proxy": "^2.0.0-beta.6",
     "react-cosmos-telescope": "^2.0.0-beta.7",
     "react-cosmos-webpack": "^2.0.0-beta.8",
@@ -27,7 +29,10 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "gen-service-worker": "sw-precache --config=sw-precache-config.js",
+    "build": "react-scripts build && npm run gen-service-worker",
+    "update-docs": "rm -rf docs/* && cp -r build/* docs",
+    "start-docs": "pushstate-server docs",
     "format": "prettier --write 'src/**/*.{js,jsx}' '*.{js,jsx}' 'cosmos/**/*.{js,jsx}' --single-quote",
     "test": "CI=y react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
@@ -35,5 +40,6 @@
   },
   "eslintConfig": {
     "extends": "react-app"
-  }
+  },
+  "homepage": "."
 }

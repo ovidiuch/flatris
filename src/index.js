@@ -25,6 +25,13 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
+// TODO: Update when store changes instead
 window.addEventListener('unload', () => {
   localStorage.setItem('flatrisState', JSON.stringify(store.getState()));
 });
+
+if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js');
+  });
+}
