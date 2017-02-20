@@ -6,6 +6,7 @@
   "display": "fullscreen",
   "orientation": "portrait",
   "background_color": "#fff",
+  "theme_color": "#34495f",
   "icons": [{
     "src": "./favicon-16x16.png",
     "sizes": "16x16",
