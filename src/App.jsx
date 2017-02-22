@@ -26,6 +26,8 @@ const stretch = {
   right: 0
 };
 
+const { round, max } = Math;
+
 export default connectLayout(App, {
   getStyles: ({ height, landscape, root }) => {
     if (landscape) {
@@ -33,7 +35,7 @@ export default connectLayout(App, {
         game: {
           ...stretch,
           right: '50%',
-          paddingTop: Math.round(height - root.height)
+          paddingTop: max(0, round(height - root.height))
         },
         preview: {
           ...stretch,
