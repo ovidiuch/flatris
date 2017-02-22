@@ -11,4 +11,6 @@ In this repo you will find:
 
 [![Offline](flatris-offline.gif)](https://skidding.github.io/flatris/)
 
-*Thanks [@paulgergely](https://twitter.com/paulgergely) for the flat Tetris design!*
+Also see [elm-flatris.](https://github.com/w0rm/elm-flatris)
+
+Thanks [@paulgergely](https://twitter.com/paulgergely) for the flat Tetris design!
