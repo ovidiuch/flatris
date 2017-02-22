@@ -34,7 +34,7 @@
     "update-docs": "rm -rf docs/* && cp -r build/* docs",
     "start-docs": "npm run update-docs && pushstate-server docs",
     "format": "prettier --write 'src/**/*.{js,jsx}' '*.{js,jsx}' 'cosmos/**/*.{js,jsx}' --single-quote",
-    "test": "CI=y react-scripts test --env=jsdom",
+    "test": "npm run format && CI=y react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "cosmos": "NODE_ENV=development cosmos"
   },

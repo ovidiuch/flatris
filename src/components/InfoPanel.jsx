@@ -18,7 +18,8 @@ const InfoPanel = ({ styles }) => (
       Use the arrow keys or buttons below to play.
     </p>
     <p>
-      The game state is preserved between visits, so you can safely kill this tab when your employer is approaching and resume afterwards–including{' '}
+      The game state is preserved between visits, so you can safely kill this tab when your employer is approaching and resume afterwards–including
+      {' '}
       <a href="http://caniuse.com/#feat=serviceworkers">offline</a>
       !
     </p>
