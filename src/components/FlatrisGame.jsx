@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import _ from 'lodash';
-import $ from 'jquery';
 import { STOPPED, PLAYING, PAUSED } from '../constants/states';
 import { UP, DOWN, LEFT, RIGHT } from '../constants/keys';
 import { attachPointerDownEvent, attachPointerUpEvent } from '../lib/events';
@@ -43,15 +42,15 @@ class FlatrisGame extends React.Component {
   }
 
   componentDidMount() {
-    $(window).on('keydown', this.onKeyDown);
-    $(window).on('keyup', this.onKeyUp);
+    window.addEventListener('keydown', this.onKeyDown);
+    window.addEventListener('keyup', this.onKeyUp);
 
     this.props.onLoad();
   }
 
   componentWillUnmount() {
-    $(window).off('keydown', this.onKeyDown);
-    $(window).off('keyup', this.onKeyUp);
+    window.removeEventListener('keydown', this.onKeyDown);
+    window.removeEventListener('keyup', this.onKeyUp);
   }
 
   onKeyDown(e) {
