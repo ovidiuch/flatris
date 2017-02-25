@@ -61,8 +61,8 @@ export const advance = () => (dispatch, getState) => {
 
 export const load = () => (dispatch, getState) => {
   // Game can be initialized in a playing state
-  if (getState().gameState === PLAYING) {
-    dispatch(advance().game);
+  if (getState().game.gameState === PLAYING) {
+    dispatch(advance());
   }
 };
 
