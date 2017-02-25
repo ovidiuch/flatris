@@ -1,16 +1,16 @@
-import { STOPPED, PLAYING, PAUSED } from './constants/states';
+import { STOPPED, PLAYING, PAUSED } from '../constants/states';
 import {
   WELL_ROWS,
   WELL_COLS,
   DROP_FRAMES_DEFAULT,
   DROP_FRAMES_DECREMENT,
   LINE_CLEAR_BONUSES
-} from './constants/grid';
-import { SHAPES, COLORS } from './constants/tetromino';
+} from '../constants/grid';
+import { SHAPES, COLORS } from '../constants/tetromino';
 import {
   getRandomTetromino,
   getInitialPositionForTetromino
-} from './lib/tetromino';
+} from '../lib/tetromino';
 import {
   generateEmptyGrid,
   rotate,
@@ -19,7 +19,8 @@ import {
   transferTetrominoToGrid,
   clearLines,
   fitTetrominoPositionInWellBounds
-} from './lib/grid';
+} from '../lib/grid';
+import newGame from '../components/__fixtures__/FlatrisGame/new-game';
 
 const reducers = {
   ADVANCE: (state, action) => {
@@ -187,7 +188,10 @@ const reducers = {
   })
 };
 
-const flatrisReducer = (state, action) =>
-  action.type in reducers ? reducers[action.type](state, action) : state;
+export default (state, action) => {
+  if (typeof state === 'undefined') {
+    return newGame.reduxState;
+  }
 
-export default flatrisReducer;
+  return action.type in reducers ? reducers[action.type](state, action) : state;
+};

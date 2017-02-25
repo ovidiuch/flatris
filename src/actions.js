@@ -35,7 +35,7 @@ export const advance = () => (dispatch, getState) => {
       gameState,
       dropAcceleration,
       dropFrames
-    } = getState();
+    } = getState().game;
 
     // Stop animation when game ended
     if (gameState === STOPPED) {
@@ -62,7 +62,7 @@ export const advance = () => (dispatch, getState) => {
 export const load = () => (dispatch, getState) => {
   // Game can be initialized in a playing state
   if (getState().gameState === PLAYING) {
-    dispatch(advance());
+    dispatch(advance().game);
   }
 };
 

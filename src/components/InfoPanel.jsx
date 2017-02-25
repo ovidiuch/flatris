@@ -1,5 +1,5 @@
 import React from 'react';
-import connectLayout from '../lib/layout-connect';
+import { connect } from 'react-redux';
 
 import './InfoPanel.css';
 
@@ -34,10 +34,12 @@ const InfoPanel = ({ styles }) => (
   </div>
 );
 
-export default connectLayout(InfoPanel, {
-  getStyles: ({ fontSize }) => ({
-    root: {
-      fontSize: fontSize.text
-    }
-  })
+const getStyles = ({ fontSize }) => ({
+  root: {
+    fontSize: fontSize.text
+  }
 });
+
+export default connect(({ layout }) => ({
+  styles: getStyles(layout)
+}))(InfoPanel);

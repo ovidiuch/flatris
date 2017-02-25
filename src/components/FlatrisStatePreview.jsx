@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import connectLayout from '../lib/layout-connect';
 
 import './FlatrisStatePreview.css';
 
@@ -43,15 +42,16 @@ const FlatrisStatePreview = ({ state, styles }) => (
   </pre>
 );
 
-const mapStateToProps = state => ({ state });
-
-const container = connect(mapStateToProps)(FlatrisStatePreview);
-
-export default connectLayout(container, {
-  getStyles: ({ code }) => ({
-    root: {
-      fontSize: code.fontSize,
-      padding: code.padding
-    }
-  })
+const getStyles = ({ code }) => ({
+  root: {
+    fontSize: code.fontSize,
+    padding: code.padding
+  }
 });
+
+const mapStateToProps = ({ game, layout }) => ({
+  state: game,
+  styles: getStyles(layout)
+});
+
+export default connect(mapStateToProps)(FlatrisStatePreview);

@@ -16,7 +16,6 @@ import {
   enableAcceleration,
   disableAcceleration
 } from '../actions';
-import connectLayout from '../lib/layout-connect';
 import Well from './Well';
 import GamePanel from './GamePanel';
 import InfoPanel from './InfoPanel';
@@ -301,19 +300,6 @@ FlatrisGame.defaultProps = {
   activeTetrominoPosition: null
 };
 
-const mapStateToProps = state => state;
-const mapDispatchToProps = dispatch => ({
-  onLoad: () => dispatch(load()),
-  onStart: () => dispatch(start()),
-  onPause: () => dispatch(pause()),
-  onResume: () => dispatch(resume()),
-  onMoveLeft: () => dispatch(moveLeft()),
-  onMoveRight: () => dispatch(moveRight()),
-  onRotate: () => dispatch(rotate()),
-  onEnableAcceleration: () => dispatch(enableAcceleration()),
-  onDisableAcceleration: () => dispatch(disableAcceleration())
-});
-
 const { round } = Math;
 
 const getControlIconStyle = ({ size }) => {
@@ -363,6 +349,21 @@ const getStyles = (
   }
 });
 
-const container = connect(mapStateToProps, mapDispatchToProps)(FlatrisGame);
+const mapStateToProps = ({ game, layout }) => ({
+  ...game,
+  styles: getStyles(layout)
+});
 
-export default connectLayout(container, { getStyles });
+const mapDispatchToProps = dispatch => ({
+  onLoad: () => dispatch(load()),
+  onStart: () => dispatch(start()),
+  onPause: () => dispatch(pause()),
+  onResume: () => dispatch(resume()),
+  onMoveLeft: () => dispatch(moveLeft()),
+  onMoveRight: () => dispatch(moveRight()),
+  onRotate: () => dispatch(rotate()),
+  onEnableAcceleration: () => dispatch(enableAcceleration()),
+  onDisableAcceleration: () => dispatch(disableAcceleration())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(FlatrisGame);
