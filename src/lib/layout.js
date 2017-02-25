@@ -41,6 +41,7 @@ export default ({ store, computeLayout }) => {
   handleResize();
 
   return () => {
+    _store = _computeLayout = undefined;
     window.removeEventListener('resize', handleResize);
   };
 };
