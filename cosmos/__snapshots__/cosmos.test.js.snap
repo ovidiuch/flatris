@@ -10,7 +10,7 @@ exports[`test FlatrisGame:hallelujah 1`] = `
   className="flatris-game"
   style={
     Object {
-      "fontSize": 16,
+      "fontSize": 15,
       "height": 770,
       "width": 528,
     }
@@ -1866,7 +1866,7 @@ exports[`test FlatrisGame:hallelujah 1`] = `
         className="label"
         style={
           Object {
-            "fontSize": 16,
+            "fontSize": 15,
             "paddingTop": 33,
           }
         }>
@@ -1876,7 +1876,7 @@ exports[`test FlatrisGame:hallelujah 1`] = `
         className="count"
         style={
           Object {
-            "fontSize": 34,
+            "fontSize": 33,
           }
         }>
         184
@@ -1885,7 +1885,7 @@ exports[`test FlatrisGame:hallelujah 1`] = `
         className="label"
         style={
           Object {
-            "fontSize": 16,
+            "fontSize": 15,
             "paddingTop": 33,
           }
         }>
@@ -1895,7 +1895,7 @@ exports[`test FlatrisGame:hallelujah 1`] = `
         className="count"
         style={
           Object {
-            "fontSize": 34,
+            "fontSize": 33,
           }
         }>
         0
@@ -1904,7 +1904,7 @@ exports[`test FlatrisGame:hallelujah 1`] = `
         className="label"
         style={
           Object {
-            "fontSize": 16,
+            "fontSize": 15,
             "paddingTop": 33,
           }
         }>
@@ -2120,7 +2120,7 @@ exports[`test FlatrisGame:mission-impossible 1`] = `
   className="flatris-game"
   style={
     Object {
-      "fontSize": 16,
+      "fontSize": 15,
       "height": 770,
       "width": 528,
     }
@@ -4427,7 +4427,7 @@ exports[`test FlatrisGame:mission-impossible 1`] = `
         className="label"
         style={
           Object {
-            "fontSize": 16,
+            "fontSize": 15,
             "paddingTop": 33,
           }
         }>
@@ -4437,7 +4437,7 @@ exports[`test FlatrisGame:mission-impossible 1`] = `
         className="count"
         style={
           Object {
-            "fontSize": 34,
+            "fontSize": 33,
           }
         }>
         352
@@ -4446,7 +4446,7 @@ exports[`test FlatrisGame:mission-impossible 1`] = `
         className="label"
         style={
           Object {
-            "fontSize": 16,
+            "fontSize": 15,
             "paddingTop": 33,
           }
         }>
@@ -4456,7 +4456,7 @@ exports[`test FlatrisGame:mission-impossible 1`] = `
         className="count"
         style={
           Object {
-            "fontSize": 34,
+            "fontSize": 33,
           }
         }>
         1
@@ -4465,7 +4465,7 @@ exports[`test FlatrisGame:mission-impossible 1`] = `
         className="label"
         style={
           Object {
-            "fontSize": 16,
+            "fontSize": 15,
             "paddingTop": 33,
           }
         }>
@@ -4681,7 +4681,7 @@ exports[`test FlatrisGame:new-game 1`] = `
   className="flatris-game"
   style={
     Object {
-      "fontSize": 16,
+      "fontSize": 15,
       "height": 770,
       "width": 528,
     }
@@ -4771,7 +4771,7 @@ exports[`test FlatrisGame:new-game 1`] = `
         className="label"
         style={
           Object {
-            "fontSize": 16,
+            "fontSize": 15,
             "paddingTop": 33,
           }
         }>
@@ -4781,7 +4781,7 @@ exports[`test FlatrisGame:new-game 1`] = `
         className="count"
         style={
           Object {
-            "fontSize": 34,
+            "fontSize": 33,
           }
         }>
         0
@@ -4790,7 +4790,7 @@ exports[`test FlatrisGame:new-game 1`] = `
         className="label"
         style={
           Object {
-            "fontSize": 16,
+            "fontSize": 15,
             "paddingTop": 33,
           }
         }>
@@ -4800,7 +4800,7 @@ exports[`test FlatrisGame:new-game 1`] = `
         className="count"
         style={
           Object {
-            "fontSize": 34,
+            "fontSize": 33,
           }
         }>
         0
@@ -4809,7 +4809,7 @@ exports[`test FlatrisGame:new-game 1`] = `
         className="label"
         style={
           Object {
-            "fontSize": 16,
+            "fontSize": 15,
             "paddingTop": 33,
           }
         }>
@@ -4957,7 +4957,7 @@ exports[`test FlatrisGame:new-game-running 1`] = `
   className="flatris-game"
   style={
     Object {
-      "fontSize": 16,
+      "fontSize": 15,
       "height": 770,
       "width": 528,
     }
@@ -5084,7 +5084,7 @@ exports[`test FlatrisGame:new-game-running 1`] = `
         className="label"
         style={
           Object {
-            "fontSize": 16,
+            "fontSize": 15,
             "paddingTop": 33,
           }
         }>
@@ -5094,7 +5094,7 @@ exports[`test FlatrisGame:new-game-running 1`] = `
         className="count"
         style={
           Object {
-            "fontSize": 34,
+            "fontSize": 33,
           }
         }>
         0
@@ -5103,7 +5103,7 @@ exports[`test FlatrisGame:new-game-running 1`] = `
         className="label"
         style={
           Object {
-            "fontSize": 16,
+            "fontSize": 15,
             "paddingTop": 33,
           }
         }>
@@ -5113,7 +5113,7 @@ exports[`test FlatrisGame:new-game-running 1`] = `
         className="count"
         style={
           Object {
-            "fontSize": 34,
+            "fontSize": 33,
           }
         }>
         0
@@ -5122,7 +5122,7 @@ exports[`test FlatrisGame:new-game-running 1`] = `
         className="label"
         style={
           Object {
-            "fontSize": 16,
+            "fontSize": 15,
             "paddingTop": 33,
           }
         }>
@@ -5424,7 +5424,7 @@ exports[`test GamePanel:on-paused-game 1`] = `
     className="label"
     style={
       Object {
-        "fontSize": 16,
+        "fontSize": 15,
         "paddingTop": 33,
       }
     }>
@@ -5434,7 +5434,7 @@ exports[`test GamePanel:on-paused-game 1`] = `
     className="count"
     style={
       Object {
-        "fontSize": 34,
+        "fontSize": 33,
       }
     }>
     999
@@ -5443,7 +5443,7 @@ exports[`test GamePanel:on-paused-game 1`] = `
     className="label"
     style={
       Object {
-        "fontSize": 16,
+        "fontSize": 15,
         "paddingTop": 33,
       }
     }>
@@ -5453,7 +5453,7 @@ exports[`test GamePanel:on-paused-game 1`] = `
     className="count"
     style={
       Object {
-        "fontSize": 34,
+        "fontSize": 33,
       }
     }>
     123
@@ -5462,7 +5462,7 @@ exports[`test GamePanel:on-paused-game 1`] = `
     className="label"
     style={
       Object {
-        "fontSize": 16,
+        "fontSize": 15,
         "paddingTop": 33,
       }
     }>
@@ -5585,7 +5585,7 @@ exports[`test GamePanel:on-playing-game 1`] = `
     className="label"
     style={
       Object {
-        "fontSize": 16,
+        "fontSize": 15,
         "paddingTop": 33,
       }
     }>
@@ -5595,7 +5595,7 @@ exports[`test GamePanel:on-playing-game 1`] = `
     className="count"
     style={
       Object {
-        "fontSize": 34,
+        "fontSize": 33,
       }
     }>
     10
@@ -5604,7 +5604,7 @@ exports[`test GamePanel:on-playing-game 1`] = `
     className="label"
     style={
       Object {
-        "fontSize": 16,
+        "fontSize": 15,
         "paddingTop": 33,
       }
     }>
@@ -5614,7 +5614,7 @@ exports[`test GamePanel:on-playing-game 1`] = `
     className="count"
     style={
       Object {
-        "fontSize": 34,
+        "fontSize": 33,
       }
     }>
     0
@@ -5623,7 +5623,7 @@ exports[`test GamePanel:on-playing-game 1`] = `
     className="label"
     style={
       Object {
-        "fontSize": 16,
+        "fontSize": 15,
         "paddingTop": 33,
       }
     }>
@@ -5746,7 +5746,7 @@ exports[`test GamePanel:on-stopped-game 1`] = `
     className="label"
     style={
       Object {
-        "fontSize": 16,
+        "fontSize": 15,
         "paddingTop": 33,
       }
     }>
@@ -5756,7 +5756,7 @@ exports[`test GamePanel:on-stopped-game 1`] = `
     className="count"
     style={
       Object {
-        "fontSize": 34,
+        "fontSize": 33,
       }
     }>
     0
@@ -5765,7 +5765,7 @@ exports[`test GamePanel:on-stopped-game 1`] = `
     className="label"
     style={
       Object {
-        "fontSize": 16,
+        "fontSize": 15,
         "paddingTop": 33,
       }
     }>
@@ -5775,7 +5775,7 @@ exports[`test GamePanel:on-stopped-game 1`] = `
     className="count"
     style={
       Object {
-        "fontSize": 34,
+        "fontSize": 33,
       }
     }>
     0
@@ -5784,7 +5784,7 @@ exports[`test GamePanel:on-stopped-game 1`] = `
     className="label"
     style={
       Object {
-        "fontSize": 16,
+        "fontSize": 15,
         "paddingTop": 33,
       }
     }>
