@@ -1,5 +1,5 @@
 import React from 'react';
-import connectLayout from './lib/layout-connect';
+import { connect } from 'react-redux';
 import FlatrisGame from './components/FlatrisGame.jsx';
 import FlatrisStatePreview from './components/FlatrisStatePreview.jsx';
 
@@ -28,25 +28,29 @@ const stretch = {
 
 const { round, max } = Math;
 
-export default connectLayout(App, {
-  getStyles: ({ height, landscape, root }) => {
-    if (landscape) {
-      return {
-        game: {
-          ...stretch,
-          right: '50%',
-          paddingTop: max(0, round(height - root.height))
-        },
-        preview: {
-          ...stretch,
-          left: '50%'
-        }
-      };
-    }
-
+const getStyles = ({ height, landscape, root }) => {
+  if (landscape) {
     return {
-      game: {},
-      preview: {}
+      game: {
+        ...stretch,
+        right: '50%',
+        paddingTop: max(0, round(height - root.height))
+      },
+      preview: {
+        ...stretch,
+        left: '50%'
+      }
     };
   }
-});
+
+  return {
+    game: {},
+    preview: {}
+  };
+};
+
+export default connect(({ layout }) => {
+  return {
+    styles: getStyles(layout)
+  };
+})(App);

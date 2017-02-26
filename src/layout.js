@@ -37,12 +37,12 @@ export default ({ width, height }) => {
     blockSize,
     landscape,
     fontSize: {
-      default: getRelSize(14, 2),
-      text: getRelSize(20, 2),
-      button: getRelSize(18, 2),
+      default: getRelSize(14),
+      text: getRelSize(20),
+      button: getRelSize(18),
       control: getRelSize(24),
-      title: getRelSize(40, 2),
-      count: getRelSize(30, 2)
+      title: getRelSize(40),
+      count: getRelSize(30)
     },
     root: {
       width: gameWidth,

@@ -1,1 +1,4 @@
-export default {};
+export default {
+  // Activate Redux layout
+  reduxState: {}
+};

@@ -1,30 +1,34 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
-import flatrisReducer from './reducer';
+import gameReducer from './reducers/game';
+import initLayout, { layoutReducer } from 'react-redux-layout';
 import computeLayout from './layout';
-import LayoutProvider from './lib/layout-provider';
 import App from './App.jsx';
-import newGame from './components/__fixtures__/FlatrisGame/new-game';
 
 // Unload previous state from local storage if present, otherwise
 // a blank Flatris instance will be rendered
 const prevState = localStorage.getItem('flatrisState');
-const initialState = prevState ? JSON.parse(prevState) : newGame.reduxState;
+const initialState = prevState ? { game: JSON.parse(prevState) } : undefined;
 
-const store = createStore(flatrisReducer, initialState, applyMiddleware(thunk));
+const rootReducer = combineReducers({
+  game: gameReducer,
+  layout: layoutReducer
+});
+
+const store = createStore(rootReducer, initialState, applyMiddleware(thunk));
 
 store.subscribe(() => {
-  localStorage.setItem('flatrisState', JSON.stringify(store.getState()));
+  localStorage.setItem('flatrisState', JSON.stringify(store.getState().game));
 });
+
+initLayout({ store, computeLayout });
 
 ReactDOM.render(
   <Provider store={store}>
-    <LayoutProvider computeLayout={computeLayout}>
-      <App />
-    </LayoutProvider>
+    <App />
   </Provider>,
   document.getElementById('root')
 );
