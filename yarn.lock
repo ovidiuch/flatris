@@ -5039,6 +5039,10 @@ react-querystring-router@^2.0.0-beta.6:
   dependencies:
     react-dom-polyfill "^2.0.0-beta.6"
 
+react-redux-layout@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/react-redux-layout/-/react-redux-layout-0.1.0.tgz#803aea036794b5496ed799de8d1c92af3b7a7468"
+
 react-redux@^5.0.2:
   version "5.0.2"
   resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-5.0.2.tgz#3d9878f5f71c6fafcd45de1fbb162ea31f389814"

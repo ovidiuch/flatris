@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 import gameReducer from './reducers/game';
-import initLayout, { layoutReducer } from './lib/layout';
+import initLayout, { layoutReducer } from 'react-redux-layout';
 import computeLayout from './layout';
 import App from './App.jsx';
 

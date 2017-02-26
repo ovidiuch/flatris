@@ -3,7 +3,7 @@ import thunk from 'redux-thunk';
 import createReduxProxy from 'react-cosmos-redux-proxy';
 import computeLayout from '../src/layout';
 import gameReducer from '../src/reducers/game';
-import initLayout, { layoutReducer } from '../src/lib/layout';
+import initLayout, { layoutReducer } from 'react-redux-layout';
 
 const rootReducer = combineReducers({
   game: gameReducer,
