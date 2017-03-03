@@ -21,7 +21,7 @@ export default () => {
 
       const store = createStore(
         rootReducer,
-        { game: initialState },
+        initialState,
         applyMiddleware(thunk)
       );
       _destroyLayout = initLayout({ store, computeLayout });

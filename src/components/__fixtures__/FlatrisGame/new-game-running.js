@@ -9,15 +9,17 @@ import { generateEmptyGrid } from '../../../lib/grid';
 
 export default {
   reduxState: {
-    gameState: PLAYING,
-    score: 0,
-    lines: 0,
-    nextTetromino: 'I',
-    grid: generateEmptyGrid(WELL_ROWS, WELL_COLS),
-    activeTetromino: 'J',
-    activeTetrominoGrid: SHAPES.J,
-    activeTetrominoPosition: { x: 4, y: -2 },
-    dropFrames: DROP_FRAMES_DEFAULT,
-    dropAcceleration: false
+    game: {
+      gameState: PLAYING,
+      score: 0,
+      lines: 0,
+      nextTetromino: 'I',
+      grid: generateEmptyGrid(WELL_ROWS, WELL_COLS),
+      activeTetromino: 'J',
+      activeTetrominoGrid: SHAPES.J,
+      activeTetrominoPosition: { x: 4, y: -2 },
+      dropFrames: DROP_FRAMES_DEFAULT,
+      dropAcceleration: false
+    }
   }
 };
