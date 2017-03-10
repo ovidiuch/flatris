@@ -1,4 +1,6 @@
 export default {
   componentPaths: ['src/components'],
-  proxies: ['cosmos/redux-proxy']
+  proxies: ['src/redux-proxy'],
+  containerQuerySelector: '#root',
+  webpackConfigPath: 'react-scripts/config/webpack.config.dev'
 };
