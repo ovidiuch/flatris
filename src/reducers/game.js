@@ -190,7 +190,7 @@ const reducers = {
 
 export default (state, action) => {
   if (typeof state === 'undefined') {
-    return newGame.reduxState;
+    return newGame.reduxState.game;
   }
 
   return action.type in reducers ? reducers[action.type](state, action) : state;
