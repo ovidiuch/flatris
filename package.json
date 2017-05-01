@@ -22,10 +22,12 @@
   "devDependencies": {
     "prettier": "^0.18.0",
     "pushstate-server": "^2.2.1",
-    "react-cosmos-normalize-props-proxy": "^2.0.0-beta.9",
-    "react-cosmos-redux-proxy": "^2.0.0-beta.9",
-    "react-cosmos-telescope": "^2.0.0-beta.9",
-    "react-cosmos-webpack": "^2.0.0-beta.10",
+    "react-component-playground": "^2.0.0-beta.12",
+    "react-cosmos": "^2.0.0-beta.12",
+    "react-cosmos-normalize-props-proxy": "2.0.0-beta.11",
+    "react-cosmos-redux-proxy": "2.0.0-beta.11",
+    "react-cosmos-telescope": "^2.0.0-beta.12",
+    "react-cosmos-webpack": "^2.0.0-beta.12",
     "react-scripts": "0.9.5",
     "webpack": "1.14.0"
   },
