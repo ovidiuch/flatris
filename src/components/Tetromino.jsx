@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import SquareBlock from './SquareBlock';
 
 import './Tetromino.css';
@@ -45,9 +46,9 @@ class Tetromino extends React.Component {
 }
 
 Tetromino.propTypes = {
-  color: React.PropTypes.string.isRequired,
-  grid: React.PropTypes.arrayOf(
-    React.PropTypes.arrayOf(React.PropTypes.number)
+  color: PropTypes.string.isRequired,
+  grid: PropTypes.arrayOf(
+    PropTypes.arrayOf(PropTypes.number)
   ).isRequired
 };
 

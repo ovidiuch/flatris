@@ -9,9 +9,10 @@
   },
   "dependencies": {
     "lodash": "^4.17.4",
+    "prop-types": "^15.5.10",
     "raf": "^3.3.0",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
     "react-redux": "^5.0.2",
     "react-redux-layout": "^0.1.0",
     "redux": "^3.6.0",

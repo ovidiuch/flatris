@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { STOPPED, PLAYING, PAUSED } from '../constants/states';
 import { SHAPES, COLORS } from '../constants/tetromino';
@@ -98,13 +99,13 @@ class GamePanel extends React.Component {
 }
 
 GamePanel.propTypes = {
-  gameState: React.PropTypes.oneOf([STOPPED, PLAYING, PAUSED]).isRequired,
-  score: React.PropTypes.number.isRequired,
-  lines: React.PropTypes.number.isRequired,
-  nextTetromino: React.PropTypes.string,
-  onStart: React.PropTypes.func.isRequired,
-  onPause: React.PropTypes.func.isRequired,
-  onResume: React.PropTypes.func.isRequired
+  gameState: PropTypes.oneOf([STOPPED, PLAYING, PAUSED]).isRequired,
+  score: PropTypes.number.isRequired,
+  lines: PropTypes.number.isRequired,
+  nextTetromino: PropTypes.string,
+  onStart: PropTypes.func.isRequired,
+  onPause: PropTypes.func.isRequired,
+  onResume: PropTypes.func.isRequired
 };
 
 GamePanel.defaultProps = {

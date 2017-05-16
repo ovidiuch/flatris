@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import SquareBlock from './SquareBlock';
 
 import './WellGrid.css';
@@ -54,8 +55,8 @@ class WellGrid extends React.Component {
 }
 
 WellGrid.propTypes = {
-  grid: React.PropTypes.arrayOf(
-    React.PropTypes.arrayOf(React.PropTypes.array)
+  grid: PropTypes.arrayOf(
+    PropTypes.arrayOf(PropTypes.array)
   ).isRequired
 };
 
