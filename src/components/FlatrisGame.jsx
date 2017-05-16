@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import _ from 'lodash';
 import { STOPPED, PLAYING, PAUSED } from '../constants/states';
@@ -267,28 +268,28 @@ class FlatrisGame extends React.Component {
 }
 
 FlatrisGame.propTypes = {
-  gameState: React.PropTypes.oneOf([STOPPED, PLAYING, PAUSED]).isRequired,
-  score: React.PropTypes.number.isRequired,
-  lines: React.PropTypes.number.isRequired,
-  nextTetromino: React.PropTypes.string,
-  grid: React.PropTypes.arrayOf(React.PropTypes.arrayOf(React.PropTypes.array)),
-  activeTetromino: React.PropTypes.string,
-  activeTetrominoGrid: React.PropTypes.arrayOf(
-    React.PropTypes.arrayOf(React.PropTypes.number)
+  gameState: PropTypes.oneOf([STOPPED, PLAYING, PAUSED]).isRequired,
+  score: PropTypes.number.isRequired,
+  lines: PropTypes.number.isRequired,
+  nextTetromino: PropTypes.string,
+  grid: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.array)),
+  activeTetromino: PropTypes.string,
+  activeTetrominoGrid: PropTypes.arrayOf(
+    PropTypes.arrayOf(PropTypes.number)
   ),
-  activeTetrominoPosition: React.PropTypes.shape({
-    x: React.PropTypes.number,
-    y: React.PropTypes.number
+  activeTetrominoPosition: PropTypes.shape({
+    x: PropTypes.number,
+    y: PropTypes.number
   }),
-  onLoad: React.PropTypes.func.isRequired,
-  onStart: React.PropTypes.func.isRequired,
-  onPause: React.PropTypes.func.isRequired,
-  onResume: React.PropTypes.func.isRequired,
-  onMoveLeft: React.PropTypes.func.isRequired,
-  onMoveRight: React.PropTypes.func.isRequired,
-  onRotate: React.PropTypes.func.isRequired,
-  onEnableAcceleration: React.PropTypes.func.isRequired,
-  onDisableAcceleration: React.PropTypes.func.isRequired
+  onLoad: PropTypes.func.isRequired,
+  onStart: PropTypes.func.isRequired,
+  onPause: PropTypes.func.isRequired,
+  onResume: PropTypes.func.isRequired,
+  onMoveLeft: PropTypes.func.isRequired,
+  onMoveRight: PropTypes.func.isRequired,
+  onRotate: PropTypes.func.isRequired,
+  onEnableAcceleration: PropTypes.func.isRequired,
+  onDisableAcceleration: PropTypes.func.isRequired
 };
 
 FlatrisGame.defaultProps = {

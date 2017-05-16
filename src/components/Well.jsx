@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { COLORS } from '../constants/tetromino';
 import { getExactPosition } from '../lib/grid';
 import WellGrid from './WellGrid';
@@ -70,16 +71,16 @@ class Well extends React.Component {
 }
 
 Well.propTypes = {
-  grid: React.PropTypes.arrayOf(
-    React.PropTypes.arrayOf(React.PropTypes.array)
+  grid: PropTypes.arrayOf(
+    PropTypes.arrayOf(PropTypes.array)
   ).isRequired,
-  activeTetromino: React.PropTypes.string,
-  activeTetrominoGrid: React.PropTypes.arrayOf(
-    React.PropTypes.arrayOf(React.PropTypes.number)
+  activeTetromino: PropTypes.string,
+  activeTetrominoGrid: PropTypes.arrayOf(
+    PropTypes.arrayOf(PropTypes.number)
   ),
-  activeTetrominoPosition: React.PropTypes.shape({
-    x: React.PropTypes.number,
-    y: React.PropTypes.number
+  activeTetrominoPosition: PropTypes.shape({
+    x: PropTypes.number,
+    y: PropTypes.number
   })
 };
 
