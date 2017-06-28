@@ -5866,6 +5866,79 @@ exports[`test InfoPanel:static-panel 1`] = `
 </div>
 `;
 
+exports[`test Logo:default 1`] = `
+<div
+  className="logo">
+  <ul
+    className="tetromino">
+    <li
+      className="grid-square-block"
+      style={
+        Object {
+          "left": "0%",
+          "top": "0%",
+        }
+      }>
+      <div
+        className="square-block"
+        style={
+          Object {
+            "backgroundColor": "#34495f",
+          }
+        } />
+    </li>
+    <li
+      className="grid-square-block"
+      style={
+        Object {
+          "left": "25%",
+          "top": "0%",
+        }
+      }>
+      <div
+        className="square-block"
+        style={
+          Object {
+            "backgroundColor": "#34495f",
+          }
+        } />
+    </li>
+    <li
+      className="grid-square-block"
+      style={
+        Object {
+          "left": "25%",
+          "top": "25%",
+        }
+      }>
+      <div
+        className="square-block"
+        style={
+          Object {
+            "backgroundColor": "#34495f",
+          }
+        } />
+    </li>
+    <li
+      className="grid-square-block"
+      style={
+        Object {
+          "left": "50%",
+          "top": "25%",
+        }
+      }>
+      <div
+        className="square-block"
+        style={
+          Object {
+            "backgroundColor": "#34495f",
+          }
+        } />
+    </li>
+  </ul>
+</div>
+`;
+
 exports[`test SquareBlock:color-of-the-I-tetromino 1`] = `
 <div
   className="square-block"

@@ -55,9 +55,7 @@ class WellGrid extends React.Component {
 }
 
 WellGrid.propTypes = {
-  grid: PropTypes.arrayOf(
-    PropTypes.arrayOf(PropTypes.array)
-  ).isRequired
+  grid: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.array)).isRequired
 };
 
 export default WellGrid;

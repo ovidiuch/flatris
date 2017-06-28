@@ -47,9 +47,7 @@ class Tetromino extends React.Component {
 
 Tetromino.propTypes = {
   color: PropTypes.string.isRequired,
-  grid: PropTypes.arrayOf(
-    PropTypes.arrayOf(PropTypes.number)
-  ).isRequired
+  grid: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)).isRequired
 };
 
 export default Tetromino;

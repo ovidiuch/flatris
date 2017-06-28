@@ -274,9 +274,7 @@ FlatrisGame.propTypes = {
   nextTetromino: PropTypes.string,
   grid: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.array)),
   activeTetromino: PropTypes.string,
-  activeTetrominoGrid: PropTypes.arrayOf(
-    PropTypes.arrayOf(PropTypes.number)
-  ),
+  activeTetrominoGrid: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)),
   activeTetrominoPosition: PropTypes.shape({
     x: PropTypes.number,
     y: PropTypes.number
