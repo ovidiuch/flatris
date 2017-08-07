@@ -15,20 +15,20 @@
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.2",
     "react-redux-layout": "^0.1.0",
-    "redux": "^3.6.0",
+    "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
-    "styled-components": "^1.4.3",
+    "styled-components": "^2.1.2",
     "sw-precache": "^5.0.0"
   },
   "devDependencies": {
-    "prettier": "^0.18.0",
-    "pushstate-server": "^2.2.1",
-    "react-cosmos-normalize-props-proxy": "^2.0.0-beta.15",
-    "react-cosmos-redux-proxy": "^2.0.0-beta.15",
-    "react-cosmos-telescope": "^2.0.0-beta.15",
-    "react-cosmos-webpack": "^2.0.0-beta.16",
-    "react-scripts": "0.9.5",
-    "webpack": "1.14.0"
+    "prettier": "^1.5.3",
+    "pushstate-server": "^3.0.1",
+    "react-cosmos-normalize-props-proxy": "^2.0.0-beta.20",
+    "react-cosmos-redux-proxy": "^2.0.0-beta.20",
+    "react-cosmos-telescope": "^2.0.0-beta.20",
+    "react-cosmos-webpack": "^2.0.0-beta.20",
+    "react-scripts": "^1.0.10",
+    "webpack": "^3.4.1"
   },
   "scripts": {
     "start": "react-scripts start",
