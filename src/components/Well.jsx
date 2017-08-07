@@ -17,10 +17,12 @@ class Well extends React.Component {
    * afterwards.
    */
   shouldComponentUpdate(nextProps) {
-    return nextProps.grid !== this.props.grid ||
+    return (
+      nextProps.grid !== this.props.grid ||
       nextProps.activeTetromino !== this.props.activeTetromino ||
       nextProps.activeTetrominoGrid !== this.props.activeTetrominoGrid ||
-      nextProps.activeTetrominoPosition !== this.props.activeTetrominoPosition;
+      nextProps.activeTetrominoPosition !== this.props.activeTetrominoPosition
+    );
   }
 
   getNumberOfRows() {
@@ -45,11 +47,7 @@ class Well extends React.Component {
   }
 
   render() {
-    const {
-      grid,
-      activeTetromino,
-      activeTetrominoGrid
-    } = this.props;
+    const { grid, activeTetromino, activeTetrominoGrid } = this.props;
 
     return (
       <div className="well">

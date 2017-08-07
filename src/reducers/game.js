@@ -119,20 +119,18 @@ const reducers = {
     });
   },
 
-  PAUSE: state => Object.assign({}, state, {
-    gameState: PAUSED
-  }),
+  PAUSE: state =>
+    Object.assign({}, state, {
+      gameState: PAUSED
+    }),
 
-  RESUME: state => Object.assign({}, state, {
-    gameState: PLAYING
-  }),
+  RESUME: state =>
+    Object.assign({}, state, {
+      gameState: PLAYING
+    }),
 
   MOVE: (state, action) => {
-    const {
-      grid,
-      activeTetrominoGrid,
-      activeTetrominoPosition
-    } = state;
+    const { grid, activeTetrominoGrid, activeTetrominoPosition } = state;
     const { direction } = action.payload;
 
     const newPosition = Object.assign({}, activeTetrominoPosition, {
@@ -151,11 +149,7 @@ const reducers = {
   },
 
   ROTATE: state => {
-    const {
-      grid,
-      activeTetrominoGrid,
-      activeTetrominoPosition
-    } = state;
+    const { grid, activeTetrominoGrid, activeTetrominoPosition } = state;
 
     const newGrid = rotate(activeTetrominoGrid);
 
@@ -179,13 +173,15 @@ const reducers = {
     });
   },
 
-  ENABLE_ACCELERATION: state => Object.assign({}, state, {
-    dropAcceleration: true
-  }),
+  ENABLE_ACCELERATION: state =>
+    Object.assign({}, state, {
+      dropAcceleration: true
+    }),
 
-  DISABLE_ACCELERATION: state => Object.assign({}, state, {
-    dropAcceleration: false
-  })
+  DISABLE_ACCELERATION: state =>
+    Object.assign({}, state, {
+      dropAcceleration: false
+    })
 };
 
 export default (state, action) => {

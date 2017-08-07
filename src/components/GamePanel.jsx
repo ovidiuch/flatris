@@ -29,13 +29,7 @@ class GamePanel extends React.Component {
   }
 
   renderGameButton() {
-    const {
-      gameState,
-      onStart,
-      onPause,
-      onResume,
-      styles
-    } = this.props;
+    const { gameState, onStart, onPause, onResume, styles } = this.props;
 
     let eventHandler;
     let label;
@@ -65,21 +59,28 @@ class GamePanel extends React.Component {
   }
 
   render() {
-    const {
-      score,
-      lines,
-      nextTetromino,
-      styles
-    } = this.props;
+    const { score, lines, nextTetromino, styles } = this.props;
 
     return (
       <div className="game-panel" style={styles.root}>
-        <p className="title" style={styles.title}>Flatris</p>
-        <p className="label" style={styles.label}>Score</p>
-        <p className="count" style={styles.count}>{score}</p>
-        <p className="label" style={styles.label}>Lines Cleared</p>
-        <p className="count" style={styles.count}>{lines}</p>
-        <p className="label" style={styles.label}>Next Shape</p>
+        <p className="title" style={styles.title}>
+          Flatris
+        </p>
+        <p className="label" style={styles.label}>
+          Score
+        </p>
+        <p className="count" style={styles.count}>
+          {score}
+        </p>
+        <p className="label" style={styles.label}>
+          Lines Cleared
+        </p>
+        <p className="count" style={styles.count}>
+          {lines}
+        </p>
+        <p className="label" style={styles.label}>
+          Next Shape
+        </p>
         <div
           className={this.getNextTetrominoClass()}
           style={styles.nextTetrimino}

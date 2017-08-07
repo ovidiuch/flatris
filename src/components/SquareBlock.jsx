@@ -8,9 +8,8 @@ import './SquareBlock.css';
  * square block. The only configurable property square blocks have is their
  * color.
  */
-const SquareBlock = ({ color }) => (
-  <div className="square-block" style={{ backgroundColor: color }} />
-);
+const SquareBlock = ({ color }) =>
+  <div className="square-block" style={{ backgroundColor: color }} />;
 
 SquareBlock.propTypes = {
   color: PropTypes.string.isRequired

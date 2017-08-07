@@ -147,10 +147,7 @@ class FlatrisGame extends React.Component {
   }
 
   renderInfoPanel() {
-    const {
-      gameState,
-      styles
-    } = this.props;
+    const { gameState, styles } = this.props;
 
     return gameState === PLAYING
       ? null
@@ -170,9 +167,7 @@ class FlatrisGame extends React.Component {
   }
 
   renderControls() {
-    const {
-      styles
-    } = this.props;
+    const { styles } = this.props;
 
     return (
       <div className="controls" style={styles.controls}>
@@ -311,15 +306,7 @@ const getControlIconStyle = ({ size }) => {
   };
 };
 
-const getStyles = (
-  {
-    fontSize,
-    root,
-    well,
-    side,
-    controls
-  }
-) => ({
+const getStyles = ({ fontSize, root, well, side, controls }) => ({
   root: {
     width: root.width,
     height: root.height,

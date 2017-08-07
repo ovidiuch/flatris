@@ -13,10 +13,10 @@ const cancelFrame = () => {
   raf.cancel(animationHandle);
 };
 
-const now = typeof performance !== 'undefined' &&
-  typeof performance.now === 'function'
-  ? () => performance.now()
-  : () => Date.now();
+const now =
+  typeof performance !== 'undefined' && typeof performance.now === 'function'
+    ? () => performance.now()
+    : () => Date.now();
 
 const scheduleFrame = cb => {
   timeBegin = now();
@@ -31,11 +31,7 @@ let yProgress = 0;
 export const advance = () => (dispatch, getState) => {
   cancelFrame();
   scheduleFrame(frames => {
-    const {
-      gameState,
-      dropAcceleration,
-      dropFrames
-    } = getState().game;
+    const { gameState, dropAcceleration, dropFrames } = getState().game;
 
     // Stop animation when game ended
     if (gameState === STOPPED) {

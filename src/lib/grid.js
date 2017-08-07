@@ -87,7 +87,7 @@ export function getBottomMostPosition(grid, tetrominoGrid, position) {
 }
 
 const getMaxIdFromLine = line =>
-  Math.max(...line.map(cell => cell ? cell[0] : 0));
+  Math.max(...line.map(cell => (cell ? cell[0] : 0)));
 
 const getMaxIdFromGrid = grid =>
   Math.max(...grid.map(line => getMaxIdFromLine(line)));
@@ -138,9 +138,8 @@ export function clearLines(grid) {
   for (let row = rows - 1; row >= 0; row--) {
     if (isLine(clearedGrid[row])) {
       for (let row2 = row; row2 >= 0; row2--) {
-        clearedGrid[row2] = row2 > 0
-          ? clearedGrid[row2 - 1]
-          : createEmptyLine(cols);
+        clearedGrid[row2] =
+          row2 > 0 ? clearedGrid[row2 - 1] : createEmptyLine(cols);
       }
 
       linesCleared++;
