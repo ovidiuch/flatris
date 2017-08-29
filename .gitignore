@@ -8,6 +8,7 @@
 
 # production
 /build
+/cosmos-export
 
 # misc
 .DS_Store
