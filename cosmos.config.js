@@ -1,6 +1,6 @@
 module.exports = {
   componentPaths: ['src/components'],
-  proxies: ['react-cosmos-normalize-props-proxy', 'src/redux-proxy'],
+  proxiesPath: 'src/cosmos.proxies',
   containerQuerySelector: '#root',
   webpackConfigPath: 'react-scripts/config/webpack.config.dev',
   publicPath: 'public'
