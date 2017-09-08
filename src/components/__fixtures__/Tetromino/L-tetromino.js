@@ -1,6 +1,8 @@
 import { SHAPES, COLORS } from '../../../constants/tetromino';
 
 export default {
-  color: COLORS.L,
-  grid: SHAPES.L
+  props: {
+    color: COLORS.L,
+    grid: SHAPES.L
+  }
 };

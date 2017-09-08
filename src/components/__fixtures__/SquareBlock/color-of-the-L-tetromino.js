@@ -1,5 +1,7 @@
 import { COLORS } from '../../../constants/tetromino';
 
 export default {
-  color: COLORS.L
+  props: {
+    color: COLORS.L
+  }
 };
