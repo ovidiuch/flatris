@@ -1,4 +1,3 @@
-import createNormalizePropsProxy from 'react-cosmos-normalize-props-proxy';
 import createReduxProxy from 'react-cosmos-redux-proxy';
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
@@ -14,7 +13,6 @@ const rootReducer = combineReducers({
 let _destroyLayout;
 
 export default [
-  createNormalizePropsProxy(),
   createReduxProxy({
     createStore: initialState => {
       if (_destroyLayout) {
