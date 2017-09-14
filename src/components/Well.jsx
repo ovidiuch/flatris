@@ -51,17 +51,17 @@ class Well extends React.Component {
 
     return (
       <div className="well">
-        {activeTetromino
-          ? <div
-              className="active-tetromino"
-              style={this.getActiveTetrominoestyles()}
-            >
-              <Tetromino
-                color={COLORS[activeTetromino]}
-                grid={activeTetrominoGrid}
-              />
-            </div>
-          : null}
+        {activeTetromino ? (
+          <div
+            className="active-tetromino"
+            style={this.getActiveTetrominoestyles()}
+          >
+            <Tetromino
+              color={COLORS[activeTetromino]}
+              grid={activeTetrominoGrid}
+            />
+          </div>
+        ) : null}
         <WellGrid grid={grid} />
       </div>
     );

@@ -37,10 +37,11 @@ const prettifyState = state => {
 /**
  * Render the prettified, serialized state of a Flatris instance.
  */
-const FlatrisStatePreview = ({ state, styles }) =>
+const FlatrisStatePreview = ({ state, styles }) => (
   <pre className="flatris-state-preview" style={styles.root}>
     {prettifyState(state)}
-  </pre>;
+  </pre>
+);
 
 const getStyles = ({ code }) => ({
   root: {

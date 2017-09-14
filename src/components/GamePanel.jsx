@@ -85,13 +85,13 @@ class GamePanel extends React.Component {
           className={this.getNextTetrominoClass()}
           style={styles.nextTetrimino}
         >
-          {nextTetromino
-            ? <Tetromino
-                key={nextTetromino}
-                color={COLORS[nextTetromino]}
-                grid={SHAPES[nextTetromino]}
-              />
-            : null}
+          {nextTetromino ? (
+            <Tetromino
+              key={nextTetromino}
+              color={COLORS[nextTetromino]}
+              grid={SHAPES[nextTetromino]}
+            />
+          ) : null}
         </div>
         {this.renderGameButton()}
       </div>

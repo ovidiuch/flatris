@@ -6,7 +6,8 @@ import './Logo.css';
 
 const tetromino = 'Z';
 
-export default () =>
+export default () => (
   <div className="logo">
     <Tetromino key={tetromino} color="#34495f" grid={SHAPES[tetromino]} />
-  </div>;
+  </div>
+);

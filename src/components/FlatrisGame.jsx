@@ -149,11 +149,11 @@ class FlatrisGame extends React.Component {
   renderInfoPanel() {
     const { gameState, styles } = this.props;
 
-    return gameState === PLAYING
-      ? null
-      : <div className="info-panel-container" style={styles.infoPanel}>
-          <InfoPanel />
-        </div>;
+    return gameState === PLAYING ? null : (
+      <div className="info-panel-container" style={styles.infoPanel}>
+        <InfoPanel />
+      </div>
+    );
   }
 
   renderControlIcon(path) {
@@ -234,16 +234,16 @@ class FlatrisGame extends React.Component {
 
     return (
       <div className="flatris-game" style={styles.root}>
-        {grid
-          ? <div className="well-container" style={styles.well}>
-              <Well
-                grid={grid}
-                activeTetromino={activeTetromino}
-                activeTetrominoGrid={activeTetrominoGrid}
-                activeTetrominoPosition={activeTetrominoPosition}
-              />
-            </div>
-          : null}
+        {grid ? (
+          <div className="well-container" style={styles.well}>
+            <Well
+              grid={grid}
+              activeTetromino={activeTetromino}
+              activeTetrominoGrid={activeTetrominoGrid}
+              activeTetrominoPosition={activeTetrominoPosition}
+            />
+          </div>
+        ) : null}
         {this.renderInfoPanel()}
         <div className="game-panel-container" style={styles.gamePanel}>
           <GamePanel

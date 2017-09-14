@@ -7,7 +7,7 @@ import './InfoPanel.css';
  * Information panel for the Flatris game/Cosmos demo, shown in between game
  * states.
  */
-const InfoPanel = ({ styles }) =>
+const InfoPanel = ({ styles }) => (
   <div className="info-panel" style={styles.root}>
     <p>
       <a href="https://github.com/skidding/flatris">Flatris</a> is a
@@ -28,7 +28,8 @@ const InfoPanel = ({ styles }) =>
     <p>
       Built by <a href="https://twitter.com/skidding">@skidding</a>.
     </p>
-  </div>;
+  </div>
+);
 
 const getStyles = ({ fontSize }) => ({
   root: {

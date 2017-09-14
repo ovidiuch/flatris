@@ -37,11 +37,7 @@ class Tetromino extends React.Component {
   }
 
   render() {
-    return (
-      <ul className="tetromino">
-        {this.renderGridBlocks()}
-      </ul>
-    );
+    return <ul className="tetromino">{this.renderGridBlocks()}</ul>;
   }
 }
 

@@ -46,11 +46,7 @@ class WellGrid extends React.Component {
   }
 
   render() {
-    return (
-      <ul className="well-grid">
-        {this.renderGridBlocks()}
-      </ul>
-    );
+    return <ul className="well-grid">{this.renderGridBlocks()}</ul>;
   }
 }
 
