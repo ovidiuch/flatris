@@ -24,8 +24,8 @@
     "prettier": "^1.6.1",
     "pushstate-server": "^3.0.1",
     "react-cosmos-redux-proxy": "^2.0.0-rc.1",
-    "react-cosmos-telescope": "^2.0.0-rc.1",
-    "react-cosmos-webpack": "^2.0.0-rc.1",
+    "react-cosmos-telescope": "^2.0.0-rc.3",
+    "react-cosmos-webpack": "^2.0.0-rc.3",
     "react-scripts": "^1.0.13",
     "webpack": "^3.5.6"
   },
