@@ -9,25 +9,25 @@
   },
   "dependencies": {
     "lodash": "^4.17.4",
-    "prop-types": "^15.5.10",
-    "raf": "^3.3.0",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
+    "prop-types": "^15.6.0",
+    "raf": "^3.4.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
     "react-redux": "^5.0.6",
     "react-redux-layout": "^0.1.0",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
-    "styled-components": "^2.1.2",
+    "styled-components": "^2.2.1",
     "sw-precache": "^5.0.0"
   },
   "devDependencies": {
-    "prettier": "^1.6.1",
+    "prettier": "^1.7.4",
     "pushstate-server": "^3.0.1",
-    "react-cosmos-redux-proxy": "^2.0.0-rc.1",
-    "react-cosmos-telescope": "^2.0.0-rc.3",
-    "react-cosmos-webpack": "^2.0.0-rc.3",
-    "react-scripts": "^1.0.13",
-    "webpack": "^3.5.6"
+    "react-cosmos-redux-proxy": "^2.0.0",
+    "react-cosmos-telescope": "^2.1.0",
+    "react-cosmos-webpack": "^2.1.0",
+    "react-scripts": "^1.0.14",
+    "webpack": "^3.6.0"
   },
   "scripts": {
     "start": "react-scripts start",
