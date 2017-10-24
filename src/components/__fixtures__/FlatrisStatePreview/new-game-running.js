@@ -6,8 +6,11 @@ import {
 } from '../../../constants/grid';
 import { SHAPES } from '../../../constants/tetromino';
 import { generateEmptyGrid } from '../../../lib/grid';
+import FlatrisStatePreview from '../../FlatrisStatePreview.jsx';
 
 export default {
+  component: FlatrisStatePreview,
+
   reduxState: {
     game: {
       gameState: PLAYING,

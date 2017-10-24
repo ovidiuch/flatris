@@ -1,14 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button:hello-world 1`] = `
-<button
-  className="sc-bdVaJa dEHCuP"
->
-  Hello world!
-</button>
-`;
-
-exports[`FlatrisGame:hallelujah 1`] = `
+exports[`Connect(FlatrisGame):hallelujah 1`] = `
 <div
   className="flatris-game"
   style={
@@ -2356,7 +2348,7 @@ exports[`FlatrisGame:hallelujah 1`] = `
 </div>
 `;
 
-exports[`FlatrisGame:mission-impossible 1`] = `
+exports[`Connect(FlatrisGame):mission-impossible 1`] = `
 <div
   className="flatris-game"
   style={
@@ -5203,7 +5195,7 @@ exports[`FlatrisGame:mission-impossible 1`] = `
 </div>
 `;
 
-exports[`FlatrisGame:new-game 1`] = `
+exports[`Connect(FlatrisGame):new-game 1`] = `
 <div
   className="flatris-game"
   style={
@@ -5507,7 +5499,7 @@ exports[`FlatrisGame:new-game 1`] = `
 </div>
 `;
 
-exports[`FlatrisGame:new-game-running 1`] = `
+exports[`Connect(FlatrisGame):new-game-running 1`] = `
 <div
   className="flatris-game"
   style={
@@ -5934,7 +5926,7 @@ exports[`FlatrisGame:new-game-running 1`] = `
 </div>
 `;
 
-exports[`FlatrisStatePreview:new-game 1`] = `
+exports[`Connect(FlatrisStatePreview):new-game 1`] = `
 <pre
   className="flatris-state-preview"
   style={
@@ -5952,7 +5944,7 @@ exports[`FlatrisStatePreview:new-game 1`] = `
 </pre>
 `;
 
-exports[`FlatrisStatePreview:new-game-running 1`] = `
+exports[`Connect(FlatrisStatePreview):new-game-running 1`] = `
 <pre
   className="flatris-state-preview"
   style={
@@ -6005,7 +5997,7 @@ exports[`FlatrisStatePreview:new-game-running 1`] = `
 </pre>
 `;
 
-exports[`GamePanel:on-paused-game 1`] = `
+exports[`Connect(GamePanel):on-paused-game 1`] = `
 <div
   className="game-panel"
   style={
@@ -6184,7 +6176,7 @@ exports[`GamePanel:on-paused-game 1`] = `
 </div>
 `;
 
-exports[`GamePanel:on-playing-game 1`] = `
+exports[`Connect(GamePanel):on-playing-game 1`] = `
 <div
   className="game-panel"
   style={
@@ -6363,7 +6355,7 @@ exports[`GamePanel:on-playing-game 1`] = `
 </div>
 `;
 
-exports[`GamePanel:on-stopped-game 1`] = `
+exports[`Connect(GamePanel):on-stopped-game 1`] = `
 <div
   className="game-panel"
   style={
@@ -6465,7 +6457,7 @@ exports[`GamePanel:on-stopped-game 1`] = `
 </div>
 `;
 
-exports[`InfoPanel:static-panel 1`] = `
+exports[`Connect(InfoPanel):static-panel 1`] = `
 <div
   className="info-panel"
   style={
@@ -11584,4 +11576,12 @@ exports[`WellGrid:flatris 1`] = `
     />
   </li>
 </ul>
+`;
+
+exports[`styled.button:hello-world 1`] = `
+<button
+  className="sc-bdVaJa dEHCuP"
+>
+  Hello world!
+</button>
 `;

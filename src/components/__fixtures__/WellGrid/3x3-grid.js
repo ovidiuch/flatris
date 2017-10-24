@@ -1,4 +1,8 @@
+import WellGrid from '../../WellGrid.jsx';
+
 export default {
+  component: WellGrid,
+
   props: {
     grid: [
       [null, [5, '#fbb414'], [6, '#fbb414']],

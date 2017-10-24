@@ -1,6 +1,9 @@
 import { SHAPES } from '../../../constants/tetromino';
+import Well from '../../Well.jsx';
 
 export default {
+  component: Well,
+
   props: {
     grid: [
       [null, null, null, null, null, null, null, null, null, null],

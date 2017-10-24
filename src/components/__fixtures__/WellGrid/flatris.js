@@ -1,6 +1,9 @@
+import WellGrid from '../../WellGrid.jsx';
 /* eslint-disable max-len, comma-spacing, no-multi-spaces, array-bracket-spacing */
 
 export default {
+  component: WellGrid,
+
   props: {
     grid: [
       [

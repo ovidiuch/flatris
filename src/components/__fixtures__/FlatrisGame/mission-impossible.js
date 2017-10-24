@@ -1,7 +1,10 @@
 import { PAUSED } from '../../../constants/states';
 import { SHAPES } from '../../../constants/tetromino';
+import FlatrisGame from '../../FlatrisGame.jsx';
 
 export default {
+  component: FlatrisGame,
+
   reduxState: {
     game: {
       gameState: PAUSED,
