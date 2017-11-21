@@ -5800,105 +5800,69 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-cosmos-config@^3.0.0-beta.5:
-  version "3.0.0-beta.5"
-  resolved "https://registry.yarnpkg.com/react-cosmos-config/-/react-cosmos-config-3.0.0-beta.5.tgz#be8adcf5f7cc848bf648a06e8035ff9799cf8dad"
+react-cosmos-config@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/react-cosmos-config/-/react-cosmos-config-3.0.0.tgz#59ae97569fa05e2dbdad946d3b8abae4f1081e01"
   dependencies:
-    react-cosmos-shared "^3.0.0-beta.5"
+    react-cosmos-shared "^3.0.0"
     yargs "^9.0.1"
 
-react-cosmos-config@^3.0.0-rc.2:
-  version "3.0.0-rc.2"
-  resolved "https://registry.yarnpkg.com/react-cosmos-config/-/react-cosmos-config-3.0.0-rc.2.tgz#3737f690df44df8da99d9561bb5b8b29747da97a"
-  dependencies:
-    react-cosmos-shared "^3.0.0-rc.2"
-    yargs "^9.0.1"
-
-react-cosmos-loader@^3.0.0-beta.5:
-  version "3.0.0-beta.5"
-  resolved "https://registry.yarnpkg.com/react-cosmos-loader/-/react-cosmos-loader-3.0.0-beta.5.tgz#52c57e31d7a4c07e2c73ac1feb4e48d12d686698"
+react-cosmos-loader@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/react-cosmos-loader/-/react-cosmos-loader-3.0.0.tgz#41d264c64e043820b807e918244c94c38df5dc00"
   dependencies:
     deep-equal "^1.0.1"
     lodash.merge "^4.6.0"
     prop-types "^15.5.10"
-    react-cosmos-shared "^3.0.0-beta.5"
-    react-cosmos-state-proxy "^3.0.0-beta.5"
+    react-cosmos-shared "^3.0.0"
+    react-cosmos-state-proxy "^3.0.0"
 
-react-cosmos-loader@^3.0.0-rc.2:
-  version "3.0.0-rc.2"
-  resolved "https://registry.yarnpkg.com/react-cosmos-loader/-/react-cosmos-loader-3.0.0-rc.2.tgz#476db44d2ff16b07e4034ad7b357b997b2ecb424"
-  dependencies:
-    deep-equal "^1.0.1"
-    lodash.merge "^4.6.0"
-    prop-types "^15.5.10"
-    react-cosmos-shared "^3.0.0-rc.2"
-    react-cosmos-state-proxy "^3.0.0-rc.2"
+react-cosmos-playground@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/react-cosmos-playground/-/react-cosmos-playground-3.0.0.tgz#9a0aba0db11354a8be079f0cb81a532c3887d83e"
 
-react-cosmos-playground@^3.0.0-rc.2:
-  version "3.0.0-rc.2"
-  resolved "https://registry.yarnpkg.com/react-cosmos-playground/-/react-cosmos-playground-3.0.0-rc.2.tgz#85389b65da795649d022b7fd40fe5cac80dc7365"
-
-react-cosmos-redux-proxy@3.0.0-beta.5:
-  version "3.0.0-beta.5"
-  resolved "https://registry.yarnpkg.com/react-cosmos-redux-proxy/-/react-cosmos-redux-proxy-3.0.0-beta.5.tgz#e85bcb2e91c0f37f0f3be5795e5c2066b098f450"
+react-cosmos-redux-proxy@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/react-cosmos-redux-proxy/-/react-cosmos-redux-proxy-3.0.0.tgz#06ddff360f28dd2287f5ba2b17b3bf341a49298c"
   dependencies:
     lodash.omit "^4.5.0"
     prop-types "^15.5.10"
-    react-cosmos-shared "^3.0.0-beta.5"
+    react-cosmos-shared "^3.0.0"
     redux "^3.7.2"
 
-react-cosmos-shared@^3.0.0-beta.5:
-  version "3.0.0-beta.5"
-  resolved "https://registry.yarnpkg.com/react-cosmos-shared/-/react-cosmos-shared-3.0.0-beta.5.tgz#e57f9887f2c59c3a81db5623779e086022c2e775"
+react-cosmos-shared@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/react-cosmos-shared/-/react-cosmos-shared-3.0.0.tgz#9d5fd285c5251f96df27112965d241df2d34eca7"
   dependencies:
     lodash.isplainobject "^4.0.6"
     prop-types "^15.5.10"
     resolve-from "^3.0.0"
     slash "^1.0.0"
 
-react-cosmos-shared@^3.0.0-rc.2:
-  version "3.0.0-rc.2"
-  resolved "https://registry.yarnpkg.com/react-cosmos-shared/-/react-cosmos-shared-3.0.0-rc.2.tgz#ffd4a44df0c2aa17930ab7815c9a738fa230580a"
-  dependencies:
-    lodash.isplainobject "^4.0.6"
-    prop-types "^15.5.10"
-    resolve-from "^3.0.0"
-    slash "^1.0.0"
-
-react-cosmos-state-proxy@^3.0.0-beta.5:
-  version "3.0.0-beta.5"
-  resolved "https://registry.yarnpkg.com/react-cosmos-state-proxy/-/react-cosmos-state-proxy-3.0.0-beta.5.tgz#00049943094e882f2830fc608efd7136c271fe34"
+react-cosmos-state-proxy@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/react-cosmos-state-proxy/-/react-cosmos-state-proxy-3.0.0.tgz#e3aa956ceb406e0a9cdb5d514b825bd8ad157b58"
   dependencies:
     lodash.isempty "^4.4.0"
     lodash.isequal "^4.4.0"
     lodash.omit "^4.5.0"
     prop-types "^15.5.10"
-    react-cosmos-shared "^3.0.0-beta.5"
+    react-cosmos-shared "^3.0.0"
 
-react-cosmos-state-proxy@^3.0.0-rc.2:
-  version "3.0.0-rc.2"
-  resolved "https://registry.yarnpkg.com/react-cosmos-state-proxy/-/react-cosmos-state-proxy-3.0.0-rc.2.tgz#27708e4420a00f8c7781a39aa96643c5211bab8a"
+react-cosmos-telescope@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/react-cosmos-telescope/-/react-cosmos-telescope-3.0.0.tgz#0f5adbf1102074e333fd6fd7f865a9cf5bd7bea6"
   dependencies:
-    lodash.isempty "^4.4.0"
-    lodash.isequal "^4.4.0"
-    lodash.omit "^4.5.0"
-    prop-types "^15.5.10"
-    react-cosmos-shared "^3.0.0-rc.2"
+    react-cosmos-config "^3.0.0"
+    react-cosmos-loader "^3.0.0"
+    react-cosmos-shared "^3.0.0"
+    react-cosmos-state-proxy "^3.0.0"
+    react-cosmos-voyager2 "^3.0.0"
+    react-test-renderer "^16.1.0"
 
-react-cosmos-telescope@3.0.0-beta.6:
-  version "3.0.0-beta.6"
-  resolved "https://registry.yarnpkg.com/react-cosmos-telescope/-/react-cosmos-telescope-3.0.0-beta.6.tgz#69854aa871cc149aa8a7efc4a94dd3ab91dd924b"
-  dependencies:
-    react-cosmos-config "^3.0.0-beta.5"
-    react-cosmos-loader "^3.0.0-beta.5"
-    react-cosmos-shared "^3.0.0-beta.5"
-    react-cosmos-state-proxy "^3.0.0-beta.5"
-    react-cosmos-voyager2 "^3.0.0-beta.6"
-    react-test-renderer "^16.0.0"
-
-react-cosmos-voyager2@^3.0.0-beta.6:
-  version "3.0.0-beta.6"
-  resolved "https://registry.yarnpkg.com/react-cosmos-voyager2/-/react-cosmos-voyager2-3.0.0-beta.6.tgz#1780d376169ffa0a486ebce5db6966d3dd38dd23"
+react-cosmos-voyager2@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/react-cosmos-voyager2/-/react-cosmos-voyager2-3.0.0.tgz#940cd6032612c54e5d85890136c778be9ccc9617"
   dependencies:
     babel-types "^6.26.0"
     babylon "^6.18.0"
@@ -5906,30 +5870,18 @@ react-cosmos-voyager2@^3.0.0-beta.6:
     glob "^7.1.2"
     lodash.sortby "^4.7.0"
     micromatch "^3.1.4"
+    react-cosmos-shared "^3.0.0"
     util.promisify "^1.0.0"
 
-react-cosmos-voyager2@^3.0.0-rc.2:
-  version "3.0.0-rc.2"
-  resolved "https://registry.yarnpkg.com/react-cosmos-voyager2/-/react-cosmos-voyager2-3.0.0-rc.2.tgz#d168f8eba1cac7c104f473f511752c309b00e708"
-  dependencies:
-    babel-types "^6.26.0"
-    babylon "^6.18.0"
-    commondir "^1.0.1"
-    glob "^7.1.2"
-    lodash.sortby "^4.7.0"
-    micromatch "^3.1.4"
-    react-cosmos-shared "^3.0.0-rc.2"
-    util.promisify "^1.0.0"
-
-react-cosmos-voyager@^3.0.0-rc.2:
-  version "3.0.0-rc.2"
-  resolved "https://registry.yarnpkg.com/react-cosmos-voyager/-/react-cosmos-voyager-3.0.0-rc.2.tgz#9fa5dc7fa08e6e3f0b7acace8eae909b99e0a0ba"
+react-cosmos-voyager@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/react-cosmos-voyager/-/react-cosmos-voyager-3.0.0.tgz#e6e00d6f890a5285b3256a6e188b217cd3d73453"
   dependencies:
     glob "^7.1.1"
 
-react-cosmos@^3.0.0-rc.2:
-  version "3.0.0-rc.2"
-  resolved "https://registry.yarnpkg.com/react-cosmos/-/react-cosmos-3.0.0-rc.2.tgz#1732467f5cb247dde6c820c6e2f12957ed18d5ba"
+react-cosmos@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/react-cosmos/-/react-cosmos-3.0.0.tgz#6e5ef464f971982a2f4125c9163aa8af103a9005"
   dependencies:
     express "^4.15.4"
     fs-extra "^4.0.1"
@@ -5937,12 +5889,12 @@ react-cosmos@^3.0.0-rc.2:
     http-proxy-middleware "^0.17.4"
     import-from "^2.1.0"
     lodash.omit "^4.5.0"
-    react-cosmos-config "^3.0.0-rc.2"
-    react-cosmos-loader "^3.0.0-rc.2"
-    react-cosmos-playground "^3.0.0-rc.2"
-    react-cosmos-shared "^3.0.0-rc.2"
-    react-cosmos-voyager "^3.0.0-rc.2"
-    react-cosmos-voyager2 "^3.0.0-rc.2"
+    react-cosmos-config "^3.0.0"
+    react-cosmos-loader "^3.0.0"
+    react-cosmos-playground "^3.0.0"
+    react-cosmos-shared "^3.0.0"
+    react-cosmos-voyager "^3.0.0"
+    react-cosmos-voyager2 "^3.0.0"
     react-dev-utils "^4.2.1"
     react-error-overlay "^3.0.0"
     resolve-from "^3.0.0"
@@ -6089,12 +6041,13 @@ react-scripts@^1.0.14:
   optionalDependencies:
     fsevents "1.1.2"
 
-react-test-renderer@^16.0.0:
-  version "16.0.0"
-  resolved "https://registry.yarnpkg.com/react-test-renderer/-/react-test-renderer-16.0.0.tgz#9fe7b8308f2f71f29fc356d4102086f131c9cb15"
+react-test-renderer@^16.1.0:
+  version "16.1.1"
+  resolved "https://registry.yarnpkg.com/react-test-renderer/-/react-test-renderer-16.1.1.tgz#a05184688d564be799f212449262525d1e350537"
   dependencies:
     fbjs "^0.8.16"
     object-assign "^4.1.1"
+    prop-types "^15.6.0"
 
 "react@^15 || ^16":
   version "15.6.1"
