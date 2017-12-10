@@ -303,6 +303,10 @@ async-each@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/async-each/-/async-each-1.0.1.tgz#19d386a1d9edc6e7c1c85d388aedbcc56d33602d"
 
+async-until@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/async-until/-/async-until-1.0.0.tgz#5db55a07b89b1446f9ca541cdb37b29989f681f0"
+
 async@^1.4.0, async@^1.5.2:
   version "1.5.2"
   resolved "https://registry.yarnpkg.com/async/-/async-1.5.2.tgz#ec6a61ae56480c0c3cb241c95618e20892f9672a"
@@ -5800,69 +5804,70 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-cosmos-config@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/react-cosmos-config/-/react-cosmos-config-3.0.0.tgz#59ae97569fa05e2dbdad946d3b8abae4f1081e01"
+react-cosmos-config@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/react-cosmos-config/-/react-cosmos-config-3.1.1.tgz#fc01864e914214fd04a462cb2797cc0c1feb60e2"
   dependencies:
-    react-cosmos-shared "^3.0.0"
+    react-cosmos-shared "^3.1.1"
     yargs "^9.0.1"
 
-react-cosmos-loader@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/react-cosmos-loader/-/react-cosmos-loader-3.0.0.tgz#41d264c64e043820b807e918244c94c38df5dc00"
+react-cosmos-loader@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/react-cosmos-loader/-/react-cosmos-loader-3.1.1.tgz#f43085dabf04854b489f636b6c32bceefe487d11"
   dependencies:
+    async-until "^1.0.0"
     deep-equal "^1.0.1"
     lodash.merge "^4.6.0"
     prop-types "^15.5.10"
-    react-cosmos-shared "^3.0.0"
-    react-cosmos-state-proxy "^3.0.0"
+    react-cosmos-shared "^3.1.1"
+    react-cosmos-state-proxy "^3.1.1"
 
-react-cosmos-playground@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/react-cosmos-playground/-/react-cosmos-playground-3.0.0.tgz#9a0aba0db11354a8be079f0cb81a532c3887d83e"
+react-cosmos-playground@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/react-cosmos-playground/-/react-cosmos-playground-3.1.1.tgz#111b25bf94421881fdbc716ee96a0cbb369e3836"
 
-react-cosmos-redux-proxy@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/react-cosmos-redux-proxy/-/react-cosmos-redux-proxy-3.0.0.tgz#06ddff360f28dd2287f5ba2b17b3bf341a49298c"
+react-cosmos-redux-proxy@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/react-cosmos-redux-proxy/-/react-cosmos-redux-proxy-3.1.1.tgz#744db9935a9c91c66fadc31f518b7b5df56ed1a1"
   dependencies:
     lodash.omit "^4.5.0"
     prop-types "^15.5.10"
-    react-cosmos-shared "^3.0.0"
+    react-cosmos-shared "^3.1.1"
     redux "^3.7.2"
 
-react-cosmos-shared@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/react-cosmos-shared/-/react-cosmos-shared-3.0.0.tgz#9d5fd285c5251f96df27112965d241df2d34eca7"
+react-cosmos-shared@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/react-cosmos-shared/-/react-cosmos-shared-3.1.1.tgz#9ba312df9cb328589f9aa1744cbcc69bcbe59dbf"
   dependencies:
     lodash.isplainobject "^4.0.6"
     prop-types "^15.5.10"
     resolve-from "^3.0.0"
     slash "^1.0.0"
 
-react-cosmos-state-proxy@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/react-cosmos-state-proxy/-/react-cosmos-state-proxy-3.0.0.tgz#e3aa956ceb406e0a9cdb5d514b825bd8ad157b58"
+react-cosmos-state-proxy@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/react-cosmos-state-proxy/-/react-cosmos-state-proxy-3.1.1.tgz#deb29a71246102e7db00825353337781bd7837bb"
   dependencies:
     lodash.isempty "^4.4.0"
     lodash.isequal "^4.4.0"
     lodash.omit "^4.5.0"
     prop-types "^15.5.10"
-    react-cosmos-shared "^3.0.0"
+    react-cosmos-shared "^3.1.1"
 
-react-cosmos-telescope@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/react-cosmos-telescope/-/react-cosmos-telescope-3.0.0.tgz#0f5adbf1102074e333fd6fd7f865a9cf5bd7bea6"
+react-cosmos-telescope@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/react-cosmos-telescope/-/react-cosmos-telescope-3.1.1.tgz#a7f6a105de244d8dc3fa5f513ea5b814b3e0739b"
   dependencies:
-    react-cosmos-config "^3.0.0"
-    react-cosmos-loader "^3.0.0"
-    react-cosmos-shared "^3.0.0"
-    react-cosmos-state-proxy "^3.0.0"
-    react-cosmos-voyager2 "^3.0.0"
+    react-cosmos-config "^3.1.1"
+    react-cosmos-loader "^3.1.1"
+    react-cosmos-shared "^3.1.1"
+    react-cosmos-state-proxy "^3.1.1"
+    react-cosmos-voyager2 "^3.1.1"
     react-test-renderer "^16.1.0"
 
-react-cosmos-voyager2@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/react-cosmos-voyager2/-/react-cosmos-voyager2-3.0.0.tgz#940cd6032612c54e5d85890136c778be9ccc9617"
+react-cosmos-voyager2@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/react-cosmos-voyager2/-/react-cosmos-voyager2-3.1.1.tgz#69cd7369535ed67464374c4ad764ca897d31116b"
   dependencies:
     babel-types "^6.26.0"
     babylon "^6.18.0"
@@ -5870,35 +5875,36 @@ react-cosmos-voyager2@^3.0.0:
     glob "^7.1.2"
     lodash.sortby "^4.7.0"
     micromatch "^3.1.4"
-    react-cosmos-shared "^3.0.0"
+    react-cosmos-shared "^3.1.1"
     util.promisify "^1.0.0"
 
-react-cosmos-voyager@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/react-cosmos-voyager/-/react-cosmos-voyager-3.0.0.tgz#e6e00d6f890a5285b3256a6e188b217cd3d73453"
+react-cosmos-voyager@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/react-cosmos-voyager/-/react-cosmos-voyager-3.1.1.tgz#1b638d4eb8071f4362ff0fb19c9b9d008e17d144"
   dependencies:
     glob "^7.1.1"
+    traverse "^0.6.6"
 
-react-cosmos@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/react-cosmos/-/react-cosmos-3.0.0.tgz#6e5ef464f971982a2f4125c9163aa8af103a9005"
+react-cosmos@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/react-cosmos/-/react-cosmos-3.1.1.tgz#e14bcf14da62395ab1e0bd77e5906340e49b3023"
   dependencies:
+    commondir "^1.0.1"
     express "^4.15.4"
     fs-extra "^4.0.1"
     glob "^7.1.1"
     http-proxy-middleware "^0.17.4"
     import-from "^2.1.0"
     lodash.omit "^4.5.0"
-    react-cosmos-config "^3.0.0"
-    react-cosmos-loader "^3.0.0"
-    react-cosmos-playground "^3.0.0"
-    react-cosmos-shared "^3.0.0"
-    react-cosmos-voyager "^3.0.0"
-    react-cosmos-voyager2 "^3.0.0"
+    react-cosmos-config "^3.1.1"
+    react-cosmos-loader "^3.1.1"
+    react-cosmos-playground "^3.1.1"
+    react-cosmos-shared "^3.1.1"
+    react-cosmos-voyager "^3.1.1"
+    react-cosmos-voyager2 "^3.1.1"
     react-dev-utils "^4.2.1"
     react-error-overlay "^3.0.0"
     resolve-from "^3.0.0"
-    traverse "^0.6.6"
     webpack-dev-middleware "^1.12.0"
     webpack-hot-middleware "^2.18.2"
     yargs "^8.0.1"

@@ -23,9 +23,9 @@
   "devDependencies": {
     "prettier": "^1.7.4",
     "pushstate-server": "^3.0.1",
-    "react-cosmos": "^3.0.0",
-    "react-cosmos-redux-proxy": "^3.0.0",
-    "react-cosmos-telescope": "^3.0.0",
+    "react-cosmos": "^3.1.1",
+    "react-cosmos-redux-proxy": "^3.1.1",
+    "react-cosmos-telescope": "^3.1.1",
     "react-scripts": "^1.0.14"
   },
   "scripts": {
