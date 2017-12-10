@@ -24,7 +24,8 @@
   font-weight: normal;
 }
 
-.game-panel .next-tetromino {}
+.game-panel .next-tetromino {
+}
 
 .game-panel .next-tetromino .square-block {
   /* Override any color the next Tetromino has for a gray shape */

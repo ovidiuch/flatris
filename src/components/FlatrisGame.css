@@ -49,7 +49,7 @@
 
 .flatris-game .controls button:nth-child(1) svg {
   transform-origin: 50% 50%;
-  transform: scale(-1,1);
+  transform: scale(-1, 1);
 }
 
 .flatris-game .controls button:nth-child(2) {

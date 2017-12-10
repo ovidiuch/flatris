@@ -11,24 +11,25 @@
     "lodash": "^4.17.4",
     "prop-types": "^15.6.0",
     "raf": "^3.4.0",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",
     "react-redux-layout": "^0.1.0",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
-    "styled-components": "^2.2.1",
+    "styled-components": "^2.2.4",
     "sw-precache": "^5.0.0"
   },
   "devDependencies": {
-    "prettier": "^1.7.4",
+    "prettier": "^1.9.1",
     "pushstate-server": "^3.0.1",
     "react-cosmos": "^3.1.1",
     "react-cosmos-redux-proxy": "^3.1.1",
     "react-cosmos-telescope": "^3.1.1",
-    "react-scripts": "^1.0.14"
+    "react-scripts": "^1.0.17"
   },
   "scripts": {
+    "prettify": "prettier --write 'src/**/*.{js,jsx,css}'",
     "start": "react-scripts start",
     "gen-service-worker": "sw-precache --config=sw-precache-config.js",
     "build": "react-scripts build && npm run gen-service-worker",
