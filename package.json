@@ -29,13 +29,12 @@
     "react-scripts": "^1.0.17"
   },
   "scripts": {
-    "prettify": "prettier --write 'src/**/*.{js,jsx,css}'",
     "start": "react-scripts start",
     "gen-service-worker": "sw-precache --config=sw-precache-config.js",
     "build": "react-scripts build && npm run gen-service-worker",
     "update-docs": "rm -rf docs/* && cp -r build/* docs",
     "start-docs": "npm run update-docs && pushstate-server docs",
-    "format": "prettier --write 'src/**/*.{js,jsx}' '*.{js,jsx}' 'cosmos/**/*.{js,jsx}' --single-quote",
+    "format": "prettier --write 'src/**/*.{js,jsx,css}' '*.{js,jsx,css}' 'cosmos/**/*.{js,jsx,css}'",
     "test": "npm run format && CI=y react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "cosmos": "cosmos",
