@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { STOPPED, PLAYING, PAUSED } from '../constants/states';
 import { SHAPES, COLORS } from '../constants/tetromino';
-import { attachPointerDownEvent } from '../lib/events';
+import { attachPointerDownEvent } from '../utils/events';
 import Tetromino from './Tetromino';
 import Button from './Button';
 

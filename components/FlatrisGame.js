@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import _ from 'lodash';
 import { STOPPED, PLAYING, PAUSED } from '../constants/states';
 import { UP, DOWN, LEFT, RIGHT } from '../constants/keys';
-import { attachPointerDownEvent, attachPointerUpEvent } from '../lib/events';
+import { attachPointerDownEvent, attachPointerUpEvent } from '../utils/events';
 import {
   load,
   start,

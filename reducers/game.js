@@ -10,7 +10,7 @@ import { SHAPES, COLORS } from '../constants/tetromino';
 import {
   getRandomTetromino,
   getInitialPositionForTetromino
-} from '../lib/tetromino';
+} from '../utils/tetromino';
 import {
   generateEmptyGrid,
   rotate,
@@ -19,7 +19,7 @@ import {
   transferTetrominoToGrid,
   clearLines,
   fitTetrominoPositionInWellBounds
-} from '../lib/grid';
+} from '../utils/grid';
 import newGame from '../components/__fixtures__/FlatrisGame/new-game';
 
 const reducers = {

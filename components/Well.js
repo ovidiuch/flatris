@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { COLORS } from '../constants/tetromino';
-import { getExactPosition } from '../lib/grid';
+import { getExactPosition } from '../utils/grid';
 import WellGrid from './WellGrid';
 import Tetromino from './Tetromino';
 

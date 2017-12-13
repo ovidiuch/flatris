@@ -5,7 +5,7 @@ import {
   DROP_FRAMES_DEFAULT
 } from '../../../constants/grid';
 import { SHAPES } from '../../../constants/tetromino';
-import { generateEmptyGrid } from '../../../lib/grid';
+import { generateEmptyGrid } from '../../../utils/grid';
 import FlatrisGame from '../../FlatrisGame';
 
 export default {
