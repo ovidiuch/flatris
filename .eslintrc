@@ -1,0 +1,39 @@
+{
+  "parser": "babel-eslint",
+  "extends": [
+    "eslint:recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings"
+  ],
+  "plugins": ["react"],
+  "env": {
+    "shared-node-browser": true
+  },
+  "globals": {
+    "global": true
+  },
+  "rules": {
+    "no-console": "warn"
+  },
+  "overrides": [
+    {
+      "files": ["jest.config.js", "cosmos.config.js", "cosmos.test.js"],
+      "env": {
+        "node": true
+      }
+    },
+    {
+      "files": ["components/**/*.js", "pages/**/*.js"],
+      "rules": {
+        "react/jsx-uses-react": "error",
+        "react/jsx-uses-vars": "error"
+      }
+    },
+    {
+      "files": ["**/__fixtures__/**/*.js"],
+      "rules": {
+        "no-console": "off"
+      }
+    }
+  ]
+}
