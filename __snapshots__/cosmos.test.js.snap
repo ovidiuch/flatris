@@ -6571,6 +6571,65 @@ exports[`Logo:default 1`] = `
 </div>
 `;
 
+exports[`Preloader:default 1`] = `
+<div
+  className="jsx-3689405750 root"
+>
+  <div
+    className="jsx-3689405750 preloader"
+  >
+    <span
+      className="jsx-3689405750 cell"
+    />
+    <span
+      className="jsx-3689405750 cell on"
+    />
+    <span
+      className="jsx-3689405750 cell on"
+    />
+    <span
+      className="jsx-3689405750 cell"
+    />
+    <span
+      className="jsx-3689405750 cell on"
+    />
+    <span
+      className="jsx-3689405750 cell on"
+    />
+    <span
+      className="jsx-3689405750 cell"
+    />
+    <span
+      className="jsx-3689405750 cell"
+    />
+    <span
+      className="jsx-3689405750 cell"
+    />
+    <span
+      className="jsx-3689405750 cell"
+    />
+    <span
+      className="jsx-3689405750 cell"
+    />
+    <span
+      className="jsx-3689405750 cell"
+    />
+    <span
+      className="jsx-3689405750 cell"
+    />
+    <span
+      className="jsx-3689405750 cell"
+    />
+    <span
+      className="jsx-3689405750 cell"
+    />
+    <span
+      className="jsx-3689405750 cell"
+    />
+  </div>
+</div>
+`;
+
 exports[`SquareBlock:color-of-the-I-tetromino 1`] = `
 <div
   className="jsx-2043156612 square-block"

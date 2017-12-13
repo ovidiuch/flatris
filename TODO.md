@@ -1,4 +1,4 @@
-* [ ] Integrate preloader (get from public/index.html)
+* [x] Extract Preloader component (get from public/index.html)
 * [ ] Use public assets
 * [ ] Bring back layout
 * [ ] [INSERT SERVER STUFF HERE]
