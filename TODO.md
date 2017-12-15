@@ -1,6 +1,6 @@
 * [x] Extract Preloader component (get from public/index.html)
-* [ ] Use public assets
-* [ ] Bring back layout
+* [x] Remove dynamic layout
 * [ ] [INSERT SERVER STUFF HERE]
+* [ ] Use public assets
 * [ ] Minimize state footprint
 * [ ] Optimize CSS via will-change

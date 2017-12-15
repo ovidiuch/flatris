@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { number, string, array, func, shape, oneOf, arrayOf } from 'prop-types';
 import { connect } from 'react-redux';
 import _ from 'lodash';
 import { STOPPED, PLAYING, PAUSED } from '../constants/states';
@@ -148,116 +148,77 @@ class FlatrisGame extends React.Component {
     return this.props.gameState === PLAYING;
   }
 
-  renderInfoPanel() {
-    const { gameState, styles } = this.props;
-
-    return gameState === PLAYING ? null : (
-      <div className="info-panel-container" style={styles.infoPanel}>
-        <InfoPanel />
-        <style jsx>{`
-          .info-panel-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            background: rgba(236, 240, 241, 0.85);
-          }
-        `}</style>
-      </div>
-    );
-  }
-
   renderControlIcon(path) {
-    const { styles } = this.props;
-
     return (
-      <svg style={styles.controlIcon} viewBox="0 0 24 24">
+      <svg viewBox="0 0 24 24">
         <path d={path} />
       </svg>
     );
   }
 
   renderControls() {
-    const { styles } = this.props;
-
     return (
-      <div className="controls" style={styles.controls}>
-        {React.createElement(
-          Button,
-          {
-            ...attachPointerDownEvent(this.onRotatePress),
-            style: styles.control
-          },
-          this.renderControlIcon(
-            'M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z'
-          )
-        )}
-        {React.createElement(
-          Button,
-          {
-            ...attachPointerDownEvent(this.onLeftPress),
-            style: styles.control
-          },
-          this.renderControlIcon(
-            'M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z'
-          )
-        )}
-        {React.createElement(
-          Button,
-          {
-            ...attachPointerDownEvent(this.onRightPress),
-            style: styles.control
-          },
-          this.renderControlIcon(
-            'M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z'
-          )
-        )}
-        {React.createElement(
-          Button,
-          {
-            ...attachPointerDownEvent(this.onPullPress),
-            ...attachPointerUpEvent(this.onPullRelease),
-            style: _.omit(styles.control, 'marginRight')
-          },
-          this.renderControlIcon(
-            'M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z'
-          )
-        )}
+      <div className="controls">
+        <div className="button">
+          <Button {...attachPointerDownEvent(this.onRotatePress)}>
+            {this.renderControlIcon(
+              'M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z'
+            )}
+          </Button>
+        </div>
+        <div className="button">
+          <Button {...attachPointerDownEvent(this.onLeftPress)}>
+            {this.renderControlIcon(
+              'M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z'
+            )}
+          </Button>
+        </div>
+        <div className="button">
+          <Button {...attachPointerDownEvent(this.onRightPress)}>
+            {this.renderControlIcon(
+              'M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z'
+            )}
+          </Button>
+        </div>
+        <div className="button">
+          <Button
+            {...attachPointerDownEvent(this.onPullPress)}
+            {...attachPointerUpEvent(this.onPullRelease)}
+          >
+            {this.renderControlIcon(
+              'M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z'
+            )}
+          </Button>
+        </div>
         <style jsx>{`
           .controls {
             position: absolute;
+            top: calc(100% * 20 / 24);
+            bottom: 0;
             left: 0;
+            right: 0;
           }
 
-          .controls :global(button) {
-            position: absolute;
-            top: 0;
+          .controls .button {
+            position: relative;
+            float: left;
+            width: 25%;
+            height: 100%;
+          }
+
+          .controls .button :global(button) {
+            overflow: hidden;
             background: #ecf0f1;
             color: #34495f;
           }
 
-          .controls :global(button) svg {
+          .controls .button :global(svg) {
             fill: #34495f;
           }
 
-          .controls :global(button):nth-child(1) {
-            left: 0;
-          }
-
-          .controls :global(button):nth-child(1) :global(svg) {
+          .controls .button:nth-child(1) :global(svg) {
             transform-origin: 50% 50%;
             transform: scale(-1, 1);
-          }
-
-          .controls :global(button):nth-child(2) {
-            left: 26.67%;
-          }
-
-          .controls :global(button):nth-child(3) {
-            right: 26.67%;
-          }
-
-          .controls :global(button):nth-child(4) {
-            right: 0;
           }
         `}</style>
       </div>
@@ -276,14 +237,13 @@ class FlatrisGame extends React.Component {
       activeTetrominoPosition,
       onStart,
       onPause,
-      onResume,
-      styles
+      onResume
     } = this.props;
 
     return (
-      <div className="flatris-game" style={styles.root}>
-        {grid ? (
-          <div className="well-container" style={styles.well}>
+      <div className="flatris-game">
+        {grid && (
+          <div className="well-container">
             <Well
               grid={grid}
               activeTetromino={activeTetromino}
@@ -291,9 +251,13 @@ class FlatrisGame extends React.Component {
               activeTetrominoPosition={activeTetrominoPosition}
             />
           </div>
-        ) : null}
-        {this.renderInfoPanel()}
-        <div className="game-panel-container" style={styles.gamePanel}>
+        )}
+        {gameState !== PLAYING && (
+          <div className="info-panel-container">
+            <InfoPanel />
+          </div>
+        )}
+        <div className="game-panel-container">
           <GamePanel
             gameState={gameState}
             score={score}
@@ -308,22 +272,38 @@ class FlatrisGame extends React.Component {
         <style jsx>{`
           /* Flatris expects a 480 width viewport */
           .flatris-game {
-            position: relative;
-            margin: 0 auto;
+            position: position;
+            top: 0;
+            bottom: 0;
+            left: 0
+            right: 0;
           }
 
-          .well-container {
+          .well-container,
+          .info-panel-container {
             position: absolute;
             top: 0;
             left: 0;
+            right: calc(100% * 6 / 16);
             background: #ecf0f1;
+          }
+
+          .info-panel-container {
+            background: rgba(236, 240, 241, 0.85);
           }
 
           .game-panel-container {
             position: absolute;
             top: 0;
             right: 0;
+            left: calc(100% * 10 / 16);
             background: #fff;
+          }
+
+          .well-container,
+          .info-panel-container,
+          .game-panel-container {
+            bottom: calc(100% * 4 / 24);
           }
         `}</style>
       </div>
@@ -332,26 +312,26 @@ class FlatrisGame extends React.Component {
 }
 
 FlatrisGame.propTypes = {
-  gameState: PropTypes.oneOf([STOPPED, PLAYING, PAUSED]).isRequired,
-  score: PropTypes.number.isRequired,
-  lines: PropTypes.number.isRequired,
-  nextTetromino: PropTypes.string,
-  grid: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.array)),
-  activeTetromino: PropTypes.string,
-  activeTetrominoGrid: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)),
-  activeTetrominoPosition: PropTypes.shape({
-    x: PropTypes.number,
-    y: PropTypes.number
+  gameState: oneOf([STOPPED, PLAYING, PAUSED]).isRequired,
+  score: number.isRequired,
+  lines: number.isRequired,
+  nextTetromino: string,
+  grid: arrayOf(arrayOf(array)),
+  activeTetromino: string,
+  activeTetrominoGrid: arrayOf(arrayOf(number)),
+  activeTetrominoPosition: shape({
+    x: number,
+    y: number
   }),
-  onLoad: PropTypes.func.isRequired,
-  onStart: PropTypes.func.isRequired,
-  onPause: PropTypes.func.isRequired,
-  onResume: PropTypes.func.isRequired,
-  onMoveLeft: PropTypes.func.isRequired,
-  onMoveRight: PropTypes.func.isRequired,
-  onRotate: PropTypes.func.isRequired,
-  onEnableAcceleration: PropTypes.func.isRequired,
-  onDisableAcceleration: PropTypes.func.isRequired
+  onLoad: func.isRequired,
+  onStart: func.isRequired,
+  onPause: func.isRequired,
+  onResume: func.isRequired,
+  onMoveLeft: func.isRequired,
+  onMoveRight: func.isRequired,
+  onRotate: func.isRequired,
+  onEnableAcceleration: func.isRequired,
+  onDisableAcceleration: func.isRequired
 };
 
 FlatrisGame.defaultProps = {
@@ -362,62 +342,20 @@ FlatrisGame.defaultProps = {
   activeTetrominoPosition: null
 };
 
-const { round } = Math;
+const mapStateToProps = ({ game }) => ({
+  ...game
+});
 
-const getControlIconStyle = ({ size }) => {
-  const iconSize = round(size * 0.8);
-  const padding = round((size - iconSize) / 2);
-
-  return {
-    marginTop: padding,
-    width: iconSize,
-    height: iconSize
-  };
+const mapDispatchToProps = {
+  onLoad: load,
+  onStart: start,
+  onPause: pause,
+  onResume: resume,
+  onMoveLeft: moveLeft,
+  onMoveRight: moveRight,
+  onRotate: rotate,
+  onEnableAcceleration: enableAcceleration,
+  onDisableAcceleration: disableAcceleration
 };
-
-const getStyles = ({ fontSize, root, well, side, controls }) => ({
-  root: {
-    width: root.width,
-    height: root.height,
-    fontSize: fontSize.default
-  },
-  well,
-  controls: {
-    top: well.height,
-    width: well.width,
-    height: controls.size,
-    marginTop: controls.padding
-  },
-  control: {
-    width: controls.size,
-    height: controls.size,
-    fontSize: fontSize.control,
-    lineHeight: `${controls.size}px`
-  },
-  controlIcon: getControlIconStyle(controls),
-  infoPanel: well,
-  gamePanel: {
-    width: side.width,
-    height: side.height,
-    left: well.width
-  }
-});
-
-const mapStateToProps = ({ game, layout }) => ({
-  ...game,
-  styles: getStyles(layout)
-});
-
-const mapDispatchToProps = dispatch => ({
-  onLoad: () => dispatch(load()),
-  onStart: () => dispatch(start()),
-  onPause: () => dispatch(pause()),
-  onResume: () => dispatch(resume()),
-  onMoveLeft: () => dispatch(moveLeft()),
-  onMoveRight: () => dispatch(moveRight()),
-  onRotate: () => dispatch(rotate()),
-  onEnableAcceleration: () => dispatch(enableAcceleration()),
-  onDisableAcceleration: () => dispatch(disableAcceleration())
-});
 
 export default connect(mapStateToProps, mapDispatchToProps)(FlatrisGame);

@@ -5,6 +5,9 @@ export default ({ children, ...rest }) => (
     {children}
     <style jsx>{`
       .button {
+        position: absolute;
+        width: 100%;
+        height: 100%;
         display: block;
         margin: 0;
         padding: 0;

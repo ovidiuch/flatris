@@ -1,12 +1,11 @@
 import React from 'react';
-import { connect } from 'react-redux';
 
 /**
  * Information panel for the Flatris game/Cosmos demo, shown in between game
  * states.
  */
-const InfoPanel = ({ styles }) => (
-  <div className="info-panel" style={styles.root}>
+const InfoPanel = () => (
+  <div className="info-panel">
     <p>
       <a href="https://github.com/skidding/flatris">Flatris</a> is a
       mobile-friendly implementation of Tetris, built using React & Redux.
@@ -28,6 +27,7 @@ const InfoPanel = ({ styles }) => (
     </p>
     <style jsx>{`
       .info-panel {
+        font-size: 1em;
         color: #34495f;
       }
 
@@ -49,12 +49,4 @@ const InfoPanel = ({ styles }) => (
   </div>
 );
 
-const getStyles = ({ fontSize }) => ({
-  root: {
-    fontSize: fontSize.text
-  }
-});
-
-export default connect(({ layout }) => ({
-  styles: getStyles(layout)
-}))(InfoPanel);
+export default InfoPanel;

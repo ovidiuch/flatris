@@ -1,6 +1,6 @@
 import React from 'react';
 import withRedux from 'next-redux-wrapper';
-import { initStore } from '../store';
+import { createStore } from '../store';
 import Layout from '../components/Layout';
 import FlatrisGame from '../components/FlatrisGame';
 
@@ -10,4 +10,4 @@ const DefaultPage = () => (
   </Layout>
 );
 
-export default withRedux(initStore)(DefaultPage);
+export default withRedux(createStore)(DefaultPage);

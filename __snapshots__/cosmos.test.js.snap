@@ -2,7 +2,7 @@
 
 exports[`Button:hello-world 1`] = `
 <button
-  className="jsx-2805778865 button"
+  className="jsx-1799409735 button"
 >
   Hello world!
 </button>
@@ -10,23 +10,10 @@ exports[`Button:hello-world 1`] = `
 
 exports[`Connect(FlatrisGame):hallelujah 1`] = `
 <div
-  className="jsx-2661707907 flatris-game"
-  style={
-    Object {
-      "fontSize": 15,
-      "height": 770,
-      "width": 528,
-    }
-  }
+  className="jsx-4118570470 flatris-game"
 >
   <div
-    className="jsx-2661707907 well-container"
-    style={
-      Object {
-        "height": 660,
-        "width": 330,
-      }
-    }
+    className="jsx-4118570470 well-container"
   >
     <div
       className="jsx-2881654396 well"
@@ -2046,96 +2033,43 @@ exports[`Connect(FlatrisGame):hallelujah 1`] = `
     </div>
   </div>
   <div
-    className="jsx-2661707907 game-panel-container"
-    style={
-      Object {
-        "height": 660,
-        "left": 330,
-        "width": 198,
-      }
-    }
+    className="jsx-4118570470 game-panel-container"
   >
     <div
-      className="jsx-1032822957 game-panel"
-      style={
-        Object {
-          "padding": "0 33px",
-        }
-      }
+      className="jsx-1095581809 game-panel"
     >
-      <p
-        className="jsx-1032822957 title"
-        style={
-          Object {
-            "fontSize": 44,
-            "paddingTop": 33,
-          }
-        }
+      <div
+        className="jsx-1095581809 title"
       >
         Flatris
-      </p>
-      <p
-        className="jsx-1032822957 label"
-        style={
-          Object {
-            "fontSize": 15,
-            "paddingTop": 33,
-          }
-        }
+      </div>
+      <div
+        className="jsx-1095581809 label score-label"
       >
         Score
-      </p>
-      <p
-        className="jsx-1032822957 count"
-        style={
-          Object {
-            "fontSize": 33,
-          }
-        }
+      </div>
+      <div
+        className="jsx-1095581809 count score-count"
       >
         184
-      </p>
-      <p
-        className="jsx-1032822957 label"
-        style={
-          Object {
-            "fontSize": 15,
-            "paddingTop": 33,
-          }
-        }
+      </div>
+      <div
+        className="jsx-1095581809 label lines-label"
       >
         Lines Cleared
-      </p>
-      <p
-        className="jsx-1032822957 count"
-        style={
-          Object {
-            "fontSize": 33,
-          }
-        }
+      </div>
+      <div
+        className="jsx-1095581809 count lines-count"
       >
         0
-      </p>
-      <p
-        className="jsx-1032822957 label"
-        style={
-          Object {
-            "fontSize": 15,
-            "paddingTop": 33,
-          }
-        }
+      </div>
+      <div
+        className="jsx-1095581809 label next-label"
       >
         Next Shape
-      </p>
+      </div>
       <div
-        className="jsx-1032822957 next-tetromino next-tetromino-S"
-        style={
-          Object {
-            "height": 132,
-            "marginTop": 11,
-            "width": 132,
-          }
-        }
+        className="jsx-1095581809 next-tetromino next-tetromino-S"
       >
         <div
           className="jsx-2115617632 tetromino"
@@ -2214,167 +2148,96 @@ exports[`Connect(FlatrisGame):hallelujah 1`] = `
           </div>
         </div>
       </div>
-      <button
-        className="jsx-2805778865 button"
-        onMouseDown={[Function]}
-        style={
-          Object {
-            "bottom": 33,
-            "fontSize": 20,
-            "height": 66,
-            "left": 33,
-            "lineHeight": "66px",
-            "width": 132,
-          }
-        }
+      <div
+        className="jsx-1095581809 game-button"
       >
-        Pause
-      </button>
+        <button
+          className="jsx-1799409735 button"
+          onMouseDown={[Function]}
+        >
+          Pause
+        </button>
+      </div>
     </div>
   </div>
   <div
-    className="jsx-3917327508 controls"
-    style={
-      Object {
-        "height": 66,
-        "marginTop": 22,
-        "top": 660,
-        "width": 330,
-      }
-    }
+    className="jsx-4129571554 controls"
   >
-    <button
-      className="jsx-2805778865 button"
-      onMouseDown={[Function]}
-      style={
-        Object {
-          "fontSize": 26,
-          "height": 66,
-          "lineHeight": "66px",
-          "width": 66,
-        }
-      }
+    <div
+      className="jsx-4129571554 button"
     >
-      <svg
-        style={
-          Object {
-            "height": 53,
-            "marginTop": 7,
-            "width": 53,
-          }
-        }
-        viewBox="0 0 24 24"
+      <button
+        className="jsx-1799409735 button"
+        onMouseDown={[Function]}
       >
-        <path
-          d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"
-        />
-      </svg>
-    </button>
-    <button
-      className="jsx-2805778865 button"
-      onMouseDown={[Function]}
-      style={
-        Object {
-          "fontSize": 26,
-          "height": 66,
-          "lineHeight": "66px",
-          "width": 66,
-        }
-      }
+        <svg
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      className="jsx-4129571554 button"
     >
-      <svg
-        style={
-          Object {
-            "height": 53,
-            "marginTop": 7,
-            "width": 53,
-          }
-        }
-        viewBox="0 0 24 24"
+      <button
+        className="jsx-1799409735 button"
+        onMouseDown={[Function]}
       >
-        <path
-          d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
-        />
-      </svg>
-    </button>
-    <button
-      className="jsx-2805778865 button"
-      onMouseDown={[Function]}
-      style={
-        Object {
-          "fontSize": 26,
-          "height": 66,
-          "lineHeight": "66px",
-          "width": 66,
-        }
-      }
+        <svg
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      className="jsx-4129571554 button"
     >
-      <svg
-        style={
-          Object {
-            "height": 53,
-            "marginTop": 7,
-            "width": 53,
-          }
-        }
-        viewBox="0 0 24 24"
+      <button
+        className="jsx-1799409735 button"
+        onMouseDown={[Function]}
       >
-        <path
-          d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
-        />
-      </svg>
-    </button>
-    <button
-      className="jsx-2805778865 button"
-      onMouseDown={[Function]}
-      onMouseUp={[Function]}
-      style={
-        Object {
-          "fontSize": 26,
-          "height": 66,
-          "lineHeight": "66px",
-          "width": 66,
-        }
-      }
+        <svg
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      className="jsx-4129571554 button"
     >
-      <svg
-        style={
-          Object {
-            "height": 53,
-            "marginTop": 7,
-            "width": 53,
-          }
-        }
-        viewBox="0 0 24 24"
+      <button
+        className="jsx-1799409735 button"
+        onMouseDown={[Function]}
+        onMouseUp={[Function]}
       >
-        <path
-          d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
-        />
-      </svg>
-    </button>
+        <svg
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
+          />
+        </svg>
+      </button>
+    </div>
   </div>
 </div>
 `;
 
 exports[`Connect(FlatrisGame):mission-impossible 1`] = `
 <div
-  className="jsx-2661707907 flatris-game"
-  style={
-    Object {
-      "fontSize": 15,
-      "height": 770,
-      "width": 528,
-    }
-  }
+  className="jsx-4118570470 flatris-game"
 >
   <div
-    className="jsx-2661707907 well-container"
-    style={
-      Object {
-        "height": 660,
-        "width": 330,
-      }
-    }
+    className="jsx-4118570470 well-container"
   >
     <div
       className="jsx-2881654396 well"
@@ -4834,27 +4697,16 @@ exports[`Connect(FlatrisGame):mission-impossible 1`] = `
     </div>
   </div>
   <div
-    className="jsx-1211458885 info-panel-container"
-    style={
-      Object {
-        "height": 660,
-        "width": 330,
-      }
-    }
+    className="jsx-4118570470 info-panel-container"
   >
     <div
-      className="jsx-1947158901 info-panel"
-      style={
-        Object {
-          "fontSize": 22,
-        }
-      }
+      className="jsx-3274946734 info-panel"
     >
       <p
-        className="jsx-1947158901"
+        className="jsx-3274946734"
       >
         <a
-          className="jsx-1947158901"
+          className="jsx-3274946734"
           href="https://github.com/skidding/flatris"
         >
           Flatris
@@ -4862,17 +4714,17 @@ exports[`Connect(FlatrisGame):mission-impossible 1`] = `
          is a mobile-friendly implementation of Tetris, built using React & Redux.
       </p>
       <p
-        className="jsx-1947158901"
+        className="jsx-3274946734"
       >
         Use the arrow keys or buttons below to play.
       </p>
       <p
-        className="jsx-1947158901"
+        className="jsx-3274946734"
       >
         The game state is preserved between visits, so you can safely kill this tab when your employer is approaching and resume afterwards–including
          
         <a
-          className="jsx-1947158901"
+          className="jsx-3274946734"
           href="http://caniuse.com/#feat=serviceworkers"
         >
           offline
@@ -4880,12 +4732,12 @@ exports[`Connect(FlatrisGame):mission-impossible 1`] = `
         !
       </p>
       <p
-        className="jsx-1947158901"
+        className="jsx-3274946734"
       >
         Check out the
          
         <a
-          className="jsx-1947158901"
+          className="jsx-3274946734"
           href="https://github.com/skidding/flatris"
         >
           source code
@@ -4893,11 +4745,11 @@ exports[`Connect(FlatrisGame):mission-impossible 1`] = `
          when you're done playing.
       </p>
       <p
-        className="jsx-1947158901"
+        className="jsx-3274946734"
       >
         Built by 
         <a
-          className="jsx-1947158901"
+          className="jsx-3274946734"
           href="https://twitter.com/skidding"
         >
           @skidding
@@ -4907,96 +4759,43 @@ exports[`Connect(FlatrisGame):mission-impossible 1`] = `
     </div>
   </div>
   <div
-    className="jsx-2661707907 game-panel-container"
-    style={
-      Object {
-        "height": 660,
-        "left": 330,
-        "width": 198,
-      }
-    }
+    className="jsx-4118570470 game-panel-container"
   >
     <div
-      className="jsx-1032822957 game-panel"
-      style={
-        Object {
-          "padding": "0 33px",
-        }
-      }
+      className="jsx-1095581809 game-panel"
     >
-      <p
-        className="jsx-1032822957 title"
-        style={
-          Object {
-            "fontSize": 44,
-            "paddingTop": 33,
-          }
-        }
+      <div
+        className="jsx-1095581809 title"
       >
         Flatris
-      </p>
-      <p
-        className="jsx-1032822957 label"
-        style={
-          Object {
-            "fontSize": 15,
-            "paddingTop": 33,
-          }
-        }
+      </div>
+      <div
+        className="jsx-1095581809 label score-label"
       >
         Score
-      </p>
-      <p
-        className="jsx-1032822957 count"
-        style={
-          Object {
-            "fontSize": 33,
-          }
-        }
+      </div>
+      <div
+        className="jsx-1095581809 count score-count"
       >
         352
-      </p>
-      <p
-        className="jsx-1032822957 label"
-        style={
-          Object {
-            "fontSize": 15,
-            "paddingTop": 33,
-          }
-        }
+      </div>
+      <div
+        className="jsx-1095581809 label lines-label"
       >
         Lines Cleared
-      </p>
-      <p
-        className="jsx-1032822957 count"
-        style={
-          Object {
-            "fontSize": 33,
-          }
-        }
+      </div>
+      <div
+        className="jsx-1095581809 count lines-count"
       >
         1
-      </p>
-      <p
-        className="jsx-1032822957 label"
-        style={
-          Object {
-            "fontSize": 15,
-            "paddingTop": 33,
-          }
-        }
+      </div>
+      <div
+        className="jsx-1095581809 label next-label"
       >
         Next Shape
-      </p>
+      </div>
       <div
-        className="jsx-1032822957 next-tetromino next-tetromino-S"
-        style={
-          Object {
-            "height": 132,
-            "marginTop": 11,
-            "width": 132,
-          }
-        }
+        className="jsx-1095581809 next-tetromino next-tetromino-S"
       >
         <div
           className="jsx-2115617632 tetromino"
@@ -5075,181 +4874,105 @@ exports[`Connect(FlatrisGame):mission-impossible 1`] = `
           </div>
         </div>
       </div>
-      <button
-        className="jsx-2805778865 button"
-        onMouseDown={[Function]}
-        style={
-          Object {
-            "bottom": 33,
-            "fontSize": 20,
-            "height": 66,
-            "left": 33,
-            "lineHeight": "66px",
-            "width": 132,
-          }
-        }
+      <div
+        className="jsx-1095581809 game-button"
       >
-        Resume
-      </button>
+        <button
+          className="jsx-1799409735 button"
+          onMouseDown={[Function]}
+        >
+          Resume
+        </button>
+      </div>
     </div>
   </div>
   <div
-    className="jsx-3917327508 controls"
-    style={
-      Object {
-        "height": 66,
-        "marginTop": 22,
-        "top": 660,
-        "width": 330,
-      }
-    }
+    className="jsx-4129571554 controls"
   >
-    <button
-      className="jsx-2805778865 button"
-      onMouseDown={[Function]}
-      style={
-        Object {
-          "fontSize": 26,
-          "height": 66,
-          "lineHeight": "66px",
-          "width": 66,
-        }
-      }
+    <div
+      className="jsx-4129571554 button"
     >
-      <svg
-        style={
-          Object {
-            "height": 53,
-            "marginTop": 7,
-            "width": 53,
-          }
-        }
-        viewBox="0 0 24 24"
+      <button
+        className="jsx-1799409735 button"
+        onMouseDown={[Function]}
       >
-        <path
-          d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"
-        />
-      </svg>
-    </button>
-    <button
-      className="jsx-2805778865 button"
-      onMouseDown={[Function]}
-      style={
-        Object {
-          "fontSize": 26,
-          "height": 66,
-          "lineHeight": "66px",
-          "width": 66,
-        }
-      }
+        <svg
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      className="jsx-4129571554 button"
     >
-      <svg
-        style={
-          Object {
-            "height": 53,
-            "marginTop": 7,
-            "width": 53,
-          }
-        }
-        viewBox="0 0 24 24"
+      <button
+        className="jsx-1799409735 button"
+        onMouseDown={[Function]}
       >
-        <path
-          d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
-        />
-      </svg>
-    </button>
-    <button
-      className="jsx-2805778865 button"
-      onMouseDown={[Function]}
-      style={
-        Object {
-          "fontSize": 26,
-          "height": 66,
-          "lineHeight": "66px",
-          "width": 66,
-        }
-      }
+        <svg
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      className="jsx-4129571554 button"
     >
-      <svg
-        style={
-          Object {
-            "height": 53,
-            "marginTop": 7,
-            "width": 53,
-          }
-        }
-        viewBox="0 0 24 24"
+      <button
+        className="jsx-1799409735 button"
+        onMouseDown={[Function]}
       >
-        <path
-          d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
-        />
-      </svg>
-    </button>
-    <button
-      className="jsx-2805778865 button"
-      onMouseDown={[Function]}
-      onMouseUp={[Function]}
-      style={
-        Object {
-          "fontSize": 26,
-          "height": 66,
-          "lineHeight": "66px",
-          "width": 66,
-        }
-      }
+        <svg
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      className="jsx-4129571554 button"
     >
-      <svg
-        style={
-          Object {
-            "height": 53,
-            "marginTop": 7,
-            "width": 53,
-          }
-        }
-        viewBox="0 0 24 24"
+      <button
+        className="jsx-1799409735 button"
+        onMouseDown={[Function]}
+        onMouseUp={[Function]}
       >
-        <path
-          d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
-        />
-      </svg>
-    </button>
+        <svg
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
+          />
+        </svg>
+      </button>
+    </div>
   </div>
 </div>
 `;
 
 exports[`Connect(FlatrisGame):new-game 1`] = `
 <div
-  className="jsx-2661707907 flatris-game"
-  style={
-    Object {
-      "fontSize": 15,
-      "height": 770,
-      "width": 528,
-    }
-  }
+  className="jsx-4118570470 flatris-game"
 >
   <div
-    className="jsx-1211458885 info-panel-container"
-    style={
-      Object {
-        "height": 660,
-        "width": 330,
-      }
-    }
+    className="jsx-4118570470 info-panel-container"
   >
     <div
-      className="jsx-1947158901 info-panel"
-      style={
-        Object {
-          "fontSize": 22,
-        }
-      }
+      className="jsx-3274946734 info-panel"
     >
       <p
-        className="jsx-1947158901"
+        className="jsx-3274946734"
       >
         <a
-          className="jsx-1947158901"
+          className="jsx-3274946734"
           href="https://github.com/skidding/flatris"
         >
           Flatris
@@ -5257,17 +4980,17 @@ exports[`Connect(FlatrisGame):new-game 1`] = `
          is a mobile-friendly implementation of Tetris, built using React & Redux.
       </p>
       <p
-        className="jsx-1947158901"
+        className="jsx-3274946734"
       >
         Use the arrow keys or buttons below to play.
       </p>
       <p
-        className="jsx-1947158901"
+        className="jsx-3274946734"
       >
         The game state is preserved between visits, so you can safely kill this tab when your employer is approaching and resume afterwards–including
          
         <a
-          className="jsx-1947158901"
+          className="jsx-3274946734"
           href="http://caniuse.com/#feat=serviceworkers"
         >
           offline
@@ -5275,12 +4998,12 @@ exports[`Connect(FlatrisGame):new-game 1`] = `
         !
       </p>
       <p
-        className="jsx-1947158901"
+        className="jsx-3274946734"
       >
         Check out the
          
         <a
-          className="jsx-1947158901"
+          className="jsx-3274946734"
           href="https://github.com/skidding/flatris"
         >
           source code
@@ -5288,11 +5011,11 @@ exports[`Connect(FlatrisGame):new-game 1`] = `
          when you're done playing.
       </p>
       <p
-        className="jsx-1947158901"
+        className="jsx-3274946734"
       >
         Built by 
         <a
-          className="jsx-1947158901"
+          className="jsx-3274946734"
           href="https://twitter.com/skidding"
         >
           @skidding
@@ -5302,258 +5025,134 @@ exports[`Connect(FlatrisGame):new-game 1`] = `
     </div>
   </div>
   <div
-    className="jsx-2661707907 game-panel-container"
-    style={
-      Object {
-        "height": 660,
-        "left": 330,
-        "width": 198,
-      }
-    }
+    className="jsx-4118570470 game-panel-container"
   >
     <div
-      className="jsx-1032822957 game-panel"
-      style={
-        Object {
-          "padding": "0 33px",
-        }
-      }
+      className="jsx-1095581809 game-panel"
     >
-      <p
-        className="jsx-1032822957 title"
-        style={
-          Object {
-            "fontSize": 44,
-            "paddingTop": 33,
-          }
-        }
+      <div
+        className="jsx-1095581809 title"
       >
         Flatris
-      </p>
-      <p
-        className="jsx-1032822957 label"
-        style={
-          Object {
-            "fontSize": 15,
-            "paddingTop": 33,
-          }
-        }
+      </div>
+      <div
+        className="jsx-1095581809 label score-label"
       >
         Score
-      </p>
-      <p
-        className="jsx-1032822957 count"
-        style={
-          Object {
-            "fontSize": 33,
-          }
-        }
+      </div>
+      <div
+        className="jsx-1095581809 count score-count"
       >
         0
-      </p>
-      <p
-        className="jsx-1032822957 label"
-        style={
-          Object {
-            "fontSize": 15,
-            "paddingTop": 33,
-          }
-        }
+      </div>
+      <div
+        className="jsx-1095581809 label lines-label"
       >
         Lines Cleared
-      </p>
-      <p
-        className="jsx-1032822957 count"
-        style={
-          Object {
-            "fontSize": 33,
-          }
-        }
+      </div>
+      <div
+        className="jsx-1095581809 count lines-count"
       >
         0
-      </p>
-      <p
-        className="jsx-1032822957 label"
-        style={
-          Object {
-            "fontSize": 15,
-            "paddingTop": 33,
-          }
-        }
+      </div>
+      <div
+        className="jsx-1095581809 label next-label"
       >
         Next Shape
-      </p>
+      </div>
       <div
-        className="jsx-1032822957 next-tetromino"
-        style={
-          Object {
-            "height": 132,
-            "marginTop": 11,
-            "width": 132,
-          }
-        }
+        className="jsx-1095581809 next-tetromino"
       />
-      <button
-        className="jsx-2805778865 button"
-        onMouseDown={[Function]}
-        style={
-          Object {
-            "bottom": 33,
-            "fontSize": 20,
-            "height": 66,
-            "left": 33,
-            "lineHeight": "66px",
-            "width": 132,
-          }
-        }
+      <div
+        className="jsx-1095581809 game-button"
       >
-        New game
-      </button>
+        <button
+          className="jsx-1799409735 button"
+          onMouseDown={[Function]}
+        >
+          New game
+        </button>
+      </div>
     </div>
   </div>
   <div
-    className="jsx-3917327508 controls"
-    style={
-      Object {
-        "height": 66,
-        "marginTop": 22,
-        "top": 660,
-        "width": 330,
-      }
-    }
+    className="jsx-4129571554 controls"
   >
-    <button
-      className="jsx-2805778865 button"
-      onMouseDown={[Function]}
-      style={
-        Object {
-          "fontSize": 26,
-          "height": 66,
-          "lineHeight": "66px",
-          "width": 66,
-        }
-      }
+    <div
+      className="jsx-4129571554 button"
     >
-      <svg
-        style={
-          Object {
-            "height": 53,
-            "marginTop": 7,
-            "width": 53,
-          }
-        }
-        viewBox="0 0 24 24"
+      <button
+        className="jsx-1799409735 button"
+        onMouseDown={[Function]}
       >
-        <path
-          d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"
-        />
-      </svg>
-    </button>
-    <button
-      className="jsx-2805778865 button"
-      onMouseDown={[Function]}
-      style={
-        Object {
-          "fontSize": 26,
-          "height": 66,
-          "lineHeight": "66px",
-          "width": 66,
-        }
-      }
+        <svg
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      className="jsx-4129571554 button"
     >
-      <svg
-        style={
-          Object {
-            "height": 53,
-            "marginTop": 7,
-            "width": 53,
-          }
-        }
-        viewBox="0 0 24 24"
+      <button
+        className="jsx-1799409735 button"
+        onMouseDown={[Function]}
       >
-        <path
-          d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
-        />
-      </svg>
-    </button>
-    <button
-      className="jsx-2805778865 button"
-      onMouseDown={[Function]}
-      style={
-        Object {
-          "fontSize": 26,
-          "height": 66,
-          "lineHeight": "66px",
-          "width": 66,
-        }
-      }
+        <svg
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      className="jsx-4129571554 button"
     >
-      <svg
-        style={
-          Object {
-            "height": 53,
-            "marginTop": 7,
-            "width": 53,
-          }
-        }
-        viewBox="0 0 24 24"
+      <button
+        className="jsx-1799409735 button"
+        onMouseDown={[Function]}
       >
-        <path
-          d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
-        />
-      </svg>
-    </button>
-    <button
-      className="jsx-2805778865 button"
-      onMouseDown={[Function]}
-      onMouseUp={[Function]}
-      style={
-        Object {
-          "fontSize": 26,
-          "height": 66,
-          "lineHeight": "66px",
-          "width": 66,
-        }
-      }
+        <svg
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      className="jsx-4129571554 button"
     >
-      <svg
-        style={
-          Object {
-            "height": 53,
-            "marginTop": 7,
-            "width": 53,
-          }
-        }
-        viewBox="0 0 24 24"
+      <button
+        className="jsx-1799409735 button"
+        onMouseDown={[Function]}
+        onMouseUp={[Function]}
       >
-        <path
-          d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
-        />
-      </svg>
-    </button>
+        <svg
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
+          />
+        </svg>
+      </button>
+    </div>
   </div>
 </div>
 `;
 
 exports[`Connect(FlatrisGame):new-game-running 1`] = `
 <div
-  className="jsx-2661707907 flatris-game"
-  style={
-    Object {
-      "fontSize": 15,
-      "height": 770,
-      "width": 528,
-    }
-  }
+  className="jsx-4118570470 flatris-game"
 >
   <div
-    className="jsx-2661707907 well-container"
-    style={
-      Object {
-        "height": 660,
-        "width": 330,
-      }
-    }
+    className="jsx-4118570470 well-container"
   >
     <div
       className="jsx-2881654396 well"
@@ -5652,96 +5251,43 @@ exports[`Connect(FlatrisGame):new-game-running 1`] = `
     </div>
   </div>
   <div
-    className="jsx-2661707907 game-panel-container"
-    style={
-      Object {
-        "height": 660,
-        "left": 330,
-        "width": 198,
-      }
-    }
+    className="jsx-4118570470 game-panel-container"
   >
     <div
-      className="jsx-1032822957 game-panel"
-      style={
-        Object {
-          "padding": "0 33px",
-        }
-      }
+      className="jsx-1095581809 game-panel"
     >
-      <p
-        className="jsx-1032822957 title"
-        style={
-          Object {
-            "fontSize": 44,
-            "paddingTop": 33,
-          }
-        }
+      <div
+        className="jsx-1095581809 title"
       >
         Flatris
-      </p>
-      <p
-        className="jsx-1032822957 label"
-        style={
-          Object {
-            "fontSize": 15,
-            "paddingTop": 33,
-          }
-        }
+      </div>
+      <div
+        className="jsx-1095581809 label score-label"
       >
         Score
-      </p>
-      <p
-        className="jsx-1032822957 count"
-        style={
-          Object {
-            "fontSize": 33,
-          }
-        }
+      </div>
+      <div
+        className="jsx-1095581809 count score-count"
       >
         0
-      </p>
-      <p
-        className="jsx-1032822957 label"
-        style={
-          Object {
-            "fontSize": 15,
-            "paddingTop": 33,
-          }
-        }
+      </div>
+      <div
+        className="jsx-1095581809 label lines-label"
       >
         Lines Cleared
-      </p>
-      <p
-        className="jsx-1032822957 count"
-        style={
-          Object {
-            "fontSize": 33,
-          }
-        }
+      </div>
+      <div
+        className="jsx-1095581809 count lines-count"
       >
         0
-      </p>
-      <p
-        className="jsx-1032822957 label"
-        style={
-          Object {
-            "fontSize": 15,
-            "paddingTop": 33,
-          }
-        }
+      </div>
+      <div
+        className="jsx-1095581809 label next-label"
       >
         Next Shape
-      </p>
+      </div>
       <div
-        className="jsx-1032822957 next-tetromino next-tetromino-I"
-        style={
-          Object {
-            "height": 132,
-            "marginTop": 11,
-            "width": 132,
-          }
-        }
+        className="jsx-1095581809 next-tetromino next-tetromino-I"
       >
         <div
           className="jsx-2115617632 tetromino"
@@ -5820,230 +5366,126 @@ exports[`Connect(FlatrisGame):new-game-running 1`] = `
           </div>
         </div>
       </div>
-      <button
-        className="jsx-2805778865 button"
-        onMouseDown={[Function]}
-        style={
-          Object {
-            "bottom": 33,
-            "fontSize": 20,
-            "height": 66,
-            "left": 33,
-            "lineHeight": "66px",
-            "width": 132,
-          }
-        }
+      <div
+        className="jsx-1095581809 game-button"
       >
-        Pause
-      </button>
+        <button
+          className="jsx-1799409735 button"
+          onMouseDown={[Function]}
+        >
+          Pause
+        </button>
+      </div>
     </div>
   </div>
   <div
-    className="jsx-3917327508 controls"
-    style={
-      Object {
-        "height": 66,
-        "marginTop": 22,
-        "top": 660,
-        "width": 330,
-      }
-    }
+    className="jsx-4129571554 controls"
   >
-    <button
-      className="jsx-2805778865 button"
-      onMouseDown={[Function]}
-      style={
-        Object {
-          "fontSize": 26,
-          "height": 66,
-          "lineHeight": "66px",
-          "width": 66,
-        }
-      }
+    <div
+      className="jsx-4129571554 button"
     >
-      <svg
-        style={
-          Object {
-            "height": 53,
-            "marginTop": 7,
-            "width": 53,
-          }
-        }
-        viewBox="0 0 24 24"
+      <button
+        className="jsx-1799409735 button"
+        onMouseDown={[Function]}
       >
-        <path
-          d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"
-        />
-      </svg>
-    </button>
-    <button
-      className="jsx-2805778865 button"
-      onMouseDown={[Function]}
-      style={
-        Object {
-          "fontSize": 26,
-          "height": 66,
-          "lineHeight": "66px",
-          "width": 66,
-        }
-      }
+        <svg
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      className="jsx-4129571554 button"
     >
-      <svg
-        style={
-          Object {
-            "height": 53,
-            "marginTop": 7,
-            "width": 53,
-          }
-        }
-        viewBox="0 0 24 24"
+      <button
+        className="jsx-1799409735 button"
+        onMouseDown={[Function]}
       >
-        <path
-          d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
-        />
-      </svg>
-    </button>
-    <button
-      className="jsx-2805778865 button"
-      onMouseDown={[Function]}
-      style={
-        Object {
-          "fontSize": 26,
-          "height": 66,
-          "lineHeight": "66px",
-          "width": 66,
-        }
-      }
+        <svg
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      className="jsx-4129571554 button"
     >
-      <svg
-        style={
-          Object {
-            "height": 53,
-            "marginTop": 7,
-            "width": 53,
-          }
-        }
-        viewBox="0 0 24 24"
+      <button
+        className="jsx-1799409735 button"
+        onMouseDown={[Function]}
       >
-        <path
-          d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
-        />
-      </svg>
-    </button>
-    <button
-      className="jsx-2805778865 button"
-      onMouseDown={[Function]}
-      onMouseUp={[Function]}
-      style={
-        Object {
-          "fontSize": 26,
-          "height": 66,
-          "lineHeight": "66px",
-          "width": 66,
-        }
-      }
+        <svg
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      className="jsx-4129571554 button"
     >
-      <svg
-        style={
-          Object {
-            "height": 53,
-            "marginTop": 7,
-            "width": 53,
-          }
-        }
-        viewBox="0 0 24 24"
+      <button
+        className="jsx-1799409735 button"
+        onMouseDown={[Function]}
+        onMouseUp={[Function]}
       >
-        <path
-          d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
-        />
-      </svg>
-    </button>
+        <svg
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
+          />
+        </svg>
+      </button>
+    </div>
   </div>
 </div>
 `;
 
-exports[`Connect(GamePanel):on-paused-game 1`] = `
+exports[`GamePanel:on-paused-game 1`] = `
 <div
-  className="jsx-1032822957 game-panel"
-  style={
-    Object {
-      "padding": "0 33px",
-    }
-  }
+  className="jsx-1095581809 game-panel"
 >
-  <p
-    className="jsx-1032822957 title"
-    style={
-      Object {
-        "fontSize": 44,
-        "paddingTop": 33,
-      }
-    }
+  <div
+    className="jsx-1095581809 title"
   >
     Flatris
-  </p>
-  <p
-    className="jsx-1032822957 label"
-    style={
-      Object {
-        "fontSize": 15,
-        "paddingTop": 33,
-      }
-    }
+  </div>
+  <div
+    className="jsx-1095581809 label score-label"
   >
     Score
-  </p>
-  <p
-    className="jsx-1032822957 count"
-    style={
-      Object {
-        "fontSize": 33,
-      }
-    }
+  </div>
+  <div
+    className="jsx-1095581809 count score-count"
   >
     999
-  </p>
-  <p
-    className="jsx-1032822957 label"
-    style={
-      Object {
-        "fontSize": 15,
-        "paddingTop": 33,
-      }
-    }
+  </div>
+  <div
+    className="jsx-1095581809 label lines-label"
   >
     Lines Cleared
-  </p>
-  <p
-    className="jsx-1032822957 count"
-    style={
-      Object {
-        "fontSize": 33,
-      }
-    }
+  </div>
+  <div
+    className="jsx-1095581809 count lines-count"
   >
     123
-  </p>
-  <p
-    className="jsx-1032822957 label"
-    style={
-      Object {
-        "fontSize": 15,
-        "paddingTop": 33,
-      }
-    }
+  </div>
+  <div
+    className="jsx-1095581809 label next-label"
   >
     Next Shape
-  </p>
+  </div>
   <div
-    className="jsx-1032822957 next-tetromino next-tetromino-I"
-    style={
-      Object {
-        "height": 132,
-        "marginTop": 11,
-        "width": 132,
-      }
-    }
+    className="jsx-1095581809 next-tetromino next-tetromino-I"
   >
     <div
       className="jsx-2115617632 tetromino"
@@ -6122,107 +5564,55 @@ exports[`Connect(GamePanel):on-paused-game 1`] = `
       </div>
     </div>
   </div>
-  <button
-    className="jsx-2805778865 button"
-    onMouseDown={[Function]}
-    style={
-      Object {
-        "bottom": 33,
-        "fontSize": 20,
-        "height": 66,
-        "left": 33,
-        "lineHeight": "66px",
-        "width": 132,
-      }
-    }
+  <div
+    className="jsx-1095581809 game-button"
   >
-    Resume
-  </button>
+    <button
+      className="jsx-1799409735 button"
+      onMouseDown={[Function]}
+    >
+      Resume
+    </button>
+  </div>
 </div>
 `;
 
-exports[`Connect(GamePanel):on-playing-game 1`] = `
+exports[`GamePanel:on-playing-game 1`] = `
 <div
-  className="jsx-1032822957 game-panel"
-  style={
-    Object {
-      "padding": "0 33px",
-    }
-  }
+  className="jsx-1095581809 game-panel"
 >
-  <p
-    className="jsx-1032822957 title"
-    style={
-      Object {
-        "fontSize": 44,
-        "paddingTop": 33,
-      }
-    }
+  <div
+    className="jsx-1095581809 title"
   >
     Flatris
-  </p>
-  <p
-    className="jsx-1032822957 label"
-    style={
-      Object {
-        "fontSize": 15,
-        "paddingTop": 33,
-      }
-    }
+  </div>
+  <div
+    className="jsx-1095581809 label score-label"
   >
     Score
-  </p>
-  <p
-    className="jsx-1032822957 count"
-    style={
-      Object {
-        "fontSize": 33,
-      }
-    }
+  </div>
+  <div
+    className="jsx-1095581809 count score-count"
   >
     10
-  </p>
-  <p
-    className="jsx-1032822957 label"
-    style={
-      Object {
-        "fontSize": 15,
-        "paddingTop": 33,
-      }
-    }
+  </div>
+  <div
+    className="jsx-1095581809 label lines-label"
   >
     Lines Cleared
-  </p>
-  <p
-    className="jsx-1032822957 count"
-    style={
-      Object {
-        "fontSize": 33,
-      }
-    }
+  </div>
+  <div
+    className="jsx-1095581809 count lines-count"
   >
     0
-  </p>
-  <p
-    className="jsx-1032822957 label"
-    style={
-      Object {
-        "fontSize": 15,
-        "paddingTop": 33,
-      }
-    }
+  </div>
+  <div
+    className="jsx-1095581809 label next-label"
   >
     Next Shape
-  </p>
+  </div>
   <div
-    className="jsx-1032822957 next-tetromino next-tetromino-S"
-    style={
-      Object {
-        "height": 132,
-        "marginTop": 11,
-        "width": 132,
-      }
-    }
+    className="jsx-1095581809 next-tetromino next-tetromino-S"
   >
     <div
       className="jsx-2115617632 tetromino"
@@ -6301,141 +5691,369 @@ exports[`Connect(GamePanel):on-playing-game 1`] = `
       </div>
     </div>
   </div>
-  <button
-    className="jsx-2805778865 button"
-    onMouseDown={[Function]}
-    style={
-      Object {
-        "bottom": 33,
-        "fontSize": 20,
-        "height": 66,
-        "left": 33,
-        "lineHeight": "66px",
-        "width": 132,
-      }
-    }
+  <div
+    className="jsx-1095581809 game-button"
   >
-    Pause
-  </button>
+    <button
+      className="jsx-1799409735 button"
+      onMouseDown={[Function]}
+    >
+      Pause
+    </button>
+  </div>
 </div>
 `;
 
-exports[`Connect(GamePanel):on-stopped-game 1`] = `
+exports[`GamePanel:on-stopped-game 1`] = `
 <div
-  className="jsx-1032822957 game-panel"
-  style={
-    Object {
-      "padding": "0 33px",
-    }
-  }
+  className="jsx-1095581809 game-panel"
 >
-  <p
-    className="jsx-1032822957 title"
-    style={
-      Object {
-        "fontSize": 44,
-        "paddingTop": 33,
-      }
-    }
+  <div
+    className="jsx-1095581809 title"
   >
     Flatris
-  </p>
-  <p
-    className="jsx-1032822957 label"
-    style={
-      Object {
-        "fontSize": 15,
-        "paddingTop": 33,
-      }
-    }
+  </div>
+  <div
+    className="jsx-1095581809 label score-label"
   >
     Score
-  </p>
-  <p
-    className="jsx-1032822957 count"
-    style={
-      Object {
-        "fontSize": 33,
-      }
-    }
+  </div>
+  <div
+    className="jsx-1095581809 count score-count"
   >
     0
-  </p>
-  <p
-    className="jsx-1032822957 label"
-    style={
-      Object {
-        "fontSize": 15,
-        "paddingTop": 33,
-      }
-    }
+  </div>
+  <div
+    className="jsx-1095581809 label lines-label"
   >
     Lines Cleared
-  </p>
-  <p
-    className="jsx-1032822957 count"
-    style={
-      Object {
-        "fontSize": 33,
-      }
-    }
+  </div>
+  <div
+    className="jsx-1095581809 count lines-count"
   >
     0
-  </p>
-  <p
-    className="jsx-1032822957 label"
-    style={
-      Object {
-        "fontSize": 15,
-        "paddingTop": 33,
-      }
-    }
+  </div>
+  <div
+    className="jsx-1095581809 label next-label"
   >
     Next Shape
-  </p>
+  </div>
   <div
-    className="jsx-1032822957 next-tetromino"
-    style={
-      Object {
-        "height": 132,
-        "marginTop": 11,
-        "width": 132,
-      }
-    }
+    className="jsx-1095581809 next-tetromino"
   />
-  <button
-    className="jsx-2805778865 button"
-    onMouseDown={[Function]}
-    style={
-      Object {
-        "bottom": 33,
-        "fontSize": 20,
-        "height": 66,
-        "left": 33,
-        "lineHeight": "66px",
-        "width": 132,
-      }
-    }
+  <div
+    className="jsx-1095581809 game-button"
   >
-    New game
-  </button>
+    <button
+      className="jsx-1799409735 button"
+      onMouseDown={[Function]}
+    >
+      New game
+    </button>
+  </div>
 </div>
 `;
 
-exports[`Connect(InfoPanel):static-panel 1`] = `
+exports[`Grid:default 1`] = `
 <div
-  className="jsx-1947158901 info-panel"
-  style={
-    Object {
-      "fontSize": 22,
-    }
-  }
+  className="jsx-2043181861"
+>
+  <div
+    className="jsx-2043181861 grid"
+  >
+    <div
+      className="jsx-2043181861 item"
+    >
+      <div
+        className="jsx-2043181861 inner"
+      />
+    </div>
+    <div
+      className="jsx-2043181861 item"
+    >
+      <div
+        className="jsx-2043181861 inner"
+      />
+    </div>
+    <div
+      className="jsx-2043181861 item"
+    >
+      <div
+        className="jsx-2043181861 inner"
+      />
+    </div>
+    <div
+      className="jsx-2043181861 item"
+    >
+      <div
+        className="jsx-2043181861 inner"
+      />
+    </div>
+    <div
+      className="jsx-2043181861 item"
+    >
+      <div
+        className="jsx-2043181861 inner"
+      />
+    </div>
+    <div
+      className="jsx-2043181861 item"
+    >
+      <div
+        className="jsx-2043181861 inner"
+      />
+    </div>
+    <div
+      className="jsx-2043181861 item"
+    >
+      <div
+        className="jsx-2043181861 inner"
+      />
+    </div>
+    <div
+      className="jsx-2043181861 item"
+    >
+      <div
+        className="jsx-2043181861 inner"
+      />
+    </div>
+    <div
+      className="jsx-2043181861 item"
+    >
+      <div
+        className="jsx-2043181861 inner"
+      />
+    </div>
+    <div
+      className="jsx-2043181861 item"
+    >
+      <div
+        className="jsx-2043181861 inner"
+      />
+    </div>
+    <div
+      className="jsx-2043181861 item"
+    >
+      <div
+        className="jsx-2043181861 inner"
+      />
+    </div>
+    <div
+      className="jsx-2043181861 item"
+    >
+      <div
+        className="jsx-2043181861 inner"
+      />
+    </div>
+    <div
+      className="jsx-2043181861 item"
+    >
+      <div
+        className="jsx-2043181861 inner"
+      />
+    </div>
+    <div
+      className="jsx-2043181861 item"
+    >
+      <div
+        className="jsx-2043181861 inner"
+      />
+    </div>
+    <div
+      className="jsx-2043181861 item"
+    >
+      <div
+        className="jsx-2043181861 inner"
+      />
+    </div>
+    <div
+      className="jsx-2043181861 item"
+    >
+      <div
+        className="jsx-2043181861 inner"
+      />
+    </div>
+    <div
+      className="jsx-2043181861 item"
+    >
+      <div
+        className="jsx-2043181861 inner"
+      />
+    </div>
+    <div
+      className="jsx-2043181861 item"
+    >
+      <div
+        className="jsx-2043181861 inner"
+      />
+    </div>
+    <div
+      className="jsx-2043181861 item"
+    >
+      <div
+        className="jsx-2043181861 inner"
+      />
+    </div>
+    <div
+      className="jsx-2043181861 item"
+    >
+      <div
+        className="jsx-2043181861 inner"
+      />
+    </div>
+    <div
+      className="jsx-2043181861 item"
+    >
+      <div
+        className="jsx-2043181861 inner"
+      />
+    </div>
+    <div
+      className="jsx-2043181861 item"
+    >
+      <div
+        className="jsx-2043181861 inner"
+      />
+    </div>
+    <div
+      className="jsx-2043181861 item"
+    >
+      <div
+        className="jsx-2043181861 inner"
+      />
+    </div>
+    <div
+      className="jsx-2043181861 item"
+    >
+      <div
+        className="jsx-2043181861 inner"
+      />
+    </div>
+    <div
+      className="jsx-2043181861 item"
+    >
+      <div
+        className="jsx-2043181861 inner"
+      />
+    </div>
+    <div
+      className="jsx-2043181861 item"
+    >
+      <div
+        className="jsx-2043181861 inner"
+      />
+    </div>
+    <div
+      className="jsx-2043181861 item"
+    >
+      <div
+        className="jsx-2043181861 inner"
+      />
+    </div>
+    <div
+      className="jsx-2043181861 item"
+    >
+      <div
+        className="jsx-2043181861 inner"
+      />
+    </div>
+    <div
+      className="jsx-2043181861 item"
+    >
+      <div
+        className="jsx-2043181861 inner"
+      />
+    </div>
+    <div
+      className="jsx-2043181861 item"
+    >
+      <div
+        className="jsx-2043181861 inner"
+      />
+    </div>
+    <div
+      className="jsx-2043181861 item"
+    >
+      <div
+        className="jsx-2043181861 inner"
+      />
+    </div>
+    <div
+      className="jsx-2043181861 item"
+    >
+      <div
+        className="jsx-2043181861 inner"
+      />
+    </div>
+    <div
+      className="jsx-2043181861 item"
+    >
+      <div
+        className="jsx-2043181861 inner"
+      />
+    </div>
+    <div
+      className="jsx-2043181861 item"
+    >
+      <div
+        className="jsx-2043181861 inner"
+      />
+    </div>
+    <div
+      className="jsx-2043181861 item"
+    >
+      <div
+        className="jsx-2043181861 inner"
+      />
+    </div>
+    <div
+      className="jsx-2043181861 item"
+    >
+      <div
+        className="jsx-2043181861 inner"
+      />
+    </div>
+    <div
+      className="jsx-2043181861 item"
+    >
+      <div
+        className="jsx-2043181861 inner"
+      />
+    </div>
+    <div
+      className="jsx-2043181861 item"
+    >
+      <div
+        className="jsx-2043181861 inner"
+      />
+    </div>
+    <div
+      className="jsx-2043181861 item"
+    >
+      <div
+        className="jsx-2043181861 inner"
+      />
+    </div>
+    <div
+      className="jsx-2043181861 item"
+    >
+      <div
+        className="jsx-2043181861 inner"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`InfoPanel:static-panel 1`] = `
+<div
+  className="jsx-3274946734 info-panel"
 >
   <p
-    className="jsx-1947158901"
+    className="jsx-3274946734"
   >
     <a
-      className="jsx-1947158901"
+      className="jsx-3274946734"
       href="https://github.com/skidding/flatris"
     >
       Flatris
@@ -6443,17 +6061,17 @@ exports[`Connect(InfoPanel):static-panel 1`] = `
      is a mobile-friendly implementation of Tetris, built using React & Redux.
   </p>
   <p
-    className="jsx-1947158901"
+    className="jsx-3274946734"
   >
     Use the arrow keys or buttons below to play.
   </p>
   <p
-    className="jsx-1947158901"
+    className="jsx-3274946734"
   >
     The game state is preserved between visits, so you can safely kill this tab when your employer is approaching and resume afterwards–including
      
     <a
-      className="jsx-1947158901"
+      className="jsx-3274946734"
       href="http://caniuse.com/#feat=serviceworkers"
     >
       offline
@@ -6461,12 +6079,12 @@ exports[`Connect(InfoPanel):static-panel 1`] = `
     !
   </p>
   <p
-    className="jsx-1947158901"
+    className="jsx-3274946734"
   >
     Check out the
      
     <a
-      className="jsx-1947158901"
+      className="jsx-3274946734"
       href="https://github.com/skidding/flatris"
     >
       source code
@@ -6474,11 +6092,11 @@ exports[`Connect(InfoPanel):static-panel 1`] = `
      when you're done playing.
   </p>
   <p
-    className="jsx-1947158901"
+    className="jsx-3274946734"
   >
     Built by 
     <a
-      className="jsx-1947158901"
+      className="jsx-3274946734"
       href="https://twitter.com/skidding"
     >
       @skidding

@@ -12,6 +12,7 @@ export default ({ children, title = 'Flatris' }) => (
           margin: 0;
           padding: 0;
           font-family: Helvetica, Arial, sans-serif;
+          font-size: 16px;
         }
       `}</style>
     </Head>

@@ -1,20 +1,20 @@
-import { createStore, applyMiddleware, combineReducers } from 'redux';
+import {
+  createStore as createReduxStore,
+  applyMiddleware,
+  combineReducers
+} from 'redux';
 import thunk from 'redux-thunk';
-// import initLayout, { layoutReducer } from 'react-redux-layout';
-
+import { composeWithDevTools } from 'redux-devtools-extension';
 import gameReducer from './reducers/game';
-import computeLayout from './layout';
 
 const rootReducer = combineReducers({
-  game: gameReducer,
-  layout: () => computeLayout({ width: 800, height: 600 })
+  game: gameReducer
 });
 
-export const initStore = initialState => {
-  const store = createStore(rootReducer, initialState, applyMiddleware(thunk));
-
-  // TODO: Bring back layout
-  // initLayout({ store, computeLayout });
-
-  return store;
+export const createStore = initialState => {
+  return createReduxStore(
+    rootReducer,
+    initialState,
+    composeWithDevTools(applyMiddleware(thunk))
+  );
 };

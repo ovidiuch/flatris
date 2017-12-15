@@ -1,6 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import { string, number, func, oneOf } from 'prop-types';
 import { STOPPED, PLAYING, PAUSED } from '../constants/states';
 import { SHAPES, COLORS } from '../constants/tetromino';
 import { attachPointerDownEvent } from '../utils/events';
@@ -27,7 +26,7 @@ class GamePanel extends React.Component {
   }
 
   renderGameButton() {
-    const { gameState, onStart, onPause, onResume, styles } = this.props;
+    const { gameState, onStart, onPause, onResume } = this.props;
 
     let eventHandler;
     let label;
@@ -46,43 +45,21 @@ class GamePanel extends React.Component {
         label = 'New game';
     }
 
-    return React.createElement(
-      Button,
-      {
-        ...attachPointerDownEvent(eventHandler),
-        style: styles.button
-      },
-      label
-    );
+    return <Button {...attachPointerDownEvent(eventHandler)}>{label}</Button>;
   }
 
   render() {
-    const { score, lines, nextTetromino, styles } = this.props;
+    const { score, lines, nextTetromino } = this.props;
 
     return (
-      <div className="game-panel" style={styles.root}>
-        <p className="title" style={styles.title}>
-          Flatris
-        </p>
-        <p className="label" style={styles.label}>
-          Score
-        </p>
-        <p className="count" style={styles.count}>
-          {score}
-        </p>
-        <p className="label" style={styles.label}>
-          Lines Cleared
-        </p>
-        <p className="count" style={styles.count}>
-          {lines}
-        </p>
-        <p className="label" style={styles.label}>
-          Next Shape
-        </p>
-        <div
-          className={this.getNextTetrominoClass()}
-          style={styles.nextTetrimino}
-        >
+      <div className="game-panel">
+        <div className="title">Flatris</div>
+        <div className="label score-label">Score</div>
+        <div className="count score-count">{score}</div>
+        <div className="label lines-label">Lines Cleared</div>
+        <div className="count lines-count">{lines}</div>
+        <div className="label next-label">Next Shape</div>
+        <div className={this.getNextTetrominoClass()}>
           {nextTetromino ? (
             <Tetromino
               key={nextTetromino}
@@ -91,53 +68,83 @@ class GamePanel extends React.Component {
             />
           ) : null}
         </div>
-        {this.renderGameButton()}
+        <div className="game-button">{this.renderGameButton()}</div>
         <style jsx>{`
           .game-panel {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
             color: #34495f;
           }
 
-          .game-panel p {
-            margin: 0;
-            line-height: 1em;
+          .game-panel > div {
+            position: absolute;
+            left: calc(100% * 1 / 6);
+            right: calc(100% * 1 / 6);
           }
 
-          .game-panel .title {
+          .title {
+            top: calc(100% * 1 / 24);
             color: #34495f;
             font-weight: normal;
+            font-size: 2em;
             line-height: 1.5em;
           }
 
-          .game-panel .label {
+          .score-label {
+            top: calc(100% * 3 / 24);
+          }
+
+          .score-count {
+            top: calc(100% * 4 / 24);
+          }
+
+          .lines-label {
+            top: calc(100% * 6 / 24);
+          }
+
+          .lines-count {
+            top: calc(100% * 7 / 24);
+          }
+
+          .next-label {
+            top: calc(100% * 9 / 24);
+          }
+
+          .next-tetromino {
+            top: calc(100% * 10 / 24);
+            width: calc(100% * 4 / 6);
+            height: calc(100% * 4 / 24);
+          }
+
+          .game-button {
+            height: calc(100% * 2 / 24);
+            bottom: calc(100% * 1 / 24);
+          }
+
+          .label {
             color: #9ba4ab;
             font-weight: 300;
+            white-space: nowrap;
           }
 
-          .game-panel .count {
-            margin: 0.16em 0 0 0;
+          .count {
+            font-size: 2em;
             color: #3993d0;
-            font-weight: normal;
+            white-space: nowrap;
           }
 
-          .game-panel .next-tetromino {
-            position: relative;
-          }
-
-          .game-panel .next-tetromino .square-block {
+          .next-tetromino :global(.square-block) {
             /* Override any color the next Tetromino has for a gray shape */
             background-color: #ecf0f1 !important;
           }
 
           /* The I Tetromino needs to be lifted a bit because it has an empty row
-        in its default position */
-          .game-panel .next-tetromino.next-tetromino-I {
+            in its default position */
+          .next-tetromino-I {
             transform: translate(0, -25%);
-          }
-
-          .game-panel button {
-            position: absolute;
-            margin: 0;
-            padding: 0;
           }
         `}</style>
       </div>
@@ -146,49 +153,17 @@ class GamePanel extends React.Component {
 }
 
 GamePanel.propTypes = {
-  gameState: PropTypes.oneOf([STOPPED, PLAYING, PAUSED]).isRequired,
-  score: PropTypes.number.isRequired,
-  lines: PropTypes.number.isRequired,
-  nextTetromino: PropTypes.string,
-  onStart: PropTypes.func.isRequired,
-  onPause: PropTypes.func.isRequired,
-  onResume: PropTypes.func.isRequired
+  gameState: oneOf([STOPPED, PLAYING, PAUSED]).isRequired,
+  score: number.isRequired,
+  lines: number.isRequired,
+  nextTetromino: string,
+  onStart: func.isRequired,
+  onPause: func.isRequired,
+  onResume: func.isRequired
 };
 
 GamePanel.defaultProps = {
   nextTetromino: null
 };
 
-const getStyles = ({ blockSize, fontSize, side }) => ({
-  root: {
-    padding: `0 ${side.padding}px`
-  },
-  title: {
-    fontSize: fontSize.title,
-    paddingTop: side.padding
-  },
-  label: {
-    fontSize: fontSize.default,
-    paddingTop: side.padding
-  },
-  count: {
-    fontSize: fontSize.count
-  },
-  nextTetrimino: {
-    width: blockSize * 4,
-    height: blockSize * 4,
-    marginTop: side.padding / 3
-  },
-  button: {
-    bottom: side.padding,
-    left: side.padding,
-    width: blockSize * 4,
-    height: blockSize * 2,
-    fontSize: fontSize.button,
-    lineHeight: `${blockSize * 2}px`
-  }
-});
-
-export default connect(({ layout }) => ({
-  styles: getStyles(layout)
-}))(GamePanel);
+export default GamePanel;
