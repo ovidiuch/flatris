@@ -10,9 +10,9 @@ const GameContainer = ({ children }) => {
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
-          background: #fff;
           width: 80px;
           height: 120px;
+          background: #fff;
           font-size: 3px;
         }
 

@@ -81,8 +81,8 @@ class GamePanel extends React.Component {
 
           .game-panel > div {
             position: absolute;
-            left: calc(100% * 1 / 6);
-            right: calc(100% * 1 / 6);
+            left: calc(100% / 6);
+            right: calc(100% / 6);
           }
 
           .title {
@@ -127,37 +127,37 @@ class GamePanel extends React.Component {
           }
 
           .title {
-            top: calc(100% * 1 / 24);
+            top: calc(100% / 20);
           }
           .score-label {
-            top: calc(100% * 3 / 24);
+            top: calc(100% * 3 / 20);
           }
 
           .score-count {
-            top: calc(100% * 4 / 24);
+            top: calc(100% * 4 / 20);
           }
 
           .lines-label {
-            top: calc(100% * 6 / 24);
+            top: calc(100% * 6 / 20);
           }
 
           .lines-count {
-            top: calc(100% * 7 / 24);
+            top: calc(100% * 7 / 20);
           }
 
           .next-label {
-            top: calc(100% * 9 / 24);
+            top: calc(100% * 9 / 20);
           }
 
           .next-tetromino {
-            top: calc(100% * 10 / 24);
+            top: calc(100% * 10 / 20);
             width: calc(100% * 4 / 6);
-            height: calc(100% * 4 / 24);
+            height: calc(100% * 4 / 20);
           }
 
           .game-button {
-            height: calc(100% * 2 / 24);
-            bottom: calc(100% * 1 / 24);
+            height: calc(100% * 2 / 20);
+            bottom: calc(100% / 20);
           }
         `}</style>
       </div>

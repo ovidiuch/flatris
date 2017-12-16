@@ -11,7 +11,8 @@ export default ({ children, title = 'Flatris' }) => (
         body {
           margin: 0;
           padding: 0;
-          font-family: Helvetica, Arial, sans-serif;
+          font-family: -apple-system, BlinkMacSystemFont, Ubuntu, 'Helvetica Neue',
+            sans-serif;
           font-size: 16px;
         }
       `}</style>

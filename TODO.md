@@ -2,13 +2,15 @@
 * [x] Remove dynamic layout
 * [x] Create script for generating media queries for game page
       Search: Does media query include scrollbar? Actually, the whole point is to avoid a scrollbar
-* [ ] Add UI for user list and share button
-* [ ] Design "database" (games with users)
+* [x] Design game UI screens (new game, pausing and user list)
+* [ ] Design new game state
+* [ ] Create server "database" (games with users)
 * [ ] Read game (Redux) state from server side in Page.getInitialProps
 * [ ] Create `currentUser` game state (changes when Tetromino drops)
 * [ ] Subscribe to socket.io on mount and dispatch or apply messages based on turn
 * [ ] [WORKING PROTOTYPE]
-* [ ] Create game/:id route and game/new
+* [ ] Create game/:id route
+* [ ] Create sharing UI flow
 * [ ] Preview all existing games in index page
 * [ ] Algorithm for distributing events from bundled messages in time
       Calc time of each event in min-max interval and map [0, 1] value to [server timestamp of last received message...now...1s]

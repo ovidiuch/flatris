@@ -5,12 +5,16 @@ import GameContainer from './components/GameContainer';
 import { createStore } from './store';
 
 const ViewportContainer = props => {
-  const { nextProxy, fixture: { component } } = props;
+  const { nextProxy, fixture: { component, opacity = 1 } } = props;
   const { value: NextProxy, next } = nextProxy;
   const nextEl = <NextProxy {...props} nextProxy={next()} />;
 
   if (component === FlatrisGame) {
-    return <GameContainer>{nextEl}</GameContainer>;
+    return (
+      <GameContainer>
+        <div style={{ opacity }}>{nextEl}</div>
+      </GameContainer>
+    );
   }
 
   return nextEl;
