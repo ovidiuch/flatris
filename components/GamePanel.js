@@ -86,13 +86,49 @@ class GamePanel extends React.Component {
           }
 
           .title {
-            top: calc(100% * 1 / 24);
             color: #34495f;
             font-weight: normal;
             font-size: 2em;
             line-height: 1.5em;
           }
 
+          .label {
+            color: #9ba4ab;
+            font-size: 1em;
+            font-weight: 300;
+            white-space: nowrap;
+            padding-top: 0.25em;
+          }
+
+          .count {
+            color: #3993d0;
+            font-size: 2em;
+            font-weight: 400;
+            white-space: nowrap;
+          }
+
+          .game-button :global(button) {
+            font-size: 1em;
+          }
+
+          .next-tetromino {
+            padding-top: 0.25em;
+          }
+
+          .next-tetromino :global(.square-block) {
+            /* Override any color the next Tetromino has for a gray shape */
+            background-color: #ecf0f1 !important;
+          }
+
+          /* The I Tetromino needs to be lifted a bit because it has an empty row
+            in its default position */
+          .next-tetromino-I {
+            transform: translate(0, -25%);
+          }
+
+          .title {
+            top: calc(100% * 1 / 24);
+          }
           .score-label {
             top: calc(100% * 3 / 24);
           }
@@ -122,29 +158,6 @@ class GamePanel extends React.Component {
           .game-button {
             height: calc(100% * 2 / 24);
             bottom: calc(100% * 1 / 24);
-          }
-
-          .label {
-            color: #9ba4ab;
-            font-weight: 300;
-            white-space: nowrap;
-          }
-
-          .count {
-            font-size: 2em;
-            color: #3993d0;
-            white-space: nowrap;
-          }
-
-          .next-tetromino :global(.square-block) {
-            /* Override any color the next Tetromino has for a gray shape */
-            background-color: #ecf0f1 !important;
-          }
-
-          /* The I Tetromino needs to be lifted a bit because it has an empty row
-            in its default position */
-          .next-tetromino-I {
-            transform: translate(0, -25%);
           }
         `}</style>
       </div>

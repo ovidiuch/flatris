@@ -23,7 +23,7 @@
       }
     },
     {
-      "files": ["components/**/*.js", "pages/**/*.js"],
+      "files": ["components/**/*.js", "pages/**/*.js", "cosmos.proxies.js"],
       "rules": {
         "react/jsx-uses-react": "error",
         "react/jsx-uses-vars": "error"
