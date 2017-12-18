@@ -1,14 +1,11 @@
-import { STOPPED } from '../../../constants/states';
+import { getBlankGame } from '../../../reducers/game';
 import FlatrisGame from '../../FlatrisGame';
 
 export default {
   component: FlatrisGame,
 
   reduxState: {
-    game: {
-      gameState: STOPPED,
-      score: 0,
-      lines: 0
-    }
+    game: getBlankGame('S', 'S'),
+    userId: 0
   }
 };

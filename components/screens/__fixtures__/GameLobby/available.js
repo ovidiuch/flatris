@@ -1,13 +1,21 @@
-import GameLobby from '../../GameLobby';
+// @flow
 
-export default {
+import GameLobby from '../../GameLobby';
+import { getBlankGame } from '../../../../reducers/game';
+
+import type { Props } from '../../GameLobby';
+
+const fixture: { props: Props } = {
   component: GameLobby,
   props: {
     game: {
-      curPlayers: 2,
-      maxPlayers: 8
+      ...getBlankGame('S', 'S'),
+      maxPlayers: 8,
+      users: [{ id: 1, status: 'PLAYING' }, { id: 2, status: 'PLAYING' }]
     },
     onView: () => console.log('Just watch'),
     onPlay: () => console.log('Start playin')
   }
 };
+
+export default fixture;

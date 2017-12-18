@@ -1,74 +1,85 @@
-import React from 'react';
-import { string, number, func, oneOf } from 'prop-types';
-import { STOPPED, PLAYING, PAUSED } from '../constants/states';
+// @flow
+
+import React, { Component } from 'react';
+import classNames from 'classnames';
 import { SHAPES, COLORS } from '../constants/tetromino';
 import { attachPointerDownEvent } from '../utils/events';
+import { getUser, getPlayingUsers } from '../reducers/game';
 import Tetromino from './Tetromino';
 import Button from './Button';
 
-class GamePanel extends React.Component {
+import type { Game } from '../types';
+
+export type Props = {
+  game: Game,
+  userId: number,
+  showMenuButton: boolean,
+  onMenu: Function
+};
+
+export default class GamePanel extends Component<Props> {
   /**
    * The game panel contains:
    * - The next Tetromino to be inserted
    * - The score and lines cleared
    * - Start or pause/resume controls
    */
-  getNextTetrominoClass() {
-    const classes = ['next-tetromino'];
-
-    // We use this extra class to position tetrominoes differently from CSS
-    // based on their type
-    if (this.props.nextTetromino) {
-      classes.push(`next-tetromino-${this.props.nextTetromino}`);
-    }
-
-    return classes.join(' ');
-  }
-
   renderGameButton() {
-    const { gameState, onStart, onPause, onResume } = this.props;
+    const { game, userId, showMenuButton, onMenu } = this.props;
+    const { activeUserId } = game;
 
-    let eventHandler;
-    let label;
-
-    switch (gameState) {
-      case PLAYING:
-        eventHandler = onPause;
-        label = 'Pause';
-        break;
-      case PAUSED:
-        eventHandler = onResume;
-        label = 'Resume';
-        break;
-      default:
-        eventHandler = onStart;
-        label = 'New game';
+    // Screens take over controls after the menu button has been pressed
+    if (!showMenuButton) {
+      return;
     }
 
-    return <Button {...attachPointerDownEvent(eventHandler)}>{label}</Button>;
+    const curUser = getUser(game, userId);
+    const playingUsers = getPlayingUsers(game);
+
+    // Allow user to open menu (and thus become a watcher) when it's not their
+    // turn or when the user is solo
+    if (playingUsers.length === 1 || (curUser && activeUserId !== curUser.id)) {
+      return <Button {...attachPointerDownEvent(onMenu)}>Menu</Button>;
+    }
+
+    return <Button disabled>Menu</Button>;
   }
 
   render() {
-    const { score, lines, nextTetromino } = this.props;
+    const { game, userId } = this.props;
 
     return (
       <div className="game-panel">
         <div className="title">Flatris</div>
         <div className="label score-label">Score</div>
-        <div className="count score-count">{score}</div>
+        <div className="count score-count">{game.score}</div>
         <div className="label lines-label">Lines Cleared</div>
-        <div className="count lines-count">{lines}</div>
+        <div className="count lines-count">{game.lines}</div>
         <div className="label next-label">Next Shape</div>
         <div className={this.getNextTetrominoClass()}>
-          {nextTetromino ? (
-            <Tetromino
-              key={nextTetromino}
-              color={COLORS[nextTetromino]}
-              grid={SHAPES[nextTetromino]}
-            />
-          ) : null}
+          <Tetromino
+            key={game.nextTetromino}
+            color={COLORS[game.nextTetromino]}
+            grid={SHAPES[game.nextTetromino]}
+          />
+        </div>
+        <div className="users">
+          {game.users.map(user => {
+            const classes = classNames('user', {
+              'user-active': user.id === game.activeUserId,
+              'user-watching': user.status === 'WATCHING'
+            });
+
+            return (
+              <div className={classes} key={user.id}>
+                {userId === user.id && <strong>You: </strong>}
+                <span>User #{user.id}</span>
+              </div>
+            );
+          })}
         </div>
         <div className="game-button">{this.renderGameButton()}</div>
+
         <style jsx>{`
           .game-panel {
             position: absolute;
@@ -82,14 +93,7 @@ class GamePanel extends React.Component {
           .game-panel > div {
             position: absolute;
             left: calc(100% / 6);
-            right: calc(100% / 6);
-          }
-
-          .title {
-            color: #34495f;
-            font-weight: normal;
-            font-size: 2em;
-            line-height: 1.5em;
+            width: calc(100% / 6 * 4);
           }
 
           .label {
@@ -107,17 +111,42 @@ class GamePanel extends React.Component {
             white-space: nowrap;
           }
 
-          .game-button :global(button) {
-            font-size: 1em;
+          .title {
+            top: calc(100% / 20);
+            color: #34495f;
+            font-weight: normal;
+            font-size: 2em;
+            line-height: 1.5em;
+          }
+
+          .score-label {
+            top: calc(100% / 20 * 3);
+          }
+
+          .score-count {
+            top: calc(100% / 20 * 4);
+          }
+
+          .lines-label {
+            top: calc(100% / 20 * 6);
+          }
+
+          .lines-count {
+            top: calc(100% / 20 * 7);
+          }
+
+          .next-label {
+            top: calc(100% / 20 * 9);
           }
 
           .next-tetromino {
-            padding-top: 0.25em;
+            top: calc(100% / 20 * 10);
+            height: calc(100% / 20 * 4);
           }
 
           .next-tetromino :global(.square-block) {
             /* Override any color the next Tetromino has for a gray shape */
-            background-color: #ecf0f1 !important;
+            background-color: #3993d0 !important;
           }
 
           /* The I Tetromino needs to be lifted a bit because it has an empty row
@@ -126,57 +155,48 @@ class GamePanel extends React.Component {
             transform: translate(0, -25%);
           }
 
-          .title {
-            top: calc(100% / 20);
-          }
-          .score-label {
-            top: calc(100% * 3 / 20);
-          }
-
-          .score-count {
-            top: calc(100% * 4 / 20);
+          .users {
+            top: calc(100% / 20 * 13);
+            height: calc(100% / 20 * 3);
+            overflow-x: hidden;
+            overflow-y: auto;
+            background-color: #ecf0f1;
           }
 
-          .lines-label {
-            top: calc(100% * 6 / 20);
+          .user {
+            box-sizing: border-box;
+            height: calc(100% / 3);
+            padding: 0 0.5em;
+            font-size: 1em;
+            line-height: 1.75em;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
           }
 
-          .lines-count {
-            top: calc(100% * 7 / 20);
+          .user-active {
+            background: #3993d0;
+            color: #fff;
           }
 
-          .next-label {
-            top: calc(100% * 9 / 20);
-          }
-
-          .next-tetromino {
-            top: calc(100% * 10 / 20);
-            width: calc(100% * 4 / 6);
-            height: calc(100% * 4 / 20);
+          .user-watching {
+            opacity: 0.5;
           }
 
           .game-button {
-            height: calc(100% * 2 / 20);
+            height: calc(100% / 20 * 2);
             bottom: calc(100% / 20);
           }
         `}</style>
       </div>
     );
   }
+
+  getNextTetrominoClass() {
+    const { nextTetromino } = this.props.game;
+
+    // We use this extra class to position tetrominoes differently from CSS
+    // based on their type
+    return `next-tetromino next-tetromino-${nextTetromino}`;
+  }
 }
-
-GamePanel.propTypes = {
-  gameState: oneOf([STOPPED, PLAYING, PAUSED]).isRequired,
-  score: number.isRequired,
-  lines: number.isRequired,
-  nextTetromino: string,
-  onStart: func.isRequired,
-  onPause: func.isRequired,
-  onResume: func.isRequired
-};
-
-GamePanel.defaultProps = {
-  nextTetromino: null
-};
-
-export default GamePanel;

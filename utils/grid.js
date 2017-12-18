@@ -1,4 +1,8 @@
-export function generateEmptyGrid(rows, cols) {
+// @flow
+
+import type { Grid, WallGrid, TetrominoGrid, Position2d } from '../types';
+
+export function generateEmptyGrid(rows: number, cols: number): WallGrid {
   const matrix = [];
 
   for (let row = 0; row < rows; row++) {
@@ -11,7 +15,7 @@ export function generateEmptyGrid(rows, cols) {
   return matrix;
 }
 
-export function rotate(grid) {
+export function rotate<GridItem>(grid: Grid<GridItem>): Grid<GridItem> {
   const matrix = [];
   const rows = grid.length;
   const cols = grid[0].length;
@@ -26,7 +30,7 @@ export function rotate(grid) {
   return matrix;
 }
 
-export function getExactPosition({ x, y }) {
+export function getExactPosition({ x, y }: Position2d) {
   // The position has floating numbers because of how gravity is incremented
   // with each frame
   return {
@@ -35,7 +39,11 @@ export function getExactPosition({ x, y }) {
   };
 }
 
-export function isPositionAvailable(grid, tetrominoGrid, position) {
+export function isPositionAvailable(
+  grid: WallGrid,
+  tetrominoGrid: TetrominoGrid,
+  position: Position2d
+): boolean {
   const rows = grid.length;
   const cols = grid[0].length;
   const tetrominoRows = tetrominoGrid.length;
@@ -75,7 +83,11 @@ export function isPositionAvailable(grid, tetrominoGrid, position) {
   return true;
 }
 
-export function getBottomMostPosition(grid, tetrominoGrid, position) {
+export function getBottomMostPosition(
+  grid: WallGrid,
+  tetrominoGrid: TetrominoGrid,
+  position: Position2d
+): Position2d {
   // Snap vertical position to grid
   let y = Math.floor(position.y);
 
@@ -92,7 +104,12 @@ const getMaxIdFromLine = line =>
 const getMaxIdFromGrid = grid =>
   Math.max(...grid.map(line => getMaxIdFromLine(line)));
 
-export function transferTetrominoToGrid(grid, tetrominoGrid, position, color) {
+export function transferTetrominoToGrid(
+  grid: WallGrid,
+  tetrominoGrid: TetrominoGrid,
+  position: Position2d,
+  color: string
+): WallGrid {
   const rows = tetrominoGrid.length;
   const cols = tetrominoGrid[0].length;
   const tetrominoPositionInGrid = getExactPosition(position);
@@ -124,7 +141,12 @@ const createEmptyLine = cols => [...Array(cols)].map(() => null);
 
 const isLine = row => !row.some(cell => cell === null);
 
-export function clearLines(grid) {
+export function clearLines(
+  grid: WallGrid
+): {
+  clearedGrid: WallGrid,
+  linesCleared: number
+} {
   /**
    * Clear all rows that form a complete line, from one left to right, inside
    * the Well grid. Gravity is applied to fill in the cleared lines with the
@@ -156,9 +178,9 @@ export function clearLines(grid) {
 }
 
 export function fitTetrominoPositionInWellBounds(
-  grid,
-  tetrominoGrid,
-  { x, y }
+  grid: WallGrid,
+  tetrominoGrid: TetrominoGrid,
+  { x, y }: Position2d
 ) {
   const cols = grid[0].length;
   const tetrominoRows = tetrominoGrid.length;

@@ -1,14 +1,25 @@
-import { number, func, shape } from 'prop-types';
+// @flow
+
 import React, { Component } from 'react';
 import Button from '../Button';
+import { getPlayingUsers } from '../../reducers/game';
+
+import type { Game } from '../../types';
+
+export type Props = {
+  game: Game,
+  onView: Function,
+  onPlay: Function
+};
 
 /**
  * Screen for hanging around in the game's lobby
  */
-export default class GameLobby extends Component {
+export default class GameLobby extends Component<Props> {
   render() {
-    const { game: { curPlayers, maxPlayers }, onView, onPlay } = this.props;
-    const seatsLeft = maxPlayers - curPlayers;
+    const { game, onView, onPlay } = this.props;
+    const { maxPlayers } = game;
+    const seatsLeft = maxPlayers - getPlayingUsers(game).length;
 
     return (
       <div className="screen">
@@ -92,12 +103,3 @@ export default class GameLobby extends Component {
     );
   }
 }
-
-GameLobby.propTypes = {
-  game: shape({
-    curPlayers: number.isRequired,
-    maxPlayers: number.isRequired
-  }).isRequired,
-  onView: func.isRequired,
-  onPlay: func.isRequired
-};
