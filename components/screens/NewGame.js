@@ -104,7 +104,7 @@ export default class NewGame extends Component {
             color: #34495f;
             font-size: 2em;
             font-weight: 400;
-            line-height: 1.55em;
+            line-height: 1.5em;
             text-align: center;
             cursor: pointer;
             user-select: none;

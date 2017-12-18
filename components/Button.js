@@ -22,10 +22,9 @@ export default ({
         color: ${color};
         font-family: -apple-system, BlinkMacSystemFont, Ubuntu, 'Helvetica Neue',
           sans-serif;
-        font-size: 1.2em;
+        font-size: 1.1em;
         font-weight: 600;
         text-transform: uppercase;
-        letter-spacing: 0.05em;
         outline: none;
         cursor: pointer;
         user-select: none;

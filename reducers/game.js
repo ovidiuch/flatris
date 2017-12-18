@@ -224,6 +224,10 @@ export function getBlankGame(
   };
 }
 
+export function getSeatsLeft(game: Game): number {
+  return game.maxPlayers - getPlayingUsers(game).length;
+}
+
 export function isAnyonePlaying(game: Game): boolean {
   return getPlayingUsers(game).length > 0;
 }

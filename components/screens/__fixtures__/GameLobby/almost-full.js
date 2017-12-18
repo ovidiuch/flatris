@@ -13,7 +13,7 @@ const fixture: { props: Props } = {
       maxPlayers: 3,
       users: [{ id: 1, status: 'PLAYING' }, { id: 2, status: 'PLAYING' }]
     },
-    onView: () => console.log('Just watch'),
+    onWatch: () => console.log('Just watch'),
     onPlay: () => console.log('Start playin')
   }
 };

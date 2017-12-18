@@ -11,7 +11,7 @@ const fixture: { props: Props } = {
     game: {
       ...getBlankGame('S', 'S'),
       maxPlayers: 8,
-      users: [{ id: 1, status: 'PLAYING' }, { id: 2, status: 'PLAYING' }]
+      users: [{ id: 1, status: 'WATCHING' }]
     },
     onWatch: () => console.log('Just watch'),
     onPlay: () => console.log('Start playin')

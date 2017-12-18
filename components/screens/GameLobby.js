@@ -2,13 +2,13 @@
 
 import React, { Component } from 'react';
 import Button from '../Button';
-import { getPlayingUsers } from '../../reducers/game';
+import { getSeatsLeft, isAnyonePlaying } from '../../reducers/game';
 
 import type { Game } from '../../types';
 
 export type Props = {
   game: Game,
-  onView: Function,
+  onWatch: Function,
   onPlay: Function
 };
 
@@ -17,35 +17,49 @@ export type Props = {
  */
 export default class GameLobby extends Component<Props> {
   render() {
-    const { game, onView, onPlay } = this.props;
-    const { maxPlayers } = game;
-    const seatsLeft = maxPlayers - getPlayingUsers(game).length;
+    const { game, onWatch, onPlay } = this.props;
+    const anyonePlaying = isAnyonePlaying(game);
+    const seatsLeft = getSeatsLeft(game);
 
     return (
       <div className="screen">
         <h2 className="title">Join game...</h2>
-        {!seatsLeft && (
+        {!anyonePlaying && (
           <p className="message">
-            This game is <strong>full</strong>. You can still watch and wait
-            until someone leaves.
+            <strong>Nobody's playing</strong>. Show them how it's done?
           </p>
         )}
-        {seatsLeft === 1 && (
-          <p className="message">
-            Just one <strong>one seat left</strong> in this game! You can play
-            or just watch.
-          </p>
-        )}
-        {seatsLeft > 1 && (
-          <p className="message">
-            There are <strong>{seatsLeft} seats left</strong> in this game. You
-            can play or just watch.
-          </p>
-        )}
+        {anyonePlaying &&
+          !seatsLeft && (
+            <p className="message">
+              This <strong>game is full</strong>. You can still watch and wait
+              until someone leaves.
+            </p>
+          )}
+        {anyonePlaying &&
+          seatsLeft === 1 && (
+            <p className="message">
+              Just one <strong>one seat left</strong> in this game! You can play
+              or just watch.
+            </p>
+          )}
+        {anyonePlaying &&
+          seatsLeft > 1 && (
+            <p className="message">
+              There are <strong>{seatsLeft} seats left</strong> in this game.
+              You can play or just watch.
+            </p>
+          )}
         <div className="actions">
           <div className="button">
-            <Button bgColor="#fff" color="#34495f" onClick={onView}>
-              View
+            <Button
+              bgColor="#fff"
+              color="#34495f"
+              colorDisabled="rgba(52, 73, 95, 0.6)"
+              disabled={!anyonePlaying}
+              onClick={onWatch}
+            >
+              Watch
             </Button>
           </div>
           <div className="button" onClick={onPlay}>
