@@ -37,7 +37,15 @@ type Props = {
   disableAcceleration: typeof disableAcceleration
 };
 
-class FlatrisGame extends Component<Props> {
+type State = {
+  showMenu: boolean
+};
+
+class FlatrisGame extends Component<Props, State> {
+  state = {
+    showMenu: false
+  };
+
   /**
    * The Tetris game was originally designed and programmed by Alexey Pajitnov.
    * It was released on June 6, 1984 and has since become a world-wide
@@ -152,18 +160,28 @@ class FlatrisGame extends Component<Props> {
     this.props.startGame(maxPlayers, curUser);
   };
 
-  handleGameLobbyView = () => {
-    // TODO: Implement state for watching with menu closed
-    console.log('game lobby view');
+  handleGameLobbyWatch = () => {
+    this.setState({
+      showMenu: false
+    });
   };
 
   handleGameLobbyPlay = () => {
     this.props.startPlaying(this.props.userId);
+
+    this.setState({
+      showMenu: false
+    });
   };
 
   handleMenu = () => {
-    // TODO: Extend logic to account for watchers that have closed the menu
-    this.props.stopPlaying(this.props.userId);
+    if (this.isPlaying) {
+      this.props.stopPlaying(this.props.userId);
+    }
+
+    this.setState({
+      showMenu: true
+    });
   };
 
   isPlaying() {
@@ -268,6 +286,7 @@ class FlatrisGame extends Component<Props> {
       activeTetrominoGrid,
       activeTetrominoPosition
     } = game;
+    const { showMenu } = this.state;
 
     // TODO: Handle `OVER` game status
     return (
@@ -289,11 +308,11 @@ class FlatrisGame extends Component<Props> {
           </div>
         )}
         {game.status === 'PLAYING' &&
-          !this.isPlaying() && (
+          showMenu && (
             <div className="info-panel-container">
               <GameLobby
                 game={game}
-                onView={this.handleGameLobbyView}
+                onWatch={this.handleGameLobbyWatch}
                 onPlay={this.handleGameLobbyPlay}
               />
             </div>
@@ -302,7 +321,7 @@ class FlatrisGame extends Component<Props> {
           <GamePanel
             game={game}
             userId={userId}
-            showMenuButton={this.isPlaying()}
+            showMenuButton={!showMenu}
             onMenu={this.handleMenu}
           />
         </div>
