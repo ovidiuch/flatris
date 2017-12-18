@@ -7,8 +7,9 @@
 * [x] Design new game state (with Flow types)
   * [x] Put `curUser` in Redux state
   * [x] Derive paused state from `users(status=playing).len > 0`
-* [ ] Add missing screens for multiplayer flows
+* [x] Add missing screens for multiplayer flows
 * [ ] Create server "database" (games with users)
+  * [ ] Split client logic between starting or joining a game
 * [ ] Read game (Redux) state from server side in Page.getInitialProps
 * [ ] Subscribe to socket.io on mount and dispatch or apply messages based on turn
 * [ ] [WORKING PROTOTYPE]
