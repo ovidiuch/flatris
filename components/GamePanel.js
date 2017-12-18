@@ -47,21 +47,32 @@ export default class GamePanel extends Component<Props> {
 
   render() {
     const { game, userId } = this.props;
+    const { maxPlayers } = game;
+    const playingUsers = getPlayingUsers(game);
 
     return (
       <div className="game-panel">
-        <div className="title">Flatris</div>
+        <div className="title">
+          <h1>
+            World <strong>Tetris</strong>
+          </h1>
+        </div>
         <div className="label score-label">Score</div>
         <div className="count score-count">{game.score}</div>
-        <div className="label lines-label">Lines Cleared</div>
+        <div className="label lines-label">Lines</div>
         <div className="count lines-count">{game.lines}</div>
-        <div className="label next-label">Next Shape</div>
+        <div className="label next-label">Next</div>
         <div className={this.getNextTetrominoClass()}>
           <Tetromino
             key={game.nextTetromino}
             color={COLORS[game.nextTetromino]}
             grid={SHAPES[game.nextTetromino]}
           />
+        </div>
+        <div className="label users-label">
+          Players
+          {game.status !== 'PENDING' &&
+            ` ${playingUsers.length} / ${maxPlayers}`}
         </div>
         <div className="users">
           {game.users.map(user => {
@@ -99,54 +110,58 @@ export default class GamePanel extends Component<Props> {
           .label {
             color: #9ba4ab;
             font-size: 1em;
+            line-height: 1.8em;
             font-weight: 300;
             white-space: nowrap;
-            padding-top: 0.25em;
           }
 
           .count {
             color: #3993d0;
             font-size: 2em;
+            line-height: 0.8em;
             font-weight: 400;
             white-space: nowrap;
           }
 
           .title {
-            top: calc(100% / 20);
+            top: calc(100% / 20 * 0.9);
+          }
+
+          .title h1 {
+            margin: 0;
+            padding: 0;
             color: #34495f;
-            font-weight: normal;
-            font-size: 2em;
-            line-height: 1.5em;
+            font-weight: 400;
+            font-size: 1.6em;
+            line-height: 1.1em;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            text-align: center;
           }
 
           .score-label {
-            top: calc(100% / 20 * 3);
+            top: calc(100% / 20 * 3.25);
           }
 
           .score-count {
-            top: calc(100% / 20 * 4);
+            top: calc(100% / 20 * 4.25);
           }
 
           .lines-label {
-            top: calc(100% / 20 * 6);
+            top: calc(100% / 20 * 5.5);
           }
 
           .lines-count {
-            top: calc(100% / 20 * 7);
+            top: calc(100% / 20 * 6.5);
           }
 
           .next-label {
-            top: calc(100% / 20 * 9);
+            top: calc(100% / 20 * 7.75);
           }
 
           .next-tetromino {
-            top: calc(100% / 20 * 10);
+            top: calc(100% / 20 * 8.75);
             height: calc(100% / 20 * 4);
-          }
-
-          .next-tetromino :global(.square-block) {
-            /* Override any color the next Tetromino has for a gray shape */
-            background-color: #3993d0 !important;
           }
 
           /* The I Tetromino needs to be lifted a bit because it has an empty row
@@ -155,9 +170,13 @@ export default class GamePanel extends Component<Props> {
             transform: translate(0, -25%);
           }
 
+          .users-label {
+            top: calc(100% / 20 * 11);
+          }
+
           .users {
-            top: calc(100% / 20 * 13);
-            height: calc(100% / 20 * 3);
+            top: calc(100% / 20 * 12);
+            height: calc(100% / 20 * 4);
             overflow-x: hidden;
             overflow-y: auto;
             background-color: #ecf0f1;
@@ -165,7 +184,7 @@ export default class GamePanel extends Component<Props> {
 
           .user {
             box-sizing: border-box;
-            height: calc(100% / 3);
+            height: calc(100% / 4);
             padding: 0 0.5em;
             font-size: 1em;
             line-height: 1.75em;
