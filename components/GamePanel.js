@@ -4,16 +4,15 @@ import React, { Component } from 'react';
 import classNames from 'classnames';
 import { SHAPES, COLORS } from '../constants/tetromino';
 import { attachPointerDownEvent } from '../utils/events';
-import { getUser, getPlayingUsers } from '../reducers/game';
+import { getPlayer } from '../reducers/game';
 import Tetromino from './Tetromino';
 import Button from './Button';
 
-import type { Game } from '../types';
+import type { User, Game } from '../types/state';
 
 export type Props = {
+  curUser: User,
   game: Game,
-  userId: number,
-  showMenuButton: boolean,
   onMenu: Function
 };
 
@@ -25,30 +24,19 @@ export default class GamePanel extends Component<Props> {
    * - Start or pause/resume controls
    */
   renderGameButton() {
-    const { game, userId, showMenuButton, onMenu } = this.props;
-    const { activeUserId } = game;
+    const { game, onMenu } = this.props;
 
-    // Screens take over controls after the menu button has been pressed
-    if (!showMenuButton) {
+    if (game.status !== 'PENDING') {
       return;
     }
 
-    const curUser = getUser(game, userId);
-    const playingUsers = getPlayingUsers(game);
-
-    // Allow user to open menu (and thus become a watcher) when it's not their
-    // turn or when the user is solo
-    if (playingUsers.length === 1 || (curUser && activeUserId !== curUser.id)) {
-      return <Button {...attachPointerDownEvent(onMenu)}>Menu</Button>;
-    }
-
-    return <Button disabled>Menu</Button>;
+    return <Button {...attachPointerDownEvent(onMenu)}>READY</Button>;
   }
 
   render() {
-    const { game, userId } = this.props;
-    const { maxPlayers } = game;
-    const playingUsers = getPlayingUsers(game);
+    const { curUser, game } = this.props;
+    const player = getPlayer(game, curUser.id);
+    const { score, lines, nextTetromino } = player;
 
     return (
       <div className="game-panel">
@@ -58,33 +46,28 @@ export default class GamePanel extends Component<Props> {
           </h1>
         </div>
         <div className="label score-label">Score</div>
-        <div className="count score-count">{game.score}</div>
+        <div className="count score-count">{score}</div>
         <div className="label lines-label">Lines</div>
-        <div className="count lines-count">{game.lines}</div>
+        <div className="count lines-count">{lines}</div>
         <div className="label next-label">Next</div>
         <div className={this.getNextTetrominoClass()}>
           <Tetromino
-            key={game.nextTetromino}
-            color={COLORS[game.nextTetromino]}
-            grid={SHAPES[game.nextTetromino]}
+            key={nextTetromino}
+            color={COLORS[nextTetromino]}
+            grid={SHAPES[nextTetromino]}
           />
         </div>
-        <div className="label users-label">
-          Players
-          {game.status !== 'PENDING' &&
-            ` ${playingUsers.length} / ${maxPlayers}`}
-        </div>
+        <div className="label users-label">Players</div>
         <div className="users">
-          {game.users.map(user => {
+          {game.players.map(player => {
+            const { user } = player;
             const classes = classNames('user', {
-              'user-active': user.id === game.activeUserId,
-              'user-watching': user.status === 'WATCHING'
+              // 'user-ready': user.status === 'READY',
             });
 
             return (
               <div className={classes} key={user.id}>
-                {userId === user.id && <strong>You: </strong>}
-                <span>User #{user.id}</span>
+                <span>{user.name}</span>
               </div>
             );
           })}
@@ -193,13 +176,9 @@ export default class GamePanel extends Component<Props> {
             overflow: hidden;
           }
 
-          .user-active {
+          .user-ready {
             background: #3993d0;
             color: #fff;
-          }
-
-          .user-watching {
-            opacity: 0.5;
           }
 
           .game-button {
@@ -212,7 +191,9 @@ export default class GamePanel extends Component<Props> {
   }
 
   getNextTetrominoClass() {
-    const { nextTetromino } = this.props.game;
+    const { curUser, game } = this.props;
+    const player = getPlayer(game, curUser.id);
+    const { nextTetromino } = player;
 
     // We use this extra class to position tetrominoes differently from CSS
     // based on their type

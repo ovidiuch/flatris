@@ -4,9 +4,10 @@
 import raf from 'raf';
 
 import { DROP_FRAMES_ACCELERATED } from './constants/grid';
-import { getPlayingUsers, isAnyonePlaying } from './reducers/game';
+import { getPlayer, allPlayersReady } from './reducers/game';
 
-import type { User, Dispatch, GetState } from './types';
+import type { UserId, User } from './types/state';
+import type { Action, Dispatch, GetState } from './types/actions';
 
 const now =
   typeof performance !== 'undefined' && typeof performance.now === 'function'
@@ -19,14 +20,23 @@ const frameDuration = 1000 / FPS;
 // This changes too fast (60fps) to keep it in the store's state
 let yProgress = 0;
 
-export function startGame(maxPlayers: number, curUser: User) {
-  return (dispatch: Dispatch) => {
+export function createGame(user: User): Action {
+  return {
+    type: 'CREATE_GAME',
+    payload: { user }
+  };
+}
+
+export function startGame(userId: UserId) {
+  return (dispatch: Dispatch, getState: GetState) => {
     dispatch({
       type: 'START_GAME',
-      payload: { maxPlayers, curUser }
+      payload: { userId }
     });
 
-    dispatch(advanceGame());
+    if (allPlayersReady(getState().game)) {
+      dispatch(advanceGame());
+    }
   };
 }
 
@@ -35,7 +45,10 @@ export function advanceGame() {
     cancelFrame();
 
     scheduleFrame(frames => {
-      const { status, dropAcceleration, dropFrames } = getState().game;
+      const { curUser, game } = getState();
+      const { status, dropFrames } = game;
+      const player = getPlayer(game, curUser.id);
+      const { dropAcceleration } = player;
 
       // Stop animation when game ended
       if (status === 'OVER') {
@@ -50,7 +63,10 @@ export function advanceGame() {
       if (yProgress > 1) {
         dispatch({
           type: 'ADVANCE_GAME',
-          payload: { rows: Math.floor(yProgress) }
+          payload: {
+            userId: curUser.id,
+            rows: Math.floor(yProgress)
+          }
         });
         yProgress %= 1;
       }
@@ -60,69 +76,56 @@ export function advanceGame() {
   };
 }
 
-export function stopPlaying(userId: number) {
-  return (dispatch: Dispatch, getState: GetState) => {
-    dispatch({
-      type: 'STOP_PLAYING',
-      payload: {
-        userId
-      }
-    });
+export function leaveGame() {
+  return () => {
+    cancelFrame();
+  };
+}
 
-    // Pause game when nobody's playing. Possible scenarios:
-    // - Solo player, who is allowed to pause
-    // - A game with watchers where the last playing user left (TODO: treat)
-    if (!isAnyonePlaying(getState().game)) {
-      cancelFrame();
+export function moveLeft(userId: UserId): Action {
+  return {
+    type: 'MOVE',
+    payload: {
+      userId,
+      direction: -1
     }
   };
 }
 
-export function startPlaying(userId: number) {
-  return (dispatch: Dispatch, getState: GetState) => {
-    dispatch({
-      type: 'START_PLAYING',
-      payload: {
-        userId
-      }
-    });
-
-    // Resume game if it was previously paused (if no player was playing before)
-    if (getPlayingUsers(getState().game).length === 1) {
-      dispatch(advanceGame());
+export function moveRight(userId: UserId): Action {
+  return {
+    type: 'MOVE',
+    payload: {
+      userId,
+      direction: 1
     }
   };
 }
 
-export function moveLeft() {
+export function rotate(userId: UserId): Action {
   return {
-    type: 'MOVE',
-    payload: { direction: -1 }
+    type: 'ROTATE',
+    payload: {
+      userId
+    }
   };
 }
 
-export function moveRight() {
+export function enableAcceleration(userId: UserId): Action {
   return {
-    type: 'MOVE',
-    payload: { direction: 1 }
+    type: 'ENABLE_ACCELERATION',
+    payload: {
+      userId
+    }
   };
 }
 
-export function rotate() {
+export function disableAcceleration(userId: UserId): Action {
   return {
-    type: 'ROTATE'
-  };
-}
-
-export function enableAcceleration() {
-  return {
-    type: 'ENABLE_ACCELERATION'
-  };
-}
-
-export function disableAcceleration() {
-  return {
-    type: 'DISABLE_ACCELERATION'
+    type: 'DISABLE_ACCELERATION',
+    payload: {
+      userId
+    }
   };
 }
 

@@ -12,6 +12,7 @@ import {
   getRandomTetromino,
   getInitialPositionForTetromino
 } from '../utils/tetromino';
+import { getSampleUser } from '../utils/user';
 import {
   generateEmptyGrid,
   rotate,
@@ -22,27 +23,34 @@ import {
   fitTetrominoPositionInWellBounds
 } from '../utils/grid';
 
-import type { Tetromino, Game, User, UserStatus, Action } from '../types';
+import type { Tetromino, User, Player, Game } from '../types/state';
+import type { Action } from '../types/actions';
 
-export default (state: void | Game, action: Action): Game => {
+export function gameReducer(state: void | Game, action: Action): null | Game {
   if (typeof state === 'undefined') {
-    return getBlankGame();
+    return null;
   }
 
   switch (action.type) {
+    case 'CREATE_GAME': {
+      const { user } = action.payload;
+
+      return getBlankGame({ user });
+    }
+
     case 'START_GAME': {
-      const { maxPlayers, curUser } = action.payload;
+      const { userId } = action.payload;
 
       return {
-        ...getBlankGame(),
-        status: 'PLAYING',
-        maxPlayers,
-        users: [curUser],
-        activeUserId: null
+        ...updatePlayer(state, userId, { status: 'READY' }),
+        status: 'PLAYING'
       };
     }
 
     case 'ADVANCE_GAME': {
+      const { userId, rows } = action.payload;
+      const player = getPlayer(state, userId);
+      const { dropFrames } = state;
       const {
         score,
         lines,
@@ -51,10 +59,8 @@ export default (state: void | Game, action: Action): Game => {
         activeTetromino,
         activeTetrominoGrid,
         activeTetrominoPosition,
-        dropAcceleration,
-        dropFrames
-      } = state;
-      const { rows } = action.payload;
+        dropAcceleration
+      } = player;
 
       let newPosition = {
         x: activeTetrominoPosition.x,
@@ -63,10 +69,9 @@ export default (state: void | Game, action: Action): Game => {
 
       // The active Tetromino keeps falling down until it hits something
       if (isPositionAvailable(grid, activeTetrominoGrid, newPosition)) {
-        return {
-          ...state,
+        return updatePlayer(state, userId, {
           activeTetrominoPosition: newPosition
-        };
+        });
       }
 
       // A big frame skip could cause the Tetromino to jump more than one row.
@@ -105,18 +110,23 @@ export default (state: void | Game, action: Action): Game => {
       const status = newPosition.y < 0 ? 'OVER' : 'PLAYING';
 
       return {
-        ...state,
+        ...updatePlayer(state, userId, {
+          score: score + points,
+          lines: lines + linesCleared,
+          nextTetromino: getRandomTetromino(),
+          grid: clearedGrid,
+          activeTetromino: nextTetromino,
+          activeTetrominoGrid: SHAPES[nextTetromino],
+          activeTetrominoPosition: getInitialPositionForTetromino(
+            nextTetromino,
+            WELL_COLS
+          ),
+          // Clear acceleration after dropping Tetromino. Sometimes the key
+          // events would misbehave and acceleration would remain on even after
+          // releasing DOWN key
+          dropAcceleration: false
+        }),
         status,
-        score: score + points,
-        lines: lines + linesCleared,
-        nextTetromino: getRandomTetromino(),
-        grid: clearedGrid,
-        activeTetromino: nextTetromino,
-        activeTetrominoGrid: SHAPES[nextTetromino],
-        activeTetrominoPosition: getInitialPositionForTetromino(
-          nextTetromino,
-          WELL_COLS
-        ),
         // Increase speed whenever a line is cleared (fast game)
         dropFrames: linesCleared
           ? dropFrames - DROP_FRAMES_DECREMENT
@@ -124,18 +134,10 @@ export default (state: void | Game, action: Action): Game => {
       };
     }
 
-    case 'STOP_PLAYING': {
-      return changeUserState(state, action.payload.userId, 'WATCHING');
-    }
-
-    case 'START_PLAYING': {
-      return changeUserState(state, action.payload.userId, 'PLAYING');
-    }
-
     case 'MOVE': {
-      const { grid, activeTetrominoGrid, activeTetrominoPosition } = state;
-      const { direction } = action.payload;
-
+      const { userId, direction } = action.payload;
+      const player = getPlayer(state, userId);
+      const { grid, activeTetrominoGrid, activeTetrominoPosition } = player;
       const newPosition = Object.assign({}, activeTetrominoPosition, {
         x: activeTetrominoPosition.x + direction
       });
@@ -146,15 +148,15 @@ export default (state: void | Game, action: Action): Game => {
         return state;
       }
 
-      return {
-        ...state,
+      return updatePlayer(state, userId, {
         activeTetrominoPosition: newPosition
-      };
+      });
     }
 
     case 'ROTATE': {
-      const { grid, activeTetrominoGrid, activeTetrominoPosition } = state;
-
+      const { userId } = action.payload;
+      const player = getPlayer(state, userId);
+      const { grid, activeTetrominoGrid, activeTetrominoPosition } = player;
       const newGrid = rotate(activeTetrominoGrid);
 
       // If the rotation causes the active Tetromino to go outside of the
@@ -171,47 +173,51 @@ export default (state: void | Game, action: Action): Game => {
         return state;
       }
 
-      return {
-        ...state,
+      return updatePlayer(state, userId, {
         activeTetrominoGrid: newGrid,
         activeTetrominoPosition: newPosition
-      };
+      });
     }
 
     case 'ENABLE_ACCELERATION': {
-      return {
-        ...state,
+      const { userId } = action.payload;
+
+      return updatePlayer(state, userId, {
         dropAcceleration: true
-      };
+      });
     }
 
     case 'DISABLE_ACCELERATION': {
-      return {
-        ...state,
+      const { userId } = action.payload;
+
+      return updatePlayer(state, userId, {
         dropAcceleration: false
-      };
+      });
     }
 
     default:
       return state;
   }
-};
+}
 
-export function getBlankGame(
-  nextTetromino: Tetromino = getRandomTetromino(),
-  activeTetromino: Tetromino = getRandomTetromino()
-): Game {
+export function getBlankGame({
+  user = getSampleUser(),
+  nextTetromino = getRandomTetromino(),
+  activeTetromino = getRandomTetromino()
+}: {
+  user?: User,
+  nextTetromino?: Tetromino,
+  activeTetromino?: Tetromino
+}): Game {
   const activeTetrominoGrid = SHAPES[activeTetromino];
   const activeTetrominoPosition = getInitialPositionForTetromino(
     activeTetromino,
     WELL_COLS
   );
 
-  return {
+  const player1: Player = {
+    user,
     status: 'PENDING',
-    maxPlayers: 8,
-    users: [],
-    activeUserId: null,
     score: 0,
     lines: 0,
     grid: generateEmptyGrid(WELL_ROWS, WELL_COLS),
@@ -219,44 +225,44 @@ export function getBlankGame(
     activeTetromino,
     activeTetrominoGrid,
     activeTetrominoPosition,
-    dropFrames: DROP_FRAMES_DEFAULT,
     dropAcceleration: false
+  };
+
+  return {
+    status: 'PENDING',
+    players: [player1],
+    dropFrames: DROP_FRAMES_DEFAULT
   };
 }
 
-export function getSeatsLeft(game: Game): number {
-  return game.maxPlayers - getPlayingUsers(game).length;
-}
+export function getPlayer(game: Game, userId: number): Player {
+  const player = game.players.find(p => p.user.id === userId);
 
-export function isAnyonePlaying(game: Game): boolean {
-  return getPlayingUsers(game).length > 0;
-}
-
-export function getPlayingUsers(game: Game): Array<User> {
-  return game.users.filter(u => u.status === 'PLAYING');
-}
-
-export function getUser(game: Game, userId: number): ?User {
-  return game.users.find(u => u.id === userId);
-}
-
-function changeUserState(game: Game, userId: number, status: UserStatus): Game {
-  const user = getUser(game, userId);
-
-  // User with provided id not found in this game. Weird.
-  if (!user) {
-    return game;
+  if (!player) {
+    throw new Error(`Player with userId ${userId} does not exist`);
   }
 
-  const { users } = game;
-  const userIndex = users.indexOf(user);
+  return player;
+}
+
+export function allPlayersReady(game: Game) {
+  return (
+    game.players.filter(p => p.status === 'READY').length ===
+    game.players.length
+  );
+}
+
+function updatePlayer(game: Game, userId: number, attrs: $Shape<Player>): Game {
+  const { players } = game;
+  const player = getPlayer(game, userId);
+  const playerIndex = players.indexOf(player);
 
   return {
     ...game,
-    users: [
-      ...users.slice(0, userIndex),
-      { ...user, status },
-      ...users.slice(userIndex + 1)
+    players: [
+      ...players.slice(0, playerIndex),
+      { ...player, ...attrs },
+      ...players.slice(playerIndex + 1)
     ]
   };
 }

@@ -2,9 +2,8 @@
 
 import React, { Component } from 'react';
 import Button from '../Button';
-import { getSeatsLeft, isAnyonePlaying } from '../../reducers/game';
 
-import type { Game } from '../../types';
+import type { Game } from '../../types/state';
 
 export type Props = {
   game: Game,
@@ -17,46 +16,21 @@ export type Props = {
  */
 export default class GameLobby extends Component<Props> {
   render() {
-    const { game, onWatch, onPlay } = this.props;
-    const anyonePlaying = isAnyonePlaying(game);
-    const seatsLeft = getSeatsLeft(game);
+    const { onWatch, onPlay } = this.props;
+    const seatsLeft = false;
 
     return (
       <div className="screen">
         <h2 className="title">Join game...</h2>
-        {!anyonePlaying && (
-          <p className="message">
-            <strong>Nobody's playing</strong>. Show them how it's done?
-          </p>
+        {!seatsLeft && (
+          <p className="message">Game already full. Wanna watch?</p>
         )}
-        {anyonePlaying &&
-          !seatsLeft && (
-            <p className="message">
-              This <strong>game is full</strong>. You can still watch and wait
-              until someone leaves.
-            </p>
-          )}
-        {anyonePlaying &&
-          seatsLeft === 1 && (
-            <p className="message">
-              Just one <strong>one seat left</strong> in this game! You can play
-              or just watch.
-            </p>
-          )}
-        {anyonePlaying &&
-          seatsLeft > 1 && (
-            <p className="message">
-              There are <strong>{seatsLeft} seats left</strong> in this game.
-              You can play or just watch.
-            </p>
-          )}
         <div className="actions">
           <div className="button">
             <Button
               bgColor="#fff"
               color="#34495f"
               colorDisabled="rgba(52, 73, 95, 0.6)"
-              disabled={!anyonePlaying}
               onClick={onWatch}
             >
               Watch

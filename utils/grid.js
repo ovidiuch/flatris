@@ -1,6 +1,6 @@
 // @flow
 
-import type { Grid, WallGrid, TetrominoGrid, Position2d } from '../types';
+import type { Grid, WallGrid, TetrominoGrid, Position2d } from '../types/state';
 
 export function generateEmptyGrid(rows: number, cols: number): WallGrid {
   const matrix = [];

@@ -24,6 +24,10 @@ export default class Preloader extends Component {
     this.scheduleShapeChange();
   }
 
+  componentWillUnmount() {
+    clearInterval(this.timeoutId);
+  }
+
   changeShape = () => {
     const otherShapes = keys(SHAPES).filter(s => s !== this.state.currShape);
     const currShape = otherShapes[round(random() * (otherShapes.length - 1))];
@@ -36,7 +40,7 @@ export default class Preloader extends Component {
   };
 
   scheduleShapeChange() {
-    setTimeout(this.changeShape, 1000);
+    this.timeoutId = setTimeout(this.changeShape, 1000);
   }
 
   render() {

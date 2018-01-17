@@ -5,12 +5,12 @@ import {
 } from 'redux';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import gameReducer from './reducers/game';
-import userIdReducer from './reducers/user-id';
+import { gameReducer } from './reducers/game';
+import { curUserReducer } from './reducers/cur-user';
 
 const rootReducer = combineReducers({
-  game: gameReducer,
-  userId: userIdReducer
+  curUser: curUserReducer,
+  game: gameReducer
 });
 
 export const createStore = initialState => {

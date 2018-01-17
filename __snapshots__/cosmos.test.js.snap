@@ -76,42 +76,6 @@ exports[`Connect(FlatrisGame):hallelujah 1`] = `
                 className="jsx-4287887962 grid-square-block"
                 style={
                   Object {
-                    "left": "25%",
-                    "top": "0%",
-                  }
-                }
-              >
-                <div
-                  className="jsx-2043156612 square-block"
-                  style={
-                    Object {
-                      "backgroundColor": "#95c43d",
-                    }
-                  }
-                />
-              </div>
-              <div
-                className="jsx-4287887962 grid-square-block"
-                style={
-                  Object {
-                    "left": "50%",
-                    "top": "0%",
-                  }
-                }
-              >
-                <div
-                  className="jsx-2043156612 square-block"
-                  style={
-                    Object {
-                      "backgroundColor": "#95c43d",
-                    }
-                  }
-                />
-              </div>
-              <div
-                className="jsx-4287887962 grid-square-block"
-                style={
-                  Object {
                     "left": "0%",
                     "top": "25%",
                   }
@@ -121,7 +85,7 @@ exports[`Connect(FlatrisGame):hallelujah 1`] = `
                   className="jsx-2043156612 square-block"
                   style={
                     Object {
-                      "backgroundColor": "#95c43d",
+                      "backgroundColor": "#3cc7d6",
                     }
                   }
                 />
@@ -139,7 +103,43 @@ exports[`Connect(FlatrisGame):hallelujah 1`] = `
                   className="jsx-2043156612 square-block"
                   style={
                     Object {
-                      "backgroundColor": "#95c43d",
+                      "backgroundColor": "#3cc7d6",
+                    }
+                  }
+                />
+              </div>
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "50%",
+                    "top": "25%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-2043156612 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#3cc7d6",
+                    }
+                  }
+                />
+              </div>
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "75%",
+                    "top": "25%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-2043156612 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#3cc7d6",
                     }
                   }
                 />
@@ -152,174 +152,56 @@ exports[`Connect(FlatrisGame):hallelujah 1`] = `
         </div>
       </div>
       <div
-        className="jsx-1125084258 info-panel-container"
-      >
-        <div
-          className="jsx-2930071790 screen"
-        >
-          <h2
-            className="jsx-2930071790 title"
-          >
-            New game...
-          </h2>
-          <p
-            className="jsx-2930071790 message"
-          >
-            Choose the max 
-            <strong
-              className="jsx-2930071790"
-            >
-              number of players
-            </strong>
-             for this game
-          </p>
-          <div
-            className="jsx-2930071790 player-num-selector"
-          >
-            <div
-              className="jsx-2930071790 player-num"
-              onClick={[Function]}
-            >
-              1
-            </div>
-            <div
-              className="jsx-2930071790 player-num"
-              onClick={[Function]}
-            >
-              2
-            </div>
-            <div
-              className="jsx-2930071790 player-num"
-              onClick={[Function]}
-            >
-              3
-            </div>
-            <div
-              className="jsx-2930071790 player-num"
-              onClick={[Function]}
-            >
-              4
-            </div>
-            <div
-              className="jsx-2930071790 player-num"
-              onClick={[Function]}
-            >
-              5
-            </div>
-            <div
-              className="jsx-2930071790 player-num"
-              onClick={[Function]}
-            >
-              6
-            </div>
-            <div
-              className="jsx-2930071790 player-num"
-              onClick={[Function]}
-            >
-              7
-            </div>
-            <div
-              className="jsx-2930071790 player-num player-num-selected"
-              onClick={[Function]}
-            >
-              8
-            </div>
-          </div>
-          <div
-            className="jsx-2930071790 actions"
-          >
-            <div
-              className="jsx-2930071790 button"
-            >
-              <button
-                className="jsx-2671015741 button"
-                onClick={[Function]}
-              >
-                Back
-              </button>
-            </div>
-            <div
-              className="jsx-2930071790 button"
-              onClick={[Function]}
-            >
-              <button
-                className="jsx-3501768573 button"
-              >
-                Next
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
         className="jsx-1125084258 game-panel-container"
       >
         <div
-          className="jsx-995940942 game-panel"
+          className="jsx-675712511 game-panel"
         >
           <div
-            className="jsx-995940942 title"
+            className="jsx-675712511 title"
           >
             <h1
-              className="jsx-995940942"
+              className="jsx-675712511"
             >
               World 
               <strong
-                className="jsx-995940942"
+                className="jsx-675712511"
               >
                 Tetris
               </strong>
             </h1>
           </div>
           <div
-            className="jsx-995940942 label score-label"
+            className="jsx-675712511 label score-label"
           >
             Score
           </div>
           <div
-            className="jsx-995940942 count score-count"
+            className="jsx-675712511 count score-count"
           >
             0
           </div>
           <div
-            className="jsx-995940942 label lines-label"
+            className="jsx-675712511 label lines-label"
           >
             Lines
           </div>
           <div
-            className="jsx-995940942 count lines-count"
+            className="jsx-675712511 count lines-count"
           >
             0
           </div>
           <div
-            className="jsx-995940942 label next-label"
+            className="jsx-675712511 label next-label"
           >
             Next
           </div>
           <div
-            className="jsx-995940942 next-tetromino next-tetromino-S"
+            className="jsx-675712511 next-tetromino next-tetromino-L"
           >
             <div
               className="jsx-2115617632 tetromino"
             >
-              <div
-                className="jsx-4287887962 grid-square-block"
-                style={
-                  Object {
-                    "left": "25%",
-                    "top": "0%",
-                  }
-                }
-              >
-                <div
-                  className="jsx-2043156612 square-block"
-                  style={
-                    Object {
-                      "backgroundColor": "#95c43d",
-                    }
-                  }
-                />
-              </div>
               <div
                 className="jsx-4287887962 grid-square-block"
                 style={
@@ -333,7 +215,7 @@ exports[`Connect(FlatrisGame):hallelujah 1`] = `
                   className="jsx-2043156612 square-block"
                   style={
                     Object {
-                      "backgroundColor": "#95c43d",
+                      "backgroundColor": "#ed652f",
                     }
                   }
                 />
@@ -351,7 +233,7 @@ exports[`Connect(FlatrisGame):hallelujah 1`] = `
                   className="jsx-2043156612 square-block"
                   style={
                     Object {
-                      "backgroundColor": "#95c43d",
+                      "backgroundColor": "#ed652f",
                     }
                   }
                 />
@@ -369,7 +251,25 @@ exports[`Connect(FlatrisGame):hallelujah 1`] = `
                   className="jsx-2043156612 square-block"
                   style={
                     Object {
-                      "backgroundColor": "#95c43d",
+                      "backgroundColor": "#ed652f",
+                    }
+                  }
+                />
+              </div>
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "50%",
+                    "top": "25%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-2043156612 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#ed652f",
                     }
                   }
                 />
@@ -377,21 +277,31 @@ exports[`Connect(FlatrisGame):hallelujah 1`] = `
             </div>
           </div>
           <div
-            className="jsx-995940942 label users-label"
+            className="jsx-675712511 label users-label"
           >
             Players
           </div>
           <div
-            className="jsx-995940942 users"
-          />
+            className="jsx-675712511 users"
+          >
+            <div
+              className="jsx-675712511 user"
+            >
+              <span
+                className="jsx-675712511"
+              >
+                Tig
+              </span>
+            </div>
+          </div>
           <div
-            className="jsx-995940942 game-button"
+            className="jsx-675712511 game-button"
           >
             <button
               className="jsx-3501768573 button"
-              disabled={true}
+              onMouseDown={[Function]}
             >
-              Menu
+              READY
             </button>
           </div>
         </div>
@@ -517,25 +427,7 @@ exports[`Connect(FlatrisGame):mission-impossible 1`] = `
                   className="jsx-2043156612 square-block"
                   style={
                     Object {
-                      "backgroundColor": "#95c43d",
-                    }
-                  }
-                />
-              </div>
-              <div
-                className="jsx-4287887962 grid-square-block"
-                style={
-                  Object {
-                    "left": "50%",
-                    "top": "0%",
-                  }
-                }
-              >
-                <div
-                  className="jsx-2043156612 square-block"
-                  style={
-                    Object {
-                      "backgroundColor": "#95c43d",
+                      "backgroundColor": "#b04497",
                     }
                   }
                 />
@@ -553,7 +445,7 @@ exports[`Connect(FlatrisGame):mission-impossible 1`] = `
                   className="jsx-2043156612 square-block"
                   style={
                     Object {
-                      "backgroundColor": "#95c43d",
+                      "backgroundColor": "#b04497",
                     }
                   }
                 />
@@ -571,7 +463,25 @@ exports[`Connect(FlatrisGame):mission-impossible 1`] = `
                   className="jsx-2043156612 square-block"
                   style={
                     Object {
-                      "backgroundColor": "#95c43d",
+                      "backgroundColor": "#b04497",
+                    }
+                  }
+                />
+              </div>
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "50%",
+                    "top": "25%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-2043156612 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#b04497",
                     }
                   }
                 />
@@ -584,156 +494,74 @@ exports[`Connect(FlatrisGame):mission-impossible 1`] = `
         </div>
       </div>
       <div
-        className="jsx-1125084258 info-panel-container"
-      >
-        <div
-          className="jsx-2930071790 screen"
-        >
-          <h2
-            className="jsx-2930071790 title"
-          >
-            New game...
-          </h2>
-          <p
-            className="jsx-2930071790 message"
-          >
-            Choose the max 
-            <strong
-              className="jsx-2930071790"
-            >
-              number of players
-            </strong>
-             for this game
-          </p>
-          <div
-            className="jsx-2930071790 player-num-selector"
-          >
-            <div
-              className="jsx-2930071790 player-num"
-              onClick={[Function]}
-            >
-              1
-            </div>
-            <div
-              className="jsx-2930071790 player-num"
-              onClick={[Function]}
-            >
-              2
-            </div>
-            <div
-              className="jsx-2930071790 player-num"
-              onClick={[Function]}
-            >
-              3
-            </div>
-            <div
-              className="jsx-2930071790 player-num"
-              onClick={[Function]}
-            >
-              4
-            </div>
-            <div
-              className="jsx-2930071790 player-num"
-              onClick={[Function]}
-            >
-              5
-            </div>
-            <div
-              className="jsx-2930071790 player-num"
-              onClick={[Function]}
-            >
-              6
-            </div>
-            <div
-              className="jsx-2930071790 player-num"
-              onClick={[Function]}
-            >
-              7
-            </div>
-            <div
-              className="jsx-2930071790 player-num player-num-selected"
-              onClick={[Function]}
-            >
-              8
-            </div>
-          </div>
-          <div
-            className="jsx-2930071790 actions"
-          >
-            <div
-              className="jsx-2930071790 button"
-            >
-              <button
-                className="jsx-2671015741 button"
-                onClick={[Function]}
-              >
-                Back
-              </button>
-            </div>
-            <div
-              className="jsx-2930071790 button"
-              onClick={[Function]}
-            >
-              <button
-                className="jsx-3501768573 button"
-              >
-                Next
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
         className="jsx-1125084258 game-panel-container"
       >
         <div
-          className="jsx-995940942 game-panel"
+          className="jsx-675712511 game-panel"
         >
           <div
-            className="jsx-995940942 title"
+            className="jsx-675712511 title"
           >
             <h1
-              className="jsx-995940942"
+              className="jsx-675712511"
             >
               World 
               <strong
-                className="jsx-995940942"
+                className="jsx-675712511"
               >
                 Tetris
               </strong>
             </h1>
           </div>
           <div
-            className="jsx-995940942 label score-label"
+            className="jsx-675712511 label score-label"
           >
             Score
           </div>
           <div
-            className="jsx-995940942 count score-count"
+            className="jsx-675712511 count score-count"
           >
             0
           </div>
           <div
-            className="jsx-995940942 label lines-label"
+            className="jsx-675712511 label lines-label"
           >
             Lines
           </div>
           <div
-            className="jsx-995940942 count lines-count"
+            className="jsx-675712511 count lines-count"
           >
             0
           </div>
           <div
-            className="jsx-995940942 label next-label"
+            className="jsx-675712511 label next-label"
           >
             Next
           </div>
           <div
-            className="jsx-995940942 next-tetromino next-tetromino-S"
+            className="jsx-675712511 next-tetromino next-tetromino-Z"
           >
             <div
               className="jsx-2115617632 tetromino"
             >
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "0%",
+                    "top": "0%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-2043156612 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#e84138",
+                    }
+                  }
+                />
+              </div>
               <div
                 className="jsx-4287887962 grid-square-block"
                 style={
@@ -747,7 +575,25 @@ exports[`Connect(FlatrisGame):mission-impossible 1`] = `
                   className="jsx-2043156612 square-block"
                   style={
                     Object {
-                      "backgroundColor": "#95c43d",
+                      "backgroundColor": "#e84138",
+                    }
+                  }
+                />
+              </div>
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "25%",
+                    "top": "25%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-2043156612 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#e84138",
                     }
                   }
                 />
@@ -757,24 +603,6 @@ exports[`Connect(FlatrisGame):mission-impossible 1`] = `
                 style={
                   Object {
                     "left": "50%",
-                    "top": "0%",
-                  }
-                }
-              >
-                <div
-                  className="jsx-2043156612 square-block"
-                  style={
-                    Object {
-                      "backgroundColor": "#95c43d",
-                    }
-                  }
-                />
-              </div>
-              <div
-                className="jsx-4287887962 grid-square-block"
-                style={
-                  Object {
-                    "left": "0%",
                     "top": "25%",
                   }
                 }
@@ -783,25 +611,7 @@ exports[`Connect(FlatrisGame):mission-impossible 1`] = `
                   className="jsx-2043156612 square-block"
                   style={
                     Object {
-                      "backgroundColor": "#95c43d",
-                    }
-                  }
-                />
-              </div>
-              <div
-                className="jsx-4287887962 grid-square-block"
-                style={
-                  Object {
-                    "left": "25%",
-                    "top": "25%",
-                  }
-                }
-              >
-                <div
-                  className="jsx-2043156612 square-block"
-                  style={
-                    Object {
-                      "backgroundColor": "#95c43d",
+                      "backgroundColor": "#e84138",
                     }
                   }
                 />
@@ -809,21 +619,31 @@ exports[`Connect(FlatrisGame):mission-impossible 1`] = `
             </div>
           </div>
           <div
-            className="jsx-995940942 label users-label"
+            className="jsx-675712511 label users-label"
           >
             Players
           </div>
           <div
-            className="jsx-995940942 users"
-          />
+            className="jsx-675712511 users"
+          >
+            <div
+              className="jsx-675712511 user"
+            >
+              <span
+                className="jsx-675712511"
+              >
+                Tig
+              </span>
+            </div>
+          </div>
           <div
-            className="jsx-995940942 game-button"
+            className="jsx-675712511 game-button"
           >
             <button
               className="jsx-3501768573 button"
-              disabled={true}
+              onMouseDown={[Function]}
             >
-              Menu
+              READY
             </button>
           </div>
         </div>
@@ -927,7 +747,7 @@ exports[`Connect(FlatrisGame):new-game 1`] = `
             style={
               Object {
                 "height": "20%",
-                "left": "30%",
+                "left": "40%",
                 "top": "-10%",
                 "width": "40%",
               }
@@ -940,6 +760,24 @@ exports[`Connect(FlatrisGame):new-game 1`] = `
                 className="jsx-4287887962 grid-square-block"
                 style={
                   Object {
+                    "left": "0%",
+                    "top": "0%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-2043156612 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#fbb414",
+                    }
+                  }
+                />
+              </div>
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
                     "left": "25%",
                     "top": "0%",
                   }
@@ -949,25 +787,7 @@ exports[`Connect(FlatrisGame):new-game 1`] = `
                   className="jsx-2043156612 square-block"
                   style={
                     Object {
-                      "backgroundColor": "#95c43d",
-                    }
-                  }
-                />
-              </div>
-              <div
-                className="jsx-4287887962 grid-square-block"
-                style={
-                  Object {
-                    "left": "50%",
-                    "top": "0%",
-                  }
-                }
-              >
-                <div
-                  className="jsx-2043156612 square-block"
-                  style={
-                    Object {
-                      "backgroundColor": "#95c43d",
+                      "backgroundColor": "#fbb414",
                     }
                   }
                 />
@@ -985,7 +805,7 @@ exports[`Connect(FlatrisGame):new-game 1`] = `
                   className="jsx-2043156612 square-block"
                   style={
                     Object {
-                      "backgroundColor": "#95c43d",
+                      "backgroundColor": "#fbb414",
                     }
                   }
                 />
@@ -1003,7 +823,7 @@ exports[`Connect(FlatrisGame):new-game 1`] = `
                   className="jsx-2043156612 square-block"
                   style={
                     Object {
-                      "backgroundColor": "#95c43d",
+                      "backgroundColor": "#fbb414",
                     }
                   }
                 />
@@ -1016,156 +836,74 @@ exports[`Connect(FlatrisGame):new-game 1`] = `
         </div>
       </div>
       <div
-        className="jsx-1125084258 info-panel-container"
-      >
-        <div
-          className="jsx-2930071790 screen"
-        >
-          <h2
-            className="jsx-2930071790 title"
-          >
-            New game...
-          </h2>
-          <p
-            className="jsx-2930071790 message"
-          >
-            Choose the max 
-            <strong
-              className="jsx-2930071790"
-            >
-              number of players
-            </strong>
-             for this game
-          </p>
-          <div
-            className="jsx-2930071790 player-num-selector"
-          >
-            <div
-              className="jsx-2930071790 player-num"
-              onClick={[Function]}
-            >
-              1
-            </div>
-            <div
-              className="jsx-2930071790 player-num"
-              onClick={[Function]}
-            >
-              2
-            </div>
-            <div
-              className="jsx-2930071790 player-num"
-              onClick={[Function]}
-            >
-              3
-            </div>
-            <div
-              className="jsx-2930071790 player-num"
-              onClick={[Function]}
-            >
-              4
-            </div>
-            <div
-              className="jsx-2930071790 player-num"
-              onClick={[Function]}
-            >
-              5
-            </div>
-            <div
-              className="jsx-2930071790 player-num"
-              onClick={[Function]}
-            >
-              6
-            </div>
-            <div
-              className="jsx-2930071790 player-num"
-              onClick={[Function]}
-            >
-              7
-            </div>
-            <div
-              className="jsx-2930071790 player-num player-num-selected"
-              onClick={[Function]}
-            >
-              8
-            </div>
-          </div>
-          <div
-            className="jsx-2930071790 actions"
-          >
-            <div
-              className="jsx-2930071790 button"
-            >
-              <button
-                className="jsx-2671015741 button"
-                onClick={[Function]}
-              >
-                Back
-              </button>
-            </div>
-            <div
-              className="jsx-2930071790 button"
-              onClick={[Function]}
-            >
-              <button
-                className="jsx-3501768573 button"
-              >
-                Next
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
         className="jsx-1125084258 game-panel-container"
       >
         <div
-          className="jsx-995940942 game-panel"
+          className="jsx-675712511 game-panel"
         >
           <div
-            className="jsx-995940942 title"
+            className="jsx-675712511 title"
           >
             <h1
-              className="jsx-995940942"
+              className="jsx-675712511"
             >
               World 
               <strong
-                className="jsx-995940942"
+                className="jsx-675712511"
               >
                 Tetris
               </strong>
             </h1>
           </div>
           <div
-            className="jsx-995940942 label score-label"
+            className="jsx-675712511 label score-label"
           >
             Score
           </div>
           <div
-            className="jsx-995940942 count score-count"
+            className="jsx-675712511 count score-count"
           >
             0
           </div>
           <div
-            className="jsx-995940942 label lines-label"
+            className="jsx-675712511 label lines-label"
           >
             Lines
           </div>
           <div
-            className="jsx-995940942 count lines-count"
+            className="jsx-675712511 count lines-count"
           >
             0
           </div>
           <div
-            className="jsx-995940942 label next-label"
+            className="jsx-675712511 label next-label"
           >
             Next
           </div>
           <div
-            className="jsx-995940942 next-tetromino next-tetromino-S"
+            className="jsx-675712511 next-tetromino next-tetromino-Z"
           >
             <div
               className="jsx-2115617632 tetromino"
             >
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "0%",
+                    "top": "0%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-2043156612 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#e84138",
+                    }
+                  }
+                />
+              </div>
               <div
                 className="jsx-4287887962 grid-square-block"
                 style={
@@ -1179,7 +917,25 @@ exports[`Connect(FlatrisGame):new-game 1`] = `
                   className="jsx-2043156612 square-block"
                   style={
                     Object {
-                      "backgroundColor": "#95c43d",
+                      "backgroundColor": "#e84138",
+                    }
+                  }
+                />
+              </div>
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "25%",
+                    "top": "25%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-2043156612 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#e84138",
                     }
                   }
                 />
@@ -1189,24 +945,6 @@ exports[`Connect(FlatrisGame):new-game 1`] = `
                 style={
                   Object {
                     "left": "50%",
-                    "top": "0%",
-                  }
-                }
-              >
-                <div
-                  className="jsx-2043156612 square-block"
-                  style={
-                    Object {
-                      "backgroundColor": "#95c43d",
-                    }
-                  }
-                />
-              </div>
-              <div
-                className="jsx-4287887962 grid-square-block"
-                style={
-                  Object {
-                    "left": "0%",
                     "top": "25%",
                   }
                 }
@@ -1215,25 +953,7 @@ exports[`Connect(FlatrisGame):new-game 1`] = `
                   className="jsx-2043156612 square-block"
                   style={
                     Object {
-                      "backgroundColor": "#95c43d",
-                    }
-                  }
-                />
-              </div>
-              <div
-                className="jsx-4287887962 grid-square-block"
-                style={
-                  Object {
-                    "left": "25%",
-                    "top": "25%",
-                  }
-                }
-              >
-                <div
-                  className="jsx-2043156612 square-block"
-                  style={
-                    Object {
-                      "backgroundColor": "#95c43d",
+                      "backgroundColor": "#e84138",
                     }
                   }
                 />
@@ -1241,21 +961,31 @@ exports[`Connect(FlatrisGame):new-game 1`] = `
             </div>
           </div>
           <div
-            className="jsx-995940942 label users-label"
+            className="jsx-675712511 label users-label"
           >
             Players
           </div>
           <div
-            className="jsx-995940942 users"
-          />
+            className="jsx-675712511 users"
+          >
+            <div
+              className="jsx-675712511 user"
+            >
+              <span
+                className="jsx-675712511"
+              >
+                Tig
+              </span>
+            </div>
+          </div>
           <div
-            className="jsx-995940942 game-button"
+            className="jsx-675712511 game-button"
           >
             <button
               className="jsx-3501768573 button"
-              disabled={true}
+              onMouseDown={[Function]}
             >
-              Menu
+              READY
             </button>
           </div>
         </div>
@@ -1372,24 +1102,6 @@ exports[`Connect(FlatrisGame):new-game-running 1`] = `
                 className="jsx-4287887962 grid-square-block"
                 style={
                   Object {
-                    "left": "25%",
-                    "top": "0%",
-                  }
-                }
-              >
-                <div
-                  className="jsx-2043156612 square-block"
-                  style={
-                    Object {
-                      "backgroundColor": "#95c43d",
-                    }
-                  }
-                />
-              </div>
-              <div
-                className="jsx-4287887962 grid-square-block"
-                style={
-                  Object {
                     "left": "50%",
                     "top": "0%",
                   }
@@ -1399,7 +1111,7 @@ exports[`Connect(FlatrisGame):new-game-running 1`] = `
                   className="jsx-2043156612 square-block"
                   style={
                     Object {
-                      "backgroundColor": "#95c43d",
+                      "backgroundColor": "#ed652f",
                     }
                   }
                 />
@@ -1417,7 +1129,7 @@ exports[`Connect(FlatrisGame):new-game-running 1`] = `
                   className="jsx-2043156612 square-block"
                   style={
                     Object {
-                      "backgroundColor": "#95c43d",
+                      "backgroundColor": "#ed652f",
                     }
                   }
                 />
@@ -1435,7 +1147,25 @@ exports[`Connect(FlatrisGame):new-game-running 1`] = `
                   className="jsx-2043156612 square-block"
                   style={
                     Object {
-                      "backgroundColor": "#95c43d",
+                      "backgroundColor": "#ed652f",
+                    }
+                  }
+                />
+              </div>
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "50%",
+                    "top": "25%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-2043156612 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#ed652f",
                     }
                   }
                 />
@@ -1448,192 +1178,56 @@ exports[`Connect(FlatrisGame):new-game-running 1`] = `
         </div>
       </div>
       <div
-        className="jsx-1125084258 info-panel-container"
-      >
-        <div
-          className="jsx-2930071790 screen"
-        >
-          <h2
-            className="jsx-2930071790 title"
-          >
-            New game...
-          </h2>
-          <p
-            className="jsx-2930071790 message"
-          >
-            Choose the max 
-            <strong
-              className="jsx-2930071790"
-            >
-              number of players
-            </strong>
-             for this game
-          </p>
-          <div
-            className="jsx-2930071790 player-num-selector"
-          >
-            <div
-              className="jsx-2930071790 player-num"
-              onClick={[Function]}
-            >
-              1
-            </div>
-            <div
-              className="jsx-2930071790 player-num"
-              onClick={[Function]}
-            >
-              2
-            </div>
-            <div
-              className="jsx-2930071790 player-num"
-              onClick={[Function]}
-            >
-              3
-            </div>
-            <div
-              className="jsx-2930071790 player-num"
-              onClick={[Function]}
-            >
-              4
-            </div>
-            <div
-              className="jsx-2930071790 player-num"
-              onClick={[Function]}
-            >
-              5
-            </div>
-            <div
-              className="jsx-2930071790 player-num"
-              onClick={[Function]}
-            >
-              6
-            </div>
-            <div
-              className="jsx-2930071790 player-num"
-              onClick={[Function]}
-            >
-              7
-            </div>
-            <div
-              className="jsx-2930071790 player-num player-num-selected"
-              onClick={[Function]}
-            >
-              8
-            </div>
-          </div>
-          <div
-            className="jsx-2930071790 actions"
-          >
-            <div
-              className="jsx-2930071790 button"
-            >
-              <button
-                className="jsx-2671015741 button"
-                onClick={[Function]}
-              >
-                Back
-              </button>
-            </div>
-            <div
-              className="jsx-2930071790 button"
-              onClick={[Function]}
-            >
-              <button
-                className="jsx-3501768573 button"
-              >
-                Next
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
         className="jsx-1125084258 game-panel-container"
       >
         <div
-          className="jsx-995940942 game-panel"
+          className="jsx-675712511 game-panel"
         >
           <div
-            className="jsx-995940942 title"
+            className="jsx-675712511 title"
           >
             <h1
-              className="jsx-995940942"
+              className="jsx-675712511"
             >
               World 
               <strong
-                className="jsx-995940942"
+                className="jsx-675712511"
               >
                 Tetris
               </strong>
             </h1>
           </div>
           <div
-            className="jsx-995940942 label score-label"
+            className="jsx-675712511 label score-label"
           >
             Score
           </div>
           <div
-            className="jsx-995940942 count score-count"
+            className="jsx-675712511 count score-count"
           >
             0
           </div>
           <div
-            className="jsx-995940942 label lines-label"
+            className="jsx-675712511 label lines-label"
           >
             Lines
           </div>
           <div
-            className="jsx-995940942 count lines-count"
+            className="jsx-675712511 count lines-count"
           >
             0
           </div>
           <div
-            className="jsx-995940942 label next-label"
+            className="jsx-675712511 label next-label"
           >
             Next
           </div>
           <div
-            className="jsx-995940942 next-tetromino next-tetromino-S"
+            className="jsx-675712511 next-tetromino next-tetromino-I"
           >
             <div
               className="jsx-2115617632 tetromino"
             >
-              <div
-                className="jsx-4287887962 grid-square-block"
-                style={
-                  Object {
-                    "left": "25%",
-                    "top": "0%",
-                  }
-                }
-              >
-                <div
-                  className="jsx-2043156612 square-block"
-                  style={
-                    Object {
-                      "backgroundColor": "#95c43d",
-                    }
-                  }
-                />
-              </div>
-              <div
-                className="jsx-4287887962 grid-square-block"
-                style={
-                  Object {
-                    "left": "50%",
-                    "top": "0%",
-                  }
-                }
-              >
-                <div
-                  className="jsx-2043156612 square-block"
-                  style={
-                    Object {
-                      "backgroundColor": "#95c43d",
-                    }
-                  }
-                />
-              </div>
               <div
                 className="jsx-4287887962 grid-square-block"
                 style={
@@ -1647,7 +1241,7 @@ exports[`Connect(FlatrisGame):new-game-running 1`] = `
                   className="jsx-2043156612 square-block"
                   style={
                     Object {
-                      "backgroundColor": "#95c43d",
+                      "backgroundColor": "#3cc7d6",
                     }
                   }
                 />
@@ -1665,7 +1259,43 @@ exports[`Connect(FlatrisGame):new-game-running 1`] = `
                   className="jsx-2043156612 square-block"
                   style={
                     Object {
-                      "backgroundColor": "#95c43d",
+                      "backgroundColor": "#3cc7d6",
+                    }
+                  }
+                />
+              </div>
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "50%",
+                    "top": "25%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-2043156612 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#3cc7d6",
+                    }
+                  }
+                />
+              </div>
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "75%",
+                    "top": "25%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-2043156612 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#3cc7d6",
                     }
                   }
                 />
@@ -1673,21 +1303,31 @@ exports[`Connect(FlatrisGame):new-game-running 1`] = `
             </div>
           </div>
           <div
-            className="jsx-995940942 label users-label"
+            className="jsx-675712511 label users-label"
           >
             Players
           </div>
           <div
-            className="jsx-995940942 users"
-          />
+            className="jsx-675712511 users"
+          >
+            <div
+              className="jsx-675712511 user"
+            >
+              <span
+                className="jsx-675712511"
+              >
+                Tig
+              </span>
+            </div>
+          </div>
           <div
-            className="jsx-995940942 game-button"
+            className="jsx-675712511 game-button"
           >
             <button
               className="jsx-3501768573 button"
-              disabled={true}
+              onMouseDown={[Function]}
             >
-              Menu
+              READY
             </button>
           </div>
         </div>
@@ -1774,7 +1414,7 @@ exports[`GameContainer:default 1`] = `
 </div>
 `;
 
-exports[`GameLobby:almost-full 1`] = `
+exports[`GameLobby:default 1`] = `
 <div
   className="jsx-140613846 screen"
 >
@@ -1786,13 +1426,7 @@ exports[`GameLobby:almost-full 1`] = `
   <p
     className="jsx-140613846 message"
   >
-    Just one 
-    <strong
-      className="jsx-140613846"
-    >
-      one seat left
-    </strong>
-     in this game! You can play or just watch.
+    Game already full. Wanna watch?
   </p>
   <div
     className="jsx-140613846 actions"
@@ -1802,106 +1436,6 @@ exports[`GameLobby:almost-full 1`] = `
     >
       <button
         className="jsx-3533494720 button"
-        disabled={false}
-        onClick={[Function]}
-      >
-        Watch
-      </button>
-    </div>
-    <div
-      className="jsx-140613846 button"
-      onClick={[Function]}
-    >
-      <button
-        className="jsx-3501768573 button"
-        disabled={false}
-      >
-        Play
-      </button>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`GameLobby:available 1`] = `
-<div
-  className="jsx-140613846 screen"
->
-  <h2
-    className="jsx-140613846 title"
-  >
-    Join game...
-  </h2>
-  <p
-    className="jsx-140613846 message"
-  >
-    There are 
-    <strong
-      className="jsx-140613846"
-    >
-      6
-       seats left
-    </strong>
-     in this game. You can play or just watch.
-  </p>
-  <div
-    className="jsx-140613846 actions"
-  >
-    <div
-      className="jsx-140613846 button"
-    >
-      <button
-        className="jsx-3533494720 button"
-        disabled={false}
-        onClick={[Function]}
-      >
-        Watch
-      </button>
-    </div>
-    <div
-      className="jsx-140613846 button"
-      onClick={[Function]}
-    >
-      <button
-        className="jsx-3501768573 button"
-        disabled={false}
-      >
-        Play
-      </button>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`GameLobby:full 1`] = `
-<div
-  className="jsx-140613846 screen"
->
-  <h2
-    className="jsx-140613846 title"
-  >
-    Join game...
-  </h2>
-  <p
-    className="jsx-140613846 message"
-  >
-    This 
-    <strong
-      className="jsx-140613846"
-    >
-      game is full
-    </strong>
-    . You can still watch and wait until someone leaves.
-  </p>
-  <div
-    className="jsx-140613846 actions"
-  >
-    <div
-      className="jsx-140613846 button"
-    >
-      <button
-        className="jsx-3533494720 button"
-        disabled={false}
         onClick={[Function]}
       >
         Watch
@@ -1922,99 +1456,51 @@ exports[`GameLobby:full 1`] = `
 </div>
 `;
 
-exports[`GameLobby:solo 1`] = `
+exports[`GamePanel:default 1`] = `
 <div
-  className="jsx-140613846 screen"
->
-  <h2
-    className="jsx-140613846 title"
-  >
-    Join game...
-  </h2>
-  <p
-    className="jsx-140613846 message"
-  >
-    <strong
-      className="jsx-140613846"
-    >
-      Nobody's playing
-    </strong>
-    . Show them how it's done?
-  </p>
-  <div
-    className="jsx-140613846 actions"
-  >
-    <div
-      className="jsx-140613846 button"
-    >
-      <button
-        className="jsx-3533494720 button"
-        disabled={true}
-        onClick={[Function]}
-      >
-        Watch
-      </button>
-    </div>
-    <div
-      className="jsx-140613846 button"
-      onClick={[Function]}
-    >
-      <button
-        className="jsx-3501768573 button"
-        disabled={false}
-      >
-        Play
-      </button>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`GamePanel:active 1`] = `
-<div
-  className="jsx-995940942 game-panel"
+  className="jsx-675712511 game-panel"
 >
   <div
-    className="jsx-995940942 title"
+    className="jsx-675712511 title"
   >
     <h1
-      className="jsx-995940942"
+      className="jsx-675712511"
     >
       World 
       <strong
-        className="jsx-995940942"
+        className="jsx-675712511"
       >
         Tetris
       </strong>
     </h1>
   </div>
   <div
-    className="jsx-995940942 label score-label"
+    className="jsx-675712511 label score-label"
   >
     Score
   </div>
   <div
-    className="jsx-995940942 count score-count"
+    className="jsx-675712511 count score-count"
   >
     0
   </div>
   <div
-    className="jsx-995940942 label lines-label"
+    className="jsx-675712511 label lines-label"
   >
     Lines
   </div>
   <div
-    className="jsx-995940942 count lines-count"
+    className="jsx-675712511 count lines-count"
   >
     0
   </div>
   <div
-    className="jsx-995940942 label next-label"
+    className="jsx-675712511 label next-label"
   >
     Next
   </div>
   <div
-    className="jsx-995940942 next-tetromino next-tetromino-S"
+    className="jsx-675712511 next-tetromino next-tetromino-S"
   >
     <div
       className="jsx-2115617632 tetromino"
@@ -2094,1075 +1580,33 @@ exports[`GamePanel:active 1`] = `
     </div>
   </div>
   <div
-    className="jsx-995940942 label users-label"
+    className="jsx-675712511 label users-label"
   >
     Players
   </div>
   <div
-    className="jsx-995940942 users"
+    className="jsx-675712511 users"
   >
     <div
-      className="jsx-995940942 user"
+      className="jsx-675712511 user"
     >
       <span
-        className="jsx-995940942"
+        className="jsx-675712511"
       >
-        User #
-        1
-      </span>
-    </div>
-    <div
-      className="jsx-995940942 user"
-    >
-      <span
-        className="jsx-995940942"
-      >
-        User #
-        2
-      </span>
-    </div>
-    <div
-      className="jsx-995940942 user user-active"
-    >
-      <strong
-        className="jsx-995940942"
-      >
-        You: 
-      </strong>
-      <span
-        className="jsx-995940942"
-      >
-        User #
-        3
-      </span>
-    </div>
-    <div
-      className="jsx-995940942 user user-watching"
-    >
-      <span
-        className="jsx-995940942"
-      >
-        User #
-        4
+        Tig
       </span>
     </div>
   </div>
   <div
-    className="jsx-995940942 game-button"
-  />
-</div>
-`;
-
-exports[`GamePanel:pending-game 1`] = `
-<div
-  className="jsx-995940942 game-panel"
->
-  <div
-    className="jsx-995940942 title"
-  >
-    <h1
-      className="jsx-995940942"
-    >
-      World 
-      <strong
-        className="jsx-995940942"
-      >
-        Tetris
-      </strong>
-    </h1>
-  </div>
-  <div
-    className="jsx-995940942 label score-label"
-  >
-    Score
-  </div>
-  <div
-    className="jsx-995940942 count score-count"
-  >
-    0
-  </div>
-  <div
-    className="jsx-995940942 label lines-label"
-  >
-    Lines
-  </div>
-  <div
-    className="jsx-995940942 count lines-count"
-  >
-    0
-  </div>
-  <div
-    className="jsx-995940942 label next-label"
-  >
-    Next
-  </div>
-  <div
-    className="jsx-995940942 next-tetromino next-tetromino-S"
-  >
-    <div
-      className="jsx-2115617632 tetromino"
-    >
-      <div
-        className="jsx-4287887962 grid-square-block"
-        style={
-          Object {
-            "left": "25%",
-            "top": "0%",
-          }
-        }
-      >
-        <div
-          className="jsx-2043156612 square-block"
-          style={
-            Object {
-              "backgroundColor": "#95c43d",
-            }
-          }
-        />
-      </div>
-      <div
-        className="jsx-4287887962 grid-square-block"
-        style={
-          Object {
-            "left": "50%",
-            "top": "0%",
-          }
-        }
-      >
-        <div
-          className="jsx-2043156612 square-block"
-          style={
-            Object {
-              "backgroundColor": "#95c43d",
-            }
-          }
-        />
-      </div>
-      <div
-        className="jsx-4287887962 grid-square-block"
-        style={
-          Object {
-            "left": "0%",
-            "top": "25%",
-          }
-        }
-      >
-        <div
-          className="jsx-2043156612 square-block"
-          style={
-            Object {
-              "backgroundColor": "#95c43d",
-            }
-          }
-        />
-      </div>
-      <div
-        className="jsx-4287887962 grid-square-block"
-        style={
-          Object {
-            "left": "25%",
-            "top": "25%",
-          }
-        }
-      >
-        <div
-          className="jsx-2043156612 square-block"
-          style={
-            Object {
-              "backgroundColor": "#95c43d",
-            }
-          }
-        />
-      </div>
-    </div>
-  </div>
-  <div
-    className="jsx-995940942 label users-label"
-  >
-    Players
-  </div>
-  <div
-    className="jsx-995940942 users"
-  />
-  <div
-    className="jsx-995940942 game-button"
-  />
-</div>
-`;
-
-exports[`GamePanel:playing 1`] = `
-<div
-  className="jsx-995940942 game-panel"
->
-  <div
-    className="jsx-995940942 title"
-  >
-    <h1
-      className="jsx-995940942"
-    >
-      World 
-      <strong
-        className="jsx-995940942"
-      >
-        Tetris
-      </strong>
-    </h1>
-  </div>
-  <div
-    className="jsx-995940942 label score-label"
-  >
-    Score
-  </div>
-  <div
-    className="jsx-995940942 count score-count"
-  >
-    0
-  </div>
-  <div
-    className="jsx-995940942 label lines-label"
-  >
-    Lines
-  </div>
-  <div
-    className="jsx-995940942 count lines-count"
-  >
-    0
-  </div>
-  <div
-    className="jsx-995940942 label next-label"
-  >
-    Next
-  </div>
-  <div
-    className="jsx-995940942 next-tetromino next-tetromino-S"
-  >
-    <div
-      className="jsx-2115617632 tetromino"
-    >
-      <div
-        className="jsx-4287887962 grid-square-block"
-        style={
-          Object {
-            "left": "25%",
-            "top": "0%",
-          }
-        }
-      >
-        <div
-          className="jsx-2043156612 square-block"
-          style={
-            Object {
-              "backgroundColor": "#95c43d",
-            }
-          }
-        />
-      </div>
-      <div
-        className="jsx-4287887962 grid-square-block"
-        style={
-          Object {
-            "left": "50%",
-            "top": "0%",
-          }
-        }
-      >
-        <div
-          className="jsx-2043156612 square-block"
-          style={
-            Object {
-              "backgroundColor": "#95c43d",
-            }
-          }
-        />
-      </div>
-      <div
-        className="jsx-4287887962 grid-square-block"
-        style={
-          Object {
-            "left": "0%",
-            "top": "25%",
-          }
-        }
-      >
-        <div
-          className="jsx-2043156612 square-block"
-          style={
-            Object {
-              "backgroundColor": "#95c43d",
-            }
-          }
-        />
-      </div>
-      <div
-        className="jsx-4287887962 grid-square-block"
-        style={
-          Object {
-            "left": "25%",
-            "top": "25%",
-          }
-        }
-      >
-        <div
-          className="jsx-2043156612 square-block"
-          style={
-            Object {
-              "backgroundColor": "#95c43d",
-            }
-          }
-        />
-      </div>
-    </div>
-  </div>
-  <div
-    className="jsx-995940942 label users-label"
-  >
-    Players
-  </div>
-  <div
-    className="jsx-995940942 users"
-  >
-    <div
-      className="jsx-995940942 user"
-    >
-      <span
-        className="jsx-995940942"
-      >
-        User #
-        1
-      </span>
-    </div>
-    <div
-      className="jsx-995940942 user user-active"
-    >
-      <span
-        className="jsx-995940942"
-      >
-        User #
-        2
-      </span>
-    </div>
-    <div
-      className="jsx-995940942 user"
-    >
-      <strong
-        className="jsx-995940942"
-      >
-        You: 
-      </strong>
-      <span
-        className="jsx-995940942"
-      >
-        User #
-        3
-      </span>
-    </div>
-    <div
-      className="jsx-995940942 user user-watching"
-    >
-      <span
-        className="jsx-995940942"
-      >
-        User #
-        4
-      </span>
-    </div>
-  </div>
-  <div
-    className="jsx-995940942 game-button"
+    className="jsx-675712511 game-button"
   >
     <button
       className="jsx-3501768573 button"
       onMouseDown={[Function]}
     >
-      Menu
+      READY
     </button>
   </div>
-</div>
-`;
-
-exports[`GamePanel:playing 2`] = `
-<div
-  className="jsx-995940942 game-panel"
->
-  <div
-    className="jsx-995940942 title"
-  >
-    <h1
-      className="jsx-995940942"
-    >
-      World 
-      <strong
-        className="jsx-995940942"
-      >
-        Tetris
-      </strong>
-    </h1>
-  </div>
-  <div
-    className="jsx-995940942 label score-label"
-  >
-    Score
-  </div>
-  <div
-    className="jsx-995940942 count score-count"
-  >
-    0
-  </div>
-  <div
-    className="jsx-995940942 label lines-label"
-  >
-    Lines
-  </div>
-  <div
-    className="jsx-995940942 count lines-count"
-  >
-    0
-  </div>
-  <div
-    className="jsx-995940942 label next-label"
-  >
-    Next
-  </div>
-  <div
-    className="jsx-995940942 next-tetromino next-tetromino-S"
-  >
-    <div
-      className="jsx-2115617632 tetromino"
-    >
-      <div
-        className="jsx-4287887962 grid-square-block"
-        style={
-          Object {
-            "left": "25%",
-            "top": "0%",
-          }
-        }
-      >
-        <div
-          className="jsx-2043156612 square-block"
-          style={
-            Object {
-              "backgroundColor": "#95c43d",
-            }
-          }
-        />
-      </div>
-      <div
-        className="jsx-4287887962 grid-square-block"
-        style={
-          Object {
-            "left": "50%",
-            "top": "0%",
-          }
-        }
-      >
-        <div
-          className="jsx-2043156612 square-block"
-          style={
-            Object {
-              "backgroundColor": "#95c43d",
-            }
-          }
-        />
-      </div>
-      <div
-        className="jsx-4287887962 grid-square-block"
-        style={
-          Object {
-            "left": "0%",
-            "top": "25%",
-          }
-        }
-      >
-        <div
-          className="jsx-2043156612 square-block"
-          style={
-            Object {
-              "backgroundColor": "#95c43d",
-            }
-          }
-        />
-      </div>
-      <div
-        className="jsx-4287887962 grid-square-block"
-        style={
-          Object {
-            "left": "25%",
-            "top": "25%",
-          }
-        }
-      >
-        <div
-          className="jsx-2043156612 square-block"
-          style={
-            Object {
-              "backgroundColor": "#95c43d",
-            }
-          }
-        />
-      </div>
-    </div>
-  </div>
-  <div
-    className="jsx-995940942 label users-label"
-  >
-    Players
-  </div>
-  <div
-    className="jsx-995940942 users"
-  >
-    <div
-      className="jsx-995940942 user user-active"
-    >
-      <strong
-        className="jsx-995940942"
-      >
-        You: 
-      </strong>
-      <span
-        className="jsx-995940942"
-      >
-        User #
-        1
-      </span>
-    </div>
-  </div>
-  <div
-    className="jsx-995940942 game-button"
-  >
-    <button
-      className="jsx-3501768573 button"
-      onMouseDown={[Function]}
-    >
-      Menu
-    </button>
-  </div>
-</div>
-`;
-
-exports[`GamePanel:watching 1`] = `
-<div
-  className="jsx-995940942 game-panel"
->
-  <div
-    className="jsx-995940942 title"
-  >
-    <h1
-      className="jsx-995940942"
-    >
-      World 
-      <strong
-        className="jsx-995940942"
-      >
-        Tetris
-      </strong>
-    </h1>
-  </div>
-  <div
-    className="jsx-995940942 label score-label"
-  >
-    Score
-  </div>
-  <div
-    className="jsx-995940942 count score-count"
-  >
-    0
-  </div>
-  <div
-    className="jsx-995940942 label lines-label"
-  >
-    Lines
-  </div>
-  <div
-    className="jsx-995940942 count lines-count"
-  >
-    0
-  </div>
-  <div
-    className="jsx-995940942 label next-label"
-  >
-    Next
-  </div>
-  <div
-    className="jsx-995940942 next-tetromino next-tetromino-S"
-  >
-    <div
-      className="jsx-2115617632 tetromino"
-    >
-      <div
-        className="jsx-4287887962 grid-square-block"
-        style={
-          Object {
-            "left": "25%",
-            "top": "0%",
-          }
-        }
-      >
-        <div
-          className="jsx-2043156612 square-block"
-          style={
-            Object {
-              "backgroundColor": "#95c43d",
-            }
-          }
-        />
-      </div>
-      <div
-        className="jsx-4287887962 grid-square-block"
-        style={
-          Object {
-            "left": "50%",
-            "top": "0%",
-          }
-        }
-      >
-        <div
-          className="jsx-2043156612 square-block"
-          style={
-            Object {
-              "backgroundColor": "#95c43d",
-            }
-          }
-        />
-      </div>
-      <div
-        className="jsx-4287887962 grid-square-block"
-        style={
-          Object {
-            "left": "0%",
-            "top": "25%",
-          }
-        }
-      >
-        <div
-          className="jsx-2043156612 square-block"
-          style={
-            Object {
-              "backgroundColor": "#95c43d",
-            }
-          }
-        />
-      </div>
-      <div
-        className="jsx-4287887962 grid-square-block"
-        style={
-          Object {
-            "left": "25%",
-            "top": "25%",
-          }
-        }
-      >
-        <div
-          className="jsx-2043156612 square-block"
-          style={
-            Object {
-              "backgroundColor": "#95c43d",
-            }
-          }
-        />
-      </div>
-    </div>
-  </div>
-  <div
-    className="jsx-995940942 label users-label"
-  >
-    Players
-  </div>
-  <div
-    className="jsx-995940942 users"
-  >
-    <div
-      className="jsx-995940942 user user-watching"
-    >
-      <strong
-        className="jsx-995940942"
-      >
-        You: 
-      </strong>
-      <span
-        className="jsx-995940942"
-      >
-        User #
-        1
-      </span>
-    </div>
-    <div
-      className="jsx-995940942 user user-active"
-    >
-      <span
-        className="jsx-995940942"
-      >
-        User #
-        2
-      </span>
-    </div>
-    <div
-      className="jsx-995940942 user"
-    >
-      <span
-        className="jsx-995940942"
-      >
-        User #
-        3
-      </span>
-    </div>
-    <div
-      className="jsx-995940942 user"
-    >
-      <span
-        className="jsx-995940942"
-      >
-        User #
-        4
-      </span>
-    </div>
-  </div>
-  <div
-    className="jsx-995940942 game-button"
-  >
-    <button
-      className="jsx-3501768573 button"
-      onMouseDown={[Function]}
-    >
-      Menu
-    </button>
-  </div>
-</div>
-`;
-
-exports[`GamePanel:watching 2`] = `
-<div
-  className="jsx-995940942 game-panel"
->
-  <div
-    className="jsx-995940942 title"
-  >
-    <h1
-      className="jsx-995940942"
-    >
-      World 
-      <strong
-        className="jsx-995940942"
-      >
-        Tetris
-      </strong>
-    </h1>
-  </div>
-  <div
-    className="jsx-995940942 label score-label"
-  >
-    Score
-  </div>
-  <div
-    className="jsx-995940942 count score-count"
-  >
-    0
-  </div>
-  <div
-    className="jsx-995940942 label lines-label"
-  >
-    Lines
-  </div>
-  <div
-    className="jsx-995940942 count lines-count"
-  >
-    0
-  </div>
-  <div
-    className="jsx-995940942 label next-label"
-  >
-    Next
-  </div>
-  <div
-    className="jsx-995940942 next-tetromino next-tetromino-S"
-  >
-    <div
-      className="jsx-2115617632 tetromino"
-    >
-      <div
-        className="jsx-4287887962 grid-square-block"
-        style={
-          Object {
-            "left": "25%",
-            "top": "0%",
-          }
-        }
-      >
-        <div
-          className="jsx-2043156612 square-block"
-          style={
-            Object {
-              "backgroundColor": "#95c43d",
-            }
-          }
-        />
-      </div>
-      <div
-        className="jsx-4287887962 grid-square-block"
-        style={
-          Object {
-            "left": "50%",
-            "top": "0%",
-          }
-        }
-      >
-        <div
-          className="jsx-2043156612 square-block"
-          style={
-            Object {
-              "backgroundColor": "#95c43d",
-            }
-          }
-        />
-      </div>
-      <div
-        className="jsx-4287887962 grid-square-block"
-        style={
-          Object {
-            "left": "0%",
-            "top": "25%",
-          }
-        }
-      >
-        <div
-          className="jsx-2043156612 square-block"
-          style={
-            Object {
-              "backgroundColor": "#95c43d",
-            }
-          }
-        />
-      </div>
-      <div
-        className="jsx-4287887962 grid-square-block"
-        style={
-          Object {
-            "left": "25%",
-            "top": "25%",
-          }
-        }
-      >
-        <div
-          className="jsx-2043156612 square-block"
-          style={
-            Object {
-              "backgroundColor": "#95c43d",
-            }
-          }
-        />
-      </div>
-    </div>
-  </div>
-  <div
-    className="jsx-995940942 label users-label"
-  >
-    Players
-  </div>
-  <div
-    className="jsx-995940942 users"
-  >
-    <div
-      className="jsx-995940942 user user-watching"
-    >
-      <strong
-        className="jsx-995940942"
-      >
-        You: 
-      </strong>
-      <span
-        className="jsx-995940942"
-      >
-        User #
-        1
-      </span>
-    </div>
-  </div>
-  <div
-    className="jsx-995940942 game-button"
-  />
-</div>
-`;
-
-exports[`GamePanel:watching-menu 1`] = `
-<div
-  className="jsx-995940942 game-panel"
->
-  <div
-    className="jsx-995940942 title"
-  >
-    <h1
-      className="jsx-995940942"
-    >
-      World 
-      <strong
-        className="jsx-995940942"
-      >
-        Tetris
-      </strong>
-    </h1>
-  </div>
-  <div
-    className="jsx-995940942 label score-label"
-  >
-    Score
-  </div>
-  <div
-    className="jsx-995940942 count score-count"
-  >
-    0
-  </div>
-  <div
-    className="jsx-995940942 label lines-label"
-  >
-    Lines
-  </div>
-  <div
-    className="jsx-995940942 count lines-count"
-  >
-    0
-  </div>
-  <div
-    className="jsx-995940942 label next-label"
-  >
-    Next
-  </div>
-  <div
-    className="jsx-995940942 next-tetromino next-tetromino-S"
-  >
-    <div
-      className="jsx-2115617632 tetromino"
-    >
-      <div
-        className="jsx-4287887962 grid-square-block"
-        style={
-          Object {
-            "left": "25%",
-            "top": "0%",
-          }
-        }
-      >
-        <div
-          className="jsx-2043156612 square-block"
-          style={
-            Object {
-              "backgroundColor": "#95c43d",
-            }
-          }
-        />
-      </div>
-      <div
-        className="jsx-4287887962 grid-square-block"
-        style={
-          Object {
-            "left": "50%",
-            "top": "0%",
-          }
-        }
-      >
-        <div
-          className="jsx-2043156612 square-block"
-          style={
-            Object {
-              "backgroundColor": "#95c43d",
-            }
-          }
-        />
-      </div>
-      <div
-        className="jsx-4287887962 grid-square-block"
-        style={
-          Object {
-            "left": "0%",
-            "top": "25%",
-          }
-        }
-      >
-        <div
-          className="jsx-2043156612 square-block"
-          style={
-            Object {
-              "backgroundColor": "#95c43d",
-            }
-          }
-        />
-      </div>
-      <div
-        className="jsx-4287887962 grid-square-block"
-        style={
-          Object {
-            "left": "25%",
-            "top": "25%",
-          }
-        }
-      >
-        <div
-          className="jsx-2043156612 square-block"
-          style={
-            Object {
-              "backgroundColor": "#95c43d",
-            }
-          }
-        />
-      </div>
-    </div>
-  </div>
-  <div
-    className="jsx-995940942 label users-label"
-  >
-    Players
-  </div>
-  <div
-    className="jsx-995940942 users"
-  >
-    <div
-      className="jsx-995940942 user user-watching"
-    >
-      <strong
-        className="jsx-995940942"
-      >
-        You: 
-      </strong>
-      <span
-        className="jsx-995940942"
-      >
-        User #
-        1
-      </span>
-    </div>
-    <div
-      className="jsx-995940942 user user-active"
-    >
-      <span
-        className="jsx-995940942"
-      >
-        User #
-        2
-      </span>
-    </div>
-    <div
-      className="jsx-995940942 user"
-    >
-      <span
-        className="jsx-995940942"
-      >
-        User #
-        3
-      </span>
-    </div>
-    <div
-      className="jsx-995940942 user"
-    >
-      <span
-        className="jsx-995940942"
-      >
-        User #
-        4
-      </span>
-    </div>
-  </div>
-  <div
-    className="jsx-995940942 game-button"
-  />
 </div>
 `;
 

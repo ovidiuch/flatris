@@ -6,10 +6,11 @@ import { connect } from 'react-redux';
 import _ from 'lodash';
 import { UP, DOWN, LEFT, RIGHT } from '../constants/keys';
 import { attachPointerDownEvent, attachPointerUpEvent } from '../utils/events';
+import { getPlayer } from '../reducers/game';
 import {
+  createGame,
   startGame,
-  stopPlaying,
-  startPlaying,
+  leaveGame,
   moveLeft,
   moveRight,
   rotate,
@@ -18,18 +19,16 @@ import {
 } from '../actions';
 import Well from './Well';
 import GamePanel from './GamePanel';
-import NewGameScreen from './screens/NewGame';
-import GameLobby from './screens/GameLobby';
 import Button from './Button';
 
-import type { Game } from '../types';
+import type { User, Game } from '../types/state';
 
 type Props = {
+  curUser: User,
   game: Game,
-  userId: number,
+  createGame: typeof createGame,
   startGame: typeof startGame,
-  stopPlaying: typeof stopPlaying,
-  startPlaying: typeof startPlaying,
+  leaveGame: typeof leaveGame,
   moveLeft: typeof moveLeft,
   moveRight: typeof moveRight,
   rotate: typeof rotate,
@@ -63,6 +62,8 @@ class FlatrisGame extends Component<Props, State> {
     // called on the server
     window.removeEventListener('keydown', this.handleKeyDown);
     window.removeEventListener('keyup', this.handleKeyUp);
+
+    this.props.leaveGame();
   }
 
   handleKeyDown = e => {
@@ -71,129 +72,111 @@ class FlatrisGame extends Component<Props, State> {
       e.preventDefault();
     }
 
-    if (!this.isActiveUser()) {
+    if (!this.isPlaying()) {
       return;
     }
 
-    const { enableAcceleration, rotate, moveLeft, moveRight } = this.props;
+    const {
+      curUser,
+      enableAcceleration,
+      rotate,
+      moveLeft,
+      moveRight
+    } = this.props;
 
     switch (e.keyCode) {
       case DOWN:
-        enableAcceleration();
+        enableAcceleration(curUser.id);
         break;
       case UP:
-        rotate();
+        rotate(curUser.id);
         break;
       case LEFT:
-        moveLeft();
+        moveLeft(curUser.id);
         break;
       case RIGHT:
-        moveRight();
+        moveRight(curUser.id);
         break;
       default:
     }
   };
 
   handleKeyUp = e => {
-    if (!this.isActiveUser()) {
+    if (!this.isPlaying()) {
       return;
     }
 
     if (e.keyCode === DOWN) {
-      this.props.disableAcceleration();
+      const { curUser, disableAcceleration } = this.props;
+      disableAcceleration(curUser.id);
     }
   };
 
   handleRotatePress = e => {
-    if (!this.isActiveUser()) {
+    if (!this.isPlaying()) {
       return;
     }
 
     e.preventDefault();
-    this.props.rotate();
+
+    const { curUser, rotate } = this.props;
+    rotate(curUser.id);
   };
 
   handleLeftPress = e => {
-    if (!this.isActiveUser()) {
+    if (!this.isPlaying()) {
       return;
     }
 
     e.preventDefault();
-    this.props.moveLeft();
+
+    const { curUser, moveLeft } = this.props;
+    moveLeft(curUser.id);
   };
 
   handleRightPress = e => {
-    if (!this.isActiveUser()) {
+    if (!this.isPlaying()) {
       return;
     }
 
     e.preventDefault();
-    this.props.moveRight();
+
+    const { curUser, moveRight } = this.props;
+    moveRight(curUser.id);
   };
 
   handlePullPress = e => {
-    if (!this.isActiveUser()) {
+    if (!this.isPlaying()) {
       return;
     }
 
     e.preventDefault();
-    this.props.enableAcceleration();
+
+    const { curUser, enableAcceleration } = this.props;
+    enableAcceleration(curUser.id);
   };
 
   handlePullRelease = e => {
-    if (!this.isActiveUser()) {
+    if (!this.isPlaying()) {
       return;
     }
 
     e.preventDefault();
-    this.props.disableAcceleration();
-  };
 
-  handleNewGameBack = () => {
-    // TODO: Implement
-    console.log('new game back');
-  };
-
-  handleNewGameNext = maxPlayers => {
-    // XXX: HACKY
-    const curUser = { id: 1, status: 'PLAYING' };
-    this.props.startGame(maxPlayers, curUser);
-  };
-
-  handleGameLobbyWatch = () => {
-    this.setState({
-      showMenu: false
-    });
-  };
-
-  handleGameLobbyPlay = () => {
-    this.props.startPlaying(this.props.userId);
-
-    this.setState({
-      showMenu: false
-    });
+    const { curUser, disableAcceleration } = this.props;
+    disableAcceleration(curUser.id);
   };
 
   handleMenu = () => {
-    if (this.isPlaying) {
-      this.props.stopPlaying(this.props.userId);
-    }
-
-    this.setState({
-      showMenu: true
-    });
+    const { curUser, startGame } = this.props;
+    startGame(curUser.id);
   };
 
   isPlaying() {
-    const { game, userId } = this.props;
-    const user = game.users.find(u => u.id === userId);
+    const { game } = this.props;
 
-    return game.status === 'PLAYING' && !!user && user.status === 'PLAYING';
-  }
-
-  isActiveUser() {
-    // TODO: Check if userId === game.activeUserId
-    return this.isPlaying();
+    // TODO: Maybe current player is dead but watching adversary
+    return game.status === 'PLAYING';
   }
 
   renderControlIcon(path) {
@@ -279,16 +262,16 @@ class FlatrisGame extends Component<Props, State> {
   }
 
   render() {
-    const { game, userId } = this.props;
+    const { curUser, game } = this.props;
+    const curPlayer = getPlayer(game, curUser.id);
     const {
       grid,
       activeTetromino,
       activeTetrominoGrid,
       activeTetrominoPosition
-    } = game;
+    } = curPlayer;
     const { showMenu } = this.state;
 
-    // TODO: Handle `OVER` game status
     return (
       <div className="flatris-game">
         <div className="well-container">
@@ -299,28 +282,11 @@ class FlatrisGame extends Component<Props, State> {
             activeTetrominoPosition={activeTetrominoPosition}
           />
         </div>
-        {game.status === 'PENDING' && (
-          <div className="info-panel-container">
-            <NewGameScreen
-              onBack={this.handleNewGameBack}
-              onNext={this.handleNewGameNext}
-            />
-          </div>
-        )}
-        {game.status === 'PLAYING' &&
-          showMenu && (
-            <div className="info-panel-container">
-              <GameLobby
-                game={game}
-                onWatch={this.handleGameLobbyWatch}
-                onPlay={this.handleGameLobbyPlay}
-              />
-            </div>
-          )}
         <div className="game-panel-container">
           <GamePanel
+            curUser={curUser}
             game={game}
-            userId={userId}
+            userId={curUser.id}
             showMenuButton={!showMenu}
             onMenu={this.handleMenu}
           />
@@ -368,15 +334,15 @@ class FlatrisGame extends Component<Props, State> {
   }
 }
 
-const mapStateToProps = ({ game, userId }) => ({
+const mapStateToProps = ({ game, curUser }) => ({
   game,
-  userId
+  curUser
 });
 
 const mapDispatchToProps = {
+  createGame,
   startGame,
-  stopPlaying,
-  startPlaying,
+  leaveGame,
   moveLeft,
   moveRight,
   rotate,

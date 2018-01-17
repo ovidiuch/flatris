@@ -3,7 +3,7 @@
 import { sample, keys } from 'lodash';
 import { SHAPES } from '../constants/tetromino';
 
-import type { Tetromino, Position2d } from '../types';
+import type { Tetromino, Position2d } from '../types/state';
 
 export function getRandomTetromino(): Tetromino {
   return sample(keys(SHAPES));

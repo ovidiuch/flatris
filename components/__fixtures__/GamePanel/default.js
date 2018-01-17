@@ -1,5 +1,6 @@
 // @flow
 
+import { getSampleUser } from '../../../utils/user';
 import { getBlankGame } from '../../../reducers/game';
 import GamePanel from '../../GamePanel';
 
@@ -9,9 +10,8 @@ const fixture: { props: Props } = {
   component: GamePanel,
 
   props: {
-    game: getBlankGame('S', 'S'),
-    userId: 0,
-    showMenuButton: false,
+    curUser: getSampleUser(),
+    game: getBlankGame({ activeTetrimono: 'S', nextTetrimino: 'S' }),
     onMenu: () => console.log('Show menu')
   }
 };
