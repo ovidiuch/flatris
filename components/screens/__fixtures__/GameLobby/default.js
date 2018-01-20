@@ -8,7 +8,7 @@ import type { Props } from '../../GameLobby';
 const fixture: { props: Props } = {
   component: GameLobby,
   props: {
-    game: getBlankGame({ activeTetrimono: 'S', nextTetrimino: 'S' }),
+    game: getBlankGame(),
     onWatch: () => console.log('Just watch'),
     onPlay: () => console.log('Start playin')
   }

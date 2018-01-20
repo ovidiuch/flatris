@@ -217,15 +217,17 @@ export function gameReducer(state: void | ?Game, action: Action): ?Game {
   }
 }
 
-export function getBlankGame({
-  id = Date.now(),
-  user = getSampleUser()
-}: {
-  id?: GameId,
-  user?: User,
-  nextTetromino?: Tetromino,
-  activeTetromino?: Tetromino
-}): Game {
+export function getBlankGame(
+  {
+    id = Date.now(),
+    user = getSampleUser()
+  }: {
+    id?: GameId,
+    user?: User,
+    nextTetromino?: Tetromino,
+    activeTetromino?: Tetromino
+  } = {}
+): Game {
   const activeTetromino = getNextTetromino(id, 0);
   const nextTetromino = getNextTetromino(id, 1);
   const activeTetrominoGrid = SHAPES[activeTetromino];

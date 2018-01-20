@@ -76,136 +76,6 @@ exports[`Connect(FlatrisGame):hallelujah 1`] = `
                 className="jsx-4287887962 grid-square-block"
                 style={
                   Object {
-                    "left": "0%",
-                    "top": "25%",
-                  }
-                }
-              >
-                <div
-                  className="jsx-2043156612 square-block"
-                  style={
-                    Object {
-                      "backgroundColor": "#3cc7d6",
-                    }
-                  }
-                />
-              </div>
-              <div
-                className="jsx-4287887962 grid-square-block"
-                style={
-                  Object {
-                    "left": "25%",
-                    "top": "25%",
-                  }
-                }
-              >
-                <div
-                  className="jsx-2043156612 square-block"
-                  style={
-                    Object {
-                      "backgroundColor": "#3cc7d6",
-                    }
-                  }
-                />
-              </div>
-              <div
-                className="jsx-4287887962 grid-square-block"
-                style={
-                  Object {
-                    "left": "50%",
-                    "top": "25%",
-                  }
-                }
-              >
-                <div
-                  className="jsx-2043156612 square-block"
-                  style={
-                    Object {
-                      "backgroundColor": "#3cc7d6",
-                    }
-                  }
-                />
-              </div>
-              <div
-                className="jsx-4287887962 grid-square-block"
-                style={
-                  Object {
-                    "left": "75%",
-                    "top": "25%",
-                  }
-                }
-              >
-                <div
-                  className="jsx-2043156612 square-block"
-                  style={
-                    Object {
-                      "backgroundColor": "#3cc7d6",
-                    }
-                  }
-                />
-              </div>
-            </div>
-          </div>
-          <div
-            className="jsx-1915500079 well-grid"
-          />
-        </div>
-      </div>
-      <div
-        className="jsx-1125084258 game-panel-container"
-      >
-        <div
-          className="jsx-675712511 game-panel"
-        >
-          <div
-            className="jsx-675712511 title"
-          >
-            <h1
-              className="jsx-675712511"
-            >
-              World 
-              <strong
-                className="jsx-675712511"
-              >
-                Tetris
-              </strong>
-            </h1>
-          </div>
-          <div
-            className="jsx-675712511 label score-label"
-          >
-            Score
-          </div>
-          <div
-            className="jsx-675712511 count score-count"
-          >
-            0
-          </div>
-          <div
-            className="jsx-675712511 label lines-label"
-          >
-            Lines
-          </div>
-          <div
-            className="jsx-675712511 count lines-count"
-          >
-            0
-          </div>
-          <div
-            className="jsx-675712511 label next-label"
-          >
-            Next
-          </div>
-          <div
-            className="jsx-675712511 next-tetromino next-tetromino-L"
-          >
-            <div
-              className="jsx-2115617632 tetromino"
-            >
-              <div
-                className="jsx-4287887962 grid-square-block"
-                style={
-                  Object {
                     "left": "50%",
                     "top": "0%",
                   }
@@ -270,6 +140,136 @@ exports[`Connect(FlatrisGame):hallelujah 1`] = `
                   style={
                     Object {
                       "backgroundColor": "#ed652f",
+                    }
+                  }
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            className="jsx-1915500079 well-grid"
+          />
+        </div>
+      </div>
+      <div
+        className="jsx-1125084258 game-panel-container"
+      >
+        <div
+          className="jsx-675712511 game-panel"
+        >
+          <div
+            className="jsx-675712511 title"
+          >
+            <h1
+              className="jsx-675712511"
+            >
+              World 
+              <strong
+                className="jsx-675712511"
+              >
+                Tetris
+              </strong>
+            </h1>
+          </div>
+          <div
+            className="jsx-675712511 label score-label"
+          >
+            Score
+          </div>
+          <div
+            className="jsx-675712511 count score-count"
+          >
+            0
+          </div>
+          <div
+            className="jsx-675712511 label lines-label"
+          >
+            Lines
+          </div>
+          <div
+            className="jsx-675712511 count lines-count"
+          >
+            0
+          </div>
+          <div
+            className="jsx-675712511 label next-label"
+          >
+            Next
+          </div>
+          <div
+            className="jsx-675712511 next-tetromino next-tetromino-I"
+          >
+            <div
+              className="jsx-2115617632 tetromino"
+            >
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "0%",
+                    "top": "25%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-2043156612 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#3cc7d6",
+                    }
+                  }
+                />
+              </div>
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "25%",
+                    "top": "25%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-2043156612 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#3cc7d6",
+                    }
+                  }
+                />
+              </div>
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "50%",
+                    "top": "25%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-2043156612 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#3cc7d6",
+                    }
+                  }
+                />
+              </div>
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "75%",
+                    "top": "25%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-2043156612 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#3cc7d6",
                     }
                   }
                 />
@@ -418,7 +418,7 @@ exports[`Connect(FlatrisGame):mission-impossible 1`] = `
                 className="jsx-4287887962 grid-square-block"
                 style={
                   Object {
-                    "left": "25%",
+                    "left": "50%",
                     "top": "0%",
                   }
                 }
@@ -427,7 +427,7 @@ exports[`Connect(FlatrisGame):mission-impossible 1`] = `
                   className="jsx-2043156612 square-block"
                   style={
                     Object {
-                      "backgroundColor": "#b04497",
+                      "backgroundColor": "#ed652f",
                     }
                   }
                 />
@@ -445,7 +445,7 @@ exports[`Connect(FlatrisGame):mission-impossible 1`] = `
                   className="jsx-2043156612 square-block"
                   style={
                     Object {
-                      "backgroundColor": "#b04497",
+                      "backgroundColor": "#ed652f",
                     }
                   }
                 />
@@ -463,7 +463,7 @@ exports[`Connect(FlatrisGame):mission-impossible 1`] = `
                   className="jsx-2043156612 square-block"
                   style={
                     Object {
-                      "backgroundColor": "#b04497",
+                      "backgroundColor": "#ed652f",
                     }
                   }
                 />
@@ -481,7 +481,7 @@ exports[`Connect(FlatrisGame):mission-impossible 1`] = `
                   className="jsx-2043156612 square-block"
                   style={
                     Object {
-                      "backgroundColor": "#b04497",
+                      "backgroundColor": "#ed652f",
                     }
                   }
                 />
@@ -539,7 +539,7 @@ exports[`Connect(FlatrisGame):mission-impossible 1`] = `
             Next
           </div>
           <div
-            className="jsx-675712511 next-tetromino next-tetromino-Z"
+            className="jsx-675712511 next-tetromino next-tetromino-I"
           >
             <div
               className="jsx-2115617632 tetromino"
@@ -549,7 +549,7 @@ exports[`Connect(FlatrisGame):mission-impossible 1`] = `
                 style={
                   Object {
                     "left": "0%",
-                    "top": "0%",
+                    "top": "25%",
                   }
                 }
               >
@@ -557,25 +557,7 @@ exports[`Connect(FlatrisGame):mission-impossible 1`] = `
                   className="jsx-2043156612 square-block"
                   style={
                     Object {
-                      "backgroundColor": "#e84138",
-                    }
-                  }
-                />
-              </div>
-              <div
-                className="jsx-4287887962 grid-square-block"
-                style={
-                  Object {
-                    "left": "25%",
-                    "top": "0%",
-                  }
-                }
-              >
-                <div
-                  className="jsx-2043156612 square-block"
-                  style={
-                    Object {
-                      "backgroundColor": "#e84138",
+                      "backgroundColor": "#3cc7d6",
                     }
                   }
                 />
@@ -593,7 +575,7 @@ exports[`Connect(FlatrisGame):mission-impossible 1`] = `
                   className="jsx-2043156612 square-block"
                   style={
                     Object {
-                      "backgroundColor": "#e84138",
+                      "backgroundColor": "#3cc7d6",
                     }
                   }
                 />
@@ -611,7 +593,25 @@ exports[`Connect(FlatrisGame):mission-impossible 1`] = `
                   className="jsx-2043156612 square-block"
                   style={
                     Object {
-                      "backgroundColor": "#e84138",
+                      "backgroundColor": "#3cc7d6",
+                    }
+                  }
+                />
+              </div>
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "75%",
+                    "top": "25%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-2043156612 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#3cc7d6",
                     }
                   }
                 />
@@ -747,7 +747,7 @@ exports[`Connect(FlatrisGame):new-game 1`] = `
             style={
               Object {
                 "height": "20%",
-                "left": "40%",
+                "left": "30%",
                 "top": "-10%",
                 "width": "40%",
               }
@@ -760,7 +760,7 @@ exports[`Connect(FlatrisGame):new-game 1`] = `
                 className="jsx-4287887962 grid-square-block"
                 style={
                   Object {
-                    "left": "0%",
+                    "left": "50%",
                     "top": "0%",
                   }
                 }
@@ -769,25 +769,7 @@ exports[`Connect(FlatrisGame):new-game 1`] = `
                   className="jsx-2043156612 square-block"
                   style={
                     Object {
-                      "backgroundColor": "#fbb414",
-                    }
-                  }
-                />
-              </div>
-              <div
-                className="jsx-4287887962 grid-square-block"
-                style={
-                  Object {
-                    "left": "25%",
-                    "top": "0%",
-                  }
-                }
-              >
-                <div
-                  className="jsx-2043156612 square-block"
-                  style={
-                    Object {
-                      "backgroundColor": "#fbb414",
+                      "backgroundColor": "#ed652f",
                     }
                   }
                 />
@@ -805,7 +787,7 @@ exports[`Connect(FlatrisGame):new-game 1`] = `
                   className="jsx-2043156612 square-block"
                   style={
                     Object {
-                      "backgroundColor": "#fbb414",
+                      "backgroundColor": "#ed652f",
                     }
                   }
                 />
@@ -823,7 +805,25 @@ exports[`Connect(FlatrisGame):new-game 1`] = `
                   className="jsx-2043156612 square-block"
                   style={
                     Object {
-                      "backgroundColor": "#fbb414",
+                      "backgroundColor": "#ed652f",
+                    }
+                  }
+                />
+              </div>
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "50%",
+                    "top": "25%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-2043156612 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#ed652f",
                     }
                   }
                 />
@@ -881,7 +881,7 @@ exports[`Connect(FlatrisGame):new-game 1`] = `
             Next
           </div>
           <div
-            className="jsx-675712511 next-tetromino next-tetromino-Z"
+            className="jsx-675712511 next-tetromino next-tetromino-I"
           >
             <div
               className="jsx-2115617632 tetromino"
@@ -891,7 +891,7 @@ exports[`Connect(FlatrisGame):new-game 1`] = `
                 style={
                   Object {
                     "left": "0%",
-                    "top": "0%",
+                    "top": "25%",
                   }
                 }
               >
@@ -899,25 +899,7 @@ exports[`Connect(FlatrisGame):new-game 1`] = `
                   className="jsx-2043156612 square-block"
                   style={
                     Object {
-                      "backgroundColor": "#e84138",
-                    }
-                  }
-                />
-              </div>
-              <div
-                className="jsx-4287887962 grid-square-block"
-                style={
-                  Object {
-                    "left": "25%",
-                    "top": "0%",
-                  }
-                }
-              >
-                <div
-                  className="jsx-2043156612 square-block"
-                  style={
-                    Object {
-                      "backgroundColor": "#e84138",
+                      "backgroundColor": "#3cc7d6",
                     }
                   }
                 />
@@ -935,7 +917,7 @@ exports[`Connect(FlatrisGame):new-game 1`] = `
                   className="jsx-2043156612 square-block"
                   style={
                     Object {
-                      "backgroundColor": "#e84138",
+                      "backgroundColor": "#3cc7d6",
                     }
                   }
                 />
@@ -953,7 +935,25 @@ exports[`Connect(FlatrisGame):new-game 1`] = `
                   className="jsx-2043156612 square-block"
                   style={
                     Object {
-                      "backgroundColor": "#e84138",
+                      "backgroundColor": "#3cc7d6",
+                    }
+                  }
+                />
+              </div>
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "75%",
+                    "top": "25%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-2043156612 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#3cc7d6",
                     }
                   }
                 />
@@ -1500,11 +1500,29 @@ exports[`GamePanel:default 1`] = `
     Next
   </div>
   <div
-    className="jsx-675712511 next-tetromino next-tetromino-S"
+    className="jsx-675712511 next-tetromino next-tetromino-O"
   >
     <div
       className="jsx-2115617632 tetromino"
     >
+      <div
+        className="jsx-4287887962 grid-square-block"
+        style={
+          Object {
+            "left": "0%",
+            "top": "0%",
+          }
+        }
+      >
+        <div
+          className="jsx-2043156612 square-block"
+          style={
+            Object {
+              "backgroundColor": "#fbb414",
+            }
+          }
+        />
+      </div>
       <div
         className="jsx-4287887962 grid-square-block"
         style={
@@ -1518,25 +1536,7 @@ exports[`GamePanel:default 1`] = `
           className="jsx-2043156612 square-block"
           style={
             Object {
-              "backgroundColor": "#95c43d",
-            }
-          }
-        />
-      </div>
-      <div
-        className="jsx-4287887962 grid-square-block"
-        style={
-          Object {
-            "left": "50%",
-            "top": "0%",
-          }
-        }
-      >
-        <div
-          className="jsx-2043156612 square-block"
-          style={
-            Object {
-              "backgroundColor": "#95c43d",
+              "backgroundColor": "#fbb414",
             }
           }
         />
@@ -1554,7 +1554,7 @@ exports[`GamePanel:default 1`] = `
           className="jsx-2043156612 square-block"
           style={
             Object {
-              "backgroundColor": "#95c43d",
+              "backgroundColor": "#fbb414",
             }
           }
         />
@@ -1572,7 +1572,7 @@ exports[`GamePanel:default 1`] = `
           className="jsx-2043156612 square-block"
           style={
             Object {
-              "backgroundColor": "#95c43d",
+              "backgroundColor": "#fbb414",
             }
           }
         />

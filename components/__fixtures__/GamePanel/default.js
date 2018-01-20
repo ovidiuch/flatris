@@ -6,12 +6,14 @@ import GamePanel from '../../GamePanel';
 
 import type { Props } from '../../GamePanel';
 
+const user = getSampleUser();
+
 const fixture: { props: Props } = {
   component: GamePanel,
 
   props: {
-    curUser: getSampleUser(),
-    game: getBlankGame({ activeTetrimono: 'S', nextTetrimino: 'S' }),
+    curUser: user,
+    game: getBlankGame({ id: 8989, user }),
     onMenu: () => console.log('Show menu')
   }
 };
