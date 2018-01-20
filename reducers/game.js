@@ -9,7 +9,7 @@ import {
 } from '../constants/grid';
 import { SHAPES, COLORS } from '../constants/tetromino';
 import {
-  getRandomTetromino,
+  getNextTetromino,
   getInitialPositionForTetromino
 } from '../utils/tetromino';
 import { getSampleUser } from '../utils/user';
@@ -23,21 +23,34 @@ import {
   fitTetrominoPositionInWellBounds
 } from '../utils/grid';
 
-import type { Tetromino, User, Player, Game } from '../types/state';
+import type {
+  Tetromino,
+  User,
+  Player,
+  GameId,
+  Game,
+  State
+} from '../types/state';
 import type { Action } from '../types/actions';
 
-export function gameReducer(state: void | Game, action: Action): null | Game {
-  if (typeof state === 'undefined') {
-    return null;
+export function gameReducer(state: void | ?Game, action: Action): ?Game {
+  // Sometimes the @@INIT action is called more than once, which leads to
+  // calling the reducer first with state=undefined and then again one or
+  // more times with state=null. The latter calls are noops.
+  if (!state) {
+    if (action.type !== 'CREATE_GAME') {
+      return null;
+    }
+
+    const { gameId, user } = action.payload;
+
+    return getBlankGame({
+      id: gameId,
+      user
+    });
   }
 
   switch (action.type) {
-    case 'CREATE_GAME': {
-      const { user } = action.payload;
-
-      return getBlankGame({ user });
-    }
-
     case 'START_GAME': {
       const { userId } = action.payload;
 
@@ -47,11 +60,12 @@ export function gameReducer(state: void | Game, action: Action): null | Game {
       };
     }
 
-    case 'ADVANCE_GAME': {
+    case 'DROP': {
       const { userId, rows } = action.payload;
       const player = getPlayer(state, userId);
       const { dropFrames } = state;
       const {
+        drops,
         score,
         lines,
         nextTetromino,
@@ -111,9 +125,10 @@ export function gameReducer(state: void | Game, action: Action): null | Game {
 
       return {
         ...updatePlayer(state, userId, {
+          drops: drops + 1,
           score: score + points,
           lines: lines + linesCleared,
-          nextTetromino: getRandomTetromino(),
+          nextTetromino: getNextTetromino(state.id, drops + 2),
           grid: clearedGrid,
           activeTetromino: nextTetromino,
           activeTetrominoGrid: SHAPES[nextTetromino],
@@ -134,8 +149,10 @@ export function gameReducer(state: void | Game, action: Action): null | Game {
       };
     }
 
-    case 'MOVE': {
-      const { userId, direction } = action.payload;
+    case 'MOVE_LEFT':
+    case 'MOVE_RIGHT': {
+      const { userId } = action.payload;
+      const direction = action.type === 'MOVE_LEFT' ? -1 : 1;
       const player = getPlayer(state, userId);
       const { grid, activeTetrominoGrid, activeTetrominoPosition } = player;
       const newPosition = Object.assign({}, activeTetrominoPosition, {
@@ -201,14 +218,16 @@ export function gameReducer(state: void | Game, action: Action): null | Game {
 }
 
 export function getBlankGame({
-  user = getSampleUser(),
-  nextTetromino = getRandomTetromino(),
-  activeTetromino = getRandomTetromino()
+  id = Date.now(),
+  user = getSampleUser()
 }: {
+  id?: GameId,
   user?: User,
   nextTetromino?: Tetromino,
   activeTetromino?: Tetromino
 }): Game {
+  const activeTetromino = getNextTetromino(id, 0);
+  const nextTetromino = getNextTetromino(id, 1);
   const activeTetrominoGrid = SHAPES[activeTetromino];
   const activeTetrominoPosition = getInitialPositionForTetromino(
     activeTetromino,
@@ -218,6 +237,7 @@ export function getBlankGame({
   const player1: Player = {
     user,
     status: 'PENDING',
+    drops: 0,
     score: 0,
     lines: 0,
     grid: generateEmptyGrid(WELL_ROWS, WELL_COLS),
@@ -229,10 +249,19 @@ export function getBlankGame({
   };
 
   return {
+    id,
     status: 'PENDING',
     players: [player1],
     dropFrames: DROP_FRAMES_DEFAULT
   };
+}
+
+export function getCurGame(state: State): Game {
+  if (!state.game) {
+    throw new Error('Current game is missing from state');
+  }
+
+  return state.game;
 }
 
 export function getPlayer(game: Game, userId: number): Player {

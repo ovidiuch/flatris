@@ -4,10 +4,11 @@
 import raf from 'raf';
 
 import { DROP_FRAMES_ACCELERATED } from './constants/grid';
-import { getPlayer, allPlayersReady } from './reducers/game';
+import { getCurGame, getPlayer, allPlayersReady } from './reducers/game';
+import { getCurUserId } from './reducers/cur-user';
 
-import type { UserId, User } from './types/state';
-import type { Action, Dispatch, GetState } from './types/actions';
+import type { UserId, User, GameId } from './types/state';
+import type { Action, AsyncAction, Dispatch, GetState } from './types/actions';
 
 const now =
   typeof performance !== 'undefined' && typeof performance.now === 'function'
@@ -20,23 +21,42 @@ const frameDuration = 1000 / FPS;
 // This changes too fast (60fps) to keep it in the store's state
 let yProgress = 0;
 
-export function createGame(user: User): Action {
+export function auth(userId: UserId, userName: string): Action {
   return {
-    type: 'CREATE_GAME',
-    payload: { user }
+    type: 'AUTH',
+    payload: { userId, userName }
   };
 }
 
-export function startGame(userId: UserId) {
+export function createGame(gameId: GameId, user: User): Action {
+  return {
+    type: 'CREATE_GAME',
+    payload: {
+      gameId,
+      user
+    }
+  };
+}
+
+export function startGame() {
   return (dispatch: Dispatch, getState: GetState) => {
+    const userId = getCurUserId(getState());
+
     dispatch({
       type: 'START_GAME',
       payload: { userId }
     });
 
-    if (allPlayersReady(getState().game)) {
+    const game = getCurGame(getState());
+    if (allPlayersReady(game)) {
       dispatch(advanceGame());
     }
+  };
+}
+
+export function leaveGame() {
+  return () => {
+    cancelFrame();
   };
 }
 
@@ -45,9 +65,11 @@ export function advanceGame() {
     cancelFrame();
 
     scheduleFrame(frames => {
-      const { curUser, game } = getState();
+      const state = getState();
+      const userId = getCurUserId(state);
+      const game = getCurGame(state);
       const { status, dropFrames } = game;
-      const player = getPlayer(game, curUser.id);
+      const player = getPlayer(game, userId);
       const { dropAcceleration } = player;
 
       // Stop animation when game ended
@@ -62,9 +84,9 @@ export function advanceGame() {
       yProgress += frames / framesPerDrop;
       if (yProgress > 1) {
         dispatch({
-          type: 'ADVANCE_GAME',
+          type: 'DROP',
           payload: {
-            userId: curUser.id,
+            userId,
             rows: Math.floor(yProgress)
           }
         });
@@ -76,57 +98,49 @@ export function advanceGame() {
   };
 }
 
-export function leaveGame() {
-  return () => {
-    cancelFrame();
-  };
-}
-
-export function moveLeft(userId: UserId): Action {
-  return {
-    type: 'MOVE',
+export function moveLeft(): AsyncAction {
+  return getUserAction(userId => ({
+    type: 'MOVE_LEFT',
     payload: {
-      userId,
-      direction: -1
+      userId
     }
-  };
+  }));
 }
 
-export function moveRight(userId: UserId): Action {
-  return {
-    type: 'MOVE',
+export function moveRight(): AsyncAction {
+  return getUserAction(userId => ({
+    type: 'MOVE_RIGHT',
     payload: {
-      userId,
-      direction: 1
+      userId
     }
-  };
+  }));
 }
 
-export function rotate(userId: UserId): Action {
-  return {
+export function rotate(): AsyncAction {
+  return getUserAction(userId => ({
     type: 'ROTATE',
     payload: {
       userId
     }
-  };
+  }));
 }
 
-export function enableAcceleration(userId: UserId): Action {
-  return {
+export function enableAcceleration(): AsyncAction {
+  return getUserAction(userId => ({
     type: 'ENABLE_ACCELERATION',
     payload: {
       userId
     }
-  };
+  }));
 }
 
-export function disableAcceleration(userId: UserId): Action {
-  return {
+export function disableAcceleration(): AsyncAction {
+  return getUserAction(userId => ({
     type: 'DISABLE_ACCELERATION',
     payload: {
       userId
     }
-  };
+  }));
 }
 
 let animationHandle;
@@ -142,4 +156,13 @@ function scheduleFrame(cb) {
     const timeEnd = now();
     cb((timeEnd - timeBegin) / frameDuration);
   });
+}
+
+function getUserAction(decorateActionWithUser: (userId: UserId) => Action) {
+  return (dispatch: Dispatch, getState: GetState) => {
+    const state = getState();
+    const userId = getCurUserId(state);
+
+    dispatch(decorateActionWithUser(userId));
+  };
 }

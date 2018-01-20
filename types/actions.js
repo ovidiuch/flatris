@@ -1,10 +1,15 @@
 // @flow
 
-import type { State, UserId, User } from './state';
+import type { UserId, User, GameId, State } from './state';
+
+export type InitAction = {
+  type: '@@INIT'
+};
 
 export type CreateGameAction = {
   type: 'CREATE_GAME',
   payload: {
+    gameId: GameId,
     user: User
   }
 };
@@ -16,26 +21,17 @@ export type StartGameAction = {
   }
 };
 
-export type AdvanceGameAction = {
-  type: 'ADVANCE_GAME',
-  payload: {
-    userId: UserId,
-    rows: number
-  }
-};
-
-export type LeaveGameAction = {
-  type: 'LEAVE_GAME',
+export type MoveLeftAction = {
+  type: 'MOVE_LEFT',
   payload: {
     userId: UserId
   }
 };
 
-export type MoveAction = {
-  type: 'MOVE',
+export type MoveRightAction = {
+  type: 'MOVE_RIGHT',
   payload: {
-    userId: UserId,
-    direction: -1 | 1
+    userId: UserId
   }
 };
 
@@ -43,6 +39,14 @@ export type RotateAction = {
   type: 'ROTATE',
   payload: {
     userId: UserId
+  }
+};
+
+export type DropAction = {
+  type: 'DROP',
+  payload: {
+    userId: UserId,
+    rows: number
   }
 };
 
@@ -60,17 +64,27 @@ export type DisableAccelerationAction = {
   }
 };
 
-export type GetState = () => State;
-
-export type Action =
+type GameAction =
   | CreateGameAction
   | StartGameAction
-  | AdvanceGameAction
-  | LeaveGameAction
-  | MoveAction
+  | MoveLeftAction
+  | MoveRightAction
   | RotateAction
+  | DropAction
   | EnableAccelerationAction
   | DisableAccelerationAction;
+
+export type AuthAction = {
+  type: 'AUTH',
+  payload: {
+    userId: UserId,
+    userName: string
+  }
+};
+
+export type Action = InitAction | GameAction | AuthAction;
+
+export type GetState = () => State;
 
 export type AsyncAction = (dispatch: Dispatch, getState: GetState) => any;
 

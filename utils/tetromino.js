@@ -1,12 +1,15 @@
 // @flow
 
-import { sample, keys } from 'lodash';
+import { str as crc32 } from 'crc-32';
 import { SHAPES } from '../constants/tetromino';
 
-import type { Tetromino, Position2d } from '../types/state';
+import type { Tetromino, Position2d, GameId } from '../types/state';
 
-export function getRandomTetromino(): Tetromino {
-  return sample(keys(SHAPES));
+export function getNextTetromino(gameId: GameId, nth: number): Tetromino {
+  const tetrominos = Object.keys(SHAPES);
+  const randNum = crc32(String(gameId + nth));
+
+  return tetrominos[Math.abs(randNum) % tetrominos.length];
 }
 
 export function getInitialPositionForTetromino(

@@ -76,26 +76,20 @@ class FlatrisGame extends Component<Props, State> {
       return;
     }
 
-    const {
-      curUser,
-      enableAcceleration,
-      rotate,
-      moveLeft,
-      moveRight
-    } = this.props;
+    const { enableAcceleration, rotate, moveLeft, moveRight } = this.props;
 
     switch (e.keyCode) {
       case DOWN:
-        enableAcceleration(curUser.id);
+        enableAcceleration();
         break;
       case UP:
-        rotate(curUser.id);
+        rotate();
         break;
       case LEFT:
-        moveLeft(curUser.id);
+        moveLeft();
         break;
       case RIGHT:
-        moveRight(curUser.id);
+        moveRight();
         break;
       default:
     }
@@ -107,8 +101,8 @@ class FlatrisGame extends Component<Props, State> {
     }
 
     if (e.keyCode === DOWN) {
-      const { curUser, disableAcceleration } = this.props;
-      disableAcceleration(curUser.id);
+      const { disableAcceleration } = this.props;
+      disableAcceleration();
     }
   };
 
@@ -119,8 +113,8 @@ class FlatrisGame extends Component<Props, State> {
 
     e.preventDefault();
 
-    const { curUser, rotate } = this.props;
-    rotate(curUser.id);
+    const { rotate } = this.props;
+    rotate();
   };
 
   handleLeftPress = e => {
@@ -130,8 +124,8 @@ class FlatrisGame extends Component<Props, State> {
 
     e.preventDefault();
 
-    const { curUser, moveLeft } = this.props;
-    moveLeft(curUser.id);
+    const { moveLeft } = this.props;
+    moveLeft();
   };
 
   handleRightPress = e => {
@@ -141,8 +135,8 @@ class FlatrisGame extends Component<Props, State> {
 
     e.preventDefault();
 
-    const { curUser, moveRight } = this.props;
-    moveRight(curUser.id);
+    const { moveRight } = this.props;
+    moveRight();
   };
 
   handlePullPress = e => {
@@ -152,8 +146,8 @@ class FlatrisGame extends Component<Props, State> {
 
     e.preventDefault();
 
-    const { curUser, enableAcceleration } = this.props;
-    enableAcceleration(curUser.id);
+    const { enableAcceleration } = this.props;
+    enableAcceleration();
   };
 
   handlePullRelease = e => {
@@ -163,13 +157,13 @@ class FlatrisGame extends Component<Props, State> {
 
     e.preventDefault();
 
-    const { curUser, disableAcceleration } = this.props;
-    disableAcceleration(curUser.id);
+    const { disableAcceleration } = this.props;
+    disableAcceleration();
   };
 
   handleMenu = () => {
-    const { curUser, startGame } = this.props;
-    startGame(curUser.id);
+    const { startGame } = this.props;
+    startGame();
   };
 
   isPlaying() {
