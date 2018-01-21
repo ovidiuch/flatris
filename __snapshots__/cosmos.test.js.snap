@@ -50,10 +50,10 @@ exports[`Connect(FlatrisGame):hallelujah 1`] = `
     }
   >
     <div
-      className="jsx-1125084258 flatris-game"
+      className="jsx-2686739902 flatris-game"
     >
       <div
-        className="jsx-1125084258 well-container"
+        className="jsx-2686739902 well-container"
       >
         <div
           className="jsx-2881654396 well"
@@ -152,7 +152,7 @@ exports[`Connect(FlatrisGame):hallelujah 1`] = `
         </div>
       </div>
       <div
-        className="jsx-1125084258 game-panel-container"
+        className="jsx-2686739902 game-panel-container"
       >
         <div
           className="jsx-675712511 game-panel"
@@ -392,10 +392,10 @@ exports[`Connect(FlatrisGame):mission-impossible 1`] = `
     }
   >
     <div
-      className="jsx-1125084258 flatris-game"
+      className="jsx-2686739902 flatris-game"
     >
       <div
-        className="jsx-1125084258 well-container"
+        className="jsx-2686739902 well-container"
       >
         <div
           className="jsx-2881654396 well"
@@ -494,7 +494,7 @@ exports[`Connect(FlatrisGame):mission-impossible 1`] = `
         </div>
       </div>
       <div
-        className="jsx-1125084258 game-panel-container"
+        className="jsx-2686739902 game-panel-container"
       >
         <div
           className="jsx-675712511 game-panel"
@@ -734,10 +734,10 @@ exports[`Connect(FlatrisGame):new-game 1`] = `
     }
   >
     <div
-      className="jsx-1125084258 flatris-game"
+      className="jsx-2686739902 flatris-game"
     >
       <div
-        className="jsx-1125084258 well-container"
+        className="jsx-2686739902 well-container"
       >
         <div
           className="jsx-2881654396 well"
@@ -836,7 +836,7 @@ exports[`Connect(FlatrisGame):new-game 1`] = `
         </div>
       </div>
       <div
-        className="jsx-1125084258 game-panel-container"
+        className="jsx-2686739902 game-panel-container"
       >
         <div
           className="jsx-675712511 game-panel"
@@ -1076,10 +1076,10 @@ exports[`Connect(FlatrisGame):new-game-running 1`] = `
     }
   >
     <div
-      className="jsx-1125084258 flatris-game"
+      className="jsx-2686739902 flatris-game"
     >
       <div
-        className="jsx-1125084258 well-container"
+        className="jsx-2686739902 well-container"
       >
         <div
           className="jsx-2881654396 well"
@@ -1178,7 +1178,7 @@ exports[`Connect(FlatrisGame):new-game-running 1`] = `
         </div>
       </div>
       <div
-        className="jsx-1125084258 game-panel-container"
+        className="jsx-2686739902 game-panel-container"
       >
         <div
           className="jsx-675712511 game-panel"
