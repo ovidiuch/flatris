@@ -14,11 +14,30 @@ export type CreateGameAction = {
   }
 };
 
-export type StartGameAction = {
-  type: 'START_GAME',
+export type LoadGameAction = {
+  type: 'LOAD_GAME',
+  payload: {
+    gameId: GameId,
+    user: User
+  }
+};
+
+export type JoinGameAction = {
+  type: 'JOIN_GAME',
+  payload: {
+    user: User
+  }
+};
+
+export type PlayerReadyAction = {
+  type: 'PLAYER_READY',
   payload: {
     userId: UserId
   }
+};
+
+export type StartGameAction = {
+  type: 'START_GAME'
 };
 
 export type MoveLeftAction = {
@@ -66,6 +85,9 @@ export type DisableAccelerationAction = {
 
 type GameAction =
   | CreateGameAction
+  | LoadGameAction
+  | JoinGameAction
+  | PlayerReadyAction
   | StartGameAction
   | MoveLeftAction
   | MoveRightAction

@@ -8,8 +8,7 @@ import { UP, DOWN, LEFT, RIGHT } from '../constants/keys';
 import { attachPointerDownEvent, attachPointerUpEvent } from '../utils/events';
 import { getPlayer } from '../reducers/game';
 import {
-  createGame,
-  startGame,
+  playerReady,
   leaveGame,
   moveLeft,
   moveRight,
@@ -26,8 +25,7 @@ import type { User, Game } from '../types/state';
 type Props = {
   curUser: User,
   game: Game,
-  createGame: typeof createGame,
-  startGame: typeof startGame,
+  playerReady: typeof playerReady,
   leaveGame: typeof leaveGame,
   moveLeft: typeof moveLeft,
   moveRight: typeof moveRight,
@@ -162,8 +160,8 @@ class FlatrisGame extends Component<Props, State> {
   };
 
   handleMenu = () => {
-    const { startGame } = this.props;
-    startGame();
+    const { playerReady } = this.props;
+    playerReady();
   };
 
   isPlaying() {
@@ -258,6 +256,9 @@ class FlatrisGame extends Component<Props, State> {
   render() {
     const { curUser, game } = this.props;
     const curPlayer = getPlayer(game, curUser.id);
+    // TODO: Create helper for getting enemy player
+    const enemy =
+      game.players.length > 1 ? game.players.find(p => p !== curPlayer) : null;
     const {
       grid,
       activeTetromino,
@@ -269,6 +270,16 @@ class FlatrisGame extends Component<Props, State> {
     return (
       <div className="flatris-game">
         <div className="well-container">
+          {enemy && (
+            <div className="enemy-well">
+              <Well
+                grid={enemy.grid}
+                activeTetromino={enemy.activeTetromino}
+                activeTetrominoGrid={enemy.activeTetrominoGrid}
+                activeTetrominoPosition={enemy.activeTetrominoPosition}
+              />
+            </div>
+          )}
           <Well
             grid={grid}
             activeTetromino={activeTetromino}
@@ -322,6 +333,11 @@ class FlatrisGame extends Component<Props, State> {
           .game-panel-container {
             height: calc(100% / 24 * 20);
           }
+
+          .enemy-well {
+            opacity: 0.15;
+            filter: grayscale(80%);
+          }
         `}</style>
       </div>
     );
@@ -334,8 +350,7 @@ const mapStateToProps = ({ game, curUser }) => ({
 });
 
 const mapDispatchToProps = {
-  createGame,
-  startGame,
+  playerReady,
   leaveGame,
   moveLeft,
   moveRight,

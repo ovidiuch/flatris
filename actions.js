@@ -4,7 +4,7 @@
 import raf from 'raf';
 
 import { DROP_FRAMES_ACCELERATED } from './constants/grid';
-import { getCurGame, getPlayer, allPlayersReady } from './reducers/game';
+import { getCurGame, getPlayer } from './reducers/game';
 import { getCurUserId } from './reducers/cur-user';
 
 import type { UserId, User, GameId } from './types/state';
@@ -31,6 +31,7 @@ export function auth(userId: UserId, userName: string): Action {
 export function createGame(gameId: GameId, user: User): Action {
   return {
     type: 'CREATE_GAME',
+    broadcast: true,
     payload: {
       gameId,
       user
@@ -38,29 +39,53 @@ export function createGame(gameId: GameId, user: User): Action {
   };
 }
 
-export function startGame() {
-  return (dispatch: Dispatch, getState: GetState) => {
-    const userId = getCurUserId(getState());
-
-    dispatch({
-      type: 'START_GAME',
-      payload: { userId }
-    });
-
-    const game = getCurGame(getState());
-    if (allPlayersReady(game)) {
-      dispatch(advanceGame());
+export function loadGame(gameId: GameId, user: User): Action {
+  return {
+    type: 'LOAD_GAME',
+    payload: {
+      gameId,
+      user
     }
   };
 }
 
-export function leaveGame() {
+export function joinGame(user: User): Action {
+  return {
+    type: 'JOIN_GAME',
+    broadcast: true,
+    payload: {
+      user
+    }
+  };
+}
+
+export function playerReady(): AsyncAction {
+  return getUserAction(userId => ({
+    type: 'PLAYER_READY',
+    broadcast: true,
+    payload: {
+      userId
+    }
+  }));
+}
+
+export function startGame(): AsyncAction {
+  return (dispatch: Dispatch) => {
+    dispatch({
+      type: 'START_GAME'
+    });
+
+    dispatch(advanceGame());
+  };
+}
+
+export function leaveGame(): AsyncAction {
   return () => {
     cancelFrame();
   };
 }
 
-export function advanceGame() {
+export function advanceGame(): AsyncAction {
   return (dispatch: Dispatch, getState: GetState) => {
     cancelFrame();
 
@@ -85,6 +110,7 @@ export function advanceGame() {
       if (yProgress > 1) {
         dispatch({
           type: 'DROP',
+          broadcast: true,
           payload: {
             userId,
             rows: Math.floor(yProgress)
@@ -101,6 +127,7 @@ export function advanceGame() {
 export function moveLeft(): AsyncAction {
   return getUserAction(userId => ({
     type: 'MOVE_LEFT',
+    broadcast: true,
     payload: {
       userId
     }
@@ -110,6 +137,7 @@ export function moveLeft(): AsyncAction {
 export function moveRight(): AsyncAction {
   return getUserAction(userId => ({
     type: 'MOVE_RIGHT',
+    broadcast: true,
     payload: {
       userId
     }
@@ -119,6 +147,7 @@ export function moveRight(): AsyncAction {
 export function rotate(): AsyncAction {
   return getUserAction(userId => ({
     type: 'ROTATE',
+    broadcast: true,
     payload: {
       userId
     }
@@ -128,6 +157,7 @@ export function rotate(): AsyncAction {
 export function enableAcceleration(): AsyncAction {
   return getUserAction(userId => ({
     type: 'ENABLE_ACCELERATION',
+    broadcast: true,
     payload: {
       userId
     }
@@ -137,6 +167,7 @@ export function enableAcceleration(): AsyncAction {
 export function disableAcceleration(): AsyncAction {
   return getUserAction(userId => ({
     type: 'DISABLE_ACCELERATION',
+    broadcast: true,
     payload: {
       userId
     }

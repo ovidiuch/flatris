@@ -24,9 +24,10 @@ export default class GamePanel extends Component<Props> {
    * - Start or pause/resume controls
    */
   renderGameButton() {
-    const { game, onMenu } = this.props;
+    const { curUser, game, onMenu } = this.props;
+    const player = getPlayer(game, curUser.id);
 
-    if (game.status !== 'PENDING') {
+    if (player.status !== 'PENDING') {
       return;
     }
 

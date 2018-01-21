@@ -38,7 +38,7 @@ export function gameReducer(state: void | ?Game, action: Action): ?Game {
   // calling the reducer first with state=undefined and then again one or
   // more times with state=null. The latter calls are noops.
   if (!state) {
-    if (action.type !== 'CREATE_GAME') {
+    if (action.type !== 'CREATE_GAME' && action.type !== 'LOAD_GAME') {
       return null;
     }
 
@@ -51,11 +51,30 @@ export function gameReducer(state: void | ?Game, action: Action): ?Game {
   }
 
   switch (action.type) {
-    case 'START_GAME': {
-      const { userId } = action.payload;
+    case 'JOIN_GAME': {
+      const { user } = action.payload;
+      const { id, players } = state;
+
+      // Prevent duplicating player for same user
+      if (players.find(p => p.user.id === user.id)) {
+        return state;
+      }
 
       return {
-        ...updatePlayer(state, userId, { status: 'READY' }),
+        ...state,
+        players: [...players, getBlankPlayer(id, user)]
+      };
+    }
+
+    case 'PLAYER_READY': {
+      const { userId } = action.payload;
+
+      return updatePlayer(state, userId, { status: 'READY' });
+    }
+
+    case 'START_GAME': {
+      return {
+        ...state,
         status: 'PLAYING'
       };
     }
@@ -228,15 +247,24 @@ export function getBlankGame(
     activeTetromino?: Tetromino
   } = {}
 ): Game {
-  const activeTetromino = getNextTetromino(id, 0);
-  const nextTetromino = getNextTetromino(id, 1);
+  return {
+    id,
+    status: 'PENDING',
+    players: [getBlankPlayer(id, user)],
+    dropFrames: DROP_FRAMES_DEFAULT
+  };
+}
+
+export function getBlankPlayer(gameId: GameId, user: User): Player {
+  const activeTetromino = getNextTetromino(gameId, 0);
+  const nextTetromino = getNextTetromino(gameId, 1);
   const activeTetrominoGrid = SHAPES[activeTetromino];
   const activeTetrominoPosition = getInitialPositionForTetromino(
     activeTetromino,
     WELL_COLS
   );
 
-  const player1: Player = {
+  return {
     user,
     status: 'PENDING',
     drops: 0,
@@ -248,13 +276,6 @@ export function getBlankGame(
     activeTetrominoGrid,
     activeTetrominoPosition,
     dropAcceleration: false
-  };
-
-  return {
-    id,
-    status: 'PENDING',
-    players: [player1],
-    dropFrames: DROP_FRAMES_DEFAULT
   };
 }
 
