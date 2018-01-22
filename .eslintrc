@@ -19,7 +19,12 @@
   },
   "overrides": [
     {
-      "files": ["jest.config.js", "cosmos.config.js", "cosmos.test.js"],
+      "files": [
+        "jest.config.js",
+        "cosmos.config.js",
+        "cosmos.test.js",
+        "server.js"
+      ],
       "env": {
         "node": true
       }
@@ -37,7 +42,7 @@
       }
     },
     {
-      "files": ["**/__fixtures__/**/*.js"],
+      "files": ["**/__fixtures__/**/*.js", "server.js"],
       "rules": {
         "no-console": "off"
       }
