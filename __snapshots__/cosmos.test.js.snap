@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button:primary 1`] = `
+exports[`Cosmos fixtures: Button:primary 1`] = `
 <button
   className="jsx-3501768573 button"
   onClick={[Function]}
@@ -9,7 +9,7 @@ exports[`Button:primary 1`] = `
 </button>
 `;
 
-exports[`Button:primary-disabled 1`] = `
+exports[`Cosmos fixtures: Button:primary-disabled 1`] = `
 <button
   className="jsx-3501768573 button"
   disabled={true}
@@ -19,7 +19,7 @@ exports[`Button:primary-disabled 1`] = `
 </button>
 `;
 
-exports[`Button:secondary 1`] = `
+exports[`Cosmos fixtures: Button:secondary 1`] = `
 <button
   className="jsx-2671015741 button"
   onClick={[Function]}
@@ -28,7 +28,7 @@ exports[`Button:secondary 1`] = `
 </button>
 `;
 
-exports[`Button:secondary-disabled 1`] = `
+exports[`Cosmos fixtures: Button:secondary-disabled 1`] = `
 <button
   className="jsx-3533494720 button"
   disabled={true}
@@ -38,7 +38,7 @@ exports[`Button:secondary-disabled 1`] = `
 </button>
 `;
 
-exports[`Connect(SocketConnect(FlatrisGame)):hallelujah 1`] = `
+exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah 1`] = `
 <div
   className="jsx-4259701921 container"
 >
@@ -380,7 +380,7 @@ exports[`Connect(SocketConnect(FlatrisGame)):hallelujah 1`] = `
 </div>
 `;
 
-exports[`Connect(SocketConnect(FlatrisGame)):mission-impossible 1`] = `
+exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible 1`] = `
 <div
   className="jsx-4259701921 container"
 >
@@ -722,7 +722,7 @@ exports[`Connect(SocketConnect(FlatrisGame)):mission-impossible 1`] = `
 </div>
 `;
 
-exports[`Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
+exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
 <div
   className="jsx-4259701921 container"
 >
@@ -1064,7 +1064,7 @@ exports[`Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
 </div>
 `;
 
-exports[`Connect(SocketConnect(FlatrisGame)):new-game-running 1`] = `
+exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game-running 1`] = `
 <div
   className="jsx-4259701921 container"
 >
@@ -1406,7 +1406,7 @@ exports[`Connect(SocketConnect(FlatrisGame)):new-game-running 1`] = `
 </div>
 `;
 
-exports[`GameContainer:default 1`] = `
+exports[`Cosmos fixtures: GameContainer:default 1`] = `
 <div
   className="jsx-4259701921 container"
 >
@@ -1414,7 +1414,7 @@ exports[`GameContainer:default 1`] = `
 </div>
 `;
 
-exports[`GameLobby:default 1`] = `
+exports[`Cosmos fixtures: GameLobby:default 1`] = `
 <div
   className="jsx-140613846 screen"
 >
@@ -1456,7 +1456,7 @@ exports[`GameLobby:default 1`] = `
 </div>
 `;
 
-exports[`GamePanel:default 1`] = `
+exports[`Cosmos fixtures: GamePanel:default 1`] = `
 <div
   className="jsx-675712511 game-panel"
 >
@@ -1610,7 +1610,7 @@ exports[`GamePanel:default 1`] = `
 </div>
 `;
 
-exports[`Grid:default 1`] = `
+exports[`Cosmos fixtures: Grid:default 1`] = `
 <div
   className="jsx-2043181861"
 >
@@ -1901,7 +1901,7 @@ exports[`Grid:default 1`] = `
 </div>
 `;
 
-exports[`Logo:default 1`] = `
+exports[`Cosmos fixtures: Logo:default 1`] = `
 <div
   className="jsx-3287429902 logo"
 >
@@ -1984,7 +1984,7 @@ exports[`Logo:default 1`] = `
 </div>
 `;
 
-exports[`NewGame:default 1`] = `
+exports[`Cosmos fixtures: NewGame:default 1`] = `
 <div
   className="jsx-2930071790 screen"
 >
@@ -2083,7 +2083,7 @@ exports[`NewGame:default 1`] = `
 </div>
 `;
 
-exports[`Preloader:default 1`] = `
+exports[`Cosmos fixtures: Preloader:default 1`] = `
 <div
   className="jsx-3689405750 root"
 >
@@ -2142,7 +2142,7 @@ exports[`Preloader:default 1`] = `
 </div>
 `;
 
-exports[`SquareBlock:color-of-the-I-tetromino 1`] = `
+exports[`Cosmos fixtures: SquareBlock:color-of-the-I-tetromino 1`] = `
 <div
   className="jsx-2043156612 square-block"
   style={
@@ -2153,7 +2153,7 @@ exports[`SquareBlock:color-of-the-I-tetromino 1`] = `
 />
 `;
 
-exports[`SquareBlock:color-of-the-J-tetromino 1`] = `
+exports[`Cosmos fixtures: SquareBlock:color-of-the-J-tetromino 1`] = `
 <div
   className="jsx-2043156612 square-block"
   style={
@@ -2164,7 +2164,7 @@ exports[`SquareBlock:color-of-the-J-tetromino 1`] = `
 />
 `;
 
-exports[`SquareBlock:color-of-the-L-tetromino 1`] = `
+exports[`Cosmos fixtures: SquareBlock:color-of-the-L-tetromino 1`] = `
 <div
   className="jsx-2043156612 square-block"
   style={
@@ -2175,7 +2175,7 @@ exports[`SquareBlock:color-of-the-L-tetromino 1`] = `
 />
 `;
 
-exports[`SquareBlock:color-of-the-O-tetromino 1`] = `
+exports[`Cosmos fixtures: SquareBlock:color-of-the-O-tetromino 1`] = `
 <div
   className="jsx-2043156612 square-block"
   style={
@@ -2186,7 +2186,7 @@ exports[`SquareBlock:color-of-the-O-tetromino 1`] = `
 />
 `;
 
-exports[`SquareBlock:color-of-the-S-tetromino 1`] = `
+exports[`Cosmos fixtures: SquareBlock:color-of-the-S-tetromino 1`] = `
 <div
   className="jsx-2043156612 square-block"
   style={
@@ -2197,7 +2197,7 @@ exports[`SquareBlock:color-of-the-S-tetromino 1`] = `
 />
 `;
 
-exports[`SquareBlock:color-of-the-T-tetromino 1`] = `
+exports[`Cosmos fixtures: SquareBlock:color-of-the-T-tetromino 1`] = `
 <div
   className="jsx-2043156612 square-block"
   style={
@@ -2208,7 +2208,7 @@ exports[`SquareBlock:color-of-the-T-tetromino 1`] = `
 />
 `;
 
-exports[`SquareBlock:color-of-the-Z-tetromino 1`] = `
+exports[`Cosmos fixtures: SquareBlock:color-of-the-Z-tetromino 1`] = `
 <div
   className="jsx-2043156612 square-block"
   style={
@@ -2219,7 +2219,7 @@ exports[`SquareBlock:color-of-the-Z-tetromino 1`] = `
 />
 `;
 
-exports[`Tetromino:I-tetromino 1`] = `
+exports[`Cosmos fixtures: Tetromino:I-tetromino 1`] = `
 <div
   className="jsx-2115617632 tetromino"
 >
@@ -2298,7 +2298,7 @@ exports[`Tetromino:I-tetromino 1`] = `
 </div>
 `;
 
-exports[`Tetromino:J-tetromino 1`] = `
+exports[`Cosmos fixtures: Tetromino:J-tetromino 1`] = `
 <div
   className="jsx-2115617632 tetromino"
 >
@@ -2377,7 +2377,7 @@ exports[`Tetromino:J-tetromino 1`] = `
 </div>
 `;
 
-exports[`Tetromino:L-tetromino 1`] = `
+exports[`Cosmos fixtures: Tetromino:L-tetromino 1`] = `
 <div
   className="jsx-2115617632 tetromino"
 >
@@ -2456,7 +2456,7 @@ exports[`Tetromino:L-tetromino 1`] = `
 </div>
 `;
 
-exports[`Tetromino:O-tetromino 1`] = `
+exports[`Cosmos fixtures: Tetromino:O-tetromino 1`] = `
 <div
   className="jsx-2115617632 tetromino"
 >
@@ -2535,7 +2535,7 @@ exports[`Tetromino:O-tetromino 1`] = `
 </div>
 `;
 
-exports[`Tetromino:S-tetromino 1`] = `
+exports[`Cosmos fixtures: Tetromino:S-tetromino 1`] = `
 <div
   className="jsx-2115617632 tetromino"
 >
@@ -2614,7 +2614,7 @@ exports[`Tetromino:S-tetromino 1`] = `
 </div>
 `;
 
-exports[`Tetromino:T-tetromino 1`] = `
+exports[`Cosmos fixtures: Tetromino:T-tetromino 1`] = `
 <div
   className="jsx-2115617632 tetromino"
 >
@@ -2693,7 +2693,7 @@ exports[`Tetromino:T-tetromino 1`] = `
 </div>
 `;
 
-exports[`Tetromino:Z-tetromino 1`] = `
+exports[`Cosmos fixtures: Tetromino:Z-tetromino 1`] = `
 <div
   className="jsx-2115617632 tetromino"
 >
@@ -2772,7 +2772,7 @@ exports[`Tetromino:Z-tetromino 1`] = `
 </div>
 `;
 
-exports[`Tetromino:rotated-Z-tetromino-1 1`] = `
+exports[`Cosmos fixtures: Tetromino:rotated-Z-tetromino-1 1`] = `
 <div
   className="jsx-2115617632 tetromino"
 >
@@ -2851,7 +2851,7 @@ exports[`Tetromino:rotated-Z-tetromino-1 1`] = `
 </div>
 `;
 
-exports[`Tetromino:rotated-Z-tetromino-2 1`] = `
+exports[`Cosmos fixtures: Tetromino:rotated-Z-tetromino-2 1`] = `
 <div
   className="jsx-2115617632 tetromino"
 >
@@ -2930,7 +2930,7 @@ exports[`Tetromino:rotated-Z-tetromino-2 1`] = `
 </div>
 `;
 
-exports[`Tetromino:rotated-Z-tetromino-3 1`] = `
+exports[`Cosmos fixtures: Tetromino:rotated-Z-tetromino-3 1`] = `
 <div
   className="jsx-2115617632 tetromino"
 >
@@ -3009,7 +3009,7 @@ exports[`Tetromino:rotated-Z-tetromino-3 1`] = `
 </div>
 `;
 
-exports[`Well:s-coming-atcha 1`] = `
+exports[`Cosmos fixtures: Well:s-coming-atcha 1`] = `
 <div
   className="jsx-2881654396 well"
 >
@@ -3628,7 +3628,7 @@ exports[`Well:s-coming-atcha 1`] = `
 </div>
 `;
 
-exports[`Well:t-bone 1`] = `
+exports[`Cosmos fixtures: Well:t-bone 1`] = `
 <div
   className="jsx-2881654396 well"
 >
@@ -3807,7 +3807,7 @@ exports[`Well:t-bone 1`] = `
 </div>
 `;
 
-exports[`WellGrid:3x3-grid 1`] = `
+exports[`Cosmos fixtures: WellGrid:3x3-grid 1`] = `
 <div
   className="jsx-1915500079 well-grid"
 >
@@ -3954,7 +3954,7 @@ exports[`WellGrid:3x3-grid 1`] = `
 </div>
 `;
 
-exports[`WellGrid:flatris 1`] = `
+exports[`Cosmos fixtures: WellGrid:flatris 1`] = `
 <div
   className="jsx-1915500079 well-grid"
 >
