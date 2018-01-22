@@ -1,13 +1,31 @@
-import React from 'react';
+// @flow
+
+import { func } from 'prop-types';
+import React, { Component } from 'react';
 import createReduxProxy from 'react-cosmos-redux-proxy';
 import FlatrisGame from './components/FlatrisGame';
 import GameContainer from './components/GameContainer';
-import { SocketProvider } from './utils/socket/Provider';
 import { createStore } from './store';
 
-const ViewportContainer = props => {
-  const { nextProxy, fixture: { component, opacity = 1 } } = props;
-  const { value: NextProxy, next } = nextProxy;
+import type { ComponentType, Node } from 'react';
+
+type LinkedItem<Item> = {
+  value: Item,
+  next: () => LinkedItem<Item>
+};
+
+type ProxyProps = {
+  nextProxy: LinkedItem<ComponentType<ProxyProps>>,
+  fixture: Object,
+  onComponentRef: Function,
+  onFixtureUpdate: Function
+};
+
+const ViewportContainer = (props: ProxyProps) => {
+  const {
+    nextProxy: { value: NextProxy, next },
+    fixture: { component, opacity = 1 }
+  } = props;
   const nextEl = <NextProxy {...props} nextProxy={next()} />;
 
   if (component === FlatrisGame) {
@@ -21,9 +39,31 @@ const ViewportContainer = props => {
   return nextEl;
 };
 
-const SocketProviderProxy = props => {
-  const { nextProxy, fixture: { reduxState } } = props;
-  const { value: NextProxy, next } = nextProxy;
+class SocketProvider extends Component<{ children: Node }> {
+  static childContextTypes = {
+    broadcast: func.isRequired
+  };
+
+  getChildContext() {
+    return {
+      broadcast: this.handleBroadcast
+    };
+  }
+
+  handleBroadcast = async action => {
+    console.log('broadcast', action);
+  };
+
+  render() {
+    return this.props.children;
+  }
+}
+
+const SocketProviderProxy = (props: ProxyProps) => {
+  const {
+    nextProxy: { value: NextProxy, next },
+    fixture: { reduxState }
+  } = props;
   const nextEl = <NextProxy {...props} nextProxy={next()} />;
 
   return reduxState ? <SocketProvider>{nextEl}</SocketProvider> : nextEl;

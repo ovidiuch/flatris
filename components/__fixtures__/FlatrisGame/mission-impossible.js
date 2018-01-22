@@ -223,6 +223,6 @@ export default {
     // }
   },
 
-  // We need to trigger the Redux provider for SocketProvider
+  // We need to the Redux context
   reduxState: {}
 };

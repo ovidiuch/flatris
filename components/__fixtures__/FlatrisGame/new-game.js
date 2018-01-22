@@ -12,6 +12,6 @@ export default {
     game: getBlankGame({ id: 1337, user })
   },
 
-  // We need to trigger the Redux provider for SocketProvider
+  // We need to the Redux context
   reduxState: {}
 };
