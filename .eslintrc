@@ -14,7 +14,8 @@
     "global": true
   },
   "rules": {
-    "no-console": "warn"
+    "no-console": "warn",
+    "flowtype/generic-spacing": "off"
   },
   "overrides": [
     {

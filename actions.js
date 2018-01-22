@@ -9,7 +9,15 @@ import { getCurGame } from './reducers/cur-game';
 import { getCurUserId } from './reducers/cur-user';
 
 import type { UserId, User, GameId } from './types/state';
-import type { Action, AsyncAction, Dispatch, GetState } from './types/actions';
+import type {
+  AuthAction,
+  CreateGameAction,
+  JoinGameAction,
+  Action,
+  AsyncAction,
+  Dispatch,
+  GetState
+} from './types/actions';
 
 const now =
   typeof performance !== 'undefined' && typeof performance.now === 'function'
@@ -22,14 +30,14 @@ const frameDuration = 1000 / FPS;
 // This changes too fast (60fps) to keep it in the store's state
 let yProgress = 0;
 
-export function auth(userId: UserId, userName: string): Action {
+export function auth(userId: UserId, userName: string): AuthAction {
   return {
     type: 'AUTH',
     payload: { userId, userName }
   };
 }
 
-export function createGame(gameId: GameId, user: User): Action {
+export function createGame(gameId: GameId, user: User): CreateGameAction {
   return {
     type: 'CREATE_GAME',
     payload: {
@@ -39,7 +47,7 @@ export function createGame(gameId: GameId, user: User): Action {
   };
 }
 
-export function joinGame(gameId: GameId, user: User): Action {
+export function joinGame(gameId: GameId, user: User): JoinGameAction {
   return {
     type: 'JOIN_GAME',
     payload: {
@@ -59,13 +67,13 @@ export function playerReady(): AsyncAction {
   }));
 }
 
-export function stopGame(): AsyncAction {
+export function stopGame() {
   return () => {
     cancelFrame();
   };
 }
 
-export function advanceGame(drop: (rows: number) => any): AsyncAction {
+export function advanceGame(drop: (rows: number) => any) {
   return (dispatch: Dispatch, getState: GetState) => {
     cancelFrame();
 
@@ -176,7 +184,9 @@ function scheduleFrame(cb) {
   });
 }
 
-function decorateAction(fn: ({ gameId: GameId, userId: UserId }) => Action) {
+type ActionDecorator = ({ gameId: GameId, userId: UserId }) => Action;
+
+function decorateAction(fn: ActionDecorator): AsyncAction {
   return (dispatch: Dispatch, getState: GetState): Action => {
     const state = getState();
     const userId = getCurUserId(state);
