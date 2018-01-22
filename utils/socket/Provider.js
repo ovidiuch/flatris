@@ -23,8 +23,9 @@ class SocketProviderInner extends Component<Props> {
   componentDidMount() {
     if (!socket) {
       socket = io('http://localhost:4000');
-      socket.on('message', this.handleMessage);
     }
+
+    socket.on('message', this.handleMessage);
   }
 
   getChildContext() {
