@@ -6,7 +6,7 @@ import raf from 'raf';
 import { DROP_FRAMES_ACCELERATED } from './constants/grid';
 import { getPlayer } from './reducers/game';
 import { getCurGame } from './reducers/cur-game';
-import { getCurUserId } from './reducers/cur-user';
+import { getCurUser } from './reducers/cur-user';
 
 import type { UserId, User, GameId } from './types/state';
 import type {
@@ -77,7 +77,7 @@ export function advanceGame(drop: (rows: number) => any): ThunkAction {
 
     scheduleFrame(frames => {
       const state = getState();
-      const userId = getCurUserId(state);
+      const userId = getCurUser(state).id;
       const game = getCurGame(state);
       const { status, dropFrames } = game;
       const player = getPlayer(game, userId);
@@ -187,7 +187,7 @@ type ActionDecorator = ({ gameId: GameId, userId: UserId }) => Action;
 function decorateAction(fn: ActionDecorator): ThunkAction {
   return (dispatch: Dispatch, getState: GetState) => {
     const state = getState();
-    const userId = getCurUserId(state);
+    const userId = getCurUser(state).id;
     const gameId = getCurGame(state).id;
 
     return dispatch(fn({ userId, gameId }));

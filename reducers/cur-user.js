@@ -1,6 +1,6 @@
 // @flow
 
-import type { UserId, User, State } from '../types/state';
+import type { User, State } from '../types/state';
 import type { Action } from '../types/actions';
 
 export function curUserReducer(state: void | User, action: Action): ?User {
@@ -18,10 +18,6 @@ export function curUserReducer(state: void | User, action: Action): ?User {
     default:
       return state;
   }
-}
-
-export function getCurUserId(state: State): UserId {
-  return getCurUser(state).id;
 }
 
 export function getCurUser(state: State): User {
