@@ -19,11 +19,11 @@ class NewGame extends Component<Props> {
     this.createGame();
   }
 
-  createGame = async () => {
+  createGame = () => {
     const { curUser, createGame } = this.props;
 
     const gameId = Date.now();
-    await createGame(gameId, curUser);
+    createGame(gameId, curUser);
 
     Router.push(`/join?g=${gameId}`);
   };

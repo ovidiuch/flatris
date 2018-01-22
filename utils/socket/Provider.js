@@ -6,11 +6,11 @@ import { connect } from 'react-redux';
 import io from 'socket.io-client';
 
 import type { Node } from 'react';
-import type { Action, AsyncAction } from '../../types/actions';
+import type { Action, ThunkAction } from '../../types/actions';
 
 type Props = {
   children?: Node,
-  dispatch: (Action | AsyncAction) => Action
+  dispatch: (Action | ThunkAction) => Action
 };
 
 let socket;
@@ -45,11 +45,11 @@ class SocketProviderInner extends Component<Props> {
     this.props.dispatch(msg);
   };
 
-  handleBroadcast = async (action: Action) => {
+  handleBroadcast = (action: Action) => {
     const { dispatch } = this.props;
 
     // The final action is returned from async thunk actions
-    const resAction: Action = await dispatch(action);
+    const resAction: Action = dispatch(action);
 
     // console.log('broadcast', resAction);
     socket.emit('message', resAction);

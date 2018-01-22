@@ -102,6 +102,9 @@ export type Action = InitAction | GameAction | AuthAction;
 
 export type GetState = () => State;
 
-export type AsyncAction = (dispatch: Dispatch, getState: GetState) => any;
+export type ThunkAction = (
+  dispatch: Dispatch,
+  getState: GetState
+) => void | Action;
 
-export type Dispatch = (Action | AsyncAction) => any;
+export type Dispatch = (Action | ThunkAction) => Action;

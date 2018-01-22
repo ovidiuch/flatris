@@ -4,14 +4,14 @@ import { func } from 'prop-types';
 import React, { Component } from 'react';
 
 import type { ComponentType } from 'react';
-import type { Action, AsyncAction } from '../../types/actions';
+import type { Action, ThunkAction } from '../../types/actions';
 
 type Props = {};
 
 export function withSocket(
   CompType: ComponentType<*>,
   syncActions: {
-    [propName: string]: (...args: any) => Action | AsyncAction
+    [propName: string]: (...args: any) => Action | ThunkAction
   }
 ) {
   class SocketConnect extends Component<Props> {

@@ -30,7 +30,6 @@ type Props = {
   game: Game,
   playerReady: typeof playerReady,
   advanceGame: typeof advanceGame,
-  stopGame: typeof stopGame,
   drop: typeof drop,
   moveLeft: typeof moveLeft,
   moveRight: typeof moveRight,
@@ -78,7 +77,7 @@ class FlatrisGame extends Component<Props, LocalState> {
     window.removeEventListener('keydown', this.handleKeyDown);
     window.removeEventListener('keyup', this.handleKeyUp);
 
-    this.props.stopGame();
+    stopGame();
   }
 
   handleKeyDown = e => {
@@ -362,8 +361,7 @@ class FlatrisGame extends Component<Props, LocalState> {
 }
 
 const mapDispatchToProps = {
-  advanceGame,
-  stopGame
+  advanceGame
 };
 
 const syncActions = {

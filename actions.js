@@ -14,7 +14,7 @@ import type {
   CreateGameAction,
   JoinGameAction,
   Action,
-  AsyncAction,
+  ThunkAction,
   Dispatch,
   GetState
 } from './types/actions';
@@ -57,7 +57,7 @@ export function joinGame(gameId: GameId, user: User): JoinGameAction {
   };
 }
 
-export function playerReady(): AsyncAction {
+export function playerReady(): ThunkAction {
   return decorateAction(({ userId, gameId }) => ({
     type: 'PLAYER_READY',
     payload: {
@@ -68,12 +68,10 @@ export function playerReady(): AsyncAction {
 }
 
 export function stopGame() {
-  return () => {
-    cancelFrame();
-  };
+  cancelFrame();
 }
 
-export function advanceGame(drop: (rows: number) => any) {
+export function advanceGame(drop: (rows: number) => any): ThunkAction {
   return (dispatch: Dispatch, getState: GetState) => {
     cancelFrame();
 
@@ -108,7 +106,7 @@ export function advanceGame(drop: (rows: number) => any) {
   };
 }
 
-export function drop(rows: number): AsyncAction {
+export function drop(rows: number): ThunkAction {
   return decorateAction(({ userId, gameId }) => ({
     type: 'DROP',
     payload: {
@@ -119,7 +117,7 @@ export function drop(rows: number): AsyncAction {
   }));
 }
 
-export function moveLeft(): AsyncAction {
+export function moveLeft(): ThunkAction {
   return decorateAction(({ userId, gameId }) => ({
     type: 'MOVE_LEFT',
     payload: {
@@ -129,7 +127,7 @@ export function moveLeft(): AsyncAction {
   }));
 }
 
-export function moveRight(): AsyncAction {
+export function moveRight(): ThunkAction {
   return decorateAction(({ userId, gameId }) => ({
     type: 'MOVE_RIGHT',
     payload: {
@@ -139,7 +137,7 @@ export function moveRight(): AsyncAction {
   }));
 }
 
-export function rotate(): AsyncAction {
+export function rotate(): ThunkAction {
   return decorateAction(({ userId, gameId }) => ({
     type: 'ROTATE',
     payload: {
@@ -149,7 +147,7 @@ export function rotate(): AsyncAction {
   }));
 }
 
-export function enableAcceleration(): AsyncAction {
+export function enableAcceleration(): ThunkAction {
   return decorateAction(({ userId, gameId }) => ({
     type: 'ENABLE_ACCELERATION',
     payload: {
@@ -159,7 +157,7 @@ export function enableAcceleration(): AsyncAction {
   }));
 }
 
-export function disableAcceleration(): AsyncAction {
+export function disableAcceleration(): ThunkAction {
   return decorateAction(({ userId, gameId }) => ({
     type: 'DISABLE_ACCELERATION',
     payload: {
@@ -186,8 +184,8 @@ function scheduleFrame(cb) {
 
 type ActionDecorator = ({ gameId: GameId, userId: UserId }) => Action;
 
-function decorateAction(fn: ActionDecorator): AsyncAction {
-  return (dispatch: Dispatch, getState: GetState): Action => {
+function decorateAction(fn: ActionDecorator): ThunkAction {
+  return (dispatch: Dispatch, getState: GetState) => {
     const state = getState();
     const userId = getCurUserId(state);
     const gameId = getCurGame(state).id;
