@@ -27,7 +27,7 @@ export function withSocket(
       const actionCreator = syncActions[actionName];
 
       // NOTE: This must only run on the client!
-      broadcast(actionCreator(...args));
+      return broadcast(actionCreator(...args));
     };
 
     render() {

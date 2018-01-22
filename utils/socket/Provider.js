@@ -52,6 +52,9 @@ class SocketProviderInner extends Component<Props> {
 
     // console.log('broadcast', resAction);
     socket.emit('message', resAction);
+
+    // Allow callers to chain broadcasted actions
+    return resAction;
   };
 
   render() {
