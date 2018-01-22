@@ -59,7 +59,7 @@ export function playerReady(): AsyncAction {
   }));
 }
 
-export function leaveGame(): AsyncAction {
+export function stopGame(): AsyncAction {
   return () => {
     cancelFrame();
   };

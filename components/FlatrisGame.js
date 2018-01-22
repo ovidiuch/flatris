@@ -9,8 +9,8 @@ import { attachPointerDownEvent, attachPointerUpEvent } from '../utils/events';
 import { getPlayer, allPlayersReady } from '../reducers/game';
 import {
   playerReady,
-  leaveGame,
   advanceGame,
+  stopGame,
   drop,
   moveLeft,
   moveRight,
@@ -29,8 +29,8 @@ type Props = {
   curUser: User,
   game: Game,
   playerReady: typeof playerReady,
-  leaveGame: typeof leaveGame,
   advanceGame: typeof advanceGame,
+  stopGame: typeof stopGame,
   drop: typeof drop,
   moveLeft: typeof moveLeft,
   moveRight: typeof moveRight,
@@ -78,7 +78,7 @@ class FlatrisGame extends Component<Props, LocalState> {
     window.removeEventListener('keydown', this.handleKeyDown);
     window.removeEventListener('keyup', this.handleKeyUp);
 
-    this.props.leaveGame();
+    this.props.stopGame();
   }
 
   handleKeyDown = e => {
@@ -362,12 +362,12 @@ class FlatrisGame extends Component<Props, LocalState> {
 }
 
 const mapDispatchToProps = {
-  advanceGame
+  advanceGame,
+  stopGame
 };
 
 const syncActions = {
   playerReady,
-  leaveGame,
   drop,
   moveLeft,
   moveRight,
