@@ -6,16 +6,19 @@ import { connect } from 'react-redux';
 import _ from 'lodash';
 import { UP, DOWN, LEFT, RIGHT } from '../constants/keys';
 import { attachPointerDownEvent, attachPointerUpEvent } from '../utils/events';
-import { getPlayer } from '../reducers/game';
+import { getPlayer, allPlayersReady } from '../reducers/game';
 import {
   playerReady,
   leaveGame,
+  advanceGame,
+  drop,
   moveLeft,
   moveRight,
   rotate,
   enableAcceleration,
   disableAcceleration
 } from '../actions';
+import { withSocket } from '../utils/socket/connect';
 import Well from './Well';
 import GamePanel from './GamePanel';
 import Button from './Button';
@@ -27,6 +30,8 @@ type Props = {
   game: Game,
   playerReady: typeof playerReady,
   leaveGame: typeof leaveGame,
+  advanceGame: typeof advanceGame,
+  drop: typeof drop,
   moveLeft: typeof moveLeft,
   moveRight: typeof moveRight,
   rotate: typeof rotate,
@@ -34,11 +39,11 @@ type Props = {
   disableAcceleration: typeof disableAcceleration
 };
 
-type State = {
+type LocalState = {
   showMenu: boolean
 };
 
-class FlatrisGame extends Component<Props, State> {
+class FlatrisGame extends Component<Props, LocalState> {
   state = {
     showMenu: false
   };
@@ -53,6 +58,18 @@ class FlatrisGame extends Component<Props, State> {
     // called on the server
     window.addEventListener('keydown', this.handleKeyDown);
     window.addEventListener('keyup', this.handleKeyUp);
+  }
+
+  componentDidUpdate(prevProps) {
+    const prevGame = prevProps.game;
+    const { game, drop } = this.props;
+
+    // Begin game animation when both players are ready (runs on each client)
+    if (game.status === 'PLAYING') {
+      if (!allPlayersReady(prevGame) && allPlayersReady(game)) {
+        this.props.advanceGame(drop);
+      }
+    }
   }
 
   componentWillUnmount() {
@@ -344,14 +361,14 @@ class FlatrisGame extends Component<Props, State> {
   }
 }
 
-const mapStateToProps = ({ game, curUser }) => ({
-  game,
-  curUser
-});
-
 const mapDispatchToProps = {
+  advanceGame
+};
+
+const syncActions = {
   playerReady,
   leaveGame,
+  drop,
   moveLeft,
   moveRight,
   rotate,
@@ -359,4 +376,6 @@ const mapDispatchToProps = {
   disableAcceleration
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(FlatrisGame);
+export default connect(undefined, mapDispatchToProps)(
+  withSocket(FlatrisGame, syncActions)
+);

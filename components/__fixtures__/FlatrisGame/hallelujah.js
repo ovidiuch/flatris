@@ -7,7 +7,7 @@ const user = getSampleUser();
 export default {
   component: FlatrisGame,
 
-  reduxState: {
+  props: {
     curUser: user,
     game: getBlankGame({ id: 1337, user })
     // TODO: Bring back this fixture
@@ -236,5 +236,8 @@ export default {
     //   dropFrames: 30,
     //   dropAcceleration: false
     // }
-  }
+  },
+
+  // We need to trigger the Redux provider for SocketProvider
+  reduxState: {}
 };

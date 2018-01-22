@@ -23,31 +23,23 @@ import {
   fitTetrominoPositionInWellBounds
 } from '../utils/grid';
 
-import type {
-  Tetromino,
-  User,
-  Player,
-  GameId,
-  Game,
-  State
-} from '../types/state';
-import type { Action } from '../types/actions';
+import type { Tetromino, User, Player, GameId, Game } from '../types/state';
+import type { GameAction } from '../types/actions';
 
-export function gameReducer(state: void | ?Game, action: Action): ?Game {
-  // Sometimes the @@INIT action is called more than once, which leads to
-  // calling the reducer first with state=undefined and then again one or
-  // more times with state=null. The latter calls are noops.
+export function gameReducer(state: void | Game, action: GameAction): Game {
   if (!state) {
-    if (action.type !== 'CREATE_GAME' && action.type !== 'LOAD_GAME') {
-      return null;
+    switch (action.type) {
+      case 'CREATE_GAME': {
+        const { gameId, user } = action.payload;
+
+        return getBlankGame({
+          id: gameId,
+          user
+        });
+      }
+      default:
+        throw new Error(`Game action ${action.type} called on void state`);
     }
-
-    const { gameId, user } = action.payload;
-
-    return getBlankGame({
-      id: gameId,
-      user
-    });
   }
 
   switch (action.type) {
@@ -70,13 +62,6 @@ export function gameReducer(state: void | ?Game, action: Action): ?Game {
       const { userId } = action.payload;
 
       return updatePlayer(state, userId, { status: 'READY' });
-    }
-
-    case 'START_GAME': {
-      return {
-        ...state,
-        status: 'PLAYING'
-      };
     }
 
     case 'DROP': {
@@ -249,7 +234,7 @@ export function getBlankGame(
 ): Game {
   return {
     id,
-    status: 'PENDING',
+    status: 'PLAYING',
     players: [getBlankPlayer(id, user)],
     dropFrames: DROP_FRAMES_DEFAULT
   };
@@ -277,14 +262,6 @@ export function getBlankPlayer(gameId: GameId, user: User): Player {
     activeTetrominoPosition,
     dropAcceleration: false
   };
-}
-
-export function getCurGame(state: State): Game {
-  if (!state.game) {
-    throw new Error('Current game is missing from state');
-  }
-
-  return state.game;
 }
 
 export function getPlayer(game: Game, userId: number): Player {

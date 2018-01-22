@@ -39,7 +39,7 @@ export type Player = {
 // This type is allows us to change game id type from number to hash string
 export type GameId = number;
 
-export type GameStatus = 'PENDING' | 'PLAYING' | 'OVER';
+export type GameStatus = 'PLAYING' | 'OVER';
 
 export type Game = {
   id: GameId,
@@ -50,5 +50,5 @@ export type Game = {
 
 export type State = {
   curUser: ?User,
-  game: ?Game
+  curGame: ?Game
 };

@@ -38,7 +38,7 @@ exports[`Button:secondary-disabled 1`] = `
 </button>
 `;
 
-exports[`Connect(FlatrisGame):hallelujah 1`] = `
+exports[`Connect(SocketConnect(FlatrisGame)):hallelujah 1`] = `
 <div
   className="jsx-4259701921 container"
 >
@@ -380,7 +380,7 @@ exports[`Connect(FlatrisGame):hallelujah 1`] = `
 </div>
 `;
 
-exports[`Connect(FlatrisGame):mission-impossible 1`] = `
+exports[`Connect(SocketConnect(FlatrisGame)):mission-impossible 1`] = `
 <div
   className="jsx-4259701921 container"
 >
@@ -722,7 +722,7 @@ exports[`Connect(FlatrisGame):mission-impossible 1`] = `
 </div>
 `;
 
-exports[`Connect(FlatrisGame):new-game 1`] = `
+exports[`Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
 <div
   className="jsx-4259701921 container"
 >
@@ -1064,7 +1064,7 @@ exports[`Connect(FlatrisGame):new-game 1`] = `
 </div>
 `;
 
-exports[`Connect(FlatrisGame):new-game-running 1`] = `
+exports[`Connect(SocketConnect(FlatrisGame)):new-game-running 1`] = `
 <div
   className="jsx-4259701921 container"
 >

@@ -7,8 +7,11 @@ const user = getSampleUser();
 export default {
   component: FlatrisGame,
 
-  reduxState: {
+  props: {
     curUser: user,
     game: getBlankGame({ id: 1337, user })
-  }
+  },
+
+  // We need to trigger the Redux provider for SocketProvider
+  reduxState: {}
 };

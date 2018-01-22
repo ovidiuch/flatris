@@ -22,6 +22,7 @@
     * [x] Render other player's grid in the background
 * [x] Create server MVP database
   * [x] Split client logic between starting or joining a game
+* [x] Rename state.game to state.curGame
 * [ ] Add lines to other player when clearing lines
 * [ ] [WORKING PROTOTYPE]
 * [ ] Read game (Redux) state from server side in Page.getInitialProps

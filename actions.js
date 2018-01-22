@@ -4,7 +4,8 @@
 import raf from 'raf';
 
 import { DROP_FRAMES_ACCELERATED } from './constants/grid';
-import { getCurGame, getPlayer } from './reducers/game';
+import { getPlayer } from './reducers/game';
+import { getCurGame } from './reducers/cur-game';
 import { getCurUserId } from './reducers/cur-user';
 
 import type { UserId, User, GameId } from './types/state';
@@ -31,7 +32,6 @@ export function auth(userId: UserId, userName: string): Action {
 export function createGame(gameId: GameId, user: User): Action {
   return {
     type: 'CREATE_GAME',
-    broadcast: true,
     payload: {
       gameId,
       user
@@ -39,44 +39,24 @@ export function createGame(gameId: GameId, user: User): Action {
   };
 }
 
-export function loadGame(gameId: GameId, user: User): Action {
-  return {
-    type: 'LOAD_GAME',
-    payload: {
-      gameId,
-      user
-    }
-  };
-}
-
-export function joinGame(user: User): Action {
+export function joinGame(gameId: GameId, user: User): Action {
   return {
     type: 'JOIN_GAME',
-    broadcast: true,
     payload: {
+      gameId,
       user
     }
   };
 }
 
 export function playerReady(): AsyncAction {
-  return getUserAction(userId => ({
+  return decorateAction(({ userId, gameId }) => ({
     type: 'PLAYER_READY',
-    broadcast: true,
     payload: {
-      userId
+      userId,
+      gameId
     }
   }));
-}
-
-export function startGame(): AsyncAction {
-  return (dispatch: Dispatch) => {
-    dispatch({
-      type: 'START_GAME'
-    });
-
-    dispatch(advanceGame());
-  };
 }
 
 export function leaveGame(): AsyncAction {
@@ -85,7 +65,7 @@ export function leaveGame(): AsyncAction {
   };
 }
 
-export function advanceGame(): AsyncAction {
+export function advanceGame(drop: (rows: number) => any): AsyncAction {
   return (dispatch: Dispatch, getState: GetState) => {
     cancelFrame();
 
@@ -107,69 +87,76 @@ export function advanceGame(): AsyncAction {
         : dropFrames;
 
       yProgress += frames / framesPerDrop;
+
       if (yProgress > 1) {
-        dispatch({
-          type: 'DROP',
-          broadcast: true,
-          payload: {
-            userId,
-            rows: Math.floor(yProgress)
-          }
-        });
+        const rows = Math.floor(yProgress);
+        drop(rows);
+
         yProgress %= 1;
       }
 
-      dispatch(advanceGame());
+      dispatch(advanceGame(drop));
     });
   };
 }
 
-export function moveLeft(): AsyncAction {
-  return getUserAction(userId => ({
-    type: 'MOVE_LEFT',
-    broadcast: true,
+export function drop(rows: number): AsyncAction {
+  return decorateAction(({ userId, gameId }) => ({
+    type: 'DROP',
     payload: {
-      userId
+      userId,
+      gameId,
+      rows
+    }
+  }));
+}
+
+export function moveLeft(): AsyncAction {
+  return decorateAction(({ userId, gameId }) => ({
+    type: 'MOVE_LEFT',
+    payload: {
+      userId,
+      gameId
     }
   }));
 }
 
 export function moveRight(): AsyncAction {
-  return getUserAction(userId => ({
+  return decorateAction(({ userId, gameId }) => ({
     type: 'MOVE_RIGHT',
-    broadcast: true,
     payload: {
-      userId
+      userId,
+      gameId
     }
   }));
 }
 
 export function rotate(): AsyncAction {
-  return getUserAction(userId => ({
+  return decorateAction(({ userId, gameId }) => ({
     type: 'ROTATE',
-    broadcast: true,
     payload: {
-      userId
+      userId,
+      gameId
     }
   }));
 }
 
 export function enableAcceleration(): AsyncAction {
-  return getUserAction(userId => ({
+  return decorateAction(({ userId, gameId }) => ({
     type: 'ENABLE_ACCELERATION',
-    broadcast: true,
     payload: {
-      userId
+      userId,
+      gameId
     }
   }));
 }
 
 export function disableAcceleration(): AsyncAction {
-  return getUserAction(userId => ({
+  return decorateAction(({ userId, gameId }) => ({
     type: 'DISABLE_ACCELERATION',
-    broadcast: true,
     payload: {
-      userId
+      userId,
+      gameId
     }
   }));
 }
@@ -189,11 +176,12 @@ function scheduleFrame(cb) {
   });
 }
 
-function getUserAction(decorateActionWithUser: (userId: UserId) => Action) {
-  return (dispatch: Dispatch, getState: GetState) => {
+function decorateAction(fn: ({ gameId: GameId, userId: UserId }) => Action) {
+  return (dispatch: Dispatch, getState: GetState): Action => {
     const state = getState();
     const userId = getCurUserId(state);
+    const gameId = getCurGame(state).id;
 
-    dispatch(decorateActionWithUser(userId));
+    return dispatch(fn({ userId, gameId }));
   };
 }

@@ -14,17 +14,10 @@ export type CreateGameAction = {
   }
 };
 
-export type LoadGameAction = {
-  type: 'LOAD_GAME',
-  payload: {
-    gameId: GameId,
-    user: User
-  }
-};
-
 export type JoinGameAction = {
   type: 'JOIN_GAME',
   payload: {
+    gameId: GameId,
     user: User
   }
 };
@@ -32,17 +25,15 @@ export type JoinGameAction = {
 export type PlayerReadyAction = {
   type: 'PLAYER_READY',
   payload: {
+    gameId: GameId,
     userId: UserId
   }
-};
-
-export type StartGameAction = {
-  type: 'START_GAME'
 };
 
 export type MoveLeftAction = {
   type: 'MOVE_LEFT',
   payload: {
+    gameId: GameId,
     userId: UserId
   }
 };
@@ -50,6 +41,7 @@ export type MoveLeftAction = {
 export type MoveRightAction = {
   type: 'MOVE_RIGHT',
   payload: {
+    gameId: GameId,
     userId: UserId
   }
 };
@@ -57,6 +49,7 @@ export type MoveRightAction = {
 export type RotateAction = {
   type: 'ROTATE',
   payload: {
+    gameId: GameId,
     userId: UserId
   }
 };
@@ -64,6 +57,7 @@ export type RotateAction = {
 export type DropAction = {
   type: 'DROP',
   payload: {
+    gameId: GameId,
     userId: UserId,
     rows: number
   }
@@ -72,6 +66,7 @@ export type DropAction = {
 export type EnableAccelerationAction = {
   type: 'ENABLE_ACCELERATION',
   payload: {
+    gameId: GameId,
     userId: UserId
   }
 };
@@ -79,16 +74,15 @@ export type EnableAccelerationAction = {
 export type DisableAccelerationAction = {
   type: 'DISABLE_ACCELERATION',
   payload: {
+    gameId: GameId,
     userId: UserId
   }
 };
 
-type GameAction =
+export type GameAction =
   | CreateGameAction
-  | LoadGameAction
   | JoinGameAction
   | PlayerReadyAction
-  | StartGameAction
   | MoveLeftAction
   | MoveRightAction
   | RotateAction
