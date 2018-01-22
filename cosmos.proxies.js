@@ -2,12 +2,14 @@
 
 import { func } from 'prop-types';
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import createReduxProxy from 'react-cosmos-redux-proxy';
 import FlatrisGame from './components/FlatrisGame';
 import GameContainer from './components/GameContainer';
 import { createStore } from './store';
 
 import type { ComponentType, Node } from 'react';
+import type { Action, ThunkAction } from './types/actions';
 
 type LinkedItem<Item> = {
   value: Item,
@@ -39,7 +41,12 @@ const ViewportContainer = (props: ProxyProps) => {
   return nextEl;
 };
 
-class SocketProvider extends Component<{ children: Node }> {
+type SocketProviderProps = {
+  children: Node,
+  dispatch: (Action | ThunkAction) => Action
+};
+
+class SocketProviderRaw extends Component<SocketProviderProps> {
   static childContextTypes = {
     broadcast: func.isRequired
   };
@@ -50,14 +57,19 @@ class SocketProvider extends Component<{ children: Node }> {
     };
   }
 
-  handleBroadcast = async action => {
+  handleBroadcast = action => {
     console.log('broadcast', action);
+
+    const { dispatch } = this.props;
+    dispatch(action);
   };
 
   render() {
     return this.props.children;
   }
 }
+
+const SocketProvider = connect()(SocketProviderRaw);
 
 const SocketProviderProxy = (props: ProxyProps) => {
   const {

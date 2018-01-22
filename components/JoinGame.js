@@ -4,15 +4,16 @@ import { Component } from 'react';
 import { connect } from 'react-redux';
 import { createGame, joinGame } from '../actions';
 import { withSocket } from '../utils/socket/connect';
+import { getCurUser } from '../reducers/cur-user';
 
 import type { Node } from 'react';
 import type { User, Game, GameId, State } from '../types/state';
 
 type Props = {
-  curUser: User,
   gameId: GameId,
+  curUser: User,
   curGame: ?Game,
-  children: (curGame: Game) => Node,
+  children: Node,
   createGame: typeof createGame,
   joinGame: typeof joinGame
 };
@@ -41,13 +42,14 @@ class JoinGame extends Component<Props> {
     // It takes two independent actions to load and join game, and we're only
     // ready to  render the game once both actions propagated
     return curGame && curGame.players.find(p => p.user.id === curUser.id)
-      ? children(curGame)
+      ? children
       : null;
   }
 }
 
-const mapStateToProps = ({ curGame }: State): $Shape<Props> => ({
-  curGame
+const mapStateToProps = (state: State): $Shape<Props> => ({
+  curUser: getCurUser(state),
+  curGame: state.curGame
 });
 
 const mapDispatchToProps = {

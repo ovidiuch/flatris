@@ -9,7 +9,7 @@ import type { Node } from 'react';
 import type { Action, ThunkAction } from '../../types/actions';
 
 type Props = {
-  children?: Node,
+  children: Node,
   dispatch: (Action | ThunkAction) => Action
 };
 

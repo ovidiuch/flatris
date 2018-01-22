@@ -3,13 +3,14 @@ import { getBlankGame } from '../../../reducers/game';
 import FlatrisGame from '../../FlatrisGame';
 
 const user = getSampleUser();
+const game = getBlankGame({ id: 1337, user });
 
 export default {
   component: FlatrisGame,
 
-  props: {
+  reduxState: {
     curUser: user,
-    game: getBlankGame({ id: 1337, user })
+    curGame: game
     // TODO: Bring back this fixture
     // game: {
     //   gameState: PLAYING,
@@ -236,8 +237,5 @@ export default {
     //   dropFrames: 30,
     //   dropAcceleration: false
     // }
-  },
-
-  // We need to the Redux context
-  reduxState: {}
+  }
 };

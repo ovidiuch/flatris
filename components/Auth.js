@@ -9,7 +9,7 @@ import type { User, State } from '../types/state';
 
 type Props = {
   curUser: ?User,
-  children: (curUser: User) => Node,
+  children: Node,
   auth: typeof auth
 };
 
@@ -49,7 +49,7 @@ class Auth extends Component<Props> {
     const { curUser, children } = this.props;
 
     return curUser ? (
-      children(curUser)
+      children
     ) : (
       <form onSubmit={this.handleGo}>
         <input type="text" ref={this.handleInputRef} />

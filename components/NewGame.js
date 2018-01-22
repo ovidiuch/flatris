@@ -1,12 +1,14 @@
 // @flow
 
 import { Component } from 'react';
+import { connect } from 'react-redux';
 import Router from 'next/router';
 import { createGame } from '../actions';
 import { withSocket } from '../utils/socket/connect';
+import { getCurUser } from '../reducers/cur-user';
 
 import type { Node } from 'react';
-import type { User, Game } from '../types/state';
+import type { User, Game, State } from '../types/state';
 
 type Props = {
   curUser: User,
@@ -34,8 +36,12 @@ class NewGame extends Component<Props> {
   }
 }
 
+const mapStateToProps = (state: State): $Shape<Props> => ({
+  curUser: getCurUser(state)
+});
+
 const syncActions = {
   createGame
 };
 
-export default withSocket(NewGame, syncActions);
+export default connect(mapStateToProps)(withSocket(NewGame, syncActions));

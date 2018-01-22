@@ -14,15 +14,11 @@ const DefaultPage = ({ url }) => (
   <Layout>
     <SocketProvider>
       <Auth>
-        {curUser => (
-          <JoinGame curUser={curUser} gameId={Number(url.query.g)}>
-            {curGame => (
-              <GameContainer>
-                <FlatrisGame curUser={curUser} game={curGame} />
-              </GameContainer>
-            )}
-          </JoinGame>
-        )}
+        <JoinGame gameId={Number(url.query.g)}>
+          <GameContainer>
+            <FlatrisGame />
+          </GameContainer>
+        </JoinGame>
       </Auth>
     </SocketProvider>
   </Layout>

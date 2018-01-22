@@ -7,6 +7,8 @@ import _ from 'lodash';
 import { UP, DOWN, LEFT, RIGHT } from '../constants/keys';
 import { attachPointerDownEvent, attachPointerUpEvent } from '../utils/events';
 import { getPlayer, allPlayersReady } from '../reducers/game';
+import { getCurUser } from '../reducers/cur-user';
+import { getCurGame } from '../reducers/cur-game';
 import {
   playerReady,
   advanceGame,
@@ -23,7 +25,7 @@ import Well from './Well';
 import GamePanel from './GamePanel';
 import Button from './Button';
 
-import type { User, Game } from '../types/state';
+import type { User, Game, State } from '../types/state';
 
 type Props = {
   curUser: User,
@@ -360,6 +362,11 @@ class FlatrisGame extends Component<Props, LocalState> {
   }
 }
 
+const mapStateToProps = (state: State): $Shape<Props> => ({
+  curUser: getCurUser(state),
+  game: getCurGame(state)
+});
+
 const mapDispatchToProps = {
   advanceGame
 };
@@ -374,6 +381,6 @@ const syncActions = {
   disableAcceleration
 };
 
-export default connect(undefined, mapDispatchToProps)(
+export default connect(mapStateToProps, mapDispatchToProps)(
   withSocket(FlatrisGame, syncActions)
 );

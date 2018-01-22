@@ -21,9 +21,13 @@ export function curUserReducer(state: void | User, action: Action): ?User {
 }
 
 export function getCurUserId(state: State): UserId {
+  return getCurUser(state).id;
+}
+
+export function getCurUser(state: State): User {
   if (!state.curUser) {
     throw new Error('Current user is missing from state');
   }
 
-  return state.curUser.id;
+  return state.curUser;
 }
