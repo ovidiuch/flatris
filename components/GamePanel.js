@@ -62,13 +62,14 @@ export default class GamePanel extends Component<Props> {
         <div className="users">
           {game.players.map(player => {
             const { user } = player;
+            const isMe = user.id === curUser.id;
             const classes = classNames('user', {
               // 'user-ready': user.status === 'READY',
             });
 
             return (
               <div className={classes} key={user.id}>
-                <span>{user.name}</span>
+                <span>{isMe ? <strong>{user.name}</strong> : user.name}</span>
               </div>
             );
           })}
