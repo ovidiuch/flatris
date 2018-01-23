@@ -20,7 +20,9 @@ import {
   getBottomMostPosition,
   transferTetrominoToGrid,
   clearLines,
-  fitTetrominoPositionInWellBounds
+  fitTetrominoPositionInWellBounds,
+  getLineBlocksFromGrid,
+  appendBlocksToGrid
 } from '../utils/grid';
 
 import type { Tetromino, User, Player, GameId, Game } from '../types/state';
@@ -111,7 +113,7 @@ export function gameReducer(state: void | Game, action: GameAction): Game {
       );
 
       // Clear lines created after landing and transfering a Tetromino
-      const { clearedGrid, linesCleared } = clearLines(newGrid);
+      const { clearedGrid, rowsCleared } = clearLines(newGrid);
 
       // TODO: Calculate cells in Tetromino. All current Tetrominoes have 4 cells
       const cells = 4;
@@ -119,19 +121,19 @@ export function gameReducer(state: void | Game, action: GameAction): Game {
       // Rudimentary scoring logic, no T-Spin and combo bonuses. Read more at
       // http://tetris.wikia.com/wiki/Scoring
       let points = dropAcceleration ? cells * 2 : cells;
-      if (linesCleared) {
-        points += LINE_CLEAR_BONUSES[linesCleared - 1] * (lines + 1);
+      if (rowsCleared.length) {
+        points += LINE_CLEAR_BONUSES[rowsCleared.length - 1] * (lines + 1);
       }
 
       // Game over when well is full& and it should stop inserting any new
       // Tetrominoes from this point on (until the Well is reset)
       const status = newPosition.y < 0 ? 'OVER' : 'PLAYING';
 
-      return {
+      let newState = {
         ...updatePlayer(state, userId, {
           drops: drops + 1,
           score: score + points,
-          lines: lines + linesCleared,
+          lines: lines + rowsCleared.length,
           nextTetromino: getNextTetromino(state.id, drops + 2),
           grid: clearedGrid,
           activeTetromino: nextTetromino,
@@ -147,10 +149,69 @@ export function gameReducer(state: void | Game, action: GameAction): Game {
         }),
         status,
         // Increase speed whenever a line is cleared (fast game)
-        dropFrames: linesCleared
+        dropFrames: rowsCleared.length
           ? dropFrames - DROP_FRAMES_DECREMENT
           : dropFrames
       };
+
+      // Transfer blocks from cleared lines to enemy grid 😈
+      if (rowsCleared.length > 0) {
+        const enemy = getEnemyPlayer(newState, userId);
+        if (enemy) {
+          // We reference old `grid` to get cleared lines *without* blocks
+          // from active Tetromino
+          const blocksFromEnemy = getLineBlocksFromGrid(grid, rowsCleared);
+
+          return updatePlayer(newState, enemy.user.id, {
+            blocksFromEnemy
+          });
+        }
+      }
+
+      return newState;
+    }
+
+    case 'APPEND_ENEMY_BLOCKS': {
+      const { userId } = action.payload;
+      const player = getPlayer(state, userId);
+      const {
+        grid,
+        activeTetrominoGrid,
+        activeTetrominoPosition,
+        blocksFromEnemy
+      } = player;
+
+      let newGrid = appendBlocksToGrid(grid, blocksFromEnemy);
+
+      // Push active Tetromino up if necessary
+      if (
+        isPositionAvailable(
+          newGrid,
+          activeTetrominoGrid,
+          activeTetrominoPosition
+        )
+      ) {
+        return updatePlayer(state, userId, {
+          grid: newGrid,
+          blocksFromEnemy: []
+        });
+      }
+
+      // Receiving rows of blocks from enemy might cause the active Tetrimino
+      // to overlap with the grid, so it some cases it will be pushed up
+      // mid-drop to avoid collisions. The next DROP action will instantly
+      // transfer active Tetromino to wall grid in these cases
+      const newPosition = getBottomMostPosition(
+        newGrid,
+        activeTetrominoGrid,
+        activeTetrominoPosition
+      );
+
+      return updatePlayer(state, userId, {
+        grid: newGrid,
+        activeTetrominoPosition: newPosition,
+        blocksFromEnemy: []
+      });
     }
 
     case 'MOVE_LEFT':
@@ -260,7 +321,8 @@ export function getBlankPlayer(gameId: GameId, user: User): Player {
     activeTetromino,
     activeTetrominoGrid,
     activeTetrominoPosition,
-    dropAcceleration: false
+    dropAcceleration: false,
+    blocksFromEnemy: []
   };
 }
 
@@ -270,6 +332,13 @@ export function getPlayer(game: Game, userId: number): Player {
   if (!player) {
     throw new Error(`Player with userId ${userId} does not exist`);
   }
+
+  return player;
+}
+
+// XXX: This only works with max 2 players per game
+export function getEnemyPlayer(game: Game, curUserId: number): ?Player {
+  const player = game.players.find(p => p.user.id !== curUserId);
 
   return player;
 }

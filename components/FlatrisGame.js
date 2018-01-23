@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import _ from 'lodash';
 import { UP, DOWN, LEFT, RIGHT } from '../constants/keys';
 import { attachPointerDownEvent, attachPointerUpEvent } from '../utils/events';
-import { getPlayer, allPlayersReady } from '../reducers/game';
+import { getPlayer, getEnemyPlayer, allPlayersReady } from '../reducers/game';
 import { getCurUser } from '../reducers/cur-user';
 import { getCurGame } from '../reducers/cur-game';
 import {
@@ -18,7 +18,8 @@ import {
   moveRight,
   rotate,
   enableAcceleration,
-  disableAcceleration
+  disableAcceleration,
+  appendEnemyBlocks
 } from '../actions';
 import { withSocket } from '../utils/socket/connect';
 import Well from './Well';
@@ -37,7 +38,8 @@ type Props = {
   moveRight: typeof moveRight,
   rotate: typeof rotate,
   enableAcceleration: typeof enableAcceleration,
-  disableAcceleration: typeof disableAcceleration
+  disableAcceleration: typeof disableAcceleration,
+  appendEnemyBlocks: typeof appendEnemyBlocks
 };
 
 type LocalState = {
@@ -63,12 +65,16 @@ class FlatrisGame extends Component<Props, LocalState> {
 
   componentDidUpdate(prevProps) {
     const prevGame = prevProps.game;
-    const { game, drop } = this.props;
+    const { curUser, game, drop } = this.props;
 
     // Begin game animation when both players are ready (runs on each client)
     if (game.status === 'PLAYING') {
       if (!allPlayersReady(prevGame) && allPlayersReady(game)) {
         this.props.advanceGame(drop);
+      }
+
+      if (getPlayer(game, curUser.id).blocksFromEnemy.length) {
+        this.props.appendEnemyBlocks();
       }
     }
   }
@@ -274,9 +280,7 @@ class FlatrisGame extends Component<Props, LocalState> {
   render() {
     const { curUser, game } = this.props;
     const curPlayer = getPlayer(game, curUser.id);
-    // TODO: Create helper for getting enemy player
-    const enemy =
-      game.players.length > 1 ? game.players.find(p => p !== curPlayer) : null;
+    const enemy = getEnemyPlayer(game, curUser.id);
     const {
       grid,
       activeTetromino,
@@ -378,7 +382,8 @@ const syncActions = {
   moveRight,
   rotate,
   enableAcceleration,
-  disableAcceleration
+  disableAcceleration,
+  appendEnemyBlocks
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(

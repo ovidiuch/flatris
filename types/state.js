@@ -1,5 +1,7 @@
 // @flow
 
+export type Color = string; // #ff0000
+
 export type Tetromino = 'I' | 'O' | 'T' | 'J' | 'L' | 'S' | 'Z';
 
 export type Grid<GridItem> = Array<Array<GridItem>>;
@@ -8,7 +10,7 @@ export type TetrominoGrid = Grid<0 | 1>;
 
 export type Position2d = { x: number, y: number };
 
-export type WallGridItem = [number, string];
+export type WallGridItem = [number, Color];
 
 export type WallGrid = Grid<?WallGridItem>;
 
@@ -33,7 +35,8 @@ export type Player = {
   activeTetromino: Tetromino,
   activeTetrominoGrid: TetrominoGrid,
   activeTetrominoPosition: Position2d,
-  dropAcceleration: boolean
+  dropAcceleration: boolean,
+  blocksFromEnemy: Grid<?Color>
 };
 
 // This type is allows us to change game id type from number to hash string

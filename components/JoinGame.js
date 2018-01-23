@@ -31,6 +31,7 @@ class JoinGame extends Component<Props> {
     );
     const { players: [{ user }] } = games[gameId];
 
+    // TODO: Load entire game
     // TODO: Don't join if game is already running
     createGame(gameId, user);
     joinGame(gameId, curUser);

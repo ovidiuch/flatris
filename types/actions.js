@@ -79,6 +79,14 @@ export type DisableAccelerationAction = {
   }
 };
 
+export type AppendEnemyLines = {
+  type: 'APPEND_ENEMY_BLOCKS',
+  payload: {
+    gameId: GameId,
+    userId: UserId
+  }
+};
+
 export type GameAction =
   | CreateGameAction
   | JoinGameAction
@@ -88,7 +96,8 @@ export type GameAction =
   | RotateAction
   | DropAction
   | EnableAccelerationAction
-  | DisableAccelerationAction;
+  | DisableAccelerationAction
+  | AppendEnemyLines;
 
 export type AuthAction = {
   type: 'AUTH',

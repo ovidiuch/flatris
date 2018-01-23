@@ -1,6 +1,12 @@
 // @flow
 
-import type { Grid, WallGrid, TetrominoGrid, Position2d } from '../types/state';
+import type {
+  Color,
+  Grid,
+  WallGrid,
+  TetrominoGrid,
+  Position2d
+} from '../types/state';
 
 export function generateEmptyGrid(rows: number, cols: number): WallGrid {
   const matrix = [];
@@ -145,7 +151,7 @@ export function clearLines(
   grid: WallGrid
 ): {
   clearedGrid: WallGrid,
-  linesCleared: number
+  rowsCleared: Array<number>
 } {
   /**
    * Clear all rows that form a complete line, from one left to right, inside
@@ -155,7 +161,7 @@ export function clearLines(
   const rows = grid.length;
   const cols = grid[0].length;
   const clearedGrid = grid.map(l => l);
-  let linesCleared = 0;
+  const rowsCleared = [];
 
   for (let row = rows - 1; row >= 0; row--) {
     if (isLine(clearedGrid[row])) {
@@ -164,7 +170,11 @@ export function clearLines(
           row2 > 0 ? clearedGrid[row2 - 1] : createEmptyLine(cols);
       }
 
-      linesCleared++;
+      // Because the grid "falls" with every cleared line, the index of the
+      // original row is smaller than the current row index by the number of
+      // cleared on this occasion. We `unshift` because the lines are cleared
+      // from bottom to top, but will then be applied from top to bottom
+      rowsCleared.unshift(row - rowsCleared.length);
 
       // Go once more through the same row
       row++;
@@ -173,7 +183,7 @@ export function clearLines(
 
   return {
     clearedGrid,
-    linesCleared
+    rowsCleared
   };
 }
 
@@ -209,4 +219,56 @@ export function fitTetrominoPositionInWellBounds(
     x: newX,
     y
   };
+}
+
+export function getLineBlocksFromGrid(
+  grid: WallGrid,
+  lines: Array<number>
+): Grid<?Color> {
+  const cols = grid[0].length;
+  const subGrid = [];
+
+  lines.forEach(row => {
+    const newRow = [];
+    for (let col = 0; col < cols; col++) {
+      newRow[col] = grid[row][col] ? grid[row][col][1] : null;
+    }
+    subGrid.push(newRow);
+  });
+
+  return subGrid;
+}
+
+export function appendBlocksToGrid(
+  grid: WallGrid,
+  blocks: Grid<?Color>
+): WallGrid {
+  const newGrid = [];
+  const rows = grid.length;
+  const cols = grid[0].length;
+  let cellId = getMaxIdFromGrid(grid);
+
+  // Shift existing blocks to a higher position, to make room for the new blocks
+  // at the bottom
+  for (let row = 0; row < rows - blocks.length; row++) {
+    newGrid[row] = [];
+    for (let col = 0; col < cols; col++) {
+      newGrid[row][col] = grid[row + blocks.length][col];
+    }
+  }
+
+  // Add new blocks
+  for (let i = 0; i < blocks.length; i++) {
+    const row = newGrid.length;
+    newGrid[row] = [];
+    for (let col = 0; col < cols; col++) {
+      if (blocks[i][col]) {
+        newGrid[row][col] = [++cellId, blocks[i][col]];
+      } else {
+        newGrid[row][col] = null;
+      }
+    }
+  }
+
+  return newGrid;
 }

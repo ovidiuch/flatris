@@ -167,6 +167,16 @@ export function disableAcceleration(): ThunkAction {
   }));
 }
 
+export function appendEnemyBlocks(): ThunkAction {
+  return decorateAction(({ userId, gameId }) => ({
+    type: 'APPEND_ENEMY_BLOCKS',
+    payload: {
+      userId,
+      gameId
+    }
+  }));
+}
+
 let animationHandle;
 let timeBegin;
 
