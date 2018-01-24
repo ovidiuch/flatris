@@ -65,16 +65,16 @@ class FlatrisGame extends Component<Props, LocalState> {
 
   componentDidUpdate(prevProps) {
     const prevGame = prevProps.game;
-    const { curUser, game, drop } = this.props;
+    const { curUser, game, drop, advanceGame, appendEnemyBlocks } = this.props;
 
     // Begin game animation when both players are ready (runs on each client)
     if (game.status === 'PLAYING') {
       if (!allPlayersReady(prevGame) && allPlayersReady(game)) {
-        this.props.advanceGame(drop);
+        advanceGame(drop);
       }
 
       if (getPlayer(game, curUser.id).blocksFromEnemy.length) {
-        this.props.appendEnemyBlocks();
+        appendEnemyBlocks();
       }
     }
   }

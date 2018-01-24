@@ -24,6 +24,9 @@
   * [x] Split client logic between starting or joining a game
 * [x] Rename state.game to state.curGame
 * [x] Add blocks to other player when clearing lines
+* [x] Bring back "falling" block transition when lines are cleared
+* [ ] Earthquake effect when clearing lines
+* [ ] Green/red wall flash when clearing lines (own vs enemy)
 * [ ] [WORKING PROTOTYPE]
 * [ ] Read game (Redux) state from server side in Page.getInitialProps
 * [ ] Expand memory db to multi games
@@ -37,3 +40,4 @@
 * [ ] Minimize state footprint
 * [ ] Optimize CSS via will-change
 * [ ] Game cleanup when game is over or everyone leaves (wait a bit in case of conn drop)
+* [ ] Keep dispatching left/right/rotate events at intervals when keys are pressed (instead of relying on repeated keypress events, which don't work on mobile anyway)

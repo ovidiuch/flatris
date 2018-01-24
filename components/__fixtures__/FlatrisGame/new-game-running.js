@@ -1,10 +1,3 @@
-// import {
-//   WELL_ROWS,
-//   WELL_COLS,
-//   DROP_FRAMES_DEFAULT
-// } from '../../../constants/grid';
-// import { SHAPES } from '../../../constants/tetromino';
-// import { generateEmptyGrid } from '../../../utils/grid';
 import { getSampleUser } from '../../../utils/user';
 import { getBlankGame } from '../../../reducers/game';
 import FlatrisGame from '../../FlatrisGame';
@@ -18,18 +11,15 @@ export default {
   reduxState: {
     curUser: user,
     curGame: game
-    // TODO: Bring back this fixture
-    // game: {
-    //   gameState: PLAYING,
-    //   score: 0,
-    //   lines: 0,
-    //   nextTetromino: 'I',
-    //   grid: generateEmptyGrid(WELL_ROWS, WELL_COLS),
-    //   activeTetromino: 'J',
-    //   activeTetrominoGrid: SHAPES.J,
-    //   activeTetrominoPosition: { x: 4, y: -2 },
-    //   dropFrames: DROP_FRAMES_DEFAULT,
-    //   dropAcceleration: false
-    // }
+  },
+
+  init({ compRef }) {
+    compRef.context.store.dispatch({
+      type: 'PLAYER_READY',
+      payload: {
+        gameId: game.id,
+        userId: user.id
+      }
+    });
   }
 };

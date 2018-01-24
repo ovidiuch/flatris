@@ -13,9 +13,6 @@ const SquareBlock = ({ color }) => (
         position: absolute;
         width: 100%;
         height: 100%;
-        /* Square blocks will transition their "fall" when lines are cleared
-          beneath them */
-        transition: top 0.1s linear;
       }
     `}</style>
   </div>

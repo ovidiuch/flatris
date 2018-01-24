@@ -58,7 +58,7 @@ class SocketProviderRaw extends Component<SocketProviderProps> {
   }
 
   handleBroadcast = action => {
-    console.log('broadcast', action);
+    // console.log('broadcast', action);
 
     const { dispatch } = this.props;
     dispatch(action);

@@ -25,7 +25,7 @@ import {
   appendBlocksToGrid
 } from '../utils/grid';
 
-import type { Tetromino, User, Player, GameId, Game } from '../types/state';
+import type { User, Player, GameId, Game } from '../types/state';
 import type { GameAction } from '../types/actions';
 
 export function gameReducer(state: void | Game, action: GameAction): Game {
@@ -285,19 +285,19 @@ export function gameReducer(state: void | Game, action: GameAction): Game {
 export function getBlankGame(
   {
     id = Date.now(),
-    user = getSampleUser()
+    user = getSampleUser(),
+    dropFrames = DROP_FRAMES_DEFAULT
   }: {
     id?: GameId,
     user?: User,
-    nextTetromino?: Tetromino,
-    activeTetromino?: Tetromino
+    dropFrames?: number
   } = {}
 ): Game {
   return {
     id,
     status: 'PLAYING',
     players: [getBlankPlayer(id, user)],
-    dropFrames: DROP_FRAMES_DEFAULT
+    dropFrames
   };
 }
 
@@ -350,7 +350,11 @@ export function allPlayersReady(game: Game) {
   );
 }
 
-function updatePlayer(game: Game, userId: number, attrs: $Shape<Player>): Game {
+export function updatePlayer(
+  game: Game,
+  userId: number,
+  attrs: $Shape<Player>
+): Game {
   const { players } = game;
   const player = getPlayer(game, userId);
   const playerIndex = players.indexOf(player);

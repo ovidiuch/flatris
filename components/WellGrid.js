@@ -37,6 +37,9 @@ class WellGrid extends React.Component {
               <style jsx>{`
                 .grid-square-block {
                   position: absolute;
+                  /* Square blocks will transition their "fall" when lines are cleared
+                    beneath them */
+                  transition: top 0.1s linear;
                 }
               `}</style>
             </div>
