@@ -8,3 +8,10 @@ export function getSampleUser(): User {
     name: 'Tig'
   };
 }
+
+export function getSampleUser2(): User {
+  return {
+    id: 2,
+    name: 'Louie'
+  };
+}

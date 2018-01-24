@@ -38,6 +38,8 @@ export default {
         null
       ]
     ],
+    blocksCleared: [],
+    blocksPending: [],
     activeTetromino: 'T',
     activeTetrominoGrid: SHAPES.T,
     activeTetrominoPosition: {

@@ -1,26 +1,80 @@
-import { getSampleUser } from '../../../utils/user';
-import { getBlankGame, updatePlayer } from '../../../reducers/game';
+import { getSampleUser, getSampleUser2 } from '../../../utils/user';
+import {
+  getBlankGame,
+  getBlankPlayer,
+  updatePlayer
+} from '../../../reducers/game';
 import FlatrisGame from '../../FlatrisGame';
 
 const user = getSampleUser();
-const game = getBlankGame({ id: 1337, user, dropFrames: 30 });
+let game = getBlankGame({ id: 1337, user, dropFrames: 30 });
+
+// Add 2nd player to game state
+const user2 = getSampleUser2();
+game = {
+  ...game,
+  players: [...game.players, getBlankPlayer(game.id, user2)]
+};
+
+// Add some blocks to current user's grid
+game = updatePlayer(game, user.id, {
+  grid: [
+    [null, null, null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, [4, '#b04497'], null, null],
+    [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      [3, '#b04497'],
+      [2, '#b04497'],
+      [1, '#b04497'],
+      null
+    ]
+  ]
+});
 
 export default {
   component: FlatrisGame,
 
   init({ compRef }) {
-    compRef.context.store.dispatch({
-      type: 'PLAYER_READY',
-      payload: {
-        gameId: game.id,
-        userId: user.id
-      }
-    });
+    const { dispatch } = compRef.context.store;
+
+    // Simulate drop from enemy player
+    setTimeout(() => {
+      dispatch({
+        type: 'DROP',
+        payload: {
+          gameId: game.id,
+          userId: user2.id,
+          rows: 2
+        }
+      });
+    }, 1000);
   },
 
   reduxState: {
     curUser: user,
-    curGame: updatePlayer(game, user.id, {
+    curGame: updatePlayer(game, user2.id, {
       drops: 50,
       score: 184,
       lines: 0,
@@ -31,12 +85,20 @@ export default {
         [0, 0, 1, 0],
         [0, 0, 1, 0]
       ],
-      activeTetrominoPosition: { x: 7, y: 8.716249999999997 },
-      dropAcceleration: true,
+      activeTetrominoPosition: { x: 7, y: 15 },
+      dropAcceleration: false,
       grid: [
         [null, null, null, null, null, null, null, null, null, null],
         [null, null, null, null, null, null, null, null, null, null],
         [null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null],
         [
           null,
           null,
@@ -45,104 +107,8 @@ export default {
           null,
           null,
           null,
-          [1972, '#95c43d'],
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          [1973, '#95c43d'],
-          [1974, '#95c43d'],
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          [1968, '#b04497'],
-          [1975, '#95c43d'],
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          [1952, '#e84138'],
-          [1969, '#b04497'],
-          [1970, '#b04497'],
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          [1953, '#e84138'],
-          [1954, '#e84138'],
-          [1971, '#b04497'],
-          [1964, '#e84138'],
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          [1955, '#e84138'],
-          [1948, '#e84138'],
-          [1965, '#e84138'],
-          [1966, '#e84138'],
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          [1949, '#e84138'],
-          [1950, '#e84138'],
-          [1967, '#e84138'],
-          [1960, '#b04497'],
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          [1951, '#e84138'],
-          [1944, '#e84138'],
-          [1961, '#b04497'],
-          [1962, '#b04497'],
-          null
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          [1945, '#e84138'],
-          [1946, '#e84138'],
           [1956, '#b04497'],
-          [1963, '#b04497'],
+          null,
           null
         ],
         [
@@ -151,7 +117,7 @@ export default {
           [1929, '#3993d0'],
           [1976, '#ed652f'],
           null,
-          [1947, '#e84138'],
+          null,
           [1957, '#b04497'],
           [1958, '#b04497'],
           [1959, '#b04497'],

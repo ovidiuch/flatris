@@ -19,14 +19,14 @@ import {
   rotate,
   enableAcceleration,
   disableAcceleration,
-  appendEnemyBlocks
+  appendPendingBlocks
 } from '../actions';
 import { withSocket } from '../utils/socket/connect';
 import Well from './Well';
 import GamePanel from './GamePanel';
 import Button from './Button';
 
-import type { User, Game, State } from '../types/state';
+import type { User, Player, Game, State } from '../types/state';
 
 type Props = {
   curUser: User,
@@ -39,7 +39,7 @@ type Props = {
   rotate: typeof rotate,
   enableAcceleration: typeof enableAcceleration,
   disableAcceleration: typeof disableAcceleration,
-  appendEnemyBlocks: typeof appendEnemyBlocks
+  appendPendingBlocks: typeof appendPendingBlocks
 };
 
 type LocalState = {
@@ -65,7 +65,13 @@ class FlatrisGame extends Component<Props, LocalState> {
 
   componentDidUpdate(prevProps) {
     const prevGame = prevProps.game;
-    const { curUser, game, drop, advanceGame, appendEnemyBlocks } = this.props;
+    const {
+      curUser,
+      game,
+      drop,
+      advanceGame,
+      appendPendingBlocks
+    } = this.props;
 
     // Begin game animation when both players are ready (runs on each client)
     if (game.status === 'PLAYING') {
@@ -73,8 +79,14 @@ class FlatrisGame extends Component<Props, LocalState> {
         advanceGame(drop);
       }
 
-      if (getPlayer(game, curUser.id).blocksFromEnemy.length) {
-        appendEnemyBlocks();
+      if (getPlayer(game, curUser.id).blocksPending.length) {
+        // Ensure enemy blocks have been rendered "under the fold", before
+        // transitioning them into the visible wall. It's weird, but without
+        // setTimeout() pending blocks don't get rendered before they are
+        // appended (Redux action batching?) and the transition doesn't occur
+        setTimeout(() => {
+          appendPendingBlocks();
+        });
       }
     }
   }
@@ -277,37 +289,40 @@ class FlatrisGame extends Component<Props, LocalState> {
     );
   }
 
+  renderWell(player: Player) {
+    const {
+      grid,
+      blocksCleared,
+      blocksPending,
+      activeTetromino,
+      activeTetrominoGrid,
+      activeTetrominoPosition
+    } = player;
+
+    return (
+      <Well
+        grid={grid}
+        blocksCleared={blocksCleared}
+        blocksPending={blocksPending}
+        activeTetromino={activeTetromino}
+        activeTetrominoGrid={activeTetrominoGrid}
+        activeTetrominoPosition={activeTetrominoPosition}
+      />
+    );
+  }
+
   render() {
     const { curUser, game } = this.props;
     const curPlayer = getPlayer(game, curUser.id);
     const enemy = getEnemyPlayer(game, curUser.id);
-    const {
-      grid,
-      activeTetromino,
-      activeTetrominoGrid,
-      activeTetrominoPosition
-    } = curPlayer;
+
     const { showMenu } = this.state;
 
     return (
       <div className="flatris-game">
         <div className="well-container">
-          {enemy && (
-            <div className="enemy-well">
-              <Well
-                grid={enemy.grid}
-                activeTetromino={enemy.activeTetromino}
-                activeTetrominoGrid={enemy.activeTetrominoGrid}
-                activeTetrominoPosition={enemy.activeTetrominoPosition}
-              />
-            </div>
-          )}
-          <Well
-            grid={grid}
-            activeTetromino={activeTetromino}
-            activeTetrominoGrid={activeTetrominoGrid}
-            activeTetrominoPosition={activeTetrominoPosition}
-          />
+          {enemy && <div className="enemy-well">{this.renderWell(enemy)}</div>}
+          {this.renderWell(curPlayer)}
         </div>
         <div className="game-panel-container">
           <GamePanel
@@ -383,7 +398,7 @@ const syncActions = {
   rotate,
   enableAcceleration,
   disableAcceleration,
-  appendEnemyBlocks
+  appendPendingBlocks
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(

@@ -79,8 +79,8 @@ export type DisableAccelerationAction = {
   }
 };
 
-export type AppendEnemyLines = {
-  type: 'APPEND_ENEMY_BLOCKS',
+export type AppendPendingBlocks = {
+  type: 'APPEND_PENDING_BLOCKS',
   payload: {
     gameId: GameId,
     userId: UserId
@@ -97,7 +97,7 @@ export type GameAction =
   | DropAction
   | EnableAccelerationAction
   | DisableAccelerationAction
-  | AppendEnemyLines;
+  | AppendPendingBlocks;
 
 export type AuthAction = {
   type: 'AUTH',

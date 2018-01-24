@@ -181,6 +181,8 @@ export default {
         [62, '#e84138'],
         [61, '#e84138']
       ]
-    ]
+    ],
+    blocksCleared: [],
+    blocksPending: []
   }
 };

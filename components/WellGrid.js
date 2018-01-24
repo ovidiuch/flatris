@@ -1,52 +1,81 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+// @flow
+
+import React, { Component } from 'react';
 import SquareBlock from './SquareBlock';
 
-class WellGrid extends React.Component {
+import type { WellGrid as WellGridType, WellGridItem } from '../types/state';
+
+type Props = {
+  grid: WellGridType,
+  blocksCleared: WellGridType,
+  blocksPending: WellGridType
+};
+
+class WellGrid extends Component<Props> {
   /**
    * Grid rendering for the Tetrominoes that landed inside the Well.
    */
-  shouldComponentUpdate(nextProps) {
-    return nextProps.grid !== this.props.grid;
+  shouldComponentUpdate(nextProps: Props) {
+    return (
+      nextProps.grid !== this.props.grid ||
+      nextProps.blocksCleared !== this.props.blocksCleared ||
+      nextProps.blocksPending !== this.props.blocksPending
+    );
+  }
+
+  renderGridBlock(block: WellGridItem, row: number, col: number) {
+    const { grid } = this.props;
+    const rows = grid.length;
+    const cols = grid[0].length;
+    const widthPercent = 100 / cols;
+    const heightPercent = 100 / rows;
+
+    return (
+      <div
+        className="grid-square-block"
+        key={block[0]}
+        style={{
+          width: `${widthPercent}%`,
+          height: `${heightPercent}%`,
+          top: `${row * heightPercent}%`,
+          left: `${col * widthPercent}%`
+        }}
+      >
+        <SquareBlock color={block[1]} />
+        <style jsx>{`
+          .grid-square-block {
+            position: absolute;
+            /* Square blocks will transition their "fall" when lines are cleared
+            beneath them */
+            transition: top 0.1s linear;
+          }
+        `}</style>
+      </div>
+    );
   }
 
   renderGridBlocks() {
+    const { grid, blocksCleared, blocksPending } = this.props;
     const blocks = [];
-    const rows = this.props.grid.length;
-    const cols = this.props.grid[0].length;
-    const widthPercent = 100 / cols;
-    const heightPercent = 100 / rows;
-    let blockValue;
+    const rows = grid.length;
 
-    for (let row = 0; row < rows; row++) {
-      for (let col = 0; col < cols; col++) {
-        if (this.props.grid[row][col]) {
-          blockValue = this.props.grid[row][col];
-          blocks.push(
-            <div
-              className="grid-square-block"
-              key={blockValue[0]}
-              style={{
-                width: `${widthPercent}%`,
-                height: `${heightPercent}%`,
-                top: `${row * heightPercent}%`,
-                left: `${col * widthPercent}%`
-              }}
-            >
-              <SquareBlock color={blockValue[1]} />
-              <style jsx>{`
-                .grid-square-block {
-                  position: absolute;
-                  /* Square blocks will transition their "fall" when lines are cleared
-                    beneath them */
-                  transition: top 0.1s linear;
-                }
-              `}</style>
-            </div>
-          );
+    grid.forEach((rowBlocks, rowIndex) => {
+      rowBlocks.forEach((block, colIndex) => {
+        if (block) {
+          blocks.push(this.renderGridBlock(block, rowIndex, colIndex));
         }
-      }
-    }
+      });
+    });
+
+    // Cleared blocks transition top-to-bottom, outside the visible grid well
+    // Pending blocks transition bottom-to-top, inside the visible grid well
+    [...blocksCleared, ...blocksPending].forEach((rowBlocks, rowIndex) => {
+      rowBlocks.forEach((block, colIndex) => {
+        if (block) {
+          blocks.push(this.renderGridBlock(block, rows + rowIndex, colIndex));
+        }
+      });
+    });
 
     return blocks;
   }
@@ -66,9 +95,5 @@ class WellGrid extends React.Component {
     );
   }
 }
-
-WellGrid.propTypes = {
-  grid: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.array)).isRequired
-};
 
 export default WellGrid;

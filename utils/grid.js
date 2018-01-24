@@ -1,14 +1,14 @@
 // @flow
 
 import type {
-  Color,
   Grid,
-  WallGrid,
+  WellGrid,
   TetrominoGrid,
-  Position2d
+  Position2d,
+  Player
 } from '../types/state';
 
-export function generateEmptyGrid(rows: number, cols: number): WallGrid {
+export function generateEmptyGrid(rows: number, cols: number): WellGrid {
   const matrix = [];
 
   for (let row = 0; row < rows; row++) {
@@ -46,7 +46,7 @@ export function getExactPosition({ x, y }: Position2d) {
 }
 
 export function isPositionAvailable(
-  grid: WallGrid,
+  grid: WellGrid,
   tetrominoGrid: TetrominoGrid,
   position: Position2d
 ): boolean {
@@ -90,7 +90,7 @@ export function isPositionAvailable(
 }
 
 export function getBottomMostPosition(
-  grid: WallGrid,
+  grid: WellGrid,
   tetrominoGrid: TetrominoGrid,
   position: Position2d
 ): Position2d {
@@ -104,25 +104,20 @@ export function getBottomMostPosition(
   return Object.assign({}, position, { y });
 }
 
-const getMaxIdFromLine = line =>
-  Math.max(...line.map(cell => (cell ? cell[0] : 0)));
-
-const getMaxIdFromGrid = grid =>
-  Math.max(...grid.map(line => getMaxIdFromLine(line)));
-
 export function transferTetrominoToGrid(
-  grid: WallGrid,
+  player: Player,
   tetrominoGrid: TetrominoGrid,
   position: Position2d,
   color: string
-): WallGrid {
+): WellGrid {
+  const { grid } = player;
   const rows = tetrominoGrid.length;
   const cols = tetrominoGrid[0].length;
   const tetrominoPositionInGrid = getExactPosition(position);
   const newGrid = grid.map(l => l.map(c => c));
   let relativeRow;
   let relativeCol;
-  let cellId = getMaxIdFromGrid(newGrid);
+  let nextCellId = getNextCellId(player);
 
   for (let row = 0; row < rows; row++) {
     for (let col = 0; col < cols; col++) {
@@ -134,7 +129,7 @@ export function transferTetrominoToGrid(
         // When the Well is full the Tetromino will land before it enters the
         // top of the Well
         if (newGrid[relativeRow]) {
-          newGrid[relativeRow][relativeCol] = [++cellId, color];
+          newGrid[relativeRow][relativeCol] = [nextCellId++, color];
         }
       }
     }
@@ -148,9 +143,9 @@ const createEmptyLine = cols => [...Array(cols)].map(() => null);
 const isLine = row => !row.some(cell => cell === null);
 
 export function clearLines(
-  grid: WallGrid
+  grid: WellGrid
 ): {
-  clearedGrid: WallGrid,
+  clearedGrid: WellGrid,
   rowsCleared: Array<number>
 } {
   /**
@@ -188,7 +183,7 @@ export function clearLines(
 }
 
 export function fitTetrominoPositionInWellBounds(
-  grid: WallGrid,
+  grid: WellGrid,
   tetrominoGrid: TetrominoGrid,
   { x, y }: Position2d
 ) {
@@ -221,32 +216,28 @@ export function fitTetrominoPositionInWellBounds(
   };
 }
 
-export function getLineBlocksFromGrid(
-  grid: WallGrid,
-  lines: Array<number>
-): Grid<?Color> {
-  const cols = grid[0].length;
-  const subGrid = [];
-
-  lines.forEach(row => {
-    const newRow = [];
-    for (let col = 0; col < cols; col++) {
-      newRow[col] = grid[row][col] ? grid[row][col][1] : null;
-    }
-    subGrid.push(newRow);
-  });
-
-  return subGrid;
+export function getBlocksFromGridRows(
+  grid: WellGrid,
+  rows: Array<number>
+): WellGrid {
+  return rows.map(rowIndex => grid[rowIndex].map(block => block));
 }
 
-export function appendBlocksToGrid(
-  grid: WallGrid,
-  blocks: Grid<?Color>
-): WallGrid {
+export function overrideBlockIds(
+  blocks: WellGrid,
+  fromCellId: number
+): WellGrid {
+  let nextCellId = fromCellId;
+
+  return blocks.map(blockRow =>
+    blockRow.map(block => (block ? [nextCellId++, block[1]] : null))
+  );
+}
+
+export function appendBlocksToGrid(grid: WellGrid, blocks: WellGrid): WellGrid {
   const newGrid = [];
   const rows = grid.length;
   const cols = grid[0].length;
-  let cellId = getMaxIdFromGrid(grid);
 
   // Shift existing blocks to a higher position, to make room for the new blocks
   // at the bottom
@@ -263,7 +254,7 @@ export function appendBlocksToGrid(
     newGrid[row] = [];
     for (let col = 0; col < cols; col++) {
       if (blocks[i][col]) {
-        newGrid[row][col] = [++cellId, blocks[i][col]];
+        newGrid[row][col] = blocks[i][col];
       } else {
         newGrid[row][col] = null;
       }
@@ -271,4 +262,23 @@ export function appendBlocksToGrid(
   }
 
   return newGrid;
+}
+
+export function getNextCellId(player: Player): number {
+  const { max } = Math;
+  const { grid, blocksCleared, blocksPending } = player;
+
+  return (
+    max(
+      getMaxCellIdFromGrid(grid),
+      getMaxCellIdFromGrid(blocksCleared),
+      getMaxCellIdFromGrid(blocksPending)
+    ) + 1
+  );
+}
+
+function getMaxCellIdFromGrid(grid: WellGrid): number {
+  const { max } = Math;
+
+  return max(...grid.map(r => max(...r.map(cell => (cell ? cell[0] : 0)))));
 }

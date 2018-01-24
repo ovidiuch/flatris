@@ -21,8 +21,10 @@ import {
   transferTetrominoToGrid,
   clearLines,
   fitTetrominoPositionInWellBounds,
-  getLineBlocksFromGrid,
-  appendBlocksToGrid
+  getBlocksFromGridRows,
+  overrideBlockIds,
+  appendBlocksToGrid,
+  getNextCellId
 } from '../utils/grid';
 
 import type { User, Player, GameId, Game } from '../types/state';
@@ -106,7 +108,7 @@ export function gameReducer(state: void | Game, action: GameAction): Game {
       // This is when the active Tetromino hits the bottom of the Well and can
       // no longer be controlled
       const newGrid = transferTetrominoToGrid(
-        grid,
+        player,
         activeTetrominoGrid,
         newPosition,
         COLORS[activeTetromino]
@@ -114,6 +116,7 @@ export function gameReducer(state: void | Game, action: GameAction): Game {
 
       // Clear lines created after landing and transfering a Tetromino
       const { clearedGrid, rowsCleared } = clearLines(newGrid);
+      const blocksCleared = getBlocksFromGridRows(newGrid, rowsCleared);
 
       // TODO: Calculate cells in Tetromino. All current Tetrominoes have 4 cells
       const cells = 4;
@@ -136,6 +139,7 @@ export function gameReducer(state: void | Game, action: GameAction): Game {
           lines: lines + rowsCleared.length,
           nextTetromino: getNextTetromino(state.id, drops + 2),
           grid: clearedGrid,
+          blocksCleared,
           activeTetromino: nextTetromino,
           activeTetrominoGrid: SHAPES[nextTetromino],
           activeTetrominoPosition: getInitialPositionForTetromino(
@@ -158,12 +162,18 @@ export function gameReducer(state: void | Game, action: GameAction): Game {
       if (rowsCleared.length > 0) {
         const enemy = getEnemyPlayer(newState, userId);
         if (enemy) {
-          // We reference old `grid` to get cleared lines *without* blocks
-          // from active Tetromino
-          const blocksFromEnemy = getLineBlocksFromGrid(grid, rowsCleared);
+          const blocksPending = overrideBlockIds(
+            getBlocksFromGridRows(
+              // We reference old `grid` to get cleared lines *without* blocks
+              // from active Tetromino
+              grid,
+              rowsCleared
+            ),
+            getNextCellId(enemy)
+          );
 
           return updatePlayer(newState, enemy.user.id, {
-            blocksFromEnemy
+            blocksPending: [...enemy.blocksPending, ...blocksPending]
           });
         }
       }
@@ -171,17 +181,17 @@ export function gameReducer(state: void | Game, action: GameAction): Game {
       return newState;
     }
 
-    case 'APPEND_ENEMY_BLOCKS': {
+    case 'APPEND_PENDING_BLOCKS': {
       const { userId } = action.payload;
       const player = getPlayer(state, userId);
       const {
         grid,
+        blocksPending,
         activeTetrominoGrid,
-        activeTetrominoPosition,
-        blocksFromEnemy
+        activeTetrominoPosition
       } = player;
 
-      let newGrid = appendBlocksToGrid(grid, blocksFromEnemy);
+      let newGrid = appendBlocksToGrid(grid, blocksPending);
 
       // Push active Tetromino up if necessary
       if (
@@ -193,7 +203,7 @@ export function gameReducer(state: void | Game, action: GameAction): Game {
       ) {
         return updatePlayer(state, userId, {
           grid: newGrid,
-          blocksFromEnemy: []
+          blocksPending: []
         });
       }
 
@@ -209,8 +219,8 @@ export function gameReducer(state: void | Game, action: GameAction): Game {
 
       return updatePlayer(state, userId, {
         grid: newGrid,
-        activeTetrominoPosition: newPosition,
-        blocksFromEnemy: []
+        blocksPending: [],
+        activeTetrominoPosition: newPosition
       });
     }
 
@@ -317,12 +327,13 @@ export function getBlankPlayer(gameId: GameId, user: User): Player {
     score: 0,
     lines: 0,
     grid: generateEmptyGrid(WELL_ROWS, WELL_COLS),
+    blocksCleared: [],
+    blocksPending: [],
     nextTetromino,
     activeTetromino,
     activeTetrominoGrid,
     activeTetrominoPosition,
-    dropAcceleration: false,
-    blocksFromEnemy: []
+    dropAcceleration: false
   };
 }
 

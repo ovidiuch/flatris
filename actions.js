@@ -167,9 +167,9 @@ export function disableAcceleration(): ThunkAction {
   }));
 }
 
-export function appendEnemyBlocks(): ThunkAction {
+export function appendPendingBlocks(): ThunkAction {
   return decorateAction(({ userId, gameId }) => ({
-    type: 'APPEND_ENEMY_BLOCKS',
+    type: 'APPEND_PENDING_BLOCKS',
     payload: {
       userId,
       gameId

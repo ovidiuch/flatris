@@ -10,9 +10,9 @@ export type TetrominoGrid = Grid<0 | 1>;
 
 export type Position2d = { x: number, y: number };
 
-export type WallGridItem = [number, Color];
+export type WellGridItem = [number, Color];
 
-export type WallGrid = Grid<?WallGridItem>;
+export type WellGrid = Grid<?WellGridItem>;
 
 // This type is allows us to change user id type from number to hash string
 export type UserId = number;
@@ -30,13 +30,14 @@ export type Player = {
   drops: number,
   score: number,
   lines: number,
-  grid: WallGrid,
+  grid: WellGrid,
+  blocksCleared: WellGrid,
+  blocksPending: WellGrid,
   nextTetromino: Tetromino,
   activeTetromino: Tetromino,
   activeTetrominoGrid: TetrominoGrid,
   activeTetrominoPosition: Position2d,
-  dropAcceleration: boolean,
-  blocksFromEnemy: Grid<?Color>
+  dropAcceleration: boolean
 };
 
 // This type is allows us to change game id type from number to hash string

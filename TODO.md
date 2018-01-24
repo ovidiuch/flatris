@@ -25,6 +25,11 @@
 * [x] Rename state.game to state.curGame
 * [x] Add blocks to other player when clearing lines
 * [x] Bring back "falling" block transition when lines are cleared
+* [x] Transitions when clearing lines
+  * [x] Cleared lines should go down (not instantly disappear)
+  * [x] Lines from enemy should come up (not instantly appear)
+  * [x] getNextCellId(gameState) abstraction
+* [ ] Debug concomitant line clearing between players
 * [ ] Earthquake effect when clearing lines
 * [ ] Green/red wall flash when clearing lines (own vs enemy)
 * [ ] [WORKING PROTOTYPE]
@@ -39,5 +44,8 @@
 * [ ] Use public assets
 * [ ] Minimize state footprint
 * [ ] Optimize CSS via will-change
+* [ ] Minimize network communication
+  * [ ] Batch actions
+  * [ ] Don't send noop actions
 * [ ] Game cleanup when game is over or everyone leaves (wait a bit in case of conn drop)
 * [ ] Keep dispatching left/right/rotate events at intervals when keys are pressed (instead of relying on repeated keypress events, which don't work on mobile anyway)

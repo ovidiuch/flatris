@@ -21,7 +21,7 @@ export function curGameReducer(state: void | ?Game, action: Action): ?Game {
     case 'ROTATE':
     case 'ENABLE_ACCELERATION':
     case 'DISABLE_ACCELERATION':
-    case 'APPEND_ENEMY_BLOCKS': {
+    case 'APPEND_PENDING_BLOCKS': {
       if (!state) {
         throw new Error(`Game action ${action.type} called on null game state`);
       }

@@ -71,6 +71,8 @@ export default {
         [1214, '#3cc7d6']
       ]
     ],
+    blocksCleared: [],
+    blocksPending: [],
     activeTetromino: 'S',
     activeTetrominoGrid: SHAPES.S,
     activeTetrominoPosition: {
