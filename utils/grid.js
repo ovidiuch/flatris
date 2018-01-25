@@ -127,7 +127,7 @@ export function transferTetrominoToGrid(
         relativeRow = tetrominoPositionInGrid.y + row;
 
         // When the Well is full the Tetromino will land before it enters the
-        // top of the Well
+        // top of the Well, so we need to protect against negative row indexes
         if (newGrid[relativeRow]) {
           newGrid[relativeRow][relativeCol] = [nextCellId++, color];
         }
@@ -141,6 +141,10 @@ export function transferTetrominoToGrid(
 const createEmptyLine = cols => [...Array(cols)].map(() => null);
 
 const isLine = row => !row.some(cell => cell === null);
+
+export function hasLines(well: WellGrid): boolean {
+  return well.reduce((acc, rowBlocks) => acc || isLine(rowBlocks), false);
+}
 
 export function clearLines(
   grid: WellGrid
@@ -235,29 +239,30 @@ export function overrideBlockIds(
 }
 
 export function appendBlocksToGrid(grid: WellGrid, blocks: WellGrid): WellGrid {
-  const newGrid = [];
   const rows = grid.length;
   const cols = grid[0].length;
+  const newGrid = generateEmptyGrid(rows, cols);
 
-  // Shift existing blocks to a higher position, to make room for the new blocks
-  // at the bottom
-  for (let row = 0; row < rows - blocks.length; row++) {
-    newGrid[row] = [];
-    for (let col = 0; col < cols; col++) {
-      newGrid[row][col] = grid[row + blocks.length][col];
-    }
-  }
-
-  // Add new blocks
-  for (let i = 0; i < blocks.length; i++) {
-    const row = newGrid.length;
-    newGrid[row] = [];
-    for (let col = 0; col < cols; col++) {
-      if (blocks[i][col]) {
-        newGrid[row][col] = blocks[i][col];
-      } else {
-        newGrid[row][col] = null;
+  // 1. Apply new block rows at the bottom, and collect top "border shape"
+  const availRowsPerCol = new Array(cols).fill(rows);
+  blocks.forEach((rowBlocks, rowIndex) => {
+    const absRowIndex = rows - blocks.length + rowIndex;
+    rowBlocks.forEach((block, colIndex) => {
+      if (block) {
+        newGrid[absRowIndex][colIndex] = block;
+        availRowsPerCol[colIndex] = Math.min(
+          availRowsPerCol[colIndex],
+          absRowIndex
+        );
       }
+    });
+  });
+
+  // 2. "Pour" previous blocks over new ones
+  for (let colIndex = 0; colIndex < cols; colIndex++) {
+    const rowOffset = rows - availRowsPerCol[colIndex];
+    for (let rowIndex = rows - 1; rowIndex >= rowOffset; rowIndex--) {
+      newGrid[rowIndex - rowOffset][colIndex] = grid[rowIndex][colIndex];
     }
   }
 

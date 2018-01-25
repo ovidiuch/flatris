@@ -79,7 +79,8 @@ class FlatrisGame extends Component<Props, LocalState> {
         advanceGame(drop);
       }
 
-      if (getPlayer(game, curUser.id).blocksPending.length) {
+      const player = getPlayer(game, curUser.id);
+      if (player.blocksPending.length) {
         // Ensure enemy blocks have been rendered "under the fold", before
         // transitioning them into the visible wall. It's weird, but without
         // setTimeout() pending blocks don't get rendered before they are

@@ -8,6 +8,7 @@
   ],
   "plugins": ["react", "flowtype"],
   "env": {
+    "es6": true,
     "shared-node-browser": true
   },
   "globals": {

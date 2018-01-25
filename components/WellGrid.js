@@ -68,8 +68,16 @@ class WellGrid extends Component<Props> {
     });
 
     // Cleared blocks transition top-to-bottom, outside the visible grid well
+    blocksCleared.forEach((rowBlocks, rowIndex) => {
+      rowBlocks.forEach((block, colIndex) => {
+        if (block) {
+          blocks.push(this.renderGridBlock(block, rows + rowIndex, colIndex));
+        }
+      });
+    });
+
     // Pending blocks transition bottom-to-top, inside the visible grid well
-    [...blocksCleared, ...blocksPending].forEach((rowBlocks, rowIndex) => {
+    blocksPending.forEach((rowBlocks, rowIndex) => {
       rowBlocks.forEach((block, colIndex) => {
         if (block) {
           blocks.push(this.renderGridBlock(block, rows + rowIndex, colIndex));

@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import { COLORS } from '../constants/tetromino';
 import { getExactPosition } from '../utils/grid';
 import WellGridComponent from './WellGrid';
-import TetriminoComponent from './Tetromino';
+import TetrominoComponent from './Tetromino';
 
 import type {
   WellGrid,
@@ -79,7 +79,7 @@ class Well extends Component<Props> {
             className="active-tetromino"
             style={this.getActiveTetrominoestyles()}
           >
-            <TetriminoComponent
+            <TetrominoComponent
               color={COLORS[activeTetromino]}
               grid={activeTetrominoGrid}
             />

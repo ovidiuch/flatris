@@ -29,7 +29,8 @@
   * [x] Cleared lines should go down (not instantly disappear)
   * [x] Lines from enemy should come up (not instantly appear)
   * [x] getNextCellId(gameState) abstraction
-* [ ] Debug concomitant line clearing between players
+* [x] Fix concomitant line clearing between players
+  * [ ] Multiplayer test case: Clearing lines that aren't bottom ones
 * [ ] Earthquake effect when clearing lines
 * [ ] Green/red wall flash when clearing lines (own vs enemy)
 * [ ] [WORKING PROTOTYPE]
