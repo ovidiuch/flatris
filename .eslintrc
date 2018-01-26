@@ -12,7 +12,8 @@
     "shared-node-browser": true
   },
   "globals": {
-    "global": true
+    "global": true,
+    "process": true
   },
   "rules": {
     "no-console": "warn",

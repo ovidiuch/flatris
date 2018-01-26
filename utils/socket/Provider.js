@@ -4,6 +4,7 @@ import { func } from 'prop-types';
 import { Component } from 'react';
 import { connect } from 'react-redux';
 import io from 'socket.io-client';
+import { getApiUrl } from '../../utils/api';
 
 import type { Node } from 'react';
 import type { Action, ThunkAction } from '../../types/actions';
@@ -22,7 +23,7 @@ class SocketProviderInner extends Component<Props> {
 
   componentDidMount() {
     if (!socket) {
-      socket = io('http://localhost:4000');
+      socket = io(getApiUrl());
     }
 
     socket.on('message', this.handleMessage);

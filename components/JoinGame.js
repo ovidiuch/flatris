@@ -1,10 +1,12 @@
 // @flow
+/* global fetch */
 
 import { Component } from 'react';
 import { connect } from 'react-redux';
 import { createGame, joinGame } from '../actions';
 import { withSocket } from '../utils/socket/connect';
 import { getCurUser } from '../reducers/cur-user';
+import { getApiUrl } from '../utils/api';
 
 import type { Node } from 'react';
 import type { User, Game, GameId, State } from '../types/state';
@@ -26,9 +28,7 @@ class JoinGame extends Component<Props> {
   fetchGameState = async () => {
     const { curUser, gameId, createGame, joinGame } = this.props;
 
-    const games = await fetch('http://localhost:4000/games').then(res =>
-      res.json()
-    );
+    const games = await fetch(getApiUrl('/games')).then(res => res.json());
     const { players: [{ user }] } = games[gameId];
 
     // TODO: Load entire game
