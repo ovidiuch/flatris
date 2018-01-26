@@ -244,16 +244,19 @@ export function appendBlocksToGrid(grid: WellGrid, blocks: WellGrid): WellGrid {
   const newGrid = generateEmptyGrid(rows, cols);
 
   // 1. Apply new block rows at the bottom, and collect top "border shape"
-  const availRowsPerCol = new Array(cols).fill(rows);
+  // Hmm, this isn't very good, because 99% enemy blocks will create a line
+  // TODO: Bring back functionality or remove it with docs
+  // const availRowsPerCol = new Array(cols).fill(rows);
+  const availRowsPerCol = new Array(cols).fill(rows - blocks.length);
   blocks.forEach((rowBlocks, rowIndex) => {
     const absRowIndex = rows - blocks.length + rowIndex;
     rowBlocks.forEach((block, colIndex) => {
       if (block) {
         newGrid[absRowIndex][colIndex] = block;
-        availRowsPerCol[colIndex] = Math.min(
-          availRowsPerCol[colIndex],
-          absRowIndex
-        );
+        // availRowsPerCol[colIndex] = Math.min(
+        //   availRowsPerCol[colIndex],
+        //   absRowIndex
+        // );
       }
     });
   });
