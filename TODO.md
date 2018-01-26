@@ -35,7 +35,7 @@
 * [x] Green/red wall flash when clearing lines (own vs enemy)
 * [x] Earthquake effect when clearing lines
 * [x] Make enemy grid visible on Firefox
-* [ ] Add hidden keyboard shortcut for ending game
+* [x] Add hidden keyboard shortcut for stopping game
 * [ ] Clean up scripts (Keep server with client together in prod, separate in dev)
 * [ ] [WORKING PROTOTYPE]
 * [ ] Minimize network communication

@@ -4,7 +4,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import _ from 'lodash';
-import { UP, DOWN, LEFT, RIGHT } from '../constants/keys';
+import { UP, DOWN, LEFT, RIGHT, X } from '../constants/keys';
 import { attachPointerDownEvent, attachPointerUpEvent } from '../utils/events';
 import { getPlayer, getEnemyPlayer, allPlayersReady } from '../reducers/game';
 import { getCurUser } from '../reducers/cur-user';
@@ -116,6 +116,10 @@ class FlatrisGame extends Component<Props, LocalState> {
     const { enableAcceleration, rotate, moveLeft, moveRight } = this.props;
 
     switch (e.keyCode) {
+      case X:
+        // TEMP: Escape hatch to stop the game. Remove in final version
+        stopGame();
+        break;
       case DOWN:
         enableAcceleration();
         break;
