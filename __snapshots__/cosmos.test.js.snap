@@ -53,10 +53,10 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):double-hallelujah 
       className="jsx-2376518019 flatris-game"
     >
       <div
-        className="jsx-2611135330 quake quake-b1 quake-b4"
+        className="jsx-2611135330 quake quake-b1"
       >
         <div
-          className="jsx-2611135330 quake"
+          className="jsx-2611135330 quake quake-b4"
         >
           <div
             className="jsx-2376518019 well-container"
@@ -11564,10 +11564,10 @@ exports[`Cosmos fixtures: Preloader:default 1`] = `
 
 exports[`Cosmos fixtures: Quake:enemy-1 1`] = `
 <div
-  className="jsx-2611135330 quake quake-a1"
+  className="jsx-2611135330 quake"
 >
   <div
-    className="jsx-2611135330 quake"
+    className="jsx-2611135330 quake quake-a1"
   >
     <div>
       Jump around, jump up and get down
@@ -11586,10 +11586,10 @@ exports[`Cosmos fixtures: Quake:enemy-1 1`] = `
 
 exports[`Cosmos fixtures: Quake:enemy-2 1`] = `
 <div
-  className="jsx-2611135330 quake quake-a2"
+  className="jsx-2611135330 quake"
 >
   <div
-    className="jsx-2611135330 quake"
+    className="jsx-2611135330 quake quake-a2"
   >
     <div>
       Jump around, jump up and get down
@@ -11608,10 +11608,10 @@ exports[`Cosmos fixtures: Quake:enemy-2 1`] = `
 
 exports[`Cosmos fixtures: Quake:enemy-3 1`] = `
 <div
-  className="jsx-2611135330 quake quake-a3"
+  className="jsx-2611135330 quake"
 >
   <div
-    className="jsx-2611135330 quake"
+    className="jsx-2611135330 quake quake-a3"
   >
     <div>
       Jump around, jump up and get down
@@ -11630,10 +11630,10 @@ exports[`Cosmos fixtures: Quake:enemy-3 1`] = `
 
 exports[`Cosmos fixtures: Quake:enemy-4 1`] = `
 <div
-  className="jsx-2611135330 quake quake-a4"
+  className="jsx-2611135330 quake"
 >
   <div
-    className="jsx-2611135330 quake"
+    className="jsx-2611135330 quake quake-a4"
   >
     <div>
       Jump around, jump up and get down

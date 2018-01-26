@@ -17,20 +17,20 @@ class Quake extends Component<Props> {
     const { children, curUser, game } = this.props;
 
     const curPlayer = getPlayer(game, curUser.id);
-    const classesOuter = ['quake'];
+    const classesSelf = ['quake'];
     if (curPlayer.quake) {
-      classesOuter.push(`quake-${curPlayer.quake}`);
+      classesSelf.push(`quake-${curPlayer.quake}`);
     }
 
     const enemy = getEnemyPlayer(game, curUser.id);
-    const classesInner = ['quake'];
+    const classesOther = ['quake'];
     if (enemy && enemy.quake) {
-      classesOuter.push(`quake-${enemy.quake}`);
+      classesOther.push(`quake-${enemy.quake}`);
     }
 
     return (
-      <div className={classesOuter.join(' ')}>
-        <div className={classesInner.join(' ')}>{children}</div>
+      <div className={classesSelf.join(' ')}>
+        <div className={classesOther.join(' ')}>{children}</div>
         <style jsx>{`
           .quake {
             position: absolute;
