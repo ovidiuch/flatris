@@ -50,7 +50,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):double-hallelujah 
     }
   >
     <div
-      className="jsx-2376518019 flatris-game"
+      className="jsx-4015443650 flatris-game"
     >
       <div
         className="jsx-2611135330 quake quake-b1"
@@ -59,10 +59,10 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):double-hallelujah 
           className="jsx-2611135330 quake quake-b4"
         >
           <div
-            className="jsx-2376518019 well-container"
+            className="jsx-4015443650 well-container"
           >
             <div
-              className="jsx-2376518019 enemy-well"
+              className="jsx-4015443650 enemy-well"
             >
               <div
                 className="jsx-2881654396 well"
@@ -2927,7 +2927,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):double-hallelujah 
             </div>
           </div>
           <div
-            className="jsx-2376518019 game-panel-container"
+            className="jsx-4015443650 game-panel-container"
           >
             <div
               className="jsx-675712511 game-panel"
@@ -3182,7 +3182,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):enemy-hallelujah 1
     }
   >
     <div
-      className="jsx-2376518019 flatris-game"
+      className="jsx-4015443650 flatris-game"
     >
       <div
         className="jsx-2611135330 quake"
@@ -3191,10 +3191,10 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):enemy-hallelujah 1
           className="jsx-2611135330 quake"
         >
           <div
-            className="jsx-2376518019 well-container"
+            className="jsx-4015443650 well-container"
           >
             <div
-              className="jsx-2376518019 enemy-well"
+              className="jsx-4015443650 enemy-well"
             >
               <div
                 className="jsx-2881654396 well"
@@ -4839,7 +4839,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):enemy-hallelujah 1
             </div>
           </div>
           <div
-            className="jsx-2376518019 game-panel-container"
+            className="jsx-4015443650 game-panel-container"
           >
             <div
               className="jsx-675712511 game-panel"
@@ -5094,7 +5094,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah 1`] = `
     }
   >
     <div
-      className="jsx-2376518019 flatris-game"
+      className="jsx-4015443650 flatris-game"
     >
       <div
         className="jsx-2611135330 quake"
@@ -5103,7 +5103,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah 1`] = `
           className="jsx-2611135330 quake"
         >
           <div
-            className="jsx-2376518019 well-container"
+            className="jsx-4015443650 well-container"
           >
             <div
               className="jsx-124931555 flash"
@@ -7131,7 +7131,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah 1`] = `
             </div>
           </div>
           <div
-            className="jsx-2376518019 game-panel-container"
+            className="jsx-4015443650 game-panel-container"
           >
             <div
               className="jsx-675712511 game-panel"
@@ -7370,7 +7370,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
     }
   >
     <div
-      className="jsx-2376518019 flatris-game"
+      className="jsx-4015443650 flatris-game"
     >
       <div
         className="jsx-2611135330 quake"
@@ -7379,7 +7379,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
           className="jsx-2611135330 quake"
         >
           <div
-            className="jsx-2376518019 well-container"
+            className="jsx-4015443650 well-container"
           >
             <div
               className="jsx-124931555 flash"
@@ -9847,7 +9847,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
             </div>
           </div>
           <div
-            className="jsx-2376518019 game-panel-container"
+            className="jsx-4015443650 game-panel-container"
           >
             <div
               className="jsx-675712511 game-panel"
@@ -10093,7 +10093,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
     }
   >
     <div
-      className="jsx-2376518019 flatris-game"
+      className="jsx-4015443650 flatris-game"
     >
       <div
         className="jsx-2611135330 quake"
@@ -10102,7 +10102,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
           className="jsx-2611135330 quake"
         >
           <div
-            className="jsx-2376518019 well-container"
+            className="jsx-4015443650 well-container"
           >
             <div
               className="jsx-124931555 flash"
@@ -10209,7 +10209,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
             </div>
           </div>
           <div
-            className="jsx-2376518019 game-panel-container"
+            className="jsx-4015443650 game-panel-container"
           >
             <div
               className="jsx-675712511 game-panel"
@@ -10455,7 +10455,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game-running 1
     }
   >
     <div
-      className="jsx-2376518019 flatris-game"
+      className="jsx-4015443650 flatris-game"
     >
       <div
         className="jsx-2611135330 quake"
@@ -10464,7 +10464,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game-running 1
           className="jsx-2611135330 quake"
         >
           <div
-            className="jsx-2376518019 well-container"
+            className="jsx-4015443650 well-container"
           >
             <div
               className="jsx-124931555 flash"
@@ -10571,7 +10571,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game-running 1
             </div>
           </div>
           <div
-            className="jsx-2376518019 game-panel-container"
+            className="jsx-4015443650 game-panel-container"
           >
             <div
               className="jsx-675712511 game-panel"
