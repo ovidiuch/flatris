@@ -30,23 +30,25 @@
   * [x] Lines from enemy should come up (not instantly appear)
   * [x] getNextCellId(gameState) abstraction
 * [x] Fix concomitant line clearing between players
-  * [ ] Multiplayer test case: Clearing lines that aren't bottom ones
-* [ ] Earthquake effect when clearing lines
-* [ ] Green/red wall flash when clearing lines (own vs enemy)
+  * [x] Fix multiplayer test case: Clearing lines that aren't bottom ones
+* [x] Expand memory db to multi games
+* [x] Green/red wall flash when clearing lines (own vs enemy)
+* [x] Earthquake effect when clearing lines
+* [ ] Make enemy grid visible on Firefox
+* [ ] Clean up scripts (Keep server with client together in prod, separate in dev)
 * [ ] [WORKING PROTOTYPE]
+* [ ] Minimize network communication
+  * [ ] Don't send noop actions
+  * [ ] Batch actions
+  * [ ] Algorithm for distributing events from bundled messages in time
+        Calc time of each event in min-max interval and map [0, 1] value to [server timestamp of last received message...now...1s]
+* [ ] Keep dispatching left/right/rotate events at intervals when keys are pressed (instead of relying on repeated keypress events, which don't work on mobile anyway)
 * [ ] Read game (Redux) state from server side in Page.getInitialProps
-* [ ] Expand memory db to multi games
 * [ ] Create game/:id route
 * [ ] Create sharing UI flow
 * [ ] Preview all existing games in index page
-* [ ] Algorithm for distributing events from bundled messages in time
-      Calc time of each event in min-max interval and map [0, 1] value to [server timestamp of last received message...now...1s]
 * [ ] Grayscale loading state until JS is loaded
 * [ ] Use public assets
 * [ ] Minimize state footprint
 * [ ] Optimize CSS via will-change
-* [ ] Minimize network communication
-  * [ ] Batch actions
-  * [ ] Don't send noop actions
 * [ ] Game cleanup when game is over or everyone leaves (wait a bit in case of conn drop)
-* [ ] Keep dispatching left/right/rotate events at intervals when keys are pressed (instead of relying on repeated keypress events, which don't work on mobile anyway)

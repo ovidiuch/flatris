@@ -1,7 +1,7 @@
 import { getSampleUser, getSampleUser2 } from '../../../utils/user';
 import {
   getBlankGame,
-  getBlankPlayer,
+  addUserToGame,
   updatePlayer
 } from '../../../reducers/game';
 import FlatrisGame from '../../FlatrisGame';
@@ -11,10 +11,7 @@ let game = getBlankGame({ id: 1337, user, dropFrames: 30 });
 
 // Add 2nd player to game state
 const user2 = getSampleUser2();
-game = {
-  ...game,
-  players: [...game.players, getBlankPlayer(game.id, user2)]
-};
+game = addUserToGame(game, user2);
 
 // Add some blocks to current user's grid
 game = updatePlayer(game, user.id, {
@@ -86,7 +83,7 @@ export default {
         [0, 0, 1, 0]
       ],
       activeTetrominoPosition: { x: 7, y: 15 },
-      dropAcceleration: false,
+      dropAcceleration: true,
       grid: [
         [null, null, null, null, null, null, null, null, null, null],
         [null, null, null, null, null, null, null, null, null, null],

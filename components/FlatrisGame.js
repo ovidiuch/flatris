@@ -25,6 +25,8 @@ import { withSocket } from '../utils/socket/connect';
 import Well from './Well';
 import GamePanel from './GamePanel';
 import Button from './Button';
+import Flash from './effects/Flash';
+import Quake from './effects/Quake';
 
 import type { User, Player, Game, State } from '../types/state';
 
@@ -321,22 +323,27 @@ class FlatrisGame extends Component<Props, LocalState> {
 
     return (
       <div className="flatris-game">
-        <div className="well-container">
-          {enemy && <div className="enemy-well">{this.renderWell(enemy)}</div>}
-          {this.renderWell(curPlayer)}
-        </div>
-        <div className="game-panel-container">
-          <GamePanel
-            curUser={curUser}
-            game={game}
-            userId={curUser.id}
-            showMenuButton={!showMenu}
-            onMenu={this.handleMenu}
-          />
-        </div>
-        {this.renderControls()}
+        <Quake curUser={curUser} game={game}>
+          <div className="well-container">
+            {enemy && (
+              <div className="enemy-well">{this.renderWell(enemy)}</div>
+            )}
+            <Flash curUser={curUser} game={game}>
+              {this.renderWell(curPlayer)}
+            </Flash>
+          </div>
+          <div className="game-panel-container">
+            <GamePanel
+              curUser={curUser}
+              game={game}
+              userId={curUser.id}
+              showMenuButton={!showMenu}
+              onMenu={this.handleMenu}
+            />
+          </div>
+          {this.renderControls()}
+        </Quake>
         <style jsx>{`
-          /* Flatris expects a 480 width viewport */
           .flatris-game {
             position: absolute;
             top: 0;

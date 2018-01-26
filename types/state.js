@@ -24,6 +24,10 @@ export type User = {
 
 export type PlayerStatus = 'PENDING' | 'READY';
 
+export type FlashSuffix = 'a' | 'b';
+
+export type QuakeSuffix = 'a1' | 'a2' | 'a3' | 'a4' | 'b1' | 'b2' | 'b3' | 'b4';
+
 export type Player = {
   user: User,
   status: PlayerStatus,
@@ -37,7 +41,10 @@ export type Player = {
   activeTetromino: Tetromino,
   activeTetrominoGrid: TetrominoGrid,
   activeTetrominoPosition: Position2d,
-  dropAcceleration: boolean
+  dropAcceleration: boolean,
+  flashYay: ?FlashSuffix,
+  flashNay: ?FlashSuffix,
+  quake: ?QuakeSuffix
 };
 
 // This type is allows us to change game id type from number to hash string
