@@ -245,9 +245,8 @@ export function appendBlocksToGrid(grid: WellGrid, blocks: WellGrid): WellGrid {
 
   // 1. Apply new block rows at the bottom, and collect top "border shape"
   // Hmm, this isn't very good, because 99% enemy blocks will create a line
-  // TODO: Bring back functionality or remove it with docs
+  // NOTE: Old functionality left for posterity
   // const availRowsPerCol = new Array(cols).fill(rows);
-  const availRowsPerCol = new Array(cols).fill(rows - blocks.length);
   blocks.forEach((rowBlocks, rowIndex) => {
     const absRowIndex = rows - blocks.length + rowIndex;
     rowBlocks.forEach((block, colIndex) => {
@@ -263,7 +262,8 @@ export function appendBlocksToGrid(grid: WellGrid, blocks: WellGrid): WellGrid {
 
   // 2. "Pour" previous blocks over new ones
   for (let colIndex = 0; colIndex < cols; colIndex++) {
-    const rowOffset = rows - availRowsPerCol[colIndex];
+    // const rowOffset = rows - availRowsPerCol[colIndex];
+    const rowOffset = blocks.length;
     for (let rowIndex = rows - 1; rowIndex >= rowOffset; rowIndex--) {
       newGrid[rowIndex - rowOffset][colIndex] = grid[rowIndex][colIndex];
     }

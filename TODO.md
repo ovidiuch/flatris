@@ -37,7 +37,7 @@
 * [x] Make enemy grid visible on Firefox
 * [x] Add hidden keyboard shortcut for stopping game
 * [x] Clean up server scripts (Keep server with client together in prod, separate in dev)
-* [ ] [WORKING PROTOTYPE]
+* [x] [WORKING PROTOTYPE]
 * [ ] Minimize network communication
   * [ ] Don't send noop actions
   * [ ] Batch actions
