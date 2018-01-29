@@ -38,13 +38,21 @@
 * [x] Add hidden keyboard shortcut for stopping game
 * [x] Clean up server scripts (Keep server with client together in prod, separate in dev)
 * [x] [WORKING PROTOTYPE]
+* [x] Handle wrong game ID with 404
+* [ ] Read game (Redux) state from server side in Page.getInitialProps
+* [ ] Fix concurrency issues (eg. who joins 1st vs 2nd)
+  * [ ] Load entire game state on load
+  * [ ] Don't lose game state on refresh
+  * [ ] Don't join game if 2 players are already in
+* [ ] Show both players' score in game panel
+* [ ] Show player READY state
+* [ ] Allow players to restart once game is over
 * [ ] Minimize network communication
   * [ ] Don't send noop actions
   * [ ] Batch actions
   * [ ] Algorithm for distributing events from bundled messages in time
         Calc time of each event in min-max interval and map [0, 1] value to [server timestamp of last received message...now...1s]
 * [ ] Keep dispatching left/right/rotate events at intervals when keys are pressed (instead of relying on repeated keypress events, which don't work on mobile anyway)
-* [ ] Read game (Redux) state from server side in Page.getInitialProps
 * [ ] Create game/:id route
 * [ ] Create sharing UI flow
 * [ ] Preview all existing games in index page
