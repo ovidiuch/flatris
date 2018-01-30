@@ -1,6 +1,5 @@
 // @flow
 
-import { getValidUser } from '../utils/validation';
 import {
   users,
   sessions,
