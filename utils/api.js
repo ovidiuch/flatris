@@ -44,9 +44,17 @@ export async function createGame(user: User): Promise<Game> {
 
 export function getApiUrl(path?: string) {
   const baseUrl =
-    process.env.NODE_ENV !== 'production' ? 'http://localhost:4000' : '';
+    process.env.NODE_ENV === 'production'
+      ? getProdBaseUrl()
+      : 'http://localhost:4000';
 
   return path ? `${baseUrl}${path}` : `${baseUrl}/`;
+}
+
+function getProdBaseUrl() {
+  // Relative paths allow us to serve the prod app from any proxy address (eg.
+  // via ngrok), but server-side requests need to contain the host address
+  return typeof window === 'undefined' ? 'http://localhost:3000' : '';
 }
 
 function fetchJson(urlPath: string, options?: Object): Promise<any> {
