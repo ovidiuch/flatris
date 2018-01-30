@@ -10,6 +10,9 @@ import {
   insertGame
 } from './db';
 
+import type { User } from '../types/state';
+import type { SessionId } from './db';
+
 export function addRoutes(app: express$Application) {
   app.get('/game/:gameId', (req: express$Request, res: express$Response) => {
     const gameId = req.params.gameId;
@@ -23,7 +26,7 @@ export function addRoutes(app: express$Application) {
 
   app.post('/game', (req: express$Request, res: express$Response) => {
     try {
-      const user = getValidUser(req.body.user);
+      const user = getUserFromReqSession(req);
 
       console.log('Create game', user);
       const game = insertGame(user);
@@ -35,12 +38,10 @@ export function addRoutes(app: express$Application) {
   });
 
   app.get('/auth', (req: express$Request, res: express$Response) => {
-    const sessionId = req.cookies.sessionId;
-
-    if (sessionId && sessions[sessionId]) {
-      const { userId } = sessions[sessionId];
-      res.json(users[userId]);
-    } else {
+    try {
+      const user = getUserFromReqSession(req);
+      res.json(user);
+    } catch (err) {
       res.sendStatus(401);
     }
   });
@@ -62,4 +63,11 @@ export function addRoutes(app: express$Application) {
       res.sendStatus(400);
     }
   });
+}
+
+function getUserFromReqSession(req: express$Request): User {
+  const sessionId: SessionId = req.cookies.sessionId;
+  const { userId } = sessions[sessionId];
+
+  return users[userId];
 }

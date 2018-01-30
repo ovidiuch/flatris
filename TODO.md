@@ -46,7 +46,7 @@
 * [x] Don't join game if 2 players are already in
 * [x] Create join/:id route
 * [x] Turn sessionId, userId & gameId numbers into hashes
-* [ ] Authorize game actions using sessionId
+* [ ] Kick player on disconnect
 * [ ] Continue game after hard refresh
 * [ ] Show both players' score in game panel
 * [ ] Show player READY state

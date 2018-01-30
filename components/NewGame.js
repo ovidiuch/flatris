@@ -27,7 +27,8 @@ class NewGame extends Component<Props> {
 
   createGameIfUser() {
     if (this.props.curUser && !this.isCreating) {
-      createAndOpenGame(this.props.curUser);
+      // The user will be picked up from the session on the server
+      createAndOpenGame();
       this.isCreating = true;
     }
   }
@@ -38,8 +39,8 @@ class NewGame extends Component<Props> {
   }
 }
 
-async function createAndOpenGame(user: User) {
-  const { id } = await createGame(user);
+async function createAndOpenGame() {
+  const { id } = await createGame();
   Router.push(`/join?g=${id}`, `/join/${id}`);
 }
 

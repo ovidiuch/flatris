@@ -38,8 +38,8 @@ export async function getGame(gameId: GameId): Promise<Game> {
   return fetchJson(`/game/${gameId}`);
 }
 
-export async function createGame(user: User): Promise<Game> {
-  return fetchPost('/game', { user });
+export async function createGame(): Promise<Game> {
+  return fetchPost('/game');
 }
 
 export function getApiUrl(path?: string) {
@@ -61,7 +61,7 @@ function fetchJson(urlPath: string, options?: Object): Promise<any> {
   return fetch(getApiUrl(urlPath), options).then(res => res.json());
 }
 
-function fetchPost(urlPath: string, body: Object): Promise<any> {
+function fetchPost(urlPath: string, body: Object = {}): Promise<any> {
   return fetchJson(urlPath, {
     method: 'POST',
     credentials: 'include',
