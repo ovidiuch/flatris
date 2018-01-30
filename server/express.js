@@ -61,7 +61,7 @@ export function addRoutes(app: express$Application) {
 
 export function createApp(): express$Application {
   const app = express();
-  app.use(bodyParser());
+  app.use(bodyParser.json());
   app.use(cookieParser());
 
   return app;
