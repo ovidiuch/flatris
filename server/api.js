@@ -1,12 +1,11 @@
 // @flow
 
 import { getValidUser } from '../utils/validation';
-import { getBlankGame } from '../reducers/game';
-import { games, sessions } from './db';
+import { games, sessions, insertUser, insertSession, insertGame } from './db';
 
 export function addRoutes(app: express$Application) {
   app.get('/game/:gameId', (req: express$Request, res: express$Response) => {
-    const gameId = Number(req.params.gameId);
+    const gameId = req.params.gameId;
 
     if (gameId && games[gameId]) {
       res.json(games[gameId]);
@@ -20,9 +19,7 @@ export function addRoutes(app: express$Application) {
       const user = getValidUser(req.body.user);
 
       console.log('Create game', user);
-      const gameId = Date.now();
-      const game = getBlankGame({ id: gameId, user });
-      games[gameId] = game;
+      const game = insertGame(user);
 
       res.json(game);
     } catch (err) {
@@ -31,7 +28,7 @@ export function addRoutes(app: express$Application) {
   });
 
   app.get('/auth', (req: express$Request, res: express$Response) => {
-    const sessionId = Number(req.cookies.sessionId);
+    const sessionId = req.cookies.sessionId;
 
     if (sessionId && sessions[sessionId]) {
       res.json(sessions[sessionId]);
@@ -42,14 +39,17 @@ export function addRoutes(app: express$Application) {
 
   app.post('/auth', (req: express$Request, res: express$Response) => {
     try {
-      const user = getValidUser(req.body.user);
+      const { userName } = req.body;
+      if (!userName) {
+        throw new Error('Empty user name');
+      }
 
-      console.log('Create session', user);
-      const sessionId = Date.now();
-      sessions[sessionId] = user;
+      console.log('Create session', userName);
+      const user = insertUser(userName);
+      const session = insertSession(user.id);
 
-      res.cookie('sessionId', String(sessionId));
-      res.json({});
+      res.cookie('sessionId', session.id);
+      res.json(user);
     } catch (err) {
       res.sendStatus(400);
     }

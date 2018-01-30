@@ -6,11 +6,11 @@ import { getBlankPlayer } from '../../../../reducers/game';
 import Quake from '../../../effects/Quake';
 
 const user1 = getSampleUser();
-const player1 = getBlankPlayer(1337, user1);
+const player1 = getBlankPlayer('dce6b11e', user1);
 
 const user2 = getSampleUser2();
 const player2 = {
-  ...getBlankPlayer(1337, user2),
+  ...getBlankPlayer('dce6b11e', user2),
   quake: 'a3'
 };
 

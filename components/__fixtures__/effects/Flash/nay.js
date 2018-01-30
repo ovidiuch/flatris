@@ -6,7 +6,7 @@ import Flash from '../../../effects/Flash';
 
 const user = getSampleUser();
 const player = {
-  ...getBlankPlayer(1337, user),
+  ...getBlankPlayer('dce6b11e', user),
   flashNay: 'a'
 };
 

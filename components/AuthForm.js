@@ -24,10 +24,8 @@ class AuthForm extends Component<Props> {
     e.preventDefault();
 
     const { nameField } = this;
-    if (nameField) {
-      const user = { id: Date.now(), name: nameField.value };
-
-      await createUserSession(user);
+    if (nameField && nameField.value) {
+      const user = await createUserSession(nameField.value);
       this.props.auth(user);
     }
   };

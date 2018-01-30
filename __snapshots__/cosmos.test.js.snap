@@ -10846,7 +10846,7 @@ exports[`Cosmos fixtures: GamePanel:default 1`] = `
     Next
   </div>
   <div
-    className="jsx-748759749 next-tetromino next-tetromino-O"
+    className="jsx-748759749 next-tetromino next-tetromino-L"
   >
     <div
       className="jsx-2115617632 tetromino"
@@ -10855,7 +10855,7 @@ exports[`Cosmos fixtures: GamePanel:default 1`] = `
         className="jsx-4287887962 grid-square-block"
         style={
           Object {
-            "left": "0%",
+            "left": "50%",
             "top": "0%",
           }
         }
@@ -10864,25 +10864,7 @@ exports[`Cosmos fixtures: GamePanel:default 1`] = `
           className="jsx-86954139 square-block"
           style={
             Object {
-              "backgroundColor": "#fbb414",
-            }
-          }
-        />
-      </div>
-      <div
-        className="jsx-4287887962 grid-square-block"
-        style={
-          Object {
-            "left": "25%",
-            "top": "0%",
-          }
-        }
-      >
-        <div
-          className="jsx-86954139 square-block"
-          style={
-            Object {
-              "backgroundColor": "#fbb414",
+              "backgroundColor": "#ed652f",
             }
           }
         />
@@ -10900,7 +10882,7 @@ exports[`Cosmos fixtures: GamePanel:default 1`] = `
           className="jsx-86954139 square-block"
           style={
             Object {
-              "backgroundColor": "#fbb414",
+              "backgroundColor": "#ed652f",
             }
           }
         />
@@ -10918,7 +10900,25 @@ exports[`Cosmos fixtures: GamePanel:default 1`] = `
           className="jsx-86954139 square-block"
           style={
             Object {
-              "backgroundColor": "#fbb414",
+              "backgroundColor": "#ed652f",
+            }
+          }
+        />
+      </div>
+      <div
+        className="jsx-4287887962 grid-square-block"
+        style={
+          Object {
+            "left": "50%",
+            "top": "25%",
+          }
+        }
+      >
+        <div
+          className="jsx-86954139 square-block"
+          style={
+            Object {
+              "backgroundColor": "#ed652f",
             }
           }
         />

@@ -14,8 +14,7 @@ export type WellGridItem = [number, Color];
 
 export type WellGrid = Grid<?WellGridItem>;
 
-// This type is allows us to change user id type from number to hash string
-export type UserId = number;
+export type UserId = string;
 
 export type User = {
   id: UserId,
@@ -47,8 +46,7 @@ export type Player = {
   quake: ?QuakeSuffix
 };
 
-// This type is allows us to change game id type from number to hash string
-export type GameId = number;
+export type GameId = string;
 
 export type GameStatus = 'PLAYING' | 'OVER';
 

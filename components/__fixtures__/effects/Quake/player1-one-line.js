@@ -7,7 +7,7 @@ import Quake from '../../../effects/Quake';
 
 const user = getSampleUser();
 const player1 = {
-  ...getBlankPlayer(1337, user),
+  ...getBlankPlayer('dce6b11e', user),
   quake: 'a1'
 };
 

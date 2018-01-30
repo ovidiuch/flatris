@@ -334,7 +334,7 @@ export function isPlayer(game: Game, curUser: ?User): boolean {
   return game.players.some(p => p.user.id === id);
 }
 
-export function getPlayer(game: Game, userId: number): Player {
+export function getPlayer(game: Game, userId: UserId): Player {
   const player = game.players.find(p => p.user.id === userId);
 
   if (!player) {
@@ -377,7 +377,7 @@ export function addUserToGame(game: Game, user: User): Game {
 
 export function updatePlayer(
   game: Game,
-  userId: number,
+  userId: UserId,
   attrs: $Shape<Player>
 ): Game {
   const { players } = game;

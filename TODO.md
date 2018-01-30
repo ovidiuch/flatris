@@ -45,9 +45,9 @@
 * [x] Load entire game state on load
 * [x] Don't join game if 2 players are already in
 * [x] Create join/:id route
-* [ ] Continue game after hard refresh
-* [ ] Turn sessionId, userId & gameId numbers into hashes
+* [x] Turn sessionId, userId & gameId numbers into hashes
 * [ ] Authorize game actions using sessionId
+* [ ] Continue game after hard refresh
 * [ ] Show both players' score in game panel
 * [ ] Show player READY state
 * [ ] Allow players to restart once game is over

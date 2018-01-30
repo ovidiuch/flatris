@@ -4,15 +4,14 @@ import type { User } from '../types/state';
 
 export function getSampleUser(): User {
   return {
-    id: 1,
+    id: '99bba208',
     name: 'Tig'
   };
 }
 
 export function getSampleUser2(): User {
   return {
-    id: 2,
+    id: '018ac29a',
     name: 'Louie'
   };
 }
-

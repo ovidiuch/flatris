@@ -7,7 +7,7 @@ import GamePanel from '../../GamePanel';
 import type { Props } from '../../GamePanel';
 
 const user = getSampleUser();
-const game = getBlankGame({ id: 8989, user });
+const game = getBlankGame({ id: 'dce6b11e', user });
 
 const fixture: { props: Props } = {
   component: GamePanel,

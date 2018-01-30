@@ -30,8 +30,8 @@ export async function addCurUserToState(
   }
 }
 
-export async function createUserSession(user: User): Promise<any> {
-  return fetchPost('/auth', { user });
+export async function createUserSession(userName: string): Promise<User> {
+  return fetchPost('/auth', { userName });
 }
 
 export async function getGame(gameId: GameId): Promise<Game> {
