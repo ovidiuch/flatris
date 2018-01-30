@@ -50,7 +50,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):double-hallelujah 
     }
   >
     <div
-      className="jsx-4015443650 flatris-game"
+      className="jsx-405555431 flatris-game"
     >
       <div
         className="jsx-2611135330 quake quake-b1"
@@ -59,10 +59,10 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):double-hallelujah 
           className="jsx-2611135330 quake quake-b4"
         >
           <div
-            className="jsx-4015443650 well-container"
+            className="jsx-405555431 well-container"
           >
             <div
-              className="jsx-4015443650 enemy-well"
+              className="jsx-405555431 enemy-well"
             >
               <div
                 className="jsx-2881654396 well"
@@ -2927,52 +2927,52 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):double-hallelujah 
             </div>
           </div>
           <div
-            className="jsx-4015443650 game-panel-container"
+            className="jsx-405555431 game-panel-container"
           >
             <div
-              className="jsx-675712511 game-panel"
+              className="jsx-748759749 game-panel"
             >
               <div
-                className="jsx-675712511 title"
+                className="jsx-748759749 title"
               >
                 <h1
-                  className="jsx-675712511"
+                  className="jsx-748759749"
                 >
                   World 
                   <strong
-                    className="jsx-675712511"
+                    className="jsx-748759749"
                   >
                     Tetris
                   </strong>
                 </h1>
               </div>
               <div
-                className="jsx-675712511 label score-label"
+                className="jsx-748759749 label score-label"
               >
                 Score
               </div>
               <div
-                className="jsx-675712511 count score-count"
+                className="jsx-748759749 count score-count"
               >
                 104
               </div>
               <div
-                className="jsx-675712511 label lines-label"
+                className="jsx-748759749 label lines-label"
               >
                 Lines
               </div>
               <div
-                className="jsx-675712511 count lines-count"
+                className="jsx-748759749 count lines-count"
               >
                 1
               </div>
               <div
-                className="jsx-675712511 label next-label"
+                className="jsx-748759749 label next-label"
               >
                 Next
               </div>
               <div
-                className="jsx-675712511 next-tetromino next-tetromino-J"
+                className="jsx-748759749 next-tetromino next-tetromino-J"
               >
                 <div
                   className="jsx-2115617632 tetromino"
@@ -3052,45 +3052,31 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):double-hallelujah 
                 </div>
               </div>
               <div
-                className="jsx-675712511 label users-label"
+                className="jsx-748759749 label users-label"
               >
                 Players
               </div>
               <div
-                className="jsx-675712511 users"
+                className="jsx-748759749 users"
               >
                 <div
-                  className="jsx-675712511 user"
+                  className="jsx-748759749 user"
                 >
                   <span
-                    className="jsx-675712511"
+                    className="jsx-748759749"
                   >
-                    <strong
-                      className="jsx-675712511"
-                    >
-                      Tig
-                    </strong>
+                    Tig
                   </span>
                 </div>
                 <div
-                  className="jsx-675712511 user"
+                  className="jsx-748759749 user"
                 >
                   <span
-                    className="jsx-675712511"
+                    className="jsx-748759749"
                   >
                     Louie
                   </span>
                 </div>
-              </div>
-              <div
-                className="jsx-675712511 game-button"
-              >
-                <button
-                  className="jsx-3501768573 button"
-                  onMouseDown={[Function]}
-                >
-                  READY
-                </button>
               </div>
             </div>
           </div>
@@ -3182,7 +3168,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):enemy-hallelujah 1
     }
   >
     <div
-      className="jsx-4015443650 flatris-game"
+      className="jsx-405555431 flatris-game"
     >
       <div
         className="jsx-2611135330 quake"
@@ -3191,10 +3177,10 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):enemy-hallelujah 1
           className="jsx-2611135330 quake"
         >
           <div
-            className="jsx-4015443650 well-container"
+            className="jsx-405555431 well-container"
           >
             <div
-              className="jsx-4015443650 enemy-well"
+              className="jsx-405555431 enemy-well"
             >
               <div
                 className="jsx-2881654396 well"
@@ -4839,52 +4825,52 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):enemy-hallelujah 1
             </div>
           </div>
           <div
-            className="jsx-4015443650 game-panel-container"
+            className="jsx-405555431 game-panel-container"
           >
             <div
-              className="jsx-675712511 game-panel"
+              className="jsx-748759749 game-panel"
             >
               <div
-                className="jsx-675712511 title"
+                className="jsx-748759749 title"
               >
                 <h1
-                  className="jsx-675712511"
+                  className="jsx-748759749"
                 >
                   World 
                   <strong
-                    className="jsx-675712511"
+                    className="jsx-748759749"
                   >
                     Tetris
                   </strong>
                 </h1>
               </div>
               <div
-                className="jsx-675712511 label score-label"
+                className="jsx-748759749 label score-label"
               >
                 Score
               </div>
               <div
-                className="jsx-675712511 count score-count"
+                className="jsx-748759749 count score-count"
               >
                 0
               </div>
               <div
-                className="jsx-675712511 label lines-label"
+                className="jsx-748759749 label lines-label"
               >
                 Lines
               </div>
               <div
-                className="jsx-675712511 count lines-count"
+                className="jsx-748759749 count lines-count"
               >
                 0
               </div>
               <div
-                className="jsx-675712511 label next-label"
+                className="jsx-748759749 label next-label"
               >
                 Next
               </div>
               <div
-                className="jsx-675712511 next-tetromino next-tetromino-I"
+                className="jsx-748759749 next-tetromino next-tetromino-I"
               >
                 <div
                   className="jsx-2115617632 tetromino"
@@ -4964,45 +4950,31 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):enemy-hallelujah 1
                 </div>
               </div>
               <div
-                className="jsx-675712511 label users-label"
+                className="jsx-748759749 label users-label"
               >
                 Players
               </div>
               <div
-                className="jsx-675712511 users"
+                className="jsx-748759749 users"
               >
                 <div
-                  className="jsx-675712511 user"
+                  className="jsx-748759749 user"
                 >
                   <span
-                    className="jsx-675712511"
+                    className="jsx-748759749"
                   >
-                    <strong
-                      className="jsx-675712511"
-                    >
-                      Tig
-                    </strong>
+                    Tig
                   </span>
                 </div>
                 <div
-                  className="jsx-675712511 user"
+                  className="jsx-748759749 user"
                 >
                   <span
-                    className="jsx-675712511"
+                    className="jsx-748759749"
                   >
                     Louie
                   </span>
                 </div>
-              </div>
-              <div
-                className="jsx-675712511 game-button"
-              >
-                <button
-                  className="jsx-3501768573 button"
-                  onMouseDown={[Function]}
-                >
-                  READY
-                </button>
               </div>
             </div>
           </div>
@@ -5094,7 +5066,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah 1`] = `
     }
   >
     <div
-      className="jsx-4015443650 flatris-game"
+      className="jsx-405555431 flatris-game"
     >
       <div
         className="jsx-2611135330 quake"
@@ -5103,7 +5075,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah 1`] = `
           className="jsx-2611135330 quake"
         >
           <div
-            className="jsx-4015443650 well-container"
+            className="jsx-405555431 well-container"
           >
             <div
               className="jsx-124931555 flash"
@@ -7131,52 +7103,52 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah 1`] = `
             </div>
           </div>
           <div
-            className="jsx-4015443650 game-panel-container"
+            className="jsx-405555431 game-panel-container"
           >
             <div
-              className="jsx-675712511 game-panel"
+              className="jsx-748759749 game-panel"
             >
               <div
-                className="jsx-675712511 title"
+                className="jsx-748759749 title"
               >
                 <h1
-                  className="jsx-675712511"
+                  className="jsx-748759749"
                 >
                   World 
                   <strong
-                    className="jsx-675712511"
+                    className="jsx-748759749"
                   >
                     Tetris
                   </strong>
                 </h1>
               </div>
               <div
-                className="jsx-675712511 label score-label"
+                className="jsx-748759749 label score-label"
               >
                 Score
               </div>
               <div
-                className="jsx-675712511 count score-count"
+                className="jsx-748759749 count score-count"
               >
                 184
               </div>
               <div
-                className="jsx-675712511 label lines-label"
+                className="jsx-748759749 label lines-label"
               >
                 Lines
               </div>
               <div
-                className="jsx-675712511 count lines-count"
+                className="jsx-748759749 count lines-count"
               >
                 0
               </div>
               <div
-                className="jsx-675712511 label next-label"
+                className="jsx-748759749 label next-label"
               >
                 Next
               </div>
               <div
-                className="jsx-675712511 next-tetromino next-tetromino-I"
+                className="jsx-748759749 next-tetromino next-tetromino-I"
               >
                 <div
                   className="jsx-2115617632 tetromino"
@@ -7256,30 +7228,23 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah 1`] = `
                 </div>
               </div>
               <div
-                className="jsx-675712511 label users-label"
+                className="jsx-748759749 label users-label"
               >
                 Players
               </div>
               <div
-                className="jsx-675712511 users"
+                className="jsx-748759749 users"
               >
                 <div
-                  className="jsx-675712511 user"
+                  className="jsx-748759749 user"
                 >
                   <span
-                    className="jsx-675712511"
+                    className="jsx-748759749"
                   >
-                    <strong
-                      className="jsx-675712511"
-                    >
-                      Tig
-                    </strong>
+                    Tig
                   </span>
                 </div>
               </div>
-              <div
-                className="jsx-675712511 game-button"
-              />
             </div>
           </div>
           <div
@@ -7370,7 +7335,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
     }
   >
     <div
-      className="jsx-4015443650 flatris-game"
+      className="jsx-405555431 flatris-game"
     >
       <div
         className="jsx-2611135330 quake"
@@ -7379,7 +7344,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
           className="jsx-2611135330 quake"
         >
           <div
-            className="jsx-4015443650 well-container"
+            className="jsx-405555431 well-container"
           >
             <div
               className="jsx-124931555 flash"
@@ -9847,52 +9812,52 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
             </div>
           </div>
           <div
-            className="jsx-4015443650 game-panel-container"
+            className="jsx-405555431 game-panel-container"
           >
             <div
-              className="jsx-675712511 game-panel"
+              className="jsx-748759749 game-panel"
             >
               <div
-                className="jsx-675712511 title"
+                className="jsx-748759749 title"
               >
                 <h1
-                  className="jsx-675712511"
+                  className="jsx-748759749"
                 >
                   World 
                   <strong
-                    className="jsx-675712511"
+                    className="jsx-748759749"
                   >
                     Tetris
                   </strong>
                 </h1>
               </div>
               <div
-                className="jsx-675712511 label score-label"
+                className="jsx-748759749 label score-label"
               >
                 Score
               </div>
               <div
-                className="jsx-675712511 count score-count"
+                className="jsx-748759749 count score-count"
               >
                 352
               </div>
               <div
-                className="jsx-675712511 label lines-label"
+                className="jsx-748759749 label lines-label"
               >
                 Lines
               </div>
               <div
-                className="jsx-675712511 count lines-count"
+                className="jsx-748759749 count lines-count"
               >
                 1
               </div>
               <div
-                className="jsx-675712511 label next-label"
+                className="jsx-748759749 label next-label"
               >
                 Next
               </div>
               <div
-                className="jsx-675712511 next-tetromino next-tetromino-I"
+                className="jsx-748759749 next-tetromino next-tetromino-I"
               >
                 <div
                   className="jsx-2115617632 tetromino"
@@ -9972,36 +9937,22 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
                 </div>
               </div>
               <div
-                className="jsx-675712511 label users-label"
+                className="jsx-748759749 label users-label"
               >
                 Players
               </div>
               <div
-                className="jsx-675712511 users"
+                className="jsx-748759749 users"
               >
                 <div
-                  className="jsx-675712511 user"
+                  className="jsx-748759749 user"
                 >
                   <span
-                    className="jsx-675712511"
+                    className="jsx-748759749"
                   >
-                    <strong
-                      className="jsx-675712511"
-                    >
-                      Tig
-                    </strong>
+                    Tig
                   </span>
                 </div>
-              </div>
-              <div
-                className="jsx-675712511 game-button"
-              >
-                <button
-                  className="jsx-3501768573 button"
-                  onMouseDown={[Function]}
-                >
-                  READY
-                </button>
               </div>
             </div>
           </div>
@@ -10093,7 +10044,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
     }
   >
     <div
-      className="jsx-4015443650 flatris-game"
+      className="jsx-405555431 flatris-game"
     >
       <div
         className="jsx-2611135330 quake"
@@ -10102,7 +10053,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
           className="jsx-2611135330 quake"
         >
           <div
-            className="jsx-4015443650 well-container"
+            className="jsx-405555431 well-container"
           >
             <div
               className="jsx-124931555 flash"
@@ -10209,52 +10160,52 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
             </div>
           </div>
           <div
-            className="jsx-4015443650 game-panel-container"
+            className="jsx-405555431 game-panel-container"
           >
             <div
-              className="jsx-675712511 game-panel"
+              className="jsx-748759749 game-panel"
             >
               <div
-                className="jsx-675712511 title"
+                className="jsx-748759749 title"
               >
                 <h1
-                  className="jsx-675712511"
+                  className="jsx-748759749"
                 >
                   World 
                   <strong
-                    className="jsx-675712511"
+                    className="jsx-748759749"
                   >
                     Tetris
                   </strong>
                 </h1>
               </div>
               <div
-                className="jsx-675712511 label score-label"
+                className="jsx-748759749 label score-label"
               >
                 Score
               </div>
               <div
-                className="jsx-675712511 count score-count"
+                className="jsx-748759749 count score-count"
               >
                 0
               </div>
               <div
-                className="jsx-675712511 label lines-label"
+                className="jsx-748759749 label lines-label"
               >
                 Lines
               </div>
               <div
-                className="jsx-675712511 count lines-count"
+                className="jsx-748759749 count lines-count"
               >
                 0
               </div>
               <div
-                className="jsx-675712511 label next-label"
+                className="jsx-748759749 label next-label"
               >
                 Next
               </div>
               <div
-                className="jsx-675712511 next-tetromino next-tetromino-I"
+                className="jsx-748759749 next-tetromino next-tetromino-I"
               >
                 <div
                   className="jsx-2115617632 tetromino"
@@ -10334,36 +10285,22 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
                 </div>
               </div>
               <div
-                className="jsx-675712511 label users-label"
+                className="jsx-748759749 label users-label"
               >
                 Players
               </div>
               <div
-                className="jsx-675712511 users"
+                className="jsx-748759749 users"
               >
                 <div
-                  className="jsx-675712511 user"
+                  className="jsx-748759749 user"
                 >
                   <span
-                    className="jsx-675712511"
+                    className="jsx-748759749"
                   >
-                    <strong
-                      className="jsx-675712511"
-                    >
-                      Tig
-                    </strong>
+                    Tig
                   </span>
                 </div>
-              </div>
-              <div
-                className="jsx-675712511 game-button"
-              >
-                <button
-                  className="jsx-3501768573 button"
-                  onMouseDown={[Function]}
-                >
-                  READY
-                </button>
               </div>
             </div>
           </div>
@@ -10455,7 +10392,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game-running 1
     }
   >
     <div
-      className="jsx-4015443650 flatris-game"
+      className="jsx-405555431 flatris-game"
     >
       <div
         className="jsx-2611135330 quake"
@@ -10464,7 +10401,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game-running 1
           className="jsx-2611135330 quake"
         >
           <div
-            className="jsx-4015443650 well-container"
+            className="jsx-405555431 well-container"
           >
             <div
               className="jsx-124931555 flash"
@@ -10571,52 +10508,52 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game-running 1
             </div>
           </div>
           <div
-            className="jsx-4015443650 game-panel-container"
+            className="jsx-405555431 game-panel-container"
           >
             <div
-              className="jsx-675712511 game-panel"
+              className="jsx-748759749 game-panel"
             >
               <div
-                className="jsx-675712511 title"
+                className="jsx-748759749 title"
               >
                 <h1
-                  className="jsx-675712511"
+                  className="jsx-748759749"
                 >
                   World 
                   <strong
-                    className="jsx-675712511"
+                    className="jsx-748759749"
                   >
                     Tetris
                   </strong>
                 </h1>
               </div>
               <div
-                className="jsx-675712511 label score-label"
+                className="jsx-748759749 label score-label"
               >
                 Score
               </div>
               <div
-                className="jsx-675712511 count score-count"
+                className="jsx-748759749 count score-count"
               >
                 0
               </div>
               <div
-                className="jsx-675712511 label lines-label"
+                className="jsx-748759749 label lines-label"
               >
                 Lines
               </div>
               <div
-                className="jsx-675712511 count lines-count"
+                className="jsx-748759749 count lines-count"
               >
                 0
               </div>
               <div
-                className="jsx-675712511 label next-label"
+                className="jsx-748759749 label next-label"
               >
                 Next
               </div>
               <div
-                className="jsx-675712511 next-tetromino next-tetromino-I"
+                className="jsx-748759749 next-tetromino next-tetromino-I"
               >
                 <div
                   className="jsx-2115617632 tetromino"
@@ -10696,30 +10633,23 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game-running 1
                 </div>
               </div>
               <div
-                className="jsx-675712511 label users-label"
+                className="jsx-748759749 label users-label"
               >
                 Players
               </div>
               <div
-                className="jsx-675712511 users"
+                className="jsx-748759749 users"
               >
                 <div
-                  className="jsx-675712511 user"
+                  className="jsx-748759749 user"
                 >
                   <span
-                    className="jsx-675712511"
+                    className="jsx-748759749"
                   >
-                    <strong
-                      className="jsx-675712511"
-                    >
-                      Tig
-                    </strong>
+                    Tig
                   </span>
                 </div>
               </div>
-              <div
-                className="jsx-675712511 game-button"
-              />
             </div>
           </div>
           <div
@@ -10817,7 +10747,7 @@ exports[`Cosmos fixtures: Flash:yay 1`] = `
   <div
     className="jsx-124931555 flash"
   >
-    Yuhuu!
+    D'oh!
   </div>
 </div>
 `;
@@ -10874,49 +10804,49 @@ exports[`Cosmos fixtures: GameLobby:default 1`] = `
 
 exports[`Cosmos fixtures: GamePanel:default 1`] = `
 <div
-  className="jsx-675712511 game-panel"
+  className="jsx-748759749 game-panel"
 >
   <div
-    className="jsx-675712511 title"
+    className="jsx-748759749 title"
   >
     <h1
-      className="jsx-675712511"
+      className="jsx-748759749"
     >
       World 
       <strong
-        className="jsx-675712511"
+        className="jsx-748759749"
       >
         Tetris
       </strong>
     </h1>
   </div>
   <div
-    className="jsx-675712511 label score-label"
+    className="jsx-748759749 label score-label"
   >
     Score
   </div>
   <div
-    className="jsx-675712511 count score-count"
+    className="jsx-748759749 count score-count"
   >
     0
   </div>
   <div
-    className="jsx-675712511 label lines-label"
+    className="jsx-748759749 label lines-label"
   >
     Lines
   </div>
   <div
-    className="jsx-675712511 count lines-count"
+    className="jsx-748759749 count lines-count"
   >
     0
   </div>
   <div
-    className="jsx-675712511 label next-label"
+    className="jsx-748759749 label next-label"
   >
     Next
   </div>
   <div
-    className="jsx-675712511 next-tetromino next-tetromino-O"
+    className="jsx-748759749 next-tetromino next-tetromino-O"
   >
     <div
       className="jsx-2115617632 tetromino"
@@ -10996,36 +10926,22 @@ exports[`Cosmos fixtures: GamePanel:default 1`] = `
     </div>
   </div>
   <div
-    className="jsx-675712511 label users-label"
+    className="jsx-748759749 label users-label"
   >
     Players
   </div>
   <div
-    className="jsx-675712511 users"
+    className="jsx-748759749 users"
   >
     <div
-      className="jsx-675712511 user"
+      className="jsx-748759749 user"
     >
       <span
-        className="jsx-675712511"
+        className="jsx-748759749"
       >
-        <strong
-          className="jsx-675712511"
-        >
-          Tig
-        </strong>
+        Tig
       </span>
     </div>
-  </div>
-  <div
-    className="jsx-675712511 game-button"
-  >
-    <button
-      className="jsx-3501768573 button"
-      onMouseDown={[Function]}
-    >
-      READY
-    </button>
   </div>
 </div>
 `;
@@ -11562,51 +11478,47 @@ exports[`Cosmos fixtures: Preloader:default 1`] = `
 </div>
 `;
 
-exports[`Cosmos fixtures: Quake:enemy-1 1`] = `
+exports[`Cosmos fixtures: Quake:player1-four-lines 1`] = `
 <div
-  className="jsx-2611135330 quake"
+  className="jsx-2611135330 quake quake-a4"
 >
   <div
-    className="jsx-2611135330 quake quake-a1"
+    className="jsx-2611135330 quake"
   >
     <div>
-      Jump around, jump up and get down
+      I Like To Move It Move It
       <br />
-      Jump around, jump around
+      I Like To Move It Move It
       <br />
-      Jump up and get down
+      I Like To Move It Move
       <br />
-      Jump up, jump up and get down
-      <br />
-      Jump, jump
+      It Ya Like To (MOVE IT!)
     </div>
   </div>
 </div>
 `;
 
-exports[`Cosmos fixtures: Quake:enemy-2 1`] = `
+exports[`Cosmos fixtures: Quake:player1-one-line 1`] = `
 <div
-  className="jsx-2611135330 quake"
+  className="jsx-2611135330 quake quake-a1"
 >
   <div
-    className="jsx-2611135330 quake quake-a2"
+    className="jsx-2611135330 quake"
   >
     <div>
-      Jump around, jump up and get down
+      I Like To Move It Move It
       <br />
-      Jump around, jump around
+      I Like To Move It Move It
       <br />
-      Jump up and get down
+      I Like To Move It Move
       <br />
-      Jump up, jump up and get down
-      <br />
-      Jump, jump
+      It Ya Like To (MOVE IT!)
     </div>
   </div>
 </div>
 `;
 
-exports[`Cosmos fixtures: Quake:enemy-3 1`] = `
+exports[`Cosmos fixtures: Quake:player2-three-lines 1`] = `
 <div
   className="jsx-2611135330 quake"
 >
@@ -11628,12 +11540,12 @@ exports[`Cosmos fixtures: Quake:enemy-3 1`] = `
 </div>
 `;
 
-exports[`Cosmos fixtures: Quake:enemy-4 1`] = `
+exports[`Cosmos fixtures: Quake:player2-two-lines 1`] = `
 <div
   className="jsx-2611135330 quake"
 >
   <div
-    className="jsx-2611135330 quake quake-a4"
+    className="jsx-2611135330 quake quake-a2"
   >
     <div>
       Jump around, jump up and get down
@@ -11645,86 +11557,6 @@ exports[`Cosmos fixtures: Quake:enemy-4 1`] = `
       Jump up, jump up and get down
       <br />
       Jump, jump
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Cosmos fixtures: Quake:self-1 1`] = `
-<div
-  className="jsx-2611135330 quake quake-a1"
->
-  <div
-    className="jsx-2611135330 quake"
-  >
-    <div>
-      I Like To Move It Move It
-      <br />
-      I Like To Move It Move It
-      <br />
-      I Like To Move It Move
-      <br />
-      It Ya Like To (MOVE IT!)
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Cosmos fixtures: Quake:self-2 1`] = `
-<div
-  className="jsx-2611135330 quake quake-a2"
->
-  <div
-    className="jsx-2611135330 quake"
-  >
-    <div>
-      I Like To Move It Move It
-      <br />
-      I Like To Move It Move It
-      <br />
-      I Like To Move It Move
-      <br />
-      It Ya Like To (MOVE IT!)
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Cosmos fixtures: Quake:self-3 1`] = `
-<div
-  className="jsx-2611135330 quake quake-a3"
->
-  <div
-    className="jsx-2611135330 quake"
-  >
-    <div>
-      I Like To Move It Move It
-      <br />
-      I Like To Move It Move It
-      <br />
-      I Like To Move It Move
-      <br />
-      It Ya Like To (MOVE IT!)
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Cosmos fixtures: Quake:self-4 1`] = `
-<div
-  className="jsx-2611135330 quake quake-a4"
->
-  <div
-    className="jsx-2611135330 quake"
-  >
-    <div>
-      I Like To Move It Move It
-      <br />
-      I Like To Move It Move It
-      <br />
-      I Like To Move It Move
-      <br />
-      It Ya Like To (MOVE IT!)
     </div>
   </div>
 </div>

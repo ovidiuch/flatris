@@ -1,36 +1,32 @@
 // @flow
 
 import React, { Component } from 'react';
-import { getPlayer, getEnemyPlayer } from '../../reducers/game';
 
 import type { Node } from 'react';
-import type { User, Game } from '../../types/state';
+import type { Player } from '../../types/state';
 
 type Props = {
-  curUser: User,
-  game: Game,
+  player1: ?Player,
+  player2: ?Player,
   children: ?Node
 };
 
 class Quake extends Component<Props> {
   render() {
-    const { children, curUser, game } = this.props;
+    const { children, player1, player2 } = this.props;
+    const classes1 = ['quake'];
+    const classes2 = ['quake'];
 
-    const curPlayer = getPlayer(game, curUser.id);
-    const classesSelf = ['quake'];
-    if (curPlayer.quake) {
-      classesSelf.push(`quake-${curPlayer.quake}`);
+    if (player1 && player1.quake) {
+      classes1.push(`quake-${player1.quake}`);
     }
-
-    const enemy = getEnemyPlayer(game, curUser.id);
-    const classesOther = ['quake'];
-    if (enemy && enemy.quake) {
-      classesOther.push(`quake-${enemy.quake}`);
+    if (player2 && player2.quake) {
+      classes2.push(`quake-${player2.quake}`);
     }
 
     return (
-      <div className={classesSelf.join(' ')}>
-        <div className={classesOther.join(' ')}>{children}</div>
+      <div className={classes1.join(' ')}>
+        <div className={classes2.join(' ')}>{children}</div>
         <style jsx>{`
           .quake {
             position: absolute;

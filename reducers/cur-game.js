@@ -11,8 +11,8 @@ export function curGameReducer(state: void | ?Game, action: Action): ?Game {
   }
 
   switch (action.type) {
-    case 'CREATE_GAME':
-      return gameReducer(undefined, action);
+    case 'LOAD_GAME':
+      return action.payload.game;
     case 'JOIN_GAME':
     case 'PLAYER_READY':
     case 'DROP':

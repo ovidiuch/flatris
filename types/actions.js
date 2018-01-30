@@ -1,16 +1,22 @@
 // @flow
 
-import type { UserId, User, GameId, State } from './state';
+import type { UserId, User, GameId, Game, State } from './state';
 
 export type InitAction = {
   type: '@@INIT'
 };
 
-export type CreateGameAction = {
-  type: 'CREATE_GAME',
+export type AuthAction = {
+  type: 'AUTH',
   payload: {
-    gameId: GameId,
     user: User
+  }
+};
+
+export type LoadGameAction = {
+  type: 'LOAD_GAME',
+  payload: {
+    game: Game
   }
 };
 
@@ -88,7 +94,6 @@ export type AppendPendingBlocks = {
 };
 
 export type GameAction =
-  | CreateGameAction
   | JoinGameAction
   | PlayerReadyAction
   | MoveLeftAction
@@ -99,15 +104,7 @@ export type GameAction =
   | DisableAccelerationAction
   | AppendPendingBlocks;
 
-export type AuthAction = {
-  type: 'AUTH',
-  payload: {
-    userId: UserId,
-    userName: string
-  }
-};
-
-export type Action = InitAction | GameAction | AuthAction;
+export type Action = InitAction | AuthAction | LoadGameAction | GameAction;
 
 export type GetState = () => State;
 

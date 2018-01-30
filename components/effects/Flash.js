@@ -1,30 +1,28 @@
 // @flow
 
 import React, { Component } from 'react';
-import { getPlayer } from '../../reducers/game';
 
 import type { Node } from 'react';
-import type { User, Game } from '../../types/state';
+import type { Player } from '../../types/state';
 
 type Props = {
-  curUser: User,
-  game: Game,
+  player: ?Player,
   children: ?Node
 };
 
 class Flash extends Component<Props> {
   render() {
-    const { children, curUser, game } = this.props;
-    const curPlayer = getPlayer(game, curUser.id);
-
+    const { children, player } = this.props;
     const classesYay = ['flash'];
-    if (curPlayer.flashYay) {
-      classesYay.push(`yay-${curPlayer.flashYay}`);
-    }
-
     const classesNay = ['flash'];
-    if (curPlayer.flashNay) {
-      classesNay.push(`nay-${curPlayer.flashNay}`);
+
+    if (player) {
+      if (player.flashYay) {
+        classesYay.push(`yay-${player.flashYay}`);
+      }
+      if (player.flashNay) {
+        classesNay.push(`nay-${player.flashNay}`);
+      }
     }
 
     return (

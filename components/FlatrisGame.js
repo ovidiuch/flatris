@@ -4,12 +4,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import _ from 'lodash';
-import { UP, DOWN, LEFT, RIGHT, X } from '../constants/keys';
-import { attachPointerDownEvent, attachPointerUpEvent } from '../utils/events';
-import { getPlayer, getEnemyPlayer, allPlayersReady } from '../reducers/game';
-import { getCurUser } from '../reducers/cur-user';
+import { UP, DOWN, LEFT, RIGHT } from '../constants/keys';
+import {
+  isPlayer,
+  getPlayer,
+  getPlayer1,
+  getPlayer2,
+  allPlayersReady
+} from '../reducers/game';
 import { getCurGame } from '../reducers/cur-game';
 import {
+  joinGame,
   playerReady,
   advanceGame,
   stopGame,
@@ -24,15 +29,20 @@ import {
 import { withSocket } from '../utils/socket/connect';
 import Well from './Well';
 import GamePanel from './GamePanel';
-import Button from './Button';
+import Rotate from './controls/Rotate';
+import Left from './controls/Left';
+import Right from './controls/Right';
+import Drop from './controls/Drop';
 import Flash from './effects/Flash';
 import Quake from './effects/Quake';
+import AuthForm from './AuthForm';
 
 import type { User, Player, Game, State } from '../types/state';
 
 type Props = {
-  curUser: User,
+  curUser: ?User,
   game: Game,
+  joinGame: typeof joinGame,
   playerReady: typeof playerReady,
   advanceGame: typeof advanceGame,
   drop: typeof drop,
@@ -44,15 +54,7 @@ type Props = {
   appendPendingBlocks: typeof appendPendingBlocks
 };
 
-type LocalState = {
-  showMenu: boolean
-};
-
-class FlatrisGame extends Component<Props, LocalState> {
-  state = {
-    showMenu: false
-  };
-
+class FlatrisGame extends Component<Props> {
   /**
    * The Tetris game was originally designed and programmed by Alexey Pajitnov.
    * It was released on June 6, 1984 and has since become a world-wide
@@ -75,8 +77,8 @@ class FlatrisGame extends Component<Props, LocalState> {
       appendPendingBlocks
     } = this.props;
 
-    // Begin game animation when both players are ready (runs on each client)
-    if (game.status === 'PLAYING') {
+    if (curUser && this.isPlaying()) {
+      // Begin game animation when both players are ready (runs on each client)
       if (!allPlayersReady(prevGame) && allPlayersReady(game)) {
         advanceGame(drop);
       }
@@ -103,6 +105,14 @@ class FlatrisGame extends Component<Props, LocalState> {
     stopGame();
   }
 
+  handleJoin = () => {
+    const { curUser, game, joinGame } = this.props;
+
+    if (curUser) {
+      joinGame(game.id, curUser);
+    }
+  };
+
   handleKeyDown = e => {
     // Prevent page from scrolling when pressing arrow keys
     if (_.values([UP, DOWN, LEFT, RIGHT]).indexOf(e.keyCode) !== -1) {
@@ -113,10 +123,20 @@ class FlatrisGame extends Component<Props, LocalState> {
       return;
     }
 
-    const { enableAcceleration, rotate, moveLeft, moveRight } = this.props;
+    const {
+      playerReady,
+      enableAcceleration,
+      rotate,
+      moveLeft,
+      moveRight
+    } = this.props;
 
     switch (e.keyCode) {
-      case X:
+      case 82: // R key
+        // TEMP: Until menus are created
+        playerReady();
+        break;
+      case 88: // X key
         // TEMP: Escape hatch to stop the game. Remove in final version
         stopGame();
         break;
@@ -202,16 +222,10 @@ class FlatrisGame extends Component<Props, LocalState> {
     disableAcceleration();
   };
 
-  handleMenu = () => {
-    const { playerReady } = this.props;
-    playerReady();
-  };
-
   isPlaying() {
-    const { game } = this.props;
+    const { curUser, game } = this.props;
 
-    // TODO: Maybe current player is dead but watching adversary
-    return game.status === 'PLAYING';
+    return isPlayer(game, curUser) && game.status === 'PLAYING';
   }
 
   renderControlIcon(path) {
@@ -226,35 +240,19 @@ class FlatrisGame extends Component<Props, LocalState> {
     return (
       <div className="controls">
         <div className="button">
-          <Button {...attachPointerDownEvent(this.handleRotatePress)}>
-            {this.renderControlIcon(
-              'M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z'
-            )}
-          </Button>
+          <Rotate onPress={this.handleRotatePress} />
         </div>
         <div className="button">
-          <Button {...attachPointerDownEvent(this.handleLeftPress)}>
-            {this.renderControlIcon(
-              'M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z'
-            )}
-          </Button>
+          <Left onPress={this.handleLeftPress} />
         </div>
         <div className="button">
-          <Button {...attachPointerDownEvent(this.handleRightPress)}>
-            {this.renderControlIcon(
-              'M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z'
-            )}
-          </Button>
+          <Right onPress={this.handleRightPress} />
         </div>
         <div className="button">
-          <Button
-            {...attachPointerDownEvent(this.handlePullPress)}
-            {...attachPointerUpEvent(this.handlePullRelease)}
-          >
-            {this.renderControlIcon(
-              'M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z'
-            )}
-          </Button>
+          <Drop
+            onPress={this.handlePullPress}
+            onRelease={this.handlePullRelease}
+          />
         </div>
         <style jsx>{`
           .controls {
@@ -318,32 +316,58 @@ class FlatrisGame extends Component<Props, LocalState> {
     );
   }
 
+  renderScreens() {
+    const { curUser, game } = this.props;
+    const player1 = getPlayer1(game, curUser);
+    const player2 = getPlayer2(game, player1);
+    const isCurPlayer = isPlayer(game, curUser);
+
+    if (isCurPlayer) {
+      return null;
+    }
+
+    const noRoomLeft = Boolean(player2);
+    const authToJoin = !player2 && !curUser;
+    const readyToJoin = !player2 && curUser;
+
+    return (
+      <div className="screen-container">
+        {noRoomLeft && <div>Game is full</div>}
+        {authToJoin && <AuthForm />}
+        {readyToJoin && (
+          <button onClick={this.handleJoin}>Press to join</button>
+        )}
+        <style jsx>{`
+          .screen-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: calc(100% / 16 * 6);
+            height: calc(100% / 24 * 20);
+            background: rgba(236, 240, 241, 0.85);
+          }
+        `}</style>
+      </div>
+    );
+  }
+
   render() {
     const { curUser, game } = this.props;
-    const curPlayer = getPlayer(game, curUser.id);
-    const enemy = getEnemyPlayer(game, curUser.id);
-
-    const { showMenu } = this.state;
+    const player1 = getPlayer1(game, curUser);
+    const player2 = getPlayer2(game, player1);
 
     return (
       <div className="flatris-game">
-        <Quake curUser={curUser} game={game}>
+        <Quake player1={player1} player2={player2}>
           <div className="well-container">
-            {enemy && (
-              <div className="enemy-well">{this.renderWell(enemy)}</div>
+            {player2 && (
+              <div className="enemy-well">{this.renderWell(player2)}</div>
             )}
-            <Flash curUser={curUser} game={game}>
-              {this.renderWell(curPlayer)}
-            </Flash>
+            <Flash player={player1}>{this.renderWell(player1)}</Flash>
           </div>
+          {this.renderScreens()}
           <div className="game-panel-container">
-            <GamePanel
-              curUser={curUser}
-              game={game}
-              userId={curUser.id}
-              showMenuButton={!showMenu}
-              onMenu={this.handleMenu}
-            />
+            <GamePanel curUser={curUser} game={game} />
           </div>
           {this.renderControls()}
         </Quake>
@@ -356,17 +380,12 @@ class FlatrisGame extends Component<Props, LocalState> {
             right: 0;
           }
 
-          .well-container,
-          .info-panel-container {
+          .well-container {
             position: absolute;
             top: 0;
             left: 0;
             right: calc(100% / 16 * 6);
             background: #ecf0f1;
-          }
-
-          .info-panel-container {
-            background: rgba(236, 240, 241, 0.85);
           }
 
           .game-panel-container {
@@ -378,7 +397,6 @@ class FlatrisGame extends Component<Props, LocalState> {
           }
 
           .well-container,
-          .info-panel-container,
           .game-panel-container {
             height: calc(100% / 24 * 20);
           }
@@ -399,7 +417,7 @@ class FlatrisGame extends Component<Props, LocalState> {
 }
 
 const mapStateToProps = (state: State): $Shape<Props> => ({
-  curUser: getCurUser(state),
+  curUser: state.curUser,
   game: getCurGame(state)
 });
 
@@ -408,6 +426,7 @@ const mapDispatchToProps = {
 };
 
 const syncActions = {
+  joinGame,
   playerReady,
   drop,
   moveLeft,

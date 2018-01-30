@@ -1,41 +1,41 @@
 // @flow
 
 import React, { Component } from 'react';
-import fetch from 'isomorphic-unfetch';
 import withRedux from 'next-redux-wrapper';
 import Error from 'next/error';
 import { createStore } from '../store';
-import { getApiUrl } from '../utils/api';
-import Layout from '../components/Layout';
+import { loadGame } from '../actions';
+import { addCurUserToState, getGame } from '../utils/api';
 import { SocketProvider } from '../utils/socket/Provider';
-import Auth from '../components/Auth';
-import JoinGame from '../components/JoinGame';
+import Layout from '../components/Layout';
 import GameContainer from '../components/GameContainer';
 import FlatrisGame from '../components/FlatrisGame';
 
-import type { Game } from '../types/state';
-
 type Props = {
-  game: ?Game
+  gameExists: boolean
 };
 
 class JoinPage extends Component<Props> {
-  static async getInitialProps({ query }) {
+  static async getInitialProps({ req, query, store }) {
+    if (req) {
+      await addCurUserToState(req, store);
+    }
+
     try {
-      const { g } = query;
-      const game = await fetch(getApiUrl(`/game/${g}`)).then(res => res.json());
+      const game = await getGame(query.g);
+      store.dispatch(loadGame(game));
 
       return {
-        game
+        gameExists: true
       };
     } catch (err) {
-      return { game: null };
+      return { gameExists: false };
     }
   }
 
   render() {
-    const { game } = this.props;
-    if (!game) {
+    const { gameExists } = this.props;
+    if (!gameExists) {
       // TODO: Identify and signal 500s differently
       return <Error statusCode={404} />;
     }
@@ -43,13 +43,9 @@ class JoinPage extends Component<Props> {
     return (
       <Layout>
         <SocketProvider>
-          <Auth>
-            <JoinGame game={game}>
-              <GameContainer>
-                <FlatrisGame />
-              </GameContainer>
-            </JoinGame>
-          </Auth>
+          <GameContainer>
+            <FlatrisGame />
+          </GameContainer>
         </SocketProvider>
       </Layout>
     );

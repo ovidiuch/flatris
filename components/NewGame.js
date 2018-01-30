@@ -1,47 +1,50 @@
 // @flow
 
-import { Component } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Router from 'next/router';
-import { createGame } from '../actions';
-import { withSocket } from '../utils/socket/connect';
-import { getCurUser } from '../reducers/cur-user';
+import { createGame } from '../utils/api';
+import AuthForm from './AuthForm';
 
 import type { Node } from 'react';
 import type { User, Game, State } from '../types/state';
 
 type Props = {
-  curUser: User,
-  children: (curGame: Game) => Node,
-  createGame: typeof createGame
+  curUser: ?User,
+  children: (curGame: Game) => Node
 };
 
 class NewGame extends Component<Props> {
+  isCreating = false;
+
   componentDidMount() {
-    this.createGame();
+    this.createGameIfUser();
   }
 
-  createGame = () => {
-    const { curUser, createGame } = this.props;
+  componentDidUpdate() {
+    this.createGameIfUser();
+  }
 
-    const gameId = Date.now();
-    createGame(gameId, curUser);
-
-    Router.push(`/join?g=${gameId}`);
-  };
+  createGameIfUser() {
+    if (this.props.curUser && !this.isCreating) {
+      createAndOpenGame(this.props.curUser);
+      this.isCreating = true;
+    }
+  }
 
   render() {
-    // Nothing to render here, component will redirect
-    return null;
+    // The component will redirect after user auth
+    return !this.props.curUser && <AuthForm />;
   }
 }
 
-const mapStateToProps = (state: State): $Shape<Props> => ({
-  curUser: getCurUser(state)
+async function createAndOpenGame(user: User) {
+  const { id } = await createGame(user);
+  Router.push(`/join?g=${id}`);
+}
+
+const mapStateToProps = ({ curUser }: State): $Shape<Props> => ({
+  curUser
 });
 
-const syncActions = {
-  createGame
-};
-
-export default connect(mapStateToProps)(withSocket(NewGame, syncActions));
+export default connect(mapStateToProps)(NewGame);

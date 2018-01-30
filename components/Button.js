@@ -1,4 +1,15 @@
+// @flow
+
 import React from 'react';
+
+import type { Node } from 'react';
+
+type Props = {
+  children: Node,
+  bgColor?: string,
+  color?: string,
+  colorDisabled?: string
+};
 
 export default ({
   children,
@@ -6,7 +17,7 @@ export default ({
   color = '#fff',
   colorDisabled = 'rgba(255, 255, 255, 0.6)',
   ...rest
-}) => (
+}: Props) => (
   <button className="button" {...rest}>
     {children}
     <style jsx>{`

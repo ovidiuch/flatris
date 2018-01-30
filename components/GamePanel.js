@@ -3,41 +3,28 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
 import { SHAPES, COLORS } from '../constants/tetromino';
-import { attachPointerDownEvent } from '../utils/events';
-import { getPlayer } from '../reducers/game';
 import Tetromino from './Tetromino';
-import Button from './Button';
+import { getPlayer1 } from '../reducers/game';
 
 import type { User, Game } from '../types/state';
 
 export type Props = {
-  curUser: User,
-  game: Game,
-  onMenu: Function
+  curUser: ?User,
+  game: Game
 };
 
 export default class GamePanel extends Component<Props> {
   /**
    * The game panel contains:
-   * - The next Tetromino to be inserted
-   * - The score and lines cleared
-   * - Start or pause/resume controls
+   * - The logo
+   * - The next Tetromino for the current player
+   * - The name and score for each player
+   * - Footer with credits
    */
-  renderGameButton() {
-    const { curUser, game, onMenu } = this.props;
-    const player = getPlayer(game, curUser.id);
-
-    if (player.status !== 'PENDING') {
-      return;
-    }
-
-    return <Button {...attachPointerDownEvent(onMenu)}>READY</Button>;
-  }
-
   render() {
     const { curUser, game } = this.props;
-    const player = getPlayer(game, curUser.id);
-    const { score, lines, nextTetromino } = player;
+    const player1 = getPlayer1(game, curUser);
+    const { score, lines, nextTetromino } = player1;
 
     return (
       <div className="game-panel">
@@ -62,19 +49,17 @@ export default class GamePanel extends Component<Props> {
         <div className="users">
           {game.players.map(player => {
             const { user } = player;
-            const isMe = user.id === curUser.id;
             const classes = classNames('user', {
               // 'user-ready': user.status === 'READY',
             });
 
             return (
               <div className={classes} key={user.id}>
-                <span>{isMe ? <strong>{user.name}</strong> : user.name}</span>
+                <span>{user.name}</span>
               </div>
             );
           })}
         </div>
-        <div className="game-button">{this.renderGameButton()}</div>
 
         <style jsx>{`
           .game-panel {
@@ -182,11 +167,6 @@ export default class GamePanel extends Component<Props> {
             background: #3993d0;
             color: #fff;
           }
-
-          .game-button {
-            height: calc(100% / 20 * 2);
-            bottom: calc(100% / 20);
-          }
         `}</style>
       </div>
     );
@@ -194,8 +174,8 @@ export default class GamePanel extends Component<Props> {
 
   getNextTetrominoClass() {
     const { curUser, game } = this.props;
-    const player = getPlayer(game, curUser.id);
-    const { nextTetromino } = player;
+    const player1 = getPlayer1(game, curUser);
+    const { nextTetromino } = player1;
 
     // We use this extra class to position tetrominoes differently from CSS
     // based on their type

@@ -12,7 +12,6 @@ import {
   getNextTetromino,
   getInitialPositionForTetromino
 } from '../utils/tetromino';
-import { getSampleUser } from '../utils/user';
 import {
   generateEmptyGrid,
   rotate,
@@ -42,18 +41,7 @@ import type { GameAction } from '../types/actions';
 
 export function gameReducer(state: void | Game, action: GameAction): Game {
   if (!state) {
-    switch (action.type) {
-      case 'CREATE_GAME': {
-        const { gameId, user } = action.payload;
-
-        return getBlankGame({
-          id: gameId,
-          user
-        });
-      }
-      default:
-        throw new Error(`Game action ${action.type} called on void state`);
-    }
+    throw new Error(`Game action ${action.type} called on void state`);
   }
 
   switch (action.type) {
@@ -288,17 +276,15 @@ export function gameReducer(state: void | Game, action: GameAction): Game {
   }
 }
 
-export function getBlankGame(
-  {
-    id = Date.now(),
-    user = getSampleUser(),
-    dropFrames = DROP_FRAMES_DEFAULT
-  }: {
-    id?: GameId,
-    user?: User,
-    dropFrames?: number
-  } = {}
-): Game {
+export function getBlankGame({
+  id,
+  user,
+  dropFrames = DROP_FRAMES_DEFAULT
+}: {
+  id: GameId,
+  user: User,
+  dropFrames?: number
+} = {}): Game {
   return {
     id,
     status: 'PLAYING',
@@ -336,6 +322,18 @@ export function getBlankPlayer(gameId: GameId, user: User): Player {
   };
 }
 
+export function isPlayer(game: Game, curUser: ?User): boolean {
+  if (!curUser) {
+    return false;
+  }
+
+  // Flow requires us to store the current user's id aside, as the curUser
+  // object may change by the time the some callback is called. Smart!
+  const { id } = curUser;
+
+  return game.players.some(p => p.user.id === id);
+}
+
 export function getPlayer(game: Game, userId: number): Player {
   const player = game.players.find(p => p.user.id === userId);
 
@@ -346,11 +344,19 @@ export function getPlayer(game: Game, userId: number): Player {
   return player;
 }
 
-// XXX: This only works with max 2 players per game
-export function getEnemyPlayer(game: Game, curUserId: number): ?Player {
-  const player = game.players.find(p => p.user.id !== curUserId);
+export function getPlayer1(game: Game, curUser: ?User): Player {
+  if (!game.players.length) {
+    throw new Error('Games must have at least one player');
+  }
 
-  return player;
+  return curUser && isPlayer(game, curUser)
+    ? getPlayer(game, curUser.id)
+    : game.players[0];
+}
+
+export function getPlayer2(game: Game, player1: Player): ?Player {
+  // NOTE: This only works with max 2 players per game
+  return game.players.find(p => p !== player1);
 }
 
 export function allPlayersReady(game: Game) {
@@ -441,7 +447,8 @@ function sendClearedBlocksToEnemy(
   unclearedGrid: WellGrid,
   rowsCleared: Array<number>
 ): Game {
-  const enemy = getEnemyPlayer(game, userId);
+  const curPlayer = getPlayer(game, userId);
+  const enemy = getPlayer2(game, curPlayer);
   if (!enemy) {
     return game;
   }

@@ -1,4 +1,4 @@
-import { getSampleUser } from '../../../utils/user';
+import { getSampleUser } from '../../../utils/test-helpers';
 import { getBlankGame } from '../../../reducers/game';
 import FlatrisGame from '../../FlatrisGame';
 

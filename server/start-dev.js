@@ -1,23 +1,22 @@
 // @flow
 
 import http from 'http';
-import express from 'express';
 import { setDefaultEnv } from './env';
 import { startServer } from './http';
 import { attachSocket } from './socket';
-import { addRoutes } from './express';
-import { games } from './db';
+import { createApp, addRoutes } from './express';
 
 setDefaultEnv('development');
 
-const app = express();
+const app = createApp();
 const server = http.createServer(app);
 
-attachSocket({ server, games });
+attachSocket(server);
 
 // CORS
 app.use(function(req: express$Request, res: express$Response, next) {
-  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+  res.header('Access-Control-Allow-Credentials', 'true');
   res.header(
     'Access-Control-Allow-Headers',
     'Origin, X-Requested-With, Content-Type, Accept'
@@ -25,6 +24,6 @@ app.use(function(req: express$Request, res: express$Response, next) {
   next();
 });
 
-addRoutes(app, games);
+addRoutes(app);
 
 startServer(server, 4000);

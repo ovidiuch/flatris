@@ -39,14 +39,18 @@
 * [x] Clean up server scripts (Keep server with client together in prod, separate in dev)
 * [x] [WORKING PROTOTYPE]
 * [x] Handle wrong game ID with 404
-* [ ] Read game (Redux) state from server side in Page.getInitialProps
-* [ ] Fix concurrency issues (eg. who joins 1st vs 2nd)
-  * [ ] Load entire game state on load
-  * [ ] Don't lose game state on refresh
-  * [ ] Don't join game if 2 players are already in
+* [x] Create server-side user sessions
+* [x] Read game (Redux) state from server side in Page.getInitialProps
+* [x] Use HTTP request instead of socket event to create game
+* [x] Load entire game state on load
+* [x] Don't join game if 2 players are already in
+* [ ] Continue game after hard refresh
+* [ ] Turn sessionId, userId & gameId numbers into hashes
+* [ ] Authorize game actions using sessionId
 * [ ] Show both players' score in game panel
 * [ ] Show player READY state
 * [ ] Allow players to restart once game is over
+* [ ] Add disabled state to buttons (get rid of early exists in handlers)
 * [ ] Minimize network communication
   * [ ] Don't send noop actions
   * [ ] Batch actions

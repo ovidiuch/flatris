@@ -1,5 +1,5 @@
 import { SHAPES } from '../../../constants/tetromino';
-import { getSampleUser } from '../../../utils/user';
+import { getSampleUser } from '../../../utils/test-helpers';
 import { getBlankGame, updatePlayer } from '../../../reducers/game';
 import FlatrisGame from '../../FlatrisGame';
 

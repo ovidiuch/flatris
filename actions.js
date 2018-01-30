@@ -8,10 +8,10 @@ import { getPlayer } from './reducers/game';
 import { getCurGame } from './reducers/cur-game';
 import { getCurUser } from './reducers/cur-user';
 
-import type { UserId, User, GameId } from './types/state';
+import type { UserId, User, GameId, Game } from './types/state';
 import type {
   AuthAction,
-  CreateGameAction,
+  LoadGameAction,
   JoinGameAction,
   Action,
   ThunkAction,
@@ -30,19 +30,18 @@ const frameDuration = 1000 / FPS;
 // This changes too fast (60fps) to keep it in the store's state
 let yProgress = 0;
 
-export function auth(userId: UserId, userName: string): AuthAction {
+export function auth(user: User): AuthAction {
   return {
     type: 'AUTH',
-    payload: { userId, userName }
+    payload: { user }
   };
 }
 
-export function createGame(gameId: GameId, user: User): CreateGameAction {
+export function loadGame(game: Game): LoadGameAction {
   return {
-    type: 'CREATE_GAME',
+    type: 'LOAD_GAME',
     payload: {
-      gameId,
-      user
+      game
     }
   };
 }

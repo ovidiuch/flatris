@@ -3,16 +3,16 @@
 import type { User, State } from '../types/state';
 import type { Action } from '../types/actions';
 
-export function curUserReducer(state: void | User, action: Action): ?User {
+export function curUserReducer(state: void | ?User, action: Action): ?User {
   if (typeof state === 'undefined') {
     return null;
   }
 
   switch (action.type) {
     case 'AUTH': {
-      const { userId, userName } = action.payload;
+      const { user } = action.payload;
 
-      return { id: userId, name: userName };
+      return user;
     }
 
     default:

@@ -1,4 +1,4 @@
-import { getSampleUser, getSampleUser2 } from '../../../utils/user';
+import { getSampleUser, getSampleUser2 } from '../../../utils/test-helpers';
 import {
   getBlankGame,
   addUserToGame,

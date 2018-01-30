@@ -1,19 +1,21 @@
 // @flow
 
-import { getSampleUser } from '../../../../utils/user';
-import { getBlankGame, updatePlayer } from '../../../../reducers/game';
-import WellEffects from '../../../effects/Flash';
+import { getSampleUser } from '../../../../utils/test-helpers';
+import { getBlankPlayer } from '../../../../reducers/game';
+import Flash from '../../../effects/Flash';
 
 const user = getSampleUser();
-const game = getBlankGame({ id: 1337, user });
+const player = {
+  ...getBlankPlayer(1337, user),
+  flashNay: 'a'
+};
 
-export default {
-  component: WellEffects,
+const fixture = {
+  component: Flash,
   props: {
-    curUser: user,
-    game: updatePlayer(game, user.id, {
-      flashNay: 'a'
-    })
+    player
   },
   children: `D'oh!`
 };
+
+export default fixture;

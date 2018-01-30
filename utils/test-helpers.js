@@ -15,3 +15,4 @@ export function getSampleUser2(): User {
     name: 'Louie'
   };
 }
+
