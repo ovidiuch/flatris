@@ -12,11 +12,11 @@ import GameContainer from '../components/GameContainer';
 import FlatrisGame from '../components/FlatrisGame';
 
 type Props = {
-  gameExists: boolean
+  statusCode: false | number
 };
 
 class JoinPage extends Component<Props> {
-  static async getInitialProps({ req, query, store }) {
+  static async getInitialProps({ req, res, query, store }) {
     if (req) {
       await addCurUserToState(req, store);
     }
@@ -26,17 +26,25 @@ class JoinPage extends Component<Props> {
       store.dispatch(loadGame(game));
 
       return {
-        gameExists: true
+        statusCode: false
       };
     } catch (err) {
-      return { gameExists: false };
+      // TODO: Identify and signal 500s differently
+      const statusCode = 404;
+
+      // Server side rendered pages will return this status code, whereas
+      // client side rendered pages will just render the appropriate message
+      if (res) {
+        res.statusCode = statusCode;
+      }
+
+      return { statusCode };
     }
   }
 
   render() {
-    const { gameExists } = this.props;
-    if (!gameExists) {
-      // TODO: Identify and signal 500s differently
+    const { statusCode } = this.props;
+    if (statusCode) {
       return <Error statusCode={404} />;
     }
 
