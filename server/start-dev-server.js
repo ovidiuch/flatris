@@ -4,7 +4,8 @@ import http from 'http';
 import { setDefaultEnv } from './env';
 import { startServer } from './http';
 import { attachSocket } from './socket';
-import { createApp, addRoutes } from './express';
+import { addRoutes } from './api';
+import { createApp } from './express';
 
 setDefaultEnv('development');
 

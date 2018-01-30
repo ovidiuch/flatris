@@ -44,6 +44,7 @@
 * [x] Use HTTP request instead of socket event to create game
 * [x] Load entire game state on load
 * [x] Don't join game if 2 players are already in
+* [x] Create join/:id route
 * [ ] Continue game after hard refresh
 * [ ] Turn sessionId, userId & gameId numbers into hashes
 * [ ] Authorize game actions using sessionId
@@ -57,7 +58,6 @@
   * [ ] Algorithm for distributing events from bundled messages in time
         Calc time of each event in min-max interval and map [0, 1] value to [server timestamp of last received message...now...1s]
 * [ ] Keep dispatching left/right/rotate events at intervals when keys are pressed (instead of relying on repeated keypress events, which don't work on mobile anyway)
-* [ ] Create game/:id route
 * [ ] Create sharing UI flow
 * [ ] Preview all existing games in index page
 * [ ] Grayscale loading state until JS is loaded

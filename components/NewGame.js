@@ -40,7 +40,7 @@ class NewGame extends Component<Props> {
 
 async function createAndOpenGame(user: User) {
   const { id } = await createGame(user);
-  Router.push(`/join?g=${id}`);
+  Router.push(`/join?g=${id}`, `/join/${id}`);
 }
 
 const mapStateToProps = ({ curUser }: State): $Shape<Props> => ({

@@ -13,8 +13,8 @@
     "test": "jest",
     "cosmos": "cosmos",
     "cosmos:export": "cosmos-export",
-    "dev:client": "next",
-    "dev:server": "babel-node server/start-dev.js",
+    "dev:client": "babel-node server/start-dev-client.js",
+    "dev:server": "babel-node server/start-dev-server.js",
     "dev:server:watch": "nodemon server/start-dev.js  --exec babel-node",
     "build": "next build",
     "start": "babel-node server/start-prod.js"
