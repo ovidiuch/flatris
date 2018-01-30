@@ -2972,29 +2972,11 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):double-hallelujah 
                 Next
               </div>
               <div
-                className="jsx-748759749 next-tetromino next-tetromino-J"
+                className="jsx-748759749 next-tetromino next-tetromino-I"
               >
                 <div
                   className="jsx-2115617632 tetromino"
                 >
-                  <div
-                    className="jsx-4287887962 grid-square-block"
-                    style={
-                      Object {
-                        "left": "0%",
-                        "top": "0%",
-                      }
-                    }
-                  >
-                    <div
-                      className="jsx-86954139 square-block"
-                      style={
-                        Object {
-                          "backgroundColor": "#3993d0",
-                        }
-                      }
-                    />
-                  </div>
                   <div
                     className="jsx-4287887962 grid-square-block"
                     style={
@@ -3008,7 +2990,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):double-hallelujah 
                       className="jsx-86954139 square-block"
                       style={
                         Object {
-                          "backgroundColor": "#3993d0",
+                          "backgroundColor": "#3cc7d6",
                         }
                       }
                     />
@@ -3026,7 +3008,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):double-hallelujah 
                       className="jsx-86954139 square-block"
                       style={
                         Object {
-                          "backgroundColor": "#3993d0",
+                          "backgroundColor": "#3cc7d6",
                         }
                       }
                     />
@@ -3044,7 +3026,25 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):double-hallelujah 
                       className="jsx-86954139 square-block"
                       style={
                         Object {
-                          "backgroundColor": "#3993d0",
+                          "backgroundColor": "#3cc7d6",
+                        }
+                      }
+                    />
+                  </div>
+                  <div
+                    className="jsx-4287887962 grid-square-block"
+                    style={
+                      Object {
+                        "left": "75%",
+                        "top": "25%",
+                      }
+                    }
+                  >
+                    <div
+                      className="jsx-86954139 square-block"
+                      style={
+                        Object {
+                          "backgroundColor": "#3cc7d6",
                         }
                       }
                     />
@@ -4666,24 +4666,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):enemy-hallelujah 1
                         className="jsx-4287887962 grid-square-block"
                         style={
                           Object {
-                            "left": "50%",
-                            "top": "0%",
-                          }
-                        }
-                      >
-                        <div
-                          className="jsx-86954139 square-block"
-                          style={
-                            Object {
-                              "backgroundColor": "#ed652f",
-                            }
-                          }
-                        />
-                      </div>
-                      <div
-                        className="jsx-4287887962 grid-square-block"
-                        style={
-                          Object {
                             "left": "0%",
                             "top": "25%",
                           }
@@ -4693,7 +4675,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):enemy-hallelujah 1
                           className="jsx-86954139 square-block"
                           style={
                             Object {
-                              "backgroundColor": "#ed652f",
+                              "backgroundColor": "#3cc7d6",
                             }
                           }
                         />
@@ -4711,7 +4693,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):enemy-hallelujah 1
                           className="jsx-86954139 square-block"
                           style={
                             Object {
-                              "backgroundColor": "#ed652f",
+                              "backgroundColor": "#3cc7d6",
                             }
                           }
                         />
@@ -4729,7 +4711,25 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):enemy-hallelujah 1
                           className="jsx-86954139 square-block"
                           style={
                             Object {
-                              "backgroundColor": "#ed652f",
+                              "backgroundColor": "#3cc7d6",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-4287887962 grid-square-block"
+                        style={
+                          Object {
+                            "left": "75%",
+                            "top": "25%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#3cc7d6",
                             }
                           }
                         />
@@ -10082,24 +10082,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
                         className="jsx-4287887962 grid-square-block"
                         style={
                           Object {
-                            "left": "50%",
-                            "top": "0%",
-                          }
-                        }
-                      >
-                        <div
-                          className="jsx-86954139 square-block"
-                          style={
-                            Object {
-                              "backgroundColor": "#ed652f",
-                            }
-                          }
-                        />
-                      </div>
-                      <div
-                        className="jsx-4287887962 grid-square-block"
-                        style={
-                          Object {
                             "left": "0%",
                             "top": "25%",
                           }
@@ -10109,7 +10091,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
                           className="jsx-86954139 square-block"
                           style={
                             Object {
-                              "backgroundColor": "#ed652f",
+                              "backgroundColor": "#3cc7d6",
                             }
                           }
                         />
@@ -10127,7 +10109,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
                           className="jsx-86954139 square-block"
                           style={
                             Object {
-                              "backgroundColor": "#ed652f",
+                              "backgroundColor": "#3cc7d6",
                             }
                           }
                         />
@@ -10145,7 +10127,25 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
                           className="jsx-86954139 square-block"
                           style={
                             Object {
-                              "backgroundColor": "#ed652f",
+                              "backgroundColor": "#3cc7d6",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-4287887962 grid-square-block"
+                        style={
+                          Object {
+                            "left": "75%",
+                            "top": "25%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#3cc7d6",
                             }
                           }
                         />
@@ -10430,24 +10430,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game-running 1
                         className="jsx-4287887962 grid-square-block"
                         style={
                           Object {
-                            "left": "50%",
-                            "top": "0%",
-                          }
-                        }
-                      >
-                        <div
-                          className="jsx-86954139 square-block"
-                          style={
-                            Object {
-                              "backgroundColor": "#ed652f",
-                            }
-                          }
-                        />
-                      </div>
-                      <div
-                        className="jsx-4287887962 grid-square-block"
-                        style={
-                          Object {
                             "left": "0%",
                             "top": "25%",
                           }
@@ -10457,7 +10439,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game-running 1
                           className="jsx-86954139 square-block"
                           style={
                             Object {
-                              "backgroundColor": "#ed652f",
+                              "backgroundColor": "#3cc7d6",
                             }
                           }
                         />
@@ -10475,7 +10457,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game-running 1
                           className="jsx-86954139 square-block"
                           style={
                             Object {
-                              "backgroundColor": "#ed652f",
+                              "backgroundColor": "#3cc7d6",
                             }
                           }
                         />
@@ -10493,7 +10475,25 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game-running 1
                           className="jsx-86954139 square-block"
                           style={
                             Object {
-                              "backgroundColor": "#ed652f",
+                              "backgroundColor": "#3cc7d6",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-4287887962 grid-square-block"
+                        style={
+                          Object {
+                            "left": "75%",
+                            "top": "25%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#3cc7d6",
                             }
                           }
                         />

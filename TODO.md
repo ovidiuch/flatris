@@ -46,22 +46,20 @@
 * [x] Don't join game if 2 players are already in
 * [x] Create join/:id route
 * [x] Turn sessionId, userId & gameId numbers into hashes
+* [ ] Grayscale loading state until JS is loaded
 * [ ] Kick player on disconnect
 * [ ] Continue game after hard refresh
 * [ ] Show both players' score in game panel
 * [ ] Show player READY state
 * [ ] Allow players to restart once game is over
 * [ ] Add disabled state to buttons (get rid of early exists in handlers)
-* [ ] Minimize network communication
-  * [ ] Don't send noop actions
+* [ ] Keep dispatching left/right/rotate events at intervals when keys are pressed (instead of relying on repeated keypress events, which don't work on mobile anyway)
+* [ ] Minimize network communication: Don't send noop actions
+* [ ] Use public assets
+* [ ] Optimize CSS via will-change
+* [ ] Minimize state footprint
+* [ ] [BEAUTIFUL MVP]
+* [ ] Index page with preview of all existing games
   * [ ] Batch actions
   * [ ] Algorithm for distributing events from bundled messages in time
         Calc time of each event in min-max interval and map [0, 1] value to [server timestamp of last received message...now...1s]
-* [ ] Keep dispatching left/right/rotate events at intervals when keys are pressed (instead of relying on repeated keypress events, which don't work on mobile anyway)
-* [ ] Create sharing UI flow
-* [ ] Preview all existing games in index page
-* [ ] Grayscale loading state until JS is loaded
-* [ ] Use public assets
-* [ ] Minimize state footprint
-* [ ] Optimize CSS via will-change
-* [ ] Game cleanup when game is over or everyone leaves (wait a bit in case of conn drop)
