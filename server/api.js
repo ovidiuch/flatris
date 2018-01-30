@@ -1,7 +1,14 @@
 // @flow
 
 import { getValidUser } from '../utils/validation';
-import { games, sessions, insertUser, insertSession, insertGame } from './db';
+import {
+  users,
+  sessions,
+  games,
+  insertUser,
+  insertSession,
+  insertGame
+} from './db';
 
 export function addRoutes(app: express$Application) {
   app.get('/game/:gameId', (req: express$Request, res: express$Response) => {
@@ -31,7 +38,8 @@ export function addRoutes(app: express$Application) {
     const sessionId = req.cookies.sessionId;
 
     if (sessionId && sessions[sessionId]) {
-      res.json(sessions[sessionId]);
+      const { userId } = sessions[sessionId];
+      res.json(users[userId]);
     } else {
       res.sendStatus(401);
     }
