@@ -19,19 +19,26 @@ export function withSocket(
       CompType.name})`;
 
     static contextTypes = {
-      broadcast: func.isRequired
+      openGame: func.isRequired,
+      closeGame: func.isRequired,
+      broadcastGameAction: func.isRequired
     };
 
     createActionHandler = (actionName: string) => async (...args: any) => {
-      const { broadcast } = this.context;
+      const { broadcastGameAction } = this.context;
       const actionCreator = syncActions[actionName];
 
       // NOTE: This must only run on the client!
-      return broadcast(actionCreator(...args));
+      return broadcastGameAction(actionCreator(...args));
     };
 
     render() {
-      const actions = {};
+      const { openGame, closeGame } = this.context;
+      const actions = {
+        openGame,
+        closeGame
+      };
+
       Object.keys(syncActions).forEach(actionName => {
         actions[actionName] = this.createActionHandler(actionName);
       });

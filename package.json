@@ -15,7 +15,7 @@
     "cosmos:export": "cosmos-export",
     "dev:client": "babel-node server/start-dev-client.js",
     "dev:server": "babel-node server/start-dev-server.js",
-    "dev:server:watch": "nodemon server/start-dev.js  --exec babel-node",
+    "dev:server:watch": "nodemon server/start-dev-server.js  --exec babel-node",
     "build": "next build",
     "start": "babel-node server/start-prod.js"
   },

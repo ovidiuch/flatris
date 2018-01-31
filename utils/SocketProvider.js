@@ -7,7 +7,8 @@ import io from 'socket.io-client';
 import { getApiUrl } from '../utils/api';
 
 import type { Node } from 'react';
-import type { Action, ThunkAction } from '../types/actions';
+import type { GameId } from '../types/state';
+import type { Action, GameAction, ThunkAction } from '../types/actions';
 
 type Props = {
   children: Node,
@@ -16,44 +17,62 @@ type Props = {
 
 let socket;
 
+function getSocket() {
+  if (!socket) {
+    socket = io(getApiUrl());
+  }
+
+  return socket;
+}
+
 class SocketProviderInner extends Component<Props> {
   static childContextTypes = {
-    broadcast: func.isRequired
+    openGame: func.isRequired,
+    closeGame: func.isRequired,
+    broadcastGameAction: func.isRequired
   };
 
   componentDidMount() {
-    if (!socket) {
-      socket = io(getApiUrl());
-    }
-
-    socket.on('message', this.handleMessage);
+    getSocket().on('game-action', this.handleReceiveGameAction);
   }
 
   getChildContext() {
     return {
-      broadcast: this.handleBroadcast
+      openGame: this.handleOpenGame,
+      closeGame: this.handleCloseGame,
+      broadcastGameAction: this.handleBroadcastGameAction
     };
   }
 
   componentWillUnmount() {
     if (socket) {
-      socket.off('message', this.handleMessage);
+      socket.off('game-action', this.handleReceiveGameAction);
     }
   }
 
-  handleMessage = msg => {
-    // console.log('on message', msg);
-    this.props.dispatch(msg);
+  handleOpenGame = (gameId: GameId) => {
+    // console.log('[SOCKET] open-game', gameId);
+    getSocket().emit('open-game', gameId);
   };
 
-  handleBroadcast = (action: Action) => {
+  handleCloseGame = (gameId: GameId) => {
+    // console.log('[SOCKET] close-game', gameId);
+    getSocket().emit('close-game', gameId);
+  };
+
+  handleReceiveGameAction = (action: GameAction) => {
+    // console.log('[SOCKET] On game-action', action);
+    this.props.dispatch(action);
+  };
+
+  handleBroadcastGameAction = (action: Action) => {
     const { dispatch } = this.props;
 
     // The final action is returned from async thunk actions
     const resAction: Action = dispatch(action);
 
-    // console.log('broadcast', resAction);
-    socket.emit('message', resAction);
+    // console.log('[SOCKET] Emit game-action', resAction);
+    getSocket().emit('game-action', resAction);
 
     // Allow callers to chain broadcasted actions
     return resAction;

@@ -1,14 +1,19 @@
+// @flow
+
+import { Component } from 'react';
 import { getSampleUser } from '../../../utils/test-helpers';
 import { getBlankGame, updatePlayer } from '../../../reducers/game';
 import FlatrisGame from '../../FlatrisGame';
 
+import type { ElementRef } from 'react';
+
 const user = getSampleUser();
-const game = getBlankGame({ id: 1337, user, dropFrames: 30 });
+const game = getBlankGame({ id: 'dce6b11e', user, dropFrames: 30 });
 
 export default {
   component: FlatrisGame,
 
-  init({ compRef }) {
+  init({ compRef }: { compRef: ElementRef<typeof Component> }) {
     compRef.context.store.dispatch({
       type: 'PLAYER_READY',
       payload: {

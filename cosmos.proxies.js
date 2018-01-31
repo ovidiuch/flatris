@@ -9,6 +9,7 @@ import GameContainer from './components/GameContainer';
 import { createStore } from './store';
 
 import type { ComponentType, Node } from 'react';
+import type { GameId } from './types/state';
 import type { Action, ThunkAction } from './types/actions';
 
 type LinkedItem<Item> = {
@@ -48,19 +49,31 @@ type SocketProviderProps = {
 
 class SocketProviderRaw extends Component<SocketProviderProps> {
   static childContextTypes = {
-    broadcast: func.isRequired
+    openGame: func.isRequired,
+    closeGame: func.isRequired,
+    broadcastGameAction: func.isRequired
   };
 
   getChildContext() {
     return {
-      broadcast: this.handleBroadcast
+      openGame: this.handleOpenGame,
+      closeGame: this.handleCloseGame,
+      broadcastGameAction: this.handleBroadcastGameAction
     };
   }
 
-  handleBroadcast = action => {
-    // console.log('broadcast', action);
+  handleOpenGame = (gameId: GameId) => {
+    console.log('[SOCKET] open-game', gameId);
+  };
 
+  handleCloseGame = (gameId: GameId) => {
+    console.log('[SOCKET] close-game', gameId);
+  };
+
+  handleBroadcastGameAction = (action: Action) => {
     const { dispatch } = this.props;
+
+    // The final action is returned from async thunk actions
     dispatch(action);
   };
 

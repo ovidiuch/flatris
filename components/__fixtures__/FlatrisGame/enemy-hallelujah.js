@@ -1,3 +1,6 @@
+// @flow
+
+import { Component } from 'react';
 import { getSampleUser, getSampleUser2 } from '../../../utils/test-helpers';
 import {
   getBlankGame,
@@ -6,8 +9,10 @@ import {
 } from '../../../reducers/game';
 import FlatrisGame from '../../FlatrisGame';
 
+import type { ElementRef } from 'react';
+
 const user = getSampleUser();
-let game = getBlankGame({ id: 1337, user, dropFrames: 30 });
+let game = getBlankGame({ id: 'dce6b11e', user, dropFrames: 30 });
 
 // Add 2nd player to game state
 const user2 = getSampleUser2();
@@ -53,7 +58,7 @@ game = updatePlayer(game, user.id, {
 export default {
   component: FlatrisGame,
 
-  init({ compRef }) {
+  init({ compRef }: { compRef: ElementRef<typeof Component> }) {
     const { dispatch } = compRef.context.store;
 
     // Simulate drop from enemy player

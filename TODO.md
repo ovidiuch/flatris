@@ -47,6 +47,7 @@
 * [x] Create join/:id route
 * [x] Turn sessionId, userId & gameId numbers into hashes
 * [ ] Grayscale loading state until JS is loaded
+* [x] Subscribe to game events on game page, once JS is loaded
 * [ ] Kick player on disconnect
 * [ ] Continue game after hard refresh
 * [ ] Show both players' score in game panel

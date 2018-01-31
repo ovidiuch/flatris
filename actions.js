@@ -66,13 +66,9 @@ export function playerReady(): ThunkAction {
   }));
 }
 
-export function stopGame() {
-  cancelFrame();
-}
-
-export function advanceGame(drop: (rows: number) => any): ThunkAction {
+export function runGameFrame(drop: (rows: number) => any): ThunkAction {
   return (dispatch: Dispatch, getState: GetState) => {
-    cancelFrame();
+    cancelGameFrame();
 
     scheduleFrame(frames => {
       const state = getState();
@@ -100,9 +96,13 @@ export function advanceGame(drop: (rows: number) => any): ThunkAction {
         yProgress %= 1;
       }
 
-      dispatch(advanceGame(drop));
+      dispatch(runGameFrame(drop));
     });
   };
+}
+
+export function cancelGameFrame() {
+  raf.cancel(animationHandle);
 }
 
 export function drop(rows: number): ThunkAction {
@@ -178,10 +178,6 @@ export function appendPendingBlocks(): ThunkAction {
 
 let animationHandle;
 let timeBegin;
-
-function cancelFrame() {
-  raf.cancel(animationHandle);
-}
 
 function scheduleFrame(cb) {
   timeBegin = now();

@@ -16,8 +16,8 @@ import { getCurGame } from '../reducers/cur-game';
 import {
   joinGame,
   playerReady,
-  advanceGame,
-  stopGame,
+  runGameFrame,
+  cancelGameFrame,
   drop,
   moveLeft,
   moveRight,
@@ -37,14 +37,16 @@ import Flash from './effects/Flash';
 import Quake from './effects/Quake';
 import AuthForm from './AuthForm';
 
-import type { User, Player, Game, State } from '../types/state';
+import type { User, Player, GameId, Game, State } from '../types/state';
 
 type Props = {
   curUser: ?User,
   game: Game,
+  openGame: (gameId: GameId) => void,
+  closeGame: (gameId: GameId) => void,
   joinGame: typeof joinGame,
   playerReady: typeof playerReady,
-  advanceGame: typeof advanceGame,
+  runGameFrame: typeof runGameFrame,
   drop: typeof drop,
   moveLeft: typeof moveLeft,
   moveRight: typeof moveRight,
@@ -65,6 +67,9 @@ class FlatrisGame extends Component<Props> {
     // called on the server
     window.addEventListener('keydown', this.handleKeyDown);
     window.addEventListener('keyup', this.handleKeyUp);
+
+    const { game, openGame } = this.props;
+    openGame(game.id);
   }
 
   componentDidUpdate(prevProps) {
@@ -73,14 +78,14 @@ class FlatrisGame extends Component<Props> {
       curUser,
       game,
       drop,
-      advanceGame,
+      runGameFrame,
       appendPendingBlocks
     } = this.props;
 
     if (curUser && this.isPlaying()) {
       // Begin game animation when both players are ready (runs on each client)
       if (!allPlayersReady(prevGame) && allPlayersReady(game)) {
-        advanceGame(drop);
+        runGameFrame(drop);
       }
 
       const player = getPlayer(game, curUser.id);
@@ -102,7 +107,10 @@ class FlatrisGame extends Component<Props> {
     window.removeEventListener('keydown', this.handleKeyDown);
     window.removeEventListener('keyup', this.handleKeyUp);
 
-    stopGame();
+    const { game, closeGame } = this.props;
+    closeGame(game.id);
+
+    cancelGameFrame();
   }
 
   handleJoin = () => {
@@ -138,7 +146,7 @@ class FlatrisGame extends Component<Props> {
         break;
       case 88: // X key
         // TEMP: Escape hatch to stop the game. Remove in final version
-        stopGame();
+        cancelGameFrame();
         break;
       case DOWN:
         enableAcceleration();
@@ -422,7 +430,7 @@ const mapStateToProps = (state: State): $Shape<Props> => ({
 });
 
 const mapDispatchToProps = {
-  advanceGame
+  runGameFrame
 };
 
 const syncActions = {
