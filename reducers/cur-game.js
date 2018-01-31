@@ -11,8 +11,20 @@ export function curGameReducer(state: void | ?Game, action: Action): ?Game {
   }
 
   switch (action.type) {
-    case 'LOAD_GAME':
-      return action.payload.game;
+    case 'LOAD_GAME': {
+      const { game } = action.payload;
+
+      return {
+        ...game,
+        players: game.players.map(p => ({
+          ...p,
+          // Strip effects to avoid running them on page load
+          flashYay: null,
+          flashNay: null,
+          quake: null
+        }))
+      };
+    }
     case 'JOIN_GAME':
     case 'PLAYER_READY':
     case 'DROP':

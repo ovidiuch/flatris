@@ -46,7 +46,7 @@
 * [x] Don't join game if 2 players are already in
 * [x] Create join/:id route
 * [x] Turn sessionId, userId & gameId numbers into hashes
-* [ ] Grayscale loading state until JS is loaded
+* [x] Grayscale loading state until JS is loaded
 * [x] Subscribe to game events on game page, once JS is loaded
 * [ ] Kick player on disconnect
 * [ ] Continue game after hard refresh
@@ -60,6 +60,7 @@
 * [ ] Optimize CSS via will-change
 * [ ] Minimize state footprint
 * [ ] [BEAUTIFUL MVP]
+* [ ] Create fixtures for all components
 * [ ] Index page with preview of all existing games
   * [ ] Batch actions
   * [ ] Algorithm for distributing events from bundled messages in time
