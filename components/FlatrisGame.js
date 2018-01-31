@@ -279,26 +279,6 @@ class FlatrisGame extends Component<Props> {
             width: 25%;
             height: 100%;
           }
-
-          .controls .button :global(button) {
-            overflow: hidden;
-            width: 80%;
-            height: 80%;
-            margin: 10% 0 0 10%;
-            background: #ecf0f1;
-            color: #34495f;
-            border-radius: 100%;
-          }
-
-          .controls .button :global(svg) {
-            fill: #34495f;
-            transform: scale(0.6);
-          }
-
-          .controls .button:nth-child(1) :global(svg) {
-            transform-origin: 50% 50%;
-            transform: scale(-0.6, 0.6);
-          }
         `}</style>
       </div>
     );

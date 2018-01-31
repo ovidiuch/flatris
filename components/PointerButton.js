@@ -8,15 +8,15 @@ import type { Node } from 'react';
 
 type Props = {
   children: Node,
-  onPress?: Function,
+  onPress: Function,
   onRelease?: Function
 };
 
-export default ({ children, onPress, onRelease }: Props) => {
-  let props = {};
-  if (onPress) {
-    props = { ...props, ...attachPointerDownEvent(onPress) };
-  }
+export default ({ children, onPress, onRelease, ...rest }: Props) => {
+  let props = {
+    ...rest,
+    ...attachPointerDownEvent(onPress)
+  };
   if (onRelease) {
     props = { ...props, ...attachPointerUpEvent(onRelease) };
   }
