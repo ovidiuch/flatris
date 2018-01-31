@@ -48,19 +48,23 @@
 * [x] Turn sessionId, userId & gameId numbers into hashes
 * [x] Grayscale loading state until JS is loaded
 * [x] Subscribe to game events on game page, once JS is loaded
-* [ ] Kick player on disconnect
 * [ ] Continue game after hard refresh
+* [ ] Create "Invite or play" screen
+* [ ] Create "Join game" screen
+* [ ] Create "Join game" screen
 * [ ] Show both players' score in game panel
 * [ ] Show player READY state
 * [ ] Allow players to restart once game is over
 * [ ] Add disabled state to buttons (get rid of early exists in handlers)
 * [ ] Keep dispatching left/right/rotate events at intervals when keys are pressed (instead of relying on repeated keypress events, which don't work on mobile anyway)
-* [ ] Minimize network communication: Don't send noop actions
 * [ ] Use public assets
-* [ ] Optimize CSS via will-change
-* [ ] Minimize state footprint
 * [ ] [BEAUTIFUL MVP]
+* [ ] Create actionId, link actions to prev actions, ensuring consistency
+* [ ] Create action backfill if user has old state and new actions
+* [ ] Minimize network communication: Don't send noop actions
+* [ ] Minimize state footprint
 * [ ] Create fixtures for all components
+* [ ] Freeze game on player disconnect (Keep seat taken in case user returns)
 * [ ] Index page with preview of all existing games
   * [ ] Batch actions
   * [ ] Algorithm for distributing events from bundled messages in time
