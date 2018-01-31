@@ -10,7 +10,8 @@ import {
   getPlayer,
   getPlayer1,
   getPlayer2,
-  allPlayersReady
+  allPlayersReady,
+  isCurUserPlaying
 } from '../reducers/game';
 import { getCurGame } from '../reducers/cur-game';
 import {
@@ -68,8 +69,13 @@ class FlatrisGame extends Component<Props> {
     window.addEventListener('keydown', this.handleKeyDown);
     window.addEventListener('keyup', this.handleKeyUp);
 
-    const { game, openGame } = this.props;
+    const { curUser, game, openGame, drop, runGameFrame } = this.props;
     openGame(game.id);
+
+    // Start game if playing user returned after possibly being disconnected
+    if (isCurUserPlaying(game, curUser)) {
+      runGameFrame(drop);
+    }
   }
 
   componentDidUpdate(prevProps) {
@@ -82,9 +88,9 @@ class FlatrisGame extends Component<Props> {
       appendPendingBlocks
     } = this.props;
 
-    if (curUser && this.isPlaying()) {
+    if (curUser && isCurUserPlaying(game, curUser)) {
       // Begin game animation when both players are ready (runs on each client)
-      if (!allPlayersReady(prevGame) && allPlayersReady(game)) {
+      if (!allPlayersReady(prevGame)) {
         runGameFrame(drop);
       }
 
@@ -127,7 +133,7 @@ class FlatrisGame extends Component<Props> {
       e.preventDefault();
     }
 
-    if (!this.isPlaying()) {
+    if (!this.isCurUserPlaying()) {
       return;
     }
 
@@ -165,7 +171,7 @@ class FlatrisGame extends Component<Props> {
   };
 
   handleKeyUp = e => {
-    if (!this.isPlaying()) {
+    if (!this.isCurUserPlaying()) {
       return;
     }
 
@@ -176,7 +182,7 @@ class FlatrisGame extends Component<Props> {
   };
 
   handleRotatePress = e => {
-    if (!this.isPlaying()) {
+    if (!this.isCurUserPlaying()) {
       return;
     }
 
@@ -187,7 +193,7 @@ class FlatrisGame extends Component<Props> {
   };
 
   handleLeftPress = e => {
-    if (!this.isPlaying()) {
+    if (!this.isCurUserPlaying()) {
       return;
     }
 
@@ -198,7 +204,7 @@ class FlatrisGame extends Component<Props> {
   };
 
   handleRightPress = e => {
-    if (!this.isPlaying()) {
+    if (!this.isCurUserPlaying()) {
       return;
     }
 
@@ -209,7 +215,7 @@ class FlatrisGame extends Component<Props> {
   };
 
   handlePullPress = e => {
-    if (!this.isPlaying()) {
+    if (!this.isCurUserPlaying()) {
       return;
     }
 
@@ -220,7 +226,7 @@ class FlatrisGame extends Component<Props> {
   };
 
   handlePullRelease = e => {
-    if (!this.isPlaying()) {
+    if (!this.isCurUserPlaying()) {
       return;
     }
 
@@ -230,10 +236,10 @@ class FlatrisGame extends Component<Props> {
     disableAcceleration();
   };
 
-  isPlaying() {
+  isCurUserPlaying() {
     const { curUser, game } = this.props;
 
-    return isPlayer(game, curUser) && game.status === 'PLAYING';
+    return isCurUserPlaying(game, curUser);
   }
 
   renderControlIcon(path) {

@@ -20,6 +20,7 @@ game = addUserToGame(game, user2);
 
 // Add some blocks to current user's grid
 game = updatePlayer(game, user.id, {
+  status: 'READY',
   grid: [
     [null, null, null, null, null, null, null, null, null, null],
     [null, null, null, null, null, null, null, null, null, null],
@@ -144,6 +145,7 @@ export default {
   reduxState: {
     curUser: user,
     curGame: updatePlayer(game, user2.id, {
+      status: 'READY',
       drops: 50,
       score: 184,
       lines: 0,

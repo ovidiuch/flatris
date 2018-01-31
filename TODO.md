@@ -48,7 +48,7 @@
 * [x] Turn sessionId, userId & gameId numbers into hashes
 * [x] Grayscale loading state until JS is loaded
 * [x] Subscribe to game events on game page, once JS is loaded
-* [ ] Continue game after hard refresh
+* [x] Continue game after hard refresh
 * [ ] Create "Invite or play" screen
 * [ ] Create "Join game" screen
 * [ ] Create "Join game" screen

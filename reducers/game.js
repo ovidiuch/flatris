@@ -366,6 +366,14 @@ export function allPlayersReady(game: Game) {
   );
 }
 
+export function isGameRunning(game: Game) {
+  return game.status === 'PLAYING' && allPlayersReady(game);
+}
+
+export function isCurUserPlaying(game: Game, curUser: ?User) {
+  return isPlayer(game, curUser) && allPlayersReady(game);
+}
+
 export function addUserToGame(game: Game, user: User): Game {
   const { id, players } = game;
 
