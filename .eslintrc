@@ -35,7 +35,7 @@
       "files": [
         "components/**/*.js",
         "pages/**/*.js",
-        "utils/socket/connect.js",
+        "utils/socket-connect.js",
         "cosmos.proxies.js"
       ],
       "rules": {

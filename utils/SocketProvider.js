@@ -4,10 +4,10 @@ import { func } from 'prop-types';
 import { Component } from 'react';
 import { connect } from 'react-redux';
 import io from 'socket.io-client';
-import { getApiUrl } from '../../utils/api';
+import { getApiUrl } from '../utils/api';
 
 import type { Node } from 'react';
-import type { Action, ThunkAction } from '../../types/actions';
+import type { Action, ThunkAction } from '../types/actions';
 
 type Props = {
   children: Node,

@@ -26,7 +26,7 @@ import {
   disableAcceleration,
   appendPendingBlocks
 } from '../actions';
-import { withSocket } from '../utils/socket/connect';
+import { withSocket } from '../utils/socket-connect';
 import Well from './Well';
 import GamePanel from './GamePanel';
 import Rotate from './controls/Rotate';
