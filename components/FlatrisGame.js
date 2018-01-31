@@ -128,6 +128,12 @@ class FlatrisGame extends Component<Props> {
   };
 
   handleKeyDown = e => {
+    // TEMP: Until menus are created
+    if (e.keyCode === 82) {
+      this.props.playerReady();
+      return;
+    }
+
     // Prevent page from scrolling when pressing arrow keys
     if (_.values([UP, DOWN, LEFT, RIGHT]).indexOf(e.keyCode) !== -1) {
       e.preventDefault();
@@ -137,19 +143,9 @@ class FlatrisGame extends Component<Props> {
       return;
     }
 
-    const {
-      playerReady,
-      enableAcceleration,
-      rotate,
-      moveLeft,
-      moveRight
-    } = this.props;
+    const { enableAcceleration, rotate, moveLeft, moveRight } = this.props;
 
     switch (e.keyCode) {
-      case 82: // R key
-        // TEMP: Until menus are created
-        playerReady();
-        break;
       case 88: // X key
         // TEMP: Escape hatch to stop the game. Remove in final version
         cancelGameFrame();
