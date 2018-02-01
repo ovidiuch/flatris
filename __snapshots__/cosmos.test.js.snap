@@ -9855,15 +9855,15 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
               className="jsx-639453897 screen-container"
             >
               <div
-                className="jsx-683717609 screen"
+                className="jsx-1120442871 screen"
               >
                 <h2
-                  className="jsx-683717609 title"
+                  className="jsx-1120442871 title"
                 >
                   New game...
                 </h2>
                 <div
-                  className="jsx-683717609 message"
+                  className="jsx-1120442871 message"
                 >
                   <p>
                     <strong>
@@ -9881,10 +9881,10 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
                   </p>
                 </div>
                 <div
-                  className="jsx-683717609 actions"
+                  className="jsx-1120442871 actions"
                 >
                   <div
-                    className="jsx-683717609 button"
+                    className="jsx-1120442871 button"
                   >
                     <button
                       className="jsx-3501768573 button"
@@ -10260,15 +10260,15 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
               className="jsx-639453897 screen-container"
             >
               <div
-                className="jsx-683717609 screen"
+                className="jsx-1120442871 screen"
               >
                 <h2
-                  className="jsx-683717609 title"
+                  className="jsx-1120442871 title"
                 >
                   New game...
                 </h2>
                 <div
-                  className="jsx-683717609 message"
+                  className="jsx-1120442871 message"
                 >
                   <p>
                     <strong>
@@ -10286,10 +10286,10 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
                   </p>
                 </div>
                 <div
-                  className="jsx-683717609 actions"
+                  className="jsx-1120442871 actions"
                 >
                   <div
-                    className="jsx-683717609 button"
+                    className="jsx-1120442871 button"
                   >
                     <button
                       className="jsx-3501768573 button"
@@ -11112,15 +11112,15 @@ exports[`Cosmos fixtures: GetReady:default 1`] = `
       }
     >
       <div
-        className="jsx-683717609 screen"
+        className="jsx-1120442871 screen"
       >
         <h2
-          className="jsx-683717609 title"
+          className="jsx-1120442871 title"
         >
           Get ready...
         </h2>
         <div
-          className="jsx-683717609 message"
+          className="jsx-1120442871 message"
         >
           <p>
             Game will start when
@@ -11134,10 +11134,10 @@ exports[`Cosmos fixtures: GetReady:default 1`] = `
           </p>
         </div>
         <div
-          className="jsx-683717609 actions"
+          className="jsx-1120442871 actions"
         >
           <div
-            className="jsx-683717609 button"
+            className="jsx-1120442871 button"
           >
             <button
               className="jsx-3501768573 button"
@@ -11460,15 +11460,15 @@ exports[`Cosmos fixtures: JoinGame:available 1`] = `
       }
     >
       <div
-        className="jsx-683717609 screen"
+        className="jsx-1120442871 screen"
       >
         <h2
-          className="jsx-683717609 title"
+          className="jsx-1120442871 title"
         >
           Join game...
         </h2>
         <div
-          className="jsx-683717609 message"
+          className="jsx-1120442871 message"
         >
           <p>
             <strong>
@@ -11482,10 +11482,10 @@ exports[`Cosmos fixtures: JoinGame:available 1`] = `
           </p>
         </div>
         <div
-          className="jsx-683717609 actions"
+          className="jsx-1120442871 actions"
         >
           <div
-            className="jsx-683717609 button"
+            className="jsx-1120442871 button"
           >
             <button
               className="jsx-3501768573 button"
@@ -11496,7 +11496,7 @@ exports[`Cosmos fixtures: JoinGame:available 1`] = `
             </button>
           </div>
           <div
-            className="jsx-683717609 button"
+            className="jsx-1120442871 button"
           >
             <button
               className="jsx-2671015741 button"
@@ -11528,15 +11528,15 @@ exports[`Cosmos fixtures: JoinGame:full 1`] = `
       }
     >
       <div
-        className="jsx-683717609 screen"
+        className="jsx-1120442871 screen"
       >
         <h2
-          className="jsx-683717609 title"
+          className="jsx-1120442871 title"
         >
           Join game...
         </h2>
         <div
-          className="jsx-683717609 message"
+          className="jsx-1120442871 message"
         >
           <p>
             <strong>
@@ -11556,10 +11556,10 @@ exports[`Cosmos fixtures: JoinGame:full 1`] = `
           </p>
         </div>
         <div
-          className="jsx-683717609 actions"
+          className="jsx-1120442871 actions"
         >
           <div
-            className="jsx-683717609 button"
+            className="jsx-1120442871 button"
           >
             <button
               className="jsx-3501768573 button"
@@ -11570,7 +11570,7 @@ exports[`Cosmos fixtures: JoinGame:full 1`] = `
             </button>
           </div>
           <div
-            className="jsx-683717609 button"
+            className="jsx-1120442871 button"
           >
             <button
               className="jsx-2671015741 button"
@@ -11702,15 +11702,15 @@ exports[`Cosmos fixtures: NewGame:default 1`] = `
       }
     >
       <div
-        className="jsx-683717609 screen"
+        className="jsx-1120442871 screen"
       >
         <h2
-          className="jsx-683717609 title"
+          className="jsx-1120442871 title"
         >
           New game...
         </h2>
         <div
-          className="jsx-683717609 message"
+          className="jsx-1120442871 message"
         >
           <p>
             <strong>
@@ -11728,10 +11728,10 @@ exports[`Cosmos fixtures: NewGame:default 1`] = `
           </p>
         </div>
         <div
-          className="jsx-683717609 actions"
+          className="jsx-1120442871 actions"
         >
           <div
-            className="jsx-683717609 button"
+            className="jsx-1120442871 button"
           >
             <button
               className="jsx-3501768573 button"
@@ -12817,15 +12817,15 @@ exports[`Cosmos fixtures: WaitingForOther:default 1`] = `
       }
     >
       <div
-        className="jsx-683717609 screen"
+        className="jsx-1120442871 screen"
       >
         <h2
-          className="jsx-683717609 title"
+          className="jsx-1120442871 title"
         >
           Waiting...
         </h2>
         <div
-          className="jsx-683717609 message"
+          className="jsx-1120442871 message"
         >
           <p>
             Your friend is a bit
@@ -12839,10 +12839,10 @@ exports[`Cosmos fixtures: WaitingForOther:default 1`] = `
           </p>
         </div>
         <div
-          className="jsx-683717609 actions"
+          className="jsx-1120442871 actions"
         >
           <div
-            className="jsx-683717609 button"
+            className="jsx-1120442871 button"
           >
             <button
               className="jsx-3501768573 button"

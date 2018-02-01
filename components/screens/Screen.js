@@ -57,13 +57,17 @@ export default class Screen extends Component<Props> {
             white-space: nowrap;
           }
 
-          .message p {
+          .message :global(p) {
             margin-top: 0;
+          }
+
+          .message :global(a) {
+            color: #34495f;
           }
 
           .actions {
             position: absolute;
-            top: calc(100% / 20 * 16);
+            top: calc(100% / 20 * 17);
             left: 0;
             right: 0;
             height: calc(100% / 20 * 2);
