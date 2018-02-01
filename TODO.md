@@ -64,6 +64,8 @@
   * [ ] Show player READY state
   * [ ] New Flatris logo
   * [ ] Animated next Tetromino transition
+* [ ] Allow users to just watch
+* [ ] Add ability to PING other user to get ready
 * [ ] Keep dispatching left/right/rotate events at intervals when keys are pressed (instead of relying on repeated keypress events, which don't work on mobile anyway)
 * [ ] Use public assets
 * [ ] Different layouts per device type/orientation
