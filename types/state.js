@@ -21,7 +21,7 @@ export type User = {
   name: string
 };
 
-export type PlayerStatus = 'PENDING' | 'READY';
+export type PlayerStatus = 'PENDING' | 'READY' | 'OVER';
 
 export type FlashSuffix = 'a' | 'b';
 
@@ -48,11 +48,8 @@ export type Player = {
 
 export type GameId = string;
 
-export type GameStatus = 'PLAYING' | 'OVER';
-
 export type Game = {
   id: GameId,
-  status: GameStatus,
   players: Array<Player>,
   dropFrames: number
 };

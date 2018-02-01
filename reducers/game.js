@@ -117,10 +117,9 @@ export function gameReducer(state: void | Game, action: GameAction): Game {
       // this we would need to somehow re-apply the part of the active Tetromino
       // that didn't fit upon landing, after the lines have been cleared.
       if (newPosition.y < 0) {
-        return {
-          ...state,
+        return updatePlayer(state, userId, {
           status: 'OVER'
-        };
+        });
       }
 
       // This is when the active Tetromino hits the bottom of the Well and can
@@ -285,7 +284,6 @@ export function getBlankGame({
 }): Game {
   return {
     id,
-    status: 'PLAYING',
     players: [getBlankPlayer(id, user)],
     dropFrames
   };
@@ -362,10 +360,6 @@ export function allPlayersReady(game: Game) {
     game.players.filter(p => p.status === 'READY').length ===
     game.players.length
   );
-}
-
-export function isGameRunning(game: Game) {
-  return game.status === 'PLAYING' && allPlayersReady(game);
 }
 
 export function addUserToGame(game: Game, user: User): Game {

@@ -4,7 +4,7 @@
 import raf from 'raf';
 
 import { DROP_FRAMES_ACCELERATED } from './constants/grid';
-import { getPlayer } from './reducers/game';
+import { getPlayer, allPlayersReady } from './reducers/game';
 import { getCurGame } from './reducers/cur-game';
 import { getCurUser } from './reducers/cur-user';
 
@@ -74,12 +74,12 @@ export function runGameFrame(drop: (rows: number) => any): ThunkAction {
       const state = getState();
       const userId = getCurUser(state).id;
       const game = getCurGame(state);
-      const { status, dropFrames } = game;
+      const { dropFrames } = game;
       const player = getPlayer(game, userId);
       const { dropAcceleration } = player;
 
-      // Stop animation when game ended
-      if (status === 'OVER') {
+      // Stop animation when game ended (either player has `OVER` status)
+      if (!allPlayersReady(game)) {
         return;
       }
 
