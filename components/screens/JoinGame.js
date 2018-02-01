@@ -1,6 +1,7 @@
 // @flow
 
-import React, { Component } from 'react';
+import React, { Fragment, Component } from 'react';
+import Link from 'next/link';
 import Button from '../Button';
 
 import type { Game } from '../../types/state';
@@ -8,36 +9,50 @@ import type { Game } from '../../types/state';
 export type Props = {
   game: Game,
   onWatch: Function,
-  onPlay: Function
+  onJoin: Function
 };
 
-/**
- * Screen for hanging around in the game's lobby
- */
-export default class GameLobby extends Component<Props> {
+// TODO: ReadyToJoin
+export default class JoinGame extends Component<Props> {
   render() {
-    const { onWatch, onPlay } = this.props;
-    const seatsLeft = false;
+    const { game, onWatch, onJoin } = this.props;
+    const roomLeft = game.players.length < 2;
 
     return (
       <div className="screen">
         <h2 className="title">Join game...</h2>
-        {!seatsLeft && (
-          <p className="message">Game already full. Wanna watch?</p>
-        )}
+        <div className="message">
+          {roomLeft ? (
+            <Fragment>
+              <p>
+                <strong>Room for one more!</strong>
+              </p>
+              <p>
+                You can watch, or you<br />can play. Up to you.
+              </p>
+            </Fragment>
+          ) : (
+            <Fragment>
+              <p>
+                <strong>Game full.</strong>
+              </p>
+              <p>
+                You can watch, or<br />
+                <Link href="/">
+                  <a>create another game</a>
+                </Link>.
+              </p>
+            </Fragment>
+          )}
+        </div>
         <div className="actions">
           <div className="button">
-            <Button
-              bgColor="#fff"
-              color="#34495f"
-              colorDisabled="rgba(52, 73, 95, 0.6)"
-              onClick={onWatch}
-            >
+            <Button bgColor="#fff" color="#34495f" onClick={onWatch}>
               Watch
             </Button>
           </div>
-          <div className="button" onClick={onPlay}>
-            <Button disabled={!seatsLeft}>Play</Button>
+          <div className="button" onClick={onJoin}>
+            <Button disabled={!roomLeft}>Join</Button>
           </div>
         </div>
         <style jsx>{`
@@ -70,6 +85,15 @@ export default class GameLobby extends Component<Props> {
             padding: 0;
             font-size: 1.2em;
             line-height: 1.3em;
+            white-space: nowrap;
+          }
+
+          .message p {
+            margin-top: 0;
+          }
+
+          .message a {
+            color: #34495f;
           }
 
           .actions {

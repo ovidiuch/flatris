@@ -4,30 +4,27 @@ import React, { Component } from 'react';
 import Button from '../Button';
 
 export type Props = {
-  onPlay: Function
+  onReady: Function
 };
 
-export default class InviteOrPlaySolo extends Component<Props> {
+export default class GetReady extends Component<Props> {
   render() {
-    const { onPlay } = this.props;
+    const { onReady } = this.props;
 
     return (
       <div className="screen">
-        <h2 className="title">New game...</h2>
+        <h2 className="title">Get ready...</h2>
         <div className="message">
           <p>
-            <strong>
-              Invite a friend to<br />battle, or play solo.
-            </strong>
+            The game will begin<br />you're both ready.
           </p>
           <p>
-            Either way, you can<br />start playing until the<br />other person
-            arrives.
+            <strong>Good luck!</strong>
           </p>
         </div>
         <div className="actions">
-          <div className="button" onClick={onPlay}>
-            <Button>PLAY</Button>
+          <div className="button" onClick={onReady}>
+            <Button>Ready</Button>
           </div>
         </div>
         <style jsx>{`

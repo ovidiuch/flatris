@@ -50,13 +50,20 @@
 * [x] Subscribe to game events on game page, once JS is loaded
 * [x] Continue game after hard refresh
 * [x] Add fixtures for all components
+* [x] Add disabled state to buttons (get rid of early exists in handlers)
 * [x] Create "Invite or play" screen
-* [ ] Create "Join game" screen
-* [ ] Create "Join game" screen
-* [ ] Show both players' score in game panel
-* [ ] Show player READY state
+* [x] Create "Game full" screen
+* [x] Create "Join game" screen
+* [x] Create "Get ready" screen
+* [x] Create "Waiting for other" screen
+* [ ] Create "Game over" screen
+* [ ] Style "Auth" screen
+* [ ] Style GamePanel
+  * [ ] Show both players' score in game panel
+  * [ ] Show player READY state
+  * [ ] New Flatris logo
+  * [ ] Animated next Tetromino transition
 * [ ] Allow players to restart once game is over
-* [ ] Add disabled state to buttons (get rid of early exists in handlers)
 * [ ] Keep dispatching left/right/rotate events at intervals when keys are pressed (instead of relying on repeated keypress events, which don't work on mobile anyway)
 * [ ] Use public assets
 * [ ] Different layouts per device type/orientation

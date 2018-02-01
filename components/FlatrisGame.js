@@ -10,8 +10,7 @@ import {
   getPlayer,
   getPlayer1,
   getPlayer2,
-  allPlayersReady,
-  isCurUserPlaying
+  allPlayersReady
 } from '../reducers/game';
 import { getCurGame } from '../reducers/cur-game';
 import {
@@ -37,7 +36,10 @@ import Drop from './controls/Drop';
 import Flash from './effects/Flash';
 import Quake from './effects/Quake';
 import AuthForm from './AuthForm';
-import InviteOrPlaySolo from './screens/InviteOrPlaySolo';
+import NewGame from './screens/NewGame';
+import JoinGame from './screens/JoinGame';
+import GetReady from './screens/GetReady';
+import WaitingForOther from './screens/WaitingForOther';
 
 import type { User, Player, GameId, Game, State } from '../types/state';
 
@@ -60,34 +62,24 @@ type Props = {
 
 class FlatrisGame extends Component<Props> {
   componentDidMount() {
-    // window isn't available on the server side, but nor is componentDidMount
-    // called on the server
-    window.addEventListener('keydown', this.handleKeyDown);
-    window.addEventListener('keyup', this.handleKeyUp);
-
-    const { curUser, game, openGame, drop, runGameFrame } = this.props;
+    const { curUser, game, openGame } = this.props;
     openGame(game.id);
 
     // Start game if playing user returned after possibly being disconnected
-    if (isCurUserPlaying(game, curUser)) {
-      runGameFrame(drop);
+    if (isPlayer(game, curUser) && allPlayersReady(game)) {
+      this.startGame();
     }
   }
 
   componentDidUpdate(prevProps) {
     const prevGame = prevProps.game;
-    const {
-      curUser,
-      game,
-      drop,
-      runGameFrame,
-      appendPendingBlocks
-    } = this.props;
+    const { curUser, game, appendPendingBlocks } = this.props;
 
-    if (curUser && isCurUserPlaying(game, curUser)) {
-      // Begin game animation when both players are ready (runs on each client)
-      if (!allPlayersReady(prevGame)) {
-        runGameFrame(drop);
+    if (curUser && isPlayer(game, curUser)) {
+      if (allPlayersReady(game) && !allPlayersReady(prevGame)) {
+        this.startGame();
+      } else if (!allPlayersReady(game) && allPlayersReady(prevGame)) {
+        this.stopGame();
       }
 
       const player = getPlayer(game, curUser.id);
@@ -104,16 +96,41 @@ class FlatrisGame extends Component<Props> {
   }
 
   componentWillUnmount() {
-    // window isn't available on the server side, but nor is componentDidMount
-    // called on the server
-    window.removeEventListener('keydown', this.handleKeyDown);
-    window.removeEventListener('keyup', this.handleKeyUp);
+    this.stopGame();
 
     const { game, closeGame } = this.props;
     closeGame(game.id);
+  }
 
+  attachKeyEvents() {
+    // window isn't available on the server side, but nor is componentDidMount
+    // called on the server
+    window.addEventListener('keydown', this.handleKeyDown);
+    window.addEventListener('keyup', this.handleKeyUp);
+  }
+
+  detachKeyEvents() {
+    // window isn't available on the server side, but nor is componentWillUnmount
+    // called on the server
+    window.removeEventListener('keydown', this.handleKeyDown);
+    window.removeEventListener('keyup', this.handleKeyUp);
+  }
+
+  startGame() {
+    const { drop, runGameFrame } = this.props;
+
+    this.attachKeyEvents();
+    runGameFrame(drop);
+  }
+
+  stopGame() {
+    this.detachKeyEvents();
     cancelGameFrame();
   }
+
+  handleWatch = () => {
+    console.log('Watch');
+  };
 
   handleJoin = () => {
     const { curUser, game, joinGame } = this.props;
@@ -127,20 +144,14 @@ class FlatrisGame extends Component<Props> {
     this.props.playerReady();
   };
 
-  handleKeyDown = e => {
-    // TEMP: Until menus are created
-    if (e.keyCode === 82) {
-      this.props.playerReady();
-      return;
-    }
+  handlePing = () => {
+    console.log('Ping');
+  };
 
+  handleKeyDown = e => {
     // Prevent page from scrolling when pressing arrow keys
     if (_.values([UP, DOWN, LEFT, RIGHT]).indexOf(e.keyCode) !== -1) {
       e.preventDefault();
-    }
-
-    if (!this.isCurUserPlaying()) {
-      return;
     }
 
     const { enableAcceleration, rotate, moveLeft, moveRight } = this.props;
@@ -167,10 +178,6 @@ class FlatrisGame extends Component<Props> {
   };
 
   handleKeyUp = e => {
-    if (!this.isCurUserPlaying()) {
-      return;
-    }
-
     if (e.keyCode === DOWN) {
       const { disableAcceleration } = this.props;
       disableAcceleration();
@@ -178,10 +185,6 @@ class FlatrisGame extends Component<Props> {
   };
 
   handleRotatePress = e => {
-    if (!this.isCurUserPlaying()) {
-      return;
-    }
-
     e.preventDefault();
 
     const { rotate } = this.props;
@@ -189,10 +192,6 @@ class FlatrisGame extends Component<Props> {
   };
 
   handleLeftPress = e => {
-    if (!this.isCurUserPlaying()) {
-      return;
-    }
-
     e.preventDefault();
 
     const { moveLeft } = this.props;
@@ -200,10 +199,6 @@ class FlatrisGame extends Component<Props> {
   };
 
   handleRightPress = e => {
-    if (!this.isCurUserPlaying()) {
-      return;
-    }
-
     e.preventDefault();
 
     const { moveRight } = this.props;
@@ -211,10 +206,6 @@ class FlatrisGame extends Component<Props> {
   };
 
   handlePullPress = e => {
-    if (!this.isCurUserPlaying()) {
-      return;
-    }
-
     e.preventDefault();
 
     const { enableAcceleration } = this.props;
@@ -222,21 +213,11 @@ class FlatrisGame extends Component<Props> {
   };
 
   handlePullRelease = e => {
-    if (!this.isCurUserPlaying()) {
-      return;
-    }
-
     e.preventDefault();
 
     const { disableAcceleration } = this.props;
     disableAcceleration();
   };
-
-  isCurUserPlaying() {
-    const { curUser, game } = this.props;
-
-    return isCurUserPlaying(game, curUser);
-  }
 
   renderControlIcon(path) {
     return (
@@ -247,19 +228,23 @@ class FlatrisGame extends Component<Props> {
   }
 
   renderControls() {
+    const { curUser, game } = this.props;
+    const isGameRunning = isPlayer(game, curUser) && allPlayersReady(game);
+
     return (
       <div className="controls">
         <div className="button">
-          <Rotate onPress={this.handleRotatePress} />
+          <Rotate disabled={!isGameRunning} onPress={this.handleRotatePress} />
         </div>
         <div className="button">
-          <Left onPress={this.handleLeftPress} />
+          <Left disabled={!isGameRunning} onPress={this.handleLeftPress} />
         </div>
         <div className="button">
-          <Right onPress={this.handleRightPress} />
+          <Right disabled={!isGameRunning} onPress={this.handleRightPress} />
         </div>
         <div className="button">
           <Drop
+            disabled={!isGameRunning}
             onPress={this.handlePullPress}
             onRelease={this.handlePullRelease}
           />
@@ -308,29 +293,39 @@ class FlatrisGame extends Component<Props> {
 
   renderScreens() {
     const { curUser, game } = this.props;
-    const player1 = getPlayer1(game, curUser);
-    const player2 = getPlayer2(game, player1);
-    const isCurPlayer = isPlayer(game, curUser);
+    const hasJoined = isPlayer(game, curUser);
 
-    // TODO: Allow 2nd player to join a running solo game
-    if (allPlayersReady(game)) {
+    // No screen while game is running
+    // TODO: Show menu for users that are just watching
+    if (hasJoined && allPlayersReady(game)) {
       return null;
     }
 
-    const inviteOrPlaySolo =
-      isCurPlayer && !player2 && player1.status === 'PENDING';
-    const authToJoin = !curUser && !player2;
-    const noRoomLeft = !isCurPlayer && Boolean(player2);
-    const readyToJoin = !isCurPlayer && !player2;
+    const player1 = getPlayer1(game, curUser);
+    const player2 = getPlayer2(game, player1);
 
     return (
       <div className="screen-container">
-        {inviteOrPlaySolo && <InviteOrPlaySolo onPlay={this.handleReady} />}
-        {authToJoin && <AuthForm />}
-        {readyToJoin && (
-          <button onClick={this.handleJoin}>Press to join</button>
-        )}
-        {noRoomLeft && <div>Game is full</div>}
+        {hasJoined && !player2 && <NewGame onPlay={this.handleReady} />}
+        {!curUser && <AuthForm />}
+        {curUser &&
+          !hasJoined && (
+            <JoinGame
+              game={game}
+              onWatch={this.handleWatch}
+              onJoin={this.handleJoin}
+            />
+          )}
+        {hasJoined &&
+          player2 &&
+          player1.status === 'PENDING' && (
+            <GetReady onReady={this.handleReady} />
+          )}
+        {hasJoined &&
+          player2 &&
+          player1.status === 'READY' && (
+            <WaitingForOther onPing={this.handlePing} />
+          )}
         <style jsx>{`
           .screen-container {
             position: absolute;

@@ -47,14 +47,12 @@ export function gameReducer(state: void | Game, action: GameAction): Game {
   switch (action.type) {
     case 'JOIN_GAME': {
       const { user } = action.payload;
-      const { players } = state;
 
-      // Prevent duplicating player for same user
-      if (players.find(p => p.user.id === user.id)) {
-        return state;
-      }
+      // Reset game and player1's status when player2 arrives
+      const { id, players: [player1] } = state;
+      const freshGame = getBlankGame({ id, user: player1.user });
 
-      return addUserToGame(state, user);
+      return addUserToGame(freshGame, user);
     }
 
     case 'PLAYER_READY': {
@@ -284,7 +282,7 @@ export function getBlankGame({
   id: GameId,
   user: User,
   dropFrames?: number
-} = {}): Game {
+}): Game {
   return {
     id,
     status: 'PLAYING',
@@ -368,10 +366,6 @@ export function allPlayersReady(game: Game) {
 
 export function isGameRunning(game: Game) {
   return game.status === 'PLAYING' && allPlayersReady(game);
-}
-
-export function isCurUserPlaying(game: Game, curUser: ?User) {
-  return isPlayer(game, curUser) && allPlayersReady(game);
 }
 
 export function addUserToGame(game: Game, user: User): Game {

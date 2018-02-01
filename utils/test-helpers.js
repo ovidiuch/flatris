@@ -15,3 +15,10 @@ export function getSampleUser2(): User {
     name: 'Louie'
   };
 }
+
+export function getSampleUser3(): User {
+  return {
+    id: '12b3ef',
+    name: 'Bill'
+  };
+}

@@ -8,8 +8,9 @@ type Props = {
   onRelease: Function
 };
 
-export default ({ onPress, onRelease }: Props) => (
+export default ({ onPress, onRelease, ...rest }: Props) => (
   <PointerButton
+    {...rest}
     bgColor="#fff"
     color="#34495f"
     onPress={onPress}

@@ -3087,6 +3087,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):double-hallelujah 
               >
                 <button
                   className="jsx-2671015741 button"
+                  disabled={false}
                   onMouseDown={[Function]}
                 >
                   <svg
@@ -3105,6 +3106,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):double-hallelujah 
               >
                 <button
                   className="jsx-2671015741 button"
+                  disabled={false}
                   onMouseDown={[Function]}
                 >
                   <svg
@@ -3123,6 +3125,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):double-hallelujah 
               >
                 <button
                   className="jsx-2671015741 button"
+                  disabled={false}
                   onMouseDown={[Function]}
                 >
                   <svg
@@ -3141,6 +3144,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):double-hallelujah 
               >
                 <button
                   className="jsx-2671015741 button"
+                  disabled={false}
                   onMouseDown={[Function]}
                   onMouseUp={[Function]}
                 >
@@ -4993,6 +4997,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):enemy-hallelujah 1
               >
                 <button
                   className="jsx-2671015741 button"
+                  disabled={false}
                   onMouseDown={[Function]}
                 >
                   <svg
@@ -5011,6 +5016,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):enemy-hallelujah 1
               >
                 <button
                   className="jsx-2671015741 button"
+                  disabled={false}
                   onMouseDown={[Function]}
                 >
                   <svg
@@ -5029,6 +5035,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):enemy-hallelujah 1
               >
                 <button
                   className="jsx-2671015741 button"
+                  disabled={false}
                   onMouseDown={[Function]}
                 >
                   <svg
@@ -5047,6 +5054,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):enemy-hallelujah 1
               >
                 <button
                   className="jsx-2671015741 button"
+                  disabled={false}
                   onMouseDown={[Function]}
                   onMouseUp={[Function]}
                 >
@@ -7270,6 +7278,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah 1`] = `
               >
                 <button
                   className="jsx-2671015741 button"
+                  disabled={false}
                   onMouseDown={[Function]}
                 >
                   <svg
@@ -7288,6 +7297,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah 1`] = `
               >
                 <button
                   className="jsx-2671015741 button"
+                  disabled={false}
                   onMouseDown={[Function]}
                 >
                   <svg
@@ -7306,6 +7316,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah 1`] = `
               >
                 <button
                   className="jsx-2671015741 button"
+                  disabled={false}
                   onMouseDown={[Function]}
                 >
                   <svg
@@ -7324,6 +7335,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah 1`] = `
               >
                 <button
                   className="jsx-2671015741 button"
+                  disabled={false}
                   onMouseDown={[Function]}
                   onMouseUp={[Function]}
                 >
@@ -9873,7 +9885,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
                     <br
                       className="jsx-3835220806"
                     />
-                    start playing until the
+                    warm up until the
                     <br
                       className="jsx-3835220806"
                     />
@@ -9890,7 +9902,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
                     <button
                       className="jsx-3501768573 button"
                     >
-                      PLAY
+                      Play
                     </button>
                   </div>
                 </div>
@@ -10044,6 +10056,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
               >
                 <button
                   className="jsx-2671015741 button"
+                  disabled={true}
                   onMouseDown={[Function]}
                 >
                   <svg
@@ -10062,6 +10075,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
               >
                 <button
                   className="jsx-2671015741 button"
+                  disabled={true}
                   onMouseDown={[Function]}
                 >
                   <svg
@@ -10080,6 +10094,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
               >
                 <button
                   className="jsx-2671015741 button"
+                  disabled={true}
                   onMouseDown={[Function]}
                 >
                   <svg
@@ -10098,6 +10113,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
               >
                 <button
                   className="jsx-2671015741 button"
+                  disabled={true}
                   onMouseDown={[Function]}
                   onMouseUp={[Function]}
                 >
@@ -10286,7 +10302,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
                     <br
                       className="jsx-3835220806"
                     />
-                    start playing until the
+                    warm up until the
                     <br
                       className="jsx-3835220806"
                     />
@@ -10303,7 +10319,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
                     <button
                       className="jsx-3501768573 button"
                     >
-                      PLAY
+                      Play
                     </button>
                   </div>
                 </div>
@@ -10457,6 +10473,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
               >
                 <button
                   className="jsx-2671015741 button"
+                  disabled={true}
                   onMouseDown={[Function]}
                 >
                   <svg
@@ -10475,6 +10492,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
               >
                 <button
                   className="jsx-2671015741 button"
+                  disabled={true}
                   onMouseDown={[Function]}
                 >
                   <svg
@@ -10493,6 +10511,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
               >
                 <button
                   className="jsx-2671015741 button"
+                  disabled={true}
                   onMouseDown={[Function]}
                 >
                   <svg
@@ -10511,6 +10530,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
               >
                 <button
                   className="jsx-2671015741 button"
+                  disabled={true}
                   onMouseDown={[Function]}
                   onMouseUp={[Function]}
                 >
@@ -10813,6 +10833,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game-running 1
               >
                 <button
                   className="jsx-2671015741 button"
+                  disabled={false}
                   onMouseDown={[Function]}
                 >
                   <svg
@@ -10831,6 +10852,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game-running 1
               >
                 <button
                   className="jsx-2671015741 button"
+                  disabled={false}
                   onMouseDown={[Function]}
                 >
                   <svg
@@ -10849,6 +10871,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game-running 1
               >
                 <button
                   className="jsx-2671015741 button"
+                  disabled={false}
                   onMouseDown={[Function]}
                 >
                   <svg
@@ -10867,6 +10890,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game-running 1
               >
                 <button
                   className="jsx-2671015741 button"
+                  disabled={false}
                   onMouseDown={[Function]}
                   onMouseUp={[Function]}
                 >
@@ -10937,48 +10961,6 @@ exports[`Cosmos fixtures: GameContainer:default 1`] = `
   className="jsx-267927504 container"
 >
   Hello
-</div>
-`;
-
-exports[`Cosmos fixtures: GameLobby:default 1`] = `
-<div
-  className="jsx-140613846 screen"
->
-  <h2
-    className="jsx-140613846 title"
-  >
-    Join game...
-  </h2>
-  <p
-    className="jsx-140613846 message"
-  >
-    Game already full. Wanna watch?
-  </p>
-  <div
-    className="jsx-140613846 actions"
-  >
-    <div
-      className="jsx-140613846 button"
-    >
-      <button
-        className="jsx-3533494720 button"
-        onClick={[Function]}
-      >
-        Watch
-      </button>
-    </div>
-    <div
-      className="jsx-140613846 button"
-      onClick={[Function]}
-    >
-      <button
-        className="jsx-3501768573 button"
-        disabled={true}
-      >
-        Play
-      </button>
-    </div>
-  </div>
 </div>
 `;
 
@@ -11130,6 +11112,71 @@ exports[`Cosmos fixtures: GamePanel:default 1`] = `
             >
               Tig
             </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Cosmos fixtures: GetReady:default 1`] = `
+<div
+  className="jsx-267927504 container"
+>
+  <div
+    className="jsx-4132995980 inner-container"
+  >
+    <div
+      className="jsx-4132995980"
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+    >
+      <div
+        className="jsx-3835220806 screen"
+      >
+        <h2
+          className="jsx-3835220806 title"
+        >
+          Get ready...
+        </h2>
+        <div
+          className="jsx-3835220806 message"
+        >
+          <p
+            className="jsx-3835220806"
+          >
+            The game will begin
+            <br
+              className="jsx-3835220806"
+            />
+            you're both ready.
+          </p>
+          <p
+            className="jsx-3835220806"
+          >
+            <strong
+              className="jsx-3835220806"
+            >
+              Good luck!
+            </strong>
+          </p>
+        </div>
+        <div
+          className="jsx-3835220806 actions"
+        >
+          <div
+            className="jsx-3835220806 button"
+            onClick={[Function]}
+          >
+            <button
+              className="jsx-3501768573 button"
+            >
+              Ready
+            </button>
           </div>
         </div>
       </div>
@@ -11429,7 +11476,7 @@ exports[`Cosmos fixtures: Grid:default 1`] = `
 </div>
 `;
 
-exports[`Cosmos fixtures: InviteOrPlaySolo:default 1`] = `
+exports[`Cosmos fixtures: JoinGame:available 1`] = `
 <div
   className="jsx-267927504 container"
 >
@@ -11445,54 +11492,140 @@ exports[`Cosmos fixtures: InviteOrPlaySolo:default 1`] = `
       }
     >
       <div
-        className="jsx-3835220806 screen"
+        className="jsx-449595441 screen"
       >
         <h2
-          className="jsx-3835220806 title"
+          className="jsx-449595441 title"
         >
-          New game...
+          Join game...
         </h2>
         <div
-          className="jsx-3835220806 message"
+          className="jsx-449595441 message"
         >
           <p
-            className="jsx-3835220806"
+            className="jsx-449595441"
           >
             <strong
-              className="jsx-3835220806"
+              className="jsx-449595441"
             >
-              Invite a friend to
-              <br
-                className="jsx-3835220806"
-              />
-              battle, or play solo.
+              Room for one more!
             </strong>
           </p>
           <p
-            className="jsx-3835220806"
+            className="jsx-449595441"
           >
-            Either way, you can
+            You can watch, or you
             <br
-              className="jsx-3835220806"
+              className="jsx-449595441"
             />
-            start playing until the
-            <br
-              className="jsx-3835220806"
-            />
-            other person arrives.
+            can play. Up to you.
           </p>
         </div>
         <div
-          className="jsx-3835220806 actions"
+          className="jsx-449595441 actions"
         >
           <div
-            className="jsx-3835220806 button"
+            className="jsx-449595441 button"
+          >
+            <button
+              className="jsx-2671015741 button"
+              onClick={[Function]}
+            >
+              Watch
+            </button>
+          </div>
+          <div
+            className="jsx-449595441 button"
             onClick={[Function]}
           >
             <button
               className="jsx-3501768573 button"
+              disabled={false}
             >
-              PLAY
+              Join
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Cosmos fixtures: JoinGame:full 1`] = `
+<div
+  className="jsx-267927504 container"
+>
+  <div
+    className="jsx-4132995980 inner-container"
+  >
+    <div
+      className="jsx-4132995980"
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+    >
+      <div
+        className="jsx-449595441 screen"
+      >
+        <h2
+          className="jsx-449595441 title"
+        >
+          Join game...
+        </h2>
+        <div
+          className="jsx-449595441 message"
+        >
+          <p
+            className="jsx-449595441"
+          >
+            <strong
+              className="jsx-449595441"
+            >
+              Game full.
+            </strong>
+          </p>
+          <p
+            className="jsx-449595441"
+          >
+            You can watch, or
+            <br
+              className="jsx-449595441"
+            />
+            <a
+              className="jsx-449595441"
+              href="/"
+              onClick={[Function]}
+            >
+              create another game
+            </a>
+            .
+          </p>
+        </div>
+        <div
+          className="jsx-449595441 actions"
+        >
+          <div
+            className="jsx-449595441 button"
+          >
+            <button
+              className="jsx-2671015741 button"
+              onClick={[Function]}
+            >
+              Watch
+            </button>
+          </div>
+          <div
+            className="jsx-449595441 button"
+            onClick={[Function]}
+          >
+            <button
+              className="jsx-3501768573 button"
+              disabled={true}
+            >
+              Join
             </button>
           </div>
         </div>
@@ -11597,6 +11730,79 @@ exports[`Cosmos fixtures: Logo:default 1`] = `
           }
         }
       />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Cosmos fixtures: NewGame:default 1`] = `
+<div
+  className="jsx-267927504 container"
+>
+  <div
+    className="jsx-4132995980 inner-container"
+  >
+    <div
+      className="jsx-4132995980"
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+    >
+      <div
+        className="jsx-3835220806 screen"
+      >
+        <h2
+          className="jsx-3835220806 title"
+        >
+          New game...
+        </h2>
+        <div
+          className="jsx-3835220806 message"
+        >
+          <p
+            className="jsx-3835220806"
+          >
+            <strong
+              className="jsx-3835220806"
+            >
+              Invite a friend to
+              <br
+                className="jsx-3835220806"
+              />
+              battle, or play solo.
+            </strong>
+          </p>
+          <p
+            className="jsx-3835220806"
+          >
+            Either way, you can
+            <br
+              className="jsx-3835220806"
+            />
+            warm up until the
+            <br
+              className="jsx-3835220806"
+            />
+            other person arrives.
+          </p>
+        </div>
+        <div
+          className="jsx-3835220806 actions"
+        >
+          <div
+            className="jsx-3835220806 button"
+            onClick={[Function]}
+          >
+            <button
+              className="jsx-3501768573 button"
+            >
+              Play
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -12652,6 +12858,71 @@ exports[`Cosmos fixtures: Tetromino:rotated-Z-tetromino-3 1`] = `
         }
       }
     />
+  </div>
+</div>
+`;
+
+exports[`Cosmos fixtures: WaitingForOther:default 1`] = `
+<div
+  className="jsx-267927504 container"
+>
+  <div
+    className="jsx-4132995980 inner-container"
+  >
+    <div
+      className="jsx-4132995980"
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+    >
+      <div
+        className="jsx-3835220806 screen"
+      >
+        <h2
+          className="jsx-3835220806 title"
+        >
+          Waiting...
+        </h2>
+        <div
+          className="jsx-3835220806 message"
+        >
+          <p
+            className="jsx-3835220806"
+          >
+            Your friend is a bit
+            <br
+              className="jsx-3835220806"
+            />
+            slower. I know...
+          </p>
+          <p
+            className="jsx-3835220806"
+          >
+            <strong
+              className="jsx-3835220806"
+            >
+              Ping them to hurry!
+            </strong>
+          </p>
+        </div>
+        <div
+          className="jsx-3835220806 actions"
+        >
+          <div
+            className="jsx-3835220806 button"
+            onClick={[Function]}
+          >
+            <button
+              className="jsx-3501768573 button"
+            >
+              Ping
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 `;
