@@ -8,7 +8,7 @@
   * [x] Put `curUser` in Redux state
   * [x] Derive paused state from `users(status=playing).len > 0`
 * [x] Add missing screens for multiplayer flows
-* [x] PIVOT: Turn collaborative Tetris (2-8 players) into competitive 1vs1 Tetris
+* [x] PIVOT: Turn collaborative Flatris (2-8 players) into competitive 1vs1 Flatris
   * [x] Redesign state and actions
     * [x] Make MOVE, ROTATE, ENABLE_ACCELERATION, DISABLE_ACCELERATION userId based
     * [x] Cancel ADVANCE loop on unmount

@@ -410,8 +410,7 @@ function rewardClearedBlocks(game: Game, userId: UserId): Game {
   // TODO: Calculate cells in Tetromino. All current Tetrominoes have 4 cells
   const cells = 4;
 
-  // Rudimentary scoring logic, no T-Spin and combo bonuses. Read more at
-  // http://tetris.wikia.com/wiki/Scoring
+  // Rudimentary scoring logic, no T-Spin and combo bonuses
   let points = dropAcceleration ? cells * 2 : cells;
   if (blocksCleared.length) {
     points += LINE_CLEAR_BONUSES[blocksCleared.length - 1] * (lines + 1);

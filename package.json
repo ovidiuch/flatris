@@ -2,7 +2,7 @@
   "name": "flatris",
   "license": "MIT",
   "version": "1.0.0",
-  "description": "Tetris for millennials",
+  "description": "A multiplayer game for millennials",
   "repository": {
     "type": "git",
     "url": "https://github.com/skidding/flatris.git"

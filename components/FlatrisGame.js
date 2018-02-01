@@ -58,11 +58,6 @@ type Props = {
 };
 
 class FlatrisGame extends Component<Props> {
-  /**
-   * The Tetris game was originally designed and programmed by Alexey Pajitnov.
-   * It was released on June 6, 1984 and has since become a world-wide
-   * phenomenon. Read more about the game at http://en.wikipedia.org/wiki/Tetris
-   */
   componentDidMount() {
     // window isn't available on the server side, but nor is componentDidMount
     // called on the server

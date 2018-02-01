@@ -12,7 +12,6 @@ const GameContainer = ({ children }) => {
           transform: translate(-50%, -50%);
           width: 80px;
           height: 120px;
-          background: #fff;
           font-size: 3px;
         }
 
