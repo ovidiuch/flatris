@@ -321,25 +321,16 @@ class FlatrisGame extends Component<Props> {
       return null;
     }
 
-    if (!player2) {
-      if (player1.status === 'LOST') {
-        return this.renderScreen(
-          <GameOver
-            curUser={curUser}
-            game={game}
-            onRestart={this.handleReady}
-          />
-        );
-      }
-
-      // player1.status === 'PENDING'
-      return this.renderScreen(<NewGame onPlay={this.handleReady} />);
-    }
-
     if (player1.status === 'LOST' || player1.status === 'WON') {
       return this.renderScreen(
         <GameOver curUser={curUser} game={game} onRestart={this.handleReady} />
       );
+    }
+
+    if (!player2) {
+      // player1 status is 'PENDING', because if it wouldn've been 'READY'
+      // allPlayersReady(game) would've returned true
+      return this.renderScreen(<NewGame onPlay={this.handleReady} />);
     }
 
     if (player1.status === 'READY') {
