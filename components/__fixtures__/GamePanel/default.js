@@ -12,6 +12,11 @@ const game = getBlankGame({ id: 'dce6b11e', user });
 const fixture: { props: Props } = {
   component: GamePanel,
 
+  container: {
+    width: 6,
+    height: 20
+  },
+
   props: {
     curUser: user,
     game

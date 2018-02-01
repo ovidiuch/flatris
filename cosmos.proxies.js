@@ -4,7 +4,6 @@ import { func } from 'prop-types';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import createReduxProxy from 'react-cosmos-redux-proxy';
-import FlatrisGame from './components/FlatrisGame';
 import GameContainer from './components/GameContainer';
 import { createStore } from './store';
 
@@ -24,23 +23,35 @@ type ProxyProps = {
   onFixtureUpdate: Function
 };
 
-const ViewportContainer = (props: ProxyProps) => {
-  const {
-    nextProxy: { value: NextProxy, next },
-    fixture: { component, opacity = 1 }
-  } = props;
-  const nextEl = <NextProxy {...props} nextProxy={next()} />;
+class ViewportContainer extends Component<ProxyProps> {
+  render() {
+    const {
+      nextProxy: { value: NextProxy, next },
+      fixture: { container, opacity = 1 }
+    } = this.props;
+    const nextEl = <NextProxy {...this.props} nextProxy={next()} />;
 
-  if (component === FlatrisGame) {
+    if (!container) {
+      return nextEl;
+    }
+
     return (
       <GameContainer>
-        <div style={{ opacity }}>{nextEl}</div>
+        <div className="inner-container">
+          <div style={{ opacity }}>{nextEl}</div>
+          <style jsx>{`
+            .inner-container {
+              position: absolute;
+              background: #fff;
+              width: calc(100% / 16 * ${container.width});
+              height: calc(100% / 24 * ${container.height});
+            }
+          `}</style>
+        </div>
       </GameContainer>
     );
   }
-
-  return nextEl;
-};
+}
 
 type SocketProviderProps = {
   children: Node,
