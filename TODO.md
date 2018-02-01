@@ -56,7 +56,7 @@
 * [x] Create "Join game" screen
 * [x] Create "Get ready" screen
 * [x] Create "Waiting for other" screen
-* [ ] Create "Game over" screen
+* [x] Create "Game over" screen
 * [ ] Style "Auth" screen
 * [ ] Style GamePanel
   * [ ] Show both players' score in game panel

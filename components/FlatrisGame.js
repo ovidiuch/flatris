@@ -40,7 +40,9 @@ import NewGame from './screens/NewGame';
 import JoinGame from './screens/JoinGame';
 import GetReady from './screens/GetReady';
 import WaitingForOther from './screens/WaitingForOther';
+import GameOver from './screens/GameOver';
 
+import type { Node } from 'react';
 import type { User, Player, GameId, Game, State } from '../types/state';
 
 type Props = {
@@ -291,41 +293,59 @@ class FlatrisGame extends Component<Props> {
     );
   }
 
+  // TODO: Show menu for users that are just watching
   renderScreens() {
     const { curUser, game } = this.props;
     const hasJoined = isPlayer(game, curUser);
 
-    // No screen while game is running
-    // TODO: Show menu for users that are just watching
-    if (hasJoined && allPlayersReady(game)) {
-      return null;
-    }
-
+    // P1 is the current user's player, P2 is the other (in multiplayer games)
     const player1 = getPlayer1(game, curUser);
     const player2 = getPlayer2(game, player1);
 
+    if (!curUser) {
+      return this.renderScreen(<AuthForm />);
+    }
+
+    if (!hasJoined) {
+      return this.renderScreen(
+        <JoinGame
+          game={game}
+          onWatch={this.handleWatch}
+          onJoin={this.handleJoin}
+        />
+      );
+    }
+
+    // No screen when current user joined and game is running
+    if (allPlayersReady(game)) {
+      return null;
+    }
+
+    if (player1.status === 'PENDING') {
+      return this.renderScreen(
+        player2 ? (
+          <GetReady onReady={this.handleReady} />
+        ) : (
+          <NewGame onPlay={this.handleReady} />
+        )
+      );
+    }
+
+    if (player1.status === 'READY' && player2 && player2.status === 'PENDING') {
+      return this.renderScreen(<WaitingForOther onPing={this.handlePing} />);
+    }
+
+    if (player1.status === 'OVER' || (player2 && player2.status === 'OVER')) {
+      return this.renderScreen(
+        <GameOver curUser={curUser} game={game} onRestart={this.handleReady} />
+      );
+    }
+  }
+
+  renderScreen(content: Node) {
     return (
       <div className="screen-container">
-        {hasJoined && !player2 && <NewGame onPlay={this.handleReady} />}
-        {!curUser && <AuthForm />}
-        {curUser &&
-          !hasJoined && (
-            <JoinGame
-              game={game}
-              onWatch={this.handleWatch}
-              onJoin={this.handleJoin}
-            />
-          )}
-        {hasJoined &&
-          player2 &&
-          player1.status === 'PENDING' && (
-            <GetReady onReady={this.handleReady} />
-          )}
-        {hasJoined &&
-          player2 &&
-          player1.status === 'READY' && (
-            <WaitingForOther onPing={this.handlePing} />
-          )}
+        {content}
         <style jsx>{`
           .screen-container {
             position: absolute;

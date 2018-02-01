@@ -10940,6 +10940,171 @@ exports[`Cosmos fixtures: GameContainer:default 1`] = `
 </div>
 `;
 
+exports[`Cosmos fixtures: GameOver:multi-loss 1`] = `
+<div
+  className="jsx-267927504 container"
+>
+  <div
+    className="jsx-4132995980 inner-container"
+  >
+    <div
+      className="jsx-4132995980"
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+    >
+      <div
+        className="jsx-1120442871 screen"
+      >
+        <h2
+          className="jsx-1120442871 title"
+        >
+          Game over
+        </h2>
+        <div
+          className="jsx-1120442871 message"
+        >
+          <p>
+            Oh well...
+          </p>
+          <p>
+            <strong>
+              Up for another?
+            </strong>
+          </p>
+        </div>
+        <div
+          className="jsx-1120442871 actions"
+        >
+          <div
+            className="jsx-1120442871 button"
+          >
+            <button
+              className="jsx-3501768573 button"
+              onClick={[Function]}
+            >
+              Again
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Cosmos fixtures: GameOver:multi-win 1`] = `
+<div
+  className="jsx-267927504 container"
+>
+  <div
+    className="jsx-4132995980 inner-container"
+  >
+    <div
+      className="jsx-4132995980"
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+    >
+      <div
+        className="jsx-1120442871 screen"
+      >
+        <h2
+          className="jsx-1120442871 title"
+        >
+          Game over
+        </h2>
+        <div
+          className="jsx-1120442871 message"
+        >
+          <p>
+            You kicked ass!
+          </p>
+          <p>
+            <strong>
+              Up for another?
+            </strong>
+          </p>
+        </div>
+        <div
+          className="jsx-1120442871 actions"
+        >
+          <div
+            className="jsx-1120442871 button"
+          >
+            <button
+              className="jsx-3501768573 button"
+              onClick={[Function]}
+            >
+              Again
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Cosmos fixtures: GameOver:solo 1`] = `
+<div
+  className="jsx-267927504 container"
+>
+  <div
+    className="jsx-4132995980 inner-container"
+  >
+    <div
+      className="jsx-4132995980"
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+    >
+      <div
+        className="jsx-1120442871 screen"
+      >
+        <h2
+          className="jsx-1120442871 title"
+        >
+          Game over
+        </h2>
+        <div
+          className="jsx-1120442871 message"
+        >
+          <p>
+            Well, that was fun!
+          </p>
+          <p>
+            <strong>
+              Up for another?
+            </strong>
+          </p>
+        </div>
+        <div
+          className="jsx-1120442871 actions"
+        >
+          <div
+            className="jsx-1120442871 button"
+          >
+            <button
+              className="jsx-3501768573 button"
+              onClick={[Function]}
+            >
+              Again
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Cosmos fixtures: GamePanel:default 1`] = `
 <div
   className="jsx-267927504 container"
