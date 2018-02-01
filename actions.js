@@ -78,7 +78,7 @@ export function runGameFrame(drop: (rows: number) => any): ThunkAction {
       const player = getPlayer(game, userId);
       const { dropAcceleration } = player;
 
-      // Stop animation when game ended (either player has `OVER` status)
+      // Stop animation when game ended (players change status to WON/LOST)
       if (!allPlayersReady(game)) {
         return;
       }

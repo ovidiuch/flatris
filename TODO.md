@@ -57,13 +57,13 @@
 * [x] Create "Get ready" screen
 * [x] Create "Waiting for other" screen
 * [x] Create "Game over" screen
+  * [x] Allow players to restart once game is over
 * [ ] Style "Auth" screen
 * [ ] Style GamePanel
   * [ ] Show both players' score in game panel
   * [ ] Show player READY state
   * [ ] New Flatris logo
   * [ ] Animated next Tetromino transition
-* [ ] Allow players to restart once game is over
 * [ ] Keep dispatching left/right/rotate events at intervals when keys are pressed (instead of relying on repeated keypress events, which don't work on mobile anyway)
 * [ ] Use public assets
 * [ ] Different layouts per device type/orientation

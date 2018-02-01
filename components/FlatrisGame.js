@@ -321,25 +321,33 @@ class FlatrisGame extends Component<Props> {
       return null;
     }
 
-    if (player1.status === 'PENDING') {
-      return this.renderScreen(
-        player2 ? (
-          <GetReady onReady={this.handleReady} />
-        ) : (
-          <NewGame onPlay={this.handleReady} />
-        )
-      );
+    if (!player2) {
+      if (player1.status === 'LOST') {
+        return this.renderScreen(
+          <GameOver
+            curUser={curUser}
+            game={game}
+            onRestart={this.handleReady}
+          />
+        );
+      }
+
+      // player1.status === 'PENDING'
+      return this.renderScreen(<NewGame onPlay={this.handleReady} />);
     }
 
-    if (player1.status === 'READY' && player2 && player2.status === 'PENDING') {
-      return this.renderScreen(<WaitingForOther onPing={this.handlePing} />);
-    }
-
-    if (player1.status === 'OVER' || (player2 && player2.status === 'OVER')) {
+    if (player1.status === 'LOST' || player1.status === 'WON') {
       return this.renderScreen(
         <GameOver curUser={curUser} game={game} onRestart={this.handleReady} />
       );
     }
+
+    if (player1.status === 'READY') {
+      return this.renderScreen(<WaitingForOther onPing={this.handlePing} />);
+    }
+
+    // player1.status === 'PENDING'
+    return this.renderScreen(<GetReady onReady={this.handleReady} />);
   }
 
   renderScreen(content: Node) {

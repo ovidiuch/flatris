@@ -47,18 +47,32 @@ export function gameReducer(state: void | Game, action: GameAction): Game {
   switch (action.type) {
     case 'JOIN_GAME': {
       const { user } = action.payload;
+      const { players: [player1] } = state;
 
-      // Reset game and player1's status when player2 arrives
-      const { id, players: [player1] } = state;
-      const freshGame = getBlankGame({ id, user: player1.user });
-
-      return addUserToGame(freshGame, user);
+      // Stop player1's game when player2 arrives
+      const game = updatePlayer(state, player1.user.id, { status: 'PENDING' });
+      return addUserToGame(game, user);
     }
 
     case 'PLAYER_READY': {
       const { userId } = action.payload;
+      const game = updatePlayer(state, userId, { status: 'READY' });
 
-      return updatePlayer(state, userId, { status: 'READY' });
+      // Reset game when all players are ready to (re)start
+      if (allPlayersReady(game)) {
+        const { id, players } = game;
+
+        return {
+          id,
+          players: players.map(player => ({
+            ...getBlankPlayer(id, player.user),
+            status: 'READY'
+          })),
+          dropFrames: DROP_FRAMES_DEFAULT
+        };
+      }
+
+      return game;
     }
 
     case 'DROP': {
@@ -117,9 +131,13 @@ export function gameReducer(state: void | Game, action: GameAction): Game {
       // this we would need to somehow re-apply the part of the active Tetromino
       // that didn't fit upon landing, after the lines have been cleared.
       if (newPosition.y < 0) {
-        return updatePlayer(state, userId, {
-          status: 'OVER'
-        });
+        return {
+          ...state,
+          players: state.players.map(player => ({
+            ...player,
+            status: player.user.id === userId ? 'LOST' : 'WON'
+          }))
+        };
       }
 
       // This is when the active Tetromino hits the bottom of the Well and can
@@ -198,7 +216,7 @@ export function gameReducer(state: void | Game, action: GameAction): Game {
 
       return updatePlayer(state, userId, {
         // The next `DROP` event will determine whether the well is full and
-        // if the game is OVER or not
+        // if the game is over or not
         grid: newGrid,
         blocksPending: [],
         activeTetrominoPosition: newPosition

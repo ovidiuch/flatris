@@ -42,7 +42,7 @@ export default class GameOver extends Component<Props> {
     const { curUser, game } = this.props;
     const player1 = getPlayer1(game, curUser);
 
-    if (player1.status === 'OVER') {
+    if (player1.status === 'LOST') {
       return (
         <Fragment>
           <p>Oh well...</p>

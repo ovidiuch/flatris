@@ -14,8 +14,11 @@ const user1 = getSampleUser();
 const user2 = getSampleUser2();
 let game = getBlankGame({ id: 'd2f', user: user1 });
 game = addUserToGame(game, user2);
+game = updatePlayer(game, user1.id, {
+  status: 'WON'
+});
 game = updatePlayer(game, user2.id, {
-  status: 'OVER'
+  status: 'LOST'
 });
 
 const fixture: { props: Props } = {
