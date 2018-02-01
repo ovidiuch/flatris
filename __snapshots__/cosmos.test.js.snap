@@ -9855,52 +9855,40 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
               className="jsx-639453897 screen-container"
             >
               <div
-                className="jsx-3835220806 screen"
+                className="jsx-683717609 screen"
               >
                 <h2
-                  className="jsx-3835220806 title"
+                  className="jsx-683717609 title"
                 >
                   New game...
                 </h2>
                 <div
-                  className="jsx-3835220806 message"
+                  className="jsx-683717609 message"
                 >
-                  <p
-                    className="jsx-3835220806"
-                  >
-                    <strong
-                      className="jsx-3835220806"
-                    >
+                  <p>
+                    <strong>
                       Invite a friend to
-                      <br
-                        className="jsx-3835220806"
-                      />
+                      <br />
                       battle, or play solo.
                     </strong>
                   </p>
-                  <p
-                    className="jsx-3835220806"
-                  >
+                  <p>
                     Either way, you can
-                    <br
-                      className="jsx-3835220806"
-                    />
+                    <br />
                     warm up until the
-                    <br
-                      className="jsx-3835220806"
-                    />
+                    <br />
                     other person arrives.
                   </p>
                 </div>
                 <div
-                  className="jsx-3835220806 actions"
+                  className="jsx-683717609 actions"
                 >
                   <div
-                    className="jsx-3835220806 button"
-                    onClick={[Function]}
+                    className="jsx-683717609 button"
                   >
                     <button
                       className="jsx-3501768573 button"
+                      onClick={[Function]}
                     >
                       Play
                     </button>
@@ -10272,52 +10260,40 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
               className="jsx-639453897 screen-container"
             >
               <div
-                className="jsx-3835220806 screen"
+                className="jsx-683717609 screen"
               >
                 <h2
-                  className="jsx-3835220806 title"
+                  className="jsx-683717609 title"
                 >
                   New game...
                 </h2>
                 <div
-                  className="jsx-3835220806 message"
+                  className="jsx-683717609 message"
                 >
-                  <p
-                    className="jsx-3835220806"
-                  >
-                    <strong
-                      className="jsx-3835220806"
-                    >
+                  <p>
+                    <strong>
                       Invite a friend to
-                      <br
-                        className="jsx-3835220806"
-                      />
+                      <br />
                       battle, or play solo.
                     </strong>
                   </p>
-                  <p
-                    className="jsx-3835220806"
-                  >
+                  <p>
                     Either way, you can
-                    <br
-                      className="jsx-3835220806"
-                    />
+                    <br />
                     warm up until the
-                    <br
-                      className="jsx-3835220806"
-                    />
+                    <br />
                     other person arrives.
                   </p>
                 </div>
                 <div
-                  className="jsx-3835220806 actions"
+                  className="jsx-683717609 actions"
                 >
                   <div
-                    className="jsx-3835220806 button"
-                    onClick={[Function]}
+                    className="jsx-683717609 button"
                   >
                     <button
                       className="jsx-3501768573 button"
+                      onClick={[Function]}
                     >
                       Play
                     </button>
@@ -11136,44 +11112,36 @@ exports[`Cosmos fixtures: GetReady:default 1`] = `
       }
     >
       <div
-        className="jsx-3835220806 screen"
+        className="jsx-683717609 screen"
       >
         <h2
-          className="jsx-3835220806 title"
+          className="jsx-683717609 title"
         >
           Get ready...
         </h2>
         <div
-          className="jsx-3835220806 message"
+          className="jsx-683717609 message"
         >
-          <p
-            className="jsx-3835220806"
-          >
-            The game will begin
-            <br
-              className="jsx-3835220806"
-            />
+          <p>
+            Game will start when
+            <br />
             you're both ready.
           </p>
-          <p
-            className="jsx-3835220806"
-          >
-            <strong
-              className="jsx-3835220806"
-            >
+          <p>
+            <strong>
               Good luck!
             </strong>
           </p>
         </div>
         <div
-          className="jsx-3835220806 actions"
+          className="jsx-683717609 actions"
         >
           <div
-            className="jsx-3835220806 button"
-            onClick={[Function]}
+            className="jsx-683717609 button"
           >
             <button
               className="jsx-3501768573 button"
+              onClick={[Function]}
             >
               Ready
             </button>
@@ -11492,57 +11460,49 @@ exports[`Cosmos fixtures: JoinGame:available 1`] = `
       }
     >
       <div
-        className="jsx-449595441 screen"
+        className="jsx-683717609 screen"
       >
         <h2
-          className="jsx-449595441 title"
+          className="jsx-683717609 title"
         >
           Join game...
         </h2>
         <div
-          className="jsx-449595441 message"
+          className="jsx-683717609 message"
         >
-          <p
-            className="jsx-449595441"
-          >
-            <strong
-              className="jsx-449595441"
-            >
+          <p>
+            <strong>
               Room for one more!
             </strong>
           </p>
-          <p
-            className="jsx-449595441"
-          >
+          <p>
             You can watch, or you
-            <br
-              className="jsx-449595441"
-            />
+            <br />
             can play. Up to you.
           </p>
         </div>
         <div
-          className="jsx-449595441 actions"
+          className="jsx-683717609 actions"
         >
           <div
-            className="jsx-449595441 button"
+            className="jsx-683717609 button"
+          >
+            <button
+              className="jsx-3501768573 button"
+              disabled={false}
+              onClick={[Function]}
+            >
+              Join
+            </button>
+          </div>
+          <div
+            className="jsx-683717609 button"
           >
             <button
               className="jsx-2671015741 button"
               onClick={[Function]}
             >
               Watch
-            </button>
-          </div>
-          <div
-            className="jsx-449595441 button"
-            onClick={[Function]}
-          >
-            <button
-              className="jsx-3501768573 button"
-              disabled={false}
-            >
-              Join
             </button>
           </div>
         </div>
@@ -11568,34 +11528,25 @@ exports[`Cosmos fixtures: JoinGame:full 1`] = `
       }
     >
       <div
-        className="jsx-449595441 screen"
+        className="jsx-683717609 screen"
       >
         <h2
-          className="jsx-449595441 title"
+          className="jsx-683717609 title"
         >
           Join game...
         </h2>
         <div
-          className="jsx-449595441 message"
+          className="jsx-683717609 message"
         >
-          <p
-            className="jsx-449595441"
-          >
-            <strong
-              className="jsx-449595441"
-            >
+          <p>
+            <strong>
               Game full.
             </strong>
           </p>
-          <p
-            className="jsx-449595441"
-          >
+          <p>
             You can watch, or
-            <br
-              className="jsx-449595441"
-            />
+            <br />
             <a
-              className="jsx-449595441"
               href="/"
               onClick={[Function]}
             >
@@ -11605,27 +11556,27 @@ exports[`Cosmos fixtures: JoinGame:full 1`] = `
           </p>
         </div>
         <div
-          className="jsx-449595441 actions"
+          className="jsx-683717609 actions"
         >
           <div
-            className="jsx-449595441 button"
+            className="jsx-683717609 button"
+          >
+            <button
+              className="jsx-3501768573 button"
+              disabled={true}
+              onClick={[Function]}
+            >
+              Join
+            </button>
+          </div>
+          <div
+            className="jsx-683717609 button"
           >
             <button
               className="jsx-2671015741 button"
               onClick={[Function]}
             >
               Watch
-            </button>
-          </div>
-          <div
-            className="jsx-449595441 button"
-            onClick={[Function]}
-          >
-            <button
-              className="jsx-3501768573 button"
-              disabled={true}
-            >
-              Join
             </button>
           </div>
         </div>
@@ -11751,52 +11702,40 @@ exports[`Cosmos fixtures: NewGame:default 1`] = `
       }
     >
       <div
-        className="jsx-3835220806 screen"
+        className="jsx-683717609 screen"
       >
         <h2
-          className="jsx-3835220806 title"
+          className="jsx-683717609 title"
         >
           New game...
         </h2>
         <div
-          className="jsx-3835220806 message"
+          className="jsx-683717609 message"
         >
-          <p
-            className="jsx-3835220806"
-          >
-            <strong
-              className="jsx-3835220806"
-            >
+          <p>
+            <strong>
               Invite a friend to
-              <br
-                className="jsx-3835220806"
-              />
+              <br />
               battle, or play solo.
             </strong>
           </p>
-          <p
-            className="jsx-3835220806"
-          >
+          <p>
             Either way, you can
-            <br
-              className="jsx-3835220806"
-            />
+            <br />
             warm up until the
-            <br
-              className="jsx-3835220806"
-            />
+            <br />
             other person arrives.
           </p>
         </div>
         <div
-          className="jsx-3835220806 actions"
+          className="jsx-683717609 actions"
         >
           <div
-            className="jsx-3835220806 button"
-            onClick={[Function]}
+            className="jsx-683717609 button"
           >
             <button
               className="jsx-3501768573 button"
+              onClick={[Function]}
             >
               Play
             </button>
@@ -12878,44 +12817,36 @@ exports[`Cosmos fixtures: WaitingForOther:default 1`] = `
       }
     >
       <div
-        className="jsx-3835220806 screen"
+        className="jsx-683717609 screen"
       >
         <h2
-          className="jsx-3835220806 title"
+          className="jsx-683717609 title"
         >
           Waiting...
         </h2>
         <div
-          className="jsx-3835220806 message"
+          className="jsx-683717609 message"
         >
-          <p
-            className="jsx-3835220806"
-          >
+          <p>
             Your friend is a bit
-            <br
-              className="jsx-3835220806"
-            />
+            <br />
             slower. I know...
           </p>
-          <p
-            className="jsx-3835220806"
-          >
-            <strong
-              className="jsx-3835220806"
-            >
+          <p>
+            <strong>
               Ping them to hurry!
             </strong>
           </p>
         </div>
         <div
-          className="jsx-3835220806 actions"
+          className="jsx-683717609 actions"
         >
           <div
-            className="jsx-3835220806 button"
-            onClick={[Function]}
+            className="jsx-683717609 button"
           >
             <button
               className="jsx-3501768573 button"
+              onClick={[Function]}
             >
               Ping
             </button>
