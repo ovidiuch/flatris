@@ -37,6 +37,8 @@ export default class Layout extends Component<Props, State> {
       'layout-static': !hasJsLoaded
     });
 
+    // TODO: Embed fonts
+    // http://www.sameratiani.com/2011/10/16/embed-inline-webfonts-in-css.html
     return (
       <div>
         <Head>

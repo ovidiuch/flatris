@@ -312,6 +312,7 @@ class FlatrisGame extends Component<Props> {
     const player2 = getPlayer2(game, player1);
     const isCurPlayer = isPlayer(game, curUser);
 
+    // TODO: Allow 2nd player to join a running solo game
     if (allPlayersReady(game)) {
       return null;
     }
