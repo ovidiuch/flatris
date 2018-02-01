@@ -2,10 +2,12 @@
 
 import Button from '../../Button';
 
-export default {
+import type { Props } from '../../Button';
+
+const fixture: { props: Props } = {
   component: Button,
-  children: 'Press me will you',
   props: {
+    children: 'Press me will you',
     disabled: true,
     bgColor: '#fff',
     color: '#34495f',
@@ -13,3 +15,6 @@ export default {
     onClick: () => console.log('Yay! Button clicked-ed!')
   }
 };
+
+export default fixture;
+

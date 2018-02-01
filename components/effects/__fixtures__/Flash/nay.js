@@ -13,9 +13,9 @@ const player = {
 const fixture = {
   component: Flash,
   props: {
-    player
-  },
-  children: `D'oh!`
+    player,
+    children: `D'oh!`
+  }
 };
 
 export default fixture;

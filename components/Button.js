@@ -4,7 +4,7 @@ import React from 'react';
 
 import type { Node } from 'react';
 
-type Props = {
+export type Props = {
   children: Node,
   bgColor?: string,
   color?: string,

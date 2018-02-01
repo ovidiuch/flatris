@@ -2,10 +2,15 @@
 
 import Button from '../../Button';
 
-export default {
+import type { Props } from '../../Button';
+
+const fixture: { props: Props } = {
   component: Button,
-  children: 'Press or be pressed',
   props: {
+    children: 'Press or be pressed',
     onClick: () => console.log('Yay! Button clicked-ed!')
   }
 };
+
+export default fixture;
+

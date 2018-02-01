@@ -2,11 +2,15 @@
 
 import Button from '../../Button';
 
-export default {
+import type { Props } from '../../Button';
+
+const fixture: { props: Props } = {
   component: Button,
-  children: 'No chance amigo',
   props: {
+    children: 'No chance amigo',
     disabled: true,
     onClick: () => console.log('Yay! Button clicked-ed!')
   }
 };
+
+export default fixture;

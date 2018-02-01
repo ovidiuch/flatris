@@ -18,15 +18,15 @@ export default {
   component: Quake,
   props: {
     player1,
-    player2
-  },
-  children: (
-    <div>
-      Jump around, jump up and get down<br />
-      Jump around, jump around<br />
-      Jump up and get down<br />
-      Jump up, jump up and get down<br />
-      Jump, jump
-    </div>
-  )
+    player2,
+    children: (
+      <div>
+        Jump around, jump up and get down<br />
+        Jump around, jump around<br />
+        Jump up and get down<br />
+        Jump up, jump up and get down<br />
+        Jump, jump
+      </div>
+    )
+  }
 };
