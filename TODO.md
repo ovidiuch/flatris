@@ -50,7 +50,7 @@
 * [x] Subscribe to game events on game page, once JS is loaded
 * [x] Continue game after hard refresh
 * [x] Add fixtures for all components
-* [ ] Create "Invite or play" screen
+* [x] Create "Invite or play" screen
 * [ ] Create "Join game" screen
 * [ ] Create "Join game" screen
 * [ ] Show both players' score in game panel
@@ -63,6 +63,7 @@
   * [ ] No controls on desktop
   * [ ] Side controls on landscape mobile
 * [ ] [BEAUTIFUL MVP]
+* [ ] Add sharing buttons to "Invite or play" screen
 * [ ] Create actionId, link actions to prev actions, ensuring consistency
 * [ ] Create action backfill if user has old state and new actions
 * [ ] Minimize network communication: Don't send noop actions

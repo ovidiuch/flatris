@@ -37,6 +37,7 @@ import Drop from './controls/Drop';
 import Flash from './effects/Flash';
 import Quake from './effects/Quake';
 import AuthForm from './AuthForm';
+import InviteOrPlaySolo from './screens/InviteOrPlaySolo';
 
 import type { User, Player, GameId, Game, State } from '../types/state';
 
@@ -120,6 +121,10 @@ class FlatrisGame extends Component<Props> {
     if (curUser) {
       joinGame(game.id, curUser);
     }
+  };
+
+  handleReady = () => {
+    this.props.playerReady();
   };
 
   handleKeyDown = e => {
@@ -307,21 +312,24 @@ class FlatrisGame extends Component<Props> {
     const player2 = getPlayer2(game, player1);
     const isCurPlayer = isPlayer(game, curUser);
 
-    if (isCurPlayer) {
+    if (allPlayersReady(game)) {
       return null;
     }
 
-    const noRoomLeft = Boolean(player2);
-    const authToJoin = !player2 && !curUser;
-    const readyToJoin = !player2 && curUser;
+    const inviteOrPlaySolo =
+      isCurPlayer && !player2 && player1.status === 'PENDING';
+    const authToJoin = !curUser && !player2;
+    const noRoomLeft = !isCurPlayer && Boolean(player2);
+    const readyToJoin = !isCurPlayer && !player2;
 
     return (
       <div className="screen-container">
-        {noRoomLeft && <div>Game is full</div>}
+        {inviteOrPlaySolo && <InviteOrPlaySolo onPlay={this.handleReady} />}
         {authToJoin && <AuthForm />}
         {readyToJoin && (
           <button onClick={this.handleJoin}>Press to join</button>
         )}
+        {noRoomLeft && <div>Game is full</div>}
         <style jsx>{`
           .screen-container {
             position: absolute;
