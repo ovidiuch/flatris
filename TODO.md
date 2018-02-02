@@ -58,6 +58,10 @@
 * [x] Create "Waiting for other" screen
 * [x] Create "Game over" screen
   * [x] Allow players to restart once game is over
+* [x] Different layouts per device type/orientation
+  * [x] No controls on desktop
+  * [ ] Side controls on landscape mobile
+* [ ] Drop Tetromino on SPACE key
 * [ ] Style "Auth" screen
 * [ ] Style GamePanel
   * [ ] Show both players' score in game panel
@@ -68,9 +72,6 @@
 * [ ] Add ability to PING other user to get ready
 * [ ] Keep dispatching left/right/rotate events at intervals when keys are pressed (instead of relying on repeated keypress events, which don't work on mobile anyway)
 * [ ] Use public assets
-* [ ] Different layouts per device type/orientation
-  * [ ] No controls on desktop
-  * [ ] Side controls on landscape mobile
 * [ ] [BEAUTIFUL MVP]
 * [ ] Add sharing buttons to "Invite or play" screen
 * [ ] Create actionId, link actions to prev actions, ensuring consistency

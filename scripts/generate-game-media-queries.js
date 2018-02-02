@@ -1,32 +1,95 @@
-const COLS = 16;
-const ROWS = 24;
+// @flow
+
+const GAME_COLS = 16;
+const GAME_ROWS = 20;
+const CONTROL_BLOCKS = 4;
 const MIN_BLOCK_SIZE = 5;
 const MAX_BLOCK_SIZE = 200;
 
-function getFontSizePerWidth(width) {
-  return Math.floor(width / 26);
+let query = ``;
+
+for (let i = MIN_BLOCK_SIZE; i <= MAX_BLOCK_SIZE; i++) {
+  const isFirst = i === MIN_BLOCK_SIZE;
+  const { width, height } = getPortraitSize(i);
+
+  // First portrait size will be default
+  query += isFirst
+    ? getPortraitRules({ width, height })
+    : getPortraitQuery({ width, height });
+  query += getLandscapeQuery({ width, height });
 }
 
-let queries = `
-.container {
-  width: ${COLS * MIN_BLOCK_SIZE}px;
-  height: ${ROWS * MIN_BLOCK_SIZE}px;
-  font-size: ${getFontSizePerWidth(COLS * MIN_BLOCK_SIZE)}px;
+console.log(query);
+
+function getPortraitQuery({ width, height }) {
+  const cond = getMediaQueryCond({ width, height });
+  const body = getPortraitRules({ width, height });
+
+  return getMediaQuery(cond, body);
 }
-`;
 
-for (var i = MIN_BLOCK_SIZE + 1; i <= MAX_BLOCK_SIZE; i++) {
-  const width = i * COLS;
-  const height = i * ROWS;
+function getLandscapeQuery({ height }) {
+  // Add one block size of padding at both top and bottomsides
+  const blockSize = Math.floor(height / (GAME_ROWS + 2));
+  const width = blockSize * GAME_COLS;
+  const widthWithControls = width + 2 * CONTROL_BLOCKS * blockSize;
+  const gameHeight = blockSize * GAME_ROWS;
 
-  queries += `
-@media (min-width: ${width}px) and (min-height: ${height}px) {
-  .container {
+  const cond = getMediaQueryCond({
+    width: widthWithControls,
+    height
+  });
+  const body = getLandscapeRules({ width, height: gameHeight });
+
+  return getMediaQuery(cond, body);
+}
+
+function getMediaQuery(cond, body) {
+  return `
+@media ${cond} {
+  ${body}
+}`;
+}
+
+function getPortraitRules({ width, height }) {
+  return `.container {
     width: ${width}px;
     height: ${height}px;
     font-size: ${getFontSizePerWidth(width)}px;
   }
-}`;
+  .controls {
+    display: block;
+  }
+  .game-height {
+    height: calc(100% / 24 * 20);
+  }`;
 }
 
-console.log(queries);
+function getLandscapeRules({ width, height }) {
+  return `.container {
+    width: ${width}px;
+    height: ${height}px;
+    font-size: ${getFontSizePerWidth(width)}px;
+  }
+  .controls {
+    display: none;
+  }
+  .game-height {
+    height: 100%;
+  }`;
+}
+
+function getMediaQueryCond({ width, height }) {
+  return `(min-width: ${width}px) and (min-height: ${height}px)`;
+}
+
+function getPortraitSize(i) {
+  return {
+    width: i * GAME_COLS,
+    height: i * (GAME_ROWS + CONTROL_BLOCKS)
+  };
+}
+
+function getFontSizePerWidth(width) {
+  return Math.floor(width / 26);
+}

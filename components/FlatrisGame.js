@@ -343,7 +343,7 @@ class FlatrisGame extends Component<Props> {
 
   renderScreen(content: Node) {
     return (
-      <div className="screen-container">
+      <div className="screen-container game-height">
         {content}
         <style jsx>{`
           .screen-container {
@@ -351,7 +351,6 @@ class FlatrisGame extends Component<Props> {
             top: 0;
             left: 0;
             right: calc(100% / 16 * 6);
-            height: calc(100% / 24 * 20);
             background: rgba(236, 240, 241, 0.85);
           }
         `}</style>
@@ -367,14 +366,14 @@ class FlatrisGame extends Component<Props> {
     return (
       <div className="flatris-game">
         <Quake player1={player1} player2={player2}>
-          <div className="well-container">
+          <div className="well-container game-height">
             {player2 && (
               <div className="enemy-well">{this.renderWell(player2)}</div>
             )}
             <Flash player={player1}>{this.renderWell(player1)}</Flash>
           </div>
           {this.renderScreens()}
-          <div className="game-panel-container">
+          <div className="side-container game-height">
             <GamePanel curUser={curUser} game={game} />
           </div>
           {this.renderControls()}
@@ -396,17 +395,12 @@ class FlatrisGame extends Component<Props> {
             background: #ecf0f1;
           }
 
-          .game-panel-container {
+          .side-container {
             position: absolute;
             top: 0;
             right: 0;
             left: calc(100% / 16 * 10);
             background: #fff;
-          }
-
-          .well-container,
-          .game-panel-container {
-            height: calc(100% / 24 * 20);
           }
 
           .enemy-well {

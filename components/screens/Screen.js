@@ -40,8 +40,8 @@ export default class Screen extends Component<Props> {
             top: calc(100% / 20);
             margin: 0;
             padding: 0;
-            font-size: 2.2em;
-            line-height: 2.1em;
+            font-size: 2em;
+            line-height: 2.2em;
             font-weight: 600;
             white-space: nowrap;
             opacity: 0.7;
