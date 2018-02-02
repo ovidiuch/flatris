@@ -2944,9 +2944,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):double-hallelujah 
                   >
                     <h1
                       className="jsx-2431903456"
-                    >
-                      Flatris
-                    </h1>
+                    />
                   </div>
                   <div
                     className="jsx-2431903456 label score-label"
@@ -4858,9 +4856,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):enemy-hallelujah 1
                   >
                     <h1
                       className="jsx-2431903456"
-                    >
-                      Flatris
-                    </h1>
+                    />
                   </div>
                   <div
                     className="jsx-2431903456 label score-label"
@@ -7152,9 +7148,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah 1`] = `
                   >
                     <h1
                       className="jsx-2431903456"
-                    >
-                      Flatris
-                    </h1>
+                    />
                   </div>
                   <div
                     className="jsx-2431903456 label score-label"
@@ -9922,9 +9916,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
                   >
                     <h1
                       className="jsx-2431903456"
-                    >
-                      Flatris
-                    </h1>
+                    />
                   </div>
                   <div
                     className="jsx-2431903456 label score-label"
@@ -10331,9 +10323,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
                   >
                     <h1
                       className="jsx-2431903456"
-                    >
-                      Flatris
-                    </h1>
+                    />
                   </div>
                   <div
                     className="jsx-2431903456 label score-label"
@@ -10695,9 +10685,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game-running 1
                   >
                     <h1
                       className="jsx-2431903456"
-                    >
-                      Flatris
-                    </h1>
+                    />
                   </div>
                   <div
                     className="jsx-2431903456 label score-label"
@@ -11171,9 +11159,7 @@ exports[`Cosmos fixtures: GamePanel:default 1`] = `
           >
             <h1
               className="jsx-2431903456"
-            >
-              Flatris
-            </h1>
+            />
           </div>
           <div
             className="jsx-2431903456 label score-label"

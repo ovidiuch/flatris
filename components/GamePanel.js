@@ -29,7 +29,7 @@ export default class GamePanel extends Component<Props> {
     return (
       <div className="game-panel">
         <div className="title">
-          <h1>Flatris</h1>
+          <h1 />
         </div>
         <div className="label score-label">Score</div>
         <div className="count score-count">{score}</div>
