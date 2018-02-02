@@ -3147,7 +3147,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):double-hallelujah 
                     className="jsx-2671015741 button"
                     disabled={false}
                     onMouseDown={[Function]}
-                    onMouseUp={[Function]}
                   >
                     <svg
                       className="jsx-1901912742"
@@ -5059,7 +5058,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):enemy-hallelujah 1
                     className="jsx-2671015741 button"
                     disabled={false}
                     onMouseDown={[Function]}
-                    onMouseUp={[Function]}
                   >
                     <svg
                       className="jsx-1901912742"
@@ -7342,7 +7340,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah 1`] = `
                     className="jsx-2671015741 button"
                     disabled={false}
                     onMouseDown={[Function]}
-                    onMouseUp={[Function]}
                   >
                     <svg
                       className="jsx-1901912742"
@@ -10110,7 +10107,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
                     className="jsx-2671015741 button"
                     disabled={true}
                     onMouseDown={[Function]}
-                    onMouseUp={[Function]}
                   >
                     <svg
                       className="jsx-1901912742"
@@ -10517,7 +10513,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
                     className="jsx-2671015741 button"
                     disabled={true}
                     onMouseDown={[Function]}
-                    onMouseUp={[Function]}
                   >
                     <svg
                       className="jsx-1901912742"
@@ -10879,7 +10874,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game-running 1
                     className="jsx-2671015741 button"
                     disabled={false}
                     onMouseDown={[Function]}
-                    onMouseUp={[Function]}
                   >
                     <svg
                       className="jsx-1901912742"
@@ -10906,7 +10900,6 @@ exports[`Cosmos fixtures: Drop:default 1`] = `
 <button
   className="jsx-2671015741 button"
   onMouseDown={[Function]}
-  onMouseUp={[Function]}
 >
   <svg
     className="jsx-1901912742"

@@ -208,18 +208,11 @@ class FlatrisGame extends Component<Props> {
     moveRight();
   };
 
-  handlePullPress = e => {
+  handleDropPress = e => {
     e.preventDefault();
 
     const { enableAcceleration } = this.props;
     enableAcceleration();
-  };
-
-  handlePullRelease = e => {
-    e.preventDefault();
-
-    const { disableAcceleration } = this.props;
-    disableAcceleration();
   };
 
   renderControlIcon(path) {
@@ -246,11 +239,7 @@ class FlatrisGame extends Component<Props> {
           <Right disabled={!isGameRunning} onPress={this.handleRightPress} />
         </div>
         <div className="button">
-          <Drop
-            disabled={!isGameRunning}
-            onPress={this.handlePullPress}
-            onRelease={this.handlePullRelease}
-          />
+          <Drop disabled={!isGameRunning} onPress={this.handleDropPress} />
         </div>
         <style jsx>{`
           .controls {
