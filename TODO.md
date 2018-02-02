@@ -61,7 +61,7 @@
 * [x] Different layouts per device type/orientation
   * [x] No controls on desktop
   * [ ] Side controls on landscape mobile
-* [ ] Drop Tetromino on SPACE key
+* [x] Drop Tetromino on SPACE key
 * [ ] Style "Auth" screen
 * [ ] Style GamePanel
   * [ ] Show both players' score in game panel

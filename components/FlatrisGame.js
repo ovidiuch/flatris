@@ -4,7 +4,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import _ from 'lodash';
-import { UP, DOWN, LEFT, RIGHT } from '../constants/keys';
+import { UP, DOWN, LEFT, RIGHT, SPACE } from '../constants/keys';
 import {
   isPlayer,
   getPlayer,
@@ -164,6 +164,7 @@ class FlatrisGame extends Component<Props> {
         cancelGameFrame();
         break;
       case DOWN:
+      case SPACE:
         enableAcceleration();
         break;
       case UP:
