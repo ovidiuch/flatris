@@ -5,6 +5,7 @@ import React from 'react';
 import type { Node } from 'react';
 
 export type Props = {
+  type?: 'button' | 'submit' | 'reset',
   children: Node,
   bgColor?: string,
   color?: string,
@@ -12,13 +13,14 @@ export type Props = {
 };
 
 export default ({
+  type = 'button',
   children,
   bgColor = '#34495f',
   color = '#fff',
   colorDisabled = 'rgba(255, 255, 255, 0.6)',
   ...rest
 }: Props) => (
-  <button className="button" {...rest}>
+  <button type={type} className="button" {...rest}>
     {children}
     <style jsx>{`
       .button {
@@ -39,11 +41,23 @@ export default ({
         outline: none;
         cursor: pointer;
         user-select: none;
+        transition: transform 0.2s;
+        transform: translate(0, 0);
+      }
+
+      .button:focus,
+      .button:hover {
+        transform: translate(0, -0.25em);
+      }
+
+      .button:active {
+        transform: translate(0, 0);
       }
 
       .button:disabled {
         cursor: default;
         color: ${colorDisabled};
+        transform: translate(0, 0);
       }
     `}</style>
   </button>

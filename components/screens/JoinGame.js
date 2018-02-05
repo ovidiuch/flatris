@@ -28,8 +28,9 @@ export default class JoinGame extends Component<Props> {
                 <strong>Room for one more!</strong>
               </p>
               <p>
-                You can watch, or you<br />can play. Up to you.
+                You can watch, or<br />you can play.
               </p>
+              <p>What do you fancy?</p>
             </Fragment>
           ) : (
             <Fragment>

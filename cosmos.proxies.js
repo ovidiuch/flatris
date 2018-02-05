@@ -1,6 +1,7 @@
 // @flow
 
 import { func } from 'prop-types';
+import classNames from 'classnames';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import createReduxProxy from 'react-cosmos-redux-proxy';
@@ -27,7 +28,7 @@ class ViewportContainer extends Component<ProxyProps> {
   render() {
     const {
       nextProxy: { value: NextProxy, next },
-      fixture: { container, opacity = 1 }
+      fixture: { container }
     } = this.props;
     const nextEl = <NextProxy {...this.props} nextProxy={next()} />;
 
@@ -35,16 +36,32 @@ class ViewportContainer extends Component<ProxyProps> {
       return nextEl;
     }
 
+    const {
+      width,
+      height,
+      fullHeight = false,
+      backgroundColor = '#fff',
+      opacity = 1
+    } = container;
+    const classes = classNames('inner-container', {
+      'game-height': fullHeight
+    });
+
+    // Dynamic style
+    const style = {};
+    if (!fullHeight) {
+      style.height = `calc(100% / 24 * ${height})`;
+    }
+
     return (
       <GameContainer>
-        <div className="inner-container">
+        <div className={classes} style={style}>
           <div style={{ opacity }}>{nextEl}</div>
           <style jsx>{`
             .inner-container {
               position: absolute;
-              background: #fff;
-              width: calc(100% / 16 * ${container.width});
-              height: calc(100% / 24 * ${container.height});
+              width: calc(100% / 16 * ${width});
+              background: ${backgroundColor};
             }
           `}</style>
         </div>

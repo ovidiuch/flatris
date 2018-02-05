@@ -35,8 +35,8 @@ import Right from './controls/Right';
 import Drop from './controls/Drop';
 import Flash from './effects/Flash';
 import Quake from './effects/Quake';
-import AuthForm from './AuthForm';
 import NewGame from './screens/NewGame';
+import Auth from './screens/Auth';
 import JoinGame from './screens/JoinGame';
 import GetReady from './screens/GetReady';
 import WaitingForOther from './screens/WaitingForOther';
@@ -293,7 +293,7 @@ class FlatrisGame extends Component<Props> {
     const player2 = getPlayer2(game, player1);
 
     if (!curUser) {
-      return this.renderScreen(<AuthForm />);
+      return this.renderScreen(<Auth />);
     }
 
     if (!hasJoined) {

@@ -45,7 +45,9 @@ export default class GameOver extends Component<Props> {
     if (player1.status === 'LOST') {
       return (
         <Fragment>
-          <p>Oh well...</p>
+          <p>
+            Oh well... better luck<br />next time!
+          </p>
           <p>
             <strong>Up for another?</strong>
           </p>
@@ -55,7 +57,7 @@ export default class GameOver extends Component<Props> {
 
     return (
       <Fragment>
-        <p>You kicked ass!</p>
+        <p>Noice! You kicked ass.</p>
         <p>
           <strong>Up for another?</strong>
         </p>

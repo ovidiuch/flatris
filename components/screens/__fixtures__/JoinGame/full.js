@@ -22,7 +22,8 @@ const fixture: { props: Props } = {
 
   container: {
     width: 10,
-    height: 20
+    fullHeight: true,
+    backgroundColor: 'rgba(236, 240, 241, 0.85)'
   }
 };
 

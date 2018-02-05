@@ -10,6 +10,10 @@ export type Props = {
 };
 
 export default class Screen extends Component<Props> {
+  static defaultProps = {
+    actions: []
+  };
+
   render() {
     const { title, message, actions } = this.props;
 
@@ -32,7 +36,6 @@ export default class Screen extends Component<Props> {
             left: calc(100% / 10);
             right: calc(100% / 10);
             color: #34495f;
-            font-size: 1.1em;
           }
 
           .title {
@@ -40,7 +43,7 @@ export default class Screen extends Component<Props> {
             top: calc(100% / 20);
             margin: 0;
             padding: 0;
-            font-size: 2em;
+            font-size: 2.2em;
             line-height: 2.2em;
             font-weight: 600;
             white-space: nowrap;
@@ -50,9 +53,12 @@ export default class Screen extends Component<Props> {
           .message {
             position: absolute;
             top: calc(100% / 20 * 5);
+            left: 0;
+            right: 0;
+            height: calc(100% / 20 * 11);
             margin: 0;
             padding: 0;
-            font-size: 1.2em;
+            font-size: 1.3em;
             line-height: 1.3em;
             white-space: nowrap;
           }
@@ -71,6 +77,7 @@ export default class Screen extends Component<Props> {
             left: 0;
             right: 0;
             height: calc(100% / 20 * 2);
+            font-size: 1.1em;
           }
 
           .actions .button {

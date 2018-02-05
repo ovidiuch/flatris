@@ -6,7 +6,7 @@
 * [x] Add user list to GamePanel
 * [x] Design new game state (with Flow types)
   * [x] Put `curUser` in Redux state
-  * [x] Derive paused state from `users(status=playing).len > 0`
+  * [x] Derive playing state from `users(status=playing).len`
 * [x] Add missing screens for multiplayer flows
 * [x] PIVOT: Turn collaborative Flatris (2-8 players) into competitive 1vs1 Flatris
   * [x] Redesign state and actions
@@ -63,6 +63,9 @@
   * [ ] Side controls on landscape mobile
 * [x] Drop Tetromino on SPACE key
 * [ ] Style "Auth" screen
+  * [x] When joining
+  * [ ] When creating
+  * [ ] Sanitize input
 * [ ] Style GamePanel
   * [ ] Show both players' score in game panel
   * [ ] Show player READY state
@@ -70,8 +73,13 @@
   * [ ] Animated next Tetromino transition
 * [ ] Allow users to just watch
 * [ ] Add ability to PING other user to get ready
-* [ ] Keep dispatching left/right/rotate events at intervals when keys are pressed (instead of relying on repeated keypress events, which don't work on mobile anyway)
+* [ ] Onboarding screen
+  * [ ] Left, right, up, down & space keys for desktop
+  * [ ] Point to keys at the bottom on mobile, and on sides on tablet
+  * [ ] Explain Flatris invention: line transferring
+* [ ] Throttle key down events
 * [ ] Use public assets
+  * [ ] Add meta tags from old index.html
 * [ ] [BEAUTIFUL MVP]
 * [ ] Add sharing buttons to "Invite or play" screen
 * [ ] Create actionId, link actions to prev actions, ensuring consistency
