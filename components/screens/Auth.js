@@ -8,17 +8,26 @@ import Button from '../Button';
 import Screen from './Screen';
 
 type Props = {
+  disabled?: boolean,
+  onAuth?: Function,
   auth: typeof auth
 };
 
 class Auth extends Component<Props> {
+  static defaultProps = {
+    disabled: false
+  };
+
   nameField: ?HTMLInputElement;
 
   handleInputRef = node => {
     this.nameField = node;
+    this.focusOnNameField();
+  };
 
-    if (node) {
-      node.focus();
+  focusOnNameField = () => {
+    if (this.nameField && !this.props.disabled) {
+      this.nameField.focus();
     }
   };
 
@@ -27,34 +36,47 @@ class Auth extends Component<Props> {
 
     const { nameField } = this;
     if (nameField && nameField.value) {
+      const { onAuth, auth } = this.props;
+
+      // Signal that auth started to parent
+      if (onAuth) {
+        onAuth();
+      }
+
+      // TODO: Sanitize
       const user = await createUserSession(nameField.value);
-      this.props.auth(user);
+      auth(user);
     }
   };
 
   render() {
+    const { disabled } = this.props;
+
     return (
       <form onSubmit={this.handleGo}>
         <Screen
           title="Just a sec..."
           message={
             <Fragment>
-              <p>Enter your name</p>
+              <p onClick={this.focusOnNameField}>Enter your name</p>
               <p>
                 <input
                   type="text"
+                  disabled={disabled}
                   ref={this.handleInputRef}
-                  placeholder="Barry Lyndon"
+                  placeholder="Monkey"
                 />
               </p>
               <p>
-                <em>
-                  Fake names<br />allowed ;-)
-                </em>
+                <small>Fake names allowed ;-)</small>
               </p>
             </Fragment>
           }
-          actions={[<Button type="submit">Enter</Button>]}
+          actions={[
+            <Button type="submit" disabled={disabled}>
+              Enter
+            </Button>
+          ]}
         />
         <style jsx>{`
           input {
@@ -75,6 +97,9 @@ class Auth extends Component<Props> {
           input::placeholder {
             color: #ccc;
             font-weight: 300;
+          }
+          input:disabled {
+            cursor: not-allowed;
           }
         `}</style>
       </form>

@@ -71,6 +71,11 @@ export default class Screen extends Component<Props> {
             color: #34495f;
           }
 
+          .message :global(small) {
+            font-size: 0.8em;
+            opacity: 0.8;
+          }
+
           .actions {
             position: absolute;
             top: calc(100% / 20 * 17);

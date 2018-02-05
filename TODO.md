@@ -64,7 +64,7 @@
 * [x] Drop Tetromino on SPACE key
 * [ ] Style "Auth" screen
   * [x] When joining
-  * [ ] When creating
+  * [x] When creating
   * [ ] Sanitize input
 * [ ] Style GamePanel
   * [ ] Show both players' score in game panel

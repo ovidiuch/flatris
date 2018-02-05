@@ -6,6 +6,7 @@ import { createStore } from '../store';
 import { SocketProvider } from '../utils/SocketProvider';
 import { addCurUserToState } from '../utils/api';
 import Layout from '../components/Layout';
+import GameContainer from '../components/GameContainer';
 import NewGame from '../components/NewGame';
 
 type Props = {};
@@ -21,7 +22,9 @@ class CreatePage extends Component<Props> {
     return (
       <Layout>
         <SocketProvider>
-          <NewGame />
+          <GameContainer>
+            <NewGame />
+          </GameContainer>
         </SocketProvider>
       </Layout>
     );

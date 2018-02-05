@@ -4,7 +4,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Router from 'next/router';
 import { createGame } from '../utils/api';
-import AuthForm from './AuthForm';
+import GamePanel from './GamePanel';
+import Auth from './screens/Auth';
 
 import type { Node } from 'react';
 import type { User, Game, State } from '../types/state';
@@ -14,8 +15,22 @@ type Props = {
   children: (curGame: Game) => Node
 };
 
-class NewGame extends Component<Props> {
-  isCreating = false;
+type LocalState = {
+  requireAuth: boolean,
+  pendingAuth: boolean,
+  pendingCreate: boolean
+};
+
+class NewGame extends Component<Props, LocalState> {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      requireAuth: !props.curUser,
+      pendingAuth: false,
+      pendingCreate: false
+    };
+  }
 
   componentDidMount() {
     this.createGameIfUser();
@@ -26,16 +41,62 @@ class NewGame extends Component<Props> {
   }
 
   createGameIfUser() {
-    if (this.props.curUser && !this.isCreating) {
+    if (this.props.curUser && !this.state.pendingCreate) {
       // The user will be picked up from the session on the server
-      createAndOpenGame();
-      this.isCreating = true;
+      this.setState(
+        { pendingAuth: false, pendingCreate: true },
+        createAndOpenGame
+      );
     }
   }
 
+  handleAuth = () => {
+    this.setState({
+      pendingAuth: true
+    });
+  };
+
   render() {
-    // The component will redirect after user auth
-    return !this.props.curUser && <AuthForm />;
+    const { requireAuth, pendingAuth, pendingCreate } = this.state;
+
+    return (
+      <div className="flatris-game">
+        <div className="screen-container game-height">
+          {requireAuth && (
+            <Auth
+              disabled={pendingAuth || pendingCreate}
+              onAuth={this.handleAuth}
+            />
+          )}
+        </div>
+        <div className="side-container game-height">
+          <GamePanel curUser={null} game={null} />
+        </div>
+        <style jsx>{`
+          .flatris-game {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0
+            right: 0;
+          }
+          .screen-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: calc(100% / 16 * 6);
+            background: rgba(236, 240, 241, 0.85);
+          }
+          .side-container {
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: calc(100% / 16 * 10);
+            background: #fff;
+          }
+        `}</style>
+      </div>
+    );
   }
 }
 

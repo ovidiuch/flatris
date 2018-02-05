@@ -62,56 +62,138 @@ exports[`Cosmos fixtures: Connect(Auth):default 1`] = `
         }
       >
         <form
-          className="jsx-2689793794"
+          className="jsx-2704288946"
           onSubmit={[Function]}
         >
           <div
-            className="jsx-4179025735 screen"
+            className="jsx-2725138947 screen"
           >
             <h2
-              className="jsx-4179025735 title"
+              className="jsx-2725138947 title"
             >
               Just a sec...
             </h2>
             <div
-              className="jsx-4179025735 message"
+              className="jsx-2725138947 message"
             >
               <p
-                className="jsx-2689793794"
+                className="jsx-2704288946"
+                onClick={[Function]}
               >
                 Enter your name
               </p>
               <p
-                className="jsx-2689793794"
+                className="jsx-2704288946"
               >
                 <input
-                  className="jsx-2689793794"
-                  placeholder="Barry Lyndon"
+                  className="jsx-2704288946"
+                  disabled={false}
+                  placeholder="Monkey"
                   type="text"
                 />
               </p>
               <p
-                className="jsx-2689793794"
+                className="jsx-2704288946"
               >
-                <em
-                  className="jsx-2689793794"
+                <small
+                  className="jsx-2704288946"
                 >
-                  Fake names
-                  <br
-                    className="jsx-2689793794"
-                  />
-                  allowed ;-)
-                </em>
+                  Fake names allowed ;-)
+                </small>
               </p>
             </div>
             <div
-              className="jsx-4179025735 actions"
+              className="jsx-2725138947 actions"
             >
               <div
-                className="jsx-4179025735 button"
+                className="jsx-2725138947 button"
               >
                 <button
                   className="jsx-3005955449 button"
+                  disabled={false}
+                  type="submit"
+                >
+                  Enter
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Cosmos fixtures: Connect(Auth):disabled 1`] = `
+<div
+  className="jsx-539289291 outer"
+>
+  <div
+    className="jsx-539289291 container"
+  >
+    <div
+      className="jsx-3597755056 inner-container game-height"
+      style={Object {}}
+    >
+      <div
+        className="jsx-3597755056"
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+      >
+        <form
+          className="jsx-2704288946"
+          onSubmit={[Function]}
+        >
+          <div
+            className="jsx-2725138947 screen"
+          >
+            <h2
+              className="jsx-2725138947 title"
+            >
+              Just a sec...
+            </h2>
+            <div
+              className="jsx-2725138947 message"
+            >
+              <p
+                className="jsx-2704288946"
+                onClick={[Function]}
+              >
+                Enter your name
+              </p>
+              <p
+                className="jsx-2704288946"
+              >
+                <input
+                  className="jsx-2704288946"
+                  disabled={true}
+                  placeholder="Monkey"
+                  type="text"
+                />
+              </p>
+              <p
+                className="jsx-2704288946"
+              >
+                <small
+                  className="jsx-2704288946"
+                >
+                  Fake names allowed ;-)
+                </small>
+              </p>
+            </div>
+            <div
+              className="jsx-2725138947 actions"
+            >
+              <div
+                className="jsx-2725138947 button"
+              >
+                <button
+                  className="jsx-3005955449 button"
+                  disabled={true}
                   type="submit"
                 >
                   Enter
@@ -9981,15 +10063,15 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
                 className="jsx-138775075 screen-container game-height"
               >
                 <div
-                  className="jsx-4179025735 screen"
+                  className="jsx-2725138947 screen"
                 >
                   <h2
-                    className="jsx-4179025735 title"
+                    className="jsx-2725138947 title"
                   >
                     New game...
                   </h2>
                   <div
-                    className="jsx-4179025735 message"
+                    className="jsx-2725138947 message"
                   >
                     <p>
                       <strong>
@@ -10007,10 +10089,10 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
                     </p>
                   </div>
                   <div
-                    className="jsx-4179025735 actions"
+                    className="jsx-2725138947 actions"
                   >
                     <div
-                      className="jsx-4179025735 button"
+                      className="jsx-2725138947 button"
                     >
                       <button
                         className="jsx-3005955449 button"
@@ -10397,15 +10479,15 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
                 className="jsx-138775075 screen-container game-height"
               >
                 <div
-                  className="jsx-4179025735 screen"
+                  className="jsx-2725138947 screen"
                 >
                   <h2
-                    className="jsx-4179025735 title"
+                    className="jsx-2725138947 title"
                   >
                     New game...
                   </h2>
                   <div
-                    className="jsx-4179025735 message"
+                    className="jsx-2725138947 message"
                   >
                     <p>
                       <strong>
@@ -10423,10 +10505,10 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
                     </p>
                   </div>
                   <div
-                    className="jsx-4179025735 actions"
+                    className="jsx-2725138947 actions"
                   >
                     <div
-                      className="jsx-4179025735 button"
+                      className="jsx-2725138947 button"
                     >
                       <button
                         className="jsx-3005955449 button"
@@ -11114,15 +11196,15 @@ exports[`Cosmos fixtures: GameOver:multi-loss 1`] = `
         }
       >
         <div
-          className="jsx-4179025735 screen"
+          className="jsx-2725138947 screen"
         >
           <h2
-            className="jsx-4179025735 title"
+            className="jsx-2725138947 title"
           >
             Game over
           </h2>
           <div
-            className="jsx-4179025735 message"
+            className="jsx-2725138947 message"
           >
             <p>
               Oh well... better luck
@@ -11136,10 +11218,10 @@ exports[`Cosmos fixtures: GameOver:multi-loss 1`] = `
             </p>
           </div>
           <div
-            className="jsx-4179025735 actions"
+            className="jsx-2725138947 actions"
           >
             <div
-              className="jsx-4179025735 button"
+              className="jsx-2725138947 button"
             >
               <button
                 className="jsx-3005955449 button"
@@ -11177,15 +11259,15 @@ exports[`Cosmos fixtures: GameOver:multi-win 1`] = `
         }
       >
         <div
-          className="jsx-4179025735 screen"
+          className="jsx-2725138947 screen"
         >
           <h2
-            className="jsx-4179025735 title"
+            className="jsx-2725138947 title"
           >
             Game over
           </h2>
           <div
-            className="jsx-4179025735 message"
+            className="jsx-2725138947 message"
           >
             <p>
               Noice! You kicked ass.
@@ -11197,10 +11279,10 @@ exports[`Cosmos fixtures: GameOver:multi-win 1`] = `
             </p>
           </div>
           <div
-            className="jsx-4179025735 actions"
+            className="jsx-2725138947 actions"
           >
             <div
-              className="jsx-4179025735 button"
+              className="jsx-2725138947 button"
             >
               <button
                 className="jsx-3005955449 button"
@@ -11238,15 +11320,15 @@ exports[`Cosmos fixtures: GameOver:solo 1`] = `
         }
       >
         <div
-          className="jsx-4179025735 screen"
+          className="jsx-2725138947 screen"
         >
           <h2
-            className="jsx-4179025735 title"
+            className="jsx-2725138947 title"
           >
             Game over
           </h2>
           <div
-            className="jsx-4179025735 message"
+            className="jsx-2725138947 message"
           >
             <p>
               Well, that was fun!
@@ -11258,10 +11340,10 @@ exports[`Cosmos fixtures: GameOver:solo 1`] = `
             </p>
           </div>
           <div
-            className="jsx-4179025735 actions"
+            className="jsx-2725138947 actions"
           >
             <div
-              className="jsx-4179025735 button"
+              className="jsx-2725138947 button"
             >
               <button
                 className="jsx-3005955449 button"
@@ -11462,15 +11544,15 @@ exports[`Cosmos fixtures: GetReady:default 1`] = `
         }
       >
         <div
-          className="jsx-4179025735 screen"
+          className="jsx-2725138947 screen"
         >
           <h2
-            className="jsx-4179025735 title"
+            className="jsx-2725138947 title"
           >
             Get ready...
           </h2>
           <div
-            className="jsx-4179025735 message"
+            className="jsx-2725138947 message"
           >
             <p>
               Game will start when
@@ -11484,10 +11566,10 @@ exports[`Cosmos fixtures: GetReady:default 1`] = `
             </p>
           </div>
           <div
-            className="jsx-4179025735 actions"
+            className="jsx-2725138947 actions"
           >
             <div
-              className="jsx-4179025735 button"
+              className="jsx-2725138947 button"
             >
               <button
                 className="jsx-3005955449 button"
@@ -11816,15 +11898,15 @@ exports[`Cosmos fixtures: JoinGame:available 1`] = `
         }
       >
         <div
-          className="jsx-4179025735 screen"
+          className="jsx-2725138947 screen"
         >
           <h2
-            className="jsx-4179025735 title"
+            className="jsx-2725138947 title"
           >
             Join game...
           </h2>
           <div
-            className="jsx-4179025735 message"
+            className="jsx-2725138947 message"
           >
             <p>
               <strong>
@@ -11841,10 +11923,10 @@ exports[`Cosmos fixtures: JoinGame:available 1`] = `
             </p>
           </div>
           <div
-            className="jsx-4179025735 actions"
+            className="jsx-2725138947 actions"
           >
             <div
-              className="jsx-4179025735 button"
+              className="jsx-2725138947 button"
             >
               <button
                 className="jsx-3005955449 button"
@@ -11856,7 +11938,7 @@ exports[`Cosmos fixtures: JoinGame:available 1`] = `
               </button>
             </div>
             <div
-              className="jsx-4179025735 button"
+              className="jsx-2725138947 button"
             >
               <button
                 className="jsx-2175202617 button"
@@ -11894,15 +11976,15 @@ exports[`Cosmos fixtures: JoinGame:full 1`] = `
         }
       >
         <div
-          className="jsx-4179025735 screen"
+          className="jsx-2725138947 screen"
         >
           <h2
-            className="jsx-4179025735 title"
+            className="jsx-2725138947 title"
           >
             Join game...
           </h2>
           <div
-            className="jsx-4179025735 message"
+            className="jsx-2725138947 message"
           >
             <p>
               <strong>
@@ -11922,10 +12004,10 @@ exports[`Cosmos fixtures: JoinGame:full 1`] = `
             </p>
           </div>
           <div
-            className="jsx-4179025735 actions"
+            className="jsx-2725138947 actions"
           >
             <div
-              className="jsx-4179025735 button"
+              className="jsx-2725138947 button"
             >
               <button
                 className="jsx-3005955449 button"
@@ -11937,7 +12019,7 @@ exports[`Cosmos fixtures: JoinGame:full 1`] = `
               </button>
             </div>
             <div
-              className="jsx-4179025735 button"
+              className="jsx-2725138947 button"
             >
               <button
                 className="jsx-2175202617 button"
@@ -12076,15 +12158,15 @@ exports[`Cosmos fixtures: NewGame:default 1`] = `
         }
       >
         <div
-          className="jsx-4179025735 screen"
+          className="jsx-2725138947 screen"
         >
           <h2
-            className="jsx-4179025735 title"
+            className="jsx-2725138947 title"
           >
             New game...
           </h2>
           <div
-            className="jsx-4179025735 message"
+            className="jsx-2725138947 message"
           >
             <p>
               <strong>
@@ -12102,10 +12184,10 @@ exports[`Cosmos fixtures: NewGame:default 1`] = `
             </p>
           </div>
           <div
-            className="jsx-4179025735 actions"
+            className="jsx-2725138947 actions"
           >
             <div
-              className="jsx-4179025735 button"
+              className="jsx-2725138947 button"
             >
               <button
                 className="jsx-3005955449 button"
@@ -13200,15 +13282,15 @@ exports[`Cosmos fixtures: WaitingForOther:default 1`] = `
         }
       >
         <div
-          className="jsx-4179025735 screen"
+          className="jsx-2725138947 screen"
         >
           <h2
-            className="jsx-4179025735 title"
+            className="jsx-2725138947 title"
           >
             Waiting...
           </h2>
           <div
-            className="jsx-4179025735 message"
+            className="jsx-2725138947 message"
           >
             <p>
               Your friend is a bit
@@ -13222,10 +13304,10 @@ exports[`Cosmos fixtures: WaitingForOther:default 1`] = `
             </p>
           </div>
           <div
-            className="jsx-4179025735 actions"
+            className="jsx-2725138947 actions"
           >
             <div
-              className="jsx-4179025735 button"
+              className="jsx-2725138947 button"
             >
               <button
                 className="jsx-3005955449 button"

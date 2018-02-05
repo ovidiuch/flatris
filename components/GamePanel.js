@@ -3,14 +3,14 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
 import { SHAPES, COLORS } from '../constants/tetromino';
+import { getBlankPlayer, getPlayer1 } from '../reducers/game';
 import Tetromino from './Tetromino';
-import { getPlayer1 } from '../reducers/game';
 
 import type { User, Game } from '../types/state';
 
 export type Props = {
   curUser: ?User,
-  game: Game
+  game: ?Game
 };
 
 export default class GamePanel extends Component<Props> {
@@ -23,7 +23,10 @@ export default class GamePanel extends Component<Props> {
    */
   render() {
     const { curUser, game } = this.props;
-    const player1 = getPlayer1(game, curUser);
+    // TODO: Remove player stats when game is null
+    const player1 = game
+      ? getPlayer1(game, curUser)
+      : getBlankPlayer('mock', { id: 'mock', name: 'Monkey' });
     const { score, lines, nextTetromino } = player1;
 
     return (
@@ -45,18 +48,19 @@ export default class GamePanel extends Component<Props> {
         </div>
         <div className="label users-label">Players</div>
         <div className="users">
-          {game.players.map(player => {
-            const { user } = player;
-            const classes = classNames('user', {
-              // 'user-ready': user.status === 'READY',
-            });
+          {game &&
+            game.players.map(player => {
+              const { user } = player;
+              const classes = classNames('user', {
+                // 'user-ready': user.status === 'READY',
+              });
 
-            return (
-              <div className={classes} key={user.id}>
-                <span>{user.name}</span>
-              </div>
-            );
-          })}
+              return (
+                <div className={classes} key={user.id}>
+                  <span>{user.name}</span>
+                </div>
+              );
+            })}
         </div>
 
         <style jsx>{`
@@ -170,12 +174,17 @@ export default class GamePanel extends Component<Props> {
   }
 
   getNextTetrominoClass() {
-    const { curUser, game } = this.props;
-    const player1 = getPlayer1(game, curUser);
-    const { nextTetromino } = player1;
-
     // We use this extra class to position tetrominoes differently from CSS
     // based on their type
-    return `next-tetromino next-tetromino-${nextTetromino}`;
+    return `next-tetromino next-tetromino-${this.getNextTetromino()}`;
+  }
+
+  getNextTetromino() {
+    const { curUser, game } = this.props;
+    if (!game) {
+      return 'L';
+    }
+
+    return getPlayer1(game, curUser).nextTetromino;
   }
 }

@@ -6,6 +6,7 @@ const fixture = {
   component: Auth,
 
   props: {
+    disabled: true,
     onAuth: () => console.log('Auth started...')
   },
   reduxState: {},
