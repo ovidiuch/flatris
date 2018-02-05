@@ -62,10 +62,10 @@
   * [x] No controls on desktop
   * [ ] Side controls on landscape mobile
 * [x] Drop Tetromino on SPACE key
-* [ ] Style "Auth" screen
+* [x] Style "Auth" screen
   * [x] When joining
   * [x] When creating
-  * [ ] Sanitize input
+  * [x] Restrict name length
 * [ ] Style GamePanel
   * [ ] Show both players' score in game panel
   * [ ] Show player READY state
@@ -77,6 +77,7 @@
   * [ ] Left, right, up, down & space keys for desktop
   * [ ] Point to keys at the bottom on mobile, and on sides on tablet
   * [ ] Explain Flatris invention: line transferring
+* [ ] Encourage players to play "first x out of y" on game over
 * [ ] Throttle key down events
 * [ ] Use public assets
   * [ ] Add meta tags from old index.html

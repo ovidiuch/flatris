@@ -88,6 +88,7 @@ exports[`Cosmos fixtures: Connect(Auth):default 1`] = `
                 <input
                   className="jsx-2704288946"
                   disabled={false}
+                  maxLength={14}
                   placeholder="Monkey"
                   type="text"
                 />
@@ -171,6 +172,7 @@ exports[`Cosmos fixtures: Connect(Auth):disabled 1`] = `
                 <input
                   className="jsx-2704288946"
                   disabled={true}
+                  maxLength={14}
                   placeholder="Monkey"
                   type="text"
                 />
@@ -11555,7 +11557,7 @@ exports[`Cosmos fixtures: GetReady:default 1`] = `
             className="jsx-2725138947 message"
           >
             <p>
-              Game will start when
+              Game starts when
               <br />
               you're both ready.
             </p>

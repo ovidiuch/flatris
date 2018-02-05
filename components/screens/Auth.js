@@ -3,6 +3,7 @@
 import React, { Fragment, Component } from 'react';
 import { connect } from 'react-redux';
 import { auth } from '../../actions';
+import { MAX_NAME_LENGTH } from '../../constants/user';
 import { createUserSession } from '../../utils/api';
 import Button from '../Button';
 import Screen from './Screen';
@@ -65,6 +66,7 @@ class Auth extends Component<Props> {
                   disabled={disabled}
                   ref={this.handleInputRef}
                   placeholder="Monkey"
+                  maxLength={MAX_NAME_LENGTH}
                 />
               </p>
               <p>

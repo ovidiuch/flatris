@@ -2,6 +2,7 @@
 
 import crypto from 'crypto';
 import { getBlankGame } from '../reducers/game';
+import { MAX_NAME_LENGTH } from '../constants/user';
 
 import type { GameId, Game, UserId, User } from '../types/state';
 
@@ -18,7 +19,7 @@ export const sessions: Sessions = {};
 
 export function insertUser(name: string): User {
   const userId = genRandUniqId(users);
-  const user = { id: userId, name };
+  const user = { id: userId, name: name.substring(0, MAX_NAME_LENGTH) };
   users[userId] = user;
 
   return user;
