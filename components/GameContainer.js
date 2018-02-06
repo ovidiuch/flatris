@@ -12,13 +12,15 @@ const GameContainer = ({ children }) => {
           width: 100vw;
           height: 100vh;
         }
-
         .container {
           position: absolute;
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
           font-size: 3px;
+        }
+        .game-height {
+          position: absolute;
         }
 
         .container {

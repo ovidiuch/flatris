@@ -83,10 +83,7 @@ async function doAfter(delay, fn) {
 export default {
   component: FlatrisGame,
 
-  container: {
-    width: 16,
-    height: 24
-  },
+  container: {},
 
   async init({ compRef }: { compRef: ElementRef<typeof Component> }) {
     const { dispatch } = compRef.context.store;

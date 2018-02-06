@@ -24,7 +24,7 @@ type ProxyProps = {
   onFixtureUpdate: Function
 };
 
-class ViewportContainer extends Component<ProxyProps> {
+class GameContainerProxy extends Component<ProxyProps> {
   render() {
     const {
       nextProxy: { value: NextProxy, next },
@@ -39,32 +39,45 @@ class ViewportContainer extends Component<ProxyProps> {
     const {
       width,
       height,
-      fullHeight = false,
+      gameHeight = false,
       backgroundColor = '#fff',
       opacity = 1
     } = container;
-    const classes = classNames('inner-container', {
-      'game-height': fullHeight
-    });
 
-    // Dynamic style
-    const style = {};
-    if (!fullHeight) {
-      style.height = `calc(100% / 24 * ${height})`;
+    let style = {
+      position: 'absolute',
+      opacity,
+      backgroundColor
+    };
+    if (width) {
+      style = { ...style, width: `calc(100% / 16 * ${width})` };
     }
+    if (height) {
+      // NOTE: This only works well for elements wrapped in .game-height
+      style = { ...style, height: `calc(100% / 20 * ${height})` };
+    }
+
+    const innerEl = (
+      <div className="inner-container" style={style}>
+        {nextEl}
+        <style jsx>{`
+          .inner-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+          }
+        `}</style>
+      </div>
+    );
 
     return (
       <GameContainer>
-        <div className={classes} style={style}>
-          <div style={{ opacity }}>{nextEl}</div>
-          <style jsx>{`
-            .inner-container {
-              position: absolute;
-              width: calc(100% / 16 * ${width});
-              background: ${backgroundColor};
-            }
-          `}</style>
-        </div>
+        {gameHeight ? <div className="game-height">{innerEl}</div> : innerEl}
+        <style jsx>{`
+          .game-height {
+            width: 100%;
+          }
+        `}</style>
       </GameContainer>
     );
   }
@@ -123,7 +136,7 @@ const SocketProviderProxy = (props: ProxyProps) => {
 };
 
 export default [
-  ViewportContainer,
+  GameContainerProxy,
   createReduxProxy({
     createStore
   }),

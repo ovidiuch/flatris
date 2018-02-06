@@ -14,7 +14,7 @@ const fixture: { props: Props } = {
 
   container: {
     width: 6,
-    height: 20
+    gameHeight: true
   },
 
   props: {
