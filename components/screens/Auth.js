@@ -14,12 +14,20 @@ type Props = {
   auth: typeof auth
 };
 
-class Auth extends Component<Props> {
+type LocalState = {
+  name: string
+};
+
+class Auth extends Component<Props, LocalState> {
   static defaultProps = {
     disabled: false
   };
 
   nameField: ?HTMLInputElement;
+
+  state = {
+    name: ''
+  };
 
   handleInputRef = node => {
     this.nameField = node;
@@ -32,11 +40,17 @@ class Auth extends Component<Props> {
     }
   };
 
+  handleNameChange = e => {
+    this.setState({
+      name: e.target.value
+    });
+  };
+
   handleGo = async e => {
     e.preventDefault();
 
-    const { nameField } = this;
-    if (nameField && nameField.value) {
+    const { name } = this.state;
+    if (name) {
       const { onAuth, auth } = this.props;
 
       // Signal that auth started to parent
@@ -44,14 +58,14 @@ class Auth extends Component<Props> {
         onAuth();
       }
 
-      // TODO: Sanitize
-      const user = await createUserSession(nameField.value);
+      const user = await createUserSession(name);
       auth(user);
     }
   };
 
   render() {
     const { disabled } = this.props;
+    const { name } = this.state;
 
     return (
       <form onSubmit={this.handleGo}>
@@ -63,6 +77,8 @@ class Auth extends Component<Props> {
               <p>
                 <input
                   type="text"
+                  value={name}
+                  onChange={this.handleNameChange}
                   disabled={disabled}
                   ref={this.handleInputRef}
                   placeholder="Monkey"
@@ -75,7 +91,7 @@ class Auth extends Component<Props> {
             </Fragment>
           }
           actions={[
-            <Button type="submit" disabled={disabled}>
+            <Button type="submit" disabled={disabled || !name}>
               Enter
             </Button>
           ]}

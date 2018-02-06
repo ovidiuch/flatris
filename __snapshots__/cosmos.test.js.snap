@@ -89,8 +89,10 @@ exports[`Cosmos fixtures: Connect(Auth):default 1`] = `
                   className="jsx-2704288946"
                   disabled={false}
                   maxLength={14}
+                  onChange={[Function]}
                   placeholder="Monkey"
                   type="text"
+                  value=""
                 />
               </p>
               <p
@@ -111,7 +113,7 @@ exports[`Cosmos fixtures: Connect(Auth):default 1`] = `
               >
                 <button
                   className="jsx-3005955449 button"
-                  disabled={false}
+                  disabled={true}
                   type="submit"
                 >
                   Enter
@@ -173,8 +175,10 @@ exports[`Cosmos fixtures: Connect(Auth):disabled 1`] = `
                   className="jsx-2704288946"
                   disabled={true}
                   maxLength={14}
+                  onChange={[Function]}
                   placeholder="Monkey"
                   type="text"
+                  value=""
                 />
               </p>
               <p
