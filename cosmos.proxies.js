@@ -1,7 +1,6 @@
 // @flow
 
 import { func } from 'prop-types';
-import classNames from 'classnames';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import createReduxProxy from 'react-cosmos-redux-proxy';

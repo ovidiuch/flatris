@@ -1,10 +1,10 @@
 {
   "name": "Flatris",
   "short_name": "Flatris",
-  "description": "A multiplayer game for millennials",
-  "start_url": "./?app=true",
+  "description": "A classic game with a multiplayer twist",
+  "start_url": "/?app=true",
   "display": "fullscreen",
-  "orientation": "portrait",
+  "orientation": "portrait-primary",
   "background_color": "#fff",
   "theme_color": "#34495f",
   "icons": [

@@ -1,6 +1,7 @@
 // @flow
 
 import next from 'next';
+import { join } from 'path';
 import { startServer } from './http';
 
 export async function startNextApp(
@@ -12,6 +13,11 @@ export async function startNextApp(
   const nextHandler = nextApp.getRequestHandler();
 
   await nextApp.prepare();
+
+  app.get('/favicon.ico', (req: express$Request, res: express$Response) => {
+    const path = join(__dirname, '../static/favicon.ico');
+    return nextApp.serveStatic(req, res, path);
+  });
 
   app.get('/join/:id', (req: express$Request, res: express$Response) => {
     const params = { g: req.params.id };

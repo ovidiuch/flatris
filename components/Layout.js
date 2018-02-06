@@ -43,10 +43,42 @@ export default class Layout extends Component<Props, State> {
       <div>
         <Head>
           <title>{title}</title>
-          <meta charSet="utf-8" />
+          <meta charset="utf-8" />
           <meta
             name="viewport"
-            content="initial-scale=1.0, width=device-width"
+            content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"
+          />
+          <meta name="apple-mobile-web-app-capable" content="yes" />
+          <meta name="theme-color" content="#34495f" />
+          <link rel="manifest" href="/static/manifest.webmanifest" />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/static/favicon-16x16.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/static/favicon-32x32.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="192x192"
+            href="/static/android-chrome-192x192.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="256x256"
+            href="/static/android-chrome-256x256.png"
+          />
+          <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/static/apple-touch-icon.png"
           />
         </Head>
         <style jsx global>{`

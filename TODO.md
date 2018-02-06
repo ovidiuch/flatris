@@ -60,12 +60,13 @@
   * [x] Allow players to restart once game is over
 * [x] Different layouts per device type/orientation
   * [x] No controls on desktop
-  * [ ] Side controls on landscape mobile
 * [x] Drop Tetromino on SPACE key
 * [x] Style "Auth" screen
   * [x] When joining
   * [x] When creating
   * [x] Restrict name length
+* [x] Reuse old public assets
+  * [x] Add meta tags from old index.html
 * [ ] Style GamePanel
   * [ ] Show both players' score in game panel
   * [ ] Show player READY state
@@ -73,14 +74,13 @@
   * [ ] Animated next Tetromino transition
 * [ ] Allow users to just watch
 * [ ] Add ability to PING other user to get ready
+* [ ] Side controls on landscape mobile
 * [ ] Onboarding screen
   * [ ] Left, right, up, down & space keys for desktop
   * [ ] Point to keys at the bottom on mobile, and on sides on tablet
   * [ ] Explain Flatris invention: line transferring
 * [ ] Encourage players to play "first x out of y" on game over
 * [ ] Throttle key down events
-* [ ] Use public assets
-  * [ ] Add meta tags from old index.html
 * [ ] [BEAUTIFUL MVP]
 * [ ] Add sharing buttons to "Invite or play" screen
 * [ ] Create actionId, link actions to prev actions, ensuring consistency
