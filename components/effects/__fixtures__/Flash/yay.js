@@ -1,5 +1,6 @@
 // @flow
 
+import { createFixture } from '../../../../utils/create-fixture';
 import { getSampleUser } from '../../../../utils/test-helpers';
 import { getBlankPlayer } from '../../../../reducers/game';
 import Flash from '../../../effects/Flash';
@@ -10,12 +11,10 @@ const player = {
   flashYay: 'a'
 };
 
-const fixture = {
+export default createFixture({
   component: Flash,
   props: {
     player,
     children: `D'oh!`
   }
-};
-
-export default fixture;
+});
