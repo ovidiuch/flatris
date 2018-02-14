@@ -68,10 +68,13 @@
 * [x] Reuse old public assets
   * [x] Add meta tags from old index.html
 * [ ] Style GamePanel
-  * [ ] Show both players' score in game panel
-  * [ ] Show player READY state
-  * [ ] New Flatris logo
-  * [ ] Animated next Tetromino transition
+  * [x] Show both players' score in game panel
+  * [x] Show player READY state
+  * [x] New Flatris logo
+  * [ ] Abbr. numbers over 1K
+  * [ ] Show lines instead of "wins" for single player
+  * [ ] Turn 1P / 2P panels into buttons
+* [ ] Add global score (how many games each player won)
 * [ ] Allow users to just watch
 * [ ] Add ability to PING other user to get ready
 * [ ] Side controls on landscape mobile

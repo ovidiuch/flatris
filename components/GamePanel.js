@@ -1,10 +1,10 @@
 // @flow
 
 import React, { Component } from 'react';
-import classNames from 'classnames';
 import { SHAPES, COLORS } from '../constants/tetromino';
-import { getBlankPlayer, getCurPlayer } from '../reducers/game';
+import { getCurPlayer, allPlayersReady } from '../reducers/game';
 import Tetromino from './Tetromino';
+import PlayerInfo from './PlayerInfo';
 
 import type { User, Game } from '../types/state';
 
@@ -22,47 +22,40 @@ export default class GamePanel extends Component<Props> {
    * - Footer with credits
    */
   render() {
-    const { curUser, game } = this.props;
-    // TODO: Remove player stats when game is null
-    const player1 = game
-      ? getCurPlayer(game, curUser)
-      : getBlankPlayer('mock', { id: 'mock', name: 'Monkey' });
-    const { score, lines, nextTetromino } = player1;
+    const { game } = this.props;
+    const player1 = game && game.players[0];
+    const player2 = game && game.players[1];
+    const nextTetromino = this.getNextTetromino();
+    const showP1ReadyState = showPlayerReadyState(game, true);
+    const showP2ReadyState = showPlayerReadyState(game, false);
 
     return (
       <div className="game-panel">
         <div className="title">
-          <h1 />
+          <h1>Flatris</h1>
         </div>
-        <div className="label score-label">Score</div>
-        <div className="count score-count">{score}</div>
-        <div className="label lines-label">Lines</div>
-        <div className="count lines-count">{lines}</div>
-        <div className="label next-label">Next</div>
-        <div className={this.getNextTetrominoClass()}>
+        <div className="next-label">Next</div>
+        <div className={getNextTetrominoClass(nextTetromino)}>
           <Tetromino
             key={nextTetromino}
             color={COLORS[nextTetromino]}
             grid={SHAPES[nextTetromino]}
           />
         </div>
-        <div className="label users-label">Players</div>
-        <div className="users">
-          {game &&
-            game.players.map(player => {
-              const { user } = player;
-              const classes = classNames('user', {
-                // 'user-ready': user.status === 'READY',
-              });
-
-              return (
-                <div className={classes} key={user.id}>
-                  <span>{user.name}</span>
-                </div>
-              );
-            })}
+        <div className="player1">
+          <PlayerInfo
+            player={player1}
+            isPlayer1
+            showReadyState={showP1ReadyState}
+          />
         </div>
-
+        <div className="player2">
+          <PlayerInfo
+            player={player2}
+            isPlayer1={false}
+            showReadyState={showP2ReadyState}
+          />
+        </div>
         <style jsx>{`
           .game-panel {
             position: absolute;
@@ -70,7 +63,6 @@ export default class GamePanel extends Component<Props> {
             bottom: 0;
             left: 0;
             right: 0;
-            color: #34495f;
           }
 
           .game-panel > div {
@@ -79,59 +71,37 @@ export default class GamePanel extends Component<Props> {
             width: calc(100% / 6 * 4);
           }
 
-          .label {
-            color: #9ba4ab;
-            font-size: 1em;
-            line-height: 1.8em;
-            font-weight: 300;
-            white-space: nowrap;
-          }
-
-          .count {
-            color: #3993d0;
-            font-size: 2em;
-            line-height: 0.8em;
-            font-weight: 400;
-            white-space: nowrap;
-          }
-
           .title {
-            top: calc(100% / 20 * 0.9);
+            top: calc(100% / 20);
           }
 
           .title h1 {
             margin: 0;
             padding: 0;
             color: #34495f;
+            font-size: 2.8em;
+            font-family: 'Teko', sans-serif;
             font-weight: 400;
-            font-size: 1.6em;
-            line-height: 1.1em;
+            line-height: 1.3em;
             text-transform: uppercase;
-            text-align: center;
-          }
-
-          .score-label {
-            top: calc(100% / 20 * 3.25);
-          }
-
-          .score-count {
-            top: calc(100% / 20 * 4.25);
-          }
-
-          .lines-label {
-            top: calc(100% / 20 * 5.5);
-          }
-
-          .lines-count {
-            top: calc(100% / 20 * 6.5);
+            letter-spacing: 0.02em;
           }
 
           .next-label {
-            top: calc(100% / 20 * 7.75);
+            top: calc(100% / 20 * 4);
+            margin-top: -0.25em;
+            color: #9ba4ab;
+            font-family: 'Teko', sans-serif;
+            font-weight: 300;
+            font-size: 1.8em;
+            line-height: 1em;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            opacity: 0.8;
           }
 
           .next-tetromino {
-            top: calc(100% / 20 * 8.75);
+            top: calc(100% / 20 * 5);
             height: calc(100% / 20 * 4);
           }
 
@@ -141,50 +111,56 @@ export default class GamePanel extends Component<Props> {
             transform: translate(0, -25%);
           }
 
-          .users-label {
-            top: calc(100% / 20 * 11);
-          }
-
-          .users {
-            top: calc(100% / 20 * 12);
+          .player1 {
+            position: absolute;
+            top: calc(100% / 20 * 8);
             height: calc(100% / 20 * 4);
-            overflow-x: hidden;
-            overflow-y: auto;
-            background-color: #ecf0f1;
           }
 
-          .user {
-            box-sizing: border-box;
-            height: calc(100% / 4);
-            padding: 0 0.5em;
-            font-size: 1em;
-            line-height: 1.75em;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            overflow: hidden;
-          }
-
-          .user-ready {
-            background: #3993d0;
-            color: #fff;
+          .player2 {
+            position: absolute;
+            top: calc(100% / 20 * 13);
+            height: calc(100% / 20 * 4);
           }
         `}</style>
       </div>
     );
   }
 
-  getNextTetrominoClass() {
-    // We use this extra class to position tetrominoes differently from CSS
-    // based on their type
-    return `next-tetromino next-tetromino-${this.getNextTetromino()}`;
-  }
-
-  getNextTetromino() {
+  getNextTetromino(): Tetromino {
     const { curUser, game } = this.props;
+
     if (!game) {
       return 'L';
     }
 
-    return getCurPlayer(game, curUser).nextTetromino;
+    const curPlayer = getCurPlayer(game, curUser);
+    const { nextTetromino } = curPlayer;
+
+    return nextTetromino;
   }
+}
+
+function getNextTetrominoClass(tetromino: Tetromino) {
+  // We use this extra class to position tetrominoes differently from CSS
+  // based on their type
+  return `next-tetromino next-tetromino-${tetromino}`;
+}
+
+function showPlayerReadyState(game: ?Game, isPlayer1: boolean): boolean {
+  if (!game || allPlayersReady(game)) {
+    return false;
+  }
+
+  const player1 = game.players[0];
+  if (isPlayer1 && player1.status === 'READY') {
+    return true;
+  }
+
+  const player2 = game.players[1];
+  if (!isPlayer1 && player2 && player2.status === 'READY') {
+    return true;
+  }
+
+  return false;
 }

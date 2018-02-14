@@ -43,7 +43,7 @@ export default class Layout extends Component<Props, State> {
       <div>
         <Head>
           <title>{title}</title>
-          <meta charset="utf-8" />
+          <meta charSet="utf-8" />
           <meta
             name="viewport"
             content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"
@@ -79,6 +79,10 @@ export default class Layout extends Component<Props, State> {
             rel="apple-touch-icon"
             sizes="180x180"
             href="/static/apple-touch-icon.png"
+          />
+          <link
+            href="https://fonts.googleapis.com/css?family=Teko:300,400"
+            rel="stylesheet"
           />
         </Head>
         <style jsx global>{`

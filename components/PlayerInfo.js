@@ -1,0 +1,190 @@
+// @flow
+
+import React, { Component } from 'react';
+
+import type { Player } from '../types/state';
+
+export type Props = {
+  player: ?Player,
+  isPlayer1: boolean,
+  showReadyState: boolean
+};
+
+export default class PlayerInfo extends Component<Props> {
+  renderMissingPlayer(isPlayer1: boolean) {
+    return (
+      <div className="player-info selectable">
+        <div className="centered">
+          <div className="player">{isPlayer1 ? '1p' : '2p'}</div>
+          <div className="insert-coin">insert coin</div>
+        </div>
+        <style jsx>{`
+          .player-info {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #ecf0f1;
+            color: #9ba4ab;
+            font-family: 'Teko', sans-serif;
+            font-weight: 300;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            white-space: nowrap;
+            text-align: center;
+            user-select: none;
+            cursor: default;
+          }
+
+          .selectable {
+            background: #ecf0f1
+              radial-gradient(rgba(255, 255, 255, 0.8) 0%, transparent 50%);
+            background-size: 400% 400%;
+            background-position: 100% 100%;
+            cursor: pointer;
+            animation: wave 5s linear infinite;
+          }
+
+          .centered {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+
+          .player {
+            font-size: 3.2em;
+            line-height: 0.9em;
+            font-weight: 400;
+          }
+
+          .insert-coin {
+            font-size: 1.6em;
+            line-height: 1em;
+          }
+
+          @keyframes wave {
+            0% {
+              background-position: 100% 100%;
+            }
+            20% {
+              background-position: 0% 0%;
+            }
+            100% {
+              background-position: 0% 0%;
+            }
+          }
+        `}</style>
+      </div>
+    );
+  }
+
+  render() {
+    const { player, isPlayer1, showReadyState } = this.props;
+
+    if (!player) {
+      return this.renderMissingPlayer(isPlayer1);
+    }
+
+    const { user, score } = player;
+
+    return (
+      <div className="player-info">
+        <div className="name">
+          <div className="vcentered">{user.name}</div>
+        </div>
+        <div className="score">
+          <div className="score-row">
+            <div className="label vcentered">Wins</div>
+            <div className="value vcentered">0</div>
+          </div>
+          <div className="score-row">
+            <div className="label vcentered">Score</div>
+            <div className="value vcentered">{score}</div>
+          </div>
+        </div>
+        {showReadyState && (
+          <div className="ready">
+            <span>Ready</span>
+          </div>
+        )}
+        <style jsx>{`
+          .player-info {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            color: #34495f;
+            font-family: 'Teko', sans-serif;
+            font-size: 1.8em;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+          }
+
+          .name {
+            position: relative;
+            height: calc(100% / 3);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-weight: 400;
+          }
+
+          .score {
+            position: absolute;
+            top: calc(100% / 3);
+            width: 100%;
+            height: calc(100% / 3 * 2);
+          }
+
+          .score-row {
+            position: relative;
+            width: 100%;
+            height: 50%;
+          }
+
+          .label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: #9ba4ab;
+            opacity: 0.8;
+          }
+
+          .value {
+            position: absolute;
+            top: 0;
+            right: 0;
+            color: #3993d0;
+          }
+
+          .ready {
+            position: absolute;
+            top: calc(100% / 3);
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(57, 147, 208, 0.85);
+            color: #fff;
+            font-size: 1.2em;
+            font-weight: 600;
+            text-transform: uppercase;
+            text-align: center;
+          }
+          .ready span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -35%);
+            text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+          }
+
+          .vcentered {
+            position: absolute;
+            top: 50%;
+            transform: translate(0, -40%);
+          }
+        `}</style>
+      </div>
+    );
+  }
+}

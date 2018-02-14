@@ -64,31 +64,31 @@ exports[`Cosmos fixtures: Connect(Auth):default 1`] = `
         }
       >
         <form
-          className="jsx-2704288946"
+          className="jsx-1749762593"
           onSubmit={[Function]}
         >
           <div
-            className="jsx-2725138947 screen"
+            className="jsx-2820880205 screen"
           >
             <h2
-              className="jsx-2725138947 title"
+              className="jsx-2820880205 title"
             >
               Just a sec...
             </h2>
             <div
-              className="jsx-2725138947 message"
+              className="jsx-2820880205 message"
             >
               <p
-                className="jsx-2704288946"
+                className="jsx-1749762593"
                 onClick={[Function]}
               >
                 Enter your name
               </p>
               <p
-                className="jsx-2704288946"
+                className="jsx-1749762593"
               >
                 <input
-                  className="jsx-2704288946"
+                  className="jsx-1749762593"
                   disabled={false}
                   maxLength={14}
                   onChange={[Function]}
@@ -98,20 +98,20 @@ exports[`Cosmos fixtures: Connect(Auth):default 1`] = `
                 />
               </p>
               <p
-                className="jsx-2704288946"
+                className="jsx-1749762593"
               >
                 <small
-                  className="jsx-2704288946"
+                  className="jsx-1749762593"
                 >
                   Fake names allowed ;-)
                 </small>
               </p>
             </div>
             <div
-              className="jsx-2725138947 actions"
+              className="jsx-2820880205 actions"
             >
               <div
-                className="jsx-2725138947 button"
+                className="jsx-2820880205 button"
               >
                 <button
                   className="jsx-3005955449 button"
@@ -152,31 +152,31 @@ exports[`Cosmos fixtures: Connect(Auth):disabled 1`] = `
         }
       >
         <form
-          className="jsx-2704288946"
+          className="jsx-1749762593"
           onSubmit={[Function]}
         >
           <div
-            className="jsx-2725138947 screen"
+            className="jsx-2820880205 screen"
           >
             <h2
-              className="jsx-2725138947 title"
+              className="jsx-2820880205 title"
             >
               Just a sec...
             </h2>
             <div
-              className="jsx-2725138947 message"
+              className="jsx-2820880205 message"
             >
               <p
-                className="jsx-2704288946"
+                className="jsx-1749762593"
                 onClick={[Function]}
               >
                 Enter your name
               </p>
               <p
-                className="jsx-2704288946"
+                className="jsx-1749762593"
               >
                 <input
-                  className="jsx-2704288946"
+                  className="jsx-1749762593"
                   disabled={true}
                   maxLength={14}
                   onChange={[Function]}
@@ -186,20 +186,20 @@ exports[`Cosmos fixtures: Connect(Auth):disabled 1`] = `
                 />
               </p>
               <p
-                className="jsx-2704288946"
+                className="jsx-1749762593"
               >
                 <small
-                  className="jsx-2704288946"
+                  className="jsx-1749762593"
                 >
                   Fake names allowed ;-)
                 </small>
               </p>
             </div>
             <div
-              className="jsx-2725138947 actions"
+              className="jsx-2820880205 actions"
             >
               <div
-                className="jsx-2725138947 button"
+                className="jsx-2820880205 button"
               >
                 <button
                   className="jsx-3005955449 button"
@@ -3116,42 +3116,24 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):double-hallelujah 
               className="jsx-548545702 side-container game-height"
             >
               <div
-                className="jsx-2431903456 game-panel"
+                className="jsx-215556098 game-panel"
               >
                 <div
-                  className="jsx-2431903456 title"
+                  className="jsx-215556098 title"
                 >
                   <h1
-                    className="jsx-2431903456"
-                  />
+                    className="jsx-215556098"
+                  >
+                    Flatris
+                  </h1>
                 </div>
                 <div
-                  className="jsx-2431903456 label score-label"
-                >
-                  Score
-                </div>
-                <div
-                  className="jsx-2431903456 count score-count"
-                >
-                  104
-                </div>
-                <div
-                  className="jsx-2431903456 label lines-label"
-                >
-                  Lines
-                </div>
-                <div
-                  className="jsx-2431903456 count lines-count"
-                >
-                  1
-                </div>
-                <div
-                  className="jsx-2431903456 label next-label"
+                  className="jsx-215556098 next-label"
                 >
                   Next
                 </div>
                 <div
-                  className="jsx-2431903456 next-tetromino next-tetromino-I"
+                  className="jsx-215556098 next-tetromino next-tetromino-I"
                 >
                   <div
                     className="jsx-2115617632 tetromino"
@@ -3231,30 +3213,101 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):double-hallelujah 
                   </div>
                 </div>
                 <div
-                  className="jsx-2431903456 label users-label"
+                  className="jsx-215556098 player1"
                 >
-                  Players
+                  <div
+                    className="jsx-1982851776 player-info"
+                  >
+                    <div
+                      className="jsx-1982851776 name"
+                    >
+                      <div
+                        className="jsx-1982851776 vcentered"
+                      >
+                        Tig
+                      </div>
+                    </div>
+                    <div
+                      className="jsx-1982851776 score"
+                    >
+                      <div
+                        className="jsx-1982851776 score-row"
+                      >
+                        <div
+                          className="jsx-1982851776 label vcentered"
+                        >
+                          Wins
+                        </div>
+                        <div
+                          className="jsx-1982851776 value vcentered"
+                        >
+                          0
+                        </div>
+                      </div>
+                      <div
+                        className="jsx-1982851776 score-row"
+                      >
+                        <div
+                          className="jsx-1982851776 label vcentered"
+                        >
+                          Score
+                        </div>
+                        <div
+                          className="jsx-1982851776 value vcentered"
+                        >
+                          104
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 <div
-                  className="jsx-2431903456 users"
+                  className="jsx-215556098 player2"
                 >
                   <div
-                    className="jsx-2431903456 user"
+                    className="jsx-1982851776 player-info"
                   >
-                    <span
-                      className="jsx-2431903456"
+                    <div
+                      className="jsx-1982851776 name"
                     >
-                      Tig
-                    </span>
-                  </div>
-                  <div
-                    className="jsx-2431903456 user"
-                  >
-                    <span
-                      className="jsx-2431903456"
+                      <div
+                        className="jsx-1982851776 vcentered"
+                      >
+                        Louie
+                      </div>
+                    </div>
+                    <div
+                      className="jsx-1982851776 score"
                     >
-                      Louie
-                    </span>
+                      <div
+                        className="jsx-1982851776 score-row"
+                      >
+                        <div
+                          className="jsx-1982851776 label vcentered"
+                        >
+                          Wins
+                        </div>
+                        <div
+                          className="jsx-1982851776 value vcentered"
+                        >
+                          0
+                        </div>
+                      </div>
+                      <div
+                        className="jsx-1982851776 score-row"
+                      >
+                        <div
+                          className="jsx-1982851776 label vcentered"
+                        >
+                          Score
+                        </div>
+                        <div
+                          className="jsx-1982851776 value vcentered"
+                        >
+                          988
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -5029,42 +5082,24 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):enemy-hallelujah 1
               className="jsx-548545702 side-container game-height"
             >
               <div
-                className="jsx-2431903456 game-panel"
+                className="jsx-215556098 game-panel"
               >
                 <div
-                  className="jsx-2431903456 title"
+                  className="jsx-215556098 title"
                 >
                   <h1
-                    className="jsx-2431903456"
-                  />
+                    className="jsx-215556098"
+                  >
+                    Flatris
+                  </h1>
                 </div>
                 <div
-                  className="jsx-2431903456 label score-label"
-                >
-                  Score
-                </div>
-                <div
-                  className="jsx-2431903456 count score-count"
-                >
-                  0
-                </div>
-                <div
-                  className="jsx-2431903456 label lines-label"
-                >
-                  Lines
-                </div>
-                <div
-                  className="jsx-2431903456 count lines-count"
-                >
-                  0
-                </div>
-                <div
-                  className="jsx-2431903456 label next-label"
+                  className="jsx-215556098 next-label"
                 >
                   Next
                 </div>
                 <div
-                  className="jsx-2431903456 next-tetromino next-tetromino-L"
+                  className="jsx-215556098 next-tetromino next-tetromino-L"
                 >
                   <div
                     className="jsx-2115617632 tetromino"
@@ -5144,30 +5179,101 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):enemy-hallelujah 1
                   </div>
                 </div>
                 <div
-                  className="jsx-2431903456 label users-label"
+                  className="jsx-215556098 player1"
                 >
-                  Players
+                  <div
+                    className="jsx-1982851776 player-info"
+                  >
+                    <div
+                      className="jsx-1982851776 name"
+                    >
+                      <div
+                        className="jsx-1982851776 vcentered"
+                      >
+                        Tig
+                      </div>
+                    </div>
+                    <div
+                      className="jsx-1982851776 score"
+                    >
+                      <div
+                        className="jsx-1982851776 score-row"
+                      >
+                        <div
+                          className="jsx-1982851776 label vcentered"
+                        >
+                          Wins
+                        </div>
+                        <div
+                          className="jsx-1982851776 value vcentered"
+                        >
+                          0
+                        </div>
+                      </div>
+                      <div
+                        className="jsx-1982851776 score-row"
+                      >
+                        <div
+                          className="jsx-1982851776 label vcentered"
+                        >
+                          Score
+                        </div>
+                        <div
+                          className="jsx-1982851776 value vcentered"
+                        >
+                          0
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 <div
-                  className="jsx-2431903456 users"
+                  className="jsx-215556098 player2"
                 >
                   <div
-                    className="jsx-2431903456 user"
+                    className="jsx-1982851776 player-info"
                   >
-                    <span
-                      className="jsx-2431903456"
+                    <div
+                      className="jsx-1982851776 name"
                     >
-                      Tig
-                    </span>
-                  </div>
-                  <div
-                    className="jsx-2431903456 user"
-                  >
-                    <span
-                      className="jsx-2431903456"
+                      <div
+                        className="jsx-1982851776 vcentered"
+                      >
+                        Louie
+                      </div>
+                    </div>
+                    <div
+                      className="jsx-1982851776 score"
                     >
-                      Louie
-                    </span>
+                      <div
+                        className="jsx-1982851776 score-row"
+                      >
+                        <div
+                          className="jsx-1982851776 label vcentered"
+                        >
+                          Wins
+                        </div>
+                        <div
+                          className="jsx-1982851776 value vcentered"
+                        >
+                          0
+                        </div>
+                      </div>
+                      <div
+                        className="jsx-1982851776 score-row"
+                      >
+                        <div
+                          className="jsx-1982851776 label vcentered"
+                        >
+                          Score
+                        </div>
+                        <div
+                          className="jsx-1982851776 value vcentered"
+                        >
+                          184
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -7322,42 +7428,24 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah 1`] = `
               className="jsx-548545702 side-container game-height"
             >
               <div
-                className="jsx-2431903456 game-panel"
+                className="jsx-215556098 game-panel"
               >
                 <div
-                  className="jsx-2431903456 title"
+                  className="jsx-215556098 title"
                 >
                   <h1
-                    className="jsx-2431903456"
-                  />
+                    className="jsx-215556098"
+                  >
+                    Flatris
+                  </h1>
                 </div>
                 <div
-                  className="jsx-2431903456 label score-label"
-                >
-                  Score
-                </div>
-                <div
-                  className="jsx-2431903456 count score-count"
-                >
-                  184
-                </div>
-                <div
-                  className="jsx-2431903456 label lines-label"
-                >
-                  Lines
-                </div>
-                <div
-                  className="jsx-2431903456 count lines-count"
-                >
-                  0
-                </div>
-                <div
-                  className="jsx-2431903456 label next-label"
+                  className="jsx-215556098 next-label"
                 >
                   Next
                 </div>
                 <div
-                  className="jsx-2431903456 next-tetromino next-tetromino-L"
+                  className="jsx-215556098 next-tetromino next-tetromino-L"
                 >
                   <div
                     className="jsx-2115617632 tetromino"
@@ -7437,21 +7525,74 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah 1`] = `
                   </div>
                 </div>
                 <div
-                  className="jsx-2431903456 label users-label"
-                >
-                  Players
-                </div>
-                <div
-                  className="jsx-2431903456 users"
+                  className="jsx-215556098 player1"
                 >
                   <div
-                    className="jsx-2431903456 user"
+                    className="jsx-1982851776 player-info"
                   >
-                    <span
-                      className="jsx-2431903456"
+                    <div
+                      className="jsx-1982851776 name"
                     >
-                      Tig
-                    </span>
+                      <div
+                        className="jsx-1982851776 vcentered"
+                      >
+                        Tig
+                      </div>
+                    </div>
+                    <div
+                      className="jsx-1982851776 score"
+                    >
+                      <div
+                        className="jsx-1982851776 score-row"
+                      >
+                        <div
+                          className="jsx-1982851776 label vcentered"
+                        >
+                          Wins
+                        </div>
+                        <div
+                          className="jsx-1982851776 value vcentered"
+                        >
+                          0
+                        </div>
+                      </div>
+                      <div
+                        className="jsx-1982851776 score-row"
+                      >
+                        <div
+                          className="jsx-1982851776 label vcentered"
+                        >
+                          Score
+                        </div>
+                        <div
+                          className="jsx-1982851776 value vcentered"
+                        >
+                          184
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="jsx-215556098 player2"
+                >
+                  <div
+                    className="jsx-1157014460 player-info selectable"
+                  >
+                    <div
+                      className="jsx-1157014460 centered"
+                    >
+                      <div
+                        className="jsx-1157014460 player"
+                      >
+                        2p
+                      </div>
+                      <div
+                        className="jsx-1157014460 insert-coin"
+                      >
+                        insert coin
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -10046,15 +10187,15 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
               className="jsx-138775075 screen-container game-height"
             >
               <div
-                className="jsx-2725138947 screen"
+                className="jsx-2820880205 screen"
               >
                 <h2
-                  className="jsx-2725138947 title"
+                  className="jsx-2820880205 title"
                 >
                   New game...
                 </h2>
                 <div
-                  className="jsx-2725138947 message"
+                  className="jsx-2820880205 message"
                 >
                   <p>
                     <strong>
@@ -10072,10 +10213,10 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
                   </p>
                 </div>
                 <div
-                  className="jsx-2725138947 actions"
+                  className="jsx-2820880205 actions"
                 >
                   <div
-                    className="jsx-2725138947 button"
+                    className="jsx-2820880205 button"
                   >
                     <button
                       className="jsx-3005955449 button"
@@ -10092,42 +10233,24 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
               className="jsx-548545702 side-container game-height"
             >
               <div
-                className="jsx-2431903456 game-panel"
+                className="jsx-215556098 game-panel"
               >
                 <div
-                  className="jsx-2431903456 title"
+                  className="jsx-215556098 title"
                 >
                   <h1
-                    className="jsx-2431903456"
-                  />
+                    className="jsx-215556098"
+                  >
+                    Flatris
+                  </h1>
                 </div>
                 <div
-                  className="jsx-2431903456 label score-label"
-                >
-                  Score
-                </div>
-                <div
-                  className="jsx-2431903456 count score-count"
-                >
-                  352
-                </div>
-                <div
-                  className="jsx-2431903456 label lines-label"
-                >
-                  Lines
-                </div>
-                <div
-                  className="jsx-2431903456 count lines-count"
-                >
-                  1
-                </div>
-                <div
-                  className="jsx-2431903456 label next-label"
+                  className="jsx-215556098 next-label"
                 >
                   Next
                 </div>
                 <div
-                  className="jsx-2431903456 next-tetromino next-tetromino-L"
+                  className="jsx-215556098 next-tetromino next-tetromino-L"
                 >
                   <div
                     className="jsx-2115617632 tetromino"
@@ -10207,21 +10330,74 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
                   </div>
                 </div>
                 <div
-                  className="jsx-2431903456 label users-label"
-                >
-                  Players
-                </div>
-                <div
-                  className="jsx-2431903456 users"
+                  className="jsx-215556098 player1"
                 >
                   <div
-                    className="jsx-2431903456 user"
+                    className="jsx-1982851776 player-info"
                   >
-                    <span
-                      className="jsx-2431903456"
+                    <div
+                      className="jsx-1982851776 name"
                     >
-                      Tig
-                    </span>
+                      <div
+                        className="jsx-1982851776 vcentered"
+                      >
+                        Tig
+                      </div>
+                    </div>
+                    <div
+                      className="jsx-1982851776 score"
+                    >
+                      <div
+                        className="jsx-1982851776 score-row"
+                      >
+                        <div
+                          className="jsx-1982851776 label vcentered"
+                        >
+                          Wins
+                        </div>
+                        <div
+                          className="jsx-1982851776 value vcentered"
+                        >
+                          0
+                        </div>
+                      </div>
+                      <div
+                        className="jsx-1982851776 score-row"
+                      >
+                        <div
+                          className="jsx-1982851776 label vcentered"
+                        >
+                          Score
+                        </div>
+                        <div
+                          className="jsx-1982851776 value vcentered"
+                        >
+                          352
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="jsx-215556098 player2"
+                >
+                  <div
+                    className="jsx-1157014460 player-info selectable"
+                  >
+                    <div
+                      className="jsx-1157014460 centered"
+                    >
+                      <div
+                        className="jsx-1157014460 player"
+                      >
+                        2p
+                      </div>
+                      <div
+                        className="jsx-1157014460 insert-coin"
+                      >
+                        insert coin
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -10455,15 +10631,15 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
               className="jsx-138775075 screen-container game-height"
             >
               <div
-                className="jsx-2725138947 screen"
+                className="jsx-2820880205 screen"
               >
                 <h2
-                  className="jsx-2725138947 title"
+                  className="jsx-2820880205 title"
                 >
                   New game...
                 </h2>
                 <div
-                  className="jsx-2725138947 message"
+                  className="jsx-2820880205 message"
                 >
                   <p>
                     <strong>
@@ -10481,10 +10657,10 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
                   </p>
                 </div>
                 <div
-                  className="jsx-2725138947 actions"
+                  className="jsx-2820880205 actions"
                 >
                   <div
-                    className="jsx-2725138947 button"
+                    className="jsx-2820880205 button"
                   >
                     <button
                       className="jsx-3005955449 button"
@@ -10501,42 +10677,24 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
               className="jsx-548545702 side-container game-height"
             >
               <div
-                className="jsx-2431903456 game-panel"
+                className="jsx-215556098 game-panel"
               >
                 <div
-                  className="jsx-2431903456 title"
+                  className="jsx-215556098 title"
                 >
                   <h1
-                    className="jsx-2431903456"
-                  />
+                    className="jsx-215556098"
+                  >
+                    Flatris
+                  </h1>
                 </div>
                 <div
-                  className="jsx-2431903456 label score-label"
-                >
-                  Score
-                </div>
-                <div
-                  className="jsx-2431903456 count score-count"
-                >
-                  0
-                </div>
-                <div
-                  className="jsx-2431903456 label lines-label"
-                >
-                  Lines
-                </div>
-                <div
-                  className="jsx-2431903456 count lines-count"
-                >
-                  0
-                </div>
-                <div
-                  className="jsx-2431903456 label next-label"
+                  className="jsx-215556098 next-label"
                 >
                   Next
                 </div>
                 <div
-                  className="jsx-2431903456 next-tetromino next-tetromino-L"
+                  className="jsx-215556098 next-tetromino next-tetromino-L"
                 >
                   <div
                     className="jsx-2115617632 tetromino"
@@ -10616,21 +10774,74 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
                   </div>
                 </div>
                 <div
-                  className="jsx-2431903456 label users-label"
-                >
-                  Players
-                </div>
-                <div
-                  className="jsx-2431903456 users"
+                  className="jsx-215556098 player1"
                 >
                   <div
-                    className="jsx-2431903456 user"
+                    className="jsx-1982851776 player-info"
                   >
-                    <span
-                      className="jsx-2431903456"
+                    <div
+                      className="jsx-1982851776 name"
                     >
-                      Tig
-                    </span>
+                      <div
+                        className="jsx-1982851776 vcentered"
+                      >
+                        Tig
+                      </div>
+                    </div>
+                    <div
+                      className="jsx-1982851776 score"
+                    >
+                      <div
+                        className="jsx-1982851776 score-row"
+                      >
+                        <div
+                          className="jsx-1982851776 label vcentered"
+                        >
+                          Wins
+                        </div>
+                        <div
+                          className="jsx-1982851776 value vcentered"
+                        >
+                          0
+                        </div>
+                      </div>
+                      <div
+                        className="jsx-1982851776 score-row"
+                      >
+                        <div
+                          className="jsx-1982851776 label vcentered"
+                        >
+                          Score
+                        </div>
+                        <div
+                          className="jsx-1982851776 value vcentered"
+                        >
+                          0
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="jsx-215556098 player2"
+                >
+                  <div
+                    className="jsx-1157014460 player-info selectable"
+                  >
+                    <div
+                      className="jsx-1157014460 centered"
+                    >
+                      <div
+                        className="jsx-1157014460 player"
+                      >
+                        2p
+                      </div>
+                      <div
+                        className="jsx-1157014460 insert-coin"
+                      >
+                        insert coin
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -10864,42 +11075,24 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game-running 1
               className="jsx-548545702 side-container game-height"
             >
               <div
-                className="jsx-2431903456 game-panel"
+                className="jsx-215556098 game-panel"
               >
                 <div
-                  className="jsx-2431903456 title"
+                  className="jsx-215556098 title"
                 >
                   <h1
-                    className="jsx-2431903456"
-                  />
+                    className="jsx-215556098"
+                  >
+                    Flatris
+                  </h1>
                 </div>
                 <div
-                  className="jsx-2431903456 label score-label"
-                >
-                  Score
-                </div>
-                <div
-                  className="jsx-2431903456 count score-count"
-                >
-                  0
-                </div>
-                <div
-                  className="jsx-2431903456 label lines-label"
-                >
-                  Lines
-                </div>
-                <div
-                  className="jsx-2431903456 count lines-count"
-                >
-                  0
-                </div>
-                <div
-                  className="jsx-2431903456 label next-label"
+                  className="jsx-215556098 next-label"
                 >
                   Next
                 </div>
                 <div
-                  className="jsx-2431903456 next-tetromino next-tetromino-L"
+                  className="jsx-215556098 next-tetromino next-tetromino-L"
                 >
                   <div
                     className="jsx-2115617632 tetromino"
@@ -10979,21 +11172,74 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game-running 1
                   </div>
                 </div>
                 <div
-                  className="jsx-2431903456 label users-label"
-                >
-                  Players
-                </div>
-                <div
-                  className="jsx-2431903456 users"
+                  className="jsx-215556098 player1"
                 >
                   <div
-                    className="jsx-2431903456 user"
+                    className="jsx-1982851776 player-info"
                   >
-                    <span
-                      className="jsx-2431903456"
+                    <div
+                      className="jsx-1982851776 name"
                     >
-                      Tig
-                    </span>
+                      <div
+                        className="jsx-1982851776 vcentered"
+                      >
+                        Tig
+                      </div>
+                    </div>
+                    <div
+                      className="jsx-1982851776 score"
+                    >
+                      <div
+                        className="jsx-1982851776 score-row"
+                      >
+                        <div
+                          className="jsx-1982851776 label vcentered"
+                        >
+                          Wins
+                        </div>
+                        <div
+                          className="jsx-1982851776 value vcentered"
+                        >
+                          0
+                        </div>
+                      </div>
+                      <div
+                        className="jsx-1982851776 score-row"
+                      >
+                        <div
+                          className="jsx-1982851776 label vcentered"
+                        >
+                          Score
+                        </div>
+                        <div
+                          className="jsx-1982851776 value vcentered"
+                        >
+                          0
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="jsx-215556098 player2"
+                >
+                  <div
+                    className="jsx-1157014460 player-info selectable"
+                  >
+                    <div
+                      className="jsx-1157014460 centered"
+                    >
+                      <div
+                        className="jsx-1157014460 player"
+                      >
+                        2p
+                      </div>
+                      <div
+                        className="jsx-1157014460 insert-coin"
+                      >
+                        insert coin
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -11166,15 +11412,15 @@ exports[`Cosmos fixtures: GameOver:multi-loss 1`] = `
         }
       >
         <div
-          className="jsx-2725138947 screen"
+          className="jsx-2820880205 screen"
         >
           <h2
-            className="jsx-2725138947 title"
+            className="jsx-2820880205 title"
           >
             Game over
           </h2>
           <div
-            className="jsx-2725138947 message"
+            className="jsx-2820880205 message"
           >
             <p>
               Oh well... better luck
@@ -11188,10 +11434,10 @@ exports[`Cosmos fixtures: GameOver:multi-loss 1`] = `
             </p>
           </div>
           <div
-            className="jsx-2725138947 actions"
+            className="jsx-2820880205 actions"
           >
             <div
-              className="jsx-2725138947 button"
+              className="jsx-2820880205 button"
             >
               <button
                 className="jsx-3005955449 button"
@@ -11231,15 +11477,15 @@ exports[`Cosmos fixtures: GameOver:multi-win 1`] = `
         }
       >
         <div
-          className="jsx-2725138947 screen"
+          className="jsx-2820880205 screen"
         >
           <h2
-            className="jsx-2725138947 title"
+            className="jsx-2820880205 title"
           >
             Game over
           </h2>
           <div
-            className="jsx-2725138947 message"
+            className="jsx-2820880205 message"
           >
             <p>
               Noice! You kicked ass.
@@ -11251,10 +11497,10 @@ exports[`Cosmos fixtures: GameOver:multi-win 1`] = `
             </p>
           </div>
           <div
-            className="jsx-2725138947 actions"
+            className="jsx-2820880205 actions"
           >
             <div
-              className="jsx-2725138947 button"
+              className="jsx-2820880205 button"
             >
               <button
                 className="jsx-3005955449 button"
@@ -11294,15 +11540,15 @@ exports[`Cosmos fixtures: GameOver:solo 1`] = `
         }
       >
         <div
-          className="jsx-2725138947 screen"
+          className="jsx-2820880205 screen"
         >
           <h2
-            className="jsx-2725138947 title"
+            className="jsx-2820880205 title"
           >
             Game over
           </h2>
           <div
-            className="jsx-2725138947 message"
+            className="jsx-2820880205 message"
           >
             <p>
               Well, that was fun!
@@ -11314,10 +11560,10 @@ exports[`Cosmos fixtures: GameOver:solo 1`] = `
             </p>
           </div>
           <div
-            className="jsx-2725138947 actions"
+            className="jsx-2820880205 actions"
           >
             <div
-              className="jsx-2725138947 button"
+              className="jsx-2820880205 button"
             >
               <button
                 className="jsx-3005955449 button"
@@ -11357,42 +11603,24 @@ exports[`Cosmos fixtures: GamePanel:default 1`] = `
         }
       >
         <div
-          className="jsx-2431903456 game-panel"
+          className="jsx-215556098 game-panel"
         >
           <div
-            className="jsx-2431903456 title"
+            className="jsx-215556098 title"
           >
             <h1
-              className="jsx-2431903456"
-            />
+              className="jsx-215556098"
+            >
+              Flatris
+            </h1>
           </div>
           <div
-            className="jsx-2431903456 label score-label"
-          >
-            Score
-          </div>
-          <div
-            className="jsx-2431903456 count score-count"
-          >
-            0
-          </div>
-          <div
-            className="jsx-2431903456 label lines-label"
-          >
-            Lines
-          </div>
-          <div
-            className="jsx-2431903456 count lines-count"
-          >
-            0
-          </div>
-          <div
-            className="jsx-2431903456 label next-label"
+            className="jsx-215556098 next-label"
           >
             Next
           </div>
           <div
-            className="jsx-2431903456 next-tetromino next-tetromino-L"
+            className="jsx-215556098 next-tetromino next-tetromino-L"
           >
             <div
               className="jsx-2115617632 tetromino"
@@ -11472,21 +11700,74 @@ exports[`Cosmos fixtures: GamePanel:default 1`] = `
             </div>
           </div>
           <div
-            className="jsx-2431903456 label users-label"
-          >
-            Players
-          </div>
-          <div
-            className="jsx-2431903456 users"
+            className="jsx-215556098 player1"
           >
             <div
-              className="jsx-2431903456 user"
+              className="jsx-1982851776 player-info"
             >
-              <span
-                className="jsx-2431903456"
+              <div
+                className="jsx-1982851776 name"
               >
-                Tig
-              </span>
+                <div
+                  className="jsx-1982851776 vcentered"
+                >
+                  Tig
+                </div>
+              </div>
+              <div
+                className="jsx-1982851776 score"
+              >
+                <div
+                  className="jsx-1982851776 score-row"
+                >
+                  <div
+                    className="jsx-1982851776 label vcentered"
+                  >
+                    Wins
+                  </div>
+                  <div
+                    className="jsx-1982851776 value vcentered"
+                  >
+                    0
+                  </div>
+                </div>
+                <div
+                  className="jsx-1982851776 score-row"
+                >
+                  <div
+                    className="jsx-1982851776 label vcentered"
+                  >
+                    Score
+                  </div>
+                  <div
+                    className="jsx-1982851776 value vcentered"
+                  >
+                    0
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="jsx-215556098 player2"
+          >
+            <div
+              className="jsx-1157014460 player-info selectable"
+            >
+              <div
+                className="jsx-1157014460 centered"
+              >
+                <div
+                  className="jsx-1157014460 player"
+                >
+                  2p
+                </div>
+                <div
+                  className="jsx-1157014460 insert-coin"
+                >
+                  insert coin
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -11518,15 +11799,15 @@ exports[`Cosmos fixtures: GetReady:default 1`] = `
         }
       >
         <div
-          className="jsx-2725138947 screen"
+          className="jsx-2820880205 screen"
         >
           <h2
-            className="jsx-2725138947 title"
+            className="jsx-2820880205 title"
           >
             Get ready...
           </h2>
           <div
-            className="jsx-2725138947 message"
+            className="jsx-2820880205 message"
           >
             <p>
               Game starts when
@@ -11540,10 +11821,10 @@ exports[`Cosmos fixtures: GetReady:default 1`] = `
             </p>
           </div>
           <div
-            className="jsx-2725138947 actions"
+            className="jsx-2820880205 actions"
           >
             <div
-              className="jsx-2725138947 button"
+              className="jsx-2820880205 button"
             >
               <button
                 className="jsx-3005955449 button"
@@ -11874,15 +12155,15 @@ exports[`Cosmos fixtures: JoinGame:available 1`] = `
         }
       >
         <div
-          className="jsx-2725138947 screen"
+          className="jsx-2820880205 screen"
         >
           <h2
-            className="jsx-2725138947 title"
+            className="jsx-2820880205 title"
           >
             Join game...
           </h2>
           <div
-            className="jsx-2725138947 message"
+            className="jsx-2820880205 message"
           >
             <p>
               <strong>
@@ -11899,10 +12180,10 @@ exports[`Cosmos fixtures: JoinGame:available 1`] = `
             </p>
           </div>
           <div
-            className="jsx-2725138947 actions"
+            className="jsx-2820880205 actions"
           >
             <div
-              className="jsx-2725138947 button"
+              className="jsx-2820880205 button"
             >
               <button
                 className="jsx-3005955449 button"
@@ -11914,7 +12195,7 @@ exports[`Cosmos fixtures: JoinGame:available 1`] = `
               </button>
             </div>
             <div
-              className="jsx-2725138947 button"
+              className="jsx-2820880205 button"
             >
               <button
                 className="jsx-2175202617 button"
@@ -11954,15 +12235,15 @@ exports[`Cosmos fixtures: JoinGame:full 1`] = `
         }
       >
         <div
-          className="jsx-2725138947 screen"
+          className="jsx-2820880205 screen"
         >
           <h2
-            className="jsx-2725138947 title"
+            className="jsx-2820880205 title"
           >
             Join game...
           </h2>
           <div
-            className="jsx-2725138947 message"
+            className="jsx-2820880205 message"
           >
             <p>
               <strong>
@@ -11982,10 +12263,10 @@ exports[`Cosmos fixtures: JoinGame:full 1`] = `
             </p>
           </div>
           <div
-            className="jsx-2725138947 actions"
+            className="jsx-2820880205 actions"
           >
             <div
-              className="jsx-2725138947 button"
+              className="jsx-2820880205 button"
             >
               <button
                 className="jsx-3005955449 button"
@@ -11997,7 +12278,7 @@ exports[`Cosmos fixtures: JoinGame:full 1`] = `
               </button>
             </div>
             <div
-              className="jsx-2725138947 button"
+              className="jsx-2820880205 button"
             >
               <button
                 className="jsx-2175202617 button"
@@ -12138,15 +12419,15 @@ exports[`Cosmos fixtures: NewGame:default 1`] = `
         }
       >
         <div
-          className="jsx-2725138947 screen"
+          className="jsx-2820880205 screen"
         >
           <h2
-            className="jsx-2725138947 title"
+            className="jsx-2820880205 title"
           >
             New game...
           </h2>
           <div
-            className="jsx-2725138947 message"
+            className="jsx-2820880205 message"
           >
             <p>
               <strong>
@@ -12164,10 +12445,10 @@ exports[`Cosmos fixtures: NewGame:default 1`] = `
             </p>
           </div>
           <div
-            className="jsx-2725138947 actions"
+            className="jsx-2820880205 actions"
           >
             <div
-              className="jsx-2725138947 button"
+              className="jsx-2820880205 button"
             >
               <button
                 className="jsx-3005955449 button"
@@ -12176,6 +12457,326 @@ exports[`Cosmos fixtures: NewGame:default 1`] = `
               >
                 Play
               </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Cosmos fixtures: PlayerInfo:player 1`] = `
+<div
+  className="jsx-3830632126 outer"
+>
+  <div
+    className="jsx-3830632126 container"
+  >
+    <div
+      className="jsx-1266082788 game-height"
+    >
+      <div
+        className="jsx-1294220987 inner-container"
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "height": "calc(100% / 20 * 4)",
+            "opacity": 1,
+            "position": "absolute",
+            "width": "calc(100% / 16 * 4)",
+          }
+        }
+      >
+        <div
+          className="jsx-1982851776 player-info"
+        >
+          <div
+            className="jsx-1982851776 name"
+          >
+            <div
+              className="jsx-1982851776 vcentered"
+            >
+              Treznik
+            </div>
+          </div>
+          <div
+            className="jsx-1982851776 score"
+          >
+            <div
+              className="jsx-1982851776 score-row"
+            >
+              <div
+                className="jsx-1982851776 label vcentered"
+              >
+                Wins
+              </div>
+              <div
+                className="jsx-1982851776 value vcentered"
+              >
+                0
+              </div>
+            </div>
+            <div
+              className="jsx-1982851776 score-row"
+            >
+              <div
+                className="jsx-1982851776 label vcentered"
+              >
+                Score
+              </div>
+              <div
+                className="jsx-1982851776 value vcentered"
+              >
+                0
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Cosmos fixtures: PlayerInfo:player-big-score 1`] = `
+<div
+  className="jsx-3830632126 outer"
+>
+  <div
+    className="jsx-3830632126 container"
+  >
+    <div
+      className="jsx-1266082788 game-height"
+    >
+      <div
+        className="jsx-1294220987 inner-container"
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "height": "calc(100% / 20 * 4)",
+            "opacity": 1,
+            "position": "absolute",
+            "width": "calc(100% / 16 * 4)",
+          }
+        }
+      >
+        <div
+          className="jsx-1982851776 player-info"
+        >
+          <div
+            className="jsx-1982851776 name"
+          >
+            <div
+              className="jsx-1982851776 vcentered"
+            >
+              Treznik
+            </div>
+          </div>
+          <div
+            className="jsx-1982851776 score"
+          >
+            <div
+              className="jsx-1982851776 score-row"
+            >
+              <div
+                className="jsx-1982851776 label vcentered"
+              >
+                Wins
+              </div>
+              <div
+                className="jsx-1982851776 value vcentered"
+              >
+                0
+              </div>
+            </div>
+            <div
+              className="jsx-1982851776 score-row"
+            >
+              <div
+                className="jsx-1982851776 label vcentered"
+              >
+                Score
+              </div>
+              <div
+                className="jsx-1982851776 value vcentered"
+              >
+                442387
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Cosmos fixtures: PlayerInfo:player-ready 1`] = `
+<div
+  className="jsx-3830632126 outer"
+>
+  <div
+    className="jsx-3830632126 container"
+  >
+    <div
+      className="jsx-1266082788 game-height"
+    >
+      <div
+        className="jsx-1294220987 inner-container"
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "height": "calc(100% / 20 * 4)",
+            "opacity": 1,
+            "position": "absolute",
+            "width": "calc(100% / 16 * 4)",
+          }
+        }
+      >
+        <div
+          className="jsx-1982851776 player-info"
+        >
+          <div
+            className="jsx-1982851776 name"
+          >
+            <div
+              className="jsx-1982851776 vcentered"
+            >
+              Treznik
+            </div>
+          </div>
+          <div
+            className="jsx-1982851776 score"
+          >
+            <div
+              className="jsx-1982851776 score-row"
+            >
+              <div
+                className="jsx-1982851776 label vcentered"
+              >
+                Wins
+              </div>
+              <div
+                className="jsx-1982851776 value vcentered"
+              >
+                0
+              </div>
+            </div>
+            <div
+              className="jsx-1982851776 score-row"
+            >
+              <div
+                className="jsx-1982851776 label vcentered"
+              >
+                Score
+              </div>
+              <div
+                className="jsx-1982851776 value vcentered"
+              >
+                1337
+              </div>
+            </div>
+          </div>
+          <div
+            className="jsx-1982851776 ready"
+          >
+            <span
+              className="jsx-1982851776"
+            >
+              Ready
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Cosmos fixtures: PlayerInfo:player1-missing 1`] = `
+<div
+  className="jsx-3830632126 outer"
+>
+  <div
+    className="jsx-3830632126 container"
+  >
+    <div
+      className="jsx-1266082788 game-height"
+    >
+      <div
+        className="jsx-1294220987 inner-container"
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "height": "calc(100% / 20 * 4)",
+            "opacity": 1,
+            "position": "absolute",
+            "width": "calc(100% / 16 * 4)",
+          }
+        }
+      >
+        <div
+          className="jsx-1157014460 player-info selectable"
+        >
+          <div
+            className="jsx-1157014460 centered"
+          >
+            <div
+              className="jsx-1157014460 player"
+            >
+              1p
+            </div>
+            <div
+              className="jsx-1157014460 insert-coin"
+            >
+              insert coin
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Cosmos fixtures: PlayerInfo:player2-missing 1`] = `
+<div
+  className="jsx-3830632126 outer"
+>
+  <div
+    className="jsx-3830632126 container"
+  >
+    <div
+      className="jsx-1266082788 game-height"
+    >
+      <div
+        className="jsx-1294220987 inner-container"
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "height": "calc(100% / 20 * 4)",
+            "opacity": 1,
+            "position": "absolute",
+            "width": "calc(100% / 16 * 4)",
+          }
+        }
+      >
+        <div
+          className="jsx-1157014460 player-info selectable"
+        >
+          <div
+            className="jsx-1157014460 centered"
+          >
+            <div
+              className="jsx-1157014460 player"
+            >
+              2p
+            </div>
+            <div
+              className="jsx-1157014460 insert-coin"
+            >
+              insert coin
             </div>
           </div>
         </div>
@@ -13264,15 +13865,15 @@ exports[`Cosmos fixtures: WaitingForOther:default 1`] = `
         }
       >
         <div
-          className="jsx-2725138947 screen"
+          className="jsx-2820880205 screen"
         >
           <h2
-            className="jsx-2725138947 title"
+            className="jsx-2820880205 title"
           >
             Waiting...
           </h2>
           <div
-            className="jsx-2725138947 message"
+            className="jsx-2820880205 message"
           >
             <p>
               Your friend is a bit
@@ -13286,10 +13887,10 @@ exports[`Cosmos fixtures: WaitingForOther:default 1`] = `
             </p>
           </div>
           <div
-            className="jsx-2725138947 actions"
+            className="jsx-2820880205 actions"
           >
             <div
-              className="jsx-2725138947 button"
+              className="jsx-2820880205 button"
             >
               <button
                 className="jsx-3005955449 button"

@@ -59,7 +59,7 @@ export default class Screen extends Component<Props> {
             margin: 0;
             padding: 0;
             font-size: 1.3em;
-            line-height: 1.3em;
+            line-height: 1.4em;
             white-space: nowrap;
           }
 

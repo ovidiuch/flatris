@@ -103,9 +103,10 @@ class Auth extends Component<Props, LocalState> {
             padding: 0.8em;
             border: 0;
             background: #fff;
+            color: #666;
             box-shadow: inset 0.25em 0.25em 0 0 rgba(0, 0, 0, 0.2);
             font-size: 1em;
-            color: #666;
+            text-transform: uppercase;
             outline: none;
           }
           input:focus {
