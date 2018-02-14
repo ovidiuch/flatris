@@ -64,9 +64,10 @@ export function gameReducer(state: void | Game, action: GameAction): Game {
 
         return {
           id,
-          players: players.map(player => ({
-            ...getBlankPlayer(id, player.user),
-            status: 'READY'
+          players: players.map(({ user, wins }) => ({
+            ...getBlankPlayer(id, user),
+            status: 'READY',
+            wins
           })),
           dropFrames: DROP_FRAMES_DEFAULT
         };
@@ -133,10 +134,17 @@ export function gameReducer(state: void | Game, action: GameAction): Game {
       if (newPosition.y < 0) {
         return {
           ...state,
-          players: state.players.map(player => ({
-            ...player,
-            status: player.user.id === userId ? 'LOST' : 'WON'
-          }))
+          players: state.players.map(player => {
+            const newAttrs =
+              player.user.id === userId
+                ? { status: 'LOST' }
+                : { status: 'WON', wins: player.wins + 1 };
+
+            return {
+              ...player,
+              ...newAttrs
+            };
+          })
         };
       }
 
@@ -322,6 +330,7 @@ export function getBlankPlayer(gameId: GameId, user: User): Player {
     drops: 0,
     score: 0,
     lines: 0,
+    wins: 0,
     grid: generateEmptyGrid(WELL_ROWS, WELL_COLS),
     blocksCleared: [],
     blocksPending: [],

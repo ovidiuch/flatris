@@ -93,7 +93,7 @@ export default class PlayerInfo extends Component<Props> {
       return this.renderMissingPlayer();
     }
 
-    const { user, score, lines } = player;
+    const { user, wins, score, lines } = player;
     const humanizedScore = humanizeNumber(score);
 
     return (
@@ -105,7 +105,7 @@ export default class PlayerInfo extends Component<Props> {
           {showWins && (
             <div className="score-row">
               <div className="label vcentered">Wins</div>
-              <div className="value vcentered">0</div>
+              <div className="value vcentered">{wins}</div>
             </div>
           )}
           <div className="score-row">

@@ -74,7 +74,7 @@
   * [x] Humanize numbers over 1K
   * [x] Show lines instead of "wins" for single player
   * [x] Make "2P insert coin" clickable
-* [ ] Add global score (how many games each player won)
+* [x] Add global score (how many games each player won)
 * [ ] Add ability to PING other user to get ready
 * [ ] Allow users to just watch
 * [ ] Side controls on landscape mobile

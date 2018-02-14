@@ -33,6 +33,7 @@ export type Player = {
   drops: number,
   score: number,
   lines: number,
+  wins: number,
   grid: WellGrid,
   blocksCleared: WellGrid,
   blocksPending: WellGrid,
