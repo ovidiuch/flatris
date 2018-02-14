@@ -4,9 +4,10 @@ import React, { Component } from 'react';
 
 import type { Player } from '../types/state';
 
-export type Props = {
+type Props = {
   player: ?Player,
   isPlayer1: boolean,
+  showWins: boolean,
   showReadyState: boolean
 };
 
@@ -79,13 +80,13 @@ export default class PlayerInfo extends Component<Props> {
   }
 
   render() {
-    const { player, isPlayer1, showReadyState } = this.props;
+    const { player, isPlayer1, showWins, showReadyState } = this.props;
 
     if (!player) {
       return this.renderMissingPlayer(isPlayer1);
     }
 
-    const { user, score } = player;
+    const { user, score, lines } = player;
     const humanizedScore = humanizeNumber(score);
 
     return (
@@ -94,14 +95,22 @@ export default class PlayerInfo extends Component<Props> {
           <div className="vcentered">{user.name}</div>
         </div>
         <div className="score">
-          <div className="score-row">
-            <div className="label vcentered">Wins</div>
-            <div className="value vcentered">0</div>
-          </div>
+          {showWins && (
+            <div className="score-row">
+              <div className="label vcentered">Wins</div>
+              <div className="value vcentered">0</div>
+            </div>
+          )}
           <div className="score-row">
             <div className="label vcentered">Score</div>
             <div className="value vcentered">{humanizedScore}</div>
           </div>
+          {!showWins && (
+            <div className="score-row">
+              <div className="label vcentered">Lines</div>
+              <div className="value vcentered">{lines}</div>
+            </div>
+          )}
         </div>
         {showReadyState && (
           <div className="ready">
@@ -116,6 +125,7 @@ export default class PlayerInfo extends Component<Props> {
             color: #34495f;
             font-family: 'Teko', sans-serif;
             font-size: 1.8em;
+            line-height: 1em;
             font-weight: 300;
             text-transform: uppercase;
             letter-spacing: 0.02em;

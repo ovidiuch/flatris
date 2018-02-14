@@ -1,7 +1,15 @@
 // @flow
 
 import { createFixture } from '../../../utils/create-fixture';
+import { getBlankPlayer } from '../../../reducers/game';
 import PlayerInfo from '../../PlayerInfo';
+
+const user = { id: 'mock', name: 'Treznik' };
+const player = {
+  ...getBlankPlayer('mock', user),
+  score: 442387,
+  lines: 226
+};
 
 export default createFixture({
   component: PlayerInfo,
@@ -13,10 +21,9 @@ export default createFixture({
   },
 
   props: {
-    player: null,
+    player,
     isPlayer1: true,
     showWins: false,
     showReadyState: false
   }
 });
-

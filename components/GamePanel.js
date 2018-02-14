@@ -25,6 +25,7 @@ export default class GamePanel extends Component<Props> {
     const { game } = this.props;
     const player1 = game && game.players[0];
     const player2 = game && game.players[1];
+    const isMultiGame = Boolean(player2);
     const nextTetromino = this.getNextTetromino();
     const showP1ReadyState = showPlayerReadyState(game, true);
     const showP2ReadyState = showPlayerReadyState(game, false);
@@ -46,6 +47,7 @@ export default class GamePanel extends Component<Props> {
           <PlayerInfo
             player={player1}
             isPlayer1
+            showWins={isMultiGame}
             showReadyState={showP1ReadyState}
           />
         </div>
@@ -53,6 +55,7 @@ export default class GamePanel extends Component<Props> {
           <PlayerInfo
             player={player2}
             isPlayer1={false}
+            showWins={isMultiGame}
             showReadyState={showP2ReadyState}
           />
         </div>

@@ -1,10 +1,9 @@
 // @flow
 
+import { createFixture } from '../../../utils/create-fixture';
 import PlayerInfo from '../../PlayerInfo';
 
-import type { Props } from '../../PlayerInfo';
-
-const fixture: { props: Props } = {
+export default createFixture({
   component: PlayerInfo,
 
   container: {
@@ -16,8 +15,7 @@ const fixture: { props: Props } = {
   props: {
     player: null,
     isPlayer1: false,
+    showWins: false,
     showReadyState: false
   }
-};
-
-export default fixture;
+});
