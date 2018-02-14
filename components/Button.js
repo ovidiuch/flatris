@@ -42,22 +42,22 @@ export default ({
         cursor: pointer;
         user-select: none;
         transition: transform 0.2s;
-        transform: translate(0, 0);
+        transform: translate3d(0, 0, 0);
       }
 
       .button:focus,
       .button:hover {
-        transform: translate(0, -0.25em);
+        transform: translate3d(0, -0.25em, 0);
       }
 
       .button:active {
-        transform: translate(0, 0);
+        transform: translate3d(0, 0, 0);
       }
 
       .button:disabled {
         cursor: default;
         color: ${colorDisabled};
-        transform: translate(0, 0);
+        transform: translate3d(0, 0, 0);
       }
     `}</style>
   </button>

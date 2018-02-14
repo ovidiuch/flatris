@@ -2,7 +2,7 @@
 
 exports[`Cosmos fixtures: Button:primary 1`] = `
 <button
-  className="jsx-3005955449 button"
+  className="jsx-790935581 button"
   onClick={[Function]}
   type="button"
 >
@@ -12,7 +12,7 @@ exports[`Cosmos fixtures: Button:primary 1`] = `
 
 exports[`Cosmos fixtures: Button:primary-disabled 1`] = `
 <button
-  className="jsx-3005955449 button"
+  className="jsx-790935581 button"
   disabled={true}
   onClick={[Function]}
   type="button"
@@ -23,7 +23,7 @@ exports[`Cosmos fixtures: Button:primary-disabled 1`] = `
 
 exports[`Cosmos fixtures: Button:secondary 1`] = `
 <button
-  className="jsx-2175202617 button"
+  className="jsx-4255150045 button"
   onClick={[Function]}
   type="button"
 >
@@ -33,7 +33,7 @@ exports[`Cosmos fixtures: Button:secondary 1`] = `
 
 exports[`Cosmos fixtures: Button:secondary-disabled 1`] = `
 <button
-  className="jsx-171911876 button"
+  className="jsx-2326356000 button"
   disabled={true}
   onClick={[Function]}
   type="button"
@@ -114,7 +114,7 @@ exports[`Cosmos fixtures: Connect(Auth):default 1`] = `
                 className="jsx-2820880205 button"
               >
                 <button
-                  className="jsx-3005955449 button"
+                  className="jsx-790935581 button"
                   disabled={true}
                   type="submit"
                 >
@@ -202,7 +202,7 @@ exports[`Cosmos fixtures: Connect(Auth):disabled 1`] = `
                 className="jsx-2820880205 button"
               >
                 <button
-                  className="jsx-3005955449 button"
+                  className="jsx-790935581 button"
                   disabled={true}
                   type="submit"
                 >
@@ -3319,7 +3319,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):double-hallelujah 
                 className="jsx-2263946291 button"
               >
                 <button
-                  className="jsx-2175202617 button"
+                  className="jsx-4255150045 button"
                   disabled={false}
                   onMouseDown={[Function]}
                   type="button"
@@ -3339,7 +3339,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):double-hallelujah 
                 className="jsx-2263946291 button"
               >
                 <button
-                  className="jsx-2175202617 button"
+                  className="jsx-4255150045 button"
                   disabled={false}
                   onMouseDown={[Function]}
                   type="button"
@@ -3359,7 +3359,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):double-hallelujah 
                 className="jsx-2263946291 button"
               >
                 <button
-                  className="jsx-2175202617 button"
+                  className="jsx-4255150045 button"
                   disabled={false}
                   onMouseDown={[Function]}
                   type="button"
@@ -3379,7 +3379,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):double-hallelujah 
                 className="jsx-2263946291 button"
               >
                 <button
-                  className="jsx-2175202617 button"
+                  className="jsx-4255150045 button"
                   disabled={false}
                   onMouseDown={[Function]}
                   type="button"
@@ -5285,7 +5285,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):enemy-hallelujah 1
                 className="jsx-2263946291 button"
               >
                 <button
-                  className="jsx-2175202617 button"
+                  className="jsx-4255150045 button"
                   disabled={false}
                   onMouseDown={[Function]}
                   type="button"
@@ -5305,7 +5305,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):enemy-hallelujah 1
                 className="jsx-2263946291 button"
               >
                 <button
-                  className="jsx-2175202617 button"
+                  className="jsx-4255150045 button"
                   disabled={false}
                   onMouseDown={[Function]}
                   type="button"
@@ -5325,7 +5325,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):enemy-hallelujah 1
                 className="jsx-2263946291 button"
               >
                 <button
-                  className="jsx-2175202617 button"
+                  className="jsx-4255150045 button"
                   disabled={false}
                   onMouseDown={[Function]}
                   type="button"
@@ -5345,7 +5345,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):enemy-hallelujah 1
                 className="jsx-2263946291 button"
               >
                 <button
-                  className="jsx-2175202617 button"
+                  className="jsx-4255150045 button"
                   disabled={false}
                   onMouseDown={[Function]}
                   type="button"
@@ -7605,7 +7605,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah 1`] = `
                 className="jsx-2263946291 button"
               >
                 <button
-                  className="jsx-2175202617 button"
+                  className="jsx-4255150045 button"
                   disabled={false}
                   onMouseDown={[Function]}
                   type="button"
@@ -7625,7 +7625,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah 1`] = `
                 className="jsx-2263946291 button"
               >
                 <button
-                  className="jsx-2175202617 button"
+                  className="jsx-4255150045 button"
                   disabled={false}
                   onMouseDown={[Function]}
                   type="button"
@@ -7645,7 +7645,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah 1`] = `
                 className="jsx-2263946291 button"
               >
                 <button
-                  className="jsx-2175202617 button"
+                  className="jsx-4255150045 button"
                   disabled={false}
                   onMouseDown={[Function]}
                   type="button"
@@ -7665,8 +7665,2385 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah 1`] = `
                 className="jsx-2263946291 button"
               >
                 <button
-                  className="jsx-2175202617 button"
+                  className="jsx-4255150045 button"
                   disabled={false}
+                  onMouseDown={[Function]}
+                  type="button"
+                >
+                  <svg
+                    className="jsx-1901912742"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      className="jsx-1901912742"
+                      d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah-guest 1`] = `
+<div
+  className="jsx-3830632126 outer"
+>
+  <div
+    className="jsx-3830632126 container"
+  >
+    <div
+      className="jsx-1294220987 inner-container"
+      style={
+        Object {
+          "backgroundColor": "#fff",
+          "opacity": 1,
+          "position": "absolute",
+        }
+      }
+    >
+      <div
+        className="jsx-548545702 flatris-game"
+      >
+        <div
+          className="jsx-2611135330 quake"
+        >
+          <div
+            className="jsx-2611135330 quake"
+          >
+            <div
+              className="jsx-548545702 well-container game-height"
+            >
+              <div
+                className="jsx-124931555 flash"
+              >
+                <div
+                  className="jsx-124931555 flash"
+                >
+                  <div
+                    className="jsx-2881654396 well"
+                  >
+                    <div
+                      className="jsx-2881654396 active-tetromino"
+                      style={
+                        Object {
+                          "height": "20%",
+                          "left": "70%",
+                          "top": "40%",
+                          "width": "40%",
+                        }
+                      }
+                    >
+                      <div
+                        className="jsx-2115617632 tetromino"
+                      >
+                        <div
+                          className="jsx-4287887962 grid-square-block"
+                          style={
+                            Object {
+                              "left": "50%",
+                              "top": "0%",
+                            }
+                          }
+                        >
+                          <div
+                            className="jsx-86954139 square-block"
+                            style={
+                              Object {
+                                "backgroundColor": "#3cc7d6",
+                              }
+                            }
+                          />
+                        </div>
+                        <div
+                          className="jsx-4287887962 grid-square-block"
+                          style={
+                            Object {
+                              "left": "50%",
+                              "top": "25%",
+                            }
+                          }
+                        >
+                          <div
+                            className="jsx-86954139 square-block"
+                            style={
+                              Object {
+                                "backgroundColor": "#3cc7d6",
+                              }
+                            }
+                          />
+                        </div>
+                        <div
+                          className="jsx-4287887962 grid-square-block"
+                          style={
+                            Object {
+                              "left": "50%",
+                              "top": "50%",
+                            }
+                          }
+                        >
+                          <div
+                            className="jsx-86954139 square-block"
+                            style={
+                              Object {
+                                "backgroundColor": "#3cc7d6",
+                              }
+                            }
+                          />
+                        </div>
+                        <div
+                          className="jsx-4287887962 grid-square-block"
+                          style={
+                            Object {
+                              "left": "50%",
+                              "top": "75%",
+                            }
+                          }
+                        >
+                          <div
+                            className="jsx-86954139 square-block"
+                            style={
+                              Object {
+                                "backgroundColor": "#3cc7d6",
+                              }
+                            }
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      className="jsx-1915500079 well-grid"
+                    >
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "70%",
+                            "top": "15%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#95c43d",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "70%",
+                            "top": "20%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#95c43d",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "80%",
+                            "top": "20%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#95c43d",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "70%",
+                            "top": "25%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#b04497",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "80%",
+                            "top": "25%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#95c43d",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "60%",
+                            "top": "30%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#e84138",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "70%",
+                            "top": "30%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#b04497",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "80%",
+                            "top": "30%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#b04497",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "50%",
+                            "top": "35%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#e84138",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "60%",
+                            "top": "35%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#e84138",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "70%",
+                            "top": "35%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#b04497",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "80%",
+                            "top": "35%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#e84138",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "50%",
+                            "top": "40%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#e84138",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "60%",
+                            "top": "40%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#e84138",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "70%",
+                            "top": "40%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#e84138",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "80%",
+                            "top": "40%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#e84138",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "50%",
+                            "top": "45%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#e84138",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "60%",
+                            "top": "45%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#e84138",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "70%",
+                            "top": "45%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#e84138",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "80%",
+                            "top": "45%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#b04497",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "50%",
+                            "top": "50%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#e84138",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "60%",
+                            "top": "50%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#e84138",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "70%",
+                            "top": "50%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#b04497",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "80%",
+                            "top": "50%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#b04497",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "50%",
+                            "top": "55%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#e84138",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "60%",
+                            "top": "55%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#e84138",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "70%",
+                            "top": "55%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#b04497",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "80%",
+                            "top": "55%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#b04497",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "10%",
+                            "top": "60%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#3993d0",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "20%",
+                            "top": "60%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#3993d0",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "30%",
+                            "top": "60%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#ed652f",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "50%",
+                            "top": "60%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#e84138",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "60%",
+                            "top": "60%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#b04497",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "70%",
+                            "top": "60%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#b04497",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "80%",
+                            "top": "60%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#b04497",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "10%",
+                            "top": "65%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#3993d0",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "20%",
+                            "top": "65%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#3cc7d6",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "30%",
+                            "top": "65%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#ed652f",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "50%",
+                            "top": "65%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#fbb414",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "60%",
+                            "top": "65%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#fbb414",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "70%",
+                            "top": "65%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#ed652f",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "80%",
+                            "top": "65%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#ed652f",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "0%",
+                            "top": "70%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#b04497",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "10%",
+                            "top": "70%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#3993d0",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "20%",
+                            "top": "70%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#3cc7d6",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "30%",
+                            "top": "70%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#ed652f",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "40%",
+                            "top": "70%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#ed652f",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "50%",
+                            "top": "70%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#fbb414",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "60%",
+                            "top": "70%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#fbb414",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "70%",
+                            "top": "70%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#e84138",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "80%",
+                            "top": "70%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#ed652f",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "0%",
+                            "top": "75%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#b04497",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "10%",
+                            "top": "75%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#b04497",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "20%",
+                            "top": "75%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#3cc7d6",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "30%",
+                            "top": "75%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#3993d0",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "40%",
+                            "top": "75%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#fbb414",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "50%",
+                            "top": "75%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#fbb414",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "60%",
+                            "top": "75%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#e84138",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "70%",
+                            "top": "75%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#e84138",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "80%",
+                            "top": "75%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#ed652f",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "0%",
+                            "top": "80%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#b04497",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "10%",
+                            "top": "80%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#e84138",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "20%",
+                            "top": "80%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#3cc7d6",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "30%",
+                            "top": "80%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#3993d0",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "40%",
+                            "top": "80%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#fbb414",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "50%",
+                            "top": "80%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#fbb414",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "60%",
+                            "top": "80%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#e84138",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "70%",
+                            "top": "80%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#ed652f",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "80%",
+                            "top": "80%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#3993d0",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "0%",
+                            "top": "85%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#e84138",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "10%",
+                            "top": "85%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#e84138",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "20%",
+                            "top": "85%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#3993d0",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "30%",
+                            "top": "85%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#3993d0",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "40%",
+                            "top": "85%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#95c43d",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "50%",
+                            "top": "85%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#ed652f",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "60%",
+                            "top": "85%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#ed652f",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "70%",
+                            "top": "85%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#ed652f",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "80%",
+                            "top": "85%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#3993d0",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "0%",
+                            "top": "90%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#e84138",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "10%",
+                            "top": "90%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#b04497",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "20%",
+                            "top": "90%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#e84138",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "30%",
+                            "top": "90%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#e84138",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "40%",
+                            "top": "90%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#95c43d",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "50%",
+                            "top": "90%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#95c43d",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "60%",
+                            "top": "90%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#3993d0",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "70%",
+                            "top": "90%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#3993d0",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "80%",
+                            "top": "90%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#3993d0",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "0%",
+                            "top": "95%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#b04497",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "10%",
+                            "top": "95%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#b04497",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "20%",
+                            "top": "95%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#b04497",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "30%",
+                            "top": "95%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#e84138",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "40%",
+                            "top": "95%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#e84138",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "50%",
+                            "top": "95%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#95c43d",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "60%",
+                            "top": "95%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#3993d0",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "70%",
+                            "top": "95%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#3993d0",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-845335831 grid-square-block"
+                        style={
+                          Object {
+                            "height": "5%",
+                            "left": "80%",
+                            "top": "95%",
+                            "width": "10%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#3993d0",
+                            }
+                          }
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="jsx-138775075 screen-container game-height"
+            >
+              <div
+                className="jsx-2820880205 screen"
+              >
+                <h2
+                  className="jsx-2820880205 title"
+                >
+                  Join game...
+                </h2>
+                <div
+                  className="jsx-2820880205 message"
+                >
+                  <p>
+                    <strong>
+                      Room for one more!
+                    </strong>
+                  </p>
+                  <p>
+                    You can watch, or
+                    <br />
+                    you can play.
+                  </p>
+                  <p>
+                    What do you fancy?
+                  </p>
+                </div>
+                <div
+                  className="jsx-2820880205 actions"
+                >
+                  <div
+                    className="jsx-2820880205 button"
+                  >
+                    <button
+                      className="jsx-790935581 button"
+                      disabled={false}
+                      onClick={[Function]}
+                      type="button"
+                    >
+                      Join
+                    </button>
+                  </div>
+                  <div
+                    className="jsx-2820880205 button"
+                  >
+                    <button
+                      className="jsx-4255150045 button"
+                      onClick={[Function]}
+                      type="button"
+                    >
+                      Watch
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="jsx-548545702 side-container game-height"
+            >
+              <div
+                className="jsx-215556098 game-panel"
+              >
+                <div
+                  className="jsx-215556098 title"
+                >
+                  <h1
+                    className="jsx-215556098"
+                  >
+                    Flatris
+                  </h1>
+                </div>
+                <div
+                  className="jsx-215556098 next-label"
+                >
+                  Next
+                </div>
+                <div
+                  className="jsx-215556098 next-tetromino next-tetromino-L"
+                >
+                  <div
+                    className="jsx-2115617632 tetromino"
+                  >
+                    <div
+                      className="jsx-4287887962 grid-square-block"
+                      style={
+                        Object {
+                          "left": "50%",
+                          "top": "0%",
+                        }
+                      }
+                    >
+                      <div
+                        className="jsx-86954139 square-block"
+                        style={
+                          Object {
+                            "backgroundColor": "#ed652f",
+                          }
+                        }
+                      />
+                    </div>
+                    <div
+                      className="jsx-4287887962 grid-square-block"
+                      style={
+                        Object {
+                          "left": "0%",
+                          "top": "25%",
+                        }
+                      }
+                    >
+                      <div
+                        className="jsx-86954139 square-block"
+                        style={
+                          Object {
+                            "backgroundColor": "#ed652f",
+                          }
+                        }
+                      />
+                    </div>
+                    <div
+                      className="jsx-4287887962 grid-square-block"
+                      style={
+                        Object {
+                          "left": "25%",
+                          "top": "25%",
+                        }
+                      }
+                    >
+                      <div
+                        className="jsx-86954139 square-block"
+                        style={
+                          Object {
+                            "backgroundColor": "#ed652f",
+                          }
+                        }
+                      />
+                    </div>
+                    <div
+                      className="jsx-4287887962 grid-square-block"
+                      style={
+                        Object {
+                          "left": "50%",
+                          "top": "25%",
+                        }
+                      }
+                    >
+                      <div
+                        className="jsx-86954139 square-block"
+                        style={
+                          Object {
+                            "backgroundColor": "#ed652f",
+                          }
+                        }
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="jsx-215556098 player1"
+                >
+                  <div
+                    className="jsx-1517809321 player-info"
+                  >
+                    <div
+                      className="jsx-1517809321 name"
+                    >
+                      <div
+                        className="jsx-1517809321 vcentered"
+                      >
+                        Tig
+                      </div>
+                    </div>
+                    <div
+                      className="jsx-1517809321 score"
+                    >
+                      <div
+                        className="jsx-1517809321 score-row"
+                      >
+                        <div
+                          className="jsx-1517809321 label vcentered"
+                        >
+                          Score
+                        </div>
+                        <div
+                          className="jsx-1517809321 value vcentered"
+                        >
+                          184
+                        </div>
+                      </div>
+                      <div
+                        className="jsx-1517809321 score-row"
+                      >
+                        <div
+                          className="jsx-1517809321 label vcentered"
+                        >
+                          Lines
+                        </div>
+                        <div
+                          className="jsx-1517809321 value vcentered"
+                        >
+                          0
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="jsx-215556098 player2"
+                >
+                  <div
+                    className="jsx-1157014460 player-info selectable"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="jsx-1157014460 centered"
+                    >
+                      <div
+                        className="jsx-1157014460 player"
+                      >
+                        2p
+                      </div>
+                      <div
+                        className="jsx-1157014460 insert-coin"
+                      >
+                        insert coin
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="jsx-2263946291 controls"
+            >
+              <div
+                className="jsx-2263946291 button"
+              >
+                <button
+                  className="jsx-4255150045 button"
+                  disabled={true}
+                  onMouseDown={[Function]}
+                  type="button"
+                >
+                  <svg
+                    className="jsx-3424417933"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      className="jsx-3424417933"
+                      d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div
+                className="jsx-2263946291 button"
+              >
+                <button
+                  className="jsx-4255150045 button"
+                  disabled={true}
+                  onMouseDown={[Function]}
+                  type="button"
+                >
+                  <svg
+                    className="jsx-1901912742"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      className="jsx-1901912742"
+                      d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div
+                className="jsx-2263946291 button"
+              >
+                <button
+                  className="jsx-4255150045 button"
+                  disabled={true}
+                  onMouseDown={[Function]}
+                  type="button"
+                >
+                  <svg
+                    className="jsx-1901912742"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      className="jsx-1901912742"
+                      d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div
+                className="jsx-2263946291 button"
+              >
+                <button
+                  className="jsx-4255150045 button"
+                  disabled={true}
                   onMouseDown={[Function]}
                   type="button"
                 >
@@ -10220,7 +12597,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
                     className="jsx-2820880205 button"
                   >
                     <button
-                      className="jsx-3005955449 button"
+                      className="jsx-790935581 button"
                       onClick={[Function]}
                       type="button"
                     >
@@ -10411,7 +12788,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
                 className="jsx-2263946291 button"
               >
                 <button
-                  className="jsx-2175202617 button"
+                  className="jsx-4255150045 button"
                   disabled={true}
                   onMouseDown={[Function]}
                   type="button"
@@ -10431,7 +12808,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
                 className="jsx-2263946291 button"
               >
                 <button
-                  className="jsx-2175202617 button"
+                  className="jsx-4255150045 button"
                   disabled={true}
                   onMouseDown={[Function]}
                   type="button"
@@ -10451,7 +12828,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
                 className="jsx-2263946291 button"
               >
                 <button
-                  className="jsx-2175202617 button"
+                  className="jsx-4255150045 button"
                   disabled={true}
                   onMouseDown={[Function]}
                   type="button"
@@ -10471,7 +12848,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
                 className="jsx-2263946291 button"
               >
                 <button
-                  className="jsx-2175202617 button"
+                  className="jsx-4255150045 button"
                   disabled={true}
                   onMouseDown={[Function]}
                   type="button"
@@ -10665,7 +13042,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
                     className="jsx-2820880205 button"
                   >
                     <button
-                      className="jsx-3005955449 button"
+                      className="jsx-790935581 button"
                       onClick={[Function]}
                       type="button"
                     >
@@ -10856,7 +13233,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
                 className="jsx-2263946291 button"
               >
                 <button
-                  className="jsx-2175202617 button"
+                  className="jsx-4255150045 button"
                   disabled={true}
                   onMouseDown={[Function]}
                   type="button"
@@ -10876,7 +13253,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
                 className="jsx-2263946291 button"
               >
                 <button
-                  className="jsx-2175202617 button"
+                  className="jsx-4255150045 button"
                   disabled={true}
                   onMouseDown={[Function]}
                   type="button"
@@ -10896,7 +13273,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
                 className="jsx-2263946291 button"
               >
                 <button
-                  className="jsx-2175202617 button"
+                  className="jsx-4255150045 button"
                   disabled={true}
                   onMouseDown={[Function]}
                   type="button"
@@ -10916,7 +13293,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
                 className="jsx-2263946291 button"
               >
                 <button
-                  className="jsx-2175202617 button"
+                  className="jsx-4255150045 button"
                   disabled={true}
                   onMouseDown={[Function]}
                   type="button"
@@ -11255,7 +13632,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game-running 1
                 className="jsx-2263946291 button"
               >
                 <button
-                  className="jsx-2175202617 button"
+                  className="jsx-4255150045 button"
                   disabled={false}
                   onMouseDown={[Function]}
                   type="button"
@@ -11275,7 +13652,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game-running 1
                 className="jsx-2263946291 button"
               >
                 <button
-                  className="jsx-2175202617 button"
+                  className="jsx-4255150045 button"
                   disabled={false}
                   onMouseDown={[Function]}
                   type="button"
@@ -11295,7 +13672,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game-running 1
                 className="jsx-2263946291 button"
               >
                 <button
-                  className="jsx-2175202617 button"
+                  className="jsx-4255150045 button"
                   disabled={false}
                   onMouseDown={[Function]}
                   type="button"
@@ -11315,7 +13692,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game-running 1
                 className="jsx-2263946291 button"
               >
                 <button
-                  className="jsx-2175202617 button"
+                  className="jsx-4255150045 button"
                   disabled={false}
                   onMouseDown={[Function]}
                   type="button"
@@ -11342,7 +13719,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game-running 1
 
 exports[`Cosmos fixtures: Drop:default 1`] = `
 <button
-  className="jsx-2175202617 button"
+  className="jsx-4255150045 button"
   onMouseDown={[Function]}
   type="button"
 >
@@ -11444,7 +13821,7 @@ exports[`Cosmos fixtures: GameOver:multi-loss 1`] = `
               className="jsx-2820880205 button"
             >
               <button
-                className="jsx-3005955449 button"
+                className="jsx-790935581 button"
                 onClick={[Function]}
                 type="button"
               >
@@ -11507,7 +13884,7 @@ exports[`Cosmos fixtures: GameOver:multi-win 1`] = `
               className="jsx-2820880205 button"
             >
               <button
-                className="jsx-3005955449 button"
+                className="jsx-790935581 button"
                 onClick={[Function]}
                 type="button"
               >
@@ -11570,7 +13947,7 @@ exports[`Cosmos fixtures: GameOver:solo 1`] = `
               className="jsx-2820880205 button"
             >
               <button
-                className="jsx-3005955449 button"
+                className="jsx-790935581 button"
                 onClick={[Function]}
                 type="button"
               >
@@ -11832,7 +14209,7 @@ exports[`Cosmos fixtures: GetReady:default 1`] = `
               className="jsx-2820880205 button"
             >
               <button
-                className="jsx-3005955449 button"
+                className="jsx-790935581 button"
                 onClick={[Function]}
                 type="button"
               >
@@ -11900,7 +14277,7 @@ exports[`Cosmos fixtures: GetReady:ping 1`] = `
                 className="jsx-109255757 shake"
               >
                 <button
-                  className="jsx-3005955449 button"
+                  className="jsx-790935581 button"
                   onClick={[Function]}
                   type="button"
                 >
@@ -12260,7 +14637,7 @@ exports[`Cosmos fixtures: JoinGame:available 1`] = `
               className="jsx-2820880205 button"
             >
               <button
-                className="jsx-3005955449 button"
+                className="jsx-790935581 button"
                 disabled={false}
                 onClick={[Function]}
                 type="button"
@@ -12272,7 +14649,7 @@ exports[`Cosmos fixtures: JoinGame:available 1`] = `
               className="jsx-2820880205 button"
             >
               <button
-                className="jsx-2175202617 button"
+                className="jsx-4255150045 button"
                 onClick={[Function]}
                 type="button"
               >
@@ -12343,7 +14720,7 @@ exports[`Cosmos fixtures: JoinGame:full 1`] = `
               className="jsx-2820880205 button"
             >
               <button
-                className="jsx-3005955449 button"
+                className="jsx-790935581 button"
                 disabled={true}
                 onClick={[Function]}
                 type="button"
@@ -12355,7 +14732,7 @@ exports[`Cosmos fixtures: JoinGame:full 1`] = `
               className="jsx-2820880205 button"
             >
               <button
-                className="jsx-2175202617 button"
+                className="jsx-4255150045 button"
                 onClick={[Function]}
                 type="button"
               >
@@ -12372,7 +14749,7 @@ exports[`Cosmos fixtures: JoinGame:full 1`] = `
 
 exports[`Cosmos fixtures: Left:default 1`] = `
 <button
-  className="jsx-2175202617 button"
+  className="jsx-4255150045 button"
   onMouseDown={[Function]}
   type="button"
 >
@@ -12525,7 +14902,7 @@ exports[`Cosmos fixtures: NewGame:default 1`] = `
               className="jsx-2820880205 button"
             >
               <button
-                className="jsx-3005955449 button"
+                className="jsx-790935581 button"
                 onClick={[Function]}
                 type="button"
               >
@@ -12937,7 +15314,7 @@ exports[`Cosmos fixtures: PlayerInfo:player2-missing 1`] = `
 
 exports[`Cosmos fixtures: PointerButton:primary 1`] = `
 <button
-  className="jsx-3005955449 button"
+  className="jsx-790935581 button"
   onMouseDown={[Function]}
   onMouseUp={[Function]}
   type="button"
@@ -13091,7 +15468,7 @@ exports[`Cosmos fixtures: Quake:player2-two-lines 1`] = `
 
 exports[`Cosmos fixtures: Right:default 1`] = `
 <button
-  className="jsx-2175202617 button"
+  className="jsx-4255150045 button"
   onMouseDown={[Function]}
   type="button"
 >
@@ -13109,7 +15486,7 @@ exports[`Cosmos fixtures: Right:default 1`] = `
 
 exports[`Cosmos fixtures: Rotate:default 1`] = `
 <button
-  className="jsx-2175202617 button"
+  className="jsx-4255150045 button"
   onMouseDown={[Function]}
   type="button"
 >
@@ -14058,7 +16435,7 @@ exports[`Cosmos fixtures: WaitingForOther:default 1`] = `
               className="jsx-2820880205 button"
             >
               <button
-                className="jsx-3005955449 button"
+                className="jsx-790935581 button"
                 onClick={[Function]}
                 type="button"
               >
@@ -14126,7 +16503,7 @@ exports[`Cosmos fixtures: WaitingForOther:ping 1`] = `
                 className="jsx-109255757 shake"
               >
                 <button
-                  className="jsx-3005955449 button"
+                  className="jsx-790935581 button"
                   onClick={[Function]}
                   type="button"
                 >

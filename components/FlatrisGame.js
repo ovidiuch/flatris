@@ -28,6 +28,7 @@ import {
   ping
 } from '../actions';
 import { withSocket } from '../utils/socket-connect';
+import Button from './Button';
 import Well from './Well';
 import GamePanel from './GamePanel';
 import Rotate from './controls/Rotate';
@@ -64,7 +65,15 @@ type Props = {
   ping: typeof ping
 };
 
-class FlatrisGame extends Component<Props> {
+type LocalState = {
+  isWatching: boolean
+};
+
+class FlatrisGame extends Component<Props, LocalState> {
+  state = {
+    isWatching: false
+  };
+
   componentDidMount() {
     const { curUser, game, openGame } = this.props;
     openGame(game.id);
@@ -133,7 +142,15 @@ class FlatrisGame extends Component<Props> {
   }
 
   handleWatch = () => {
-    console.log('Watch');
+    this.setState({
+      isWatching: true
+    });
+  };
+
+  handleMenu = () => {
+    this.setState({
+      isWatching: false
+    });
   };
 
   handleJoin = () => {
@@ -299,6 +316,7 @@ class FlatrisGame extends Component<Props> {
   // TODO: Show menu for users that are just watching
   renderScreens() {
     const { curUser, game } = this.props;
+    const { isWatching } = this.state;
     const hasJoined = isPlayer(game, curUser);
 
     // P1 is the current user's player, P2 is the other (in multiplayer games)
@@ -307,6 +325,10 @@ class FlatrisGame extends Component<Props> {
 
     if (!curUser) {
       return this.renderScreen(<Auth />);
+    }
+
+    if (isWatching) {
+      return this.renderScreen(this.renderMenuBtn());
     }
 
     if (!hasJoined) {
@@ -359,6 +381,30 @@ class FlatrisGame extends Component<Props> {
             left: 0;
             right: calc(100% / 16 * 6);
             background: rgba(236, 240, 241, 0.85);
+          }
+        `}</style>
+      </div>
+    );
+  }
+
+  renderMenuBtn() {
+    return (
+      <div className="menu-btn">
+        <Button onClick={this.handleMenu}>Menu</Button>
+        <style jsx>{`
+          .menu-btn {
+            position: absolute;
+            top: calc(100% / 20 * 17);
+            left: calc(100% / 10 * 5);
+            width: calc(100% / 10 * 4);
+            height: calc(100% / 20 * 2);
+            font-size: 1.1em;
+            opacity: 0.5;
+            transition: opacity 0.5s;
+          }
+
+          .menu-btn:hover {
+            opacity: 1;
           }
         `}</style>
       </div>

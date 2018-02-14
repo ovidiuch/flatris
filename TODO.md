@@ -76,7 +76,8 @@
   * [x] Make "2P insert coin" clickable
 * [x] Add global score (how many games each player won)
 * [x] Add ability to PING other player
-* [ ] Allow users to just watch
+* [x] Allow users to just watch
+  * [ ] Disable controls when user isn't playing
 * [ ] Side controls on landscape mobile
 * [ ] Onboarding screen
   * [ ] Left, right, up, down & space keys for desktop
@@ -86,6 +87,7 @@
 * [ ] Throttle key down events
 * [ ] Add copy to clipboard btn to "Invite or play" screen
   * [ ] Copy to clipboard when clicking on "2P insert coin"
+* [ ] Don't request user auth when game is full (allow guests to watch)
 * [ ] [BEAUTIFUL MVP]
 * [ ] Create actionId, link actions to prev actions, ensuring consistency
 * [ ] Create action backfill if user has old state and new actions
