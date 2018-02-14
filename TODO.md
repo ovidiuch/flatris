@@ -79,10 +79,10 @@
 * [x] Allow users to just watch
   * [ ] Disable controls when user isn't playing
 * [ ] Side controls on landscape mobile
-* [ ] Onboarding screen
-  * [ ] Left, right, up, down & space keys for desktop
-  * [ ] Point to keys at the bottom on mobile, and on sides on tablet
-  * [ ] Explain Flatris invention: line transferring
+* [x] Onboarding screen
+  * [x] Left, right, up, down & space keys for desktop
+  * [x] Point to controls
+  * [x] Explain Flatris invention: line transferring
 * [ ] Encourage players to play "first x out of y" on game over
 * [ ] Throttle key down events
 * [ ] Add copy to clipboard btn to "Invite or play" screen

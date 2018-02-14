@@ -63,67 +63,65 @@ exports[`Cosmos fixtures: Connect(Auth):default 1`] = `
           }
         }
       >
-        <form
-          className="jsx-1749762593"
-          onSubmit={[Function]}
+        <div
+          className="jsx-2820880205 screen"
         >
-          <div
-            className="jsx-2820880205 screen"
+          <h2
+            className="jsx-2820880205 title"
           >
-            <h2
-              className="jsx-2820880205 title"
-            >
-              Just a sec...
-            </h2>
+            Welcome!
+          </h2>
+          <div
+            className="jsx-2820880205 message"
+          >
+            <p>
+              Use the 
+              <strong>
+                arrow keys
+              </strong>
+              ,
+              <br />
+              or the
+               
+              <strong>
+                buttons below
+              </strong>
+              <br />
+              on mobile (portrait).
+            </p>
+            <p>
+              <strong>
+                Multiplayer twist:
+              </strong>
+              <br />
+              Every line you clear
+              <br />
+              will be added to your
+              <br />
+              opponent & viceversa.
+            </p>
+            <p>
+              <em>
+                Play fast to survive!
+              </em>
+            </p>
+          </div>
+          <div
+            className="jsx-2820880205 actions"
+          >
             <div
-              className="jsx-2820880205 message"
+              className="jsx-2820880205 button"
             >
-              <p
-                className="jsx-1749762593"
+              <button
+                className="jsx-790935581 button"
                 onClick={[Function]}
+                type="button"
               >
-                Enter your name
-              </p>
-              <p
-                className="jsx-1749762593"
-              >
-                <input
-                  className="jsx-1749762593"
-                  disabled={false}
-                  maxLength={14}
-                  onChange={[Function]}
-                  placeholder="Monkey"
-                  type="text"
-                  value=""
-                />
-              </p>
-              <p
-                className="jsx-1749762593"
-              >
-                <small
-                  className="jsx-1749762593"
-                >
-                  Fake names allowed ;-)
-                </small>
-              </p>
-            </div>
-            <div
-              className="jsx-2820880205 actions"
-            >
-              <div
-                className="jsx-2820880205 button"
-              >
-                <button
-                  className="jsx-790935581 button"
-                  disabled={true}
-                  type="submit"
-                >
-                  Enter
-                </button>
-              </div>
+                Got it
+              </button>
             </div>
           </div>
-        </form>
+        </div>
       </div>
     </div>
   </div>
@@ -151,67 +149,65 @@ exports[`Cosmos fixtures: Connect(Auth):disabled 1`] = `
           }
         }
       >
-        <form
-          className="jsx-1749762593"
-          onSubmit={[Function]}
+        <div
+          className="jsx-2820880205 screen"
         >
-          <div
-            className="jsx-2820880205 screen"
+          <h2
+            className="jsx-2820880205 title"
           >
-            <h2
-              className="jsx-2820880205 title"
-            >
-              Just a sec...
-            </h2>
+            Welcome!
+          </h2>
+          <div
+            className="jsx-2820880205 message"
+          >
+            <p>
+              Use the 
+              <strong>
+                arrow keys
+              </strong>
+              ,
+              <br />
+              or the
+               
+              <strong>
+                buttons below
+              </strong>
+              <br />
+              on mobile (portrait).
+            </p>
+            <p>
+              <strong>
+                Multiplayer twist:
+              </strong>
+              <br />
+              Every line you clear
+              <br />
+              will be added to your
+              <br />
+              opponent & viceversa.
+            </p>
+            <p>
+              <em>
+                Play fast to survive!
+              </em>
+            </p>
+          </div>
+          <div
+            className="jsx-2820880205 actions"
+          >
             <div
-              className="jsx-2820880205 message"
+              className="jsx-2820880205 button"
             >
-              <p
-                className="jsx-1749762593"
+              <button
+                className="jsx-790935581 button"
                 onClick={[Function]}
+                type="button"
               >
-                Enter your name
-              </p>
-              <p
-                className="jsx-1749762593"
-              >
-                <input
-                  className="jsx-1749762593"
-                  disabled={true}
-                  maxLength={14}
-                  onChange={[Function]}
-                  placeholder="Monkey"
-                  type="text"
-                  value=""
-                />
-              </p>
-              <p
-                className="jsx-1749762593"
-              >
-                <small
-                  className="jsx-1749762593"
-                >
-                  Fake names allowed ;-)
-                </small>
-              </p>
-            </div>
-            <div
-              className="jsx-2820880205 actions"
-            >
-              <div
-                className="jsx-2820880205 button"
-              >
-                <button
-                  className="jsx-790935581 button"
-                  disabled={true}
-                  type="submit"
-                >
-                  Enter
-                </button>
-              </div>
+                Got it
+              </button>
             </div>
           </div>
-        </form>
+        </div>
       </div>
     </div>
   </div>

@@ -15,6 +15,7 @@ type Props = {
 };
 
 type LocalState = {
+  isOnboard: boolean,
   name: string
 };
 
@@ -26,6 +27,7 @@ class Auth extends Component<Props, LocalState> {
   nameField: ?HTMLInputElement;
 
   state = {
+    isOnboard: false,
     name: ''
   };
 
@@ -63,14 +65,48 @@ class Auth extends Component<Props, LocalState> {
     }
   };
 
+  handleConfirmOnboarding = () => {
+    this.setState({
+      isOnboard: true
+    });
+  };
+
   render() {
     const { disabled } = this.props;
-    const { name } = this.state;
+    const { isOnboard, name } = this.state;
+
+    if (!isOnboard) {
+      return (
+        <Screen
+          title="Welcome!"
+          message={
+            <Fragment>
+              <p>
+                Use the <strong>arrow keys</strong>,<br />or the{' '}
+                <strong>buttons below</strong>
+                <br />on mobile (portrait).
+              </p>
+              <p>
+                <strong>Multiplayer twist:</strong>
+                <br />Every line you clear<br />will be added to your<br />
+                opponent & viceversa.
+              </p>
+              <p>
+                <em>Play fast to survive!</em>
+              </p>
+            </Fragment>
+          }
+          actions={[
+            <Button onClick={this.handleConfirmOnboarding}>Got it</Button>
+          ]}
+        />
+      );
+    }
 
     return (
       <form onSubmit={this.handleGo}>
         <Screen
-          title="Just a sec..."
+          title="One sec..."
           message={
             <Fragment>
               <p onClick={this.focusOnNameField}>Enter your name</p>
