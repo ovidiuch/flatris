@@ -11847,6 +11847,75 @@ exports[`Cosmos fixtures: GetReady:default 1`] = `
 </div>
 `;
 
+exports[`Cosmos fixtures: GetReady:ping 1`] = `
+<div
+  className="jsx-3830632126 outer"
+>
+  <div
+    className="jsx-3830632126 container"
+  >
+    <div
+      className="jsx-1266082788 game-height"
+    >
+      <div
+        className="jsx-1294220987 inner-container"
+        style={
+          Object {
+            "backgroundColor": "rgba(236, 240, 241, 0.85)",
+            "opacity": 1,
+            "position": "absolute",
+            "width": "calc(100% / 16 * 10)",
+          }
+        }
+      >
+        <div
+          className="jsx-2820880205 screen"
+        >
+          <h2
+            className="jsx-2820880205 title"
+          >
+            Get ready...
+          </h2>
+          <div
+            className="jsx-2820880205 message"
+          >
+            <p>
+              Game starts when
+              <br />
+              you're both ready.
+            </p>
+            <p>
+              <strong>
+                Good luck!
+              </strong>
+            </p>
+          </div>
+          <div
+            className="jsx-2820880205 actions"
+          >
+            <div
+              className="jsx-2820880205 button"
+            >
+              <div
+                className="jsx-109255757 shake"
+              >
+                <button
+                  className="jsx-3005955449 button"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  Ready
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Cosmos fixtures: Grid:default 1`] = `
 <div
   className="jsx-2043181861"
@@ -13995,6 +14064,75 @@ exports[`Cosmos fixtures: WaitingForOther:default 1`] = `
               >
                 Ping
               </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Cosmos fixtures: WaitingForOther:ping 1`] = `
+<div
+  className="jsx-3830632126 outer"
+>
+  <div
+    className="jsx-3830632126 container"
+  >
+    <div
+      className="jsx-1266082788 game-height"
+    >
+      <div
+        className="jsx-1294220987 inner-container"
+        style={
+          Object {
+            "backgroundColor": "rgba(236, 240, 241, 0.85)",
+            "opacity": 1,
+            "position": "absolute",
+            "width": "calc(100% / 16 * 10)",
+          }
+        }
+      >
+        <div
+          className="jsx-2820880205 screen"
+        >
+          <h2
+            className="jsx-2820880205 title"
+          >
+            Waiting...
+          </h2>
+          <div
+            className="jsx-2820880205 message"
+          >
+            <p>
+              Your friend is a bit
+              <br />
+              slower. I know...
+            </p>
+            <p>
+              <strong>
+                Ping them to hurry!
+              </strong>
+            </p>
+          </div>
+          <div
+            className="jsx-2820880205 actions"
+          >
+            <div
+              className="jsx-2820880205 button"
+            >
+              <div
+                className="jsx-109255757 shake"
+              >
+                <button
+                  className="jsx-3005955449 button"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  Ping
+                </button>
+              </div>
             </div>
           </div>
         </div>
