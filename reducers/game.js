@@ -294,6 +294,14 @@ export function gameReducer(state: void | Game, action: GameAction): Game {
       });
     }
 
+    case 'PING': {
+      const { userId, time } = action.payload;
+
+      return updatePlayer(state, userId, {
+        ping: time
+      });
+    }
+
     default:
       return state;
   }
@@ -341,7 +349,8 @@ export function getBlankPlayer(gameId: GameId, user: User): Player {
     dropAcceleration: false,
     flashYay: null,
     flashNay: null,
-    quake: null
+    quake: null,
+    ping: null
   };
 }
 

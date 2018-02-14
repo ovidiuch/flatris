@@ -13056,6 +13056,22 @@ exports[`Cosmos fixtures: Rotate:default 1`] = `
 </button>
 `;
 
+exports[`Cosmos fixtures: Shake:shake 1`] = `
+<div
+  className="jsx-109255757 shake"
+>
+  <div>
+    Shakira, Shakira!
+  </div>
+</div>
+`;
+
+exports[`Cosmos fixtures: Shake:still 1`] = `
+<em>
+  Crickets ♪
+</em>
+`;
+
 exports[`Cosmos fixtures: SquareBlock:color-of-the-I-tetromino 1`] = `
 <div
   className="jsx-86954139 square-block"

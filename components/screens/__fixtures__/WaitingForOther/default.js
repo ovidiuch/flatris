@@ -2,12 +2,18 @@
 
 import WaitingForOther from '../../WaitingForOther';
 
-import type { Props } from '../../WaitingForOther';
+import { createFixture } from '../../../../utils/create-fixture';
+import { getSampleUser } from '../../../../utils/test-helpers';
+import { getBlankPlayer } from '../../../../reducers/game';
 
-const fixture: { props: Props } = {
+const user = getSampleUser();
+const curPlayer = getBlankPlayer('1337', user);
+
+export default createFixture({
   component: WaitingForOther,
 
   props: {
+    curPlayer,
     onPing: () => console.log(`Ping!`)
   },
 
@@ -16,6 +22,4 @@ const fixture: { props: Props } = {
     gameHeight: true,
     backgroundColor: 'rgba(236, 240, 241, 0.85)'
   }
-};
-
-export default fixture;
+});

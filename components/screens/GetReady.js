@@ -1,16 +1,20 @@
 // @flow
 
 import React, { Fragment, Component } from 'react';
+import Shake from '../effects/Shake';
 import Button from '../Button';
 import Screen from './Screen';
 
-export type Props = {
+import type { Player } from '../../types/state';
+
+type Props = {
+  otherPlayer: Player,
   onReady: Function
 };
 
 export default class GetReady extends Component<Props> {
   render() {
-    const { onReady } = this.props;
+    const { otherPlayer, onReady } = this.props;
 
     return (
       <Screen
@@ -25,7 +29,11 @@ export default class GetReady extends Component<Props> {
             </p>
           </Fragment>
         }
-        actions={[<Button onClick={onReady}>Ready</Button>]}
+        actions={[
+          <Shake time={otherPlayer.ping}>
+            <Button onClick={onReady}>Ready</Button>
+          </Shake>
+        ]}
       />
     );
   }

@@ -1,11 +1,12 @@
 // @flow
 
 import React, { Fragment, Component } from 'react';
-import { getCurPlayer } from '../../reducers/game';
+import { getCurPlayer, getOtherPlayer } from '../../reducers/game';
+import Shake from '../effects/Shake';
 import Button from '../Button';
 import Screen from './Screen';
 
-import type { User, Game } from '../../types/state';
+import type { User, Player, Game } from '../../types/state';
 
 export type Props = {
   curUser: User,
@@ -15,14 +16,15 @@ export type Props = {
 
 export default class GameOver extends Component<Props> {
   render() {
-    const { game } = this.props;
-    const soloGame = game.players.length === 1;
+    const { curUser, game } = this.props;
+    const curPlayer = getCurPlayer(game, curUser);
+    const otherPlayer = getOtherPlayer(game, curPlayer);
 
     return (
       <Screen
         title="Game over"
-        message={soloGame ? this.getSoloMessage() : this.getMultiMessage()}
-        actions={this.getActions()}
+        message={otherPlayer ? this.getMultiMessage() : this.getSoloMessage()}
+        actions={this.getActions(otherPlayer)}
       />
     );
   }
@@ -40,9 +42,9 @@ export default class GameOver extends Component<Props> {
 
   getMultiMessage() {
     const { curUser, game } = this.props;
-    const player1 = getCurPlayer(game, curUser);
+    const curPlayer = getCurPlayer(game, curUser);
 
-    if (player1.status === 'LOST') {
+    if (curPlayer.status === 'LOST') {
       return (
         <Fragment>
           <p>
@@ -65,9 +67,13 @@ export default class GameOver extends Component<Props> {
     );
   }
 
-  getActions() {
+  getActions(otherPlayer: ?Player) {
     const { onRestart } = this.props;
 
-    return [<Button onClick={onRestart}>Again</Button>];
+    return [
+      <Shake time={otherPlayer && otherPlayer.ping}>
+        <Button onClick={onRestart}>Again</Button>
+      </Shake>
+    ];
   }
 }

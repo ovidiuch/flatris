@@ -24,7 +24,8 @@ import {
   rotate,
   enableAcceleration,
   disableAcceleration,
-  appendPendingBlocks
+  appendPendingBlocks,
+  ping
 } from '../actions';
 import { withSocket } from '../utils/socket-connect';
 import Well from './Well';
@@ -59,7 +60,8 @@ type Props = {
   rotate: typeof rotate,
   enableAcceleration: typeof enableAcceleration,
   disableAcceleration: typeof disableAcceleration,
-  appendPendingBlocks: typeof appendPendingBlocks
+  appendPendingBlocks: typeof appendPendingBlocks,
+  ping: typeof ping
 };
 
 class FlatrisGame extends Component<Props> {
@@ -147,7 +149,18 @@ class FlatrisGame extends Component<Props> {
   };
 
   handlePing = () => {
-    console.log('Ping');
+    const { curUser, game } = this.props;
+    const hasJoined = isPlayer(game, curUser);
+
+    if (hasJoined) {
+      const { ping } = getCurPlayer(game, curUser);
+      const now = Date.now();
+
+      // Prevent flooding the network with hysterical pings
+      if (!ping || now - ping > 500) {
+        this.props.ping();
+      }
+    }
   };
 
   handleKeyDown = e => {
@@ -324,11 +337,15 @@ class FlatrisGame extends Component<Props> {
     }
 
     if (curPlayer.status === 'READY') {
-      return this.renderScreen(<WaitingForOther onPing={this.handlePing} />);
+      return this.renderScreen(
+        <WaitingForOther curPlayer={curPlayer} onPing={this.handlePing} />
+      );
     }
 
     // curPlayer.status === 'PENDING'
-    return this.renderScreen(<GetReady onReady={this.handleReady} />);
+    return this.renderScreen(
+      <GetReady otherPlayer={otherPlayer} onReady={this.handleReady} />
+    );
   }
 
   renderScreen(content: Node) {
@@ -426,7 +443,8 @@ const syncActions = {
   rotate,
   enableAcceleration,
   disableAcceleration,
-  appendPendingBlocks
+  appendPendingBlocks,
+  ping
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(

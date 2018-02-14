@@ -21,7 +21,8 @@ export function curGameReducer(state: void | ?Game, action: Action): ?Game {
           // Strip effects to avoid running them on page load
           flashYay: null,
           flashNay: null,
-          quake: null
+          quake: null,
+          ping: null
         }))
       };
     }
@@ -33,7 +34,8 @@ export function curGameReducer(state: void | ?Game, action: Action): ?Game {
     case 'ROTATE':
     case 'ENABLE_ACCELERATION':
     case 'DISABLE_ACCELERATION':
-    case 'APPEND_PENDING_BLOCKS': {
+    case 'APPEND_PENDING_BLOCKS':
+    case 'PING': {
       if (!state) {
         throw new Error(`Game action ${action.type} called on null game state`);
       }

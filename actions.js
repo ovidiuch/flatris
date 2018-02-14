@@ -176,6 +176,17 @@ export function appendPendingBlocks(): ThunkAction {
   }));
 }
 
+export function ping(): ThunkAction {
+  return decorateAction(({ userId, gameId }) => ({
+    type: 'PING',
+    payload: {
+      userId,
+      gameId,
+      time: Date.now()
+    }
+  }));
+}
+
 let animationHandle;
 let timeBegin;
 

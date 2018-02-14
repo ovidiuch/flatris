@@ -85,11 +85,20 @@ export type DisableAccelerationAction = {
   }
 };
 
-export type AppendPendingBlocks = {
+export type AppendPendingBlocksAction = {
   type: 'APPEND_PENDING_BLOCKS',
   payload: {
     gameId: GameId,
     userId: UserId
+  }
+};
+
+export type PingAction = {
+  type: 'PING',
+  payload: {
+    gameId: GameId,
+    userId: UserId,
+    time: number
   }
 };
 
@@ -102,7 +111,8 @@ export type GameAction =
   | DropAction
   | EnableAccelerationAction
   | DisableAccelerationAction
-  | AppendPendingBlocks;
+  | AppendPendingBlocksAction
+  | PingAction;
 
 export type Action = InitAction | AuthAction | LoadGameAction | GameAction;
 

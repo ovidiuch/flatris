@@ -75,7 +75,7 @@
   * [x] Show lines instead of "wins" for single player
   * [x] Make "2P insert coin" clickable
 * [x] Add global score (how many games each player won)
-* [ ] Add ability to PING other user to get ready
+* [x] Add ability to PING other player
 * [ ] Allow users to just watch
 * [ ] Side controls on landscape mobile
 * [ ] Onboarding screen

@@ -44,7 +44,8 @@ export type Player = {
   dropAcceleration: boolean,
   flashYay: ?FlashSuffix,
   flashNay: ?FlashSuffix,
-  quake: ?QuakeSuffix
+  quake: ?QuakeSuffix,
+  ping: ?number
 };
 
 export type GameId = string;
