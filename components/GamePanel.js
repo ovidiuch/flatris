@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
 import { SHAPES, COLORS } from '../constants/tetromino';
-import { getBlankPlayer, getPlayer1 } from '../reducers/game';
+import { getBlankPlayer, getCurPlayer } from '../reducers/game';
 import Tetromino from './Tetromino';
 
 import type { User, Game } from '../types/state';
@@ -25,7 +25,7 @@ export default class GamePanel extends Component<Props> {
     const { curUser, game } = this.props;
     // TODO: Remove player stats when game is null
     const player1 = game
-      ? getPlayer1(game, curUser)
+      ? getCurPlayer(game, curUser)
       : getBlankPlayer('mock', { id: 'mock', name: 'Monkey' });
     const { score, lines, nextTetromino } = player1;
 
@@ -185,6 +185,6 @@ export default class GamePanel extends Component<Props> {
       return 'L';
     }
 
-    return getPlayer1(game, curUser).nextTetromino;
+    return getCurPlayer(game, curUser).nextTetromino;
   }
 }

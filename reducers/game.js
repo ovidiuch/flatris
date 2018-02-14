@@ -358,7 +358,7 @@ export function getPlayer(game: Game, userId: UserId): Player {
   return player;
 }
 
-export function getPlayer1(game: Game, curUser: ?User): Player {
+export function getCurPlayer(game: Game, curUser: ?User): Player {
   if (!game.players.length) {
     throw new Error('Games must have at least one player');
   }
@@ -368,9 +368,9 @@ export function getPlayer1(game: Game, curUser: ?User): Player {
     : game.players[0];
 }
 
-export function getPlayer2(game: Game, player1: Player): ?Player {
+export function getOtherPlayer(game: Game, curPlayer: Player): ?Player {
   // NOTE: This only works with max 2 players per game
-  return game.players.find(p => p !== player1);
+  return game.players.find(p => p !== curPlayer);
 }
 
 export function allPlayersReady(game: Game) {
@@ -461,7 +461,7 @@ function sendClearedBlocksToEnemy(
   rowsCleared: Array<number>
 ): Game {
   const curPlayer = getPlayer(game, userId);
-  const enemy = getPlayer2(game, curPlayer);
+  const enemy = getOtherPlayer(game, curPlayer);
   if (!enemy) {
     return game;
   }

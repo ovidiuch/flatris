@@ -8,8 +8,8 @@ import { UP, DOWN, LEFT, RIGHT, SPACE } from '../constants/keys';
 import {
   isPlayer,
   getPlayer,
-  getPlayer1,
-  getPlayer2,
+  getCurPlayer,
+  getOtherPlayer,
   allPlayersReady
 } from '../reducers/game';
 import { getCurGame } from '../reducers/cur-game';
@@ -289,8 +289,8 @@ class FlatrisGame extends Component<Props> {
     const hasJoined = isPlayer(game, curUser);
 
     // P1 is the current user's player, P2 is the other (in multiplayer games)
-    const player1 = getPlayer1(game, curUser);
-    const player2 = getPlayer2(game, player1);
+    const curPlayer = getCurPlayer(game, curUser);
+    const otherPlayer = getOtherPlayer(game, curPlayer);
 
     if (!curUser) {
       return this.renderScreen(<Auth />);
@@ -311,23 +311,23 @@ class FlatrisGame extends Component<Props> {
       return null;
     }
 
-    if (player1.status === 'LOST' || player1.status === 'WON') {
+    if (curPlayer.status === 'LOST' || curPlayer.status === 'WON') {
       return this.renderScreen(
         <GameOver curUser={curUser} game={game} onRestart={this.handleReady} />
       );
     }
 
-    if (!player2) {
-      // player1 status is 'PENDING', because if it wouldn've been 'READY'
+    if (!otherPlayer) {
+      // curPlayer status is 'PENDING', because if it wouldn've been 'READY'
       // allPlayersReady(game) would've returned true
       return this.renderScreen(<NewGame onPlay={this.handleReady} />);
     }
 
-    if (player1.status === 'READY') {
+    if (curPlayer.status === 'READY') {
       return this.renderScreen(<WaitingForOther onPing={this.handlePing} />);
     }
 
-    // player1.status === 'PENDING'
+    // curPlayer.status === 'PENDING'
     return this.renderScreen(<GetReady onReady={this.handleReady} />);
   }
 
@@ -350,17 +350,17 @@ class FlatrisGame extends Component<Props> {
 
   render() {
     const { curUser, game } = this.props;
-    const player1 = getPlayer1(game, curUser);
-    const player2 = getPlayer2(game, player1);
+    const curPlayer = getCurPlayer(game, curUser);
+    const otherPlayer = getOtherPlayer(game, curPlayer);
 
     return (
       <div className="flatris-game">
-        <Quake player1={player1} player2={player2}>
+        <Quake player1={curPlayer} player2={otherPlayer}>
           <div className="well-container game-height">
-            {player2 && (
-              <div className="enemy-well">{this.renderWell(player2)}</div>
+            {otherPlayer && (
+              <div className="enemy-well">{this.renderWell(otherPlayer)}</div>
             )}
-            <Flash player={player1}>{this.renderWell(player1)}</Flash>
+            <Flash player={curPlayer}>{this.renderWell(curPlayer)}</Flash>
           </div>
           {this.renderScreens()}
           <div className="side-container game-height">

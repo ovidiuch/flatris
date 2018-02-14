@@ -1,7 +1,7 @@
 // @flow
 
 import React, { Fragment, Component } from 'react';
-import { getPlayer1 } from '../../reducers/game';
+import { getCurPlayer } from '../../reducers/game';
 import Button from '../Button';
 import Screen from './Screen';
 
@@ -40,7 +40,7 @@ export default class GameOver extends Component<Props> {
 
   getMultiMessage() {
     const { curUser, game } = this.props;
-    const player1 = getPlayer1(game, curUser);
+    const player1 = getCurPlayer(game, curUser);
 
     if (player1.status === 'LOST') {
       return (
