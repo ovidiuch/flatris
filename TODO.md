@@ -67,7 +67,7 @@
   * [x] Restrict name length
 * [x] Reuse old public assets
   * [x] Add meta tags from old index.html
-* [ ] Style GamePanel
+* [x] Style GamePanel
   * [x] Show both players' score in game panel
   * [x] Show player READY state
   * [x] New Flatris logo
@@ -84,8 +84,9 @@
   * [ ] Explain Flatris invention: line transferring
 * [ ] Encourage players to play "first x out of y" on game over
 * [ ] Throttle key down events
+* [ ] Add copy to clipboard btn to "Invite or play" screen
+  * [ ] Copy to clipboard when clicking on "2P insert coin"
 * [ ] [BEAUTIFUL MVP]
-* [ ] Add sharing buttons to "Invite or play" screen
 * [ ] Create actionId, link actions to prev actions, ensuring consistency
 * [ ] Create action backfill if user has old state and new actions
 * [ ] Minimize network communication: Don't send noop actions
