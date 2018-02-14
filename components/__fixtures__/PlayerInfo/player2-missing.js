@@ -16,6 +16,7 @@ export default createFixture({
     player: null,
     isPlayer1: false,
     showWins: false,
-    showReadyState: false
+    showReadyState: false,
+    onSelect: () => console.log('Select P2')
   }
 });

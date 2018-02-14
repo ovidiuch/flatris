@@ -1,5 +1,6 @@
 // @flow
 
+import classNames from 'classnames';
 import React, { Component } from 'react';
 
 import type { Player } from '../types/state';
@@ -8,13 +9,19 @@ type Props = {
   player: ?Player,
   isPlayer1: boolean,
   showWins: boolean,
-  showReadyState: boolean
+  showReadyState: boolean,
+  onSelect?: Function
 };
 
 export default class PlayerInfo extends Component<Props> {
-  renderMissingPlayer(isPlayer1: boolean) {
+  renderMissingPlayer() {
+    const { isPlayer1, onSelect } = this.props;
+    const classes = classNames('player-info', {
+      selectable: Boolean(onSelect)
+    });
+
     return (
-      <div className="player-info selectable">
+      <div className={classes} onClick={onSelect}>
         <div className="centered">
           <div className="player">{isPlayer1 ? '1p' : '2p'}</div>
           <div className="insert-coin">insert coin</div>
@@ -80,10 +87,10 @@ export default class PlayerInfo extends Component<Props> {
   }
 
   render() {
-    const { player, isPlayer1, showWins, showReadyState } = this.props;
+    const { player, showWins, showReadyState } = this.props;
 
     if (!player) {
-      return this.renderMissingPlayer(isPlayer1);
+      return this.renderMissingPlayer();
     }
 
     const { user, score, lines } = player;

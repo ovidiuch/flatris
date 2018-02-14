@@ -73,7 +73,7 @@
   * [x] New Flatris logo
   * [x] Humanize numbers over 1K
   * [x] Show lines instead of "wins" for single player
-  * [ ] Turn 1P / 2P panels into buttons
+  * [x] Make "2P insert coin" clickable
 * [ ] Add global score (how many games each player won)
 * [ ] Add ability to PING other user to get ready
 * [ ] Allow users to just watch

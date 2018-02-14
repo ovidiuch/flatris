@@ -7578,6 +7578,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah 1`] = `
                 >
                   <div
                     className="jsx-1157014460 player-info selectable"
+                    onClick={[Function]}
                   >
                     <div
                       className="jsx-1157014460 centered"
@@ -10383,6 +10384,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
                 >
                   <div
                     className="jsx-1157014460 player-info selectable"
+                    onClick={[Function]}
                   >
                     <div
                       className="jsx-1157014460 centered"
@@ -10827,6 +10829,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
                 >
                   <div
                     className="jsx-1157014460 player-info selectable"
+                    onClick={[Function]}
                   >
                     <div
                       className="jsx-1157014460 centered"
@@ -11225,6 +11228,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game-running 1
                 >
                   <div
                     className="jsx-1157014460 player-info selectable"
+                    onClick={[Function]}
                   >
                     <div
                       className="jsx-1157014460 centered"
@@ -11753,6 +11757,7 @@ exports[`Cosmos fixtures: GamePanel:default 1`] = `
           >
             <div
               className="jsx-1157014460 player-info selectable"
+              onClick={[Function]}
             >
               <div
                 className="jsx-1157014460 centered"
@@ -12790,7 +12795,8 @@ exports[`Cosmos fixtures: PlayerInfo:player1-missing 1`] = `
         }
       >
         <div
-          className="jsx-1157014460 player-info selectable"
+          className="jsx-1157014460 player-info"
+          onClick={undefined}
         >
           <div
             className="jsx-1157014460 centered"
@@ -12837,6 +12843,7 @@ exports[`Cosmos fixtures: PlayerInfo:player2-missing 1`] = `
       >
         <div
           className="jsx-1157014460 player-info selectable"
+          onClick={[Function]}
         >
           <div
             className="jsx-1157014460 centered"

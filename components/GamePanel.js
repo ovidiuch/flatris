@@ -14,6 +14,10 @@ export type Props = {
 };
 
 export default class GamePanel extends Component<Props> {
+  handleSelectP2 = () => {
+    console.log('Select P2');
+  };
+
   /**
    * The game panel contains:
    * - The logo
@@ -57,6 +61,7 @@ export default class GamePanel extends Component<Props> {
             isPlayer1={false}
             showWins={isMultiGame}
             showReadyState={showP2ReadyState}
+            onSelect={game && !player2 ? this.handleSelectP2 : undefined}
           />
         </div>
         <style jsx>{`
