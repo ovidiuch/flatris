@@ -23,6 +23,7 @@
     {
       "files": [
         "jest.config.js",
+        "jest.framework-setup.js",
         "cosmos.config.js",
         "cosmos.test.js",
         "server.js",

@@ -10,7 +10,8 @@
   "scripts": {
     "lint": "eslint '**/*.js' '!**/.next/**'",
     "format": "prettier --write '**/*.{js,css}' '!**/.next/**'",
-    "test": "jest",
+    "test": "jest --maxWorkers=4",
+    "test:watch": "jest --watch",
     "cosmos": "cosmos",
     "cosmos:export": "cosmos-export",
     "dev:client": "babel-node server/start-dev-client.js",
