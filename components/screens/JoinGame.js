@@ -30,7 +30,7 @@ export default class JoinGame extends Component<Props> {
               <p>
                 You can watch, or<br />you can play.
               </p>
-              <p>What do you fancy?</p>
+              <p>What will it be?</p>
             </Fragment>
           ) : (
             <Fragment>

@@ -9765,7 +9765,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah-guest 1
                     you can play.
                   </p>
                   <p>
-                    What do you fancy?
+                    What will it be?
                   </p>
                 </div>
                 <div
@@ -14623,7 +14623,7 @@ exports[`Cosmos fixtures: JoinGame:available 1`] = `
               you can play.
             </p>
             <p>
-              What do you fancy?
+              What will it be?
             </p>
           </div>
           <div
