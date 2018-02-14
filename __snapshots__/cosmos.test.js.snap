@@ -2,7 +2,7 @@
 
 exports[`Cosmos fixtures: Button:primary 1`] = `
 <button
-  className="jsx-790935581 button"
+  className="jsx-2576755423 button hover-button"
   onClick={[Function]}
   type="button"
 >
@@ -12,7 +12,7 @@ exports[`Cosmos fixtures: Button:primary 1`] = `
 
 exports[`Cosmos fixtures: Button:primary-disabled 1`] = `
 <button
-  className="jsx-790935581 button"
+  className="jsx-2576755423 button hover-button"
   disabled={true}
   onClick={[Function]}
   type="button"
@@ -23,7 +23,7 @@ exports[`Cosmos fixtures: Button:primary-disabled 1`] = `
 
 exports[`Cosmos fixtures: Button:secondary 1`] = `
 <button
-  className="jsx-4255150045 button"
+  className="jsx-2453729951 button hover-button"
   onClick={[Function]}
   type="button"
 >
@@ -33,7 +33,7 @@ exports[`Cosmos fixtures: Button:secondary 1`] = `
 
 exports[`Cosmos fixtures: Button:secondary-disabled 1`] = `
 <button
-  className="jsx-2326356000 button"
+  className="jsx-1064755682 button hover-button"
   disabled={true}
   onClick={[Function]}
   type="button"
@@ -113,7 +113,7 @@ exports[`Cosmos fixtures: Connect(Auth):default 1`] = `
               className="jsx-2820880205 button"
             >
               <button
-                className="jsx-790935581 button"
+                className="jsx-2576755423 button hover-button"
                 onClick={[Function]}
                 type="button"
               >
@@ -199,7 +199,7 @@ exports[`Cosmos fixtures: Connect(Auth):disabled 1`] = `
               className="jsx-2820880205 button"
             >
               <button
-                className="jsx-790935581 button"
+                className="jsx-2576755423 button hover-button"
                 onClick={[Function]}
                 type="button"
               >
@@ -3315,7 +3315,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):double-hallelujah 
                 className="jsx-2263946291 button"
               >
                 <button
-                  className="jsx-4255150045 button"
+                  className="jsx-2453729951 button"
                   disabled={false}
                   onMouseDown={[Function]}
                   type="button"
@@ -3335,7 +3335,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):double-hallelujah 
                 className="jsx-2263946291 button"
               >
                 <button
-                  className="jsx-4255150045 button"
+                  className="jsx-2453729951 button"
                   disabled={false}
                   onMouseDown={[Function]}
                   type="button"
@@ -3355,7 +3355,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):double-hallelujah 
                 className="jsx-2263946291 button"
               >
                 <button
-                  className="jsx-4255150045 button"
+                  className="jsx-2453729951 button"
                   disabled={false}
                   onMouseDown={[Function]}
                   type="button"
@@ -3375,7 +3375,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):double-hallelujah 
                 className="jsx-2263946291 button"
               >
                 <button
-                  className="jsx-4255150045 button"
+                  className="jsx-2453729951 button"
                   disabled={false}
                   onMouseDown={[Function]}
                   type="button"
@@ -5281,7 +5281,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):enemy-hallelujah 1
                 className="jsx-2263946291 button"
               >
                 <button
-                  className="jsx-4255150045 button"
+                  className="jsx-2453729951 button"
                   disabled={false}
                   onMouseDown={[Function]}
                   type="button"
@@ -5301,7 +5301,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):enemy-hallelujah 1
                 className="jsx-2263946291 button"
               >
                 <button
-                  className="jsx-4255150045 button"
+                  className="jsx-2453729951 button"
                   disabled={false}
                   onMouseDown={[Function]}
                   type="button"
@@ -5321,7 +5321,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):enemy-hallelujah 1
                 className="jsx-2263946291 button"
               >
                 <button
-                  className="jsx-4255150045 button"
+                  className="jsx-2453729951 button"
                   disabled={false}
                   onMouseDown={[Function]}
                   type="button"
@@ -5341,7 +5341,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):enemy-hallelujah 1
                 className="jsx-2263946291 button"
               >
                 <button
-                  className="jsx-4255150045 button"
+                  className="jsx-2453729951 button"
                   disabled={false}
                   onMouseDown={[Function]}
                   type="button"
@@ -7601,7 +7601,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah 1`] = `
                 className="jsx-2263946291 button"
               >
                 <button
-                  className="jsx-4255150045 button"
+                  className="jsx-2453729951 button"
                   disabled={false}
                   onMouseDown={[Function]}
                   type="button"
@@ -7621,7 +7621,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah 1`] = `
                 className="jsx-2263946291 button"
               >
                 <button
-                  className="jsx-4255150045 button"
+                  className="jsx-2453729951 button"
                   disabled={false}
                   onMouseDown={[Function]}
                   type="button"
@@ -7641,7 +7641,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah 1`] = `
                 className="jsx-2263946291 button"
               >
                 <button
-                  className="jsx-4255150045 button"
+                  className="jsx-2453729951 button"
                   disabled={false}
                   onMouseDown={[Function]}
                   type="button"
@@ -7661,7 +7661,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah 1`] = `
                 className="jsx-2263946291 button"
               >
                 <button
-                  className="jsx-4255150045 button"
+                  className="jsx-2453729951 button"
                   disabled={false}
                   onMouseDown={[Function]}
                   type="button"
@@ -9775,7 +9775,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah-guest 1
                     className="jsx-2820880205 button"
                   >
                     <button
-                      className="jsx-790935581 button"
+                      className="jsx-2576755423 button hover-button"
                       disabled={false}
                       onClick={[Function]}
                       type="button"
@@ -9787,7 +9787,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah-guest 1
                     className="jsx-2820880205 button"
                   >
                     <button
-                      className="jsx-4255150045 button"
+                      className="jsx-2453729951 button hover-button"
                       onClick={[Function]}
                       type="button"
                     >
@@ -9978,7 +9978,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah-guest 1
                 className="jsx-2263946291 button"
               >
                 <button
-                  className="jsx-4255150045 button"
+                  className="jsx-2453729951 button"
                   disabled={true}
                   onMouseDown={[Function]}
                   type="button"
@@ -9998,7 +9998,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah-guest 1
                 className="jsx-2263946291 button"
               >
                 <button
-                  className="jsx-4255150045 button"
+                  className="jsx-2453729951 button"
                   disabled={true}
                   onMouseDown={[Function]}
                   type="button"
@@ -10018,7 +10018,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah-guest 1
                 className="jsx-2263946291 button"
               >
                 <button
-                  className="jsx-4255150045 button"
+                  className="jsx-2453729951 button"
                   disabled={true}
                   onMouseDown={[Function]}
                   type="button"
@@ -10038,7 +10038,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah-guest 1
                 className="jsx-2263946291 button"
               >
                 <button
-                  className="jsx-4255150045 button"
+                  className="jsx-2453729951 button"
                   disabled={true}
                   onMouseDown={[Function]}
                   type="button"
@@ -12593,7 +12593,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
                     className="jsx-2820880205 button"
                   >
                     <button
-                      className="jsx-790935581 button"
+                      className="jsx-2576755423 button hover-button"
                       onClick={[Function]}
                       type="button"
                     >
@@ -12784,7 +12784,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
                 className="jsx-2263946291 button"
               >
                 <button
-                  className="jsx-4255150045 button"
+                  className="jsx-2453729951 button"
                   disabled={true}
                   onMouseDown={[Function]}
                   type="button"
@@ -12804,7 +12804,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
                 className="jsx-2263946291 button"
               >
                 <button
-                  className="jsx-4255150045 button"
+                  className="jsx-2453729951 button"
                   disabled={true}
                   onMouseDown={[Function]}
                   type="button"
@@ -12824,7 +12824,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
                 className="jsx-2263946291 button"
               >
                 <button
-                  className="jsx-4255150045 button"
+                  className="jsx-2453729951 button"
                   disabled={true}
                   onMouseDown={[Function]}
                   type="button"
@@ -12844,7 +12844,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
                 className="jsx-2263946291 button"
               >
                 <button
-                  className="jsx-4255150045 button"
+                  className="jsx-2453729951 button"
                   disabled={true}
                   onMouseDown={[Function]}
                   type="button"
@@ -13038,7 +13038,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
                     className="jsx-2820880205 button"
                   >
                     <button
-                      className="jsx-790935581 button"
+                      className="jsx-2576755423 button hover-button"
                       onClick={[Function]}
                       type="button"
                     >
@@ -13229,7 +13229,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
                 className="jsx-2263946291 button"
               >
                 <button
-                  className="jsx-4255150045 button"
+                  className="jsx-2453729951 button"
                   disabled={true}
                   onMouseDown={[Function]}
                   type="button"
@@ -13249,7 +13249,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
                 className="jsx-2263946291 button"
               >
                 <button
-                  className="jsx-4255150045 button"
+                  className="jsx-2453729951 button"
                   disabled={true}
                   onMouseDown={[Function]}
                   type="button"
@@ -13269,7 +13269,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
                 className="jsx-2263946291 button"
               >
                 <button
-                  className="jsx-4255150045 button"
+                  className="jsx-2453729951 button"
                   disabled={true}
                   onMouseDown={[Function]}
                   type="button"
@@ -13289,7 +13289,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
                 className="jsx-2263946291 button"
               >
                 <button
-                  className="jsx-4255150045 button"
+                  className="jsx-2453729951 button"
                   disabled={true}
                   onMouseDown={[Function]}
                   type="button"
@@ -13628,7 +13628,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game-running 1
                 className="jsx-2263946291 button"
               >
                 <button
-                  className="jsx-4255150045 button"
+                  className="jsx-2453729951 button"
                   disabled={false}
                   onMouseDown={[Function]}
                   type="button"
@@ -13648,7 +13648,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game-running 1
                 className="jsx-2263946291 button"
               >
                 <button
-                  className="jsx-4255150045 button"
+                  className="jsx-2453729951 button"
                   disabled={false}
                   onMouseDown={[Function]}
                   type="button"
@@ -13668,7 +13668,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game-running 1
                 className="jsx-2263946291 button"
               >
                 <button
-                  className="jsx-4255150045 button"
+                  className="jsx-2453729951 button"
                   disabled={false}
                   onMouseDown={[Function]}
                   type="button"
@@ -13688,7 +13688,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game-running 1
                 className="jsx-2263946291 button"
               >
                 <button
-                  className="jsx-4255150045 button"
+                  className="jsx-2453729951 button"
                   disabled={false}
                   onMouseDown={[Function]}
                   type="button"
@@ -13715,7 +13715,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game-running 1
 
 exports[`Cosmos fixtures: Drop:default 1`] = `
 <button
-  className="jsx-4255150045 button"
+  className="jsx-2453729951 button"
   onMouseDown={[Function]}
   type="button"
 >
@@ -13817,7 +13817,7 @@ exports[`Cosmos fixtures: GameOver:multi-loss 1`] = `
               className="jsx-2820880205 button"
             >
               <button
-                className="jsx-790935581 button"
+                className="jsx-2576755423 button hover-button"
                 onClick={[Function]}
                 type="button"
               >
@@ -13880,7 +13880,7 @@ exports[`Cosmos fixtures: GameOver:multi-win 1`] = `
               className="jsx-2820880205 button"
             >
               <button
-                className="jsx-790935581 button"
+                className="jsx-2576755423 button hover-button"
                 onClick={[Function]}
                 type="button"
               >
@@ -13943,7 +13943,7 @@ exports[`Cosmos fixtures: GameOver:solo 1`] = `
               className="jsx-2820880205 button"
             >
               <button
-                className="jsx-790935581 button"
+                className="jsx-2576755423 button hover-button"
                 onClick={[Function]}
                 type="button"
               >
@@ -14205,7 +14205,7 @@ exports[`Cosmos fixtures: GetReady:default 1`] = `
               className="jsx-2820880205 button"
             >
               <button
-                className="jsx-790935581 button"
+                className="jsx-2576755423 button hover-button"
                 onClick={[Function]}
                 type="button"
               >
@@ -14273,7 +14273,7 @@ exports[`Cosmos fixtures: GetReady:ping 1`] = `
                 className="jsx-109255757 shake"
               >
                 <button
-                  className="jsx-790935581 button"
+                  className="jsx-2576755423 button hover-button"
                   onClick={[Function]}
                   type="button"
                 >
@@ -14633,7 +14633,7 @@ exports[`Cosmos fixtures: JoinGame:available 1`] = `
               className="jsx-2820880205 button"
             >
               <button
-                className="jsx-790935581 button"
+                className="jsx-2576755423 button hover-button"
                 disabled={false}
                 onClick={[Function]}
                 type="button"
@@ -14645,7 +14645,7 @@ exports[`Cosmos fixtures: JoinGame:available 1`] = `
               className="jsx-2820880205 button"
             >
               <button
-                className="jsx-4255150045 button"
+                className="jsx-2453729951 button hover-button"
                 onClick={[Function]}
                 type="button"
               >
@@ -14716,7 +14716,7 @@ exports[`Cosmos fixtures: JoinGame:full 1`] = `
               className="jsx-2820880205 button"
             >
               <button
-                className="jsx-790935581 button"
+                className="jsx-2576755423 button hover-button"
                 disabled={true}
                 onClick={[Function]}
                 type="button"
@@ -14728,7 +14728,7 @@ exports[`Cosmos fixtures: JoinGame:full 1`] = `
               className="jsx-2820880205 button"
             >
               <button
-                className="jsx-4255150045 button"
+                className="jsx-2453729951 button hover-button"
                 onClick={[Function]}
                 type="button"
               >
@@ -14745,7 +14745,7 @@ exports[`Cosmos fixtures: JoinGame:full 1`] = `
 
 exports[`Cosmos fixtures: Left:default 1`] = `
 <button
-  className="jsx-4255150045 button"
+  className="jsx-2453729951 button"
   onMouseDown={[Function]}
   type="button"
 >
@@ -14898,7 +14898,7 @@ exports[`Cosmos fixtures: NewGame:default 1`] = `
               className="jsx-2820880205 button"
             >
               <button
-                className="jsx-790935581 button"
+                className="jsx-2576755423 button hover-button"
                 onClick={[Function]}
                 type="button"
               >
@@ -15310,7 +15310,7 @@ exports[`Cosmos fixtures: PlayerInfo:player2-missing 1`] = `
 
 exports[`Cosmos fixtures: PointerButton:primary 1`] = `
 <button
-  className="jsx-790935581 button"
+  className="jsx-2576755423 button hover-button"
   onMouseDown={[Function]}
   onMouseUp={[Function]}
   type="button"
@@ -15464,7 +15464,7 @@ exports[`Cosmos fixtures: Quake:player2-two-lines 1`] = `
 
 exports[`Cosmos fixtures: Right:default 1`] = `
 <button
-  className="jsx-4255150045 button"
+  className="jsx-2453729951 button"
   onMouseDown={[Function]}
   type="button"
 >
@@ -15482,7 +15482,7 @@ exports[`Cosmos fixtures: Right:default 1`] = `
 
 exports[`Cosmos fixtures: Rotate:default 1`] = `
 <button
-  className="jsx-4255150045 button"
+  className="jsx-2453729951 button"
   onMouseDown={[Function]}
   type="button"
 >
@@ -16431,7 +16431,7 @@ exports[`Cosmos fixtures: WaitingForOther:default 1`] = `
               className="jsx-2820880205 button"
             >
               <button
-                className="jsx-790935581 button"
+                className="jsx-2576755423 button hover-button"
                 onClick={[Function]}
                 type="button"
               >
@@ -16499,7 +16499,7 @@ exports[`Cosmos fixtures: WaitingForOther:ping 1`] = `
                 className="jsx-109255757 shake"
               >
                 <button
-                  className="jsx-790935581 button"
+                  className="jsx-2576755423 button hover-button"
                   onClick={[Function]}
                   type="button"
                 >
