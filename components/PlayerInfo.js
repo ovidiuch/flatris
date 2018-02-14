@@ -86,6 +86,7 @@ export default class PlayerInfo extends Component<Props> {
     }
 
     const { user, score } = player;
+    const humanizedScore = humanizeNumber(score);
 
     return (
       <div className="player-info">
@@ -99,7 +100,7 @@ export default class PlayerInfo extends Component<Props> {
           </div>
           <div className="score-row">
             <div className="label vcentered">Score</div>
-            <div className="value vcentered">{score}</div>
+            <div className="value vcentered">{humanizedScore}</div>
           </div>
         </div>
         {showReadyState && (
@@ -187,4 +188,17 @@ export default class PlayerInfo extends Component<Props> {
       </div>
     );
   }
+}
+
+function humanizeNumber(nr: number): string {
+  if (nr < 10000) {
+    return String(nr);
+  }
+
+  const { round } = Math;
+  const thousands = nr / 1000;
+  const rounded =
+    thousands > 100 ? round(thousands) : round(thousands * 10) / 10;
+
+  return `${rounded}K`;
 }
