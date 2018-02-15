@@ -81,8 +81,12 @@
   * [x] Left, right, up, down & space keys for desktop
   * [x] Point to controls
   * [x] Explain Flatris invention: line transferring
-* [x] Disable in-game auth after entering 1st time
-* [x] Fade in game screens
+* User testing feedback
+  * [x] Disable in-game auth after entering 1st time
+  * [x] Fade in game screens
+  * [ ] Generate new Tetromino random sequence per game turn
+  * [ ] Clear player.ping when game starts (& other effects as well)
+  * [ ] Improve ending UI: Add WON/LOST green/red badges under player name
 * [ ] Disable controls when user isn't playing
 * [ ] Side controls on landscape mobile
 * [ ] Encourage players to play "first x out of y" on game over
@@ -91,6 +95,7 @@
   * [ ] Copy to clipboard when clicking on "2P insert coin"
 * [ ] Don't request user auth when game is full (allow guests to watch)
 * [ ] [BEAUTIFUL MVP]
+* [ ] Create drop shadow from active Tetromino
 * [ ] Create actionId, link actions to prev actions, ensuring consistency
 * [ ] Create action backfill if user has old state and new actions
 * [ ] Minimize network communication: Don't send noop actions
@@ -100,3 +105,4 @@
   * [ ] Batch actions
   * [ ] Algorithm for distributing events from bundled messages in time
         Calc time of each event in min-max interval and map [0, 1] value to [server timestamp of last received message...now...1s]
+* [ ] Sounds?
