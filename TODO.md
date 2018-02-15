@@ -85,7 +85,7 @@
   * [x] Disable in-game auth after entering 1st time
   * [x] Fade in game screens
   * [x] Generate new Tetromino random sequence per game turn
-  * [ ] Improve ending UI: Add WON/LOST green/red badges under player name
+  * [x] Improve ending UI: Add WON green badge under player name
 * [ ] Disable controls when user isn't playing
 * [ ] Side controls on landscape mobile
 * [ ] Encourage players to play "first x out of y" on game over

@@ -5,6 +5,8 @@ import React, { Component } from 'react';
 
 import type { Player } from '../types/state';
 
+// NOTE: This component is a mess. Potential refactor: Send entire game state
+// and player index, and let it determine its various render paths internally.
 type Props = {
   player: ?Player,
   wins: ?number,
@@ -92,7 +94,7 @@ export default class PlayerInfo extends Component<Props> {
       return this.renderMissingPlayer();
     }
 
-    const { user, score, lines } = player;
+    const { status, user, score, lines } = player;
     const showWins = typeof wins === 'number';
     const humanizedScore = humanizeNumber(score);
 
@@ -120,8 +122,13 @@ export default class PlayerInfo extends Component<Props> {
           )}
         </div>
         {showReadyState && (
-          <div className="ready">
+          <div className="status ready">
             <span>Ready</span>
+          </div>
+        )}
+        {status === 'WON' && (
+          <div className="status won">
+            <span>Won</span>
           </div>
         )}
         <style jsx>{`
@@ -175,25 +182,30 @@ export default class PlayerInfo extends Component<Props> {
             color: #3993d0;
           }
 
-          .ready {
+          .status {
             position: absolute;
             top: calc(100% / 3);
             bottom: 0;
             left: 0;
             right: 0;
-            background: rgba(57, 147, 208, 0.85);
             color: #fff;
             font-size: 1.2em;
             font-weight: 600;
             text-transform: uppercase;
             text-align: center;
           }
-          .ready span {
+          .status span {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -35%);
             text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+          }
+          .ready {
+            background: rgba(57, 147, 208, 0.85);
+          }
+          .won {
+            background: rgba(149, 196, 61, 0.9);
           }
 
           .vcentered {
