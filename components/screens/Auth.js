@@ -61,9 +61,6 @@ class Auth extends Component<Props, LocalState> {
       }
 
       const user = await createUserSession(name);
-
-      await new Promise(res => setTimeout(res, 3000));
-
       auth(user);
     }
   };
