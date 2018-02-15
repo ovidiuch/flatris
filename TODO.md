@@ -77,13 +77,14 @@
 * [x] Add global score (how many games each player won)
 * [x] Add ability to PING other player
 * [x] Allow users to just watch
-  * [ ] Disable controls when user isn't playing
-* [ ] Side controls on landscape mobile
 * [x] Onboarding screen
   * [x] Left, right, up, down & space keys for desktop
   * [x] Point to controls
   * [x] Explain Flatris invention: line transferring
 * [x] Disable in-game auth after entering 1st time
+* [x] Fade in game screens
+* [ ] Disable controls when user isn't playing
+* [ ] Side controls on landscape mobile
 * [ ] Encourage players to play "first x out of y" on game over
 * [ ] Throttle key down events
 * [ ] Add copy to clipboard btn to "Invite or play" screen

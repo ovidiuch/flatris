@@ -37,6 +37,7 @@ import Right from './controls/Right';
 import Drop from './controls/Drop';
 import Flash from './effects/Flash';
 import Quake from './effects/Quake';
+import FadeIn from './effects/FadeIn';
 import NewGame from './screens/NewGame';
 import Auth from './screens/Auth';
 import JoinGame from './screens/JoinGame';
@@ -327,7 +328,6 @@ class FlatrisGame extends Component<Props, LocalState> {
     );
   }
 
-  // TODO: Show menu for users that are just watching
   renderScreens() {
     const { curUser, game } = this.props;
     const { pendingAuth, isWatching } = this.state;
@@ -406,7 +406,9 @@ class FlatrisGame extends Component<Props, LocalState> {
   renderMenuBtn() {
     return (
       <div className="menu-btn">
-        <Button onClick={this.handleMenu}>Menu</Button>
+        <FadeIn>
+          <Button onClick={this.handleMenu}>Menu</Button>
+        </FadeIn>
         <style jsx>{`
           .menu-btn {
             position: absolute;

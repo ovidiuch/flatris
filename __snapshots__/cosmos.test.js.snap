@@ -64,88 +64,92 @@ exports[`Cosmos fixtures: Connect(Auth):default 1`] = `
         }
       >
         <div
-          className="jsx-2820880205 screen"
+          className="jsx-1497761764 fade-in"
         >
-          <h2
-            className="jsx-2820880205 title"
-          >
-            Welcome!
-          </h2>
           <div
-            className="jsx-2820880205 message"
+            className="jsx-1594900497 screen"
           >
-            <p
-              className="jsx-842746317"
+            <h2
+              className="jsx-1594900497 title"
             >
-              Use the 
-              <strong
-                className="jsx-842746317"
-              >
-                arrow keys
-              </strong>
-              ,
-              <br
-                className="jsx-842746317"
-              />
-              or the
-               
-              <strong
-                className="jsx-842746317"
-              >
-                buttons below
-              </strong>
-              <br
-                className="jsx-842746317"
-              />
-              on mobile (portrait).
-            </p>
-            <p
-              className="jsx-842746317"
-            >
-              <strong
-                className="jsx-842746317"
-              >
-                Multiplayer twist
-              </strong>
-              :
-              <br
-                className="jsx-842746317"
-              />
-              <span
-                className="jsx-842746317 highlight"
-              >
-                Every line you clear
-                <br
-                  className="jsx-842746317"
-                />
-                will be added to your
-                <br
-                  className="jsx-842746317"
-                />
-                opponent
-              </span>
-               
-              & viceversa.
-            </p>
-            <p
-              className="jsx-842746317"
-            >
-              Play fast to survive!
-            </p>
-          </div>
-          <div
-            className="jsx-2820880205 actions"
-          >
+              Welcome!
+            </h2>
             <div
-              className="jsx-2820880205 button"
+              className="jsx-1594900497 message"
             >
-              <button
-                className="jsx-2576755423 button hover-button"
-                onClick={[Function]}
-                type="button"
+              <p
+                className="jsx-842746317"
               >
-                Got it
-              </button>
+                Use the 
+                <strong
+                  className="jsx-842746317"
+                >
+                  arrow keys
+                </strong>
+                ,
+                <br
+                  className="jsx-842746317"
+                />
+                or the
+                 
+                <strong
+                  className="jsx-842746317"
+                >
+                  buttons below
+                </strong>
+                <br
+                  className="jsx-842746317"
+                />
+                on mobile (portrait).
+              </p>
+              <p
+                className="jsx-842746317"
+              >
+                <strong
+                  className="jsx-842746317"
+                >
+                  Multiplayer twist
+                </strong>
+                :
+                <br
+                  className="jsx-842746317"
+                />
+                <span
+                  className="jsx-842746317 highlight"
+                >
+                  Every line you clear
+                  <br
+                    className="jsx-842746317"
+                  />
+                  will be added to your
+                  <br
+                    className="jsx-842746317"
+                  />
+                  opponent
+                </span>
+                 
+                & viceversa.
+              </p>
+              <p
+                className="jsx-842746317"
+              >
+                Play fast to survive!
+              </p>
+            </div>
+            <div
+              className="jsx-1594900497 actions"
+            >
+              <div
+                className="jsx-1594900497 button"
+              >
+                <button
+                  className="jsx-2576755423 button hover-button"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  Got it
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -177,88 +181,92 @@ exports[`Cosmos fixtures: Connect(Auth):disabled 1`] = `
         }
       >
         <div
-          className="jsx-2820880205 screen"
+          className="jsx-1497761764 fade-in"
         >
-          <h2
-            className="jsx-2820880205 title"
-          >
-            Welcome!
-          </h2>
           <div
-            className="jsx-2820880205 message"
+            className="jsx-1594900497 screen"
           >
-            <p
-              className="jsx-842746317"
+            <h2
+              className="jsx-1594900497 title"
             >
-              Use the 
-              <strong
-                className="jsx-842746317"
-              >
-                arrow keys
-              </strong>
-              ,
-              <br
-                className="jsx-842746317"
-              />
-              or the
-               
-              <strong
-                className="jsx-842746317"
-              >
-                buttons below
-              </strong>
-              <br
-                className="jsx-842746317"
-              />
-              on mobile (portrait).
-            </p>
-            <p
-              className="jsx-842746317"
-            >
-              <strong
-                className="jsx-842746317"
-              >
-                Multiplayer twist
-              </strong>
-              :
-              <br
-                className="jsx-842746317"
-              />
-              <span
-                className="jsx-842746317 highlight"
-              >
-                Every line you clear
-                <br
-                  className="jsx-842746317"
-                />
-                will be added to your
-                <br
-                  className="jsx-842746317"
-                />
-                opponent
-              </span>
-               
-              & viceversa.
-            </p>
-            <p
-              className="jsx-842746317"
-            >
-              Play fast to survive!
-            </p>
-          </div>
-          <div
-            className="jsx-2820880205 actions"
-          >
+              Welcome!
+            </h2>
             <div
-              className="jsx-2820880205 button"
+              className="jsx-1594900497 message"
             >
-              <button
-                className="jsx-2576755423 button hover-button"
-                onClick={[Function]}
-                type="button"
+              <p
+                className="jsx-842746317"
               >
-                Got it
-              </button>
+                Use the 
+                <strong
+                  className="jsx-842746317"
+                >
+                  arrow keys
+                </strong>
+                ,
+                <br
+                  className="jsx-842746317"
+                />
+                or the
+                 
+                <strong
+                  className="jsx-842746317"
+                >
+                  buttons below
+                </strong>
+                <br
+                  className="jsx-842746317"
+                />
+                on mobile (portrait).
+              </p>
+              <p
+                className="jsx-842746317"
+              >
+                <strong
+                  className="jsx-842746317"
+                >
+                  Multiplayer twist
+                </strong>
+                :
+                <br
+                  className="jsx-842746317"
+                />
+                <span
+                  className="jsx-842746317 highlight"
+                >
+                  Every line you clear
+                  <br
+                    className="jsx-842746317"
+                  />
+                  will be added to your
+                  <br
+                    className="jsx-842746317"
+                  />
+                  opponent
+                </span>
+                 
+                & viceversa.
+              </p>
+              <p
+                className="jsx-842746317"
+              >
+                Play fast to survive!
+              </p>
+            </div>
+            <div
+              className="jsx-1594900497 actions"
+            >
+              <div
+                className="jsx-1594900497 button"
+              >
+                <button
+                  className="jsx-2576755423 button hover-button"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  Got it
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -9798,55 +9806,59 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah-guest 1
               className="jsx-138775075 screen-container game-height"
             >
               <div
-                className="jsx-2820880205 screen"
+                className="jsx-1497761764 fade-in"
               >
-                <h2
-                  className="jsx-2820880205 title"
-                >
-                  Join game...
-                </h2>
                 <div
-                  className="jsx-2820880205 message"
+                  className="jsx-1594900497 screen"
                 >
-                  <p>
-                    <strong>
-                      Room for one more!
-                    </strong>
-                  </p>
-                  <p>
-                    You can watch, or
-                    <br />
-                    you can play.
-                  </p>
-                  <p>
-                    What will it be?
-                  </p>
-                </div>
-                <div
-                  className="jsx-2820880205 actions"
-                >
-                  <div
-                    className="jsx-2820880205 button"
+                  <h2
+                    className="jsx-1594900497 title"
                   >
-                    <button
-                      className="jsx-2576755423 button hover-button"
-                      disabled={false}
-                      onClick={[Function]}
-                      type="button"
-                    >
-                      Join
-                    </button>
+                    Join game...
+                  </h2>
+                  <div
+                    className="jsx-1594900497 message"
+                  >
+                    <p>
+                      <strong>
+                        Room for one more!
+                      </strong>
+                    </p>
+                    <p>
+                      You can watch, or
+                      <br />
+                      you can play.
+                    </p>
+                    <p>
+                      What will it be?
+                    </p>
                   </div>
                   <div
-                    className="jsx-2820880205 button"
+                    className="jsx-1594900497 actions"
                   >
-                    <button
-                      className="jsx-2453729951 button hover-button"
-                      onClick={[Function]}
-                      type="button"
+                    <div
+                      className="jsx-1594900497 button"
                     >
-                      Watch
-                    </button>
+                      <button
+                        className="jsx-2576755423 button hover-button"
+                        disabled={false}
+                        onClick={[Function]}
+                        type="button"
+                      >
+                        Join
+                      </button>
+                    </div>
+                    <div
+                      className="jsx-1594900497 button"
+                    >
+                      <button
+                        className="jsx-2453729951 button hover-button"
+                        onClick={[Function]}
+                        type="button"
+                      >
+                        Watch
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -12615,44 +12627,48 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
               className="jsx-138775075 screen-container game-height"
             >
               <div
-                className="jsx-2820880205 screen"
+                className="jsx-1497761764 fade-in"
               >
-                <h2
-                  className="jsx-2820880205 title"
-                >
-                  New game...
-                </h2>
                 <div
-                  className="jsx-2820880205 message"
+                  className="jsx-1594900497 screen"
                 >
-                  <p>
-                    <strong>
-                      Invite a friend to
-                      <br />
-                      battle, or play solo.
-                    </strong>
-                  </p>
-                  <p>
-                    Either way, you can
-                    <br />
-                    warm up until the
-                    <br />
-                    other person arrives.
-                  </p>
-                </div>
-                <div
-                  className="jsx-2820880205 actions"
-                >
-                  <div
-                    className="jsx-2820880205 button"
+                  <h2
+                    className="jsx-1594900497 title"
                   >
-                    <button
-                      className="jsx-2576755423 button hover-button"
-                      onClick={[Function]}
-                      type="button"
+                    New game...
+                  </h2>
+                  <div
+                    className="jsx-1594900497 message"
+                  >
+                    <p>
+                      <strong>
+                        Invite a friend to
+                        <br />
+                        battle, or play solo.
+                      </strong>
+                    </p>
+                    <p>
+                      Either way, you can
+                      <br />
+                      warm up until the
+                      <br />
+                      other person arrives.
+                    </p>
+                  </div>
+                  <div
+                    className="jsx-1594900497 actions"
+                  >
+                    <div
+                      className="jsx-1594900497 button"
                     >
-                      Play
-                    </button>
+                      <button
+                        className="jsx-2576755423 button hover-button"
+                        onClick={[Function]}
+                        type="button"
+                      >
+                        Play
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -13060,44 +13076,48 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
               className="jsx-138775075 screen-container game-height"
             >
               <div
-                className="jsx-2820880205 screen"
+                className="jsx-1497761764 fade-in"
               >
-                <h2
-                  className="jsx-2820880205 title"
-                >
-                  New game...
-                </h2>
                 <div
-                  className="jsx-2820880205 message"
+                  className="jsx-1594900497 screen"
                 >
-                  <p>
-                    <strong>
-                      Invite a friend to
-                      <br />
-                      battle, or play solo.
-                    </strong>
-                  </p>
-                  <p>
-                    Either way, you can
-                    <br />
-                    warm up until the
-                    <br />
-                    other person arrives.
-                  </p>
-                </div>
-                <div
-                  className="jsx-2820880205 actions"
-                >
-                  <div
-                    className="jsx-2820880205 button"
+                  <h2
+                    className="jsx-1594900497 title"
                   >
-                    <button
-                      className="jsx-2576755423 button hover-button"
-                      onClick={[Function]}
-                      type="button"
+                    New game...
+                  </h2>
+                  <div
+                    className="jsx-1594900497 message"
+                  >
+                    <p>
+                      <strong>
+                        Invite a friend to
+                        <br />
+                        battle, or play solo.
+                      </strong>
+                    </p>
+                    <p>
+                      Either way, you can
+                      <br />
+                      warm up until the
+                      <br />
+                      other person arrives.
+                    </p>
+                  </div>
+                  <div
+                    className="jsx-1594900497 actions"
+                  >
+                    <div
+                      className="jsx-1594900497 button"
                     >
-                      Play
-                    </button>
+                      <button
+                        className="jsx-2576755423 button hover-button"
+                        onClick={[Function]}
+                        type="button"
+                      >
+                        Play
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -13785,6 +13805,16 @@ exports[`Cosmos fixtures: Drop:default 1`] = `
 </button>
 `;
 
+exports[`Cosmos fixtures: FadeIn:default 1`] = `
+<div
+  className="jsx-1497761764 fade-in"
+>
+  <div>
+    Nice and smooth
+  </div>
+</div>
+`;
+
 exports[`Cosmos fixtures: Flash:nay 1`] = `
 <div
   className="jsx-124931555 flash"
@@ -13843,40 +13873,44 @@ exports[`Cosmos fixtures: GameOver:multi-loss 1`] = `
         }
       >
         <div
-          className="jsx-2820880205 screen"
+          className="jsx-1497761764 fade-in"
         >
-          <h2
-            className="jsx-2820880205 title"
-          >
-            Game over
-          </h2>
           <div
-            className="jsx-2820880205 message"
+            className="jsx-1594900497 screen"
           >
-            <p>
-              Oh well... better luck
-              <br />
-              next time!
-            </p>
-            <p>
-              <strong>
-                Up for another?
-              </strong>
-            </p>
-          </div>
-          <div
-            className="jsx-2820880205 actions"
-          >
-            <div
-              className="jsx-2820880205 button"
+            <h2
+              className="jsx-1594900497 title"
             >
-              <button
-                className="jsx-2576755423 button hover-button"
-                onClick={[Function]}
-                type="button"
+              Game over
+            </h2>
+            <div
+              className="jsx-1594900497 message"
+            >
+              <p>
+                Oh well... better luck
+                <br />
+                next time!
+              </p>
+              <p>
+                <strong>
+                  Up for another?
+                </strong>
+              </p>
+            </div>
+            <div
+              className="jsx-1594900497 actions"
+            >
+              <div
+                className="jsx-1594900497 button"
               >
-                Again
-              </button>
+                <button
+                  className="jsx-2576755423 button hover-button"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  Again
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -13908,38 +13942,42 @@ exports[`Cosmos fixtures: GameOver:multi-win 1`] = `
         }
       >
         <div
-          className="jsx-2820880205 screen"
+          className="jsx-1497761764 fade-in"
         >
-          <h2
-            className="jsx-2820880205 title"
-          >
-            Game over
-          </h2>
           <div
-            className="jsx-2820880205 message"
+            className="jsx-1594900497 screen"
           >
-            <p>
-              Noice! You kicked ass.
-            </p>
-            <p>
-              <strong>
-                Up for another?
-              </strong>
-            </p>
-          </div>
-          <div
-            className="jsx-2820880205 actions"
-          >
-            <div
-              className="jsx-2820880205 button"
+            <h2
+              className="jsx-1594900497 title"
             >
-              <button
-                className="jsx-2576755423 button hover-button"
-                onClick={[Function]}
-                type="button"
+              Game over
+            </h2>
+            <div
+              className="jsx-1594900497 message"
+            >
+              <p>
+                Noice! You kicked ass.
+              </p>
+              <p>
+                <strong>
+                  Up for another?
+                </strong>
+              </p>
+            </div>
+            <div
+              className="jsx-1594900497 actions"
+            >
+              <div
+                className="jsx-1594900497 button"
               >
-                Again
-              </button>
+                <button
+                  className="jsx-2576755423 button hover-button"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  Again
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -13971,38 +14009,42 @@ exports[`Cosmos fixtures: GameOver:solo 1`] = `
         }
       >
         <div
-          className="jsx-2820880205 screen"
+          className="jsx-1497761764 fade-in"
         >
-          <h2
-            className="jsx-2820880205 title"
-          >
-            Game over
-          </h2>
           <div
-            className="jsx-2820880205 message"
+            className="jsx-1594900497 screen"
           >
-            <p>
-              Well, that was fun!
-            </p>
-            <p>
-              <strong>
-                Up for another?
-              </strong>
-            </p>
-          </div>
-          <div
-            className="jsx-2820880205 actions"
-          >
-            <div
-              className="jsx-2820880205 button"
+            <h2
+              className="jsx-1594900497 title"
             >
-              <button
-                className="jsx-2576755423 button hover-button"
-                onClick={[Function]}
-                type="button"
+              Game over
+            </h2>
+            <div
+              className="jsx-1594900497 message"
+            >
+              <p>
+                Well, that was fun!
+              </p>
+              <p>
+                <strong>
+                  Up for another?
+                </strong>
+              </p>
+            </div>
+            <div
+              className="jsx-1594900497 actions"
+            >
+              <div
+                className="jsx-1594900497 button"
               >
-                Again
-              </button>
+                <button
+                  className="jsx-2576755423 button hover-button"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  Again
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -14231,40 +14273,44 @@ exports[`Cosmos fixtures: GetReady:default 1`] = `
         }
       >
         <div
-          className="jsx-2820880205 screen"
+          className="jsx-1497761764 fade-in"
         >
-          <h2
-            className="jsx-2820880205 title"
-          >
-            Get ready...
-          </h2>
           <div
-            className="jsx-2820880205 message"
+            className="jsx-1594900497 screen"
           >
-            <p>
-              Game starts when
-              <br />
-              you're both ready.
-            </p>
-            <p>
-              <strong>
-                Good luck!
-              </strong>
-            </p>
-          </div>
-          <div
-            className="jsx-2820880205 actions"
-          >
-            <div
-              className="jsx-2820880205 button"
+            <h2
+              className="jsx-1594900497 title"
             >
-              <button
-                className="jsx-2576755423 button hover-button"
-                onClick={[Function]}
-                type="button"
+              Get ready...
+            </h2>
+            <div
+              className="jsx-1594900497 message"
+            >
+              <p>
+                Game starts when
+                <br />
+                you're both ready.
+              </p>
+              <p>
+                <strong>
+                  Good luck!
+                </strong>
+              </p>
+            </div>
+            <div
+              className="jsx-1594900497 actions"
+            >
+              <div
+                className="jsx-1594900497 button"
               >
-                Ready
-              </button>
+                <button
+                  className="jsx-2576755423 button hover-button"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  Ready
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -14296,43 +14342,47 @@ exports[`Cosmos fixtures: GetReady:ping 1`] = `
         }
       >
         <div
-          className="jsx-2820880205 screen"
+          className="jsx-1497761764 fade-in"
         >
-          <h2
-            className="jsx-2820880205 title"
-          >
-            Get ready...
-          </h2>
           <div
-            className="jsx-2820880205 message"
+            className="jsx-1594900497 screen"
           >
-            <p>
-              Game starts when
-              <br />
-              you're both ready.
-            </p>
-            <p>
-              <strong>
-                Good luck!
-              </strong>
-            </p>
-          </div>
-          <div
-            className="jsx-2820880205 actions"
-          >
+            <h2
+              className="jsx-1594900497 title"
+            >
+              Get ready...
+            </h2>
             <div
-              className="jsx-2820880205 button"
+              className="jsx-1594900497 message"
+            >
+              <p>
+                Game starts when
+                <br />
+                you're both ready.
+              </p>
+              <p>
+                <strong>
+                  Good luck!
+                </strong>
+              </p>
+            </div>
+            <div
+              className="jsx-1594900497 actions"
             >
               <div
-                className="jsx-109255757 shake"
+                className="jsx-1594900497 button"
               >
-                <button
-                  className="jsx-2576755423 button hover-button"
-                  onClick={[Function]}
-                  type="button"
+                <div
+                  className="jsx-109255757 shake"
                 >
-                  Ready
-                </button>
+                  <button
+                    className="jsx-2576755423 button hover-button"
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    Ready
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -14656,55 +14706,59 @@ exports[`Cosmos fixtures: JoinGame:available 1`] = `
         }
       >
         <div
-          className="jsx-2820880205 screen"
+          className="jsx-1497761764 fade-in"
         >
-          <h2
-            className="jsx-2820880205 title"
-          >
-            Join game...
-          </h2>
           <div
-            className="jsx-2820880205 message"
+            className="jsx-1594900497 screen"
           >
-            <p>
-              <strong>
-                Room for one more!
-              </strong>
-            </p>
-            <p>
-              You can watch, or
-              <br />
-              you can play.
-            </p>
-            <p>
-              What will it be?
-            </p>
-          </div>
-          <div
-            className="jsx-2820880205 actions"
-          >
-            <div
-              className="jsx-2820880205 button"
+            <h2
+              className="jsx-1594900497 title"
             >
-              <button
-                className="jsx-2576755423 button hover-button"
-                disabled={false}
-                onClick={[Function]}
-                type="button"
-              >
-                Join
-              </button>
+              Join game...
+            </h2>
+            <div
+              className="jsx-1594900497 message"
+            >
+              <p>
+                <strong>
+                  Room for one more!
+                </strong>
+              </p>
+              <p>
+                You can watch, or
+                <br />
+                you can play.
+              </p>
+              <p>
+                What will it be?
+              </p>
             </div>
             <div
-              className="jsx-2820880205 button"
+              className="jsx-1594900497 actions"
             >
-              <button
-                className="jsx-2453729951 button hover-button"
-                onClick={[Function]}
-                type="button"
+              <div
+                className="jsx-1594900497 button"
               >
-                Watch
-              </button>
+                <button
+                  className="jsx-2576755423 button hover-button"
+                  disabled={false}
+                  onClick={[Function]}
+                  type="button"
+                >
+                  Join
+                </button>
+              </div>
+              <div
+                className="jsx-1594900497 button"
+              >
+                <button
+                  className="jsx-2453729951 button hover-button"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  Watch
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -14736,58 +14790,62 @@ exports[`Cosmos fixtures: JoinGame:full 1`] = `
         }
       >
         <div
-          className="jsx-2820880205 screen"
+          className="jsx-1497761764 fade-in"
         >
-          <h2
-            className="jsx-2820880205 title"
-          >
-            Join game...
-          </h2>
           <div
-            className="jsx-2820880205 message"
+            className="jsx-1594900497 screen"
           >
-            <p>
-              <strong>
-                Game full.
-              </strong>
-            </p>
-            <p>
-              You can watch, or
-              <br />
-              <a
-                href="/"
-                onClick={[Function]}
-              >
-                create another game
-              </a>
-              .
-            </p>
-          </div>
-          <div
-            className="jsx-2820880205 actions"
-          >
-            <div
-              className="jsx-2820880205 button"
+            <h2
+              className="jsx-1594900497 title"
             >
-              <button
-                className="jsx-2576755423 button hover-button"
-                disabled={true}
-                onClick={[Function]}
-                type="button"
-              >
-                Join
-              </button>
+              Join game...
+            </h2>
+            <div
+              className="jsx-1594900497 message"
+            >
+              <p>
+                <strong>
+                  Game full.
+                </strong>
+              </p>
+              <p>
+                You can watch, or
+                <br />
+                <a
+                  href="/"
+                  onClick={[Function]}
+                >
+                  create another game
+                </a>
+                .
+              </p>
             </div>
             <div
-              className="jsx-2820880205 button"
+              className="jsx-1594900497 actions"
             >
-              <button
-                className="jsx-2453729951 button hover-button"
-                onClick={[Function]}
-                type="button"
+              <div
+                className="jsx-1594900497 button"
               >
-                Watch
-              </button>
+                <button
+                  className="jsx-2576755423 button hover-button"
+                  disabled={true}
+                  onClick={[Function]}
+                  type="button"
+                >
+                  Join
+                </button>
+              </div>
+              <div
+                className="jsx-1594900497 button"
+              >
+                <button
+                  className="jsx-2453729951 button hover-button"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  Watch
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -14920,44 +14978,48 @@ exports[`Cosmos fixtures: NewGame:default 1`] = `
         }
       >
         <div
-          className="jsx-2820880205 screen"
+          className="jsx-1497761764 fade-in"
         >
-          <h2
-            className="jsx-2820880205 title"
-          >
-            New game...
-          </h2>
           <div
-            className="jsx-2820880205 message"
+            className="jsx-1594900497 screen"
           >
-            <p>
-              <strong>
-                Invite a friend to
-                <br />
-                battle, or play solo.
-              </strong>
-            </p>
-            <p>
-              Either way, you can
-              <br />
-              warm up until the
-              <br />
-              other person arrives.
-            </p>
-          </div>
-          <div
-            className="jsx-2820880205 actions"
-          >
-            <div
-              className="jsx-2820880205 button"
+            <h2
+              className="jsx-1594900497 title"
             >
-              <button
-                className="jsx-2576755423 button hover-button"
-                onClick={[Function]}
-                type="button"
+              New game...
+            </h2>
+            <div
+              className="jsx-1594900497 message"
+            >
+              <p>
+                <strong>
+                  Invite a friend to
+                  <br />
+                  battle, or play solo.
+                </strong>
+              </p>
+              <p>
+                Either way, you can
+                <br />
+                warm up until the
+                <br />
+                other person arrives.
+              </p>
+            </div>
+            <div
+              className="jsx-1594900497 actions"
+            >
+              <div
+                className="jsx-1594900497 button"
               >
-                Play
-              </button>
+                <button
+                  className="jsx-2576755423 button hover-button"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  Play
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -16457,40 +16519,44 @@ exports[`Cosmos fixtures: WaitingForOther:default 1`] = `
         }
       >
         <div
-          className="jsx-2820880205 screen"
+          className="jsx-1497761764 fade-in"
         >
-          <h2
-            className="jsx-2820880205 title"
-          >
-            Waiting...
-          </h2>
           <div
-            className="jsx-2820880205 message"
+            className="jsx-1594900497 screen"
           >
-            <p>
-              Your friend is a bit
-              <br />
-              slower. I know...
-            </p>
-            <p>
-              <strong>
-                Ping them to hurry!
-              </strong>
-            </p>
-          </div>
-          <div
-            className="jsx-2820880205 actions"
-          >
-            <div
-              className="jsx-2820880205 button"
+            <h2
+              className="jsx-1594900497 title"
             >
-              <button
-                className="jsx-2576755423 button hover-button"
-                onClick={[Function]}
-                type="button"
+              Waiting...
+            </h2>
+            <div
+              className="jsx-1594900497 message"
+            >
+              <p>
+                Your friend is a bit
+                <br />
+                slower. I know...
+              </p>
+              <p>
+                <strong>
+                  Ping them to hurry!
+                </strong>
+              </p>
+            </div>
+            <div
+              className="jsx-1594900497 actions"
+            >
+              <div
+                className="jsx-1594900497 button"
               >
-                Ping
-              </button>
+                <button
+                  className="jsx-2576755423 button hover-button"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  Ping
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -16522,43 +16588,47 @@ exports[`Cosmos fixtures: WaitingForOther:ping 1`] = `
         }
       >
         <div
-          className="jsx-2820880205 screen"
+          className="jsx-1497761764 fade-in"
         >
-          <h2
-            className="jsx-2820880205 title"
-          >
-            Waiting...
-          </h2>
           <div
-            className="jsx-2820880205 message"
+            className="jsx-1594900497 screen"
           >
-            <p>
-              Your friend is a bit
-              <br />
-              slower. I know...
-            </p>
-            <p>
-              <strong>
-                Ping them to hurry!
-              </strong>
-            </p>
-          </div>
-          <div
-            className="jsx-2820880205 actions"
-          >
+            <h2
+              className="jsx-1594900497 title"
+            >
+              Waiting...
+            </h2>
             <div
-              className="jsx-2820880205 button"
+              className="jsx-1594900497 message"
+            >
+              <p>
+                Your friend is a bit
+                <br />
+                slower. I know...
+              </p>
+              <p>
+                <strong>
+                  Ping them to hurry!
+                </strong>
+              </p>
+            </div>
+            <div
+              className="jsx-1594900497 actions"
             >
               <div
-                className="jsx-109255757 shake"
+                className="jsx-1594900497 button"
               >
-                <button
-                  className="jsx-2576755423 button hover-button"
-                  onClick={[Function]}
-                  type="button"
+                <div
+                  className="jsx-109255757 shake"
                 >
-                  Ping
-                </button>
+                  <button
+                    className="jsx-2576755423 button hover-button"
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    Ping
+                  </button>
+                </div>
               </div>
             </div>
           </div>
