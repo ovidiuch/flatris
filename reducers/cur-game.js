@@ -1,6 +1,6 @@
 // @flow
 
-import { gameReducer } from './game';
+import { gameReducer, getBlankPlayerEffects } from './game';
 
 import type { Game, State } from '../types/state';
 import type { Action } from '../types/actions';
@@ -16,13 +16,10 @@ export function curGameReducer(state: void | ?Game, action: Action): ?Game {
 
       return {
         ...game,
-        players: game.players.map(p => ({
-          ...p,
+        players: game.players.map(player => ({
+          ...player,
           // Strip effects to avoid running them on page load
-          flashYay: null,
-          flashNay: null,
-          quake: null,
-          ping: null
+          ...getBlankPlayerEffects()
         }))
       };
     }

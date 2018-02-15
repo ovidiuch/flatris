@@ -84,8 +84,7 @@
 * User testing feedback
   * [x] Disable in-game auth after entering 1st time
   * [x] Fade in game screens
-  * [ ] Generate new Tetromino random sequence per game turn
-  * [ ] Clear player.ping when game starts (& other effects as well)
+  * [x] Generate new Tetromino random sequence per game turn
   * [ ] Improve ending UI: Add WON/LOST green/red badges under player name
 * [ ] Disable controls when user isn't playing
 * [ ] Side controls on landscape mobile

@@ -23,8 +23,8 @@ export default createFixture({
 
   props: {
     player,
+    wins: 3,
     isPlayer1: true,
-    showWins: true,
     showReadyState: true
   }
 });

@@ -14,9 +14,8 @@ export default createFixture({
 
   props: {
     player: null,
+    wins: null,
     isPlayer1: true,
-    showWins: false,
     showReadyState: false
   }
 });
-

@@ -30,17 +30,19 @@ export type QuakeSuffix = 'a1' | 'a2' | 'a3' | 'a4' | 'b1' | 'b2' | 'b3' | 'b4';
 export type Player = {
   user: User,
   status: PlayerStatus,
+  // We track losses instead of wins because they allows us to count the number
+  // of turns player per game in single player, where all turns are "lost"
+  losses: number,
   drops: number,
   score: number,
   lines: number,
-  wins: number,
   grid: WellGrid,
   blocksCleared: WellGrid,
   blocksPending: WellGrid,
-  nextTetromino: Tetromino,
   activeTetromino: Tetromino,
   activeTetrominoGrid: TetrominoGrid,
   activeTetrominoPosition: Position2d,
+  nextTetromino: Tetromino,
   dropAcceleration: boolean,
   flashYay: ?FlashSuffix,
   flashNay: ?FlashSuffix,

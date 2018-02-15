@@ -7,8 +7,8 @@ import type { Player } from '../types/state';
 
 type Props = {
   player: ?Player,
+  wins: ?number,
   isPlayer1: boolean,
-  showWins: boolean,
   showReadyState: boolean,
   onSelect?: Function
 };
@@ -86,13 +86,14 @@ export default class PlayerInfo extends Component<Props> {
   }
 
   render() {
-    const { player, showWins, showReadyState } = this.props;
+    const { player, wins, showReadyState } = this.props;
 
     if (!player) {
       return this.renderMissingPlayer();
     }
 
-    const { user, wins, score, lines } = player;
+    const { user, score, lines } = player;
+    const showWins = typeof wins === 'number';
     const humanizedScore = humanizeNumber(score);
 
     return (

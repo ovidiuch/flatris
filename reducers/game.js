@@ -61,13 +61,13 @@ export function gameReducer(state: void | Game, action: GameAction): Game {
       // Reset game when all players are ready to (re)start
       if (allPlayersReady(game)) {
         const { id, players } = game;
+        const round = getGameRound(game);
 
         return {
-          id,
-          players: players.map(({ user, wins }) => ({
-            ...getBlankPlayer(id, user),
-            status: 'READY',
-            wins
+          ...game,
+          players: players.map(player => ({
+            ...player,
+            ...getBlankPlayerRound({ gameId: id, round })
           })),
           dropFrames: DROP_FRAMES_DEFAULT
         };
@@ -137,8 +137,8 @@ export function gameReducer(state: void | Game, action: GameAction): Game {
           players: state.players.map(player => {
             const newAttrs =
               player.user.id === userId
-                ? { status: 'LOST' }
-                : { status: 'WON', wins: player.wins + 1 };
+                ? { status: 'LOST', losses: player.losses + 1 }
+                : { status: 'WON' };
 
             return {
               ...player,
@@ -158,8 +158,18 @@ export function gameReducer(state: void | Game, action: GameAction): Game {
       );
       let newState = state;
 
-      newState = resetActiveTetromino(newState, userId);
-      newState = updatePlayer(newState, userId, { grid: newGrid });
+      const round = getGameRound(newState);
+      const drops = player.drops + 1;
+
+      newState = updatePlayer(newState, userId, {
+        drops: drops,
+        grid: newGrid,
+        ...getNextPlayerTetromino({ gameId: state.id, round, drops }),
+        // Clear acceleration after dropping Tetromino. Sometimes the key
+        // events would misbehave and acceleration would remain on even after
+        // releasing DOWN key
+        dropAcceleration: false
+      });
 
       if (!hasLines(newGrid)) {
         return newState;
@@ -324,29 +334,62 @@ export function getBlankGame({
 }
 
 export function getBlankPlayer(gameId: GameId, user: User): Player {
-  const activeTetromino = getNextTetromino(gameId, 0);
-  const nextTetromino = getNextTetromino(gameId, 1);
-  const activeTetrominoGrid = SHAPES[activeTetromino];
-  const activeTetrominoPosition = getInitialPositionForTetromino(
-    activeTetromino,
-    WELL_COLS
-  );
-
   return {
     user,
     status: 'PENDING',
+    losses: 0,
+    ...getBlankPlayerRound({ gameId })
+  };
+}
+
+export function getBlankPlayerRound({
+  gameId,
+  round = 0,
+  drops = 0
+}: {
+  gameId: GameId,
+  round?: number,
+  drops?: number
+} = {}) {
+  return {
     drops: 0,
     score: 0,
     lines: 0,
-    wins: 0,
     grid: generateEmptyGrid(WELL_ROWS, WELL_COLS),
     blocksCleared: [],
     blocksPending: [],
-    nextTetromino,
-    activeTetromino,
-    activeTetrominoGrid,
-    activeTetrominoPosition,
+    ...getNextPlayerTetromino({ gameId, round, drops }),
     dropAcceleration: false,
+    ...getBlankPlayerEffects()
+  };
+}
+
+export function getNextPlayerTetromino({
+  gameId,
+  round = 0,
+  drops = 0
+}: {
+  gameId: GameId,
+  round?: number,
+  drops?: number
+} = {}) {
+  // Generate random Tetromino sequence per game round
+  const roundId = (parseInt(gameId, 16) * (round + 1)).toString(16);
+  const activeTetromino = getNextTetromino(roundId, drops);
+
+  return {
+    activeTetromino,
+    activeTetrominoGrid: SHAPES[activeTetromino],
+    activeTetrominoPosition: getInitialPositionForTetromino(
+      activeTetromino,
+      WELL_COLS
+    ),
+    nextTetromino: getNextTetromino(roundId, drops + 1)
+  };
+}
+
+export function getBlankPlayerEffects() {
+  return {
     flashYay: null,
     flashNay: null,
     quake: null,
@@ -452,24 +495,8 @@ function rewardClearedBlocks(game: Game, userId: UserId): Game {
   };
 }
 
-function resetActiveTetromino(game: Game, userId: UserId): Game {
-  const player = getPlayer(game, userId);
-  const { drops, nextTetromino } = player;
-
-  return updatePlayer(game, userId, {
-    drops: drops + 1,
-    nextTetromino: getNextTetromino(game.id, drops + 2),
-    activeTetromino: nextTetromino,
-    activeTetrominoGrid: SHAPES[nextTetromino],
-    activeTetrominoPosition: getInitialPositionForTetromino(
-      nextTetromino,
-      WELL_COLS
-    ),
-    // Clear acceleration after dropping Tetromino. Sometimes the key
-    // events would misbehave and acceleration would remain on even after
-    // releasing DOWN key
-    dropAcceleration: false
-  });
+function getGameRound(game: Game) {
+  return game.players.reduce((acc, next) => acc + next.losses, 0);
 }
 
 function sendClearedBlocksToEnemy(
