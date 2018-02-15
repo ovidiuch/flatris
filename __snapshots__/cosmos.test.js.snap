@@ -74,36 +74,63 @@ exports[`Cosmos fixtures: Connect(Auth):default 1`] = `
           <div
             className="jsx-2820880205 message"
           >
-            <p>
+            <p
+              className="jsx-842746317"
+            >
               Use the 
-              <strong>
+              <strong
+                className="jsx-842746317"
+              >
                 arrow keys
               </strong>
               ,
-              <br />
+              <br
+                className="jsx-842746317"
+              />
               or the
                
-              <strong>
+              <strong
+                className="jsx-842746317"
+              >
                 buttons below
               </strong>
-              <br />
+              <br
+                className="jsx-842746317"
+              />
               on mobile (portrait).
             </p>
-            <p>
-              <strong>
-                Multiplayer twist:
+            <p
+              className="jsx-842746317"
+            >
+              <strong
+                className="jsx-842746317"
+              >
+                Multiplayer twist
               </strong>
-              <br />
-              Every line you clear
-              <br />
-              will be added to your
-              <br />
-              opponent & viceversa.
+              :
+              <br
+                className="jsx-842746317"
+              />
+              <span
+                className="jsx-842746317 highlight"
+              >
+                Every line you clear
+                <br
+                  className="jsx-842746317"
+                />
+                will be added to your
+                <br
+                  className="jsx-842746317"
+                />
+                opponent
+              </span>
+               
+              & viceversa.
             </p>
-            <p>
-              <em>
-                Play fast to survive!
-              </em>
+            <p
+              className="jsx-842746317"
+            >
+              Play fast to survive!
             </p>
           </div>
           <div
@@ -160,36 +187,63 @@ exports[`Cosmos fixtures: Connect(Auth):disabled 1`] = `
           <div
             className="jsx-2820880205 message"
           >
-            <p>
+            <p
+              className="jsx-842746317"
+            >
               Use the 
-              <strong>
+              <strong
+                className="jsx-842746317"
+              >
                 arrow keys
               </strong>
               ,
-              <br />
+              <br
+                className="jsx-842746317"
+              />
               or the
                
-              <strong>
+              <strong
+                className="jsx-842746317"
+              >
                 buttons below
               </strong>
-              <br />
+              <br
+                className="jsx-842746317"
+              />
               on mobile (portrait).
             </p>
-            <p>
-              <strong>
-                Multiplayer twist:
+            <p
+              className="jsx-842746317"
+            >
+              <strong
+                className="jsx-842746317"
+              >
+                Multiplayer twist
               </strong>
-              <br />
-              Every line you clear
-              <br />
-              will be added to your
-              <br />
-              opponent & viceversa.
+              :
+              <br
+                className="jsx-842746317"
+              />
+              <span
+                className="jsx-842746317 highlight"
+              >
+                Every line you clear
+                <br
+                  className="jsx-842746317"
+                />
+                will be added to your
+                <br
+                  className="jsx-842746317"
+                />
+                opponent
+              </span>
+               
+              & viceversa.
             </p>
-            <p>
-              <em>
-                Play fast to survive!
-              </em>
+            <p
+              className="jsx-842746317"
+            >
+              Play fast to survive!
             </p>
           </div>
           <div
@@ -7573,19 +7627,19 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah 1`] = `
                   className="jsx-215556098 player2"
                 >
                   <div
-                    className="jsx-1157014460 player-info selectable"
+                    className="jsx-1454304847 player-info selectable"
                     onClick={[Function]}
                   >
                     <div
-                      className="jsx-1157014460 centered"
+                      className="jsx-1454304847 centered"
                     >
                       <div
-                        className="jsx-1157014460 player"
+                        className="jsx-1454304847 player"
                       >
                         2p
                       </div>
                       <div
-                        className="jsx-1157014460 insert-coin"
+                        className="jsx-1454304847 insert-coin"
                       >
                         insert coin
                       </div>
@@ -9950,19 +10004,19 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah-guest 1
                   className="jsx-215556098 player2"
                 >
                   <div
-                    className="jsx-1157014460 player-info selectable"
+                    className="jsx-1454304847 player-info selectable"
                     onClick={[Function]}
                   >
                     <div
-                      className="jsx-1157014460 centered"
+                      className="jsx-1454304847 centered"
                     >
                       <div
-                        className="jsx-1157014460 player"
+                        className="jsx-1454304847 player"
                       >
                         2p
                       </div>
                       <div
-                        className="jsx-1157014460 insert-coin"
+                        className="jsx-1454304847 insert-coin"
                       >
                         insert coin
                       </div>
@@ -12756,19 +12810,19 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
                   className="jsx-215556098 player2"
                 >
                   <div
-                    className="jsx-1157014460 player-info selectable"
+                    className="jsx-1454304847 player-info selectable"
                     onClick={[Function]}
                   >
                     <div
-                      className="jsx-1157014460 centered"
+                      className="jsx-1454304847 centered"
                     >
                       <div
-                        className="jsx-1157014460 player"
+                        className="jsx-1454304847 player"
                       >
                         2p
                       </div>
                       <div
-                        className="jsx-1157014460 insert-coin"
+                        className="jsx-1454304847 insert-coin"
                       >
                         insert coin
                       </div>
@@ -13201,19 +13255,19 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
                   className="jsx-215556098 player2"
                 >
                   <div
-                    className="jsx-1157014460 player-info selectable"
+                    className="jsx-1454304847 player-info selectable"
                     onClick={[Function]}
                   >
                     <div
-                      className="jsx-1157014460 centered"
+                      className="jsx-1454304847 centered"
                     >
                       <div
-                        className="jsx-1157014460 player"
+                        className="jsx-1454304847 player"
                       >
                         2p
                       </div>
                       <div
-                        className="jsx-1157014460 insert-coin"
+                        className="jsx-1454304847 insert-coin"
                       >
                         insert coin
                       </div>
@@ -13600,19 +13654,19 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game-running 1
                   className="jsx-215556098 player2"
                 >
                   <div
-                    className="jsx-1157014460 player-info selectable"
+                    className="jsx-1454304847 player-info selectable"
                     onClick={[Function]}
                   >
                     <div
-                      className="jsx-1157014460 centered"
+                      className="jsx-1454304847 centered"
                     >
                       <div
-                        className="jsx-1157014460 player"
+                        className="jsx-1454304847 player"
                       >
                         2p
                       </div>
                       <div
-                        className="jsx-1157014460 insert-coin"
+                        className="jsx-1454304847 insert-coin"
                       >
                         insert coin
                       </div>
@@ -14129,19 +14183,19 @@ exports[`Cosmos fixtures: GamePanel:default 1`] = `
             className="jsx-215556098 player2"
           >
             <div
-              className="jsx-1157014460 player-info selectable"
+              className="jsx-1454304847 player-info selectable"
               onClick={[Function]}
             >
               <div
-                className="jsx-1157014460 centered"
+                className="jsx-1454304847 centered"
               >
                 <div
-                  className="jsx-1157014460 player"
+                  className="jsx-1454304847 player"
                 >
                   2p
                 </div>
                 <div
-                  className="jsx-1157014460 insert-coin"
+                  className="jsx-1454304847 insert-coin"
                 >
                   insert coin
                 </div>
@@ -15237,19 +15291,19 @@ exports[`Cosmos fixtures: PlayerInfo:player1-missing 1`] = `
         }
       >
         <div
-          className="jsx-1157014460 player-info"
+          className="jsx-1454304847 player-info"
           onClick={undefined}
         >
           <div
-            className="jsx-1157014460 centered"
+            className="jsx-1454304847 centered"
           >
             <div
-              className="jsx-1157014460 player"
+              className="jsx-1454304847 player"
             >
               1p
             </div>
             <div
-              className="jsx-1157014460 insert-coin"
+              className="jsx-1454304847 insert-coin"
             >
               insert coin
             </div>
@@ -15284,19 +15338,19 @@ exports[`Cosmos fixtures: PlayerInfo:player2-missing 1`] = `
         }
       >
         <div
-          className="jsx-1157014460 player-info selectable"
+          className="jsx-1454304847 player-info selectable"
           onClick={[Function]}
         >
           <div
-            className="jsx-1157014460 centered"
+            className="jsx-1454304847 centered"
           >
             <div
-              className="jsx-1157014460 player"
+              className="jsx-1454304847 player"
             >
               2p
             </div>
             <div
-              className="jsx-1157014460 insert-coin"
+              className="jsx-1454304847 insert-coin"
             >
               insert coin
             </div>

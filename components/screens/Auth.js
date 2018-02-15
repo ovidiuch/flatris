@@ -87,13 +87,21 @@ class Auth extends Component<Props, LocalState> {
                 <br />on mobile (portrait).
               </p>
               <p>
-                <strong>Multiplayer twist:</strong>
-                <br />Every line you clear<br />will be added to your<br />
-                opponent & viceversa.
+                <strong>Multiplayer twist</strong>:
+                <br />
+                <span className="highlight">
+                  Every line you clear<br />will be added to your<br />
+                  opponent
+                </span>{' '}
+                & viceversa.
               </p>
-              <p>
-                <em>Play fast to survive!</em>
-              </p>
+              <p>Play fast to survive!</p>
+              <style jsx>{`
+                .highlight {
+                  background: rgba(245, 228, 129, 1);
+                  padding: 0.15em 0;
+                }
+              `}</style>
             </Fragment>
           }
           actions={[
