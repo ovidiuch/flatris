@@ -37,7 +37,6 @@ import Right from './controls/Right';
 import Drop from './controls/Drop';
 import Flash from './effects/Flash';
 import Quake from './effects/Quake';
-import FadeIn from './effects/FadeIn';
 import NewGame from './screens/NewGame';
 import Auth from './screens/Auth';
 import JoinGame from './screens/JoinGame';
@@ -406,9 +405,7 @@ class FlatrisGame extends Component<Props, LocalState> {
   renderMenuBtn() {
     return (
       <div className="menu-btn">
-        <FadeIn>
-          <Button onClick={this.handleMenu}>Menu</Button>
-        </FadeIn>
+        <Button onClick={this.handleMenu}>Menu</Button>
         <style jsx>{`
           .menu-btn {
             position: absolute;
