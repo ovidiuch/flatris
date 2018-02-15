@@ -26,9 +26,10 @@ export function addRoutes(app: express$Application) {
   app.post('/game', (req: express$Request, res: express$Response) => {
     try {
       const user = getUserFromReqSession(req);
-
-      console.log('Create game', user);
       const game = insertGame(user);
+
+      const numGames = Object.keys(games).length;
+      console.log(`Create game #${numGames}`, game.id, user);
 
       res.json(game);
     } catch (err) {
@@ -52,9 +53,11 @@ export function addRoutes(app: express$Application) {
         throw new Error('Empty user name');
       }
 
-      console.log('Create session', userName);
       const user = insertUser(userName);
       const session = insertSession(user.id);
+
+      const numSessions = Object.keys(sessions).length;
+      console.log(`Create session #${numSessions}`, session.id, user);
 
       res.cookie('sessionId', session.id);
       res.json(user);

@@ -11,11 +11,17 @@ export function attachSocket(server: net$Server) {
   const io = socketIo(server);
 
   io.on('connect', socket => {
+    console.log('New socket connection');
+
     socket.on('open-game', (gameId: GameId) => {
+      console.log(`Game opened ${gameId}`);
+
       socket.join(gameId);
     });
 
     socket.on('close-game', (gameId: GameId) => {
+      console.log(`Game closed ${gameId}`);
+
       socket.leave(gameId);
     });
 
