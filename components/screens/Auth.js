@@ -10,7 +10,7 @@ import Screen from './Screen';
 
 type Props = {
   disabled?: boolean,
-  onAuth?: Function,
+  onAuthStart?: Function,
   auth: typeof auth
 };
 
@@ -53,14 +53,17 @@ class Auth extends Component<Props, LocalState> {
 
     const { name } = this.state;
     if (name) {
-      const { onAuth, auth } = this.props;
+      const { onAuthStart, auth } = this.props;
 
       // Signal that auth started to parent
-      if (onAuth) {
-        onAuth();
+      if (onAuthStart) {
+        onAuthStart();
       }
 
       const user = await createUserSession(name);
+
+      await new Promise(res => setTimeout(res, 3000));
+
       auth(user);
     }
   };

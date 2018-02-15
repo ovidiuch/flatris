@@ -66,11 +66,13 @@ type Props = {
 };
 
 type LocalState = {
+  pendingAuth: boolean,
   isWatching: boolean
 };
 
 class FlatrisGame extends Component<Props, LocalState> {
   state = {
+    pendingAuth: false,
     isWatching: false
   };
 
@@ -85,8 +87,14 @@ class FlatrisGame extends Component<Props, LocalState> {
   }
 
   componentDidUpdate(prevProps) {
-    const prevGame = prevProps.game;
+    const { curUser: prevCurUser, game: prevGame } = prevProps;
     const { curUser, game, appendPendingBlocks } = this.props;
+
+    if (curUser && !prevCurUser) {
+      this.setState({
+        pendingAuth: false
+      });
+    }
 
     if (curUser && isPlayer(game, curUser)) {
       if (allPlayersReady(game) && !allPlayersReady(prevGame)) {
@@ -140,6 +148,12 @@ class FlatrisGame extends Component<Props, LocalState> {
     this.detachKeyEvents();
     cancelGameFrame();
   }
+
+  handleAuthStart = () => {
+    this.setState({
+      pendingAuth: true
+    });
+  };
 
   handleWatch = () => {
     this.setState({
@@ -316,7 +330,7 @@ class FlatrisGame extends Component<Props, LocalState> {
   // TODO: Show menu for users that are just watching
   renderScreens() {
     const { curUser, game } = this.props;
-    const { isWatching } = this.state;
+    const { pendingAuth, isWatching } = this.state;
     const hasJoined = isPlayer(game, curUser);
 
     // P1 is the current user's player, P2 is the other (in multiplayer games)
@@ -324,7 +338,9 @@ class FlatrisGame extends Component<Props, LocalState> {
     const otherPlayer = getOtherPlayer(game, curPlayer);
 
     if (!curUser) {
-      return this.renderScreen(<Auth />);
+      return this.renderScreen(
+        <Auth disabled={pendingAuth} onAuthStart={this.handleAuthStart} />
+      );
     }
 
     if (isWatching) {

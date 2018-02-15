@@ -83,6 +83,7 @@
   * [x] Left, right, up, down & space keys for desktop
   * [x] Point to controls
   * [x] Explain Flatris invention: line transferring
+* [x] Disable in-game auth after entering 1st time
 * [ ] Encourage players to play "first x out of y" on game over
 * [ ] Throttle key down events
 * [ ] Add copy to clipboard btn to "Invite or play" screen

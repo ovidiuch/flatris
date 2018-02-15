@@ -50,7 +50,7 @@ class NewGame extends Component<Props, LocalState> {
     }
   }
 
-  handleAuth = () => {
+  handleAuthStart = () => {
     this.setState({
       pendingAuth: true
     });
@@ -65,7 +65,7 @@ class NewGame extends Component<Props, LocalState> {
           {requireAuth && (
             <Auth
               disabled={pendingAuth || pendingCreate}
-              onAuth={this.handleAuth}
+              onAuthStart={this.handleAuthStart}
             />
           )}
         </div>
