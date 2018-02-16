@@ -31,10 +31,7 @@ import { withSocket } from '../utils/socket-connect';
 import Button from './Button';
 import Well from './Well';
 import GamePanel from './GamePanel';
-import Rotate from './controls/Rotate';
-import Left from './controls/Left';
-import Right from './controls/Right';
-import Drop from './controls/Drop';
+import PortraitControls from './controls/PortraitControls';
 import Flash from './effects/Flash';
 import Quake from './effects/Quake';
 import NewGame from './screens/NewGame';
@@ -231,80 +228,6 @@ class FlatrisGame extends Component<Props, LocalState> {
     }
   };
 
-  handleRotatePress = e => {
-    e.preventDefault();
-
-    const { rotate } = this.props;
-    rotate();
-  };
-
-  handleLeftPress = e => {
-    e.preventDefault();
-
-    const { moveLeft } = this.props;
-    moveLeft();
-  };
-
-  handleRightPress = e => {
-    e.preventDefault();
-
-    const { moveRight } = this.props;
-    moveRight();
-  };
-
-  handleDropPress = e => {
-    e.preventDefault();
-
-    const { enableAcceleration } = this.props;
-    enableAcceleration();
-  };
-
-  renderControlIcon(path) {
-    return (
-      <svg viewBox="0 0 24 24">
-        <path d={path} />
-      </svg>
-    );
-  }
-
-  renderControls() {
-    const { curUser, game } = this.props;
-    const isGameRunning = isPlayer(game, curUser) && allPlayersReady(game);
-
-    return (
-      <div className="controls">
-        <div className="button">
-          <Rotate disabled={!isGameRunning} onPress={this.handleRotatePress} />
-        </div>
-        <div className="button">
-          <Left disabled={!isGameRunning} onPress={this.handleLeftPress} />
-        </div>
-        <div className="button">
-          <Right disabled={!isGameRunning} onPress={this.handleRightPress} />
-        </div>
-        <div className="button">
-          <Drop disabled={!isGameRunning} onPress={this.handleDropPress} />
-        </div>
-        <style jsx>{`
-          .controls {
-            position: absolute;
-            top: calc(100% * 20 / 24);
-            bottom: 0;
-            left: 0;
-            right: 0;
-          }
-
-          .controls .button {
-            position: relative;
-            float: left;
-            width: 25%;
-            height: 100%;
-          }
-        `}</style>
-      </div>
-    );
-  }
-
   renderWell(player: Player) {
     const {
       grid,
@@ -387,12 +310,13 @@ class FlatrisGame extends Component<Props, LocalState> {
 
   renderScreen(content: Node) {
     return (
-      <div className="screen-container game-height">
+      <div className="screen-container">
         {content}
         <style jsx>{`
           .screen-container {
             position: absolute;
             top: 0;
+            bottom: 0;
             left: 0;
             right: calc(100% / 16 * 6);
             background: rgba(236, 240, 241, 0.85);
@@ -433,19 +357,21 @@ class FlatrisGame extends Component<Props, LocalState> {
 
     return (
       <div className="flatris-game">
-        <Quake player1={curPlayer} player2={otherPlayer}>
-          <div className="well-container game-height">
-            {otherPlayer && (
-              <div className="enemy-well">{this.renderWell(otherPlayer)}</div>
-            )}
-            <Flash player={curPlayer}>{this.renderWell(curPlayer)}</Flash>
-          </div>
-          {this.renderScreens()}
-          <div className="side-container game-height">
-            <GamePanel curUser={curUser} game={game} />
-          </div>
-          {this.renderControls()}
-        </Quake>
+        <div className="game-container game-height">
+          <Quake player1={curPlayer} player2={otherPlayer}>
+            <div className="well-container">
+              {otherPlayer && (
+                <div className="enemy-well">{this.renderWell(otherPlayer)}</div>
+              )}
+              <Flash player={curPlayer}>{this.renderWell(curPlayer)}</Flash>
+            </div>
+            {this.renderScreens()}
+            <div className="side-container">
+              <GamePanel curUser={curUser} game={game} />
+            </div>
+          </Quake>
+        </div>
+        <PortraitControls />
         <style jsx>{`
           .flatris-game {
             position: absolute;
@@ -455,9 +381,15 @@ class FlatrisGame extends Component<Props, LocalState> {
             right: 0;
           }
 
+          .game-container {
+            position: absolute;
+            width: 100%;
+          }
+
           .well-container {
             position: absolute;
             top: 0;
+            bottom: 0;
             left: 0;
             right: calc(100% / 16 * 6);
             background: #ecf0f1;
@@ -466,6 +398,7 @@ class FlatrisGame extends Component<Props, LocalState> {
           .side-container {
             position: absolute;
             top: 0;
+            bottom: 0;
             right: 0;
             left: calc(100% / 16 * 10);
             background: #fff;

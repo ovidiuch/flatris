@@ -50,7 +50,7 @@ export default class PlayerInfo extends Component<Props> {
               radial-gradient(rgba(255, 255, 255, 0.8) 0%, transparent 50%);
             background-size: 400% 400%;
             background-position: 100% 100%;
-            animation: wave 5s linear infinite;
+            animation: wave 5s 5s linear infinite;
           }
 
           .centered {

@@ -90,6 +90,7 @@
 * [x] Encourage players to play "best x out of y"
 * [x] Disable controls when user isn't playing
 * [ ] Side controls on landscape mobile
+  * [x] Extract portrait controls out of FlatrisGame
 * [ ] Add copy to clipboard btn to "Invite or play" screen
   * [ ] Copy to clipboard when clicking on "2P insert coin"
 * [ ] Don't request user auth when game is full (allow guests to watch)
