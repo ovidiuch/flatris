@@ -12,7 +12,7 @@ import FlatrisGame from '../../FlatrisGame';
 import type { ElementRef } from 'react';
 
 const user = getSampleUser();
-let game = getBlankGame({ id: 'dce6b11e', user, dropFrames: 30 });
+let game = getBlankGame({ id: 'dce6b11e', user });
 
 // Add 2nd player to game state
 const user2 = getSampleUser2();

@@ -2040,7 +2040,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):double-hallelujah 
                         Object {
                           "height": "20%",
                           "left": "30%",
-                          "top": "15%",
+                          "top": "10%",
                           "width": "40%",
                         }
                       }
