@@ -81,15 +81,15 @@
   * [x] Left, right, up, down & space keys for desktop
   * [x] Point to controls
   * [x] Explain Flatris invention: line transferring
-* User testing feedback
+* [x] [ALPHA TESTING] feedback
   * [x] Disable in-game auth after entering 1st time
   * [x] Fade in game screens
   * [x] Generate new Tetromino random sequence per game turn
   * [x] Improve ending UI: Add WON green badge under player name
+    * [x] Regression: Change "WON" badge to not block user score
 * [ ] Disable controls when user isn't playing
 * [ ] Side controls on landscape mobile
 * [ ] Encourage players to play "first x out of y" on game over
-* [ ] Throttle key down events
 * [ ] Add copy to clipboard btn to "Invite or play" screen
   * [ ] Copy to clipboard when clicking on "2P insert coin"
 * [ ] Don't request user auth when game is full (allow guests to watch)
@@ -97,6 +97,7 @@
 * [ ] Create drop shadow from active Tetromino
 * [ ] Create actionId, link actions to prev actions, ensuring consistency
 * [ ] Create action backfill if user has old state and new actions
+* [ ] Throttle key down events
 * [ ] Minimize network communication: Don't send noop actions
 * [ ] Minimize state footprint
 * [ ] Freeze game on player disconnect (Keep seat taken in case user returns)

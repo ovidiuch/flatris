@@ -94,7 +94,7 @@ export default class PlayerInfo extends Component<Props> {
       return this.renderMissingPlayer();
     }
 
-    const { status, user, score, lines } = player;
+    const { user, score, lines } = player;
     const showWins = typeof wins === 'number';
     const humanizedScore = humanizeNumber(score);
 
@@ -124,11 +124,6 @@ export default class PlayerInfo extends Component<Props> {
         {showReadyState && (
           <div className="status ready">
             <span>Ready</span>
-          </div>
-        )}
-        {status === 'WON' && (
-          <div className="status won">
-            <span>Won</span>
           </div>
         )}
         <style jsx>{`
@@ -182,30 +177,25 @@ export default class PlayerInfo extends Component<Props> {
             color: #3993d0;
           }
 
-          .status {
+          .ready {
             position: absolute;
             top: calc(100% / 3);
             bottom: 0;
             left: 0;
             right: 0;
+            background: rgba(57, 147, 208, 0.85);
             color: #fff;
             font-size: 1.2em;
             font-weight: 600;
             text-transform: uppercase;
             text-align: center;
           }
-          .status span {
+          .ready span {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -35%);
             text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
-          }
-          .ready {
-            background: rgba(57, 147, 208, 0.85);
-          }
-          .won {
-            background: rgba(149, 196, 61, 0.9);
           }
 
           .vcentered {

@@ -6841,9 +6841,9 @@ react-cosmos-voyager@^3.6.1:
     glob "^7.1.1"
     traverse "^0.6.6"
 
-react-cosmos@^3.7.0:
-  version "3.7.0"
-  resolved "https://registry.yarnpkg.com/react-cosmos/-/react-cosmos-3.7.0.tgz#50e6195069226d9d54ce666eae234303f562cfa5"
+react-cosmos@^3.7.1:
+  version "3.7.1"
+  resolved "https://registry.yarnpkg.com/react-cosmos/-/react-cosmos-3.7.1.tgz#5cd93158b1ccbae65461e5759a543a14f15327d0"
   dependencies:
     express "^4.15.4"
     fs-extra "^4.0.1"

@@ -6,7 +6,7 @@ import Shake from '../effects/Shake';
 import Button from '../Button';
 import Screen from './Screen';
 
-import type { User, Player, Game } from '../../types/state';
+import type { User, Game } from '../../types/state';
 
 export type Props = {
   curUser: User,
@@ -16,28 +16,45 @@ export type Props = {
 
 export default class GameOver extends Component<Props> {
   render() {
-    const { curUser, game } = this.props;
+    const { curUser, game, onRestart } = this.props;
     const curPlayer = getCurPlayer(game, curUser);
     const otherPlayer = getOtherPlayer(game, curPlayer);
 
+    if (!otherPlayer) {
+      return (
+        <Screen
+          title="Game over"
+          message={
+            <Fragment>
+              <p>That was fun!</p>
+              <p>
+                <strong>Up for another?</strong>
+              </p>
+            </Fragment>
+          }
+          actions={[<Button onClick={onRestart}>Again</Button>]}
+        />
+      );
+    }
+
     return (
       <Screen
-        title="Game over"
-        message={otherPlayer ? this.getMultiMessage() : this.getSoloMessage()}
-        actions={this.getActions(otherPlayer)}
+        title={this.getMultiTitle()}
+        message={this.getMultiMessage()}
+        actions={[
+          <Shake time={otherPlayer.ping}>
+            <Button onClick={onRestart}>Again</Button>
+          </Shake>
+        ]}
       />
     );
   }
 
-  getSoloMessage() {
-    return (
-      <Fragment>
-        <p>Well, that was fun!</p>
-        <p>
-          <strong>Up for another?</strong>
-        </p>
-      </Fragment>
-    );
+  getMultiTitle() {
+    const { curUser, game } = this.props;
+    const curPlayer = getCurPlayer(game, curUser);
+
+    return curPlayer.status === 'LOST' ? 'You lost!' : 'You won!';
   }
 
   getMultiMessage() {
@@ -48,7 +65,7 @@ export default class GameOver extends Component<Props> {
       return (
         <Fragment>
           <p>
-            Oh well... better luck<br />next time!
+            Oh well... better luck<br />next time.
           </p>
           <p>
             <strong>Up for another?</strong>
@@ -59,21 +76,11 @@ export default class GameOver extends Component<Props> {
 
     return (
       <Fragment>
-        <p>Noice! You kicked ass.</p>
+        <p>You kicked ass.</p>
         <p>
           <strong>Up for another?</strong>
         </p>
       </Fragment>
     );
-  }
-
-  getActions(otherPlayer: ?Player) {
-    const { onRestart } = this.props;
-
-    return [
-      <Shake time={otherPlayer && otherPlayer.ping}>
-        <Button onClick={onRestart}>Again</Button>
-      </Shake>
-    ];
   }
 }
