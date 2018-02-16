@@ -88,7 +88,7 @@
   * [x] Improve ending UI: Add WON green badge under player name
     * [x] Regression: Change "WON" badge to not block user score
 * [x] Encourage players to play "best x out of y"
-* [ ] Disable controls when user isn't playing
+* [x] Disable controls when user isn't playing
 * [ ] Side controls on landscape mobile
 * [ ] Add copy to clipboard btn to "Invite or play" screen
   * [ ] Copy to clipboard when clicking on "2P insert coin"
