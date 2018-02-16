@@ -6,7 +6,7 @@ import Shake from '../effects/Shake';
 import Button from '../Button';
 import Screen from './Screen';
 
-import type { User, Game } from '../../types/state';
+import type { User, Player, Game } from '../../types/state';
 
 export type Props = {
   curUser: User,
@@ -39,8 +39,8 @@ export default class GameOver extends Component<Props> {
 
     return (
       <Screen
-        title={this.getMultiTitle()}
-        message={this.getMultiMessage()}
+        title={getMultiTitle(curPlayer)}
+        message={getMultiMessage(curPlayer, otherPlayer)}
         actions={[
           <Shake time={otherPlayer.ping}>
             <Button onClick={onRestart}>Again</Button>
@@ -49,38 +49,37 @@ export default class GameOver extends Component<Props> {
       />
     );
   }
+}
 
-  getMultiTitle() {
-    const { curUser, game } = this.props;
-    const curPlayer = getCurPlayer(game, curUser);
+function getMultiTitle(curPlayer: Player) {
+  return curPlayer.status === 'LOST' ? 'You lost!' : 'You won!';
+}
 
-    return curPlayer.status === 'LOST' ? 'You lost!' : 'You won!';
-  }
+function getMultiMessage(curPlayer: Player, otherPlayer: Player) {
+  const maxLosses = Math.max(curPlayer.losses, otherPlayer.losses);
+  const numWins = maxLosses + 1;
+  const numGames = numWins * 2 - 1;
+  const bestOutOfMsg = `Best ${numWins} out of ${numGames}?`;
 
-  getMultiMessage() {
-    const { curUser, game } = this.props;
-    const curPlayer = getCurPlayer(game, curUser);
-
-    if (curPlayer.status === 'LOST') {
-      return (
-        <Fragment>
-          <p>
-            Oh well... better luck<br />next time.
-          </p>
-          <p>
-            <strong>Up for another?</strong>
-          </p>
-        </Fragment>
-      );
-    }
-
+  if (curPlayer.status === 'LOST') {
     return (
       <Fragment>
-        <p>You kicked ass.</p>
         <p>
-          <strong>Up for another?</strong>
+          Oh well... better luck<br />next time.
+        </p>
+        <p>
+          <strong>{bestOutOfMsg}</strong>
         </p>
       </Fragment>
     );
   }
+
+  return (
+    <Fragment>
+      <p>You kicked ass.</p>
+      <p>
+        <strong>{bestOutOfMsg}</strong>
+      </p>
+    </Fragment>
+  );
 }

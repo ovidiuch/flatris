@@ -15,10 +15,12 @@ const user2 = getSampleUser2();
 let game = getBlankGame({ id: 'd2f', user: user1 });
 game = addUserToGame(game, user2);
 game = updatePlayer(game, user1.id, {
-  status: 'LOST'
+  status: 'LOST',
+  losses: 5
 });
 game = updatePlayer(game, user2.id, {
-  status: 'WON'
+  status: 'WON',
+  losses: 7
 });
 
 const fixture: { props: Props } = {

@@ -18,7 +18,8 @@ game = updatePlayer(game, user1.id, {
   status: 'WON'
 });
 game = updatePlayer(game, user2.id, {
-  status: 'LOST'
+  status: 'LOST',
+  losses: 1
 });
 
 const fixture: { props: Props } = {

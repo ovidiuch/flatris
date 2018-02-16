@@ -13893,7 +13893,7 @@ exports[`Cosmos fixtures: GameOver:multi-loss 1`] = `
               </p>
               <p>
                 <strong>
-                  Up for another?
+                  Best 8 out of 15?
                 </strong>
               </p>
             </div>
@@ -13960,7 +13960,7 @@ exports[`Cosmos fixtures: GameOver:multi-win 1`] = `
               </p>
               <p>
                 <strong>
-                  Up for another?
+                  Best 2 out of 3?
                 </strong>
               </p>
             </div>
