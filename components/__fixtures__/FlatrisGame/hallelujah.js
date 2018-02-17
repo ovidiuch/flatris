@@ -10,8 +10,6 @@ const game = getBlankGame({ id: 'dce6b11e', user, dropFrames: 30 });
 export default {
   component: FlatrisGame,
 
-  container: {},
-
   reduxState: {
     curUser: user,
     curGame: updatePlayer(game, user.id, {

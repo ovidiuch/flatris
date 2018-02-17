@@ -1,7 +1,7 @@
 /* global window */
 // @flow
 
-import React, { Fragment, Component } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import _ from 'lodash';
 import { UP, DOWN, LEFT, RIGHT, SPACE } from '../constants/keys';
@@ -28,12 +28,16 @@ import {
   ping
 } from '../actions';
 import { withSocket } from '../utils/socket-connect';
+import { isMobileDevice } from '../utils/events';
+import GameContainer from '../components/GameContainer';
 import Button from './Button';
 import Well from './Well';
 import GamePanel from './GamePanel';
 import PortraitControls from './controls/PortraitControls';
+import LandscapeControls from './controls/LandscapeControls';
 import Flash from './effects/Flash';
 import Quake from './effects/Quake';
+import FadeIn from './effects/FadeIn';
 import NewGame from './screens/NewGame';
 import Auth from './screens/Auth';
 import JoinGame from './screens/JoinGame';
@@ -64,13 +68,15 @@ type Props = {
 
 type LocalState = {
   pendingAuth: boolean,
-  isWatching: boolean
+  isWatching: boolean,
+  isMobile: boolean
 };
 
 class FlatrisGame extends Component<Props, LocalState> {
   state = {
     pendingAuth: false,
-    isWatching: false
+    isWatching: false,
+    isMobile: false
   };
 
   componentDidMount() {
@@ -80,6 +86,12 @@ class FlatrisGame extends Component<Props, LocalState> {
     // Start game if playing user returned after possibly being disconnected
     if (isPlayer(game, curUser) && allPlayersReady(game)) {
       this.startGame();
+    }
+
+    if (isMobileDevice()) {
+      this.setState({
+        isMobile: true
+      });
     }
   }
 
@@ -352,11 +364,20 @@ class FlatrisGame extends Component<Props, LocalState> {
 
   render() {
     const { curUser, game } = this.props;
+    const { isMobile } = this.state;
     const curPlayer = getCurPlayer(game, curUser);
     const otherPlayer = getOtherPlayer(game, curPlayer);
 
     return (
-      <Fragment>
+      <GameContainer
+        outer={
+          isMobile && (
+            <FadeIn>
+              <LandscapeControls />
+            </FadeIn>
+          )
+        }
+      >
         <Quake player1={curPlayer} player2={otherPlayer}>
           <div className="well-container">
             {otherPlayer && (
@@ -399,7 +420,7 @@ class FlatrisGame extends Component<Props, LocalState> {
             filter: grayscale(80%);
           }
         `}</style>
-      </Fragment>
+      </GameContainer>
     );
   }
 }

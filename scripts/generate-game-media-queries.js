@@ -64,10 +64,15 @@ function getPortraitRules({ width, height }) {
   }
   .controls {
     display: block;
+  }
+  .ctrl-side {
+    display: none;
   }`;
 }
 
 function getLandscapeRules({ width, height }) {
+  const blockSize = width / 16;
+
   return `.container {
     width: ${width}px;
     height: ${height}px;
@@ -76,6 +81,11 @@ function getLandscapeRules({ width, height }) {
   }
   .controls {
     display: none;
+  }
+  .ctrl-side {
+    display: block;
+    width: ${blockSize * 4}px;
+    height: ${blockSize * 8}px;
   }`;
 }
 

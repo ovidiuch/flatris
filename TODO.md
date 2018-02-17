@@ -89,13 +89,12 @@
     * [x] Regression: Change "WON" badge to not block user score
 * [x] Encourage players to play "best x out of y"
 * [x] Disable controls when user isn't playing
-* [ ] Side controls on landscape mobile
+* [x] Side controls on landscape mobile
   * [x] Extract portrait controls out of FlatrisGame
 * [ ] Add copy to clipboard btn to "Invite or play" screen
   * [ ] Copy to clipboard when clicking on "2P insert coin"
 * [ ] Don't request user auth when game is full (allow guests to watch)
 * [ ] [BEAUTIFUL MVP]
-* [ ] Create drop shadow from active Tetromino
 * [ ] Create actionId, link actions to prev actions, ensuring consistency
 * [ ] Create action backfill if user has old state and new actions
 * [ ] Throttle key down events
@@ -106,4 +105,7 @@
   * [ ] Batch actions
   * [ ] Algorithm for distributing events from bundled messages in time
         Calc time of each event in min-max interval and map [0, 1] value to [server timestamp of last received message...now...1s]
+* [ ] Log errors and stats
+* [ ] [1.0]
+* [ ] Create drop shadow from active Tetromino
 * [ ] Sounds?

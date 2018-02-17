@@ -59,8 +59,6 @@ game = updatePlayer(game, user.id, {
 export default {
   component: FlatrisGame,
 
-  container: {},
-
   init({ compRef }: { compRef: ElementRef<typeof Component> }) {
     const { dispatch } = compRef.context.store;
 

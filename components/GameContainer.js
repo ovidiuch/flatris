@@ -5,13 +5,15 @@ import React from 'react';
 import type { Node } from 'react';
 
 type Props = {
-  children: ?Node
+  children: Node,
+  outer?: Node
 };
 
-const GameContainer = ({ children }: Props) => {
+const GameContainer = ({ children, outer }: Props) => {
   return (
     <div className="outer">
       <div className="container">{children}</div>
+      {outer}
       <style jsx global>{`
         .outer {
           position: absolute;
@@ -37,6 +39,9 @@ const GameContainer = ({ children }: Props) => {
         .controls {
           display: block;
         }
+        .ctrl-side {
+          display: none;
+        }
         @media (min-width: 120px) and (min-height: 120px) {
           .container {
             width: 80px;
@@ -46,6 +51,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 20px;
+            height: 40px;
           }
         }
         @media (min-width: 96px) and (min-height: 144px) {
@@ -58,6 +68,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 144px) and (min-height: 144px) {
           .container {
@@ -68,6 +81,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 24px;
+            height: 48px;
           }
         }
         @media (min-width: 112px) and (min-height: 168px) {
@@ -80,6 +98,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 168px) and (min-height: 168px) {
           .container {
@@ -90,6 +111,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 28px;
+            height: 56px;
           }
         }
         @media (min-width: 128px) and (min-height: 192px) {
@@ -102,6 +128,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 192px) and (min-height: 192px) {
           .container {
@@ -112,6 +141,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 32px;
+            height: 64px;
           }
         }
         @media (min-width: 144px) and (min-height: 216px) {
@@ -124,6 +158,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 216px) and (min-height: 216px) {
           .container {
@@ -134,6 +171,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 36px;
+            height: 72px;
           }
         }
         @media (min-width: 160px) and (min-height: 240px) {
@@ -146,6 +188,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 240px) and (min-height: 240px) {
           .container {
@@ -156,6 +201,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 40px;
+            height: 80px;
           }
         }
         @media (min-width: 176px) and (min-height: 264px) {
@@ -168,6 +218,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 288px) and (min-height: 264px) {
           .container {
@@ -178,6 +231,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 48px;
+            height: 96px;
           }
         }
         @media (min-width: 192px) and (min-height: 288px) {
@@ -190,6 +248,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 312px) and (min-height: 288px) {
           .container {
@@ -200,6 +261,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 52px;
+            height: 104px;
           }
         }
         @media (min-width: 208px) and (min-height: 312px) {
@@ -212,6 +278,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 336px) and (min-height: 312px) {
           .container {
@@ -222,6 +291,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 56px;
+            height: 112px;
           }
         }
         @media (min-width: 224px) and (min-height: 336px) {
@@ -234,6 +308,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 360px) and (min-height: 336px) {
           .container {
@@ -244,6 +321,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 60px;
+            height: 120px;
           }
         }
         @media (min-width: 240px) and (min-height: 360px) {
@@ -256,6 +338,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 384px) and (min-height: 360px) {
           .container {
@@ -266,6 +351,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 64px;
+            height: 128px;
           }
         }
         @media (min-width: 256px) and (min-height: 384px) {
@@ -278,6 +368,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 408px) and (min-height: 384px) {
           .container {
@@ -288,6 +381,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 68px;
+            height: 136px;
           }
         }
         @media (min-width: 272px) and (min-height: 408px) {
@@ -300,6 +398,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 432px) and (min-height: 408px) {
           .container {
@@ -310,6 +411,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 72px;
+            height: 144px;
           }
         }
         @media (min-width: 288px) and (min-height: 432px) {
@@ -322,6 +428,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 456px) and (min-height: 432px) {
           .container {
@@ -332,6 +441,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 76px;
+            height: 152px;
           }
         }
         @media (min-width: 304px) and (min-height: 456px) {
@@ -344,6 +458,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 480px) and (min-height: 456px) {
           .container {
@@ -354,6 +471,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 80px;
+            height: 160px;
           }
         }
         @media (min-width: 320px) and (min-height: 480px) {
@@ -366,6 +488,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 504px) and (min-height: 480px) {
           .container {
@@ -376,6 +501,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 84px;
+            height: 168px;
           }
         }
         @media (min-width: 336px) and (min-height: 504px) {
@@ -388,6 +518,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 528px) and (min-height: 504px) {
           .container {
@@ -398,6 +531,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 88px;
+            height: 176px;
           }
         }
         @media (min-width: 352px) and (min-height: 528px) {
@@ -410,6 +548,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 576px) and (min-height: 528px) {
           .container {
@@ -420,6 +561,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 96px;
+            height: 192px;
           }
         }
         @media (min-width: 368px) and (min-height: 552px) {
@@ -432,6 +578,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 600px) and (min-height: 552px) {
           .container {
@@ -442,6 +591,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 100px;
+            height: 200px;
           }
         }
         @media (min-width: 384px) and (min-height: 576px) {
@@ -454,6 +608,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 624px) and (min-height: 576px) {
           .container {
@@ -464,6 +621,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 104px;
+            height: 208px;
           }
         }
         @media (min-width: 400px) and (min-height: 600px) {
@@ -476,6 +638,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 648px) and (min-height: 600px) {
           .container {
@@ -486,6 +651,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 108px;
+            height: 216px;
           }
         }
         @media (min-width: 416px) and (min-height: 624px) {
@@ -498,6 +668,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 672px) and (min-height: 624px) {
           .container {
@@ -508,6 +681,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 112px;
+            height: 224px;
           }
         }
         @media (min-width: 432px) and (min-height: 648px) {
@@ -520,6 +698,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 696px) and (min-height: 648px) {
           .container {
@@ -530,6 +711,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 116px;
+            height: 232px;
           }
         }
         @media (min-width: 448px) and (min-height: 672px) {
@@ -542,6 +728,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 720px) and (min-height: 672px) {
           .container {
@@ -552,6 +741,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 120px;
+            height: 240px;
           }
         }
         @media (min-width: 464px) and (min-height: 696px) {
@@ -564,6 +758,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 744px) and (min-height: 696px) {
           .container {
@@ -574,6 +771,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 124px;
+            height: 248px;
           }
         }
         @media (min-width: 480px) and (min-height: 720px) {
@@ -586,6 +788,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 768px) and (min-height: 720px) {
           .container {
@@ -596,6 +801,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 128px;
+            height: 256px;
           }
         }
         @media (min-width: 496px) and (min-height: 744px) {
@@ -608,6 +818,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 792px) and (min-height: 744px) {
           .container {
@@ -618,6 +831,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 132px;
+            height: 264px;
           }
         }
         @media (min-width: 512px) and (min-height: 768px) {
@@ -630,6 +848,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 816px) and (min-height: 768px) {
           .container {
@@ -640,6 +861,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 136px;
+            height: 272px;
           }
         }
         @media (min-width: 528px) and (min-height: 792px) {
@@ -652,6 +878,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 864px) and (min-height: 792px) {
           .container {
@@ -662,6 +891,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 144px;
+            height: 288px;
           }
         }
         @media (min-width: 544px) and (min-height: 816px) {
@@ -674,6 +908,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 888px) and (min-height: 816px) {
           .container {
@@ -684,6 +921,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 148px;
+            height: 296px;
           }
         }
         @media (min-width: 560px) and (min-height: 840px) {
@@ -696,6 +938,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 912px) and (min-height: 840px) {
           .container {
@@ -706,6 +951,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 152px;
+            height: 304px;
           }
         }
         @media (min-width: 576px) and (min-height: 864px) {
@@ -718,6 +968,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 936px) and (min-height: 864px) {
           .container {
@@ -728,6 +981,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 156px;
+            height: 312px;
           }
         }
         @media (min-width: 592px) and (min-height: 888px) {
@@ -740,6 +998,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 960px) and (min-height: 888px) {
           .container {
@@ -750,6 +1011,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 160px;
+            height: 320px;
           }
         }
         @media (min-width: 608px) and (min-height: 912px) {
@@ -762,6 +1028,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 984px) and (min-height: 912px) {
           .container {
@@ -772,6 +1041,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 164px;
+            height: 328px;
           }
         }
         @media (min-width: 624px) and (min-height: 936px) {
@@ -784,6 +1058,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 1008px) and (min-height: 936px) {
           .container {
@@ -794,6 +1071,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 168px;
+            height: 336px;
           }
         }
         @media (min-width: 640px) and (min-height: 960px) {
@@ -806,6 +1088,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 1032px) and (min-height: 960px) {
           .container {
@@ -816,6 +1101,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 172px;
+            height: 344px;
           }
         }
         @media (min-width: 656px) and (min-height: 984px) {
@@ -828,6 +1118,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 1056px) and (min-height: 984px) {
           .container {
@@ -838,6 +1131,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 176px;
+            height: 352px;
           }
         }
         @media (min-width: 672px) and (min-height: 1008px) {
@@ -850,6 +1148,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 1080px) and (min-height: 1008px) {
           .container {
@@ -860,6 +1161,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 180px;
+            height: 360px;
           }
         }
         @media (min-width: 688px) and (min-height: 1032px) {
@@ -872,6 +1178,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 1104px) and (min-height: 1032px) {
           .container {
@@ -882,6 +1191,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 184px;
+            height: 368px;
           }
         }
         @media (min-width: 704px) and (min-height: 1056px) {
@@ -894,6 +1208,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 1152px) and (min-height: 1056px) {
           .container {
@@ -904,6 +1221,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 192px;
+            height: 384px;
           }
         }
         @media (min-width: 720px) and (min-height: 1080px) {
@@ -916,6 +1238,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 1176px) and (min-height: 1080px) {
           .container {
@@ -926,6 +1251,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 196px;
+            height: 392px;
           }
         }
         @media (min-width: 736px) and (min-height: 1104px) {
@@ -938,6 +1268,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 1200px) and (min-height: 1104px) {
           .container {
@@ -948,6 +1281,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 200px;
+            height: 400px;
           }
         }
         @media (min-width: 752px) and (min-height: 1128px) {
@@ -960,6 +1298,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 1224px) and (min-height: 1128px) {
           .container {
@@ -970,6 +1311,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 204px;
+            height: 408px;
           }
         }
         @media (min-width: 768px) and (min-height: 1152px) {
@@ -982,6 +1328,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 1248px) and (min-height: 1152px) {
           .container {
@@ -992,6 +1341,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 208px;
+            height: 416px;
           }
         }
         @media (min-width: 784px) and (min-height: 1176px) {
@@ -1004,6 +1358,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 1272px) and (min-height: 1176px) {
           .container {
@@ -1014,6 +1371,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 212px;
+            height: 424px;
           }
         }
         @media (min-width: 800px) and (min-height: 1200px) {
@@ -1026,6 +1388,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 1296px) and (min-height: 1200px) {
           .container {
@@ -1036,6 +1401,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 216px;
+            height: 432px;
           }
         }
         @media (min-width: 816px) and (min-height: 1224px) {
@@ -1048,6 +1418,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 1320px) and (min-height: 1224px) {
           .container {
@@ -1058,6 +1431,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 220px;
+            height: 440px;
           }
         }
         @media (min-width: 832px) and (min-height: 1248px) {
@@ -1070,6 +1448,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 1344px) and (min-height: 1248px) {
           .container {
@@ -1080,6 +1461,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 224px;
+            height: 448px;
           }
         }
         @media (min-width: 848px) and (min-height: 1272px) {
@@ -1092,6 +1478,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 1368px) and (min-height: 1272px) {
           .container {
@@ -1102,6 +1491,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 228px;
+            height: 456px;
           }
         }
         @media (min-width: 864px) and (min-height: 1296px) {
@@ -1114,6 +1508,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 1392px) and (min-height: 1296px) {
           .container {
@@ -1124,6 +1521,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 232px;
+            height: 464px;
           }
         }
         @media (min-width: 880px) and (min-height: 1320px) {
@@ -1136,6 +1538,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 1440px) and (min-height: 1320px) {
           .container {
@@ -1146,6 +1551,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 240px;
+            height: 480px;
           }
         }
         @media (min-width: 896px) and (min-height: 1344px) {
@@ -1158,6 +1568,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 1464px) and (min-height: 1344px) {
           .container {
@@ -1168,6 +1581,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 244px;
+            height: 488px;
           }
         }
         @media (min-width: 912px) and (min-height: 1368px) {
@@ -1180,6 +1598,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 1488px) and (min-height: 1368px) {
           .container {
@@ -1190,6 +1611,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 248px;
+            height: 496px;
           }
         }
         @media (min-width: 928px) and (min-height: 1392px) {
@@ -1202,6 +1628,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 1512px) and (min-height: 1392px) {
           .container {
@@ -1212,6 +1641,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 252px;
+            height: 504px;
           }
         }
         @media (min-width: 944px) and (min-height: 1416px) {
@@ -1224,6 +1658,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 1536px) and (min-height: 1416px) {
           .container {
@@ -1234,6 +1671,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 256px;
+            height: 512px;
           }
         }
         @media (min-width: 960px) and (min-height: 1440px) {
@@ -1246,6 +1688,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 1560px) and (min-height: 1440px) {
           .container {
@@ -1256,6 +1701,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 260px;
+            height: 520px;
           }
         }
         @media (min-width: 976px) and (min-height: 1464px) {
@@ -1268,6 +1718,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 1584px) and (min-height: 1464px) {
           .container {
@@ -1278,6 +1731,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 264px;
+            height: 528px;
           }
         }
         @media (min-width: 992px) and (min-height: 1488px) {
@@ -1290,6 +1748,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 1608px) and (min-height: 1488px) {
           .container {
@@ -1300,6 +1761,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 268px;
+            height: 536px;
           }
         }
         @media (min-width: 1008px) and (min-height: 1512px) {
@@ -1312,6 +1778,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 1632px) and (min-height: 1512px) {
           .container {
@@ -1322,6 +1791,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 272px;
+            height: 544px;
           }
         }
         @media (min-width: 1024px) and (min-height: 1536px) {
@@ -1334,6 +1808,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 1656px) and (min-height: 1536px) {
           .container {
@@ -1344,6 +1821,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 276px;
+            height: 552px;
           }
         }
         @media (min-width: 1040px) and (min-height: 1560px) {
@@ -1356,6 +1838,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 1680px) and (min-height: 1560px) {
           .container {
@@ -1366,6 +1851,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 280px;
+            height: 560px;
           }
         }
         @media (min-width: 1056px) and (min-height: 1584px) {
@@ -1378,6 +1868,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 1728px) and (min-height: 1584px) {
           .container {
@@ -1388,6 +1881,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 288px;
+            height: 576px;
           }
         }
         @media (min-width: 1072px) and (min-height: 1608px) {
@@ -1400,6 +1898,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 1752px) and (min-height: 1608px) {
           .container {
@@ -1410,6 +1911,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 292px;
+            height: 584px;
           }
         }
         @media (min-width: 1088px) and (min-height: 1632px) {
@@ -1422,6 +1928,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 1776px) and (min-height: 1632px) {
           .container {
@@ -1432,6 +1941,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 296px;
+            height: 592px;
           }
         }
         @media (min-width: 1104px) and (min-height: 1656px) {
@@ -1444,6 +1958,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 1800px) and (min-height: 1656px) {
           .container {
@@ -1454,6 +1971,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 300px;
+            height: 600px;
           }
         }
         @media (min-width: 1120px) and (min-height: 1680px) {
@@ -1466,6 +1988,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 1824px) and (min-height: 1680px) {
           .container {
@@ -1476,6 +2001,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 304px;
+            height: 608px;
           }
         }
         @media (min-width: 1136px) and (min-height: 1704px) {
@@ -1488,6 +2018,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 1848px) and (min-height: 1704px) {
           .container {
@@ -1498,6 +2031,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 308px;
+            height: 616px;
           }
         }
         @media (min-width: 1152px) and (min-height: 1728px) {
@@ -1510,6 +2048,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 1872px) and (min-height: 1728px) {
           .container {
@@ -1520,6 +2061,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 312px;
+            height: 624px;
           }
         }
         @media (min-width: 1168px) and (min-height: 1752px) {
@@ -1532,6 +2078,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 1896px) and (min-height: 1752px) {
           .container {
@@ -1542,6 +2091,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 316px;
+            height: 632px;
           }
         }
         @media (min-width: 1184px) and (min-height: 1776px) {
@@ -1554,6 +2108,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 1920px) and (min-height: 1776px) {
           .container {
@@ -1564,6 +2121,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 320px;
+            height: 640px;
           }
         }
         @media (min-width: 1200px) and (min-height: 1800px) {
@@ -1576,6 +2138,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 1944px) and (min-height: 1800px) {
           .container {
@@ -1586,6 +2151,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 324px;
+            height: 648px;
           }
         }
         @media (min-width: 1216px) and (min-height: 1824px) {
@@ -1598,6 +2168,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 1968px) and (min-height: 1824px) {
           .container {
@@ -1608,6 +2181,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 328px;
+            height: 656px;
           }
         }
         @media (min-width: 1232px) and (min-height: 1848px) {
@@ -1620,6 +2198,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 2016px) and (min-height: 1848px) {
           .container {
@@ -1630,6 +2211,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 336px;
+            height: 672px;
           }
         }
         @media (min-width: 1248px) and (min-height: 1872px) {
@@ -1642,6 +2228,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 2040px) and (min-height: 1872px) {
           .container {
@@ -1652,6 +2241,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 340px;
+            height: 680px;
           }
         }
         @media (min-width: 1264px) and (min-height: 1896px) {
@@ -1664,6 +2258,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 2064px) and (min-height: 1896px) {
           .container {
@@ -1674,6 +2271,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 344px;
+            height: 688px;
           }
         }
         @media (min-width: 1280px) and (min-height: 1920px) {
@@ -1686,6 +2288,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 2088px) and (min-height: 1920px) {
           .container {
@@ -1696,6 +2301,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 348px;
+            height: 696px;
           }
         }
         @media (min-width: 1296px) and (min-height: 1944px) {
@@ -1708,6 +2318,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 2112px) and (min-height: 1944px) {
           .container {
@@ -1718,6 +2331,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 352px;
+            height: 704px;
           }
         }
         @media (min-width: 1312px) and (min-height: 1968px) {
@@ -1730,6 +2348,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 2136px) and (min-height: 1968px) {
           .container {
@@ -1740,6 +2361,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 356px;
+            height: 712px;
           }
         }
         @media (min-width: 1328px) and (min-height: 1992px) {
@@ -1752,6 +2378,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 2160px) and (min-height: 1992px) {
           .container {
@@ -1762,6 +2391,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 360px;
+            height: 720px;
           }
         }
         @media (min-width: 1344px) and (min-height: 2016px) {
@@ -1774,6 +2408,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 2184px) and (min-height: 2016px) {
           .container {
@@ -1784,6 +2421,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 364px;
+            height: 728px;
           }
         }
         @media (min-width: 1360px) and (min-height: 2040px) {
@@ -1796,6 +2438,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 2208px) and (min-height: 2040px) {
           .container {
@@ -1806,6 +2451,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 368px;
+            height: 736px;
           }
         }
         @media (min-width: 1376px) and (min-height: 2064px) {
@@ -1818,6 +2468,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 2232px) and (min-height: 2064px) {
           .container {
@@ -1828,6 +2481,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 372px;
+            height: 744px;
           }
         }
         @media (min-width: 1392px) and (min-height: 2088px) {
@@ -1840,6 +2498,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 2256px) and (min-height: 2088px) {
           .container {
@@ -1850,6 +2511,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 376px;
+            height: 752px;
           }
         }
         @media (min-width: 1408px) and (min-height: 2112px) {
@@ -1862,6 +2528,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 2304px) and (min-height: 2112px) {
           .container {
@@ -1872,6 +2541,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 384px;
+            height: 768px;
           }
         }
         @media (min-width: 1424px) and (min-height: 2136px) {
@@ -1884,6 +2558,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 2328px) and (min-height: 2136px) {
           .container {
@@ -1894,6 +2571,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 388px;
+            height: 776px;
           }
         }
         @media (min-width: 1440px) and (min-height: 2160px) {
@@ -1906,6 +2588,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 2352px) and (min-height: 2160px) {
           .container {
@@ -1916,6 +2601,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 392px;
+            height: 784px;
           }
         }
         @media (min-width: 1456px) and (min-height: 2184px) {
@@ -1928,6 +2618,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 2376px) and (min-height: 2184px) {
           .container {
@@ -1938,6 +2631,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 396px;
+            height: 792px;
           }
         }
         @media (min-width: 1472px) and (min-height: 2208px) {
@@ -1950,6 +2648,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 2400px) and (min-height: 2208px) {
           .container {
@@ -1960,6 +2661,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 400px;
+            height: 800px;
           }
         }
         @media (min-width: 1488px) and (min-height: 2232px) {
@@ -1972,6 +2678,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 2424px) and (min-height: 2232px) {
           .container {
@@ -1982,6 +2691,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 404px;
+            height: 808px;
           }
         }
         @media (min-width: 1504px) and (min-height: 2256px) {
@@ -1994,6 +2708,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 2448px) and (min-height: 2256px) {
           .container {
@@ -2004,6 +2721,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 408px;
+            height: 816px;
           }
         }
         @media (min-width: 1520px) and (min-height: 2280px) {
@@ -2016,6 +2738,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 2472px) and (min-height: 2280px) {
           .container {
@@ -2026,6 +2751,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 412px;
+            height: 824px;
           }
         }
         @media (min-width: 1536px) and (min-height: 2304px) {
@@ -2038,6 +2768,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 2496px) and (min-height: 2304px) {
           .container {
@@ -2048,6 +2781,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 416px;
+            height: 832px;
           }
         }
         @media (min-width: 1552px) and (min-height: 2328px) {
@@ -2060,6 +2798,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 2520px) and (min-height: 2328px) {
           .container {
@@ -2070,6 +2811,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 420px;
+            height: 840px;
           }
         }
         @media (min-width: 1568px) and (min-height: 2352px) {
@@ -2082,6 +2828,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 2544px) and (min-height: 2352px) {
           .container {
@@ -2092,6 +2841,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 424px;
+            height: 848px;
           }
         }
         @media (min-width: 1584px) and (min-height: 2376px) {
@@ -2104,6 +2858,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 2592px) and (min-height: 2376px) {
           .container {
@@ -2114,6 +2871,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 432px;
+            height: 864px;
           }
         }
         @media (min-width: 1600px) and (min-height: 2400px) {
@@ -2126,6 +2888,9 @@ const GameContainer = ({ children }: Props) => {
           .controls {
             display: block;
           }
+          .ctrl-side {
+            display: none;
+          }
         }
         @media (min-width: 2616px) and (min-height: 2400px) {
           .container {
@@ -2136,6 +2901,11 @@ const GameContainer = ({ children }: Props) => {
           }
           .controls {
             display: none;
+          }
+          .ctrl-side {
+            display: block;
+            width: 436px;
+            height: 872px;
           }
         }
       `}</style>

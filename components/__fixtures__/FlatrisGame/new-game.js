@@ -10,8 +10,6 @@ const game = getBlankGame({ id: 'dce6b11e', user });
 export default {
   component: FlatrisGame,
 
-  container: {},
-
   reduxState: {
     curUser: user,
     curGame: game

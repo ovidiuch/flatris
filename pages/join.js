@@ -8,7 +8,6 @@ import { loadGame } from '../actions';
 import { addCurUserToState, getGame } from '../utils/api';
 import { SocketProvider } from '../utils/SocketProvider';
 import Layout from '../components/Layout';
-import GameContainer from '../components/GameContainer';
 import FlatrisGame from '../components/FlatrisGame';
 
 type Props = {
@@ -51,9 +50,7 @@ class JoinPage extends Component<Props> {
     return (
       <Layout>
         <SocketProvider>
-          <GameContainer>
-            <FlatrisGame />
-          </GameContainer>
+          <FlatrisGame />
         </SocketProvider>
       </Layout>
     );
