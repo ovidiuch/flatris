@@ -1,6 +1,6 @@
 // @flow
 
-import React, { Component } from 'react';
+import React, { Fragment, Component } from 'react';
 import { connect } from 'react-redux';
 import Router from 'next/router';
 import { createGame } from '../utils/api';
@@ -60,8 +60,8 @@ class NewGame extends Component<Props, LocalState> {
     const { requireAuth, pendingAuth, pendingCreate } = this.state;
 
     return (
-      <div className="flatris-game">
-        <div className="screen-container game-height">
+      <Fragment>
+        <div className="screen-container">
           {requireAuth && (
             <Auth
               disabled={pendingAuth || pendingCreate}
@@ -69,20 +69,14 @@ class NewGame extends Component<Props, LocalState> {
             />
           )}
         </div>
-        <div className="side-container game-height">
+        <div className="side-container">
           <GamePanel curUser={null} game={null} />
         </div>
         <style jsx>{`
-          .flatris-game {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0
-            right: 0;
-          }
           .screen-container {
             position: absolute;
             top: 0;
+            bottom: 0;
             left: 0;
             right: calc(100% / 16 * 6);
             background: rgba(236, 240, 241, 0.85);
@@ -90,12 +84,13 @@ class NewGame extends Component<Props, LocalState> {
           .side-container {
             position: absolute;
             top: 0;
+            bottom: 0;
             right: 0;
             left: calc(100% / 16 * 10);
             background: #fff;
           }
         `}</style>
-      </div>
+      </Fragment>
     );
   }
 }

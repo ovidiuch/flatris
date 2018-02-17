@@ -13,8 +13,7 @@ const fixture: { props: Props } = {
   component: GamePanel,
 
   container: {
-    width: 6,
-    gameHeight: true
+    width: 6
   },
 
   props: {

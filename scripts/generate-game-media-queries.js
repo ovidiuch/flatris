@@ -4,7 +4,7 @@ const GAME_COLS = 16;
 const GAME_ROWS = 20;
 const CONTROL_BLOCKS = 4;
 const MIN_BLOCK_SIZE = 5;
-const MAX_BLOCK_SIZE = 200;
+const MAX_BLOCK_SIZE = 100;
 
 let query = ``;
 
@@ -52,16 +52,18 @@ function getMediaQuery(cond, body) {
 }
 
 function getPortraitRules({ width, height }) {
+  const numBlocks = GAME_ROWS + CONTROL_BLOCKS;
+  const innerHeight = height / numBlocks * GAME_ROWS;
+  const topOffset = (height - innerHeight) / 2;
+
   return `.container {
     width: ${width}px;
-    height: ${height}px;
+    height: ${innerHeight}px;
+    margin-top: -${topOffset}px;
     font-size: ${getFontSizePerWidth(width)}px;
   }
   .controls {
     display: block;
-  }
-  .game-height {
-    height: calc(100% / 24 * 20);
   }`;
 }
 
@@ -69,13 +71,11 @@ function getLandscapeRules({ width, height }) {
   return `.container {
     width: ${width}px;
     height: ${height}px;
+    margin-top: 0;
     font-size: ${getFontSizePerWidth(width)}px;
   }
   .controls {
     display: none;
-  }
-  .game-height {
-    height: 100%;
   }`;
 }
 

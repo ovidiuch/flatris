@@ -80,8 +80,9 @@ class PortraitControls extends Component<Props> {
         <style jsx>{`
           .controls {
             position: absolute;
-            top: calc(100% * 20 / 24);
-            bottom: 0;
+            /* Hanging outside the bottom of the parent container */
+            top: 100%;
+            height: calc(100% / 20 * 4);
             left: 0;
             right: 0;
           }

@@ -33,7 +33,6 @@ const fixture: { props: Props } = {
 
   container: {
     width: 10,
-    gameHeight: true,
     backgroundColor: 'rgba(236, 240, 241, 0.85)'
   }
 };

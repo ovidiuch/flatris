@@ -8,8 +8,7 @@ export default createFixture({
 
   container: {
     width: 4,
-    height: 4,
-    gameHeight: true
+    height: 4
   },
 
   props: {

@@ -1,7 +1,7 @@
 /* global window */
 // @flow
 
-import React, { Component } from 'react';
+import React, { Fragment, Component } from 'react';
 import { connect } from 'react-redux';
 import _ from 'lodash';
 import { UP, DOWN, LEFT, RIGHT, SPACE } from '../constants/keys';
@@ -356,36 +356,21 @@ class FlatrisGame extends Component<Props, LocalState> {
     const otherPlayer = getOtherPlayer(game, curPlayer);
 
     return (
-      <div className="flatris-game">
-        <div className="game-container game-height">
-          <Quake player1={curPlayer} player2={otherPlayer}>
-            <div className="well-container">
-              {otherPlayer && (
-                <div className="enemy-well">{this.renderWell(otherPlayer)}</div>
-              )}
-              <Flash player={curPlayer}>{this.renderWell(curPlayer)}</Flash>
-            </div>
-            {this.renderScreens()}
-            <div className="side-container">
-              <GamePanel curUser={curUser} game={game} />
-            </div>
-          </Quake>
-        </div>
+      <Fragment>
+        <Quake player1={curPlayer} player2={otherPlayer}>
+          <div className="well-container">
+            {otherPlayer && (
+              <div className="enemy-well">{this.renderWell(otherPlayer)}</div>
+            )}
+            <Flash player={curPlayer}>{this.renderWell(curPlayer)}</Flash>
+          </div>
+          {this.renderScreens()}
+          <div className="side-container">
+            <GamePanel curUser={curUser} game={game} />
+          </div>
+        </Quake>
         <PortraitControls />
         <style jsx>{`
-          .flatris-game {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0
-            right: 0;
-          }
-
-          .game-container {
-            position: absolute;
-            width: 100%;
-          }
-
           .well-container {
             position: absolute;
             top: 0;
@@ -414,7 +399,7 @@ class FlatrisGame extends Component<Props, LocalState> {
             filter: grayscale(80%);
           }
         `}</style>
-      </div>
+      </Fragment>
     );
   }
 }

@@ -35,13 +35,7 @@ class GameContainerProxy extends Component<ProxyProps> {
       return nextEl;
     }
 
-    const {
-      width,
-      height,
-      gameHeight = false,
-      backgroundColor = '#fff',
-      opacity = 1
-    } = container;
+    const { width, height, backgroundColor = '#fff', opacity = 1 } = container;
 
     let style = {
       position: 'absolute',
@@ -52,29 +46,19 @@ class GameContainerProxy extends Component<ProxyProps> {
       style = { ...style, width: `calc(100% / 16 * ${width})` };
     }
     if (height) {
-      // NOTE: This only works well for elements wrapped in .game-height
       style = { ...style, height: `calc(100% / 20 * ${height})` };
     }
 
-    const innerEl = (
-      <div className="inner-container" style={style}>
-        {nextEl}
+    return (
+      <GameContainer>
+        <div className="inner-container" style={style}>
+          {nextEl}
+        </div>
         <style jsx>{`
           .inner-container {
             position: absolute;
             width: 100%;
             height: 100%;
-          }
-        `}</style>
-      </div>
-    );
-
-    return (
-      <GameContainer>
-        {gameHeight ? <div className="game-height">{innerEl}</div> : innerEl}
-        <style jsx>{`
-          .game-height {
-            width: 100%;
           }
         `}</style>
       </GameContainer>
