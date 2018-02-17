@@ -41,6 +41,7 @@ import FadeIn from './effects/FadeIn';
 import NewGame from './screens/NewGame';
 import Auth from './screens/Auth';
 import JoinGame from './screens/JoinGame';
+import GameFull from './screens/GameFull';
 import GetReady from './screens/GetReady';
 import WaitingForOther from './screens/WaitingForOther';
 import GameOver from './screens/GameOver';
@@ -271,23 +272,23 @@ class FlatrisGame extends Component<Props, LocalState> {
     const curPlayer = getCurPlayer(game, curUser);
     const otherPlayer = getOtherPlayer(game, curPlayer);
 
+    if (isWatching) {
+      return this.renderScreen(this.renderMenuBtn());
+    }
+
+    if (!hasJoined && otherPlayer) {
+      return this.renderScreen(<GameFull onWatch={this.handleWatch} />);
+    }
+
     if (!curUser) {
       return this.renderScreen(
         <Auth disabled={pendingAuth} onAuthStart={this.handleAuthStart} />
       );
     }
 
-    if (isWatching) {
-      return this.renderScreen(this.renderMenuBtn());
-    }
-
     if (!hasJoined) {
       return this.renderScreen(
-        <JoinGame
-          game={game}
-          onWatch={this.handleWatch}
-          onJoin={this.handleJoin}
-        />
+        <JoinGame onWatch={this.handleWatch} onJoin={this.handleJoin} />
       );
     }
 

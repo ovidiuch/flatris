@@ -91,9 +91,9 @@
 * [x] Disable controls when user isn't playing
 * [x] Side controls on landscape mobile
   * [x] Extract portrait controls out of FlatrisGame
+* [x] Don't request user auth when game is full (allow guests to watch)
 * [ ] Add copy to clipboard btn to "Invite or play" screen
   * [ ] Copy to clipboard when clicking on "2P insert coin"
-* [ ] Don't request user auth when game is full (allow guests to watch)
 * [ ] [BEAUTIFUL MVP]
 * [ ] Create actionId, link actions to prev actions, ensuring consistency
 * [ ] Create action backfill if user has old state and new actions

@@ -2,16 +2,16 @@
 
 import React, { Fragment, Component } from 'react';
 import Screen from './Screen';
+import Link from 'next/link';
 import Button from '../Button';
 
 export type Props = {
-  onWatch: Function,
-  onJoin: Function
+  onWatch: Function
 };
 
-export default class JoinGame extends Component<Props> {
+export default class GameFull extends Component<Props> {
   render() {
-    const { onWatch, onJoin } = this.props;
+    const { onWatch } = this.props;
 
     return (
       <Screen
@@ -19,16 +19,18 @@ export default class JoinGame extends Component<Props> {
         message={
           <Fragment>
             <p>
-              <strong>Room for one more!</strong>
+              <strong>Game full.</strong>
             </p>
             <p>
-              You can watch, or<br />you can play.
+              You can watch, or<br />
+              <Link href="/">
+                <a>create another game</a>
+              </Link>.
             </p>
-            <p>What will it be?</p>
           </Fragment>
         }
         actions={[
-          <Button onClick={onJoin}>Join</Button>,
+          <Button disabled>Join</Button>,
           <Button bgColor="#fff" color="#34495f" onClick={onWatch}>
             Watch
           </Button>

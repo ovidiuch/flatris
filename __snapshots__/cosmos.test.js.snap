@@ -9726,7 +9726,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah-guest 1
               >
                 <button
                   className="jsx-2576755423 button hover-button"
-                  disabled={false}
                   onClick={[Function]}
                   type="button"
                 >
@@ -14120,6 +14119,88 @@ exports[`Cosmos fixtures: GameContainer:default 1`] = `
 </div>
 `;
 
+exports[`Cosmos fixtures: GameFull:default 1`] = `
+<div
+  className="jsx-1613050951 outer"
+>
+  <div
+    className="jsx-1613050951 container"
+  >
+    <div
+      className="jsx-1294220987 inner-container"
+      style={
+        Object {
+          "backgroundColor": "rgba(236, 240, 241, 0.85)",
+          "opacity": 1,
+          "position": "absolute",
+          "width": "calc(100% / 16 * 10)",
+        }
+      }
+    >
+      <div
+        className="jsx-2820880205 screen"
+      >
+        <div
+          className="jsx-1497761764 fade-in"
+        >
+          <h2
+            className="jsx-2820880205 title"
+          >
+            Join game...
+          </h2>
+          <div
+            className="jsx-2820880205 message"
+          >
+            <p>
+              <strong>
+                Game full.
+              </strong>
+            </p>
+            <p>
+              You can watch, or
+              <br />
+              <a
+                href="/"
+                onClick={[Function]}
+              >
+                create another game
+              </a>
+              .
+            </p>
+          </div>
+        </div>
+        <div
+          className="jsx-2820880205 actions"
+        >
+          <div
+            className="jsx-2820880205 button"
+          >
+            <button
+              className="jsx-2576755423 button hover-button"
+              disabled={true}
+              type="button"
+            >
+              Join
+            </button>
+          </div>
+          <div
+            className="jsx-2820880205 button"
+          >
+            <button
+              className="jsx-2453729951 button hover-button"
+              onClick={[Function]}
+              type="button"
+            >
+              Watch
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Cosmos fixtures: GameOver:multi-loss 1`] = `
 <div
   className="jsx-1613050951 outer"
@@ -14929,7 +15010,7 @@ exports[`Cosmos fixtures: Grid:default 1`] = `
 </div>
 `;
 
-exports[`Cosmos fixtures: JoinGame:available 1`] = `
+exports[`Cosmos fixtures: JoinGame:default 1`] = `
 <div
   className="jsx-1613050951 outer"
 >
@@ -14984,90 +15065,6 @@ exports[`Cosmos fixtures: JoinGame:available 1`] = `
           >
             <button
               className="jsx-2576755423 button hover-button"
-              disabled={false}
-              onClick={[Function]}
-              type="button"
-            >
-              Join
-            </button>
-          </div>
-          <div
-            className="jsx-2820880205 button"
-          >
-            <button
-              className="jsx-2453729951 button hover-button"
-              onClick={[Function]}
-              type="button"
-            >
-              Watch
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Cosmos fixtures: JoinGame:full 1`] = `
-<div
-  className="jsx-1613050951 outer"
->
-  <div
-    className="jsx-1613050951 container"
-  >
-    <div
-      className="jsx-1294220987 inner-container"
-      style={
-        Object {
-          "backgroundColor": "rgba(236, 240, 241, 0.85)",
-          "opacity": 1,
-          "position": "absolute",
-          "width": "calc(100% / 16 * 10)",
-        }
-      }
-    >
-      <div
-        className="jsx-2820880205 screen"
-      >
-        <div
-          className="jsx-1497761764 fade-in"
-        >
-          <h2
-            className="jsx-2820880205 title"
-          >
-            Join game...
-          </h2>
-          <div
-            className="jsx-2820880205 message"
-          >
-            <p>
-              <strong>
-                Game full.
-              </strong>
-            </p>
-            <p>
-              You can watch, or
-              <br />
-              <a
-                href="/"
-                onClick={[Function]}
-              >
-                create another game
-              </a>
-              .
-            </p>
-          </div>
-        </div>
-        <div
-          className="jsx-2820880205 actions"
-        >
-          <div
-            className="jsx-2820880205 button"
-          >
-            <button
-              className="jsx-2576755423 button hover-button"
-              disabled={true}
               onClick={[Function]}
               type="button"
             >
