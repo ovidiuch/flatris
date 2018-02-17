@@ -60,96 +60,71 @@ exports[`Cosmos fixtures: Connect(Auth):default 1`] = `
         }
       }
     >
-      <div
-        className="jsx-2820880205 screen"
+      <form
+        className="jsx-1749762593"
+        onSubmit={[Function]}
       >
         <div
-          className="jsx-1497761764 fade-in"
-        >
-          <h2
-            className="jsx-2820880205 title"
-          >
-            Welcome!
-          </h2>
-          <div
-            className="jsx-2820880205 message"
-          >
-            <p
-              className="jsx-842746317"
-            >
-              Use the 
-              <strong
-                className="jsx-842746317"
-              >
-                arrow keys
-              </strong>
-              ,
-              <br
-                className="jsx-842746317"
-              />
-              or the
-               
-              <strong
-                className="jsx-842746317"
-              >
-                buttons below
-              </strong>
-              <br
-                className="jsx-842746317"
-              />
-              on mobile (portrait).
-            </p>
-            <p
-              className="jsx-842746317"
-            >
-              <strong
-                className="jsx-842746317"
-              >
-                Multiplayer twist
-              </strong>
-              :
-              <br
-                className="jsx-842746317"
-              />
-              <span
-                className="jsx-842746317 highlight"
-              >
-                Every line you clear
-                <br
-                  className="jsx-842746317"
-                />
-                will be added to your
-                <br
-                  className="jsx-842746317"
-                />
-                opponent
-              </span>
-               
-              & viceversa.
-            </p>
-            <p
-              className="jsx-842746317"
-            >
-              Play fast to survive!
-            </p>
-          </div>
-        </div>
-        <div
-          className="jsx-2820880205 actions"
+          className="jsx-2820880205 screen"
         >
           <div
-            className="jsx-2820880205 button"
+            className="jsx-1497761764 fade-in"
           >
-            <button
-              className="jsx-2576755423 button hover-button"
-              onClick={[Function]}
-              type="button"
+            <h2
+              className="jsx-2820880205 title"
             >
-              Got it
-            </button>
+              One sec...
+            </h2>
+            <div
+              className="jsx-2820880205 message"
+            >
+              <p
+                className="jsx-1749762593"
+                onClick={[Function]}
+              >
+                Enter your name
+              </p>
+              <p
+                className="jsx-1749762593"
+              >
+                <input
+                  className="jsx-1749762593"
+                  disabled={false}
+                  maxLength={14}
+                  onChange={[Function]}
+                  placeholder="Monkey"
+                  type="text"
+                  value=""
+                />
+              </p>
+              <p
+                className="jsx-1749762593"
+              >
+                <small
+                  className="jsx-1749762593"
+                >
+                  Fake names allowed ;-)
+                </small>
+              </p>
+            </div>
+          </div>
+          <div
+            className="jsx-2820880205 actions"
+          >
+            <div
+              className="jsx-2820880205 button"
+            >
+              <button
+                className="jsx-2576755423 button hover-button"
+                disabled={true}
+                type="submit"
+              >
+                Enter
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      </form>
     </div>
   </div>
 </div>
@@ -173,96 +148,71 @@ exports[`Cosmos fixtures: Connect(Auth):disabled 1`] = `
         }
       }
     >
-      <div
-        className="jsx-2820880205 screen"
+      <form
+        className="jsx-1749762593"
+        onSubmit={[Function]}
       >
         <div
-          className="jsx-1497761764 fade-in"
-        >
-          <h2
-            className="jsx-2820880205 title"
-          >
-            Welcome!
-          </h2>
-          <div
-            className="jsx-2820880205 message"
-          >
-            <p
-              className="jsx-842746317"
-            >
-              Use the 
-              <strong
-                className="jsx-842746317"
-              >
-                arrow keys
-              </strong>
-              ,
-              <br
-                className="jsx-842746317"
-              />
-              or the
-               
-              <strong
-                className="jsx-842746317"
-              >
-                buttons below
-              </strong>
-              <br
-                className="jsx-842746317"
-              />
-              on mobile (portrait).
-            </p>
-            <p
-              className="jsx-842746317"
-            >
-              <strong
-                className="jsx-842746317"
-              >
-                Multiplayer twist
-              </strong>
-              :
-              <br
-                className="jsx-842746317"
-              />
-              <span
-                className="jsx-842746317 highlight"
-              >
-                Every line you clear
-                <br
-                  className="jsx-842746317"
-                />
-                will be added to your
-                <br
-                  className="jsx-842746317"
-                />
-                opponent
-              </span>
-               
-              & viceversa.
-            </p>
-            <p
-              className="jsx-842746317"
-            >
-              Play fast to survive!
-            </p>
-          </div>
-        </div>
-        <div
-          className="jsx-2820880205 actions"
+          className="jsx-2820880205 screen"
         >
           <div
-            className="jsx-2820880205 button"
+            className="jsx-1497761764 fade-in"
           >
-            <button
-              className="jsx-2576755423 button hover-button"
-              onClick={[Function]}
-              type="button"
+            <h2
+              className="jsx-2820880205 title"
             >
-              Got it
-            </button>
+              One sec...
+            </h2>
+            <div
+              className="jsx-2820880205 message"
+            >
+              <p
+                className="jsx-1749762593"
+                onClick={[Function]}
+              >
+                Enter your name
+              </p>
+              <p
+                className="jsx-1749762593"
+              >
+                <input
+                  className="jsx-1749762593"
+                  disabled={true}
+                  maxLength={14}
+                  onChange={[Function]}
+                  placeholder="Monkey"
+                  type="text"
+                  value=""
+                />
+              </p>
+              <p
+                className="jsx-1749762593"
+              >
+                <small
+                  className="jsx-1749762593"
+                >
+                  Fake names allowed ;-)
+                </small>
+              </p>
+            </div>
+          </div>
+          <div
+            className="jsx-2820880205 actions"
+          >
+            <div
+              className="jsx-2820880205 button"
+            >
+              <button
+                className="jsx-2576755423 button hover-button"
+                disabled={true}
+                type="submit"
+              >
+                Enter
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      </form>
     </div>
   </div>
 </div>

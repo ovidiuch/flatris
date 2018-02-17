@@ -5,8 +5,11 @@ import { connect } from 'react-redux';
 import { auth } from '../../actions';
 import { MAX_NAME_LENGTH } from '../../constants/user';
 import { createUserSession } from '../../utils/api';
+import { isMobileDevice } from '../../utils/events';
 import Button from '../Button';
 import Screen from './Screen';
+
+import type { User } from '../../types/state';
 
 type Props = {
   disabled?: boolean,
@@ -15,8 +18,9 @@ type Props = {
 };
 
 type LocalState = {
-  isOnboard: boolean,
-  name: string
+  name: string,
+  user: ?User,
+  isMobile: boolean
 };
 
 class Auth extends Component<Props, LocalState> {
@@ -27,9 +31,21 @@ class Auth extends Component<Props, LocalState> {
   nameField: ?HTMLInputElement;
 
   state = {
-    isOnboard: false,
-    name: ''
+    name: '',
+    user: null,
+    isMobile: false
   };
+
+  componentDidMount() {
+    // TODO: Create DetectDevice component with two render props:
+    // - hasMounted: boolean (false on the server)
+    // - isMobile: boolean (only reliable once hasMounted is true)
+    if (isMobileDevice()) {
+      this.setState({
+        isMobile: true
+      });
+    }
+  }
 
   handleInputRef = node => {
     this.nameField = node;
@@ -53,7 +69,7 @@ class Auth extends Component<Props, LocalState> {
 
     const { name } = this.state;
     if (name) {
-      const { onAuthStart, auth } = this.props;
+      const { onAuthStart } = this.props;
 
       // Signal that auth started to parent
       if (onAuthStart) {
@@ -61,31 +77,52 @@ class Auth extends Component<Props, LocalState> {
       }
 
       const user = await createUserSession(name);
-      auth(user);
+
+      // Add the user to state and delay adding it to the app state until the
+      // user seems the onboarding screen
+      this.setState({
+        user
+      });
     }
   };
 
   handleConfirmOnboarding = () => {
-    this.setState({
-      isOnboard: true
-    });
+    const { auth } = this.props;
+    const { user } = this.state;
+
+    if (!user) {
+      throw new Error('Onboarding with missing user');
+    }
+
+    auth(user);
   };
 
   render() {
     const { disabled } = this.props;
-    const { isOnboard, name } = this.state;
+    const { name, user, isMobile } = this.state;
 
-    if (!isOnboard) {
+    const ctrlInstruction = isMobile ? (
+      <Fragment>
+        Press the <strong>left</strong>, <strong>right</strong>,<br />
+        <strong>rotate</strong> & <strong>drop</strong> buttons to<br />
+        control the falling piece.
+      </Fragment>
+    ) : (
+      <Fragment>
+        Use the <strong>arrow keys</strong>
+        <br />and the <strong>space</strong> bar to<br />control the falling
+        piece.
+      </Fragment>
+    );
+
+    // Greet user with onboarding after they authenticate
+    if (user) {
       return (
         <Screen
           title="Welcome!"
           message={
             <Fragment>
-              <p>
-                Use the <strong>arrow keys</strong>,<br />or the{' '}
-                <strong>buttons below</strong>
-                <br />on mobile (portrait).
-              </p>
+              <p>{ctrlInstruction}</p>
               <p>
                 <strong>Multiplayer twist</strong>:
                 <br />
@@ -93,7 +130,7 @@ class Auth extends Component<Props, LocalState> {
                   Every line you clear<br />will be added to your<br />
                   opponent
                 </span>{' '}
-                & viceversa.
+                and viceversa.
               </p>
               <p>Play fast to survive!</p>
               <style jsx>{`
