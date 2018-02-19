@@ -9899,8 +9899,8 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah-guest 1
               className="jsx-215556098 player2"
             >
               <div
-                className="jsx-1405434595 player-info selectable"
-                onClick={[Function]}
+                className="jsx-1405434595 player-info"
+                onClick={undefined}
               >
                 <div
                   className="jsx-1405434595 centered"
@@ -12523,7 +12523,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
                 </p>
                 <div
                   className="jsx-1902664598 copy"
-                  data-clipboard-text="about::///join/dce6b11e"
+                  data-clipboard-text="about:///join/dce6b11e"
                 >
                   <button
                     className="jsx-2544857778 button hover-button"
@@ -12980,7 +12980,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
                 </p>
                 <div
                   className="jsx-1902664598 copy"
-                  data-clipboard-text="about::///join/dce6b11e"
+                  data-clipboard-text="about:///join/dce6b11e"
                 >
                   <button
                     className="jsx-2544857778 button hover-button"
@@ -15283,7 +15283,7 @@ exports[`Cosmos fixtures: NewGame:copy-error 1`] = `
             </p>
             <div
               className="jsx-1902664598 copy"
-              data-clipboard-text="about::///join/1337"
+              data-clipboard-text="about:///join/1337"
             >
               <button
                 className="jsx-1565648149 button hover-button"
@@ -15375,7 +15375,7 @@ exports[`Cosmos fixtures: NewGame:copy-success 1`] = `
             </p>
             <div
               className="jsx-1902664598 copy"
-              data-clipboard-text="about::///join/1337"
+              data-clipboard-text="about:///join/1337"
             >
               <button
                 className="jsx-3398295050 button hover-button"
@@ -15467,7 +15467,7 @@ exports[`Cosmos fixtures: NewGame:default 1`] = `
             </p>
             <div
               className="jsx-1902664598 copy"
-              data-clipboard-text="about::///join/1337"
+              data-clipboard-text="about:///join/1337"
             >
               <button
                 className="jsx-2544857778 button hover-button"

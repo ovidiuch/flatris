@@ -16,6 +16,7 @@ import { getCurGame } from '../reducers/cur-game';
 import {
   joinGame,
   playerReady,
+  playerPause,
   runGameFrame,
   cancelGameFrame,
   drop,
@@ -56,6 +57,7 @@ type Props = {
   closeGame: (gameId: GameId) => void,
   joinGame: typeof joinGame,
   playerReady: typeof playerReady,
+  playerPause: typeof playerPause,
   runGameFrame: typeof runGameFrame,
   drop: typeof drop,
   moveLeft: typeof moveLeft,
@@ -163,6 +165,12 @@ class FlatrisGame extends Component<Props, LocalState> {
     this.setState({
       pendingAuth: true
     });
+  };
+
+  handleSelectP2 = () => {
+    // NOTE: This will only be called before a 2nd player arrives under normal
+    // circumstances
+    this.props.playerPause();
   };
 
   handleWatch = () => {
@@ -368,6 +376,7 @@ class FlatrisGame extends Component<Props, LocalState> {
   render() {
     const { curUser, game } = this.props;
     const { isMobile } = this.state;
+    const hasJoined = isPlayer(game, curUser);
     const curPlayer = getCurPlayer(game, curUser);
     const otherPlayer = getOtherPlayer(game, curPlayer);
 
@@ -390,7 +399,13 @@ class FlatrisGame extends Component<Props, LocalState> {
           </div>
           {this.renderScreens()}
           <div className="side-container">
-            <GamePanel curUser={curUser} game={game} />
+            <GamePanel
+              curUser={curUser}
+              game={game}
+              onSelectP2={
+                hasJoined && !otherPlayer ? this.handleSelectP2 : undefined
+              }
+            />
           </div>
         </Quake>
         <PortraitControls />
@@ -440,6 +455,7 @@ const mapDispatchToProps = {
 const syncActions = {
   joinGame,
   playerReady,
+  playerPause,
   drop,
   moveLeft,
   moveRight,

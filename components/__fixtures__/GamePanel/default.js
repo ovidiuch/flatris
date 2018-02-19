@@ -18,7 +18,8 @@ const fixture: { props: Props } = {
 
   props: {
     curUser: user,
-    game
+    game,
+    onSelectP2: () => console.log('Select P2')
   }
 };
 

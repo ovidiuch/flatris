@@ -36,6 +36,14 @@ export type PlayerReadyAction = {
   }
 };
 
+export type PlayerPauseAction = {
+  type: 'PLAYER_PAUSE',
+  payload: {
+    gameId: GameId,
+    userId: UserId
+  }
+};
+
 export type MoveLeftAction = {
   type: 'MOVE_LEFT',
   payload: {
@@ -105,6 +113,7 @@ export type PingAction = {
 export type GameAction =
   | JoinGameAction
   | PlayerReadyAction
+  | PlayerPauseAction
   | MoveLeftAction
   | MoveRightAction
   | RotateAction

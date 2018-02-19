@@ -25,6 +25,7 @@ export function curGameReducer(state: void | ?Game, action: Action): ?Game {
     }
     case 'JOIN_GAME':
     case 'PLAYER_READY':
+    case 'PLAYER_PAUSE':
     case 'DROP':
     case 'MOVE_LEFT':
     case 'MOVE_RIGHT':

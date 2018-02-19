@@ -10,14 +10,11 @@ import type { User, Game } from '../types/state';
 
 export type Props = {
   curUser: ?User,
-  game: ?Game
+  game: ?Game,
+  onSelectP2?: Function
 };
 
 export default class GamePanel extends Component<Props> {
-  handleSelectP2 = () => {
-    console.log('Select P2');
-  };
-
   /**
    * The game panel contains:
    * - The logo
@@ -26,7 +23,7 @@ export default class GamePanel extends Component<Props> {
    * - Footer with credits
    */
   render() {
-    const { game } = this.props;
+    const { game, onSelectP2 } = this.props;
     const player1 = game && game.players[0];
     const player2 = game && game.players[1];
     const nextTetromino = this.getNextTetromino();
@@ -60,7 +57,7 @@ export default class GamePanel extends Component<Props> {
             wins={player1 && player2 && player1.losses}
             isPlayer1={false}
             showReadyState={showP2ReadyState}
-            onSelect={game && !player2 ? this.handleSelectP2 : undefined}
+            onSelect={onSelectP2}
           />
         </div>
         <style jsx>{`

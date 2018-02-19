@@ -76,6 +76,12 @@ export function gameReducer(state: void | Game, action: GameAction): Game {
       return game;
     }
 
+    case 'PLAYER_PAUSE': {
+      const { userId } = action.payload;
+
+      return updatePlayer(state, userId, { status: 'PENDING' });
+    }
+
     case 'DROP': {
       const { userId, rows } = action.payload;
       const player = getPlayer(state, userId);

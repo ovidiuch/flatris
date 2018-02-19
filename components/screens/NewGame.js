@@ -58,7 +58,7 @@ export default class NewGame extends Component<Props, LocalState> {
     const { copyStatus } = this.state;
 
     const { protocol, host } = window.location;
-    const shareUrl = `${protocol}://${host}/join/${gameId}`;
+    const shareUrl = `${protocol}//${host}/join/${gameId}`;
 
     let bgColor;
     switch (copyStatus) {

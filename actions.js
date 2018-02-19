@@ -66,6 +66,16 @@ export function playerReady(): ThunkAction {
   }));
 }
 
+export function playerPause(): ThunkAction {
+  return decorateAction(({ userId, gameId }) => ({
+    type: 'PLAYER_PAUSE',
+    payload: {
+      userId,
+      gameId
+    }
+  }));
+}
+
 export function runGameFrame(drop: (rows: number) => any): ThunkAction {
   return (dispatch: Dispatch, getState: GetState) => {
     cancelGameFrame();
