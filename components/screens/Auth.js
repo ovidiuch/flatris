@@ -110,7 +110,7 @@ class Auth extends Component<Props, LocalState> {
     ) : (
       <Fragment>
         Use the <strong>arrow keys</strong>
-        <br />and the <strong>space</strong> bar to<br />control the falling
+        <br />and the <strong>space bar</strong> to<br />control the falling
         piece.
       </Fragment>
     );

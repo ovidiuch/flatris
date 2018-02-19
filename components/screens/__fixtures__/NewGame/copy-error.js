@@ -11,6 +11,10 @@ export default createFixture({
     onPlay: () => console.log(`Play!`)
   },
 
+  state: {
+    copyStatus: 'error'
+  },
+
   container: {
     width: 10,
     backgroundColor: 'rgba(236, 240, 241, 0.85)'

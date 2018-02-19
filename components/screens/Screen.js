@@ -62,13 +62,14 @@ export default class Screen extends Component<Props> {
             height: calc(100% / 20 * 11);
             margin: 0;
             padding: 0;
-            font-size: 1.3em;
-            line-height: 1.4em;
-            white-space: nowrap;
           }
 
           .message :global(p) {
+            margin: 1em 0;
             margin-top: 0;
+            font-size: 1.3em;
+            line-height: 1.4em;
+            white-space: nowrap;
           }
 
           .message :global(a) {

@@ -15,7 +15,7 @@ export default class GameFull extends Component<Props> {
 
     return (
       <Screen
-        title="Join game..."
+        title="Join game"
         message={
           <Fragment>
             <p>

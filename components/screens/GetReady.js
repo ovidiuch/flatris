@@ -18,7 +18,7 @@ export default class GetReady extends Component<Props> {
 
     return (
       <Screen
-        title="Get ready..."
+        title="Get ready"
         message={
           <Fragment>
             <p>

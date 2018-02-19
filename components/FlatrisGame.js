@@ -306,7 +306,9 @@ class FlatrisGame extends Component<Props, LocalState> {
     if (!otherPlayer) {
       // curPlayer status is 'PENDING', because if it wouldn've been 'READY'
       // allPlayersReady(game) would've returned true
-      return this.renderScreen(<NewGame onPlay={this.handleReady} />);
+      return this.renderScreen(
+        <NewGame gameId={game.id} onPlay={this.handleReady} />
+      );
     }
 
     if (curPlayer.status === 'READY') {
