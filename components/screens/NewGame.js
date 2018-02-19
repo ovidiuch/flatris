@@ -15,15 +15,29 @@ type Props = {
 };
 
 type LocalState = {
-  copyStatus: null | 'success' | 'error'
+  copyStatus: null | 'success' | 'error',
+  shareUrl: ?string
 };
 
 export default class NewGame extends Component<Props, LocalState> {
   clipboard: ?typeof Clipboard;
 
   state = {
-    copyStatus: null
+    copyStatus: null,
+    shareUrl: null
   };
+
+  componentDidMount() {
+    // NOTE: We build the URL after mounting because this code only works in to
+    // browser (ie. not on the server). First render will not have a copy button.
+    const { gameId } = this.props;
+    const { protocol, host } = window.location;
+    const shareUrl = `${protocol}//${host}/join/${gameId}`;
+
+    this.setState({
+      shareUrl
+    });
+  }
 
   componentWillUnmount() {
     if (this.clipboard) {
@@ -54,11 +68,8 @@ export default class NewGame extends Component<Props, LocalState> {
   };
 
   render() {
-    const { gameId, onPlay } = this.props;
-    const { copyStatus } = this.state;
-
-    const { protocol, host } = window.location;
-    const shareUrl = `${protocol}//${host}/join/${gameId}`;
+    const { onPlay } = this.props;
+    const { copyStatus, shareUrl } = this.state;
 
     let bgColor;
     switch (copyStatus) {
@@ -82,17 +93,19 @@ export default class NewGame extends Component<Props, LocalState> {
                 Invite a friend to<br />battle, or play solo.
               </strong>
             </p>
-            <div
-              className="copy"
-              ref={this.handleCopyBtnRef}
-              data-clipboard-text={shareUrl}
-            >
-              <Button bgColor={bgColor} color="#fff">
-                {!copyStatus && 'Copy link'}
-                {copyStatus === 'success' && 'Link copied!'}
-                {copyStatus === 'error' && 'Copy error :('}
-              </Button>
-            </div>
+            {shareUrl && (
+              <div
+                className="copy"
+                ref={this.handleCopyBtnRef}
+                data-clipboard-text={shareUrl}
+              >
+                <Button bgColor={bgColor} color="#fff">
+                  {!copyStatus && 'Copy link'}
+                  {copyStatus === 'success' && 'Link copied!'}
+                  {copyStatus === 'error' && 'Copy error :('}
+                </Button>
+              </div>
+            )}
             <p>
               Send the link and<br />warm up until the<br />other person
               arrives.
