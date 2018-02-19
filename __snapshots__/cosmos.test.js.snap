@@ -12509,20 +12509,20 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
                 className="jsx-2362338977 message"
               >
                 <p
-                  className="jsx-1902664598"
+                  className="jsx-1832570087"
                 >
                   <strong
-                    className="jsx-1902664598"
+                    className="jsx-1832570087"
                   >
                     Invite a friend to
                     <br
-                      className="jsx-1902664598"
+                      className="jsx-1832570087"
                     />
                     battle, or play solo.
                   </strong>
                 </p>
                 <div
-                  className="jsx-1902664598 copy"
+                  className="jsx-1832570087 copy"
                   data-clipboard-text="about:///join/dce6b11e"
                 >
                   <button
@@ -12533,15 +12533,15 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
                   </button>
                 </div>
                 <p
-                  className="jsx-1902664598"
+                  className="jsx-1832570087"
                 >
                   Send the link and
                   <br
-                    className="jsx-1902664598"
+                    className="jsx-1832570087"
                   />
                   warm up until the
                   <br
-                    className="jsx-1902664598"
+                    className="jsx-1832570087"
                   />
                   other person arrives.
                 </p>
@@ -12966,20 +12966,20 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
                 className="jsx-2362338977 message"
               >
                 <p
-                  className="jsx-1902664598"
+                  className="jsx-1832570087"
                 >
                   <strong
-                    className="jsx-1902664598"
+                    className="jsx-1832570087"
                   >
                     Invite a friend to
                     <br
-                      className="jsx-1902664598"
+                      className="jsx-1832570087"
                     />
                     battle, or play solo.
                   </strong>
                 </p>
                 <div
-                  className="jsx-1902664598 copy"
+                  className="jsx-1832570087 copy"
                   data-clipboard-text="about:///join/dce6b11e"
                 >
                   <button
@@ -12990,15 +12990,15 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
                   </button>
                 </div>
                 <p
-                  className="jsx-1902664598"
+                  className="jsx-1832570087"
                 >
                   Send the link and
                   <br
-                    className="jsx-1902664598"
+                    className="jsx-1832570087"
                   />
                   warm up until the
                   <br
-                    className="jsx-1902664598"
+                    className="jsx-1832570087"
                   />
                   other person arrives.
                 </p>
@@ -15269,20 +15269,20 @@ exports[`Cosmos fixtures: NewGame:copy-error 1`] = `
             className="jsx-2362338977 message"
           >
             <p
-              className="jsx-1902664598"
+              className="jsx-1832570087"
             >
               <strong
-                className="jsx-1902664598"
+                className="jsx-1832570087"
               >
                 Invite a friend to
                 <br
-                  className="jsx-1902664598"
+                  className="jsx-1832570087"
                 />
                 battle, or play solo.
               </strong>
             </p>
             <div
-              className="jsx-1902664598 copy"
+              className="jsx-1832570087 copy"
               data-clipboard-text="about:///join/1337"
             >
               <button
@@ -15293,15 +15293,15 @@ exports[`Cosmos fixtures: NewGame:copy-error 1`] = `
               </button>
             </div>
             <p
-              className="jsx-1902664598"
+              className="jsx-1832570087"
             >
               Send the link and
               <br
-                className="jsx-1902664598"
+                className="jsx-1832570087"
               />
               warm up until the
               <br
-                className="jsx-1902664598"
+                className="jsx-1832570087"
               />
               other person arrives.
             </p>
@@ -15361,20 +15361,20 @@ exports[`Cosmos fixtures: NewGame:copy-success 1`] = `
             className="jsx-2362338977 message"
           >
             <p
-              className="jsx-1902664598"
+              className="jsx-1832570087"
             >
               <strong
-                className="jsx-1902664598"
+                className="jsx-1832570087"
               >
                 Invite a friend to
                 <br
-                  className="jsx-1902664598"
+                  className="jsx-1832570087"
                 />
                 battle, or play solo.
               </strong>
             </p>
             <div
-              className="jsx-1902664598 copy"
+              className="jsx-1832570087 copy"
               data-clipboard-text="about:///join/1337"
             >
               <button
@@ -15385,15 +15385,15 @@ exports[`Cosmos fixtures: NewGame:copy-success 1`] = `
               </button>
             </div>
             <p
-              className="jsx-1902664598"
+              className="jsx-1832570087"
             >
               Send the link and
               <br
-                className="jsx-1902664598"
+                className="jsx-1832570087"
               />
               warm up until the
               <br
-                className="jsx-1902664598"
+                className="jsx-1832570087"
               />
               other person arrives.
             </p>
@@ -15453,20 +15453,20 @@ exports[`Cosmos fixtures: NewGame:default 1`] = `
             className="jsx-2362338977 message"
           >
             <p
-              className="jsx-1902664598"
+              className="jsx-1832570087"
             >
               <strong
-                className="jsx-1902664598"
+                className="jsx-1832570087"
               >
                 Invite a friend to
                 <br
-                  className="jsx-1902664598"
+                  className="jsx-1832570087"
                 />
                 battle, or play solo.
               </strong>
             </p>
             <div
-              className="jsx-1902664598 copy"
+              className="jsx-1832570087 copy"
               data-clipboard-text="about:///join/1337"
             >
               <button
@@ -15477,15 +15477,15 @@ exports[`Cosmos fixtures: NewGame:default 1`] = `
               </button>
             </div>
             <p
-              className="jsx-1902664598"
+              className="jsx-1832570087"
             >
               Send the link and
               <br
-                className="jsx-1902664598"
+                className="jsx-1832570087"
               />
               warm up until the
               <br
-                className="jsx-1902664598"
+                className="jsx-1832570087"
               />
               other person arrives.
             </p>
