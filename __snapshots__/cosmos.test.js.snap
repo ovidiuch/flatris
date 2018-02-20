@@ -17021,6 +17021,92 @@ exports[`Cosmos fixtures: WaitingForOther:default 1`] = `
 </div>
 `;
 
+exports[`Cosmos fixtures: WaitingForOther:other-player-idle 1`] = `
+<div
+  className="jsx-1613050951 outer"
+>
+  <div
+    className="jsx-1613050951 container"
+  >
+    <div
+      className="jsx-1294220987 inner-container"
+      style={
+        Object {
+          "backgroundColor": "rgba(236, 240, 241, 0.85)",
+          "opacity": 1,
+          "position": "absolute",
+          "width": "calc(100% / 16 * 10)",
+        }
+      }
+    >
+      <div
+        className="jsx-2362338977 screen"
+      >
+        <div
+          className="jsx-1497761764 fade-in"
+        >
+          <h2
+            className="jsx-2362338977 title"
+          >
+            Waiting...
+          </h2>
+          <div
+            className="jsx-2362338977 message"
+          >
+            <p>
+              Your friend is a bit
+              <br />
+              slower. I know...
+            </p>
+            <p>
+              <strong>
+                Ping them to hurry!
+              </strong>
+            </p>
+            <div
+              className="jsx-1497761764 fade-in"
+            >
+              <p>
+                Maybe your friend
+                <br />
+                left you hanging.
+                <br />
+                <a
+                  href="/"
+                  onClick={[Function]}
+                >
+                  Start another game
+                </a>
+                ?
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          className="jsx-2362338977 actions"
+        >
+          <div
+            className="jsx-2362338977 button"
+          >
+            <div
+              className="jsx-109255757 shake"
+            >
+              <button
+                className="jsx-2576755423 button hover-button"
+                onClick={[Function]}
+                type="button"
+              >
+                Ping
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Cosmos fixtures: WaitingForOther:ping 1`] = `
 <div
   className="jsx-1613050951 outer"
