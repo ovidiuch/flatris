@@ -12,14 +12,7 @@ import FlatrisGame from '../../FlatrisGame';
 import type { ElementRef } from 'react';
 
 const user = getSampleUser();
-let game = getBlankGame({
-  id: 'dce6b11e',
-  user,
-  // XXX: This test is CPU intensive and due to the frame skipping mechanism of
-  // Flatris, test results often differ between local test runs and CI. To
-  // alleviate this, we made the speed unrealistically slow.
-  dropFrames: 300
-});
+let game = getBlankGame({ id: 'dce6b11e', user });
 
 // Add 2nd player to game state
 const user2 = getSampleUser2();
@@ -93,9 +86,13 @@ export default {
   async init({ compRef }: { compRef: ElementRef<typeof Component> }) {
     const { dispatch } = compRef.context.store;
 
+    // XXX: This test is CPU intensive and due to the frame skipping mechanism
+    // of Flatris, test results that build upon game execution in time differ
+    // between local test runs and CI. To alleviate this, we only `await` on
+    // the final dispatch.
     // 1: Simulate drop from current player, which causes some lines to clear
     // and get passed to enemy as blocksPending
-    await doAfter(500, () => {
+    doAfter(500, () => {
       dispatch({
         type: 'DROP',
         payload: {
@@ -107,7 +104,7 @@ export default {
     });
 
     // 2: Apply pending enemy blocks, causing enemy grid to grow by one row
-    await doAfter(100, () => {
+    doAfter(600, () => {
       dispatch({
         type: 'APPEND_PENDING_BLOCKS',
         payload: {
@@ -119,7 +116,7 @@ export default {
 
     // 3: Trigger DROP for enemy action, which will clear four lines due to the
     // vertical active Tetromino line hitting bottom
-    await doAfter(500, () => {
+    doAfter(1100, () => {
       dispatch({
         type: 'DROP',
         payload: {
@@ -137,7 +134,7 @@ export default {
     // 5: Trigger DROP action for current player, which will clear three lines
     // due to the 3 blocks remaining from the vertical active Tetromino line
     // which hit bottom and cleared one line in Step 1
-    await doAfter(500, () => {
+    await doAfter(1600, () => {
       dispatch({
         type: 'DROP',
         payload: {
