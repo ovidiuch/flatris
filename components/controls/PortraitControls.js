@@ -59,6 +59,13 @@ class PortraitControls extends Component<Props> {
     enableAcceleration();
   };
 
+  handleDropRelease = e => {
+    e.preventDefault();
+
+    const { disableAcceleration } = this.props;
+    disableAcceleration();
+  };
+
   render() {
     const { curUser, game } = this.props;
     const isGameRunning = isPlayer(game, curUser) && allPlayersReady(game);
@@ -75,7 +82,11 @@ class PortraitControls extends Component<Props> {
           <Right disabled={!isGameRunning} onPress={this.handleRightPress} />
         </div>
         <div className="button">
-          <Drop disabled={!isGameRunning} onPress={this.handleDropPress} />
+          <Drop
+            disabled={!isGameRunning}
+            onPress={this.handleDropPress}
+            onRelease={this.handleDropRelease}
+          />
         </div>
         <style jsx>{`
           .controls {
