@@ -18,7 +18,7 @@ let game = getBlankGame({
   // XXX: This test is CPU intensive and due to the frame skipping mechanism of
   // Flatris, test results often differ between local test runs and CI. To
   // alleviate this, we made the speed unrealistically slow.
-  dropFrames: 300
+  dropFrames: 600 // Should drop one row per 10 seconds
 });
 
 // Add 2nd player to game state
