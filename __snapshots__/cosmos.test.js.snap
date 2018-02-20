@@ -1969,7 +1969,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):double-hallelujah 
                     Object {
                       "height": "20%",
                       "left": "30%",
-                      "top": "10%",
+                      "top": "0%",
                       "width": "40%",
                     }
                   }

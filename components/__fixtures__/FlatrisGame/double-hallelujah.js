@@ -12,7 +12,14 @@ import FlatrisGame from '../../FlatrisGame';
 import type { ElementRef } from 'react';
 
 const user = getSampleUser();
-let game = getBlankGame({ id: 'dce6b11e', user });
+let game = getBlankGame({
+  id: 'dce6b11e',
+  user,
+  // XXX: This test is CPU intensive and due to the frame skipping mechanism of
+  // Flatris, test results often differ between local test runs and CI. To
+  // alleviate this, we made the speed unrealistically slow.
+  dropFrames: 300
+});
 
 // Add 2nd player to game state
 const user2 = getSampleUser2();
