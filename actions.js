@@ -81,6 +81,10 @@ export function runGameFrame(drop: (rows: number) => any): ThunkAction {
     cancelGameFrame();
 
     scheduleFrame(frames => {
+      if (frames > 3) {
+        console.warn(`Perf degrated: ${frames - 1} frames skipped.`);
+      }
+
       const state = getState();
       const userId = getCurUser(state).id;
       const game = getCurGame(state);
