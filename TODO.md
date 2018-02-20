@@ -94,7 +94,7 @@
 * [x] Don't request user auth when game is full (allow guests to watch)
 * [x] Add copy to clipboard btn to "Invite or play" screen
   * [x] Show share button when clicking on "2P insert coin"
-* [ ] [BEAUTIFUL MVP]
+* [x] [BEAUTIFUL MVP]
 * [ ] Create actionId, link actions to prev actions, ensuring consistency
 * [ ] Create action backfill if user has old state and new actions
 * [ ] Throttle key down events

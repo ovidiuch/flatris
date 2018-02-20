@@ -3314,6 +3314,26 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):double-hallelujah 
           type="button"
         >
           <svg
+            className="jsx-641948776"
+            viewBox="0 0 24 24"
+          >
+            <path
+              className="jsx-641948776"
+              d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        className="jsx-352384719 button"
+      >
+        <button
+          className="jsx-1959258272 button"
+          disabled={false}
+          onMouseDown={[Function]}
+          type="button"
+        >
+          <svg
             className="jsx-1332773691"
             viewBox="0 0 24 24"
           >
@@ -3340,26 +3360,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):double-hallelujah 
             <path
               className="jsx-1332773691"
               d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
-            />
-          </svg>
-        </button>
-      </div>
-      <div
-        className="jsx-352384719 button"
-      >
-        <button
-          className="jsx-1959258272 button"
-          disabled={false}
-          onMouseDown={[Function]}
-          type="button"
-        >
-          <svg
-            className="jsx-641948776"
-            viewBox="0 0 24 24"
-          >
-            <path
-              className="jsx-641948776"
-              d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"
             />
           </svg>
         </button>
@@ -5265,6 +5265,26 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):enemy-hallelujah 1
           type="button"
         >
           <svg
+            className="jsx-641948776"
+            viewBox="0 0 24 24"
+          >
+            <path
+              className="jsx-641948776"
+              d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        className="jsx-352384719 button"
+      >
+        <button
+          className="jsx-1959258272 button"
+          disabled={false}
+          onMouseDown={[Function]}
+          type="button"
+        >
+          <svg
             className="jsx-1332773691"
             viewBox="0 0 24 24"
           >
@@ -5291,26 +5311,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):enemy-hallelujah 1
             <path
               className="jsx-1332773691"
               d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
-            />
-          </svg>
-        </button>
-      </div>
-      <div
-        className="jsx-352384719 button"
-      >
-        <button
-          className="jsx-1959258272 button"
-          disabled={false}
-          onMouseDown={[Function]}
-          type="button"
-        >
-          <svg
-            className="jsx-641948776"
-            viewBox="0 0 24 24"
-          >
-            <path
-              className="jsx-641948776"
-              d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"
             />
           </svg>
         </button>
@@ -7570,6 +7570,26 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah 1`] = `
           type="button"
         >
           <svg
+            className="jsx-641948776"
+            viewBox="0 0 24 24"
+          >
+            <path
+              className="jsx-641948776"
+              d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        className="jsx-352384719 button"
+      >
+        <button
+          className="jsx-1959258272 button"
+          disabled={false}
+          onMouseDown={[Function]}
+          type="button"
+        >
+          <svg
             className="jsx-1332773691"
             viewBox="0 0 24 24"
           >
@@ -7596,26 +7616,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah 1`] = `
             <path
               className="jsx-1332773691"
               d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
-            />
-          </svg>
-        </button>
-      </div>
-      <div
-        className="jsx-352384719 button"
-      >
-        <button
-          className="jsx-1959258272 button"
-          disabled={false}
-          onMouseDown={[Function]}
-          type="button"
-        >
-          <svg
-            className="jsx-641948776"
-            viewBox="0 0 24 24"
-          >
-            <path
-              className="jsx-641948776"
-              d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"
             />
           </svg>
         </button>
@@ -9935,6 +9935,26 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah-guest 1
           type="button"
         >
           <svg
+            className="jsx-641948776"
+            viewBox="0 0 24 24"
+          >
+            <path
+              className="jsx-641948776"
+              d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        className="jsx-352384719 button"
+      >
+        <button
+          className="jsx-1959258272 button"
+          disabled={true}
+          onMouseDown={[Function]}
+          type="button"
+        >
+          <svg
             className="jsx-1332773691"
             viewBox="0 0 24 24"
           >
@@ -9961,26 +9981,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah-guest 1
             <path
               className="jsx-1332773691"
               d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
-            />
-          </svg>
-        </button>
-      </div>
-      <div
-        className="jsx-352384719 button"
-      >
-        <button
-          className="jsx-1959258272 button"
-          disabled={true}
-          onMouseDown={[Function]}
-          type="button"
-        >
-          <svg
-            className="jsx-641948776"
-            viewBox="0 0 24 24"
-          >
-            <path
-              className="jsx-641948776"
-              d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"
             />
           </svg>
         </button>
@@ -12753,6 +12753,26 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
           type="button"
         >
           <svg
+            className="jsx-641948776"
+            viewBox="0 0 24 24"
+          >
+            <path
+              className="jsx-641948776"
+              d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        className="jsx-352384719 button"
+      >
+        <button
+          className="jsx-1959258272 button"
+          disabled={true}
+          onMouseDown={[Function]}
+          type="button"
+        >
+          <svg
             className="jsx-1332773691"
             viewBox="0 0 24 24"
           >
@@ -12779,26 +12799,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
             <path
               className="jsx-1332773691"
               d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
-            />
-          </svg>
-        </button>
-      </div>
-      <div
-        className="jsx-352384719 button"
-      >
-        <button
-          className="jsx-1959258272 button"
-          disabled={true}
-          onMouseDown={[Function]}
-          type="button"
-        >
-          <svg
-            className="jsx-641948776"
-            viewBox="0 0 24 24"
-          >
-            <path
-              className="jsx-641948776"
-              d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"
             />
           </svg>
         </button>
@@ -13210,6 +13210,26 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
           type="button"
         >
           <svg
+            className="jsx-641948776"
+            viewBox="0 0 24 24"
+          >
+            <path
+              className="jsx-641948776"
+              d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        className="jsx-352384719 button"
+      >
+        <button
+          className="jsx-1959258272 button"
+          disabled={true}
+          onMouseDown={[Function]}
+          type="button"
+        >
+          <svg
             className="jsx-1332773691"
             viewBox="0 0 24 24"
           >
@@ -13236,26 +13256,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
             <path
               className="jsx-1332773691"
               d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
-            />
-          </svg>
-        </button>
-      </div>
-      <div
-        className="jsx-352384719 button"
-      >
-        <button
-          className="jsx-1959258272 button"
-          disabled={true}
-          onMouseDown={[Function]}
-          type="button"
-        >
-          <svg
-            className="jsx-641948776"
-            viewBox="0 0 24 24"
-          >
-            <path
-              className="jsx-641948776"
-              d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"
             />
           </svg>
         </button>
@@ -13594,6 +13594,26 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game-running 1
           type="button"
         >
           <svg
+            className="jsx-641948776"
+            viewBox="0 0 24 24"
+          >
+            <path
+              className="jsx-641948776"
+              d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        className="jsx-352384719 button"
+      >
+        <button
+          className="jsx-1959258272 button"
+          disabled={false}
+          onMouseDown={[Function]}
+          type="button"
+        >
+          <svg
             className="jsx-1332773691"
             viewBox="0 0 24 24"
           >
@@ -13620,26 +13640,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game-running 1
             <path
               className="jsx-1332773691"
               d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
-            />
-          </svg>
-        </button>
-      </div>
-      <div
-        className="jsx-352384719 button"
-      >
-        <button
-          className="jsx-1959258272 button"
-          disabled={false}
-          onMouseDown={[Function]}
-          type="button"
-        >
-          <svg
-            className="jsx-641948776"
-            viewBox="0 0 24 24"
-          >
-            <path
-              className="jsx-641948776"
-              d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"
             />
           </svg>
         </button>
@@ -13919,6 +13919,26 @@ exports[`Cosmos fixtures: Connect(SocketConnect(PortraitControls)):active 1`] = 
             type="button"
           >
             <svg
+              className="jsx-641948776"
+              viewBox="0 0 24 24"
+            >
+              <path
+                className="jsx-641948776"
+                d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          className="jsx-352384719 button"
+        >
+          <button
+            className="jsx-1959258272 button"
+            disabled={false}
+            onMouseDown={[Function]}
+            type="button"
+          >
+            <svg
               className="jsx-1332773691"
               viewBox="0 0 24 24"
             >
@@ -13945,26 +13965,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(PortraitControls)):active 1`] = 
               <path
                 className="jsx-1332773691"
                 d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
-              />
-            </svg>
-          </button>
-        </div>
-        <div
-          className="jsx-352384719 button"
-        >
-          <button
-            className="jsx-1959258272 button"
-            disabled={false}
-            onMouseDown={[Function]}
-            type="button"
-          >
-            <svg
-              className="jsx-641948776"
-              viewBox="0 0 24 24"
-            >
-              <path
-                className="jsx-641948776"
-                d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"
               />
             </svg>
           </button>
@@ -14025,6 +14025,26 @@ exports[`Cosmos fixtures: Connect(SocketConnect(PortraitControls)):disabled 1`] 
             type="button"
           >
             <svg
+              className="jsx-641948776"
+              viewBox="0 0 24 24"
+            >
+              <path
+                className="jsx-641948776"
+                d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          className="jsx-352384719 button"
+        >
+          <button
+            className="jsx-1959258272 button"
+            disabled={true}
+            onMouseDown={[Function]}
+            type="button"
+          >
+            <svg
               className="jsx-1332773691"
               viewBox="0 0 24 24"
             >
@@ -14051,26 +14071,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(PortraitControls)):disabled 1`] 
               <path
                 className="jsx-1332773691"
                 d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
-              />
-            </svg>
-          </button>
-        </div>
-        <div
-          className="jsx-352384719 button"
-        >
-          <button
-            className="jsx-1959258272 button"
-            disabled={true}
-            onMouseDown={[Function]}
-            type="button"
-          >
-            <svg
-              className="jsx-641948776"
-              viewBox="0 0 24 24"
-            >
-              <path
-                className="jsx-641948776"
-                d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"
               />
             </svg>
           </button>

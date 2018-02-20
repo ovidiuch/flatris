@@ -66,13 +66,13 @@ class PortraitControls extends Component<Props> {
     return (
       <div className="controls">
         <div className="button">
+          <Rotate disabled={!isGameRunning} onPress={this.handleRotatePress} />
+        </div>
+        <div className="button">
           <Left disabled={!isGameRunning} onPress={this.handleLeftPress} />
         </div>
         <div className="button">
           <Right disabled={!isGameRunning} onPress={this.handleRightPress} />
-        </div>
-        <div className="button">
-          <Rotate disabled={!isGameRunning} onPress={this.handleRotatePress} />
         </div>
         <div className="button">
           <Drop disabled={!isGameRunning} onPress={this.handleDropPress} />
