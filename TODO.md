@@ -97,8 +97,8 @@
 * [x] [BEAUTIFUL MVP]
 * [ ] Ensure action consistency
   * [ ] Create action backfill if user has old state and new actions
-    * [ ] Create action.id, action.prevId and game.player.lastActionId
-    * [ ] Store actions on the server
+    * [x] Create action.id, action.prevId and game.player.lastActionId
+    * [x] Store actions on the server
     * [ ] Create backfill operation
 * [ ] Index page with preview of all existing games
   * [ ] Batch actions
