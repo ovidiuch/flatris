@@ -2,7 +2,7 @@
 
 import { Component } from 'react';
 import { getSampleUser } from '../../../utils/test-helpers';
-import { getBlankGame } from '../../../reducers/game';
+import { getBlankGame, getPlayer } from '../../../reducers/game';
 import FlatrisGame from '../../FlatrisGame';
 
 import type { ElementRef } from 'react';
@@ -19,14 +19,24 @@ export default {
   },
 
   init({ compRef }: { compRef: ElementRef<typeof Component> }) {
-    compRef.context.store.dispatch({
+    const { getState, dispatch } = compRef.context.store;
+
+    const prevActionId = getLastActionId(getState, user.id);
+    dispatch({
       type: 'PLAYER_READY',
       payload: {
-        actionId: 1,
-        prevActionId: 0,
+        actionId: prevActionId + 1,
+        prevActionId,
         gameId: game.id,
         userId: user.id
       }
     });
   }
 };
+
+function getLastActionId(getState, userId) {
+  const { curGame } = getState();
+  const { lastActionId } = getPlayer(curGame, userId);
+
+  return lastActionId;
+}

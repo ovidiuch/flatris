@@ -6,7 +6,8 @@ import { getSampleUser, getSampleUser2 } from '../../../utils/test-helpers';
 import {
   getBlankGame,
   addUserToGame,
-  updatePlayer
+  updatePlayer,
+  getPlayer
 } from '../../../reducers/game';
 import FlatrisGame from '../../FlatrisGame';
 
@@ -212,11 +213,12 @@ export default {
 
     // 2: Apply pending enemy blocks, causing enemy grid to grow by one row
     await doAfter(100, () => {
+      const prevActionId = getLastActionId(getState, user2.id);
       dispatch({
         type: 'APPEND_PENDING_BLOCKS',
         payload: {
-          actionId: 1,
-          prevActionId: 0,
+          actionId: prevActionId + 1,
+          prevActionId,
           gameId: game.id,
           userId: user2.id
         }
@@ -226,11 +228,12 @@ export default {
     // 3: Trigger DROP for enemy action, which will clear four lines due to the
     // vertical active Tetromino line hitting bottom
     await doAfter(500, () => {
+      const prevActionId = getLastActionId(getState, user2.id);
       dispatch({
         type: 'DROP',
         payload: {
-          actionId: 2,
-          prevActionId: 1,
+          actionId: prevActionId + 1,
+          prevActionId,
           gameId: game.id,
           userId: user2.id,
           rows: 1
@@ -256,4 +259,11 @@ async function doAfter(delay, fn) {
       res();
     }, delay);
   });
+}
+
+function getLastActionId(getState, userId) {
+  const { curGame } = getState();
+  const { lastActionId } = getPlayer(curGame, userId);
+
+  return lastActionId;
 }

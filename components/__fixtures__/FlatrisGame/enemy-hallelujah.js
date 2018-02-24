@@ -5,7 +5,8 @@ import { getSampleUser, getSampleUser2 } from '../../../utils/test-helpers';
 import {
   getBlankGame,
   addUserToGame,
-  updatePlayer
+  updatePlayer,
+  getPlayer
 } from '../../../reducers/game';
 import FlatrisGame from '../../FlatrisGame';
 
@@ -188,15 +189,16 @@ export default {
   component: FlatrisGame,
 
   init({ compRef }: { compRef: ElementRef<typeof Component> }) {
-    const { dispatch } = compRef.context.store;
+    const { dispatch, getState } = compRef.context.store;
 
     // Simulate drop from enemy player
     setTimeout(() => {
+      const prevActionId = getLastActionId(getState, user2.id);
       dispatch({
         type: 'DROP',
         payload: {
-          actionId: 1,
-          prevActionId: 0,
+          actionId: prevActionId + 1,
+          prevActionId,
           gameId: game.id,
           userId: user2.id,
           rows: 2
@@ -210,3 +212,10 @@ export default {
     curGame: game
   }
 };
+
+function getLastActionId(getState, userId) {
+  const { curGame } = getState();
+  const { lastActionId } = getPlayer(curGame, userId);
+
+  return lastActionId;
+}
