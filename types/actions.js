@@ -2,6 +2,8 @@
 
 import type { UserId, User, GameId, Game, State } from './state';
 
+export type ActionId = number;
+
 export type AuthAction = {
   type: 'AUTH',
   payload: {
@@ -19,6 +21,7 @@ export type LoadGameAction = {
 export type JoinGameAction = {
   type: 'JOIN_GAME',
   payload: {
+    actionId: ActionId,
     gameId: GameId,
     user: User
   }
@@ -27,6 +30,7 @@ export type JoinGameAction = {
 export type PlayerReadyAction = {
   type: 'PLAYER_READY',
   payload: {
+    actionId: ActionId,
     gameId: GameId,
     userId: UserId
   }
@@ -35,6 +39,7 @@ export type PlayerReadyAction = {
 export type PlayerPauseAction = {
   type: 'PLAYER_PAUSE',
   payload: {
+    actionId: ActionId,
     gameId: GameId,
     userId: UserId
   }
@@ -43,6 +48,7 @@ export type PlayerPauseAction = {
 export type MoveLeftAction = {
   type: 'MOVE_LEFT',
   payload: {
+    actionId: ActionId,
     gameId: GameId,
     userId: UserId
   }
@@ -51,6 +57,7 @@ export type MoveLeftAction = {
 export type MoveRightAction = {
   type: 'MOVE_RIGHT',
   payload: {
+    actionId: ActionId,
     gameId: GameId,
     userId: UserId
   }
@@ -59,6 +66,7 @@ export type MoveRightAction = {
 export type RotateAction = {
   type: 'ROTATE',
   payload: {
+    actionId: ActionId,
     gameId: GameId,
     userId: UserId
   }
@@ -67,6 +75,7 @@ export type RotateAction = {
 export type DropAction = {
   type: 'DROP',
   payload: {
+    actionId: ActionId,
     gameId: GameId,
     userId: UserId,
     rows: number
@@ -76,6 +85,7 @@ export type DropAction = {
 export type EnableAccelerationAction = {
   type: 'ENABLE_ACCELERATION',
   payload: {
+    actionId: ActionId,
     gameId: GameId,
     userId: UserId
   }
@@ -84,6 +94,7 @@ export type EnableAccelerationAction = {
 export type DisableAccelerationAction = {
   type: 'DISABLE_ACCELERATION',
   payload: {
+    actionId: ActionId,
     gameId: GameId,
     userId: UserId
   }
@@ -92,6 +103,7 @@ export type DisableAccelerationAction = {
 export type AppendPendingBlocksAction = {
   type: 'APPEND_PENDING_BLOCKS',
   payload: {
+    actionId: ActionId,
     gameId: GameId,
     userId: UserId
   }
@@ -100,6 +112,7 @@ export type AppendPendingBlocksAction = {
 export type PingAction = {
   type: 'PING',
   payload: {
+    actionId: ActionId,
     gameId: GameId,
     userId: UserId,
     time: number
