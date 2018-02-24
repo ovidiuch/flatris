@@ -55,8 +55,19 @@ export function gameReducer(prevState: void | Game, action: GameAction): Game {
     return addUserToGame(game, user);
   }
 
+  // Ensure action consistency
+  const { actionId, prevActionId, userId } = action.payload;
+  const player = getPlayer(prevState, userId);
+
+  if (prevActionId !== player.lastActionId) {
+    throw new Error(
+      `action.prevActionId ${prevActionId} doesn't point to player.lastStateId ${
+        player.lastActionId
+      }`
+    );
+  }
+
   // Update player.lastActionId for any game action
-  const { actionId, userId } = action.payload;
   const state = updatePlayer(prevState, userId, { lastActionId: actionId });
 
   switch (action.type) {

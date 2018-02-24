@@ -19,16 +19,24 @@ type LocalState = {
 };
 
 export default class WaitingForOther extends Component<Props, LocalState> {
+  timeoutId: ?TimeoutID;
+
   state = {
     isOtherPlayerIdle: false
   };
 
   componentDidMount() {
-    setTimeout(() => {
+    this.timeoutId = setTimeout(() => {
       this.setState({
         isOtherPlayerIdle: true
       });
     }, 30000);
+  }
+
+  componentWillUnmount() {
+    if (this.timeoutId) {
+      clearTimeout(this.timeoutId);
+    }
   }
 
   render() {

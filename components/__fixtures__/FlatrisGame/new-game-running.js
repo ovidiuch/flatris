@@ -22,6 +22,8 @@ export default {
     compRef.context.store.dispatch({
       type: 'PLAYER_READY',
       payload: {
+        actionId: 1,
+        prevActionId: 0,
         gameId: game.id,
         userId: user.id
       }
