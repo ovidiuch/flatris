@@ -31,7 +31,7 @@ export type QuakeSuffix = 'a1' | 'a2' | 'a3' | 'a4' | 'b1' | 'b2' | 'b3' | 'b4';
 
 export type Player = {
   user: User,
-  lastActionId: ?ActionId,
+  lastActionId: ActionId,
   status: PlayerStatus,
   // We track losses instead of wins because they allows us to count the number
   // of turns player per game in single player, where all turns are "lost"

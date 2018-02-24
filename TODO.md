@@ -95,11 +95,11 @@
 * [x] Add copy to clipboard btn to "Invite or play" screen
   * [x] Show share button when clicking on "2P insert coin"
 * [x] [BEAUTIFUL MVP]
-* [ ] Ensure action consistency
-  * [ ] Create action backfill if user has old state and new actions
+* [x] Ensure action consistency
+  * [x] Create action backfill if user has old state and new actions
     * [x] Create action.id, action.prevId and game.player.lastActionId
     * [x] Store actions on the server
-    * [ ] Create backfill operation
+    * [x] Create backfill operation
 * [ ] Index page with preview of all existing games
   * [ ] Batch actions
   * [ ] Algorithm for distributing events from bundled messages in time

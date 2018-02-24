@@ -52,8 +52,9 @@ export function joinGame(gameId: GameId, user: User): JoinGameAction {
   return {
     type: 'JOIN_GAME',
     payload: {
-      actionId: getActionId(),
-      prevActionId: null,
+      actionId: 0,
+      prevActionId: 0,
+      userId: user.id,
       gameId,
       user
     }
@@ -238,7 +239,7 @@ function scheduleFrame(cb) {
 
 type GameActionDecorator = ({
   actionId: ActionId,
-  prevActionId: ?ActionId,
+  prevActionId: ActionId,
   gameId: GameId,
   userId: UserId
 }) => Action;
@@ -258,10 +259,8 @@ function decorateGameAction(fn: GameActionDecorator): ThunkAction {
   };
 }
 
-function getActionId(prevActionId: ?ActionId): ActionId {
-  const now = Date.now();
-
+function getActionId(prevActionId: ActionId): ActionId {
   // Ensure action ids never duplicate (only relevant if two actions occur
   // within the same millisecond)
-  return prevActionId ? Math.max(now, prevActionId + 1) : now;
+  return Math.max(Date.now(), prevActionId + 1);
 }

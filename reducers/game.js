@@ -338,7 +338,7 @@ export function getBlankGame({
 export function getBlankPlayer(gameId: GameId, user: User): Player {
   return {
     user,
-    lastActionId: null,
+    lastActionId: 0,
     status: 'PENDING',
     losses: 0,
     ...getBlankPlayerRound({ gameId })
