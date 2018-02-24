@@ -22,6 +22,7 @@ export type JoinGameAction = {
   type: 'JOIN_GAME',
   payload: {
     actionId: ActionId,
+    prevActionId: ?ActionId,
     gameId: GameId,
     user: User
   }
@@ -31,6 +32,7 @@ export type PlayerReadyAction = {
   type: 'PLAYER_READY',
   payload: {
     actionId: ActionId,
+    prevActionId: ?ActionId,
     gameId: GameId,
     userId: UserId
   }
@@ -40,6 +42,7 @@ export type PlayerPauseAction = {
   type: 'PLAYER_PAUSE',
   payload: {
     actionId: ActionId,
+    prevActionId: ?ActionId,
     gameId: GameId,
     userId: UserId
   }
@@ -49,6 +52,7 @@ export type MoveLeftAction = {
   type: 'MOVE_LEFT',
   payload: {
     actionId: ActionId,
+    prevActionId: ?ActionId,
     gameId: GameId,
     userId: UserId
   }
@@ -58,6 +62,7 @@ export type MoveRightAction = {
   type: 'MOVE_RIGHT',
   payload: {
     actionId: ActionId,
+    prevActionId: ?ActionId,
     gameId: GameId,
     userId: UserId
   }
@@ -67,6 +72,7 @@ export type RotateAction = {
   type: 'ROTATE',
   payload: {
     actionId: ActionId,
+    prevActionId: ?ActionId,
     gameId: GameId,
     userId: UserId
   }
@@ -76,6 +82,7 @@ export type DropAction = {
   type: 'DROP',
   payload: {
     actionId: ActionId,
+    prevActionId: ?ActionId,
     gameId: GameId,
     userId: UserId,
     rows: number
@@ -86,6 +93,7 @@ export type EnableAccelerationAction = {
   type: 'ENABLE_ACCELERATION',
   payload: {
     actionId: ActionId,
+    prevActionId: ?ActionId,
     gameId: GameId,
     userId: UserId
   }
@@ -95,6 +103,7 @@ export type DisableAccelerationAction = {
   type: 'DISABLE_ACCELERATION',
   payload: {
     actionId: ActionId,
+    prevActionId: ?ActionId,
     gameId: GameId,
     userId: UserId
   }
@@ -104,6 +113,7 @@ export type AppendPendingBlocksAction = {
   type: 'APPEND_PENDING_BLOCKS',
   payload: {
     actionId: ActionId,
+    prevActionId: ?ActionId,
     gameId: GameId,
     userId: UserId
   }
@@ -113,6 +123,7 @@ export type PingAction = {
   type: 'PING',
   payload: {
     actionId: ActionId,
+    prevActionId: ?ActionId,
     gameId: GameId,
     userId: UserId,
     time: number

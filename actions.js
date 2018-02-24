@@ -1,5 +1,6 @@
 /* global performance */
 // @flow
+// TODO: Split actions file
 
 import raf from 'raf';
 
@@ -52,6 +53,7 @@ export function joinGame(gameId: GameId, user: User): JoinGameAction {
     type: 'JOIN_GAME',
     payload: {
       actionId: getActionId(),
+      prevActionId: null,
       gameId,
       user
     }
@@ -59,10 +61,11 @@ export function joinGame(gameId: GameId, user: User): JoinGameAction {
 }
 
 export function playerReady(): ThunkAction {
-  return decorateGameAction(({ actionId, userId, gameId }) => ({
+  return decorateGameAction(({ actionId, prevActionId, userId, gameId }) => ({
     type: 'PLAYER_READY',
     payload: {
       actionId,
+      prevActionId,
       userId,
       gameId
     }
@@ -70,10 +73,11 @@ export function playerReady(): ThunkAction {
 }
 
 export function playerPause(): ThunkAction {
-  return decorateGameAction(({ actionId, userId, gameId }) => ({
+  return decorateGameAction(({ actionId, prevActionId, userId, gameId }) => ({
     type: 'PLAYER_PAUSE',
     payload: {
       actionId,
+      prevActionId,
       userId,
       gameId
     }
@@ -124,10 +128,11 @@ export function cancelGameFrame() {
 }
 
 export function drop(rows: number): ThunkAction {
-  return decorateGameAction(({ actionId, userId, gameId }) => ({
+  return decorateGameAction(({ actionId, prevActionId, userId, gameId }) => ({
     type: 'DROP',
     payload: {
       actionId,
+      prevActionId,
       userId,
       gameId,
       rows
@@ -136,10 +141,11 @@ export function drop(rows: number): ThunkAction {
 }
 
 export function moveLeft(): ThunkAction {
-  return decorateGameAction(({ actionId, userId, gameId }) => ({
+  return decorateGameAction(({ actionId, prevActionId, userId, gameId }) => ({
     type: 'MOVE_LEFT',
     payload: {
       actionId,
+      prevActionId,
       userId,
       gameId
     }
@@ -147,10 +153,11 @@ export function moveLeft(): ThunkAction {
 }
 
 export function moveRight(): ThunkAction {
-  return decorateGameAction(({ actionId, userId, gameId }) => ({
+  return decorateGameAction(({ actionId, prevActionId, userId, gameId }) => ({
     type: 'MOVE_RIGHT',
     payload: {
       actionId,
+      prevActionId,
       userId,
       gameId
     }
@@ -158,10 +165,11 @@ export function moveRight(): ThunkAction {
 }
 
 export function rotate(): ThunkAction {
-  return decorateGameAction(({ actionId, userId, gameId }) => ({
+  return decorateGameAction(({ actionId, prevActionId, userId, gameId }) => ({
     type: 'ROTATE',
     payload: {
       actionId,
+      prevActionId,
       userId,
       gameId
     }
@@ -169,10 +177,11 @@ export function rotate(): ThunkAction {
 }
 
 export function enableAcceleration(): ThunkAction {
-  return decorateGameAction(({ actionId, userId, gameId }) => ({
+  return decorateGameAction(({ actionId, prevActionId, userId, gameId }) => ({
     type: 'ENABLE_ACCELERATION',
     payload: {
       actionId,
+      prevActionId,
       userId,
       gameId
     }
@@ -180,10 +189,11 @@ export function enableAcceleration(): ThunkAction {
 }
 
 export function disableAcceleration(): ThunkAction {
-  return decorateGameAction(({ actionId, userId, gameId }) => ({
+  return decorateGameAction(({ actionId, prevActionId, userId, gameId }) => ({
     type: 'DISABLE_ACCELERATION',
     payload: {
       actionId,
+      prevActionId,
       userId,
       gameId
     }
@@ -191,10 +201,11 @@ export function disableAcceleration(): ThunkAction {
 }
 
 export function appendPendingBlocks(): ThunkAction {
-  return decorateGameAction(({ actionId, userId, gameId }) => ({
+  return decorateGameAction(({ actionId, prevActionId, userId, gameId }) => ({
     type: 'APPEND_PENDING_BLOCKS',
     payload: {
       actionId,
+      prevActionId,
       userId,
       gameId
     }
@@ -202,10 +213,11 @@ export function appendPendingBlocks(): ThunkAction {
 }
 
 export function ping(): ThunkAction {
-  return decorateGameAction(({ actionId, userId, gameId }) => ({
+  return decorateGameAction(({ actionId, prevActionId, userId, gameId }) => ({
     type: 'PING',
     payload: {
       actionId,
+      prevActionId,
       userId,
       gameId,
       time: Date.now()
@@ -226,6 +238,7 @@ function scheduleFrame(cb) {
 
 type GameActionDecorator = ({
   actionId: ActionId,
+  prevActionId: ?ActionId,
   gameId: GameId,
   userId: UserId
 }) => Action;
@@ -233,15 +246,22 @@ type GameActionDecorator = ({
 function decorateGameAction(fn: GameActionDecorator): ThunkAction {
   return (dispatch: Dispatch, getState: GetState) => {
     const state = getState();
-    const userId = getCurUser(state).id;
-    const gameId = getCurGame(state).id;
-    // TODO: Send state.player.lastActionId
-    const actionId = getActionId();
 
-    return dispatch(fn({ actionId, userId, gameId }));
+    const userId = getCurUser(state).id;
+    const curGame = getCurGame(state);
+
+    const player = getPlayer(curGame, userId);
+    const { lastActionId: prevActionId } = player;
+    const actionId = getActionId(prevActionId);
+
+    return dispatch(fn({ actionId, prevActionId, userId, gameId: curGame.id }));
   };
 }
 
-function getActionId(prevActionId: number = 0): ActionId {
-  return Math.max(Date.now(), prevActionId + 1);
+function getActionId(prevActionId: ?ActionId): ActionId {
+  const now = Date.now();
+
+  // Ensure action ids never duplicate (only relevant if two actions occur
+  // within the same millisecond)
+  return prevActionId ? Math.max(now, prevActionId + 1) : now;
 }
