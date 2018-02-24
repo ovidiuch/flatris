@@ -122,10 +122,11 @@ class SocketProviderInner extends Component<Props, LocalState> {
     const backfillRanges = getBackfillRanges([game]);
     const backfillRes = await backfillGameActions(backfillRanges);
 
-    const actions = uniqWith(
-      [...backfillRes[game.id], ...this.state.pendingActions],
-      compareGameActions
-    );
+    const mergedActions = [
+      ...backfillRes[game.id],
+      ...this.state.pendingActions
+    ];
+    const uniqActions = uniqWith(mergedActions, compareGameActions);
 
     this.setState({
       isBackfilling: false,
@@ -134,9 +135,10 @@ class SocketProviderInner extends Component<Props, LocalState> {
 
     // TODO: Dispatch events at an interval, to convey the rhythm in
     // which the actions were originally performed
-    actions.forEach(this.props.dispatch);
+    uniqActions.forEach(this.props.dispatch);
 
-    console.log(`Backfilled ${actions.length} actions.`);
+    const numDupes = mergedActions.length - uniqActions.length;
+    console.log(`Backfilled ${uniqActions.length} actions. ${numDupes} dupes.`);
   }
 
   handleBroadcastGameAction = (action: Action) => {
