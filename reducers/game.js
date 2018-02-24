@@ -39,23 +39,28 @@ import type {
 } from '../types/state';
 import type { GameAction } from '../types/actions';
 
-export function gameReducer(state: void | Game, action: GameAction): Game {
-  if (!state) {
+export function gameReducer(prevState: void | Game, action: GameAction): Game {
+  if (!prevState) {
     throw new Error(`Game action ${action.type} called on void state`);
   }
 
+  if (action.type === 'JOIN_GAME') {
+    const { user } = action.payload;
+    const { players: [player1] } = prevState;
+
+    // Stop player1's game when player2 arrives
+    const game = updatePlayer(prevState, player1.user.id, {
+      status: 'PENDING'
+    });
+    return addUserToGame(game, user);
+  }
+
+  // Update player.lastActionId for any game action
+  const { actionId, userId } = action.payload;
+  const state = updatePlayer(prevState, userId, { lastActionId: actionId });
+
   switch (action.type) {
-    case 'JOIN_GAME': {
-      const { user } = action.payload;
-      const { players: [player1] } = state;
-
-      // Stop player1's game when player2 arrives
-      const game = updatePlayer(state, player1.user.id, { status: 'PENDING' });
-      return addUserToGame(game, user);
-    }
-
     case 'PLAYER_READY': {
-      const { userId } = action.payload;
       const game = updatePlayer(state, userId, { status: 'READY' });
 
       // Reset game when all players are ready to (re)start
@@ -77,13 +82,11 @@ export function gameReducer(state: void | Game, action: GameAction): Game {
     }
 
     case 'PLAYER_PAUSE': {
-      const { userId } = action.payload;
-
       return updatePlayer(state, userId, { status: 'PENDING' });
     }
 
     case 'DROP': {
-      const { userId, rows } = action.payload;
+      const { rows } = action.payload;
       const player = getPlayer(state, userId);
       const {
         grid,
@@ -200,7 +203,6 @@ export function gameReducer(state: void | Game, action: GameAction): Game {
     }
 
     case 'APPEND_PENDING_BLOCKS': {
-      const { userId } = action.payload;
       const player = getPlayer(state, userId);
       const {
         grid,
@@ -249,7 +251,6 @@ export function gameReducer(state: void | Game, action: GameAction): Game {
 
     case 'MOVE_LEFT':
     case 'MOVE_RIGHT': {
-      const { userId } = action.payload;
       const direction = action.type === 'MOVE_LEFT' ? -1 : 1;
       const player = getPlayer(state, userId);
       const { grid, activeTetrominoGrid, activeTetrominoPosition } = player;
@@ -269,7 +270,6 @@ export function gameReducer(state: void | Game, action: GameAction): Game {
     }
 
     case 'ROTATE': {
-      const { userId } = action.payload;
       const player = getPlayer(state, userId);
       const { grid, activeTetrominoGrid, activeTetrominoPosition } = player;
       const newGrid = rotate(activeTetrominoGrid);
@@ -295,23 +295,19 @@ export function gameReducer(state: void | Game, action: GameAction): Game {
     }
 
     case 'ENABLE_ACCELERATION': {
-      const { userId } = action.payload;
-
       return updatePlayer(state, userId, {
         dropAcceleration: true
       });
     }
 
     case 'DISABLE_ACCELERATION': {
-      const { userId } = action.payload;
-
       return updatePlayer(state, userId, {
         dropAcceleration: false
       });
     }
 
     case 'PING': {
-      const { userId, time } = action.payload;
+      const { time } = action.payload;
 
       return updatePlayer(state, userId, {
         ping: time
@@ -319,7 +315,7 @@ export function gameReducer(state: void | Game, action: GameAction): Game {
     }
 
     default:
-      return state;
+      return prevState;
   }
 }
 
@@ -342,6 +338,7 @@ export function getBlankGame({
 export function getBlankPlayer(gameId: GameId, user: User): Player {
   return {
     user,
+    lastActionId: 0,
     status: 'PENDING',
     losses: 0,
     ...getBlankPlayerRound({ gameId })

@@ -7,7 +7,7 @@ import { auth } from '../actions';
 
 import type { Store } from 'redux'; // eslint-disable-line import/named
 import type { User, GameId, Game, State } from '../types/state';
-import type { Action } from '../types/actions';
+import type { GameAction, Action, BackfillRanges } from '../types/actions';
 
 // NOTE: This method is strictly called on the server side
 export async function addCurUserToState(
@@ -40,6 +40,12 @@ export async function getGame(gameId: GameId): Promise<Game> {
 
 export async function createGame(): Promise<Game> {
   return fetchPost('/game');
+}
+
+export async function backfillGameActions(
+  ranges: BackfillRanges
+): Promise<{ [GameId]: Array<GameAction> }> {
+  return fetchPost(`/backfill`, { ranges });
 }
 
 export function getApiUrl(path?: string) {

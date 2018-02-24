@@ -95,17 +95,27 @@
 * [x] Add copy to clipboard btn to "Invite or play" screen
   * [x] Show share button when clicking on "2P insert coin"
 * [x] [BEAUTIFUL MVP]
-* [ ] Create actionId, link actions to prev actions, ensuring consistency
-* [ ] Create action backfill if user has old state and new actions
-* [ ] Throttle key down events
-* [ ] Minimize network communication: Don't send noop actions
-* [ ] Minimize state footprint
-* [ ] Freeze game on player disconnect (Keep seat taken in case user returns)
+* [x] Ensure action consistency
+  * [x] Create action backfill if user has old state and new actions
+    * [x] Create action.id, action.prevId and game.player.lastActionId
+    * [x] Store actions on the server
+    * [x] Create backfill operation
 * [ ] Index page with preview of all existing games
   * [ ] Batch actions
   * [ ] Algorithm for distributing events from bundled messages in time
         Calc time of each event in min-max interval and map [0, 1] value to [server timestamp of last received message...now...1s]
 * [ ] Log errors and stats
 * [ ] [1.0]
+
+OPTIMIZATIONS
+
+* [ ] Minimize network communication: Don't send noop actions
+* [ ] Minimize state footprint
+* [ ] Profile browser performance (detect unnecessary renders)
+
+BACKLOG
+
+* [ ] Freeze game on player disconnect (Keep seat taken in case user returns)
+* [ ] Throttle key down events
 * [ ] Create drop shadow from active Tetromino
-* [ ] Sounds?
+* [ ] Sounds

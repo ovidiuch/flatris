@@ -5,6 +5,7 @@ import { getBlankGame } from '../reducers/game';
 import { MAX_NAME_LENGTH } from '../constants/user';
 
 import type { GameId, Game, UserId, User } from '../types/state';
+import type { GameAction } from '../types/actions';
 
 export type SessionId = string;
 export type Session = { id: SessionId, userId: UserId };
@@ -12,10 +13,12 @@ export type Session = { id: SessionId, userId: UserId };
 export type Users = { [id: UserId]: User };
 export type Sessions = { [id: SessionId]: Session };
 export type Games = { [id: GameId]: Game };
+export type GameActions = { [id: GameId]: Array<GameAction> };
 
 export const users: Users = {};
-export const games: Games = {};
 export const sessions: Sessions = {};
+export const games: Games = {};
+export const gameActions: GameActions = {};
 
 export function insertUser(name: string): User {
   const userId = genRandUniqId(users);
@@ -39,6 +42,14 @@ export function insertGame(user: User): Game {
   games[gameId] = game;
 
   return game;
+}
+
+export function saveGameAction(action: GameAction): void {
+  const { gameId } = action.payload;
+  if (!gameActions[gameId]) {
+    gameActions[gameId] = [];
+  }
+  gameActions[gameId].push(action);
 }
 
 function genRandUniqId(collection: { [id: string]: any }): string {

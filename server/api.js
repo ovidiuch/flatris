@@ -4,12 +4,14 @@ import {
   users,
   sessions,
   games,
+  gameActions,
   insertUser,
   insertSession,
   insertGame
 } from './db';
 
-import type { User } from '../types/state';
+import type { User, GameId } from '../types/state';
+import type { GameAction, BackfillRanges } from '../types/actions';
 import type { SessionId } from './db';
 
 export function addRoutes(app: express$Application) {
@@ -33,6 +35,21 @@ export function addRoutes(app: express$Application) {
 
       res.json(game);
     } catch (err) {
+      res.sendStatus(400);
+    }
+  });
+
+  app.post('/backfill', (req: express$Request, res: express$Response) => {
+    try {
+      console.log('Backfill...');
+      console.log(JSON.stringify(req.body.ranges, null, 2));
+
+      const ranges = extractBackfillRanges(req.body.ranges);
+      const actions = getBackfillActions(ranges);
+
+      res.json(actions);
+    } catch (err) {
+      console.log(err);
       res.sendStatus(400);
     }
   });
@@ -72,4 +89,63 @@ function getUserFromReqSession(req: express$Request): User {
   const { userId } = sessions[sessionId];
 
   return users[userId];
+}
+
+function extractBackfillRanges(ranges: mixed): BackfillRanges {
+  if (!ranges || !Array.isArray(ranges)) {
+    throw new Error('Invalid backfill ranges');
+  }
+
+  return ranges.map(gameRanges => {
+    if (!gameRanges || typeof gameRanges !== 'object') {
+      throw new Error('Invalid backfill ranges');
+    }
+
+    const { gameId, players } = gameRanges;
+    if (typeof gameId !== 'string' || !Array.isArray(players)) {
+      throw new Error('Invalid backfill ranges');
+    }
+
+    return {
+      gameId,
+      players: players.map(playerRange => {
+        if (!playerRange || typeof playerRange !== 'object') {
+          throw new Error('Invalid backfill ranges');
+        }
+
+        const { userId, from } = playerRange;
+        if (typeof userId !== 'string' || typeof from !== 'number') {
+          throw new Error('Invalid backfill ranges');
+        }
+
+        return {
+          userId,
+          from
+        };
+      })
+    };
+  });
+}
+
+function getBackfillActions(
+  ranges: BackfillRanges
+): { [GameId]: Array<GameAction> } {
+  const actions = {};
+
+  ranges.forEach(({ gameId, players }) => {
+    actions[gameId] = gameActions[gameId].filter(action => {
+      return (
+        // Include JOIN_GAME actions of users that the user who requested
+        // the backfill isn't aware of
+        (action.type === 'JOIN_GAME' &&
+          !players.some(({ userId }) => userId === action.payload.userId)) ||
+        players.some(
+          ({ userId, from }) =>
+            action.payload.userId === userId && action.payload.actionId > from
+        )
+      );
+    });
+  });
+
+  return actions;
 }
