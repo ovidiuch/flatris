@@ -2,10 +2,6 @@
 
 import type { UserId, User, GameId, Game, State } from './state';
 
-export type InitAction = {
-  type: '@@INIT'
-};
-
 export type AuthAction = {
   type: 'AUTH',
   payload: {
@@ -123,7 +119,7 @@ export type GameAction =
   | AppendPendingBlocksAction
   | PingAction;
 
-export type Action = InitAction | AuthAction | LoadGameAction | GameAction;
+export type Action = AuthAction | LoadGameAction | GameAction;
 
 export type GetState = () => State;
 
