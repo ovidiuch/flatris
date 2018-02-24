@@ -78,7 +78,7 @@ class SocketProviderInner extends Component<Props, LocalState> {
     getSocket().emit('close-game', gameId);
   };
 
-  handleReceiveGameAction = async (action: GameAction) => {
+  handleReceiveGameAction = (action: GameAction) => {
     // console.log('[SOCKET] On game-action', action);
 
     const { state, dispatch } = this.props;
