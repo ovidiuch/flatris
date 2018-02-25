@@ -16,6 +16,7 @@ type Props = {
 
 class JoinPage extends Component<Props> {
   static async getInitialProps({ req, res, query, store }) {
+    // Food for thought: How to not duplicate this on every page
     if (req) {
       await addCurUserToState(req, store);
     }
