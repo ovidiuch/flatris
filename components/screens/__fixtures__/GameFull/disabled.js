@@ -1,15 +1,14 @@
 // @flow
 
 import { createFixture } from '../../../../utils/create-fixture';
-import JoinGame from '../../JoinGame';
+import GameFull from '../../GameFull';
 
 export default createFixture({
-  component: JoinGame,
+  component: GameFull,
 
   props: {
-    disabled: false,
-    onWatch: () => console.log('Just watch'),
-    onJoin: () => console.log('Join game')
+    disabled: true,
+    onWatch: () => console.log('Just watch')
   },
 
   container: {

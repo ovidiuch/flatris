@@ -12,6 +12,7 @@ export default {
   component: FlatrisGame,
 
   reduxState: {
+    jsReady: true,
     curUser: user,
     curGame: updatePlayer(game, user.id, {
       drops: 112,

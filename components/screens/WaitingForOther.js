@@ -10,6 +10,7 @@ import Screen from './Screen';
 import type { Player } from '../../types/state';
 
 type Props = {
+  disabled: boolean,
   curPlayer: Player,
   onPing: Function
 };
@@ -40,7 +41,7 @@ export default class WaitingForOther extends Component<Props, LocalState> {
   }
 
   render() {
-    const { curPlayer, onPing } = this.props;
+    const { disabled, curPlayer, onPing } = this.props;
     const { isOtherPlayerIdle } = this.state;
 
     return (
@@ -68,7 +69,9 @@ export default class WaitingForOther extends Component<Props, LocalState> {
         }
         actions={[
           <Shake time={curPlayer.ping}>
-            <Button onClick={onPing}>Ping</Button>
+            <Button disabled={disabled} onClick={onPing}>
+              Ping
+            </Button>
           </Shake>
         ]}
       />

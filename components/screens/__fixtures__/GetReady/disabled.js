@@ -6,16 +6,13 @@ import { getBlankPlayer } from '../../../../reducers/game';
 import GetReady from '../../GetReady';
 
 const user = getSampleUser();
-const otherPlayer = {
-  ...getBlankPlayer('1337', user),
-  ping: 1234
-};
+const otherPlayer = getBlankPlayer('1337', user);
 
 export default createFixture({
   component: GetReady,
 
   props: {
-    disabled: false,
+    disabled: true,
     otherPlayer,
     onReady: () => console.log(`Ready!`)
   },

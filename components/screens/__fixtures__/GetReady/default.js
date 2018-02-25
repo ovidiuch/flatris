@@ -12,6 +12,7 @@ export default createFixture({
   component: GetReady,
 
   props: {
+    disabled: false,
     otherPlayer,
     onReady: () => console.log(`Ready!`)
   },

@@ -13,6 +13,7 @@ export default createFixture({
   component: WaitingForOther,
 
   props: {
+    disabled: false,
     curPlayer,
     onPing: () => console.log(`Ping!`)
   },

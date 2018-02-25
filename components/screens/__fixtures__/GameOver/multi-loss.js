@@ -1,5 +1,6 @@
 // @flow
 
+import { createFixture } from '../../../../utils/create-fixture';
 import { getSampleUser, getSampleUser2 } from '../../../../utils/test-helpers';
 import {
   getBlankGame,
@@ -7,8 +8,6 @@ import {
   updatePlayer
 } from '../../../../reducers/game';
 import GameOver from '../../GameOver';
-
-import type { Props } from '../../GameOver';
 
 const user1 = getSampleUser();
 const user2 = getSampleUser2();
@@ -23,10 +22,11 @@ game = updatePlayer(game, user2.id, {
   losses: 7
 });
 
-const fixture: { props: Props } = {
+export default createFixture({
   component: GameOver,
 
   props: {
+    disabled: false,
     curUser: user1,
     game,
     onRestart: () => console.log(`Restart!`)
@@ -36,6 +36,4 @@ const fixture: { props: Props } = {
     width: 10,
     backgroundColor: 'rgba(236, 240, 241, 0.85)'
   }
-};
-
-export default fixture;
+});

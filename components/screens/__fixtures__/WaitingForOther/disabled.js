@@ -1,23 +1,21 @@
 // @flow
 
+import WaitingForOther from '../../WaitingForOther';
+
 import { createFixture } from '../../../../utils/create-fixture';
 import { getSampleUser } from '../../../../utils/test-helpers';
 import { getBlankPlayer } from '../../../../reducers/game';
-import GetReady from '../../GetReady';
 
 const user = getSampleUser();
-const otherPlayer = {
-  ...getBlankPlayer('1337', user),
-  ping: 1234
-};
+const curPlayer = getBlankPlayer('1337', user);
 
 export default createFixture({
-  component: GetReady,
+  component: WaitingForOther,
 
   props: {
-    disabled: false,
-    otherPlayer,
-    onReady: () => console.log(`Ready!`)
+    disabled: true,
+    curPlayer,
+    onPing: () => console.log(`Ping!`)
   },
 
   container: {

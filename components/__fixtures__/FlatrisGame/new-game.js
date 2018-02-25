@@ -11,6 +11,7 @@ export default {
   component: FlatrisGame,
 
   reduxState: {
+    jsReady: true,
     curUser: user,
     curGame: game
   }

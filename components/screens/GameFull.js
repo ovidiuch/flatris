@@ -5,13 +5,14 @@ import Link from 'next/link';
 import Screen from './Screen';
 import Button from '../Button';
 
-export type Props = {
+type Props = {
+  disabled: boolean,
   onWatch: Function
 };
 
 export default class GameFull extends Component<Props> {
   render() {
-    const { onWatch } = this.props;
+    const { disabled, onWatch } = this.props;
 
     return (
       <Screen
@@ -31,7 +32,13 @@ export default class GameFull extends Component<Props> {
         }
         actions={[
           <Button disabled>Join</Button>,
-          <Button bgColor="#fff" color="#34495f" onClick={onWatch}>
+          <Button
+            disabled={disabled}
+            bgColor="#fff"
+            color="#34495f"
+            colorDisabled="rgba(52, 73, 95, 0.6)"
+            onClick={onWatch}
+          >
             Watch
           </Button>
         ]}

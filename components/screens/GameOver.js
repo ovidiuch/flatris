@@ -8,7 +8,8 @@ import Screen from './Screen';
 
 import type { User, Player, Game } from '../../types/state';
 
-export type Props = {
+type Props = {
+  disabled: boolean,
   curUser: User,
   game: Game,
   onRestart: Function
@@ -16,7 +17,7 @@ export type Props = {
 
 export default class GameOver extends Component<Props> {
   render() {
-    const { curUser, game, onRestart } = this.props;
+    const { disabled, curUser, game, onRestart } = this.props;
     const curPlayer = getCurPlayer(game, curUser);
     const otherPlayer = getOtherPlayer(game, curPlayer);
 
@@ -32,7 +33,11 @@ export default class GameOver extends Component<Props> {
               </p>
             </Fragment>
           }
-          actions={[<Button onClick={onRestart}>Again</Button>]}
+          actions={[
+            <Button disabled={disabled} onClick={onRestart}>
+              Again
+            </Button>
+          ]}
         />
       );
     }
@@ -43,7 +48,9 @@ export default class GameOver extends Component<Props> {
         message={getMultiMessage(curPlayer, otherPlayer)}
         actions={[
           <Shake time={otherPlayer.ping}>
-            <Button onClick={onRestart}>Again</Button>
+            <Button disabled={disabled} onClick={onRestart}>
+              Again
+            </Button>
           </Shake>
         ]}
       />

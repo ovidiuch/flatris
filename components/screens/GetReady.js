@@ -8,13 +8,14 @@ import Screen from './Screen';
 import type { Player } from '../../types/state';
 
 type Props = {
+  disabled: boolean,
   otherPlayer: Player,
   onReady: Function
 };
 
 export default class GetReady extends Component<Props> {
   render() {
-    const { otherPlayer, onReady } = this.props;
+    const { disabled, otherPlayer, onReady } = this.props;
 
     return (
       <Screen
@@ -31,7 +32,9 @@ export default class GetReady extends Component<Props> {
         }
         actions={[
           <Shake time={otherPlayer.ping}>
-            <Button onClick={onReady}>Ready</Button>
+            <Button disabled={disabled} onClick={onReady}>
+              Ready
+            </Button>
           </Shake>
         ]}
       />

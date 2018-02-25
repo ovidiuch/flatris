@@ -8,7 +8,10 @@ const fixture = {
   props: {
     onAuth: () => console.log('Auth started...')
   },
-  reduxState: {},
+
+  reduxState: {
+    jsReady: true
+  },
 
   container: {
     width: 10,

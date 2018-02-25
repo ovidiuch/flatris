@@ -7,6 +7,7 @@ export default createFixture({
   component: NewGame,
 
   props: {
+    disabled: false,
     gameId: '1337',
     onPlay: () => console.log(`Play!`)
   },

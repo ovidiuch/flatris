@@ -208,6 +208,7 @@ export default {
   },
 
   reduxState: {
+    jsReady: true,
     curUser: user1,
     curGame: game
   }

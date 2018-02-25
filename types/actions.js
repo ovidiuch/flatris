@@ -4,6 +4,10 @@ import type { UserId, User, GameId, Game, State } from './state';
 
 export type ActionId = number;
 
+export type JsLoadAction = {
+  type: 'JS_LOAD'
+};
+
 export type AuthAction = {
   type: 'AUTH',
   payload: {
@@ -144,7 +148,7 @@ export type GameAction =
   | AppendPendingBlocksAction
   | PingAction;
 
-export type Action = AuthAction | LoadGameAction | GameAction;
+export type Action = JsLoadAction | AuthAction | LoadGameAction | GameAction;
 
 export type GetState = () => State;
 

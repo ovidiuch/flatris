@@ -2,39 +2,33 @@
 
 import classNames from 'classnames';
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Head from 'next/head';
 
 import type { Node } from 'react';
+import type { State } from '../types/state';
+import type { Action, Dispatch } from '../types/actions';
 
 type Props = {
+  jsReady: boolean,
   children: Node,
-  title?: string
+  title?: string,
+  jsLoad: () => Action
 };
 
-type State = {
-  hasJsLoaded: boolean
-};
-
-export default class Layout extends Component<Props, State> {
+class Layout extends Component<Props> {
   static defaultProps = {
     title: 'Flatris'
   };
 
-  state = {
-    hasJsLoaded: false
-  };
-
   componentDidMount() {
-    this.setState({
-      hasJsLoaded: true
-    });
+    this.props.jsLoad();
   }
 
   render() {
-    const { title, children } = this.props;
-    const { hasJsLoaded } = this.state;
+    const { jsReady, title, children } = this.props;
     const layoutClasses = classNames('layout', {
-      'layout-static': !hasJsLoaded
+      'layout-static': !jsReady
     });
 
     // TODO: Embed fonts
@@ -108,3 +102,15 @@ export default class Layout extends Component<Props, State> {
     );
   }
 }
+
+function mapStateToProps({ jsReady }: State): $Shape<Props> {
+  return { jsReady };
+}
+
+function mapDispatchToProps(dispatch: Dispatch): $Shape<Props> {
+  return {
+    jsLoad: () => dispatch({ type: 'JS_LOAD' })
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Layout);

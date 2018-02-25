@@ -7536,19 +7536,19 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah 1`] = `
               className="jsx-215556098 player2"
             >
               <div
-                className="jsx-1405434595 player-info selectable"
+                className="jsx-1285042675 player-info selectable"
                 onClick={[Function]}
               >
                 <div
-                  className="jsx-1405434595 centered"
+                  className="jsx-1285042675 centered"
                 >
                   <div
-                    className="jsx-1405434595 player"
+                    className="jsx-1285042675 player"
                   >
                     2p
                   </div>
                   <div
-                    className="jsx-1405434595 insert-coin"
+                    className="jsx-1285042675 insert-coin"
                   >
                     insert coin
                   </div>
@@ -9729,6 +9729,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah-guest 1
               >
                 <button
                   className="jsx-2576755423 button hover-button"
+                  disabled={false}
                   onClick={[Function]}
                   type="button"
                 >
@@ -9739,7 +9740,8 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah-guest 1
                 className="jsx-2362338977 button"
               >
                 <button
-                  className="jsx-2453729951 button hover-button"
+                  className="jsx-1064755682 button hover-button"
+                  disabled={false}
                   onClick={[Function]}
                   type="button"
                 >
@@ -9902,19 +9904,19 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah-guest 1
               className="jsx-215556098 player2"
             >
               <div
-                className="jsx-1405434595 player-info"
+                className="jsx-1285042675 player-info"
                 onClick={undefined}
               >
                 <div
-                  className="jsx-1405434595 centered"
+                  className="jsx-1285042675 centered"
                 >
                   <div
-                    className="jsx-1405434595 player"
+                    className="jsx-1285042675 player"
                   >
                     2p
                   </div>
                   <div
-                    className="jsx-1405434595 insert-coin"
+                    className="jsx-1285042675 insert-coin"
                   >
                     insert coin
                   </div>
@@ -12559,6 +12561,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
               >
                 <button
                   className="jsx-2576755423 button hover-button"
+                  disabled={false}
                   onClick={[Function]}
                   type="button"
                 >
@@ -12721,19 +12724,19 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
               className="jsx-215556098 player2"
             >
               <div
-                className="jsx-1405434595 player-info selectable"
+                className="jsx-1285042675 player-info selectable"
                 onClick={[Function]}
               >
                 <div
-                  className="jsx-1405434595 centered"
+                  className="jsx-1285042675 centered"
                 >
                   <div
-                    className="jsx-1405434595 player"
+                    className="jsx-1285042675 player"
                   >
                     2p
                   </div>
                   <div
-                    className="jsx-1405434595 insert-coin"
+                    className="jsx-1285042675 insert-coin"
                   >
                     insert coin
                   </div>
@@ -13017,6 +13020,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
               >
                 <button
                   className="jsx-2576755423 button hover-button"
+                  disabled={false}
                   onClick={[Function]}
                   type="button"
                 >
@@ -13179,19 +13183,19 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
               className="jsx-215556098 player2"
             >
               <div
-                className="jsx-1405434595 player-info selectable"
+                className="jsx-1285042675 player-info selectable"
                 onClick={[Function]}
               >
                 <div
-                  className="jsx-1405434595 centered"
+                  className="jsx-1285042675 centered"
                 >
                   <div
-                    className="jsx-1405434595 player"
+                    className="jsx-1285042675 player"
                   >
                     2p
                   </div>
                   <div
-                    className="jsx-1405434595 insert-coin"
+                    className="jsx-1285042675 insert-coin"
                   >
                     insert coin
                   </div>
@@ -13564,19 +13568,19 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game-running 1
               className="jsx-215556098 player2"
             >
               <div
-                className="jsx-1405434595 player-info selectable"
+                className="jsx-1285042675 player-info selectable"
                 onClick={[Function]}
               >
                 <div
-                  className="jsx-1405434595 centered"
+                  className="jsx-1285042675 centered"
                 >
                   <div
-                    className="jsx-1405434595 player"
+                    className="jsx-1285042675 player"
                   >
                     2p
                   </div>
                   <div
-                    className="jsx-1405434595 insert-coin"
+                    className="jsx-1285042675 insert-coin"
                   >
                     insert coin
                   </div>
@@ -14242,7 +14246,91 @@ exports[`Cosmos fixtures: GameFull:default 1`] = `
             className="jsx-2362338977 button"
           >
             <button
-              className="jsx-2453729951 button hover-button"
+              className="jsx-1064755682 button hover-button"
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+            >
+              Watch
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Cosmos fixtures: GameFull:disabled 1`] = `
+<div
+  className="jsx-1613050951 outer"
+>
+  <div
+    className="jsx-1613050951 container"
+  >
+    <div
+      className="jsx-1294220987 inner-container"
+      style={
+        Object {
+          "backgroundColor": "rgba(236, 240, 241, 0.85)",
+          "opacity": 1,
+          "position": "absolute",
+          "width": "calc(100% / 16 * 10)",
+        }
+      }
+    >
+      <div
+        className="jsx-2362338977 screen"
+      >
+        <div
+          className="jsx-1497761764 fade-in"
+        >
+          <h2
+            className="jsx-2362338977 title"
+          >
+            Join game
+          </h2>
+          <div
+            className="jsx-2362338977 message"
+          >
+            <p>
+              <strong>
+                Game full.
+              </strong>
+            </p>
+            <p>
+              You can watch, or
+              <br />
+              <a
+                href="/"
+                onClick={[Function]}
+              >
+                join another game
+              </a>
+              .
+            </p>
+          </div>
+        </div>
+        <div
+          className="jsx-2362338977 actions"
+        >
+          <div
+            className="jsx-2362338977 button"
+          >
+            <button
+              className="jsx-2576755423 button hover-button"
+              disabled={true}
+              type="button"
+            >
+              Join
+            </button>
+          </div>
+          <div
+            className="jsx-2362338977 button"
+          >
+            <button
+              className="jsx-1064755682 button hover-button"
+              disabled={true}
               onClick={[Function]}
               type="button"
             >
@@ -14308,6 +14396,7 @@ exports[`Cosmos fixtures: GameOver:multi-loss 1`] = `
           >
             <button
               className="jsx-2576755423 button hover-button"
+              disabled={false}
               onClick={[Function]}
               type="button"
             >
@@ -14371,6 +14460,7 @@ exports[`Cosmos fixtures: GameOver:multi-win 1`] = `
           >
             <button
               className="jsx-2576755423 button hover-button"
+              disabled={false}
               onClick={[Function]}
               type="button"
             >
@@ -14434,6 +14524,71 @@ exports[`Cosmos fixtures: GameOver:solo 1`] = `
           >
             <button
               className="jsx-2576755423 button hover-button"
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+            >
+              Again
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Cosmos fixtures: GameOver:solo-disabled 1`] = `
+<div
+  className="jsx-1613050951 outer"
+>
+  <div
+    className="jsx-1613050951 container"
+  >
+    <div
+      className="jsx-1294220987 inner-container"
+      style={
+        Object {
+          "backgroundColor": "rgba(236, 240, 241, 0.85)",
+          "opacity": 1,
+          "position": "absolute",
+          "width": "calc(100% / 16 * 10)",
+        }
+      }
+    >
+      <div
+        className="jsx-2362338977 screen"
+      >
+        <div
+          className="jsx-1497761764 fade-in"
+        >
+          <h2
+            className="jsx-2362338977 title"
+          >
+            Game over
+          </h2>
+          <div
+            className="jsx-2362338977 message"
+          >
+            <p>
+              That was fun!
+            </p>
+            <p>
+              <strong>
+                Up for another?
+              </strong>
+            </p>
+          </div>
+        </div>
+        <div
+          className="jsx-2362338977 actions"
+        >
+          <div
+            className="jsx-2362338977 button"
+          >
+            <button
+              className="jsx-2576755423 button hover-button"
+              disabled={true}
               onClick={[Function]}
               type="button"
             >
@@ -14615,19 +14770,19 @@ exports[`Cosmos fixtures: GamePanel:default 1`] = `
           className="jsx-215556098 player2"
         >
           <div
-            className="jsx-1405434595 player-info selectable"
+            className="jsx-1285042675 player-info selectable"
             onClick={[Function]}
           >
             <div
-              className="jsx-1405434595 centered"
+              className="jsx-1285042675 centered"
             >
               <div
-                className="jsx-1405434595 player"
+                className="jsx-1285042675 player"
               >
                 2p
               </div>
               <div
-                className="jsx-1405434595 insert-coin"
+                className="jsx-1285042675 insert-coin"
               >
                 insert coin
               </div>
@@ -14692,6 +14847,73 @@ exports[`Cosmos fixtures: GetReady:default 1`] = `
           >
             <button
               className="jsx-2576755423 button hover-button"
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+            >
+              Ready
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Cosmos fixtures: GetReady:disabled 1`] = `
+<div
+  className="jsx-1613050951 outer"
+>
+  <div
+    className="jsx-1613050951 container"
+  >
+    <div
+      className="jsx-1294220987 inner-container"
+      style={
+        Object {
+          "backgroundColor": "rgba(236, 240, 241, 0.85)",
+          "opacity": 1,
+          "position": "absolute",
+          "width": "calc(100% / 16 * 10)",
+        }
+      }
+    >
+      <div
+        className="jsx-2362338977 screen"
+      >
+        <div
+          className="jsx-1497761764 fade-in"
+        >
+          <h2
+            className="jsx-2362338977 title"
+          >
+            Get ready
+          </h2>
+          <div
+            className="jsx-2362338977 message"
+          >
+            <p>
+              Game starts when
+              <br />
+              you're both ready.
+            </p>
+            <p>
+              <strong>
+                Good luck!
+              </strong>
+            </p>
+          </div>
+        </div>
+        <div
+          className="jsx-2362338977 actions"
+        >
+          <div
+            className="jsx-2362338977 button"
+          >
+            <button
+              className="jsx-2576755423 button hover-button"
+              disabled={true}
               onClick={[Function]}
               type="button"
             >
@@ -14760,6 +14982,7 @@ exports[`Cosmos fixtures: GetReady:ping 1`] = `
             >
               <button
                 className="jsx-2576755423 button hover-button"
+                disabled={false}
                 onClick={[Function]}
                 type="button"
               >
@@ -15120,6 +15343,7 @@ exports[`Cosmos fixtures: JoinGame:default 1`] = `
           >
             <button
               className="jsx-2576755423 button hover-button"
+              disabled={false}
               onClick={[Function]}
               type="button"
             >
@@ -15130,7 +15354,89 @@ exports[`Cosmos fixtures: JoinGame:default 1`] = `
             className="jsx-2362338977 button"
           >
             <button
-              className="jsx-2453729951 button hover-button"
+              className="jsx-1064755682 button hover-button"
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+            >
+              Watch
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Cosmos fixtures: JoinGame:disabled 1`] = `
+<div
+  className="jsx-1613050951 outer"
+>
+  <div
+    className="jsx-1613050951 container"
+  >
+    <div
+      className="jsx-1294220987 inner-container"
+      style={
+        Object {
+          "backgroundColor": "rgba(236, 240, 241, 0.85)",
+          "opacity": 1,
+          "position": "absolute",
+          "width": "calc(100% / 16 * 10)",
+        }
+      }
+    >
+      <div
+        className="jsx-2362338977 screen"
+      >
+        <div
+          className="jsx-1497761764 fade-in"
+        >
+          <h2
+            className="jsx-2362338977 title"
+          >
+            Join game
+          </h2>
+          <div
+            className="jsx-2362338977 message"
+          >
+            <p>
+              <strong>
+                Room for one more!
+              </strong>
+            </p>
+            <p>
+              You can watch, or
+              <br />
+              you can play.
+            </p>
+            <p>
+              What will it be?
+            </p>
+          </div>
+        </div>
+        <div
+          className="jsx-2362338977 actions"
+        >
+          <div
+            className="jsx-2362338977 button"
+          >
+            <button
+              className="jsx-2576755423 button hover-button"
+              disabled={true}
+              onClick={[Function]}
+              type="button"
+            >
+              Join
+            </button>
+          </div>
+          <div
+            className="jsx-2362338977 button"
+          >
+            <button
+              className="jsx-1064755682 button hover-button"
+              disabled={true}
               onClick={[Function]}
               type="button"
             >
@@ -15383,6 +15689,7 @@ exports[`Cosmos fixtures: NewGame:copy-error 1`] = `
           >
             <button
               className="jsx-2576755423 button hover-button"
+              disabled={false}
               onClick={[Function]}
               type="button"
             >
@@ -15475,6 +15782,7 @@ exports[`Cosmos fixtures: NewGame:copy-success 1`] = `
           >
             <button
               className="jsx-2576755423 button hover-button"
+              disabled={false}
               onClick={[Function]}
               type="button"
             >
@@ -15567,6 +15875,100 @@ exports[`Cosmos fixtures: NewGame:default 1`] = `
           >
             <button
               className="jsx-2576755423 button hover-button"
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+            >
+              Play
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Cosmos fixtures: NewGame:disabled 1`] = `
+<div
+  className="jsx-1613050951 outer"
+>
+  <div
+    className="jsx-1613050951 container"
+  >
+    <div
+      className="jsx-1294220987 inner-container"
+      style={
+        Object {
+          "backgroundColor": "rgba(236, 240, 241, 0.85)",
+          "opacity": 1,
+          "position": "absolute",
+          "width": "calc(100% / 16 * 10)",
+        }
+      }
+    >
+      <div
+        className="jsx-2362338977 screen"
+      >
+        <div
+          className="jsx-1497761764 fade-in"
+        >
+          <h2
+            className="jsx-2362338977 title"
+          >
+            New game
+          </h2>
+          <div
+            className="jsx-2362338977 message"
+          >
+            <p
+              className="jsx-1832570087"
+            >
+              <strong
+                className="jsx-1832570087"
+              >
+                Invite a friend to
+                <br
+                  className="jsx-1832570087"
+                />
+                battle, or play solo.
+              </strong>
+            </p>
+            <div
+              className="jsx-1832570087 copy"
+            >
+              <button
+                className="jsx-2544857778 button hover-button"
+                disabled={true}
+                type="button"
+              >
+                Copy link
+              </button>
+            </div>
+            <p
+              className="jsx-1832570087"
+            >
+              Send the link and
+              <br
+                className="jsx-1832570087"
+              />
+              warm up until the
+              <br
+                className="jsx-1832570087"
+              />
+              other person arrives.
+            </p>
+          </div>
+        </div>
+        <div
+          className="jsx-2362338977 actions"
+        >
+          <div
+            className="jsx-2362338977 button"
+          >
+            <button
+              className="jsx-2576755423 button hover-button"
+              disabled={true}
               onClick={[Function]}
               type="button"
             >
@@ -15885,19 +16287,19 @@ exports[`Cosmos fixtures: PlayerInfo:player1-missing 1`] = `
       }
     >
       <div
-        className="jsx-1405434595 player-info"
+        className="jsx-1285042675 player-info"
         onClick={undefined}
       >
         <div
-          className="jsx-1405434595 centered"
+          className="jsx-1285042675 centered"
         >
           <div
-            className="jsx-1405434595 player"
+            className="jsx-1285042675 player"
           >
             1p
           </div>
           <div
-            className="jsx-1405434595 insert-coin"
+            className="jsx-1285042675 insert-coin"
           >
             insert coin
           </div>
@@ -15928,19 +16330,19 @@ exports[`Cosmos fixtures: PlayerInfo:player2-missing 1`] = `
       }
     >
       <div
-        className="jsx-1405434595 player-info selectable"
+        className="jsx-1285042675 player-info selectable"
         onClick={[Function]}
       >
         <div
-          className="jsx-1405434595 centered"
+          className="jsx-1285042675 centered"
         >
           <div
-            className="jsx-1405434595 player"
+            className="jsx-1285042675 player"
           >
             2p
           </div>
           <div
-            className="jsx-1405434595 insert-coin"
+            className="jsx-1285042675 insert-coin"
           >
             insert coin
           </div>
@@ -17017,6 +17419,73 @@ exports[`Cosmos fixtures: WaitingForOther:default 1`] = `
           >
             <button
               className="jsx-2576755423 button hover-button"
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+            >
+              Ping
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Cosmos fixtures: WaitingForOther:disabled 1`] = `
+<div
+  className="jsx-1613050951 outer"
+>
+  <div
+    className="jsx-1613050951 container"
+  >
+    <div
+      className="jsx-1294220987 inner-container"
+      style={
+        Object {
+          "backgroundColor": "rgba(236, 240, 241, 0.85)",
+          "opacity": 1,
+          "position": "absolute",
+          "width": "calc(100% / 16 * 10)",
+        }
+      }
+    >
+      <div
+        className="jsx-2362338977 screen"
+      >
+        <div
+          className="jsx-1497761764 fade-in"
+        >
+          <h2
+            className="jsx-2362338977 title"
+          >
+            Waiting...
+          </h2>
+          <div
+            className="jsx-2362338977 message"
+          >
+            <p>
+              Your friend is a bit
+              <br />
+              slower. I know...
+            </p>
+            <p>
+              <strong>
+                Ping them to hurry!
+              </strong>
+            </p>
+          </div>
+        </div>
+        <div
+          className="jsx-2362338977 actions"
+        >
+          <div
+            className="jsx-2362338977 button"
+          >
+            <button
+              className="jsx-2576755423 button hover-button"
+              disabled={true}
               onClick={[Function]}
               type="button"
             >
@@ -17101,6 +17570,7 @@ exports[`Cosmos fixtures: WaitingForOther:other-player-idle 1`] = `
             >
               <button
                 className="jsx-2576755423 button hover-button"
+                disabled={false}
                 onClick={[Function]}
                 type="button"
               >
@@ -17170,6 +17640,7 @@ exports[`Cosmos fixtures: WaitingForOther:ping 1`] = `
             >
               <button
                 className="jsx-2576755423 button hover-button"
+                disabled={false}
                 onClick={[Function]}
                 type="button"
               >

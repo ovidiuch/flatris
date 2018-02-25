@@ -62,6 +62,7 @@ export type Game = {
 };
 
 export type State = {
+  jsReady: boolean,
   curUser: ?User,
   curGame: ?Game
 };

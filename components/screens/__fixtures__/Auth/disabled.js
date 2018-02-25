@@ -6,10 +6,12 @@ const fixture = {
   component: Auth,
 
   props: {
-    disabled: true,
     onAuth: () => console.log('Auth started...')
   },
-  reduxState: {},
+
+  reduxState: {
+    jsReady: false
+  },
 
   container: {
     width: 10,

@@ -1,13 +1,13 @@
 // @flow
 
+import { createFixture } from '../../../../utils/create-fixture';
 import GameFull from '../../GameFull';
 
-import type { Props } from '../../GameFull';
-
-const fixture: { props: Props } = {
+export default createFixture({
   component: GameFull,
 
   props: {
+    disabled: false,
     onWatch: () => console.log('Just watch')
   },
 
@@ -15,6 +15,4 @@ const fixture: { props: Props } = {
     width: 10,
     backgroundColor: 'rgba(236, 240, 241, 0.85)'
   }
-};
-
-export default fixture;
+});

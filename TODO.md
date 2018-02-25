@@ -101,7 +101,15 @@
     * [x] Store actions on the server
     * [x] Create backfill operation
 * [x] UX: Disable Auth buttons while performing IO
-* [ ] UX: Disable buttons while JS is loading
+* [x] UX: Disable buttons while JS is loading
+  * [x] 2P Insert Coin in GamePanel
+  * [x] screens/Auth name field
+  * [x] screens/GameFull Watch
+  * [x] screens/GameOver Again
+  * [x] screens/GetReady Ready
+  * [x] screens/JoinGame Watch and Join
+  * [x] screens/NewGame Play and Copy
+  * [x] screens/WaitingForOther Ping
 * [ ] Index page with preview of all existing games
   * [ ] Batch actions
   * [ ] Algorithm for distributing events from bundled messages in time

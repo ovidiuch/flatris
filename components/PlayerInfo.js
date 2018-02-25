@@ -51,6 +51,7 @@ export default class PlayerInfo extends Component<Props> {
             background-size: 400% 400%;
             background-position: 100% 100%;
             animation: wave 5s 5s linear infinite;
+            cursor: pointer;
           }
 
           .centered {

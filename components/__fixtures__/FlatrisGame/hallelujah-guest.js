@@ -12,6 +12,7 @@ export default {
   component: FlatrisGame,
 
   reduxState: {
+    jsReady: true,
     curUser: user2,
     curGame: updatePlayer(game, user.id, {
       status: 'READY',

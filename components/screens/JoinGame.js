@@ -5,13 +5,14 @@ import Screen from './Screen';
 import Button from '../Button';
 
 export type Props = {
+  disabled: boolean,
   onWatch: Function,
   onJoin: Function
 };
 
 export default class JoinGame extends Component<Props> {
   render() {
-    const { onWatch, onJoin } = this.props;
+    const { disabled, onWatch, onJoin } = this.props;
 
     return (
       <Screen
@@ -28,8 +29,16 @@ export default class JoinGame extends Component<Props> {
           </Fragment>
         }
         actions={[
-          <Button onClick={onJoin}>Join</Button>,
-          <Button bgColor="#fff" color="#34495f" onClick={onWatch}>
+          <Button disabled={disabled} onClick={onJoin}>
+            Join
+          </Button>,
+          <Button
+            disabled={disabled}
+            bgColor="#fff"
+            color="#34495f"
+            colorDisabled="rgba(52, 73, 95, 0.6)"
+            onClick={onWatch}
+          >
             Watch
           </Button>
         ]}

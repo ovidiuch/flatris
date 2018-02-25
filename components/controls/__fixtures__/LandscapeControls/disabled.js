@@ -13,6 +13,7 @@ export default {
   container: {},
 
   reduxState: {
+    jsReady: true,
     curUser: user,
     curGame: game
   }

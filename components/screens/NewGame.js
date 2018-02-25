@@ -10,34 +10,21 @@ import Button from '../Button';
 import type { GameId } from '../../types/state';
 
 type Props = {
+  disabled: boolean,
   gameId: GameId,
   onPlay: Function
 };
 
 type LocalState = {
-  copyStatus: null | 'success' | 'error',
-  shareUrl: ?string
+  copyStatus: null | 'success' | 'error'
 };
 
 export default class NewGame extends Component<Props, LocalState> {
   clipboard: ?typeof Clipboard;
 
   state = {
-    copyStatus: null,
-    shareUrl: null
+    copyStatus: null
   };
-
-  componentDidMount() {
-    // NOTE: We build the URL after mounting because this code only works in to
-    // browser (ie. not on the server). First render will not have a copy button.
-    const { gameId } = this.props;
-    const { protocol, host } = window.location;
-    const shareUrl = `${protocol}//${host}/join/${gameId}`;
-
-    this.setState({
-      shareUrl
-    });
-  }
 
   componentWillUnmount() {
     if (this.clipboard) {
@@ -68,8 +55,8 @@ export default class NewGame extends Component<Props, LocalState> {
   };
 
   render() {
-    const { onPlay } = this.props;
-    const { copyStatus, shareUrl } = this.state;
+    const { disabled, onPlay } = this.props;
+    const { copyStatus } = this.state;
 
     let bgColor;
     switch (copyStatus) {
@@ -93,16 +80,22 @@ export default class NewGame extends Component<Props, LocalState> {
                 Invite a friend to<br />battle, or play solo.
               </strong>
             </p>
-            {shareUrl && (
+            {!disabled ? (
               <div
                 className="copy"
                 ref={this.handleCopyBtnRef}
-                data-clipboard-text={shareUrl}
+                data-clipboard-text={this.getShareUrl()}
               >
                 <Button bgColor={bgColor} color="#fff">
                   {!copyStatus && 'Copy link'}
                   {copyStatus === 'success' && 'Link copied!'}
                   {copyStatus === 'error' && 'Copy error :('}
+                </Button>
+              </div>
+            ) : (
+              <div className="copy">
+                <Button disabled bgColor={bgColor} color="#fff">
+                  Copy link
                 </Button>
               </div>
             )}
@@ -120,8 +113,21 @@ export default class NewGame extends Component<Props, LocalState> {
             `}</style>
           </Fragment>
         }
-        actions={[<Button onClick={onPlay}>Play</Button>]}
+        actions={[
+          <Button disabled={disabled} onClick={onPlay}>
+            Play
+          </Button>
+        ]}
       />
     );
+  }
+
+  getShareUrl() {
+    // NOTE: This code only works in to browser (ie. not on the server). SSR
+    // will return a disabled copy button.
+    const { gameId } = this.props;
+    const { protocol, host } = window.location;
+
+    return `${protocol}//${host}/join/${gameId}`;
   }
 }

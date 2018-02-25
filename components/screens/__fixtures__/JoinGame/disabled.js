@@ -7,7 +7,7 @@ export default createFixture({
   component: JoinGame,
 
   props: {
-    disabled: false,
+    disabled: true,
     onWatch: () => console.log('Just watch'),
     onJoin: () => console.log('Join game')
   },

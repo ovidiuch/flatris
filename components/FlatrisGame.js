@@ -50,6 +50,7 @@ import type { Node } from 'react';
 import type { User, Player, GameId, Game, State } from '../types/state';
 
 type Props = {
+  jsReady: boolean,
   curUser: ?User,
   game: Game,
   openGame: (gameId: GameId) => void,
@@ -257,7 +258,7 @@ class FlatrisGame extends Component<Props, LocalState> {
   }
 
   renderScreens() {
-    const { curUser, game } = this.props;
+    const { jsReady, curUser, game } = this.props;
     const { isWatching } = this.state;
     const hasJoined = isPlayer(game, curUser);
 
@@ -270,7 +271,9 @@ class FlatrisGame extends Component<Props, LocalState> {
     }
 
     if (!hasJoined && otherPlayer) {
-      return this.renderScreen(<GameFull onWatch={this.handleWatch} />);
+      return this.renderScreen(
+        <GameFull disabled={!jsReady} onWatch={this.handleWatch} />
+      );
     }
 
     if (!curUser) {
@@ -279,7 +282,11 @@ class FlatrisGame extends Component<Props, LocalState> {
 
     if (!hasJoined) {
       return this.renderScreen(
-        <JoinGame onWatch={this.handleWatch} onJoin={this.handleJoin} />
+        <JoinGame
+          disabled={!jsReady}
+          onWatch={this.handleWatch}
+          onJoin={this.handleJoin}
+        />
       );
     }
 
@@ -290,7 +297,12 @@ class FlatrisGame extends Component<Props, LocalState> {
 
     if (curPlayer.status === 'LOST' || curPlayer.status === 'WON') {
       return this.renderScreen(
-        <GameOver curUser={curUser} game={game} onRestart={this.handleReady} />
+        <GameOver
+          disabled={!jsReady}
+          curUser={curUser}
+          game={game}
+          onRestart={this.handleReady}
+        />
       );
     }
 
@@ -298,19 +310,32 @@ class FlatrisGame extends Component<Props, LocalState> {
       // curPlayer status is 'PENDING', because if it wouldn've been 'READY'
       // allPlayersReady(game) would've returned true
       return this.renderScreen(
-        <NewGame gameId={game.id} onPlay={this.handleReady} />
+        <NewGame
+          disabled={!jsReady}
+          jsReady={jsReady}
+          gameId={game.id}
+          onPlay={this.handleReady}
+        />
       );
     }
 
     if (curPlayer.status === 'READY') {
       return this.renderScreen(
-        <WaitingForOther curPlayer={curPlayer} onPing={this.handlePing} />
+        <WaitingForOther
+          disabled={!jsReady}
+          curPlayer={curPlayer}
+          onPing={this.handlePing}
+        />
       );
     }
 
     // curPlayer.status === 'PENDING'
     return this.renderScreen(
-      <GetReady otherPlayer={otherPlayer} onReady={this.handleReady} />
+      <GetReady
+        disabled={!jsReady}
+        otherPlayer={otherPlayer}
+        onReady={this.handleReady}
+      />
     );
   }
 
@@ -357,7 +382,7 @@ class FlatrisGame extends Component<Props, LocalState> {
   }
 
   render() {
-    const { curUser, game } = this.props;
+    const { jsReady, curUser, game } = this.props;
     const { isMobile } = this.state;
     const hasJoined = isPlayer(game, curUser);
     const curPlayer = getCurPlayer(game, curUser);
@@ -386,7 +411,9 @@ class FlatrisGame extends Component<Props, LocalState> {
               curUser={curUser}
               game={game}
               onSelectP2={
-                hasJoined && !otherPlayer ? this.handleSelectP2 : undefined
+                jsReady && hasJoined && !otherPlayer
+                  ? this.handleSelectP2
+                  : undefined
               }
             />
           </div>
@@ -427,6 +454,7 @@ class FlatrisGame extends Component<Props, LocalState> {
 }
 
 const mapStateToProps = (state: State): $Shape<Props> => ({
+  jsReady: state.jsReady,
   curUser: state.curUser,
   game: getCurGame(state)
 });

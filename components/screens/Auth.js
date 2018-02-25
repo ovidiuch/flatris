@@ -9,10 +9,10 @@ import { isMobileDevice } from '../../utils/events';
 import Button from '../Button';
 import Screen from './Screen';
 
-import type { User } from '../../types/state';
+import type { User, State } from '../../types/state';
 
 type Props = {
-  disabled?: boolean,
+  jsReady: boolean,
   auth: typeof auth
 };
 
@@ -103,7 +103,7 @@ class Auth extends Component<Props, LocalState> {
   };
 
   render() {
-    const { disabled } = this.props;
+    const { jsReady } = this.props;
     const { name, pendingAuth, user, hasSubmitted, isMobile } = this.state;
 
     const ctrlInstruction = isMobile ? (
@@ -170,7 +170,7 @@ class Auth extends Component<Props, LocalState> {
                   type="text"
                   value={name}
                   onChange={this.handleNameChange}
-                  disabled={disabled || pendingAuth}
+                  disabled={!jsReady || pendingAuth}
                   ref={this.handleInputRef}
                   placeholder="Monkey"
                   maxLength={MAX_NAME_LENGTH}
@@ -182,7 +182,7 @@ class Auth extends Component<Props, LocalState> {
             </Fragment>
           }
           actions={[
-            <Button type="submit" disabled={disabled || !name || pendingAuth}>
+            <Button type="submit" disabled={!jsReady || !name || pendingAuth}>
               Enter
             </Button>
           ]}
@@ -217,8 +217,12 @@ class Auth extends Component<Props, LocalState> {
   }
 }
 
+function mapStateToProps({ jsReady }: State): $Shape<Props> {
+  return { jsReady };
+}
+
 const mapDispatchToProps = {
   auth
 };
 
-export default connect(undefined, mapDispatchToProps)(Auth);
+export default connect(mapStateToProps, mapDispatchToProps)(Auth);

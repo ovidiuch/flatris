@@ -2,22 +2,20 @@
 
 import { createFixture } from '../../../../utils/create-fixture';
 import { getSampleUser } from '../../../../utils/test-helpers';
-import { getBlankPlayer } from '../../../../reducers/game';
-import GetReady from '../../GetReady';
+import { getBlankGame } from '../../../../reducers/game';
+import GameOver from '../../GameOver';
 
 const user = getSampleUser();
-const otherPlayer = {
-  ...getBlankPlayer('1337', user),
-  ping: 1234
-};
+let game = getBlankGame({ id: 'd2f', user });
 
 export default createFixture({
-  component: GetReady,
+  component: GameOver,
 
   props: {
-    disabled: false,
-    otherPlayer,
-    onReady: () => console.log(`Ready!`)
+    disabled: true,
+    curUser: user,
+    game,
+    onRestart: () => console.log(`Restart!`)
   },
 
   container: {
