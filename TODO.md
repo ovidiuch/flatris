@@ -100,6 +100,8 @@
     * [x] Create action.id, action.prevId and game.player.lastActionId
     * [x] Store actions on the server
     * [x] Create backfill operation
+* [x] UX: Disable Auth buttons while performing IO
+* [ ] UX: Disable buttons while JS is loading
 * [ ] Index page with preview of all existing games
   * [ ] Batch actions
   * [ ] Algorithm for distributing events from bundled messages in time

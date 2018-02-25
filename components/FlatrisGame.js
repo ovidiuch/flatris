@@ -69,14 +69,12 @@ type Props = {
 };
 
 type LocalState = {
-  pendingAuth: boolean,
   isWatching: boolean,
   isMobile: boolean
 };
 
 class FlatrisGame extends Component<Props, LocalState> {
   state = {
-    pendingAuth: false,
     isWatching: false,
     isMobile: false
   };
@@ -98,14 +96,8 @@ class FlatrisGame extends Component<Props, LocalState> {
   }
 
   componentDidUpdate(prevProps) {
-    const { curUser: prevCurUser, game: prevGame } = prevProps;
+    const { game: prevGame } = prevProps;
     const { curUser, game, appendPendingBlocks } = this.props;
-
-    if (curUser && !prevCurUser) {
-      this.setState({
-        pendingAuth: false
-      });
-    }
 
     if (curUser && isPlayer(game, curUser)) {
       if (allPlayersReady(game) && !allPlayersReady(prevGame)) {
@@ -159,12 +151,6 @@ class FlatrisGame extends Component<Props, LocalState> {
     this.detachKeyEvents();
     cancelGameFrame();
   }
-
-  handleAuthStart = () => {
-    this.setState({
-      pendingAuth: true
-    });
-  };
 
   handleSelectP2 = () => {
     // NOTE: This will only be called before a 2nd player arrives under normal
@@ -272,7 +258,7 @@ class FlatrisGame extends Component<Props, LocalState> {
 
   renderScreens() {
     const { curUser, game } = this.props;
-    const { pendingAuth, isWatching } = this.state;
+    const { isWatching } = this.state;
     const hasJoined = isPlayer(game, curUser);
 
     // P1 is the current user's player, P2 is the other (in multiplayer games)
@@ -288,9 +274,7 @@ class FlatrisGame extends Component<Props, LocalState> {
     }
 
     if (!curUser) {
-      return this.renderScreen(
-        <Auth disabled={pendingAuth} onAuthStart={this.handleAuthStart} />
-      );
+      return this.renderScreen(<Auth />);
     }
 
     if (!hasJoined) {

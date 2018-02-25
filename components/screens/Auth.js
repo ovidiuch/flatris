@@ -13,14 +13,15 @@ import type { User } from '../../types/state';
 
 type Props = {
   disabled?: boolean,
-  onAuthStart?: Function,
   auth: typeof auth
 };
 
 type LocalState = {
+  isMobile: boolean,
   name: string,
-  user: ?User,
-  isMobile: boolean
+  pendingAuth: boolean,
+  hasSubmitted: boolean,
+  user: ?User
 };
 
 class Auth extends Component<Props, LocalState> {
@@ -31,9 +32,11 @@ class Auth extends Component<Props, LocalState> {
   nameField: ?HTMLInputElement;
 
   state = {
+    isMobile: false,
     name: '',
+    pendingAuth: false,
     user: null,
-    isMobile: false
+    hasSubmitted: false
   };
 
   componentDidMount() {
@@ -69,18 +72,16 @@ class Auth extends Component<Props, LocalState> {
 
     const { name } = this.state;
     if (name) {
-      const { onAuthStart } = this.props;
-
-      // Signal that auth started to parent
-      if (onAuthStart) {
-        onAuthStart();
-      }
+      this.setState({
+        pendingAuth: true
+      });
 
       const user = await createUserSession(name);
 
       // Add the user to state and delay adding it to the app state until the
       // user seems the onboarding screen
       this.setState({
+        pendingAuth: false,
         user
       });
     }
@@ -94,12 +95,16 @@ class Auth extends Component<Props, LocalState> {
       throw new Error('Onboarding with missing user');
     }
 
+    this.setState({
+      hasSubmitted: true
+    });
+
     auth(user);
   };
 
   render() {
     const { disabled } = this.props;
-    const { name, user, isMobile } = this.state;
+    const { name, pendingAuth, user, hasSubmitted, isMobile } = this.state;
 
     const ctrlInstruction = isMobile ? (
       <Fragment>
@@ -142,7 +147,12 @@ class Auth extends Component<Props, LocalState> {
             </Fragment>
           }
           actions={[
-            <Button onClick={this.handleConfirmOnboarding}>Got it</Button>
+            <Button
+              disabled={hasSubmitted}
+              onClick={this.handleConfirmOnboarding}
+            >
+              Got it
+            </Button>
           ]}
         />
       );
@@ -160,7 +170,7 @@ class Auth extends Component<Props, LocalState> {
                   type="text"
                   value={name}
                   onChange={this.handleNameChange}
-                  disabled={disabled}
+                  disabled={disabled || pendingAuth}
                   ref={this.handleInputRef}
                   placeholder="Monkey"
                   maxLength={MAX_NAME_LENGTH}
@@ -172,7 +182,7 @@ class Auth extends Component<Props, LocalState> {
             </Fragment>
           }
           actions={[
-            <Button type="submit" disabled={disabled || !name}>
+            <Button type="submit" disabled={disabled || !name || pendingAuth}>
               Enter
             </Button>
           ]}

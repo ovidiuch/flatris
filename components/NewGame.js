@@ -17,7 +17,6 @@ type Props = {
 
 type LocalState = {
   requireAuth: boolean,
-  pendingAuth: boolean,
   pendingCreate: boolean
 };
 
@@ -27,48 +26,35 @@ class NewGame extends Component<Props, LocalState> {
 
     this.state = {
       requireAuth: !props.curUser,
-      pendingAuth: false,
       pendingCreate: false
     };
   }
 
   componentDidMount() {
-    this.createGameIfUser();
-  }
-
-  componentDidUpdate() {
-    this.createGameIfUser();
-  }
-
-  createGameIfUser() {
-    if (this.props.curUser && !this.state.pendingCreate) {
-      // The user will be picked up from the session on the server
-      this.setState(
-        { pendingAuth: false, pendingCreate: true },
-        createAndOpenGame
-      );
+    if (this.props.curUser) {
+      this.createGame();
     }
   }
 
-  handleAuthStart = () => {
-    this.setState({
-      pendingAuth: true
-    });
-  };
+  componentDidUpdate(prevProps) {
+    if (this.props.curUser && !prevProps.curUser) {
+      this.createGame();
+    }
+  }
+
+  createGame() {
+    if (!this.state.pendingCreate) {
+      // The user will be picked up from the session on the server
+      this.setState({ pendingCreate: true }, createAndOpenGame);
+    }
+  }
 
   render() {
-    const { requireAuth, pendingAuth, pendingCreate } = this.state;
+    const { requireAuth } = this.state;
 
     return (
       <Fragment>
-        <div className="screen-container">
-          {requireAuth && (
-            <Auth
-              disabled={pendingAuth || pendingCreate}
-              onAuthStart={this.handleAuthStart}
-            />
-          )}
-        </div>
+        <div className="screen-container">{requireAuth && <Auth />}</div>
         <div className="side-container">
           <GamePanel curUser={null} game={null} />
         </div>
