@@ -52,7 +52,7 @@ export function joinGame(gameId: GameId, user: User): JoinGameAction {
   return {
     type: 'JOIN_GAME',
     payload: {
-      actionId: 0,
+      actionId: getActionId(0),
       prevActionId: 0,
       userId: user.id,
       gameId,

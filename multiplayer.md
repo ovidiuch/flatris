@@ -75,4 +75,4 @@ The action id is a local timestamp, separate for each player. Being a timestamp,
 
 Caveat: To ensure action order consistency, the action id needs to be unique. So each player will ensure a new action's id is higher than the id of the previous action, in the highly unlikely event that two actions are dispatched in the same millisecond.
 
-> **Quirk:** Player state is initiated with `lastActionId` equal to `0`, and `JOIN_GAME` actions also have `actionId` set to `0`.
+> Player state is initiated with `lastActionId` equal to `0`, and `JOIN_GAME` actions also have `prevActionId` set to `0`.

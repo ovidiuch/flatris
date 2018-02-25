@@ -21,7 +21,7 @@ export type LoadGameAction = {
 export type JoinGameAction = {
   type: 'JOIN_GAME',
   payload: {
-    actionId: 0,
+    actionId: ActionId,
     prevActionId: 0,
     gameId: GameId,
     userId: UserId,
