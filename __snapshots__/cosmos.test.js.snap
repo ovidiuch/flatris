@@ -14218,7 +14218,7 @@ exports[`Cosmos fixtures: GameFull:default 1`] = `
                 href="/"
                 onClick={[Function]}
               >
-                create another game
+                join another game
               </a>
               .
             </p>
@@ -17084,9 +17084,8 @@ exports[`Cosmos fixtures: WaitingForOther:other-player-idle 1`] = `
                   href="/"
                   onClick={[Function]}
                 >
-                  Start another game
+                  Join another game?
                 </a>
-                ?
               </p>
             </div>
           </div>

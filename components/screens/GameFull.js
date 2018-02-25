@@ -24,7 +24,7 @@ export default class GameFull extends Component<Props> {
             <p>
               You can watch, or<br />
               <Link href="/">
-                <a>create another game</a>
+                <a>join another game</a>
               </Link>.
             </p>
           </Fragment>

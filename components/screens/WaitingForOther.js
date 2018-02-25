@@ -59,8 +59,8 @@ export default class WaitingForOther extends Component<Props, LocalState> {
                 <p>
                   Maybe your friend<br />left you hanging.<br />
                   <Link href="/">
-                    <a>Start another game</a>
-                  </Link>?
+                    <a>Join another game?</a>
+                  </Link>
                 </p>
               </FadeIn>
             )}

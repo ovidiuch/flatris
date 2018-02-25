@@ -2,8 +2,6 @@
 
 import React, { Component } from 'react';
 import Router from 'next/router';
-import withRedux from 'next-redux-wrapper';
-import { createStore } from '../store';
 import Loading from '../components/Loading';
 
 type Props = {};
@@ -25,4 +23,4 @@ class LoadingPage extends Component<Props> {
   }
 }
 
-export default withRedux(createStore)(LoadingPage);
+export default LoadingPage;
