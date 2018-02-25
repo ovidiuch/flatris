@@ -6,7 +6,7 @@ import { Component } from 'react';
 import { connect } from 'react-redux';
 import io from 'socket.io-client';
 import { getApiUrl, backfillGameActions } from '../utils/api';
-import { getPlayer } from '../reducers/game';
+import { isValidGameAction } from '../reducers/game';
 
 import type { Node } from 'react';
 import type { GameId, Game, State } from '../types/state';
@@ -68,9 +68,12 @@ class SocketProviderInner extends Component<Props, LocalState> {
     }
   }
 
-  handleOpenGame = (gameId: GameId) => {
+  handleOpenGame = async (gameId: GameId) => {
     // console.log('[SOCKET] open-game', gameId);
     getSocket().emit('open-game', gameId);
+
+    // Ensure game state is up to date
+    await this.backfill();
   };
 
   handleCloseGame = (gameId: GameId) => {
@@ -84,12 +87,6 @@ class SocketProviderInner extends Component<Props, LocalState> {
     const { state, dispatch } = this.props;
     const { isBackfilling, pendingActions } = this.state;
 
-    // TODO: Extend to work with multiple games in state
-    const { curGame } = state;
-    if (!curGame) {
-      throw new Error('Cur game missing in state');
-    }
-
     if (isBackfilling) {
       this.setState({
         pendingActions: [...pendingActions, action]
@@ -99,31 +96,42 @@ class SocketProviderInner extends Component<Props, LocalState> {
         // There's no previous player action to follow when user just joined
         dispatch(action);
       } else {
-        const { userId, prevActionId } = action.payload;
-        const player = getPlayer(curGame, userId);
+        // TODO: Extend to work with multiple games in state
+        const { curGame } = state;
+        if (!curGame) {
+          throw new Error('Cur game missing in state');
+        }
 
-        if (prevActionId === player.lastActionId) {
+        if (isValidGameAction(curGame, action)) {
           dispatch(action);
         } else {
-          this.backfill(curGame);
+          // The action will be discarded for now, but it will show up again
+          // during backfill
+          this.backfill();
         }
       }
     }
   };
 
-  async backfill(game: Game) {
+  async backfill() {
     console.warn('Backfilling...');
+
+    // TODO: Extend to work with multiple games in state
+    const { curGame } = this.props.state;
+    if (!curGame) {
+      throw new Error('Cur game missing in state');
+    }
 
     this.setState({
       isBackfilling: true,
       pendingActions: []
     });
 
-    const backfillRanges = getBackfillRanges([game]);
+    const backfillRanges = getBackfillRanges([curGame]);
     const backfillRes = await backfillGameActions(backfillRanges);
 
     const mergedActions = [
-      ...backfillRes[game.id],
+      ...backfillRes[curGame.id],
       ...this.state.pendingActions
     ];
     const uniqActions = uniqWith(mergedActions, compareGameActions);
@@ -138,11 +146,20 @@ class SocketProviderInner extends Component<Props, LocalState> {
     uniqActions.forEach(this.props.dispatch);
 
     const numDupes = mergedActions.length - uniqActions.length;
-    console.log(`Backfilled ${uniqActions.length} actions. ${numDupes} dupes.`);
+    console.log(
+      `Backfilled ${uniqActions.length} actions (${numDupes} dupes).`
+    );
   }
 
   handleBroadcastGameAction = (action: Action) => {
     const { dispatch } = this.props;
+    const { isBackfilling } = this.state;
+
+    // Disallow user to mutate state until it's up to date with server
+    if (isBackfilling) {
+      console.warn('Action broadcast denied while backfilling.');
+      return;
+    }
 
     // The final action is returned from async thunk actions
     const resAction: Action = dispatch(action);

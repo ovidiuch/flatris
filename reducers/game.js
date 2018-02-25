@@ -60,11 +60,10 @@ export function gameReducer(prevState: void | Game, action: GameAction): Game {
   const player = getPlayer(prevState, userId);
 
   if (prevActionId !== player.lastActionId) {
-    throw new Error(
-      `action.prevActionId ${prevActionId} doesn't point to player.lastStateId ${
-        player.lastActionId
-      }`
-    );
+    console.log('Game', prevState.id);
+    console.log('User', userId);
+    console.log('Action', action);
+    throw new Error(`action.prevActionId doesn't point to player.lastStateId`);
   }
 
   // Update player.lastActionId for any game action
@@ -481,6 +480,13 @@ export function updatePlayer(
       ...players.slice(playerIndex + 1)
     ]
   };
+}
+
+export function isValidGameAction(game: Game, action: GameAction): boolean {
+  const { userId, prevActionId } = action.payload;
+  const player = getPlayer(game, userId);
+
+  return prevActionId === player.lastActionId;
 }
 
 function rewardClearedBlocks(game: Game, userId: UserId): Game {

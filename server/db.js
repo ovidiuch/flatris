@@ -40,15 +40,14 @@ export function insertGame(user: User): Game {
   const gameId = genRandUniqId(games);
   const game = getBlankGame({ id: gameId, user });
   games[gameId] = game;
+  gameActions[gameId] = [];
 
   return game;
 }
 
 export function saveGameAction(action: GameAction): void {
   const { gameId } = action.payload;
-  if (!gameActions[gameId]) {
-    gameActions[gameId] = [];
-  }
+
   gameActions[gameId].push(action);
 }
 
