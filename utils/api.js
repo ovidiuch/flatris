@@ -3,7 +3,7 @@
 import fetch from 'isomorphic-unfetch';
 import cookie from 'cookie';
 import { getValidUser } from '../utils/validation';
-import { auth } from '../actions';
+import { auth } from '../actions/user';
 
 import type { Store } from 'redux'; // eslint-disable-line import/named
 import type { User, GameId, Game, State } from '../types/state';

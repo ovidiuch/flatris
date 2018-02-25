@@ -8,7 +8,7 @@ import {
   rotate,
   enableAcceleration,
   disableAcceleration
-} from '../../actions';
+} from '../../actions/game';
 import { withSocket } from '../socket/SocketConnect';
 import { isPlayer, allPlayersReady } from '../../reducers/game';
 import { getCurGame } from '../../reducers/cur-game';

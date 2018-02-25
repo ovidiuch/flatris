@@ -17,8 +17,6 @@ import {
   joinGame,
   playerReady,
   playerPause,
-  runGameFrame,
-  cancelGameFrame,
   drop,
   moveLeft,
   moveRight,
@@ -27,7 +25,8 @@ import {
   disableAcceleration,
   appendPendingBlocks,
   ping
-} from '../actions';
+} from '../actions/game';
+import { runGameFrame, cancelGameFrame } from '../actions/game-frame';
 import { withSocket } from './socket/SocketConnect';
 import { isMobileDevice } from '../utils/events';
 import GameContainer from '../components/GameContainer';

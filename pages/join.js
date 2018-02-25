@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import withRedux from 'next-redux-wrapper';
 import Error from 'next/error';
 import { createStore } from '../store';
-import { loadGame } from '../actions';
+import { loadGame } from '../actions/game';
 import { addCurUserToState, getGame } from '../utils/api';
 import { SocketProvider } from '../components/socket/SocketProvider';
 import Layout from '../components/Layout';
