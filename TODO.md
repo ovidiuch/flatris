@@ -110,22 +110,27 @@
   * [x] screens/JoinGame Watch and Join
   * [x] screens/NewGame Play and Copy
   * [x] screens/WaitingForOther Ping
-* [ ] Index page with preview of all existing games
-  * [ ] Batch actions
-  * [ ] Algorithm for distributing events from bundled messages in time
-        Calc time of each event in min-max interval and map [0, 1] value to [server timestamp of last received message...now...1s]
+* [ ] Index page
+  * [ ] List all games
+  * [ ] Sort and limit games based on relevancy (active 1p, active 2p, [inactive 1p, inactive 2p])
+  * [ ] Beautiful grid with animating games
+* [ ] Game footer
+* [ ] Notify 1p when 2p arrives via web Notifications API
 * [ ] Log errors and stats
 * [ ] [1.0]
 
 OPTIMIZATIONS
 
+* [ ] GC old games and game actions on server
 * [ ] Minimize network communication: Don't send noop actions
 * [ ] Minimize state footprint
 * [ ] Profile browser performance (detect unnecessary renders)
+* [ ] Batch actions
 
 BACKLOG
 
 * [ ] Freeze game on player disconnect (Keep seat taken in case user returns)
 * [ ] Throttle key down events
 * [ ] Create drop shadow from active Tetromino
+* [ ] Algorithm for distributing bundled actions in relative time
 * [ ] Sounds
