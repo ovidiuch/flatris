@@ -6,7 +6,7 @@ import Error from 'next/error';
 import { createStore } from '../store';
 import { loadGame } from '../actions';
 import { addCurUserToState, getGame } from '../utils/api';
-import { SocketProvider } from '../utils/SocketProvider';
+import { SocketProvider } from '../components/socket/SocketProvider';
 import Layout from '../components/Layout';
 import FlatrisGame from '../components/FlatrisGame';
 

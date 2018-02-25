@@ -9,7 +9,7 @@ import {
   enableAcceleration,
   disableAcceleration
 } from '../../actions';
-import { withSocket } from '../../utils/socket-connect';
+import { withSocket } from '../socket/SocketConnect';
 import { isPlayer, allPlayersReady } from '../../reducers/game';
 import { getCurGame } from '../../reducers/cur-game';
 

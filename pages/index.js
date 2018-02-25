@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import withRedux from 'next-redux-wrapper';
 import { createStore } from '../store';
-import { SocketProvider } from '../utils/SocketProvider';
+import { SocketProvider } from '../components/socket/SocketProvider';
 import { addCurUserToState } from '../utils/api';
 import Layout from '../components/Layout';
 import GameContainer from '../components/GameContainer';

@@ -5,17 +5,17 @@ import { uniqWith } from 'lodash';
 import { Component } from 'react';
 import { connect } from 'react-redux';
 import io from 'socket.io-client';
-import { getApiUrl, backfillGameActions } from '../utils/api';
-import { isValidGameAction } from '../reducers/game';
+import { getApiUrl, backfillGameActions } from '../../utils/api';
+import { isValidGameAction } from '../../reducers/game';
 
 import type { Node } from 'react';
-import type { GameId, Game, State } from '../types/state';
+import type { GameId, Game, State } from '../../types/state';
 import type {
   Action,
   GameAction,
   ThunkAction,
   BackfillRanges
-} from '../types/actions';
+} from '../../types/actions';
 
 type Props = {
   children: Node,

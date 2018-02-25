@@ -28,7 +28,7 @@ import {
   appendPendingBlocks,
   ping
 } from '../actions';
-import { withSocket } from '../utils/socket-connect';
+import { withSocket } from './socket/SocketConnect';
 import { isMobileDevice } from '../utils/events';
 import GameContainer from '../components/GameContainer';
 import Button from './Button';
