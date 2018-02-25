@@ -15,7 +15,7 @@ const { round, random } = Math;
 
 const range = [...Array(4).keys()];
 
-export default class Preloader extends Component {
+export default class Loading extends Component {
   state = {
     currShape: 'S'
   };
@@ -49,7 +49,7 @@ export default class Preloader extends Component {
 
     return (
       <div className="root">
-        <div className="preloader">
+        <div className="loading">
           {range.map(i =>
             range.map(j => (
               <span
@@ -67,7 +67,7 @@ export default class Preloader extends Component {
             left: 0;
             right: 0;
           }
-          .preloader {
+          .loading {
             position: absolute;
             top: 50%;
             left: 50%;

@@ -15162,6 +15162,65 @@ exports[`Cosmos fixtures: Left:default 1`] = `
 </button>
 `;
 
+exports[`Cosmos fixtures: Loading:default 1`] = `
+<div
+  className="jsx-470101677 root"
+>
+  <div
+    className="jsx-470101677 loading"
+  >
+    <span
+      className="jsx-470101677 cell"
+    />
+    <span
+      className="jsx-470101677 cell on"
+    />
+    <span
+      className="jsx-470101677 cell on"
+    />
+    <span
+      className="jsx-470101677 cell"
+    />
+    <span
+      className="jsx-470101677 cell on"
+    />
+    <span
+      className="jsx-470101677 cell on"
+    />
+    <span
+      className="jsx-470101677 cell"
+    />
+    <span
+      className="jsx-470101677 cell"
+    />
+    <span
+      className="jsx-470101677 cell"
+    />
+    <span
+      className="jsx-470101677 cell"
+    />
+    <span
+      className="jsx-470101677 cell"
+    />
+    <span
+      className="jsx-470101677 cell"
+    />
+    <span
+      className="jsx-470101677 cell"
+    />
+    <span
+      className="jsx-470101677 cell"
+    />
+    <span
+      className="jsx-470101677 cell"
+    />
+    <span
+      className="jsx-470101677 cell"
+    />
+  </div>
+</div>
+`;
+
 exports[`Cosmos fixtures: Logo:default 1`] = `
 <div
   className="jsx-3287429902 logo"
@@ -15901,65 +15960,6 @@ exports[`Cosmos fixtures: PointerButton:primary 1`] = `
 >
   Try me
 </button>
-`;
-
-exports[`Cosmos fixtures: Preloader:default 1`] = `
-<div
-  className="jsx-3689405750 root"
->
-  <div
-    className="jsx-3689405750 preloader"
-  >
-    <span
-      className="jsx-3689405750 cell"
-    />
-    <span
-      className="jsx-3689405750 cell on"
-    />
-    <span
-      className="jsx-3689405750 cell on"
-    />
-    <span
-      className="jsx-3689405750 cell"
-    />
-    <span
-      className="jsx-3689405750 cell on"
-    />
-    <span
-      className="jsx-3689405750 cell on"
-    />
-    <span
-      className="jsx-3689405750 cell"
-    />
-    <span
-      className="jsx-3689405750 cell"
-    />
-    <span
-      className="jsx-3689405750 cell"
-    />
-    <span
-      className="jsx-3689405750 cell"
-    />
-    <span
-      className="jsx-3689405750 cell"
-    />
-    <span
-      className="jsx-3689405750 cell"
-    />
-    <span
-      className="jsx-3689405750 cell"
-    />
-    <span
-      className="jsx-3689405750 cell"
-    />
-    <span
-      className="jsx-3689405750 cell"
-    />
-    <span
-      className="jsx-3689405750 cell"
-    />
-  </div>
-</div>
 `;
 
 exports[`Cosmos fixtures: Quake:player1-four-lines 1`] = `
