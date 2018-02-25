@@ -71,10 +71,16 @@ export function gameReducer(prevState: void | Game, action: GameAction): Game {
 
   switch (action.type) {
     case 'PLAYER_READY': {
+      const { status: prevStatus } = getPlayer(state, userId);
       const game = updatePlayer(state, userId, { status: 'READY' });
 
       // Reset game when all players are ready to (re)start
-      if (allPlayersReady(game)) {
+      if (
+        allPlayersReady(game) &&
+        // This condition allows solo players to pause and resume
+        // (by clicking on the "2p insert coin" button)
+        (game.players.length > 1 || prevStatus === 'LOST')
+      ) {
         const { id, players } = game;
         const round = getGameRound(game);
 
