@@ -4,25 +4,15 @@ import { getPlayer } from '../reducers/game';
 import { getCurGame } from '../reducers/cur-game';
 import { getCurUser } from '../reducers/cur-user';
 
-import type { UserId, User, GameId, Game } from '../types/state';
+import type { UserId, User, GameId } from '../types/state';
 import type {
   ActionId,
-  LoadGameAction,
   JoinGameAction,
   Action,
   ThunkAction,
   Dispatch,
   GetState
 } from '../types/actions';
-
-export function loadGame(game: Game): LoadGameAction {
-  return {
-    type: 'LOAD_GAME',
-    payload: {
-      game
-    }
-  };
-}
 
 export function joinGame(gameId: GameId, user: User): JoinGameAction {
   return {

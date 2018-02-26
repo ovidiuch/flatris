@@ -3,6 +3,7 @@
 import { Component } from 'react';
 import { getSampleUser } from '../../../utils/test-helpers';
 import { getBlankGame, getPlayer } from '../../../reducers/game';
+import { getCurGame } from '../../../reducers/cur-game';
 import FlatrisGame from '../../FlatrisGame';
 
 import type { ElementRef } from 'react';
@@ -16,7 +17,10 @@ export default {
   reduxState: {
     jsReady: true,
     curUser: user,
-    curGame: game
+    games: {
+      [game.id]: game
+    },
+    curGame: game.id
   },
 
   init({ compRef }: { compRef: ElementRef<typeof Component> }) {
@@ -36,7 +40,7 @@ export default {
 };
 
 function getLastActionId(getState, userId) {
-  const { curGame } = getState();
+  const curGame = getCurGame(getState());
   const { lastActionId } = getPlayer(curGame, userId);
 
   return lastActionId;

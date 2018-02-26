@@ -1,6 +1,6 @@
 // @flow
 
-import type { UserId, User, GameId, Game, State } from './state';
+import type { UserId, User, GameId, Game, Games, State } from './state';
 
 export type ActionId = number;
 
@@ -15,10 +15,25 @@ export type AuthAction = {
   }
 };
 
-export type LoadGameAction = {
-  type: 'LOAD_GAME',
+export type DashboardLoadAction = {
+  type: 'LOAD_DASHBOARD',
+  payload: {
+    gameCount: number,
+    games: Games
+  }
+};
+
+export type AddGameAction = {
+  type: 'ADD_GAME',
   payload: {
     game: Game
+  }
+};
+
+export type OpenGameAction = {
+  type: 'OPEN_GAME',
+  payload: {
+    gameId: GameId
   }
 };
 
@@ -148,7 +163,13 @@ export type GameAction =
   | AppendPendingBlocksAction
   | PingAction;
 
-export type Action = JsLoadAction | AuthAction | LoadGameAction | GameAction;
+export type Action =
+  | JsLoadAction
+  | AuthAction
+  | DashboardLoadAction
+  | AddGameAction
+  | OpenGameAction
+  | GameAction;
 
 export type GetState = () => State;
 

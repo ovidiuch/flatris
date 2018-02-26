@@ -407,12 +407,14 @@ export function getNextPlayerTetromino({
   };
 }
 
-export function getBlankPlayerEffects() {
+export function stripGameEffects(game: Game): Game {
   return {
-    flashYay: null,
-    flashNay: null,
-    quake: null,
-    ping: null
+    ...game,
+    players: game.players.map(player => ({
+      ...player,
+      // Strip effects to avoid running them on page load
+      ...getBlankPlayerEffects()
+    }))
   };
 }
 
@@ -566,4 +568,13 @@ function altQuakeClass(
   const offset = magnitude - 1;
 
   return quakeSuffix === QUAKE_B[offset] ? QUAKE_A[offset] : QUAKE_B[offset];
+}
+
+function getBlankPlayerEffects() {
+  return {
+    flashYay: null,
+    flashNay: null,
+    quake: null,
+    ping: null
+  };
 }

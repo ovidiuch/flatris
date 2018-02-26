@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 import io from 'socket.io-client';
 import { getApiUrl, backfillGameActions } from '../../utils/api';
 import { isValidGameAction } from '../../reducers/game';
+import { getCurGame } from '../../reducers/cur-game';
 
 import type { Node } from 'react';
 import type { GameId, Game, State } from '../../types/state';
@@ -97,10 +98,7 @@ class SocketProviderInner extends Component<Props, LocalState> {
         dispatch(action);
       } else {
         // TODO: Extend to work with multiple games in state
-        const { curGame } = state;
-        if (!curGame) {
-          throw new Error('Cur game missing in state');
-        }
+        const curGame = getCurGame(state);
 
         if (isValidGameAction(curGame, action)) {
           dispatch(action);
@@ -117,10 +115,7 @@ class SocketProviderInner extends Component<Props, LocalState> {
     console.warn('Backfilling...');
 
     // TODO: Extend to work with multiple games in state
-    const { curGame } = this.props.state;
-    if (!curGame) {
-      throw new Error('Cur game missing in state');
-    }
+    const curGame = getCurGame(this.props.state);
 
     this.setState({
       isBackfilling: true,

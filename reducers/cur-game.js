@@ -1,55 +1,34 @@
 // @flow
 
-import { gameReducer, getBlankPlayerEffects } from './game';
-
-import type { Game, State } from '../types/state';
+import type { GameId, Game, State } from '../types/state';
 import type { Action } from '../types/actions';
 
 const initialState = null;
 
 export function curGameReducer(
-  state: ?Game = initialState,
+  state: ?GameId = initialState,
   action: Action
-): ?Game {
+): ?GameId {
   switch (action.type) {
-    case 'LOAD_GAME': {
-      const { game } = action.payload;
+    case 'OPEN_GAME': {
+      const { gameId } = action.payload;
 
-      return {
-        ...game,
-        players: game.players.map(player => ({
-          ...player,
-          // Strip effects to avoid running them on page load
-          ...getBlankPlayerEffects()
-        }))
-      };
+      return gameId;
     }
-    case 'JOIN_GAME':
-    case 'PLAYER_READY':
-    case 'PLAYER_PAUSE':
-    case 'DROP':
-    case 'MOVE_LEFT':
-    case 'MOVE_RIGHT':
-    case 'ROTATE':
-    case 'ENABLE_ACCELERATION':
-    case 'DISABLE_ACCELERATION':
-    case 'APPEND_PENDING_BLOCKS':
-    case 'PING': {
-      if (!state) {
-        throw new Error(`Game action ${action.type} called on null game state`);
-      }
 
-      return gameReducer(state, action);
-    }
     default:
       return state;
   }
 }
 
-export function getCurGame(state: State): Game {
-  if (!state.curGame) {
+export function getCurGame({ games, curGame }: State): Game {
+  if (!curGame) {
     throw new Error('Current game is missing from state');
   }
 
-  return state.curGame;
+  if (!games[curGame]) {
+    throw new Error(`Current game points to missing game ${curGame}`);
+  }
+
+  return games[curGame];
 }

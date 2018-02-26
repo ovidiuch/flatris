@@ -15,6 +15,14 @@ import type { GameAction, BackfillRanges } from '../types/actions';
 import type { SessionId } from './db';
 
 export function addRoutes(app: express$Application) {
+  app.get('/dashboard', (req: express$Request, res: express$Response) => {
+    res.json({
+      gameCount: Object.keys(games).length,
+      // TODO: Filter out inactive games
+      games
+    });
+  });
+
   app.get('/game/:gameId', (req: express$Request, res: express$Response) => {
     const gameId = req.params.gameId;
 

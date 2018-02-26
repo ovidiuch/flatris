@@ -9,6 +9,7 @@ import {
   updatePlayer,
   getPlayer
 } from '../../../reducers/game';
+import { getCurGame } from '../../../reducers/cur-game';
 import FlatrisGame from '../../FlatrisGame';
 
 import type { ElementRef } from 'react';
@@ -209,7 +210,7 @@ export default {
 
     // 1: Player1's drop will be dispatched automatically, so we just wait for
     // it to occur before moving on to next step
-    await until(() => getState().curGame.players[0].lines > 0);
+    await until(() => getCurGame(getState()).players[0].lines > 0);
 
     // 2: Apply pending enemy blocks, causing enemy grid to grow by one row
     await doAfter(100, () => {
@@ -249,7 +250,10 @@ export default {
   reduxState: {
     jsReady: true,
     curUser: user1,
-    curGame: game
+    games: {
+      [game.id]: game
+    },
+    curGame: game.id
   }
 };
 
@@ -263,7 +267,7 @@ async function doAfter(delay, fn) {
 }
 
 function getLastActionId(getState, userId) {
-  const { curGame } = getState();
+  const curGame = getCurGame(getState());
   const { lastActionId } = getPlayer(curGame, userId);
 
   return lastActionId;

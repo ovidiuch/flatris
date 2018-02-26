@@ -8,6 +8,7 @@ import {
   updatePlayer,
   getPlayer
 } from '../../../reducers/game';
+import { getCurGame } from '../../../reducers/cur-game';
 import FlatrisGame from '../../FlatrisGame';
 
 import type { ElementRef } from 'react';
@@ -210,12 +211,15 @@ export default {
   reduxState: {
     jsReady: true,
     curUser: user1,
-    curGame: game
+    games: {
+      [game.id]: game
+    },
+    curGame: game.id
   }
 };
 
 function getLastActionId(getState, userId) {
-  const { curGame } = getState();
+  const curGame = getCurGame(getState());
   const { lastActionId } = getPlayer(curGame, userId);
 
   return lastActionId;

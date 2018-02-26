@@ -61,8 +61,14 @@ export type Game = {
   dropFrames: number
 };
 
+export type Games = {
+  [id: GameId]: Game
+};
+
 export type State = {
   jsReady: boolean,
+  gameCount: number,
+  games: Games,
   curUser: ?User,
-  curGame: ?Game
+  curGame: ?GameId
 };

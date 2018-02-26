@@ -15,6 +15,9 @@ export default {
   reduxState: {
     jsReady: true,
     curUser: user,
-    curGame: game
+    games: {
+      [game.id]: game
+    },
+    curGame: game.id
   }
 };

@@ -111,8 +111,8 @@
   * [x] screens/NewGame Play and Copy
   * [x] screens/WaitingForOther Ping
 * [ ] Index page
-  * [ ] List all games
-    * [ ] Create reduxState.games
+  * [x] Create reduxState.games
+  * [x] List all games
   * [ ] Sort and limit games based on relevancy (active 1p, active 2p, [inactive 1p, inactive 2p])
   * [ ] Beautiful grid with animating games
 * [ ] Game footer

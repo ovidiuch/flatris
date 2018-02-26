@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import withRedux from 'next-redux-wrapper';
 import Error from 'next/error';
 import { createStore } from '../store';
-import { loadGame } from '../actions/game';
+import { addGame, openGame } from '../actions/dashboard';
 import { addCurUserToState, getGame } from '../utils/api';
 import { SocketProvider } from '../components/socket/SocketProvider';
 import Layout from '../components/Layout';
@@ -21,25 +21,34 @@ class JoinPage extends Component<Props> {
       await addCurUserToState(req, store);
     }
 
-    try {
-      const game = await getGame(query.g);
-      store.dispatch(loadGame(game));
+    const gameId = query.g;
+    const { games } = store.getState();
 
-      return {
-        statusCode: false
-      };
-    } catch (err) {
-      // TODO: Identify and signal 500s differently
-      const statusCode = 404;
+    // No need to request game again if it's already in store (client-side)
+    // Action backfill mechanism will take care of updating the game's state
+    if (!games[gameId]) {
+      try {
+        const game = await getGame(gameId);
+        store.dispatch(addGame(game));
+      } catch (err) {
+        // TODO: Identify and signal 500s differently
+        const statusCode = 404;
 
-      // Server side rendered pages will return this status code, whereas
-      // client side rendered pages will just render the appropriate message
-      if (res) {
-        res.statusCode = statusCode;
+        // Both client and server render appropriate 404 page, but server will
+        // also set 404 status code if this page is opened directly
+        if (res) {
+          res.statusCode = statusCode;
+        }
+
+        return { statusCode };
       }
-
-      return { statusCode };
     }
+
+    store.dispatch(openGame(gameId));
+
+    return {
+      statusCode: false
+    };
   }
 
   render() {
