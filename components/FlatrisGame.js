@@ -31,12 +31,9 @@ import { withSocket } from './socket/SocketConnect';
 import { isMobileDevice } from '../utils/events';
 import GameContainer from './containers/GameContainer';
 import Button from './Button';
-import Well from './Well';
-import GamePanel from './GamePanel';
+import GamePreview from './GamePreview';
 import PortraitControls from './controls/PortraitControls';
 import LandscapeControls from './controls/LandscapeControls';
-import Flash from './effects/Flash';
-import Quake from './effects/Quake';
 import FadeIn from './effects/FadeIn';
 import Auth from './screens/Auth';
 import NewGame from './screens/NewGame';
@@ -48,7 +45,7 @@ import WaitingForOther from './screens/WaitingForOther';
 import GameOver from './screens/GameOver';
 
 import type { Node } from 'react';
-import type { User, Player, GameId, Game, State } from '../types/state';
+import type { User, GameId, Game, State } from '../types/state';
 
 type Props = {
   jsReady: boolean,
@@ -245,28 +242,6 @@ class FlatrisGame extends Component<Props, LocalState> {
     }
   };
 
-  renderWell(player: Player) {
-    const {
-      grid,
-      blocksCleared,
-      blocksPending,
-      activeTetromino,
-      activeTetrominoGrid,
-      activeTetrominoPosition
-    } = player;
-
-    return (
-      <Well
-        grid={grid}
-        blocksCleared={blocksCleared}
-        blocksPending={blocksPending}
-        activeTetromino={activeTetromino}
-        activeTetrominoGrid={activeTetrominoGrid}
-        activeTetrominoPosition={activeTetrominoPosition}
-      />
-    );
-  }
-
   renderScreens() {
     const { jsReady, curUser, game } = this.props;
     const { isWatching } = this.state;
@@ -418,56 +393,21 @@ class FlatrisGame extends Component<Props, LocalState> {
           )
         }
       >
-        <Quake player1={curPlayer} player2={otherPlayer}>
-          <div className="well-container">
-            {otherPlayer && (
-              <div className="enemy-well">{this.renderWell(otherPlayer)}</div>
-            )}
-            <Flash player={curPlayer}>{this.renderWell(curPlayer)}</Flash>
-          </div>
-          {this.renderScreens()}
-          <div className="side-container">
-            <GamePanel
-              curUser={curUser}
-              game={game}
-              onSelectP2={
-                jsReady && hasJoined && !otherPlayer
-                  ? this.handleSelectP2
-                  : undefined
-              }
-            />
-          </div>
-        </Quake>
+        <GamePreview
+          curUser={curUser}
+          game={game}
+          screen={this.renderScreens()}
+          onSelectP2={
+            // I know, right...
+            // We only want to enable this on READY state (when game is running
+            // for solo player), because in other states (new game and game
+            // over) we already show the invite screen.
+            jsReady && hasJoined && curPlayer.status === 'READY' && !otherPlayer
+              ? this.handleSelectP2
+              : undefined
+          }
+        />
         <PortraitControls />
-        <style jsx>{`
-          .well-container {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: calc(100% / 16 * 6);
-            background: #ecf0f1;
-          }
-
-          .side-container {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            right: 0;
-            left: calc(100% / 16 * 10);
-            background: #fff;
-          }
-
-          .enemy-well {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            opacity: 0.15;
-            filter: grayscale(80%);
-          }
-        `}</style>
       </GameContainer>
     );
   }
