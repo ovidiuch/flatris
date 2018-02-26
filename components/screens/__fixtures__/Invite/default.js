@@ -1,19 +1,15 @@
 // @flow
 
 import { createFixture } from '../../../../utils/create-fixture';
-import NewGame from '../../NewGame';
+import Invite from '../../Invite';
 
 export default createFixture({
-  component: NewGame,
+  component: Invite,
 
   props: {
     disabled: false,
     gameId: '1337',
-    onPlay: () => console.log(`Play!`)
-  },
-
-  state: {
-    copyStatus: 'error'
+    onPlay: () => console.log('Play')
   },
 
   container: {

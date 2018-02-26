@@ -12509,7 +12509,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
               <h2
                 className="jsx-2362338977 title"
               >
-                New game
+                1+1=3
               </h2>
               <div
                 className="jsx-2362338977 message"
@@ -12520,23 +12520,31 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
                   <strong
                     className="jsx-1832570087"
                   >
-                    Invite a friend to
+                    Playing with a 
+                    <del
+                      className="jsx-1832570087"
+                    >
+                      friend
+                    </del>
                     <br
                       className="jsx-1832570087"
                     />
-                    battle, or play solo.
+                    enemy is more fun!
                   </strong>
                 </p>
                 <div
                   className="jsx-1832570087 copy"
-                  data-clipboard-text="about:///join/dce6b11e"
                 >
-                  <button
-                    className="jsx-2544857778 button hover-button"
-                    type="button"
+                  <div
+                    data-clipboard-text="about:///join/dce6b11e"
                   >
-                    Copy link
-                  </button>
+                    <button
+                      className="jsx-2544857778 button hover-button"
+                      type="button"
+                    >
+                      Copy link
+                    </button>
+                  </div>
                 </div>
                 <p
                   className="jsx-1832570087"
@@ -12988,14 +12996,17 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
                 </p>
                 <div
                   className="jsx-1832570087 copy"
-                  data-clipboard-text="about:///join/dce6b11e"
                 >
-                  <button
-                    className="jsx-2544857778 button hover-button"
-                    type="button"
+                  <div
+                    data-clipboard-text="about:///join/dce6b11e"
                   >
-                    Copy link
-                  </button>
+                    <button
+                      className="jsx-2544857778 button hover-button"
+                      type="button"
+                    >
+                      Copy link
+                    </button>
+                  </div>
                 </div>
                 <p
                   className="jsx-1832570087"
@@ -14114,6 +14125,57 @@ exports[`Cosmos fixtures: Connect(SocketConnect(PortraitControls)):disabled 1`] 
 </div>
 `;
 
+exports[`Cosmos fixtures: CopyLink:copy-error 1`] = `
+<div
+  data-clipboard-text="about:///join/1337"
+>
+  <button
+    className="jsx-1565648149 button hover-button"
+    type="button"
+  >
+    Copy error :(
+  </button>
+</div>
+`;
+
+exports[`Cosmos fixtures: CopyLink:copy-success 1`] = `
+<div
+  data-clipboard-text="about:///join/1337"
+>
+  <button
+    className="jsx-3398295050 button hover-button"
+    type="button"
+  >
+    Link copied!
+  </button>
+</div>
+`;
+
+exports[`Cosmos fixtures: CopyLink:default 1`] = `
+<div
+  data-clipboard-text="about:///join/1337"
+>
+  <button
+    className="jsx-2544857778 button hover-button"
+    type="button"
+  >
+    Copy link
+  </button>
+</div>
+`;
+
+exports[`Cosmos fixtures: CopyLink:disabled 1`] = `
+<div>
+  <button
+    className="jsx-2544857778 button hover-button"
+    disabled={true}
+    type="button"
+  >
+    Copy link
+  </button>
+</div>
+`;
+
 exports[`Cosmos fixtures: Drop:default 1`] = `
 <button
   className="jsx-1959258272 button"
@@ -14792,18 +14854,55 @@ exports[`Cosmos fixtures: GameOver:solo 1`] = `
           <h2
             className="jsx-2362338977 title"
           >
-            Game over
+            1+1=3
           </h2>
           <div
             className="jsx-2362338977 message"
           >
-            <p>
-              That was fun!
-            </p>
-            <p>
-              <strong>
-                Up for another?
+            <p
+              className="jsx-1832570087"
+            >
+              <strong
+                className="jsx-1832570087"
+              >
+                Playing with a 
+                <del
+                  className="jsx-1832570087"
+                >
+                  friend
+                </del>
+                <br
+                  className="jsx-1832570087"
+                />
+                enemy is more fun!
               </strong>
+            </p>
+            <div
+              className="jsx-1832570087 copy"
+            >
+              <div
+                data-clipboard-text="about:///join/d2f"
+              >
+                <button
+                  className="jsx-2544857778 button hover-button"
+                  type="button"
+                >
+                  Copy link
+                </button>
+              </div>
+            </div>
+            <p
+              className="jsx-1832570087"
+            >
+              Send the link and
+              <br
+                className="jsx-1832570087"
+              />
+              warm up until the
+              <br
+                className="jsx-1832570087"
+              />
+              other person arrives.
             </p>
           </div>
         </div>
@@ -14819,7 +14918,7 @@ exports[`Cosmos fixtures: GameOver:solo 1`] = `
               onClick={[Function]}
               type="button"
             >
-              Again
+              Play
             </button>
           </div>
         </div>
@@ -14856,18 +14955,54 @@ exports[`Cosmos fixtures: GameOver:solo-disabled 1`] = `
           <h2
             className="jsx-2362338977 title"
           >
-            Game over
+            1+1=3
           </h2>
           <div
             className="jsx-2362338977 message"
           >
-            <p>
-              That was fun!
-            </p>
-            <p>
-              <strong>
-                Up for another?
+            <p
+              className="jsx-1832570087"
+            >
+              <strong
+                className="jsx-1832570087"
+              >
+                Playing with a 
+                <del
+                  className="jsx-1832570087"
+                >
+                  friend
+                </del>
+                <br
+                  className="jsx-1832570087"
+                />
+                enemy is more fun!
               </strong>
+            </p>
+            <div
+              className="jsx-1832570087 copy"
+            >
+              <div>
+                <button
+                  className="jsx-2544857778 button hover-button"
+                  disabled={true}
+                  type="button"
+                >
+                  Copy link
+                </button>
+              </div>
+            </div>
+            <p
+              className="jsx-1832570087"
+            >
+              Send the link and
+              <br
+                className="jsx-1832570087"
+              />
+              warm up until the
+              <br
+                className="jsx-1832570087"
+              />
+              other person arrives.
             </p>
           </div>
         </div>
@@ -14883,7 +15018,7 @@ exports[`Cosmos fixtures: GameOver:solo-disabled 1`] = `
               onClick={[Function]}
               type="button"
             >
-              Again
+              Play
             </button>
           </div>
         </div>
@@ -15288,6 +15423,207 @@ exports[`Cosmos fixtures: GetReady:ping 1`] = `
 </div>
 `;
 
+exports[`Cosmos fixtures: Invite:default 1`] = `
+<div
+  className="jsx-1613050951 outer"
+>
+  <div
+    className="jsx-1613050951 container"
+  >
+    <div
+      className="jsx-1294220987 inner-container"
+      style={
+        Object {
+          "backgroundColor": "rgba(236, 240, 241, 0.85)",
+          "opacity": 1,
+          "position": "absolute",
+          "width": "calc(100% / 16 * 10)",
+        }
+      }
+    >
+      <div
+        className="jsx-2362338977 screen"
+      >
+        <div
+          className="jsx-1497761764 fade-in"
+        >
+          <h2
+            className="jsx-2362338977 title"
+          >
+            1+1=3
+          </h2>
+          <div
+            className="jsx-2362338977 message"
+          >
+            <p
+              className="jsx-1832570087"
+            >
+              <strong
+                className="jsx-1832570087"
+              >
+                Playing with a 
+                <del
+                  className="jsx-1832570087"
+                >
+                  friend
+                </del>
+                <br
+                  className="jsx-1832570087"
+                />
+                enemy is more fun!
+              </strong>
+            </p>
+            <div
+              className="jsx-1832570087 copy"
+            >
+              <div
+                data-clipboard-text="about:///join/1337"
+              >
+                <button
+                  className="jsx-2544857778 button hover-button"
+                  type="button"
+                >
+                  Copy link
+                </button>
+              </div>
+            </div>
+            <p
+              className="jsx-1832570087"
+            >
+              Send the link and
+              <br
+                className="jsx-1832570087"
+              />
+              warm up until the
+              <br
+                className="jsx-1832570087"
+              />
+              other person arrives.
+            </p>
+          </div>
+        </div>
+        <div
+          className="jsx-2362338977 actions"
+        >
+          <div
+            className="jsx-2362338977 button"
+          >
+            <button
+              className="jsx-2576755423 button hover-button"
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+            >
+              Play
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Cosmos fixtures: Invite:disabled 1`] = `
+<div
+  className="jsx-1613050951 outer"
+>
+  <div
+    className="jsx-1613050951 container"
+  >
+    <div
+      className="jsx-1294220987 inner-container"
+      style={
+        Object {
+          "backgroundColor": "rgba(236, 240, 241, 0.85)",
+          "opacity": 1,
+          "position": "absolute",
+          "width": "calc(100% / 16 * 10)",
+        }
+      }
+    >
+      <div
+        className="jsx-2362338977 screen"
+      >
+        <div
+          className="jsx-1497761764 fade-in"
+        >
+          <h2
+            className="jsx-2362338977 title"
+          >
+            1+1=3
+          </h2>
+          <div
+            className="jsx-2362338977 message"
+          >
+            <p
+              className="jsx-1832570087"
+            >
+              <strong
+                className="jsx-1832570087"
+              >
+                Playing with a 
+                <del
+                  className="jsx-1832570087"
+                >
+                  friend
+                </del>
+                <br
+                  className="jsx-1832570087"
+                />
+                enemy is more fun!
+              </strong>
+            </p>
+            <div
+              className="jsx-1832570087 copy"
+            >
+              <div>
+                <button
+                  className="jsx-2544857778 button hover-button"
+                  disabled={true}
+                  type="button"
+                >
+                  Copy link
+                </button>
+              </div>
+            </div>
+            <p
+              className="jsx-1832570087"
+            >
+              Send the link and
+              <br
+                className="jsx-1832570087"
+              />
+              warm up until the
+              <br
+                className="jsx-1832570087"
+              />
+              other person arrives.
+            </p>
+          </div>
+        </div>
+        <div
+          className="jsx-2362338977 actions"
+        >
+          <div
+            className="jsx-2362338977 button"
+          >
+            <button
+              className="jsx-2576755423 button hover-button"
+              disabled={true}
+              onClick={[Function]}
+              type="button"
+            >
+              Play
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Cosmos fixtures: JoinGame:default 1`] = `
 <div
   className="jsx-1613050951 outer"
@@ -15610,192 +15946,6 @@ exports[`Cosmos fixtures: Logo:default 1`] = `
 </div>
 `;
 
-exports[`Cosmos fixtures: NewGame:copy-error 1`] = `
-<div
-  className="jsx-1613050951 outer"
->
-  <div
-    className="jsx-1613050951 container"
-  >
-    <div
-      className="jsx-1294220987 inner-container"
-      style={
-        Object {
-          "backgroundColor": "rgba(236, 240, 241, 0.85)",
-          "opacity": 1,
-          "position": "absolute",
-          "width": "calc(100% / 16 * 10)",
-        }
-      }
-    >
-      <div
-        className="jsx-2362338977 screen"
-      >
-        <div
-          className="jsx-1497761764 fade-in"
-        >
-          <h2
-            className="jsx-2362338977 title"
-          >
-            New game
-          </h2>
-          <div
-            className="jsx-2362338977 message"
-          >
-            <p
-              className="jsx-1832570087"
-            >
-              <strong
-                className="jsx-1832570087"
-              >
-                Invite a friend to
-                <br
-                  className="jsx-1832570087"
-                />
-                battle, or play solo.
-              </strong>
-            </p>
-            <div
-              className="jsx-1832570087 copy"
-              data-clipboard-text="about:///join/1337"
-            >
-              <button
-                className="jsx-1565648149 button hover-button"
-                type="button"
-              >
-                Copy error :(
-              </button>
-            </div>
-            <p
-              className="jsx-1832570087"
-            >
-              Send the link and
-              <br
-                className="jsx-1832570087"
-              />
-              warm up until the
-              <br
-                className="jsx-1832570087"
-              />
-              other person arrives.
-            </p>
-          </div>
-        </div>
-        <div
-          className="jsx-2362338977 actions"
-        >
-          <div
-            className="jsx-2362338977 button"
-          >
-            <button
-              className="jsx-2576755423 button hover-button"
-              disabled={false}
-              onClick={[Function]}
-              type="button"
-            >
-              Play
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Cosmos fixtures: NewGame:copy-success 1`] = `
-<div
-  className="jsx-1613050951 outer"
->
-  <div
-    className="jsx-1613050951 container"
-  >
-    <div
-      className="jsx-1294220987 inner-container"
-      style={
-        Object {
-          "backgroundColor": "rgba(236, 240, 241, 0.85)",
-          "opacity": 1,
-          "position": "absolute",
-          "width": "calc(100% / 16 * 10)",
-        }
-      }
-    >
-      <div
-        className="jsx-2362338977 screen"
-      >
-        <div
-          className="jsx-1497761764 fade-in"
-        >
-          <h2
-            className="jsx-2362338977 title"
-          >
-            New game
-          </h2>
-          <div
-            className="jsx-2362338977 message"
-          >
-            <p
-              className="jsx-1832570087"
-            >
-              <strong
-                className="jsx-1832570087"
-              >
-                Invite a friend to
-                <br
-                  className="jsx-1832570087"
-                />
-                battle, or play solo.
-              </strong>
-            </p>
-            <div
-              className="jsx-1832570087 copy"
-              data-clipboard-text="about:///join/1337"
-            >
-              <button
-                className="jsx-3398295050 button hover-button"
-                type="button"
-              >
-                Link copied!
-              </button>
-            </div>
-            <p
-              className="jsx-1832570087"
-            >
-              Send the link and
-              <br
-                className="jsx-1832570087"
-              />
-              warm up until the
-              <br
-                className="jsx-1832570087"
-              />
-              other person arrives.
-            </p>
-          </div>
-        </div>
-        <div
-          className="jsx-2362338977 actions"
-        >
-          <div
-            className="jsx-2362338977 button"
-          >
-            <button
-              className="jsx-2576755423 button hover-button"
-              disabled={false}
-              onClick={[Function]}
-              type="button"
-            >
-              Play
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
 exports[`Cosmos fixtures: NewGame:default 1`] = `
 <div
   className="jsx-1613050951 outer"
@@ -15843,14 +15993,17 @@ exports[`Cosmos fixtures: NewGame:default 1`] = `
             </p>
             <div
               className="jsx-1832570087 copy"
-              data-clipboard-text="about:///join/1337"
             >
-              <button
-                className="jsx-2544857778 button hover-button"
-                type="button"
+              <div
+                data-clipboard-text="about:///join/1337"
               >
-                Copy link
-              </button>
+                <button
+                  className="jsx-2544857778 button hover-button"
+                  type="button"
+                >
+                  Copy link
+                </button>
+              </div>
             </div>
             <p
               className="jsx-1832570087"
@@ -15937,13 +16090,15 @@ exports[`Cosmos fixtures: NewGame:disabled 1`] = `
             <div
               className="jsx-1832570087 copy"
             >
-              <button
-                className="jsx-2544857778 button hover-button"
-                disabled={true}
-                type="button"
-              >
-                Copy link
-              </button>
+              <div>
+                <button
+                  className="jsx-2544857778 button hover-button"
+                  disabled={true}
+                  type="button"
+                >
+                  Copy link
+                </button>
+              </div>
             </div>
             <p
               className="jsx-1832570087"

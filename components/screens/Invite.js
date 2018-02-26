@@ -13,18 +13,19 @@ type Props = {
   onPlay: Function
 };
 
-export default class NewGame extends Component<Props> {
+export default class Invite extends Component<Props> {
   render() {
     const { disabled, gameId, onPlay } = this.props;
 
     return (
       <Screen
-        title="New game"
+        title="1+1=3"
         message={
           <Fragment>
             <p>
               <strong>
-                Invite a friend to<br />battle, or play solo.
+                Playing with a <del>friend</del>
+                <br />enemy is more fun!
               </strong>
             </p>
             <div className="copy">

@@ -38,8 +38,9 @@ import LandscapeControls from './controls/LandscapeControls';
 import Flash from './effects/Flash';
 import Quake from './effects/Quake';
 import FadeIn from './effects/FadeIn';
-import NewGame from './screens/NewGame';
 import Auth from './screens/Auth';
+import NewGame from './screens/NewGame';
+import Invite from './screens/Invite';
 import JoinGame from './screens/JoinGame';
 import GameFull from './screens/GameFull';
 import GetReady from './screens/GetReady';
@@ -154,9 +155,18 @@ class FlatrisGame extends Component<Props, LocalState> {
   }
 
   handleSelectP2 = () => {
-    // NOTE: This will only be called before a 2nd player arrives under normal
-    // circumstances
-    this.props.playerPause();
+    const { curUser, game, playerPause } = this.props;
+    const { status } = getCurPlayer(game, curUser);
+
+    if (game.players.length > 1) {
+      throw new Error('Game already has two players');
+    }
+
+    // READY status for a solo player means the game is running
+    // Is status is LOST the player will see the invite screen anyway
+    if (status === 'READY') {
+      playerPause();
+    }
   };
 
   handleWatch = () => {
@@ -307,6 +317,16 @@ class FlatrisGame extends Component<Props, LocalState> {
     }
 
     if (!otherPlayer) {
+      if (curPlayer.status === 'PAUSE') {
+        return this.renderScreen(
+          <Invite
+            disabled={!jsReady}
+            gameId={game.id}
+            onPlay={this.handleReady}
+          />
+        );
+      }
+
       // curPlayer status is 'PENDING', because if it wouldn've been 'READY'
       // allPlayersReady(game) would've returned true
       return this.renderScreen(

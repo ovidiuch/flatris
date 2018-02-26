@@ -79,7 +79,7 @@ export function gameReducer(prevState: void | Game, action: GameAction): Game {
         allPlayersReady(game) &&
         // This condition allows solo players to pause and resume
         // (by clicking on the "2p insert coin" button)
-        (game.players.length > 1 || prevStatus === 'LOST')
+        (game.players.length > 1 || prevStatus !== 'PAUSE')
       ) {
         const { id, players } = game;
         const round = getGameRound(game);
@@ -98,7 +98,11 @@ export function gameReducer(prevState: void | Game, action: GameAction): Game {
     }
 
     case 'PLAYER_PAUSE': {
-      return updatePlayer(state, userId, { status: 'PENDING' });
+      if (state.players.length > 1) {
+        throw new Error('Pausing multiplayer game not allowed');
+      }
+
+      return updatePlayer(state, userId, { status: 'PAUSE' });
     }
 
     case 'DROP': {

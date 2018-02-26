@@ -23,7 +23,7 @@ export type User = {
   name: string
 };
 
-export type PlayerStatus = 'PENDING' | 'READY' | 'WON' | 'LOST';
+export type PlayerStatus = 'PENDING' | 'READY' | 'PAUSE' | 'WON' | 'LOST';
 
 export type FlashSuffix = 'a' | 'b';
 

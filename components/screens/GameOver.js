@@ -4,6 +4,7 @@ import React, { Fragment, Component } from 'react';
 import { getCurPlayer, getOtherPlayer } from '../../reducers/game';
 import Shake from '../effects/Shake';
 import Button from '../Button';
+import Invite from './Invite';
 import Screen from './Screen';
 
 import type { User, Player, Game } from '../../types/state';
@@ -22,24 +23,7 @@ export default class GameOver extends Component<Props> {
     const otherPlayer = getOtherPlayer(game, curPlayer);
 
     if (!otherPlayer) {
-      return (
-        <Screen
-          title="Game over"
-          message={
-            <Fragment>
-              <p>That was fun!</p>
-              <p>
-                <strong>Up for another?</strong>
-              </p>
-            </Fragment>
-          }
-          actions={[
-            <Button disabled={disabled} onClick={onRestart}>
-              Again
-            </Button>
-          ]}
-        />
-      );
+      return <Invite disabled={disabled} gameId={game.id} onPlay={onRestart} />;
     }
 
     return (

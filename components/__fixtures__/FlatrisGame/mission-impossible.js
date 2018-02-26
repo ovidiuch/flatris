@@ -16,6 +16,7 @@ export default {
     curUser: user,
     games: {
       [game.id]: updatePlayer(game, user.id, {
+        status: 'PAUSE',
         drops: 112,
         score: 352,
         lines: 1,

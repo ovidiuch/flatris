@@ -110,6 +110,7 @@
   * [x] screens/JoinGame Watch and Join
   * [x] screens/NewGame Play and Copy
   * [x] screens/WaitingForOther Ping
+* [x] Add pause & end game state for solo players with invite screen
 * [ ] Index page
   * [x] Create reduxState.games
   * [x] List all games
@@ -125,6 +126,7 @@
     * [ ] Touch (portrait and landscape)
 * [ ] Notify 1p when 2p arrives via web Notifications API
 * [ ] Log errors and stats
+  * [ ] componentDidCatch
 * [ ] [1.0]
 
 OPTIMIZATIONS
