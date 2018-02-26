@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 const range = [...Array(40).keys()];
 
-export default class Grid extends Component {
+export default class GameGrid extends Component {
   render() {
     return (
       <div>

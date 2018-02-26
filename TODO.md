@@ -112,9 +112,17 @@
   * [x] screens/WaitingForOther Ping
 * [ ] Index page
   * [ ] List all games
+    * [ ] Create reduxState.games
   * [ ] Sort and limit games based on relevancy (active 1p, active 2p, [inactive 1p, inactive 2p])
   * [ ] Beautiful grid with animating games
 * [ ] Game footer
+* [ ] Improve onboarding
+  * [ ] Screen 1: Rules
+    * [ ] Other player shadow (not connected)
+    * [ ] Line transferring
+  * [ ] Screen 2: Controls
+    * [ ] Keyboard (arrows and space bar)
+    * [ ] Touch (portrait and landscape)
 * [ ] Notify 1p when 2p arrives via web Notifications API
 * [ ] Log errors and stats
 * [ ] [1.0]

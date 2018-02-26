@@ -4,7 +4,7 @@ import { func } from 'prop-types';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import createReduxProxy from 'react-cosmos-redux-proxy';
-import GameContainer from './components/GameContainer';
+import GameContainer from './components/containers/GameContainer';
 import { createStore } from './store';
 
 import type { ComponentType, Node } from 'react';
