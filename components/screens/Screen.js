@@ -5,7 +5,7 @@ import FadeIn from '../effects/FadeIn';
 
 import type { Node } from 'react';
 
-export type Props = {
+type Props = {
   title: Node,
   message: Node,
   actions: Array<Node>

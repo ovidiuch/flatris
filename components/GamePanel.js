@@ -8,7 +8,7 @@ import PlayerInfo from './PlayerInfo';
 
 import type { User, Game } from '../types/state';
 
-export type Props = {
+type Props = {
   curUser: ?User,
   game: ?Game,
   onSelectP2?: Function

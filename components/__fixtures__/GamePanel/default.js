@@ -1,15 +1,14 @@
 // @flow
 
+import { createFixture } from '../../../utils/create-fixture';
 import { getSampleUser } from '../../../utils/test-helpers';
 import { getBlankGame } from '../../../reducers/game';
 import GamePanel from '../../GamePanel';
 
-import type { Props } from '../../GamePanel';
-
 const user = getSampleUser();
 const game = getBlankGame({ id: 'dce6b11e', user });
 
-const fixture: { props: Props } = {
+export default createFixture({
   component: GamePanel,
 
   container: {
@@ -21,6 +20,4 @@ const fixture: { props: Props } = {
     game,
     onSelectP2: () => console.log('Select P2')
   }
-};
-
-export default fixture;
+});

@@ -5,7 +5,7 @@ import React from 'react';
 
 import type { Node } from 'react';
 
-export type Props = {
+type Props = {
   type?: 'button' | 'submit' | 'reset',
   children: Node,
   bgColor?: string,

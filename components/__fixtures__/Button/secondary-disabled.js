@@ -1,10 +1,9 @@
 // @flow
 
+import { createFixture } from '../../../utils/create-fixture';
 import Button from '../../Button';
 
-import type { Props } from '../../Button';
-
-const fixture: { props: Props } = {
+export default createFixture({
   component: Button,
   props: {
     children: 'Press me will you',
@@ -14,7 +13,4 @@ const fixture: { props: Props } = {
     colorDisabled: 'rgba(52, 73, 95, 0.6)',
     onClick: () => console.log('Yay! Button clicked-ed!')
   }
-};
-
-export default fixture;
-
+});
