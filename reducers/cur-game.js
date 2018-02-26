@@ -5,11 +5,12 @@ import { gameReducer, getBlankPlayerEffects } from './game';
 import type { Game, State } from '../types/state';
 import type { Action } from '../types/actions';
 
-export function curGameReducer(state: void | ?Game, action: Action): ?Game {
-  if (typeof state === 'undefined') {
-    return null;
-  }
+const initialState = null;
 
+export function curGameReducer(
+  state: ?Game = initialState,
+  action: Action
+): ?Game {
   switch (action.type) {
     case 'LOAD_GAME': {
       const { game } = action.payload;
