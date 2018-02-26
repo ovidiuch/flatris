@@ -22,7 +22,11 @@ class Layout extends Component<Props> {
   };
 
   componentDidMount() {
-    this.props.jsLoad();
+    const { jsReady, jsLoad } = this.props;
+
+    if (!jsReady) {
+      jsLoad();
+    }
   }
 
   render() {
