@@ -114,7 +114,8 @@ class SocketProviderInner extends Component<Props, LocalState> {
     const { games } = this.props.state;
     const backfillId = startBackfill(
       games[gameId],
-      this.handleBackfillComplete
+      this.handleBackfillComplete,
+      this.handleBackfillError
     );
 
     this.setState({
@@ -124,6 +125,7 @@ class SocketProviderInner extends Component<Props, LocalState> {
   }
 
   handleBackfillComplete = (res: BackfillResponse) => {
+    const { dispatch } = this.props;
     const { pendingActions } = this.state;
 
     const mergedActions = [...res, ...pendingActions];
@@ -138,12 +140,19 @@ class SocketProviderInner extends Component<Props, LocalState> {
     // remove game from state completely
     // TODO: Dispatch events at an interval, to convey the rhythm in
     // which the actions were originally performed
-    uniqActions.forEach(this.props.dispatch);
+    uniqActions.forEach(dispatch);
 
     const numDupes = mergedActions.length - uniqActions.length;
     console.log(
       `Backfilled ${uniqActions.length} actions (${numDupes} dupes).`
     );
+  };
+
+  handleBackfillError = (gameId: GameId) => {
+    console.warn(`Backfill failed, removing game ${gameId} from state`);
+
+    const { dispatch } = this.props;
+    dispatch(removeGame(gameId));
   };
 
   handleBroadcastGameAction = (action: GameAction) => {

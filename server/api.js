@@ -51,9 +51,14 @@ export function addRoutes(app: express$Application) {
       console.log('Backfill...');
       console.log(JSON.stringify(req.body, null, 2));
 
-      const ranges = extractBackfillRanges(req.body);
-      const actions = getBackfillActions(ranges);
+      const backfillReq = extractBackfillRequest(req.body);
+      const { gameId } = backfillReq;
 
+      if (!games[gameId]) {
+        throw new Error(`Can't backfill missing game ${gameId}`);
+      }
+
+      const actions = getBackfillActions(backfillReq);
       res.json(actions);
     } catch (err) {
       console.log(err);
@@ -98,7 +103,7 @@ function getUserFromReqSession(req: express$Request): User {
   return users[userId];
 }
 
-function extractBackfillRanges(req: mixed): BackfillRequest {
+function extractBackfillRequest(req: mixed): BackfillRequest {
   if (!req || typeof req !== 'object') {
     throw new Error('Invalid backfill ranges');
   }
