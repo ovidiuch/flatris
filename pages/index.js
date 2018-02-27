@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 
 import withRedux from 'next-redux-wrapper';
 import { createStore } from '../store';
-import { loadDashboard } from '../actions/global';
+import { loadDashboard, stripGameEffects } from '../actions/global';
 import { addCurUserToState, getDashboard } from '../utils/api';
 import { SocketProvider } from '../components/socket/SocketProvider';
 import Layout from '../components/Layout';
@@ -24,6 +24,12 @@ class IndexPage extends Component<Props> {
       // to index page from game page
       const dashboardState = await getDashboard();
       dispatch(loadDashboard(dashboardState));
+    }
+
+    // Client-side: Strip game effects before loading dashboard when going back
+    // from game page
+    if (!req) {
+      dispatch(stripGameEffects());
     }
   }
 

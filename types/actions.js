@@ -41,6 +41,10 @@ export type CloseGameAction = {
   type: 'CLOSE_GAME'
 };
 
+export type StripGameEffectsAction = {
+  type: 'STRIP_GAME_EFFECTS'
+};
+
 export type JoinGameAction = {
   type: 'JOIN_GAME',
   payload: {
@@ -174,6 +178,7 @@ export type Action =
   | AddGameAction
   | OpenGameAction
   | CloseGameAction
+  | StripGameEffectsAction
   | GameAction;
 
 export type GetState = () => State;

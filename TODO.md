@@ -116,6 +116,7 @@
   * [x] List all games
   * [x] Beautiful grid
   * [x] Animating games
+  * [x] Strip game effects when going back to index page
   * [x] Push new games to dashboard
     * [ ] Remove inactive games
     * [ ] Dispatch game count updates to `global` subscribers

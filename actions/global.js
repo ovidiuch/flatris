@@ -6,7 +6,8 @@ import type {
   DashboardLoadAction,
   AddGameAction,
   OpenGameAction,
-  CloseGameAction
+  CloseGameAction,
+  StripGameEffectsAction
 } from '../types/actions';
 
 export function auth(user: User): AuthAction {
@@ -53,5 +54,11 @@ export function openGame(gameId: GameId): OpenGameAction {
 export function closeGame(): CloseGameAction {
   return {
     type: 'CLOSE_GAME'
+  };
+}
+
+export function stripGameEffects(): StripGameEffectsAction {
+  return {
+    type: 'STRIP_GAME_EFFECTS'
   };
 }

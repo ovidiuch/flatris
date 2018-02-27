@@ -15,12 +15,7 @@ export function gamesReducer(
     case 'LOAD_DASHBOARD': {
       const { games } = action.payload;
 
-      return Object.keys(games).reduce((acc, gameId) => {
-        return {
-          ...acc,
-          [gameId]: stripGameEffects(games[gameId])
-        };
-      }, {});
+      return getEffectlessGames(games);
     }
 
     case 'ADD_GAME': {
@@ -30,6 +25,10 @@ export function gamesReducer(
         ...state,
         [game.id]: stripGameEffects(game)
       };
+    }
+
+    case 'STRIP_GAME_EFFECTS': {
+      return getEffectlessGames(state);
     }
 
     case 'JOIN_GAME':
@@ -64,4 +63,13 @@ export function gamesReducer(
     default:
       return state;
   }
+}
+
+function getEffectlessGames(games: Games): Games {
+  return Object.keys(games).reduce((acc, gameId) => {
+    return {
+      ...acc,
+      [gameId]: stripGameEffects(games[gameId])
+    };
+  }, {});
 }
