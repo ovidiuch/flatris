@@ -40,15 +40,15 @@ class SocketProviderInner extends Component<Props, LocalState> {
     pendingActions: []
   };
 
-  componentDidMount() {
-    onGameAction(this.handleReceiveGameAction);
-  }
-
   getChildContext() {
     return {
       subscribe: this.handleSubscribe,
       broadcastGameAction: this.handleBroadcastGameAction
     };
+  }
+
+  componentDidMount() {
+    onGameAction(this.handleReceiveGameAction);
   }
 
   componentWillUnmount() {
