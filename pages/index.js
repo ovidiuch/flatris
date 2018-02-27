@@ -20,8 +20,7 @@ class IndexPage extends Component<Props> {
     if (req) {
       await addCurUserToState(req, store);
 
-      // Only do this on the server. Get new games via websocket when navigating
-      // to index page from game page
+      // Only do this on the server. Get new games via `global` websocket room
       const dashboardState = await getDashboard();
       dispatch(loadDashboard(dashboardState));
     }
