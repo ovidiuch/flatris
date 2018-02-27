@@ -37,6 +37,10 @@ export type OpenGameAction = {
   }
 };
 
+export type CloseGameAction = {
+  type: 'CLOSE_GAME'
+};
+
 export type JoinGameAction = {
   type: 'JOIN_GAME',
   payload: {
@@ -169,6 +173,7 @@ export type Action =
   | DashboardLoadAction
   | AddGameAction
   | OpenGameAction
+  | CloseGameAction
   | GameAction;
 
 export type GetState = () => State;
@@ -179,11 +184,3 @@ export type ThunkAction = (
 ) => void | Action;
 
 export type Dispatch = (Action | ThunkAction) => Action;
-
-export type BackfillRanges = Array<{
-  gameId: GameId,
-  players: Array<{
-    userId: UserId,
-    from: number
-  }>
-}>;

@@ -16,6 +16,10 @@ export function curGameReducer(
       return gameId;
     }
 
+    case 'CLOSE_GAME': {
+      return null;
+    }
+
     default:
       return state;
   }

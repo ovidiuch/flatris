@@ -65,10 +65,12 @@ export type Games = {
   [id: GameId]: Game
 };
 
+export type Following = Array<GameId>;
+
 export type State = {
   jsReady: boolean,
+  curUser: ?User,
   gameCount: number,
   games: Games,
-  curUser: ?User,
   curGame: ?GameId
 };

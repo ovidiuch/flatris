@@ -1,6 +1,7 @@
 // @flow
 
 import socketIo from 'socket.io';
+import { omit, difference } from 'lodash';
 import { gameReducer } from '../reducers/game';
 import { games, saveGameAction } from './db';
 
@@ -13,16 +14,15 @@ export function attachSocket(server: net$Server) {
   io.on('connect', socket => {
     console.log('New socket connection');
 
-    socket.on('open-game', (gameId: GameId) => {
-      console.log(`Game opened ${gameId}`);
+    socket.on('follow-games', (gameIds: Array<GameId>) => {
+      console.log(`[SOCKET] follow-games ${gameIds.join(', ')}`);
 
-      socket.join(gameId);
-    });
+      const prevRooms = Object.keys(omit(socket.rooms, socket.id));
+      const roomsToJoin = difference(gameIds, prevRooms);
+      const roomsToLeave = difference(prevRooms, gameIds);
 
-    socket.on('close-game', (gameId: GameId) => {
-      console.log(`Game closed ${gameId}`);
-
-      socket.leave(gameId);
+      socket.join(roomsToJoin);
+      roomsToLeave.forEach(gameId => socket.leave(gameId));
     });
 
     socket.on('game-action', (action: GameAction) => {

@@ -8,9 +8,9 @@ import {
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { jsReadyReducer } from './reducers/js-ready';
+import { curUserReducer } from './reducers/cur-user';
 import { gameCountReducer } from './reducers/game-count';
 import { gamesReducer } from './reducers/games';
-import { curUserReducer } from './reducers/cur-user';
 import { curGameReducer } from './reducers/cur-game';
 
 import type { Store } from 'redux'; // eslint-disable-line import/named

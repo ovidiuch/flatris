@@ -11,7 +11,8 @@ import {
 } from './db';
 
 import type { User, GameId } from '../types/state';
-import type { GameAction, BackfillRanges } from '../types/actions';
+import type { GameAction } from '../types/actions';
+import type { BackfillRanges } from '../types/backfill';
 import type { SessionId } from './db';
 
 export function addRoutes(app: express$Application) {
@@ -142,15 +143,14 @@ function getBackfillActions(
 
   ranges.forEach(({ gameId, players }) => {
     actions[gameId] = gameActions[gameId].filter(action => {
+      const player = players.find(
+        ({ userId }) => userId === action.payload.userId
+      );
+
       return (
-        // Include JOIN_GAME actions of users that the user who requested
-        // the backfill isn't aware of
-        (action.type === 'JOIN_GAME' &&
-          !players.some(({ userId }) => userId === action.payload.userId)) ||
-        players.some(
-          ({ userId, from }) =>
-            action.payload.userId === userId && action.payload.actionId > from
-        )
+        // Include all actions of users that the user who requested the backfill
+        // isn't aware of (ie. users that joined since last backfill)
+        !player || (player && action.payload.actionId > player.from)
       );
     });
   });

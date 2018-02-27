@@ -1,10 +1,12 @@
 // @flow
+// TODO: Rename to global.js and add user action here
 
 import type { GameId, Game, Games } from '../types/state';
 import type {
   DashboardLoadAction,
   AddGameAction,
-  OpenGameAction
+  OpenGameAction,
+  CloseGameAction
 } from '../types/actions';
 
 export function loadDashboard({
@@ -38,5 +40,11 @@ export function openGame(gameId: GameId): OpenGameAction {
     payload: {
       gameId
     }
+  };
+}
+
+export function closeGame(): CloseGameAction {
+  return {
+    type: 'CLOSE_GAME'
   };
 }
