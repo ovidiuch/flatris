@@ -36,7 +36,6 @@ export async function createUserSession(userName: string): Promise<User> {
 }
 
 export async function getDashboard(): Promise<{
-  gameCount: number,
   games: Games
 }> {
   return fetchJson(`/dashboard`);

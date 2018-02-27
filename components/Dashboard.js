@@ -11,7 +11,6 @@ import type { GameId, Games, State } from '../types/state';
 import type { RoomId } from '../types/api';
 
 type Props = {
-  gameCount: number,
   games: Games,
   curGame: ?GameId,
   subscribe: (roomId: RoomId) => mixed,
@@ -33,7 +32,7 @@ class Dashboard extends Component<Props> {
   // TODO: Update state.following when state.games will update via websocket
 
   render() {
-    const { gameCount, games } = this.props;
+    const { games } = this.props;
 
     // FIXME: Link/a/GamePreview
     return (
@@ -42,9 +41,6 @@ class Dashboard extends Component<Props> {
           <Link href="/new">
             <a>Create game</a>
           </Link>
-        </p>
-        <p>
-          Games: <strong>{gameCount}</strong>
         </p>
         <div className="game-grid">
           {Object.keys(games).map(gameId => (
@@ -75,9 +71,8 @@ class Dashboard extends Component<Props> {
   }
 }
 
-function mapStateToProps({ gameCount, games, curGame }: State): $Shape<Props> {
+function mapStateToProps({ games, curGame }: State): $Shape<Props> {
   return {
-    gameCount,
     games,
     curGame
   };

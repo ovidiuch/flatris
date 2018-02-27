@@ -18,7 +18,6 @@ export type AuthAction = {
 export type DashboardLoadAction = {
   type: 'LOAD_DASHBOARD',
   payload: {
-    gameCount: number,
     games: Games
   }
 };

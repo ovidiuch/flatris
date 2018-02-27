@@ -17,7 +17,6 @@ import type { SessionId } from './db';
 export function addRoutes(app: express$Application) {
   app.get('/dashboard', (req: express$Request, res: express$Response) => {
     res.json({
-      gameCount: Object.keys(games).length,
       // TODO: Filter out inactive games
       games
     });

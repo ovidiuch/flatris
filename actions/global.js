@@ -18,16 +18,13 @@ export function auth(user: User): AuthAction {
 }
 
 export function loadDashboard({
-  gameCount,
   games
 }: {
-  gameCount: number,
   games: Games
 }): DashboardLoadAction {
   return {
     type: 'LOAD_DASHBOARD',
     payload: {
-      gameCount,
       games
     }
   };
