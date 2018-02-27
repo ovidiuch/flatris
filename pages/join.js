@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import withRedux from 'next-redux-wrapper';
 import Error from 'next/error';
 import { createStore } from '../store';
-import { addGame, openGame } from '../actions/dashboard';
+import { addGame, openGame } from '../actions/global';
 import { addCurUserToState, getGame } from '../utils/api';
 import { SocketProvider } from '../components/socket/SocketProvider';
 import Layout from '../components/Layout';
@@ -15,21 +15,22 @@ type Props = {
 };
 
 class JoinPage extends Component<Props> {
-  static async getInitialProps({ req, res, query, store }) {
+  static async getInitialProps({ req, res, query, store }): Promise<Props> {
     // Food for thought: How to not duplicate this on every page
     if (req) {
       await addCurUserToState(req, store);
     }
 
+    const { getState, dispatch } = store;
     const gameId = query.g;
-    const { games } = store.getState();
+    const { games } = getState();
 
     // No need to request game again if it's already in store (client-side)
     // Action backfill mechanism will take care of updating the game's state
     if (!games[gameId]) {
       try {
         const game = await getGame(gameId);
-        store.dispatch(addGame(game));
+        dispatch(addGame(game));
       } catch (err) {
         // TODO: Identify and signal 500s differently
         const statusCode = 404;
@@ -44,7 +45,7 @@ class JoinPage extends Component<Props> {
       }
     }
 
-    store.dispatch(openGame(gameId));
+    dispatch(openGame(gameId));
 
     return {
       statusCode: false

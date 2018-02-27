@@ -3,11 +3,12 @@
 import fetch from 'isomorphic-unfetch';
 import cookie from 'cookie';
 import { getValidUser } from '../utils/validation';
-import { auth } from '../actions/user';
+import { auth } from '../actions/global';
 
 import type { Store } from 'redux'; // eslint-disable-line import/named
 import type { User, GameId, Game, Games, State } from '../types/state';
-import type { GameAction, Action, BackfillRanges } from '../types/actions';
+import type { Action } from '../types/actions';
+import type { BackfillRequest, BackfillResponse } from '../types/api';
 
 // NOTE: This method is strictly called on the server side
 export async function addCurUserToState(
@@ -35,7 +36,6 @@ export async function createUserSession(userName: string): Promise<User> {
 }
 
 export async function getDashboard(): Promise<{
-  gameCount: number,
   games: Games
 }> {
   return fetchJson(`/dashboard`);
@@ -50,9 +50,9 @@ export async function createGame(): Promise<Game> {
 }
 
 export async function backfillGameActions(
-  ranges: BackfillRanges
-): Promise<{ [GameId]: Array<GameAction> }> {
-  return fetchPost(`/backfill`, { ranges });
+  req: BackfillRequest
+): Promise<BackfillResponse> {
+  return fetchPost(`/backfill`, req);
 }
 
 export function getApiUrl(path?: string) {

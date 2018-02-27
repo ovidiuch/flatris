@@ -45,14 +45,14 @@ import WaitingForOther from './screens/WaitingForOther';
 import GameOver from './screens/GameOver';
 
 import type { Node } from 'react';
-import type { User, GameId, Game, State } from '../types/state';
+import type { User, Game, State } from '../types/state';
+import type { RoomId } from '../types/api';
 
 type Props = {
   jsReady: boolean,
   curUser: ?User,
   game: Game,
-  openGame: (gameId: GameId) => void,
-  closeGame: (gameId: GameId) => void,
+  subscribe: (roomId: RoomId) => mixed,
   joinGame: typeof joinGame,
   playerReady: typeof playerReady,
   playerPause: typeof playerPause,
@@ -72,6 +72,7 @@ type LocalState = {
   isMobile: boolean
 };
 
+// NOTE: This component will crash if state.curGame isn't populated!
 class FlatrisGame extends Component<Props, LocalState> {
   state = {
     isWatching: false,
@@ -79,8 +80,10 @@ class FlatrisGame extends Component<Props, LocalState> {
   };
 
   componentDidMount() {
-    const { curUser, game, openGame } = this.props;
-    openGame(game.id);
+    const { curUser, game, subscribe } = this.props;
+
+    // Subscribe to socket messages for this game
+    subscribe(game.id);
 
     // Start game if playing user returned after possibly being disconnected
     if (isPlayer(game, curUser) && allPlayersReady(game)) {
@@ -120,9 +123,6 @@ class FlatrisGame extends Component<Props, LocalState> {
 
   componentWillUnmount() {
     this.stopGame();
-
-    const { game, closeGame } = this.props;
-    closeGame(game.id);
   }
 
   attachKeyEvents() {

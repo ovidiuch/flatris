@@ -1,23 +1,30 @@
 // @flow
 
-import type { GameId, Game, Games } from '../types/state';
+import type { User, GameId, Game, Games } from '../types/state';
 import type {
+  AuthAction,
   DashboardLoadAction,
   AddGameAction,
-  OpenGameAction
+  OpenGameAction,
+  CloseGameAction,
+  StripGameEffectsAction
 } from '../types/actions';
 
+export function auth(user: User): AuthAction {
+  return {
+    type: 'AUTH',
+    payload: { user }
+  };
+}
+
 export function loadDashboard({
-  gameCount,
   games
 }: {
-  gameCount: number,
   games: Games
 }): DashboardLoadAction {
   return {
     type: 'LOAD_DASHBOARD',
     payload: {
-      gameCount,
       games
     }
   };
@@ -38,5 +45,17 @@ export function openGame(gameId: GameId): OpenGameAction {
     payload: {
       gameId
     }
+  };
+}
+
+export function closeGame(): CloseGameAction {
+  return {
+    type: 'CLOSE_GAME'
+  };
+}
+
+export function stripGameEffects(): StripGameEffectsAction {
+  return {
+    type: 'STRIP_GAME_EFFECTS'
   };
 }

@@ -4,91 +4,70 @@ import { func } from 'prop-types';
 import { uniqWith } from 'lodash';
 import { Component } from 'react';
 import { connect } from 'react-redux';
-import io from 'socket.io-client';
-import { getApiUrl, backfillGameActions } from '../../utils/api';
+import { getGame } from '../../utils/api';
+import { getSocket } from '../../utils/socket';
+import { startBackfill, cancelBackfill } from '../../utils/backfill';
 import { isValidGameAction } from '../../reducers/game';
-import { getCurGame } from '../../reducers/cur-game';
+import { addGame } from '../../actions/global';
 
 import type { Node } from 'react';
-import type { GameId, Game, State } from '../../types/state';
-import type {
-  Action,
-  GameAction,
-  ThunkAction,
-  BackfillRanges
-} from '../../types/actions';
+import type { Dispatch } from 'redux'; // eslint-disable-line import/named
+import type { GameId, State } from '../../types/state';
+import type { Action, GameAction } from '../../types/actions';
+import type { RoomId, BackfillResponse } from '../../types/api';
+
+const { subscribe, onGameAction, offGameAction, broadcastAction } = getSocket();
 
 type Props = {
   children: Node,
   state: State,
-  dispatch: (Action | ThunkAction) => Action
+  dispatch: Dispatch<Action>
 };
 
 type LocalState = {
-  isBackfilling: boolean,
+  backfillId: ?number,
   pendingActions: Array<GameAction>
 };
 
-let socket;
-
-function getSocket() {
-  if (!socket) {
-    socket = io(getApiUrl());
-  }
-
-  return socket;
-}
-
 class SocketProviderInner extends Component<Props, LocalState> {
   static childContextTypes = {
-    openGame: func.isRequired,
-    closeGame: func.isRequired,
+    subscribe: func.isRequired,
     broadcastGameAction: func.isRequired
   };
 
   state = {
-    isBackfilling: false,
+    backfillId: null,
     pendingActions: []
   };
 
   componentDidMount() {
-    getSocket().on('game-action', this.handleReceiveGameAction);
+    onGameAction(this.handleReceiveGameAction);
   }
 
   getChildContext() {
     return {
-      openGame: this.handleOpenGame,
-      closeGame: this.handleCloseGame,
+      subscribe: this.handleSubscribe,
       broadcastGameAction: this.handleBroadcastGameAction
     };
   }
 
   componentWillUnmount() {
-    if (socket) {
-      socket.off('game-action', this.handleReceiveGameAction);
+    const { backfillId } = this.state;
+
+    offGameAction(this.handleReceiveGameAction);
+
+    if (backfillId) {
+      cancelBackfill(backfillId);
     }
   }
-
-  handleOpenGame = async (gameId: GameId) => {
-    // console.log('[SOCKET] open-game', gameId);
-    getSocket().emit('open-game', gameId);
-
-    // Ensure game state is up to date
-    await this.backfill();
-  };
-
-  handleCloseGame = (gameId: GameId) => {
-    // console.log('[SOCKET] close-game', gameId);
-    getSocket().emit('close-game', gameId);
-  };
 
   handleReceiveGameAction = (action: GameAction) => {
     // console.log('[SOCKET] On game-action', action);
 
     const { state, dispatch } = this.props;
-    const { isBackfilling, pendingActions } = this.state;
+    const { backfillId, pendingActions } = this.state;
 
-    if (isBackfilling) {
+    if (backfillId) {
       this.setState({
         pendingActions: [...pendingActions, action]
       });
@@ -97,45 +76,66 @@ class SocketProviderInner extends Component<Props, LocalState> {
         // There's no previous player action to follow when user just joined
         dispatch(action);
       } else {
-        // TODO: Extend to work with multiple games in state
-        const curGame = getCurGame(state);
+        const { gameId } = action.payload;
+        const game = state.games[gameId];
 
-        if (isValidGameAction(curGame, action)) {
+        if (!game) {
+          this.loadGame(gameId);
+        } else if (isValidGameAction(game, action)) {
           dispatch(action);
         } else {
           // The action will be discarded for now, but it will show up again
           // during backfill
-          this.backfill();
+          this.startBackfill(gameId);
         }
       }
     }
   };
 
-  async backfill() {
-    console.warn('Backfilling...');
+  handleSubscribe = (roomId: RoomId) => {
+    subscribe(roomId);
 
-    // TODO: Extend to work with multiple games in state
-    const curGame = getCurGame(this.props.state);
+    if (roomId !== 'global') {
+      this.startBackfill(roomId);
+    }
+  };
+
+  async loadGame(gameId: GameId) {
+    console.log(`Detected new game ${gameId}...`);
+
+    const { dispatch } = this.props;
+    const game = await getGame(gameId);
+    dispatch(addGame(game));
+  }
+
+  startBackfill(gameId: GameId) {
+    console.log(`Backfilling ${gameId}...`);
+
+    const { games } = this.props.state;
+    const backfillId = startBackfill(
+      games[gameId],
+      this.handleBackfillComplete
+    );
 
     this.setState({
-      isBackfilling: true,
+      backfillId,
       pendingActions: []
     });
+  }
 
-    const backfillRanges = getBackfillRanges([curGame]);
-    const backfillRes = await backfillGameActions(backfillRanges);
+  handleBackfillComplete = (res: BackfillResponse) => {
+    const { pendingActions } = this.state;
 
-    const mergedActions = [
-      ...backfillRes[curGame.id],
-      ...this.state.pendingActions
-    ];
+    const mergedActions = [...res, ...pendingActions];
     const uniqActions = uniqWith(mergedActions, compareGameActions);
 
     this.setState({
-      isBackfilling: false,
+      backfillId: null,
       pendingActions: []
     });
 
+    // TODO: Determine if actions are compatible with game state, and if not
+    // remove game from state completely
     // TODO: Dispatch events at an interval, to convey the rhythm in
     // which the actions were originally performed
     uniqActions.forEach(this.props.dispatch);
@@ -144,23 +144,21 @@ class SocketProviderInner extends Component<Props, LocalState> {
     console.log(
       `Backfilled ${uniqActions.length} actions (${numDupes} dupes).`
     );
-  }
+  };
 
-  handleBroadcastGameAction = (action: Action) => {
+  handleBroadcastGameAction = (action: GameAction) => {
     const { dispatch } = this.props;
-    const { isBackfilling } = this.state;
+    const { backfillId } = this.state;
 
     // Disallow user to mutate state until it's up to date with server
-    if (isBackfilling) {
+    if (backfillId !== null) {
       console.warn('Action broadcast denied while backfilling.');
       return;
     }
 
     // The final action is returned from async thunk actions
     const resAction: Action = dispatch(action);
-
-    // console.log('[SOCKET] Emit game-action', resAction);
-    getSocket().emit('game-action', resAction);
+    broadcastAction(resAction);
 
     // Allow callers to chain broadcasted actions
     return resAction;
@@ -169,16 +167,6 @@ class SocketProviderInner extends Component<Props, LocalState> {
   render() {
     return this.props.children;
   }
-}
-
-function getBackfillRanges(games: Array<Game>): BackfillRanges {
-  return games.map(game => ({
-    gameId: game.id,
-    players: game.players.map(p => ({
-      userId: p.user.id,
-      from: p.lastActionId
-    }))
-  }));
 }
 
 function compareGameActions(a1: GameAction, a2: GameAction): boolean {

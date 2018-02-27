@@ -67,8 +67,7 @@ export type Games = {
 
 export type State = {
   jsReady: boolean,
-  gameCount: number,
-  games: Games,
   curUser: ?User,
+  games: Games,
   curGame: ?GameId
 };

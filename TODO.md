@@ -114,8 +114,14 @@
 * [ ] Index page
   * [x] Create reduxState.games
   * [x] List all games
+  * [x] Beautiful grid
+  * [x] Animating games
+  * [x] Strip game effects when going back to index page
+  * [x] Push new games to dashboard
+  * [ ] Remove inactive games
+  * [ ] Show blank state when no active games exist
   * [ ] Sort and limit games based on relevancy (active 1p, active 2p, [inactive 1p, inactive 2p])
-  * [ ] Beautiful grid with animating games
+  * [ ] Style layout
 * [ ] Game footer
 * [ ] Improve onboarding
   * [ ] Screen 1: Rules
@@ -124,7 +130,6 @@
   * [ ] Screen 2: Controls
     * [ ] Keyboard (arrows and space bar)
     * [ ] Touch (portrait and landscape)
-* [ ] Notify 1p when 2p arrives via web Notifications API
 * [ ] Log errors and stats
   * [ ] componentDidCatch
 * [ ] [1.0]
@@ -139,6 +144,8 @@ OPTIMIZATIONS
 
 BACKLOG
 
+* [ ] Notify 1p when 2p arrives via web Notifications API
+      https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API/
 * [ ] Freeze game on player disconnect (Keep seat taken in case user returns)
 * [ ] Throttle key down events
 * [ ] Create drop shadow from active Tetromino

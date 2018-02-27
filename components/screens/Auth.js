@@ -2,7 +2,7 @@
 
 import React, { Fragment, Component } from 'react';
 import { connect } from 'react-redux';
-import { auth } from '../../actions/user';
+import { auth } from '../../actions/global';
 import { MAX_NAME_LENGTH } from '../../constants/user';
 import { createUserSession } from '../../utils/api';
 import { isMobileDevice } from '../../utils/events';

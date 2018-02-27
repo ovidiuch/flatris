@@ -12,15 +12,14 @@ export function withSocket(
   CompType: ComponentType<*>,
   syncActions: {
     [propName: string]: (...args: any) => Action | ThunkAction
-  }
+  } = {}
 ) {
   class SocketConnect extends Component<Props> {
     static displayName = `SocketConnect(${CompType.displayName ||
       CompType.name})`;
 
     static contextTypes = {
-      openGame: func.isRequired,
-      closeGame: func.isRequired,
+      subscribe: func.isRequired,
       broadcastGameAction: func.isRequired
     };
 
@@ -33,15 +32,16 @@ export function withSocket(
     };
 
     render() {
-      const { openGame, closeGame } = this.context;
-      const actions = {
-        openGame,
-        closeGame
-      };
-
-      Object.keys(syncActions).forEach(actionName => {
-        actions[actionName] = this.createActionHandler(actionName);
-      });
+      const { subscribe } = this.context;
+      const actions = Object.keys(syncActions).reduce(
+        (acc, actionName) => {
+          return {
+            ...acc,
+            [actionName]: this.createActionHandler(actionName)
+          };
+        },
+        { subscribe }
+      );
 
       return <CompType {...this.props} {...actions} />;
     }

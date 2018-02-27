@@ -8,7 +8,6 @@ import GameContainer from './components/containers/GameContainer';
 import { createStore } from './store';
 
 import type { ComponentType, Node } from 'react';
-import type { GameId } from './types/state';
 import type { Action, ThunkAction } from './types/actions';
 
 type LinkedItem<Item> = {
@@ -73,25 +72,19 @@ type SocketProviderProps = {
 
 class SocketProviderRaw extends Component<SocketProviderProps> {
   static childContextTypes = {
-    openGame: func.isRequired,
-    closeGame: func.isRequired,
+    subscribe: func.isRequired,
     broadcastGameAction: func.isRequired
   };
 
   getChildContext() {
     return {
-      openGame: this.handleOpenGame,
-      closeGame: this.handleCloseGame,
+      subscribe: this.handleFollowGames,
       broadcastGameAction: this.handleBroadcastGameAction
     };
   }
 
-  handleOpenGame = (gameId: GameId) => {
-    console.log('[SOCKET] open-game', gameId);
-  };
-
-  handleCloseGame = (gameId: GameId) => {
-    console.log('[SOCKET] close-game', gameId);
+  handleFollowGames = following => {
+    console.log('Follow games', following);
   };
 
   handleBroadcastGameAction = (action: Action) => {

@@ -1,55 +1,43 @@
 // @flow
 
 import React, { Component } from 'react';
-import Link from 'next/link';
+
 import withRedux from 'next-redux-wrapper';
 import { createStore } from '../store';
-import { loadDashboard } from '../actions/dashboard';
+import { loadDashboard, stripGameEffects } from '../actions/global';
 import { addCurUserToState, getDashboard } from '../utils/api';
+import { SocketProvider } from '../components/socket/SocketProvider';
 import Layout from '../components/Layout';
+import Dashboard from '../components/Dashboard';
 
-import type { Games } from '../types/state';
-
-type Props = {
-  gameCount: number,
-  games: Games
-};
+type Props = {};
 
 class IndexPage extends Component<Props> {
-  static async getInitialProps({ req, store }): Promise<Props> {
+  static async getInitialProps({ req, store }) {
+    const { dispatch } = store;
+
     // Food for thought: How to not duplicate this on every page
     if (req) {
       await addCurUserToState(req, store);
+
+      // Only do this on the server. Get new games via `global` websocket room
+      const dashboardState = await getDashboard();
+      dispatch(loadDashboard(dashboardState));
     }
 
-    const dashboardState = await getDashboard();
-    store.dispatch(loadDashboard(dashboardState));
-
-    return dashboardState;
+    // Client-side: Strip game effects before loading dashboard when going back
+    // from game page
+    if (!req) {
+      dispatch(stripGameEffects());
+    }
   }
 
   render() {
-    const { gameCount, games } = this.props;
-
     return (
       <Layout>
-        <p>
-          <Link href="/new">
-            <a>Create game</a>
-          </Link>
-        </p>
-        <p>
-          Games: <strong>{gameCount}</strong>
-        </p>
-        <ul>
-          {Object.keys(games).map(gameId => (
-            <li key={gameId}>
-              <Link prefetch href={`/join?g=${gameId}`} as={`/join/${gameId}`}>
-                <a>{gameId}</a>
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <SocketProvider>
+          <Dashboard />
+        </SocketProvider>
       </Layout>
     );
   }

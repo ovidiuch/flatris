@@ -18,7 +18,6 @@ export type AuthAction = {
 export type DashboardLoadAction = {
   type: 'LOAD_DASHBOARD',
   payload: {
-    gameCount: number,
     games: Games
   }
 };
@@ -35,6 +34,14 @@ export type OpenGameAction = {
   payload: {
     gameId: GameId
   }
+};
+
+export type CloseGameAction = {
+  type: 'CLOSE_GAME'
+};
+
+export type StripGameEffectsAction = {
+  type: 'STRIP_GAME_EFFECTS'
 };
 
 export type JoinGameAction = {
@@ -169,6 +176,8 @@ export type Action =
   | DashboardLoadAction
   | AddGameAction
   | OpenGameAction
+  | CloseGameAction
+  | StripGameEffectsAction
   | GameAction;
 
 export type GetState = () => State;
@@ -179,11 +188,3 @@ export type ThunkAction = (
 ) => void | Action;
 
 export type Dispatch = (Action | ThunkAction) => Action;
-
-export type BackfillRanges = Array<{
-  gameId: GameId,
-  players: Array<{
-    userId: UserId,
-    from: number
-  }>
-}>;

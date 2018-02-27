@@ -1,11 +1,12 @@
 // @flow
 
 import socketIo from 'socket.io';
+import { omit, difference } from 'lodash';
 import { gameReducer } from '../reducers/game';
 import { games, saveGameAction } from './db';
 
-import type { GameId } from '../types/state';
 import type { GameAction } from '../types/actions';
+import type { RoomId } from '../types/api';
 
 export function attachSocket(server: net$Server) {
   const io = socketIo(server);
@@ -13,16 +14,15 @@ export function attachSocket(server: net$Server) {
   io.on('connect', socket => {
     console.log('New socket connection');
 
-    socket.on('open-game', (gameId: GameId) => {
-      console.log(`Game opened ${gameId}`);
+    socket.on('subscribe', (roomId: RoomId) => {
+      console.log(`[SOCKET] subscribe ${roomId}`);
 
-      socket.join(gameId);
-    });
+      const prevRooms = Object.keys(omit(socket.rooms, socket.id));
+      const roomsToJoin = difference([roomId], prevRooms);
+      const roomsToLeave = difference(prevRooms, [roomId]);
 
-    socket.on('close-game', (gameId: GameId) => {
-      console.log(`Game closed ${gameId}`);
-
-      socket.leave(gameId);
+      socket.join(roomsToJoin);
+      roomsToLeave.forEach(gameId => socket.leave(gameId));
     });
 
     socket.on('game-action', (action: GameAction) => {
@@ -35,7 +35,11 @@ export function attachSocket(server: net$Server) {
         saveGameAction(action);
         games[gameId] = gameReducer(games[gameId], action);
 
-        socket.to(gameId).broadcast.emit('game-action', action);
+        socket
+          .to(gameId)
+          // TODO: Filter which actions get sent to `global` if volume is high
+          .to('global')
+          .broadcast.emit('game-action', action);
       }
     });
   });
