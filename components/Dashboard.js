@@ -3,7 +3,7 @@
 import React, { Fragment, Component } from 'react';
 import Link from 'next/link';
 import { connect } from 'react-redux';
-import { closeGame } from '../actions/dashboard';
+import { closeGame } from '../actions/global';
 import { withSocket } from './socket/SocketConnect';
 import GamePreview from './GamePreview';
 

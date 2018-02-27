@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 
 import withRedux from 'next-redux-wrapper';
 import { createStore } from '../store';
-import { loadDashboard } from '../actions/dashboard';
+import { loadDashboard } from '../actions/global';
 import { addCurUserToState, getDashboard } from '../utils/api';
 import { SocketProvider } from '../components/socket/SocketProvider';
 import Layout from '../components/Layout';

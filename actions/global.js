@@ -1,13 +1,20 @@
 // @flow
-// TODO: Rename to global.js and add user action here
 
-import type { GameId, Game, Games } from '../types/state';
+import type { User, GameId, Game, Games } from '../types/state';
 import type {
+  AuthAction,
   DashboardLoadAction,
   AddGameAction,
   OpenGameAction,
   CloseGameAction
 } from '../types/actions';
+
+export function auth(user: User): AuthAction {
+  return {
+    type: 'AUTH',
+    payload: { user }
+  };
+}
 
 export function loadDashboard({
   gameCount,
