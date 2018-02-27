@@ -5,6 +5,7 @@ import {
   sessions,
   games,
   gameActions,
+  activeGames,
   insertUser,
   insertSession,
   insertGame
@@ -17,8 +18,9 @@ import type { SessionId } from './db';
 export function addRoutes(app: express$Application) {
   app.get('/dashboard', (req: express$Request, res: express$Response) => {
     res.json({
-      // TODO: Filter out inactive games
-      games
+      // NOTE: This is returned as an array instead of map in order to allow
+      // sorting in the future
+      games: activeGames.map(gameId => games[gameId])
     });
   });
 

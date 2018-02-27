@@ -3,7 +3,9 @@
 import React, { Fragment, Component } from 'react';
 import Link from 'next/link';
 import { connect } from 'react-redux';
-import { closeGame } from '../actions/global';
+import { GAME_INACTIVE_TIMEOUT } from '../constants/timeouts';
+import { createTimeoutBumper } from '../utils/timeout-bumper';
+import { closeGame, removeGame } from '../actions/global';
 import { withSocket } from './socket/SocketConnect';
 import GamePreview from './GamePreview';
 
@@ -14,12 +16,24 @@ type Props = {
   games: Games,
   curGame: ?GameId,
   subscribe: (roomId: RoomId) => mixed,
-  closeGame: () => mixed
+  closeGame: () => mixed,
+  removeGame: (gameId: GameId) => mixed
 };
 
 class Dashboard extends Component<Props> {
+  bumpTimeout: (id: string) => mixed;
+
+  constructor(props) {
+    super(props);
+
+    this.bumpTimeout = createTimeoutBumper({
+      handlerCreator: this.createGameInactiveHandler,
+      timeout: GAME_INACTIVE_TIMEOUT
+    });
+  }
+
   componentDidMount() {
-    const { curGame, subscribe, closeGame } = this.props;
+    const { games, curGame, subscribe, closeGame } = this.props;
 
     subscribe('global');
 
@@ -27,7 +41,22 @@ class Dashboard extends Component<Props> {
     if (curGame) {
       closeGame();
     }
+
+    Object.keys(games).forEach(this.bumpTimeout);
   }
+
+  componentDidUpdate({ games: prevGames }) {
+    const { games } = this.props;
+    Object.keys(games).forEach(gameId => {
+      if (games[gameId] !== prevGames[gameId]) {
+        this.bumpTimeout(gameId);
+      }
+    });
+  }
+
+  createGameInactiveHandler = (gameId: GameId) => () => {
+    this.props.removeGame(gameId);
+  };
 
   render() {
     const { games } = this.props;
@@ -84,7 +113,7 @@ function mapStateToProps({ games, curGame }: State): $Shape<Props> {
   };
 }
 
-const mapDispatchToProps = { closeGame };
+const mapDispatchToProps = { closeGame, removeGame };
 
 export default connect(mapStateToProps, mapDispatchToProps)(
   withSocket(Dashboard)

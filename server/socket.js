@@ -3,7 +3,7 @@
 import socketIo from 'socket.io';
 import { omit, difference } from 'lodash';
 import { gameReducer } from '../reducers/game';
-import { games, saveGameAction } from './db';
+import { games, saveGameAction, bumpActiveGame } from './db';
 
 import type { GameAction } from '../types/actions';
 import type { RoomId } from '../types/api';
@@ -34,6 +34,9 @@ export function attachSocket(server: net$Server) {
       } else {
         saveGameAction(action);
         games[gameId] = gameReducer(games[gameId], action);
+
+        // As long as games receive actions they are marked as active
+        bumpActiveGame(gameId);
 
         socket
           .to(gameId)

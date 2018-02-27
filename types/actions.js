@@ -1,6 +1,6 @@
 // @flow
 
-import type { UserId, User, GameId, Game, Games, State } from './state';
+import type { UserId, User, GameId, Game, State } from './state';
 
 export type ActionId = number;
 
@@ -18,7 +18,7 @@ export type AuthAction = {
 export type DashboardLoadAction = {
   type: 'LOAD_DASHBOARD',
   payload: {
-    games: Games
+    games: Array<Game>
   }
 };
 
@@ -26,6 +26,13 @@ export type AddGameAction = {
   type: 'ADD_GAME',
   payload: {
     game: Game
+  }
+};
+
+export type RemoveGameAction = {
+  type: 'REMOVE_GAME',
+  payload: {
+    gameId: GameId
   }
 };
 
@@ -175,6 +182,7 @@ export type Action =
   | AuthAction
   | DashboardLoadAction
   | AddGameAction
+  | RemoveGameAction
   | OpenGameAction
   | CloseGameAction
   | StripGameEffectsAction

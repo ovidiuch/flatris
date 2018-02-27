@@ -8,7 +8,7 @@ import { getGame } from '../../utils/api';
 import { getSocket } from '../../utils/socket';
 import { startBackfill, cancelBackfill } from '../../utils/backfill';
 import { isValidGameAction } from '../../reducers/game';
-import { addGame } from '../../actions/global';
+import { addGame, removeGame } from '../../actions/global';
 
 import type { Node } from 'react';
 import type { Dispatch } from 'redux'; // eslint-disable-line import/named

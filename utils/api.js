@@ -6,7 +6,7 @@ import { getValidUser } from '../utils/validation';
 import { auth } from '../actions/global';
 
 import type { Store } from 'redux'; // eslint-disable-line import/named
-import type { User, GameId, Game, Games, State } from '../types/state';
+import type { User, GameId, Game, State } from '../types/state';
 import type { Action } from '../types/actions';
 import type { BackfillRequest, BackfillResponse } from '../types/api';
 
@@ -36,7 +36,7 @@ export async function createUserSession(userName: string): Promise<User> {
 }
 
 export async function getDashboard(): Promise<{
-  games: Games
+  games: Array<Game>
 }> {
   return fetchJson(`/dashboard`);
 }
