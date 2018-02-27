@@ -118,8 +118,8 @@
   * [x] Animating games
   * [x] Strip game effects when going back to index page
   * [x] Push new games to dashboard
-    * [ ] Remove inactive games
-    * [ ] Dispatch game count updates to `global` subscribers
+  * [ ] Remove inactive games
+  * [ ] Show blank state when no active games exist
   * [ ] Sort and limit games based on relevancy (active 1p, active 2p, [inactive 1p, inactive 2p])
   * [ ] Style layout
 * [ ] Game footer

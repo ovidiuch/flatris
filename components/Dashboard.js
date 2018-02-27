@@ -34,36 +34,44 @@ class Dashboard extends Component<Props> {
   render() {
     const { games } = this.props;
 
-    // FIXME: Link/a/GamePreview
     return (
       <Fragment>
-        <p>
+        <div className="header">
           <Link href="/new">
             <a>Create game</a>
           </Link>
-        </p>
+        </div>
         <div className="game-grid">
           {Object.keys(games).map(gameId => (
-            <div className="game-preview" key={gameId}>
-              <Link prefetch href={`/join?g=${gameId}`} as={`/join/${gameId}`}>
-                <a>
-                  <GamePreview curUser={null} game={games[gameId]} />
-                </a>
-              </Link>
-            </div>
+            <Link
+              key={gameId}
+              prefetch
+              href={`/join?g=${gameId}`}
+              as={`/join/${gameId}`}
+            >
+              <div className="game-preview">
+                <GamePreview curUser={null} game={games[gameId]} />
+              </div>
+            </Link>
           ))}
         </div>
         <style jsx>{`
+          .header {
+            margin: 20px;
+          }
+
           .game-grid {
             overflow: hidden; /* clear the floats old school style */
           }
+
           .game-preview {
             float: left;
             position: relative;
             width: 320px;
             height: 400px;
-            margin: 20px;
+            margin: 0 0 20px 20px;
             font-size: 12px;
+            cursor: pointer;
           }
         `}</style>
       </Fragment>
