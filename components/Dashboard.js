@@ -59,11 +59,10 @@ class Dashboard extends Component<Props> {
         </div>
         <style jsx>{`
           .game-grid {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
+            overflow: hidden; /* clear the floats old school style */
           }
           .game-preview {
+            float: left;
             position: relative;
             width: 320px;
             height: 400px;
