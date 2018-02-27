@@ -45,13 +45,14 @@ import WaitingForOther from './screens/WaitingForOther';
 import GameOver from './screens/GameOver';
 
 import type { Node } from 'react';
-import type { User, Game, Following, State } from '../types/state';
+import type { User, Game, State } from '../types/state';
+import type { RoomId } from '../types/api';
 
 type Props = {
   jsReady: boolean,
   curUser: ?User,
   game: Game,
-  followGames: (following: Following) => mixed,
+  subscribe: (roomId: RoomId) => mixed,
   joinGame: typeof joinGame,
   playerReady: typeof playerReady,
   playerPause: typeof playerPause,
@@ -79,10 +80,10 @@ class FlatrisGame extends Component<Props, LocalState> {
   };
 
   componentDidMount() {
-    const { curUser, game, followGames } = this.props;
+    const { curUser, game, subscribe } = this.props;
 
     // Subscribe to socket messages for this game
-    followGames([game.id]);
+    subscribe(game.id);
 
     // Start game if playing user returned after possibly being disconnected
     if (isPlayer(game, curUser) && allPlayersReady(game)) {

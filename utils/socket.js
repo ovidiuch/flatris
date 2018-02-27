@@ -3,8 +3,8 @@
 import io from 'socket.io-client';
 import { getApiUrl } from '../utils/api';
 
-import type { GameId } from '../types/state';
-import type { GameAction } from '../types/actions';
+import type { Action, GameAction } from '../types/actions';
+import type { RoomId } from '../types/api';
 
 type GameActionHandler = (action: GameAction) => void;
 
@@ -15,9 +15,9 @@ export function getSocket() {
     socket = io(getApiUrl());
   }
 
-  function followGames(gameIds: Array<GameId>) {
-    // console.log('[SOCKET] follow-games', gameIds);
-    socket.emit('follow-games', gameIds);
+  function subscribe(roomId: RoomId) {
+    console.log('[SOCKET] subscribe', roomId);
+    socket.emit('subscribe', roomId);
   }
 
   function onGameAction(handler: GameActionHandler) {
@@ -28,13 +28,13 @@ export function getSocket() {
     socket.off('game-action', handler);
   }
 
-  function broadcastAction(action: GameAction) {
+  function broadcastAction(action: Action) {
     // console.log('[SOCKET] Emit game-action', resAction);
     socket.emit('game-action', action);
   }
 
   return {
-    followGames,
+    subscribe,
     onGameAction,
     offGameAction,
     broadcastAction

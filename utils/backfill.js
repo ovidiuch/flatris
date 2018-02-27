@@ -3,24 +3,24 @@
 import { backfillGameActions } from '../utils/api';
 
 import type { Game } from '../types/state';
-import type { BackfillRanges, BackfillResult } from '../types/backfill';
+import type { BackfillRequest, BackfillResponse } from '../types/api';
 
 let lastBackfillId = 0;
 let backfillCanceled = false;
 
 export function startBackfill(
-  games: Array<Game>,
-  onComplete: (result: BackfillResult) => void
+  game: Game,
+  onComplete: (result: BackfillResponse) => void
 ): number {
   const backfillId = ++lastBackfillId;
   backfillCanceled = false;
 
-  const ranges = getBackfillRanges(games);
-  backfillGameActions(ranges).then(result => {
+  const req = getBackfillReq(game);
+  backfillGameActions(req).then(res => {
     // Backfill will be cancelled either via cancelBackfill or if a new
     // backfill is requested (ie. only one backfill can occur at the same time)
     if (lastBackfillId === backfillId && !backfillCanceled) {
-      onComplete(result);
+      onComplete(res);
     }
   });
 
@@ -33,12 +33,12 @@ export function cancelBackfill(backfillId: number) {
   }
 }
 
-function getBackfillRanges(games: Array<Game>): BackfillRanges {
-  return games.map(game => ({
+function getBackfillReq(game: Game): BackfillRequest {
+  return {
     gameId: game.id,
     players: game.players.map(p => ({
       userId: p.user.id,
       from: p.lastActionId
     }))
-  }));
+  };
 }

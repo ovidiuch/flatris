@@ -7,22 +7,22 @@ import { closeGame } from '../actions/global';
 import { withSocket } from './socket/SocketConnect';
 import GamePreview from './GamePreview';
 
-import type { GameId, Games, Following, State } from '../types/state';
+import type { GameId, Games, State } from '../types/state';
+import type { RoomId } from '../types/api';
 
 type Props = {
   gameCount: number,
   games: Games,
   curGame: ?GameId,
-  followGames: (following: Following) => mixed,
+  subscribe: (roomId: RoomId) => mixed,
   closeGame: () => mixed
 };
 
 class Dashboard extends Component<Props> {
   componentDidMount() {
-    const { games, curGame, followGames, closeGame } = this.props;
+    const { curGame, subscribe, closeGame } = this.props;
 
-    // TODO: Only follow games that are visible in window viewport
-    followGames(Object.keys(games));
+    subscribe('global');
 
     // clear state.curGame when navigating back to dashboard from game page
     if (curGame) {

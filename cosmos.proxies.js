@@ -72,13 +72,13 @@ type SocketProviderProps = {
 
 class SocketProviderRaw extends Component<SocketProviderProps> {
   static childContextTypes = {
-    followGames: func.isRequired,
+    subscribe: func.isRequired,
     broadcastGameAction: func.isRequired
   };
 
   getChildContext() {
     return {
-      followGames: this.handleFollowGames,
+      subscribe: this.handleFollowGames,
       broadcastGameAction: this.handleBroadcastGameAction
     };
   }

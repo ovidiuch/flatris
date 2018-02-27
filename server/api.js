@@ -10,9 +10,8 @@ import {
   insertGame
 } from './db';
 
-import type { User, GameId } from '../types/state';
-import type { GameAction } from '../types/actions';
-import type { BackfillRanges } from '../types/backfill';
+import type { User } from '../types/state';
+import type { BackfillRequest, BackfillResponse } from '../types/api';
 import type { SessionId } from './db';
 
 export function addRoutes(app: express$Application) {
@@ -51,9 +50,9 @@ export function addRoutes(app: express$Application) {
   app.post('/backfill', (req: express$Request, res: express$Response) => {
     try {
       console.log('Backfill...');
-      console.log(JSON.stringify(req.body.ranges, null, 2));
+      console.log(JSON.stringify(req.body, null, 2));
 
-      const ranges = extractBackfillRanges(req.body.ranges);
+      const ranges = extractBackfillRanges(req.body);
       const actions = getBackfillActions(ranges);
 
       res.json(actions);
@@ -100,60 +99,46 @@ function getUserFromReqSession(req: express$Request): User {
   return users[userId];
 }
 
-function extractBackfillRanges(ranges: mixed): BackfillRanges {
-  if (!ranges || !Array.isArray(ranges)) {
+function extractBackfillRanges(req: mixed): BackfillRequest {
+  if (!req || typeof req !== 'object') {
     throw new Error('Invalid backfill ranges');
   }
 
-  return ranges.map(gameRanges => {
-    if (!gameRanges || typeof gameRanges !== 'object') {
-      throw new Error('Invalid backfill ranges');
-    }
+  const { gameId, players } = req;
+  if (typeof gameId !== 'string' || !Array.isArray(players)) {
+    throw new Error('Invalid backfill ranges');
+  }
 
-    const { gameId, players } = gameRanges;
-    if (typeof gameId !== 'string' || !Array.isArray(players)) {
-      throw new Error('Invalid backfill ranges');
-    }
+  return {
+    gameId,
+    players: players.map(playerRange => {
+      if (!playerRange || typeof playerRange !== 'object') {
+        throw new Error('Invalid backfill ranges');
+      }
 
-    return {
-      gameId,
-      players: players.map(playerRange => {
-        if (!playerRange || typeof playerRange !== 'object') {
-          throw new Error('Invalid backfill ranges');
-        }
+      const { userId, from } = playerRange;
+      if (typeof userId !== 'string' || typeof from !== 'number') {
+        throw new Error('Invalid backfill ranges');
+      }
 
-        const { userId, from } = playerRange;
-        if (typeof userId !== 'string' || typeof from !== 'number') {
-          throw new Error('Invalid backfill ranges');
-        }
-
-        return {
-          userId,
-          from
-        };
-      })
-    };
-  });
+      return {
+        userId,
+        from
+      };
+    })
+  };
 }
 
-function getBackfillActions(
-  ranges: BackfillRanges
-): { [GameId]: Array<GameAction> } {
-  const actions = {};
+function getBackfillActions(req: BackfillRequest): BackfillResponse {
+  return gameActions[req.gameId].filter(action => {
+    const player = req.players.find(
+      ({ userId }) => userId === action.payload.userId
+    );
 
-  ranges.forEach(({ gameId, players }) => {
-    actions[gameId] = gameActions[gameId].filter(action => {
-      const player = players.find(
-        ({ userId }) => userId === action.payload.userId
-      );
-
-      return (
-        // Include all actions of users that the user who requested the backfill
-        // isn't aware of (ie. users that joined since last backfill)
-        !player || (player && action.payload.actionId > player.from)
-      );
-    });
+    return (
+      // Include all actions of users that the user who requested the backfill
+      // isn't aware of (ie. users that joined since last backfill)
+      !player || (player && action.payload.actionId > player.from)
+    );
   });
-
-  return actions;
 }

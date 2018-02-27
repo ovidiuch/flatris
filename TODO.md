@@ -116,8 +116,9 @@
   * [x] List all games
   * [x] Beautiful grid
   * [x] Animating games
-    * [ ] Only subscribe to games visible in viewport
-  * [ ] Push new games to dashboard
+  * [x] Push new games to dashboard
+    * [ ] Remove inactive games
+    * [ ] Dispatch game count updates to `global` subscribers
   * [ ] Sort and limit games based on relevancy (active 1p, active 2p, [inactive 1p, inactive 2p])
   * [ ] Style layout
 * [ ] Game footer

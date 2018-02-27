@@ -1,46 +1,41 @@
 // @flow
 
 import { func } from 'prop-types';
-import { isEqual, uniqWith } from 'lodash';
+import { uniqWith } from 'lodash';
 import { Component } from 'react';
 import { connect } from 'react-redux';
+import { getGame } from '../../utils/api';
 import { getSocket } from '../../utils/socket';
 import { startBackfill, cancelBackfill } from '../../utils/backfill';
 import { isValidGameAction } from '../../reducers/game';
+import { addGame } from '../../actions/global';
 
 import type { Node } from 'react';
 import type { Dispatch } from 'redux'; // eslint-disable-line import/named
-import type { Following, State } from '../../types/state';
-import type { GameAction } from '../../types/actions';
-import type { BackfillResult } from '../../types/backfill';
+import type { GameId, State } from '../../types/state';
+import type { Action, GameAction } from '../../types/actions';
+import type { RoomId, BackfillResponse } from '../../types/api';
 
-const {
-  followGames,
-  onGameAction,
-  offGameAction,
-  broadcastAction
-} = getSocket();
+const { subscribe, onGameAction, offGameAction, broadcastAction } = getSocket();
 
 type Props = {
   children: Node,
   state: State,
-  dispatch: Dispatch<GameAction>
+  dispatch: Dispatch<Action>
 };
 
 type LocalState = {
-  following: Following,
   backfillId: ?number,
   pendingActions: Array<GameAction>
 };
 
 class SocketProviderInner extends Component<Props, LocalState> {
   static childContextTypes = {
-    followGames: func.isRequired,
+    subscribe: func.isRequired,
     broadcastGameAction: func.isRequired
   };
 
   state = {
-    following: [],
     backfillId: null,
     pendingActions: []
   };
@@ -51,7 +46,7 @@ class SocketProviderInner extends Component<Props, LocalState> {
 
   getChildContext() {
     return {
-      followGames: this.handleFollowGames,
+      subscribe: this.handleSubscribe,
       broadcastGameAction: this.handleBroadcastGameAction
     };
   }
@@ -85,37 +80,40 @@ class SocketProviderInner extends Component<Props, LocalState> {
         const game = state.games[gameId];
 
         if (!game) {
-          throw new Error('Received action for missing game');
-        }
-
-        if (isValidGameAction(game, action)) {
+          this.loadGame(gameId);
+        } else if (isValidGameAction(game, action)) {
           dispatch(action);
         } else {
           // The action will be discarded for now, but it will show up again
           // during backfill
-          this.startBackfill();
+          this.startBackfill(gameId);
         }
       }
     }
   };
 
-  handleFollowGames = following => {
-    if (!isEqual(following, this.state.following)) {
-      followGames(following);
+  handleSubscribe = (roomId: RoomId) => {
+    subscribe(roomId);
 
-      // Auto-backfill to ensure states are up to date
-      this.setState({ following }, this.startBackfill);
+    if (roomId !== 'global') {
+      this.startBackfill(roomId);
     }
   };
 
-  startBackfill() {
+  async loadGame(gameId: GameId) {
+    console.log(`Detected new game ${gameId}...`);
+
+    const { dispatch } = this.props;
+    const game = await getGame(gameId);
+    dispatch(addGame(game));
+  }
+
+  startBackfill(gameId: GameId) {
+    console.log(`Backfilling ${gameId}...`);
+
     const { games } = this.props.state;
-    const { following } = this.state;
-
-    console.log(`Backfilling ${following.join(', ')}...`);
-
     const backfillId = startBackfill(
-      following.map(id => games[id]),
+      games[gameId],
       this.handleBackfillComplete
     );
 
@@ -125,14 +123,10 @@ class SocketProviderInner extends Component<Props, LocalState> {
     });
   }
 
-  handleBackfillComplete = (result: BackfillResult) => {
-    const { following, pendingActions } = this.state;
+  handleBackfillComplete = (res: BackfillResponse) => {
+    const { pendingActions } = this.state;
 
-    const backfilledActions = following.reduce(
-      (acc, gameId) => [...acc, ...result[gameId]],
-      []
-    );
-    const mergedActions = [...backfilledActions, ...pendingActions];
+    const mergedActions = [...res, ...pendingActions];
     const uniqActions = uniqWith(mergedActions, compareGameActions);
 
     this.setState({
@@ -140,6 +134,8 @@ class SocketProviderInner extends Component<Props, LocalState> {
       pendingActions: []
     });
 
+    // TODO: Determine if actions are compatible with game state, and if not
+    // remove game from state completely
     // TODO: Dispatch events at an interval, to convey the rhythm in
     // which the actions were originally performed
     uniqActions.forEach(this.props.dispatch);
@@ -161,7 +157,7 @@ class SocketProviderInner extends Component<Props, LocalState> {
     }
 
     // The final action is returned from async thunk actions
-    const resAction: GameAction = dispatch(action);
+    const resAction: Action = dispatch(action);
     broadcastAction(resAction);
 
     // Allow callers to chain broadcasted actions
