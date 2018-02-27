@@ -29,8 +29,6 @@ class Dashboard extends Component<Props> {
     }
   }
 
-  // TODO: Update state.following when state.games will update via websocket
-
   render() {
     const { games } = this.props;
 
