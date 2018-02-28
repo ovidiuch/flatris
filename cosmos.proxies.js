@@ -73,14 +73,14 @@ type SocketProviderProps = {
 class SocketProviderRaw extends Component<SocketProviderProps> {
   static childContextTypes = {
     subscribe: func.isRequired,
-    keepAlive: func.isRequired,
+    keepGameAlive: func.isRequired,
     broadcastGameAction: func.isRequired
   };
 
   getChildContext() {
     return {
       subscribe: this.handleSubscribe,
-      keepAlive: this.handleKeepAlive,
+      keepGameAlive: this.handleKeepGameAlive,
       broadcastGameAction: this.handleBroadcastGameAction
     };
   }
@@ -89,7 +89,7 @@ class SocketProviderRaw extends Component<SocketProviderProps> {
     console.log('Subscribe', roomId);
   };
 
-  handleKeepAlive = gameId => {
+  handleKeepGameAlive = gameId => {
     console.log('Keep alive', gameId);
   };
 

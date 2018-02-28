@@ -18,7 +18,7 @@ import type { RoomId, BackfillResponse } from '../../types/api';
 
 const {
   subscribe,
-  keepAlive,
+  keepGameAlive,
   onGameAction,
   offGameAction,
   onGameKeepAlive,
@@ -42,7 +42,7 @@ type LocalState = {
 class SocketProviderInner extends Component<Props, LocalState> {
   static childContextTypes = {
     subscribe: func.isRequired,
-    keepAlive: func.isRequired,
+    keepGameAlive: func.isRequired,
     broadcastGameAction: func.isRequired
   };
 
@@ -54,7 +54,7 @@ class SocketProviderInner extends Component<Props, LocalState> {
   getChildContext() {
     return {
       subscribe: this.handleSubscribe,
-      keepAlive: this.handleKeepAlive,
+      keepGameAlive: this.handleKeepGameAlive,
       broadcastGameAction: this.handleBroadcastGameAction
     };
   }
@@ -131,8 +131,8 @@ class SocketProviderInner extends Component<Props, LocalState> {
     }
   };
 
-  handleKeepAlive = (gameId: GameId) => {
-    keepAlive(gameId);
+  handleKeepGameAlive = (gameId: GameId) => {
+    keepGameAlive(gameId);
   };
 
   async loadGame(gameId: GameId) {

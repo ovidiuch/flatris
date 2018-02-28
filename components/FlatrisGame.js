@@ -54,7 +54,7 @@ type Props = {
   curUser: ?User,
   game: Game,
   subscribe: (roomId: RoomId) => mixed,
-  keepAlive: (gameId: GameId) => mixed,
+  keepGameAlive: (gameId: GameId) => mixed,
   joinGame: typeof joinGame,
   playerReady: typeof playerReady,
   playerPause: typeof playerPause,
@@ -133,8 +133,8 @@ class FlatrisGame extends Component<Props, LocalState> {
   }
 
   keepAlive = () => {
-    const { game, keepAlive } = this.props;
-    keepAlive(game.id);
+    const { game, keepGameAlive } = this.props;
+    keepGameAlive(game.id);
 
     const timeout = GAME_INACTIVE_TIMEOUT - 1000;
     this.keepAliveTimeout = setTimeout(this.keepAlive, timeout);

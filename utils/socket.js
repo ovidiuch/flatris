@@ -23,7 +23,7 @@ export function getSocket() {
     socket.emit('subscribe', roomId);
   }
 
-  function keepAlive(gameId: RoomId) {
+  function keepGameAlive(gameId: RoomId) {
     console.log('[SOCKET] keep-alive', gameId);
     socket.emit('game-keep-alive', gameId);
   }
@@ -59,7 +59,7 @@ export function getSocket() {
 
   return {
     subscribe,
-    keepAlive,
+    keepGameAlive,
     onGameAction,
     offGameAction,
     onGameKeepAlive,
