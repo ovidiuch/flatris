@@ -121,7 +121,7 @@ class Dashboard extends Component<Props, LocalState> {
       // In theory this should never be reached
       console.warn('Detected current game as inactive');
     } else {
-      console.log(`Removing inactive game ${gameId}`);
+      console.log('Removing inactive game', gameId);
       this.props.removeGame(gameId);
     }
   };

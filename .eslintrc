@@ -16,7 +16,7 @@
     "process": true
   },
   "rules": {
-    "no-console": "warn",
+    "no-console": "off",
     "flowtype/generic-spacing": "off"
   },
   "overrides": [
@@ -52,10 +52,7 @@
       }
     },
     {
-      "files": ["**/__fixtures__/**/*.js", "server.js"],
-      "rules": {
-        "no-console": "off"
-      }
+      "files": ["**/__fixtures__/**/*.js", "server.js"]
     }
   ]
 }

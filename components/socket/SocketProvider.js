@@ -112,13 +112,13 @@ class SocketProviderInner extends Component<Props, LocalState> {
     const { games } = this.props.state;
 
     if (!games[gameId]) {
-      console.log(`Detected new game via keep-alive ${gameId}`);
+      console.log('Detected new game via keep-alive', gameId);
       this.startBackfill(gameId);
     }
   };
 
   handleGameRemoved = (gameId: GameId) => {
-    console.log(`Received server notice of removed game ${gameId}`);
+    console.log('Received server notice of removed game', gameId);
 
     const { dispatch } = this.props;
     dispatch(removeGame(gameId));
