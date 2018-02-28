@@ -123,8 +123,9 @@
     * [x] Remove expired after 15 minutes
     * [x] Redirect to dashboard from expired game page
   * [ ] Style
-    * [ ] Style NEW GAME button
-    * [ ] Show blank state when no active games exist
+    * [x] Style NEW GAME button
+    * [x] Add Flatris header
+    * [x] Show blank state when no active games exist
     * [ ] Fade in fade out transition to game previews
     * [ ] Highlight already joined games
 * [ ] BUG: Reset losses when 2nd player joins

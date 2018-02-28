@@ -1,23 +1,27 @@
+// @flow
+
 import React from 'react';
 import Tetromino from './Tetromino';
 import { SHAPES } from '../constants/tetromino';
 
-const tetromino = 'Z';
+type Props = {
+  color?: string
+};
 
-export default () => (
+export default ({ color = '#34495f' }: Props) => (
   <div className="logo">
-    <Tetromino key={tetromino} color="#34495f" grid={SHAPES[tetromino]} />
+    <Tetromino color={color} grid={SHAPES.S} />
     <style jsx>{`
       .logo {
         position: absolute;
         width: 100%;
         height: 100%;
-        background: #fff;
+        overflow: hidden;
       }
 
-      .logo .tetromino {
-        top: 25%;
-        left: 12.5%;
+      .logo :global(.tetromino) {
+        width: calc(100% * 4 / 3);
+        height: 200%;
       }
     `}</style>
   </div>

@@ -218,6 +218,580 @@ exports[`Cosmos fixtures: Connect(Auth):disabled 1`] = `
 </div>
 `;
 
+exports[`Cosmos fixtures: Connect(NewGame):default 1`] = `
+<div
+  className="jsx-1613050951 outer"
+>
+  <div
+    className="jsx-1613050951 container"
+  >
+    <div
+      className="jsx-3372609668 screen-container"
+    >
+      <form
+        className="jsx-1749762593"
+        onSubmit={[Function]}
+      >
+        <div
+          className="jsx-2362338977 screen"
+        >
+          <div
+            className="jsx-1497761764 fade-in"
+          >
+            <h2
+              className="jsx-2362338977 title"
+            >
+              One sec...
+            </h2>
+            <div
+              className="jsx-2362338977 message"
+            >
+              <p
+                className="jsx-1749762593"
+                onClick={[Function]}
+              >
+                Enter your name
+              </p>
+              <p
+                className="jsx-1749762593"
+              >
+                <input
+                  className="jsx-1749762593"
+                  disabled={false}
+                  maxLength={14}
+                  onChange={[Function]}
+                  placeholder="Monkey"
+                  type="text"
+                  value=""
+                />
+              </p>
+              <p
+                className="jsx-1749762593"
+              >
+                <small
+                  className="jsx-1749762593"
+                >
+                  Fake names allowed ;-)
+                </small>
+              </p>
+            </div>
+          </div>
+          <div
+            className="jsx-2362338977 actions"
+          >
+            <div
+              className="jsx-2362338977 button"
+            >
+              <button
+                className="jsx-2576755423 button hover-button"
+                disabled={true}
+                type="submit"
+              >
+                Enter
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div
+      className="jsx-3372609668 side-container"
+    >
+      <div
+        className="jsx-215556098 game-panel"
+      >
+        <div
+          className="jsx-215556098 title"
+        >
+          <h1
+            className="jsx-215556098"
+          >
+            Flatris
+          </h1>
+        </div>
+        <div
+          className="jsx-215556098 next-label"
+        >
+          Next
+        </div>
+        <div
+          className="jsx-215556098 next-tetromino next-tetromino-L"
+        >
+          <div
+            className="jsx-2115617632 tetromino"
+          >
+            <div
+              className="jsx-4287887962 grid-square-block"
+              style={
+                Object {
+                  "left": "50%",
+                  "top": "0%",
+                }
+              }
+            >
+              <div
+                className="jsx-86954139 square-block"
+                style={
+                  Object {
+                    "backgroundColor": "#ed652f",
+                  }
+                }
+              />
+            </div>
+            <div
+              className="jsx-4287887962 grid-square-block"
+              style={
+                Object {
+                  "left": "0%",
+                  "top": "25%",
+                }
+              }
+            >
+              <div
+                className="jsx-86954139 square-block"
+                style={
+                  Object {
+                    "backgroundColor": "#ed652f",
+                  }
+                }
+              />
+            </div>
+            <div
+              className="jsx-4287887962 grid-square-block"
+              style={
+                Object {
+                  "left": "25%",
+                  "top": "25%",
+                }
+              }
+            >
+              <div
+                className="jsx-86954139 square-block"
+                style={
+                  Object {
+                    "backgroundColor": "#ed652f",
+                  }
+                }
+              />
+            </div>
+            <div
+              className="jsx-4287887962 grid-square-block"
+              style={
+                Object {
+                  "left": "50%",
+                  "top": "25%",
+                }
+              }
+            >
+              <div
+                className="jsx-86954139 square-block"
+                style={
+                  Object {
+                    "backgroundColor": "#ed652f",
+                  }
+                }
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          className="jsx-215556098 player1"
+        >
+          <div
+            className="jsx-1285042675 player-info"
+            onClick={undefined}
+          >
+            <div
+              className="jsx-1285042675 centered"
+            >
+              <div
+                className="jsx-1285042675 player"
+              >
+                1p
+              </div>
+              <div
+                className="jsx-1285042675 insert-coin"
+              >
+                insert coin
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="jsx-215556098 player2"
+        >
+          <div
+            className="jsx-1285042675 player-info"
+            onClick={undefined}
+          >
+            <div
+              className="jsx-1285042675 centered"
+            >
+              <div
+                className="jsx-1285042675 player"
+              >
+                2p
+              </div>
+              <div
+                className="jsx-1285042675 insert-coin"
+              >
+                insert coin
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Cosmos fixtures: Connect(NewGame):loading 1`] = `
+<div
+  className="jsx-1613050951 outer"
+>
+  <div
+    className="jsx-1613050951 container"
+  >
+    <div
+      className="jsx-3372609668 screen-container"
+    >
+      <form
+        className="jsx-1749762593"
+        onSubmit={[Function]}
+      >
+        <div
+          className="jsx-2362338977 screen"
+        >
+          <div
+            className="jsx-1497761764 fade-in"
+          >
+            <h2
+              className="jsx-2362338977 title"
+            >
+              One sec...
+            </h2>
+            <div
+              className="jsx-2362338977 message"
+            >
+              <p
+                className="jsx-1749762593"
+                onClick={[Function]}
+              >
+                Enter your name
+              </p>
+              <p
+                className="jsx-1749762593"
+              >
+                <input
+                  className="jsx-1749762593"
+                  disabled={true}
+                  maxLength={14}
+                  onChange={[Function]}
+                  placeholder="Monkey"
+                  type="text"
+                  value=""
+                />
+              </p>
+              <p
+                className="jsx-1749762593"
+              >
+                <small
+                  className="jsx-1749762593"
+                >
+                  Fake names allowed ;-)
+                </small>
+              </p>
+            </div>
+          </div>
+          <div
+            className="jsx-2362338977 actions"
+          >
+            <div
+              className="jsx-2362338977 button"
+            >
+              <button
+                className="jsx-2576755423 button hover-button"
+                disabled={true}
+                type="submit"
+              >
+                Enter
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div
+      className="jsx-3372609668 side-container"
+    >
+      <div
+        className="jsx-215556098 game-panel"
+      >
+        <div
+          className="jsx-215556098 title"
+        >
+          <h1
+            className="jsx-215556098"
+          >
+            Flatris
+          </h1>
+        </div>
+        <div
+          className="jsx-215556098 next-label"
+        >
+          Next
+        </div>
+        <div
+          className="jsx-215556098 next-tetromino next-tetromino-L"
+        >
+          <div
+            className="jsx-2115617632 tetromino"
+          >
+            <div
+              className="jsx-4287887962 grid-square-block"
+              style={
+                Object {
+                  "left": "50%",
+                  "top": "0%",
+                }
+              }
+            >
+              <div
+                className="jsx-86954139 square-block"
+                style={
+                  Object {
+                    "backgroundColor": "#ed652f",
+                  }
+                }
+              />
+            </div>
+            <div
+              className="jsx-4287887962 grid-square-block"
+              style={
+                Object {
+                  "left": "0%",
+                  "top": "25%",
+                }
+              }
+            >
+              <div
+                className="jsx-86954139 square-block"
+                style={
+                  Object {
+                    "backgroundColor": "#ed652f",
+                  }
+                }
+              />
+            </div>
+            <div
+              className="jsx-4287887962 grid-square-block"
+              style={
+                Object {
+                  "left": "25%",
+                  "top": "25%",
+                }
+              }
+            >
+              <div
+                className="jsx-86954139 square-block"
+                style={
+                  Object {
+                    "backgroundColor": "#ed652f",
+                  }
+                }
+              />
+            </div>
+            <div
+              className="jsx-4287887962 grid-square-block"
+              style={
+                Object {
+                  "left": "50%",
+                  "top": "25%",
+                }
+              }
+            >
+              <div
+                className="jsx-86954139 square-block"
+                style={
+                  Object {
+                    "backgroundColor": "#ed652f",
+                  }
+                }
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          className="jsx-215556098 player1"
+        >
+          <div
+            className="jsx-1285042675 player-info"
+            onClick={undefined}
+          >
+            <div
+              className="jsx-1285042675 centered"
+            >
+              <div
+                className="jsx-1285042675 player"
+              >
+                1p
+              </div>
+              <div
+                className="jsx-1285042675 insert-coin"
+              >
+                insert coin
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="jsx-215556098 player2"
+        >
+          <div
+            className="jsx-1285042675 player-info"
+            onClick={undefined}
+          >
+            <div
+              className="jsx-1285042675 centered"
+            >
+              <div
+                className="jsx-1285042675 player"
+              >
+                2p
+              </div>
+              <div
+                className="jsx-1285042675 insert-coin"
+              >
+                insert coin
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):no-games 1`] = `
+<div
+  className="jsx-482953691 root"
+>
+  <div
+    className="jsx-482953691 header"
+  >
+    <div
+      className="jsx-482953691 new-game-button"
+    >
+      <button
+        className="jsx-2576755423 button hover-button"
+        onClick={[Function]}
+        type="button"
+      >
+        New game
+      </button>
+    </div>
+    <div
+      className="jsx-482953691 logo"
+    >
+      <div
+        className="jsx-1917779880 logo"
+      >
+        <div
+          className="jsx-2115617632 tetromino"
+        >
+          <div
+            className="jsx-4287887962 grid-square-block"
+            style={
+              Object {
+                "left": "25%",
+                "top": "0%",
+              }
+            }
+          >
+            <div
+              className="jsx-86954139 square-block"
+              style={
+                Object {
+                  "backgroundColor": "#ecf0f1",
+                }
+              }
+            />
+          </div>
+          <div
+            className="jsx-4287887962 grid-square-block"
+            style={
+              Object {
+                "left": "50%",
+                "top": "0%",
+              }
+            }
+          >
+            <div
+              className="jsx-86954139 square-block"
+              style={
+                Object {
+                  "backgroundColor": "#ecf0f1",
+                }
+              }
+            />
+          </div>
+          <div
+            className="jsx-4287887962 grid-square-block"
+            style={
+              Object {
+                "left": "0%",
+                "top": "25%",
+              }
+            }
+          >
+            <div
+              className="jsx-86954139 square-block"
+              style={
+                Object {
+                  "backgroundColor": "#ecf0f1",
+                }
+              }
+            />
+          </div>
+          <div
+            className="jsx-4287887962 grid-square-block"
+            style={
+              Object {
+                "left": "25%",
+                "top": "25%",
+              }
+            }
+          >
+            <div
+              className="jsx-86954139 square-block"
+              style={
+                Object {
+                  "backgroundColor": "#ecf0f1",
+                }
+              }
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="jsx-482953691 message"
+  >
+    <span
+      className="jsx-482953691"
+    >
+      No active games. Create a game and break the silence!
+    </span>
+  </div>
+  <div
+    className="jsx-482953691 game-grid"
+  />
+</div>
+`;
+
 exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):double-hallelujah 1`] = `
 <div
   className="jsx-1613050951 outer"
@@ -15885,7 +16459,7 @@ exports[`Cosmos fixtures: Loading:default 1`] = `
 
 exports[`Cosmos fixtures: Logo:default 1`] = `
 <div
-  className="jsx-3287429902 logo"
+  className="jsx-1917779880 logo"
 >
   <div
     className="jsx-2115617632 tetromino"
@@ -15894,44 +16468,8 @@ exports[`Cosmos fixtures: Logo:default 1`] = `
       className="jsx-4287887962 grid-square-block"
       style={
         Object {
-          "left": "0%",
-          "top": "0%",
-        }
-      }
-    >
-      <div
-        className="jsx-86954139 square-block"
-        style={
-          Object {
-            "backgroundColor": "#34495f",
-          }
-        }
-      />
-    </div>
-    <div
-      className="jsx-4287887962 grid-square-block"
-      style={
-        Object {
           "left": "25%",
           "top": "0%",
-        }
-      }
-    >
-      <div
-        className="jsx-86954139 square-block"
-        style={
-          Object {
-            "backgroundColor": "#34495f",
-          }
-        }
-      />
-    </div>
-    <div
-      className="jsx-4287887962 grid-square-block"
-      style={
-        Object {
-          "left": "25%",
-          "top": "25%",
         }
       }
     >
@@ -15949,6 +16487,42 @@ exports[`Cosmos fixtures: Logo:default 1`] = `
       style={
         Object {
           "left": "50%",
+          "top": "0%",
+        }
+      }
+    >
+      <div
+        className="jsx-86954139 square-block"
+        style={
+          Object {
+            "backgroundColor": "#34495f",
+          }
+        }
+      />
+    </div>
+    <div
+      className="jsx-4287887962 grid-square-block"
+      style={
+        Object {
+          "left": "0%",
+          "top": "25%",
+        }
+      }
+    >
+      <div
+        className="jsx-86954139 square-block"
+        style={
+          Object {
+            "backgroundColor": "#34495f",
+          }
+        }
+      />
+    </div>
+    <div
+      className="jsx-4287887962 grid-square-block"
+      style={
+        Object {
+          "left": "25%",
           "top": "25%",
         }
       }

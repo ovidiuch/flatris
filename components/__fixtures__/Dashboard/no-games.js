@@ -1,11 +1,12 @@
 // @flow
 
 import { createFixture } from '../../../utils/create-fixture';
-import GameContainer from '../../GameContainer';
+import Dashboard from '../../Dashboard';
 
 export default createFixture({
-  component: GameContainer,
-  props: {
-    children: 'Hello'
+  component: Dashboard,
+
+  reduxState: {
+    jsReady: true
   }
 });

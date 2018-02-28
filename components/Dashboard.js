@@ -1,6 +1,6 @@
 // @flow
 
-import React, { Fragment, Component } from 'react';
+import React, { Component } from 'react';
 import Link from 'next/link';
 import { connect } from 'react-redux';
 import { GAME_INACTIVE_TIMEOUT } from '../constants/timeouts';
@@ -8,6 +8,8 @@ import { createTimeoutBumper } from '../utils/timeout-bumper';
 import { closeGame, removeGame } from '../actions/global';
 import { withSocket } from './socket/SocketConnect';
 import GamePreview from './GamePreview';
+import Button from './Button';
+import Logo from './Logo';
 
 import type { GameId, Games, State } from '../types/state';
 import type { RoomId } from '../types/api';
@@ -78,13 +80,26 @@ class Dashboard extends Component<Props> {
 
   render() {
     const { games } = this.props;
+    const hasGames = Object.keys(games).length > 0;
 
     return (
-      <Fragment>
+      <div className="root">
         <div className="header">
-          <Link href="/new">
-            <a>Create game</a>
-          </Link>
+          <div className="new-game-button">
+            <Link href="/new">
+              <Button>New game</Button>
+            </Link>
+          </div>
+          <div className="logo">
+            <Logo color="#ecf0f1" />
+          </div>
+        </div>
+        <div className="message">
+          {hasGames ? (
+            <span>Join a game below or create a new one.</span>
+          ) : (
+            <span>No active games. Create a game and break the silence!</span>
+          )}
         </div>
         <div className="game-grid">
           {Object.keys(games).map(gameId => (
@@ -101,8 +116,35 @@ class Dashboard extends Component<Props> {
           ))}
         </div>
         <style jsx>{`
+          .root {
+            background: #fff;
+            font-size: 18px;
+          }
+
           .header {
-            margin: 20px;
+            padding: 20px;
+            height: 60px;
+          }
+
+          .new-game-button {
+            float: left;
+            position: relative;
+            width: 160px;
+            height: 60px;
+          }
+
+          .logo {
+            float: right;
+            position: relative;
+            width: 90px;
+            height: 60px;
+          }
+
+          .message {
+            padding: 20px;
+            padding-top: 0;
+            line-height: 1.5em;
+            color: #9ba4ab;
           }
 
           .game-grid {
@@ -119,7 +161,7 @@ class Dashboard extends Component<Props> {
             cursor: pointer;
           }
         `}</style>
-      </Fragment>
+      </div>
     );
   }
 }
