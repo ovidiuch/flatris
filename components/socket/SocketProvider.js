@@ -8,7 +8,7 @@ import { getGame } from '../../utils/api';
 import { getSocket } from '../../utils/socket';
 import { startBackfill, cancelBackfill } from '../../utils/backfill';
 import { isValidGameAction } from '../../reducers/game';
-import { addGame } from '../../actions/global';
+import { addGame, removeGame } from '../../actions/global';
 
 import type { Node } from 'react';
 import type { Dispatch } from 'redux'; // eslint-disable-line import/named
@@ -16,7 +16,14 @@ import type { GameId, State } from '../../types/state';
 import type { Action, GameAction } from '../../types/actions';
 import type { RoomId, BackfillResponse } from '../../types/api';
 
-const { subscribe, onGameAction, offGameAction, broadcastAction } = getSocket();
+const {
+  subscribe,
+  onGameAction,
+  offGameAction,
+  onGameRemoved,
+  offGameRemoved,
+  broadcastAction
+} = getSocket();
 
 type Props = {
   children: Node,
@@ -40,10 +47,6 @@ class SocketProviderInner extends Component<Props, LocalState> {
     pendingActions: []
   };
 
-  componentDidMount() {
-    onGameAction(this.handleReceiveGameAction);
-  }
-
   getChildContext() {
     return {
       subscribe: this.handleSubscribe,
@@ -51,17 +54,23 @@ class SocketProviderInner extends Component<Props, LocalState> {
     };
   }
 
+  componentDidMount() {
+    onGameAction(this.handleGameAction);
+    onGameRemoved(this.handleGameRemoved);
+  }
+
   componentWillUnmount() {
     const { backfillId } = this.state;
 
-    offGameAction(this.handleReceiveGameAction);
+    offGameAction(this.handleGameAction);
+    offGameRemoved(this.handleGameRemoved);
 
     if (backfillId) {
       cancelBackfill(backfillId);
     }
   }
 
-  handleReceiveGameAction = (action: GameAction) => {
+  handleGameAction = (action: GameAction) => {
     // console.log('[SOCKET] On game-action', action);
 
     const { state, dispatch } = this.props;
@@ -92,6 +101,13 @@ class SocketProviderInner extends Component<Props, LocalState> {
     }
   };
 
+  handleGameRemoved = (gameId: GameId) => {
+    console.log(`Received server notice of removed game ${gameId}`);
+
+    const { dispatch } = this.props;
+    dispatch(removeGame(gameId));
+  };
+
   handleSubscribe = (roomId: RoomId) => {
     subscribe(roomId);
 
@@ -114,7 +130,8 @@ class SocketProviderInner extends Component<Props, LocalState> {
     const { games } = this.props.state;
     const backfillId = startBackfill(
       games[gameId],
-      this.handleBackfillComplete
+      this.handleBackfillComplete,
+      this.handleBackfillError
     );
 
     this.setState({
@@ -124,6 +141,7 @@ class SocketProviderInner extends Component<Props, LocalState> {
   }
 
   handleBackfillComplete = (res: BackfillResponse) => {
+    const { dispatch } = this.props;
     const { pendingActions } = this.state;
 
     const mergedActions = [...res, ...pendingActions];
@@ -138,12 +156,19 @@ class SocketProviderInner extends Component<Props, LocalState> {
     // remove game from state completely
     // TODO: Dispatch events at an interval, to convey the rhythm in
     // which the actions were originally performed
-    uniqActions.forEach(this.props.dispatch);
+    uniqActions.forEach(dispatch);
 
     const numDupes = mergedActions.length - uniqActions.length;
     console.log(
       `Backfilled ${uniqActions.length} actions (${numDupes} dupes).`
     );
+  };
+
+  handleBackfillError = (gameId: GameId) => {
+    console.warn(`Backfill failed, removing game ${gameId} from state`);
+
+    const { dispatch } = this.props;
+    dispatch(removeGame(gameId));
   };
 
   handleBroadcastGameAction = (action: GameAction) => {

@@ -15,7 +15,10 @@ export function gamesReducer(
     case 'LOAD_DASHBOARD': {
       const { games } = action.payload;
 
-      return getEffectlessGames(games);
+      return getEffectlessGames(
+        // NOTE: We don't care about order at the moment
+        games.reduce((acc, game) => ({ ...acc, [game.id]: game }), {})
+      );
     }
 
     case 'ADD_GAME': {
@@ -25,6 +28,14 @@ export function gamesReducer(
         ...state,
         [game.id]: stripGameEffects(game)
       };
+    }
+
+    case 'REMOVE_GAME': {
+      const { gameId } = action.payload;
+
+      return Object.keys(state).reduce((acc, gId) => {
+        return gId !== gameId ? { ...acc, [gId]: state[gId] } : acc;
+      }, {});
     }
 
     case 'STRIP_GAME_EFFECTS': {

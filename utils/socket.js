@@ -3,10 +3,12 @@
 import io from 'socket.io-client';
 import { getApiUrl } from '../utils/api';
 
+import type { GameId } from '../types/state';
 import type { Action, GameAction } from '../types/actions';
 import type { RoomId } from '../types/api';
 
 type GameActionHandler = (action: GameAction) => void;
+type GameRemovedHandler = (gameId: GameId) => void;
 
 let socket;
 
@@ -28,6 +30,14 @@ export function getSocket() {
     socket.off('game-action', handler);
   }
 
+  function onGameRemoved(handler: GameRemovedHandler) {
+    socket.on('game-removed', handler);
+  }
+
+  function offGameRemoved(handler: GameRemovedHandler) {
+    socket.off('game-removed', handler);
+  }
+
   function broadcastAction(action: Action) {
     // console.log('[SOCKET] Emit game-action', resAction);
     socket.emit('game-action', action);
@@ -37,6 +47,8 @@ export function getSocket() {
     subscribe,
     onGameAction,
     offGameAction,
+    onGameRemoved,
+    offGameRemoved,
     broadcastAction
   };
 }

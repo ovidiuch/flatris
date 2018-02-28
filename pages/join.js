@@ -1,13 +1,15 @@
 // @flow
 
 import React, { Component } from 'react';
-import withRedux from 'next-redux-wrapper';
+import Router from 'next/router';
 import Error from 'next/error';
+import withRedux from 'next-redux-wrapper';
 import { createStore } from '../store';
 import { addGame, openGame } from '../actions/global';
 import { addCurUserToState, getGame } from '../utils/api';
 import { SocketProvider } from '../components/socket/SocketProvider';
 import Layout from '../components/Layout';
+import CurGameOfElse from '../components/CurGameOfElse';
 import FlatrisGame from '../components/FlatrisGame';
 
 type Props = {
@@ -61,7 +63,9 @@ class JoinPage extends Component<Props> {
     return (
       <Layout>
         <SocketProvider>
-          <FlatrisGame />
+          <CurGameOfElse else={() => Router.replace('/')}>
+            <FlatrisGame />
+          </CurGameOfElse>
         </SocketProvider>
       </Layout>
     );

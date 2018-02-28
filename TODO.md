@@ -118,10 +118,16 @@
   * [x] Animating games
   * [x] Strip game effects when going back to index page
   * [x] Push new games to dashboard
-  * [ ] Remove inactive games
-  * [ ] Show blank state when no active games exist
-  * [ ] Sort and limit games based on relevancy (active 1p, active 2p, [inactive 1p, inactive 2p])
-  * [ ] Style layout
+  * [x] Remove inactive games
+    * [x] Mark inactive after 30 seconds
+    * [x] Remove expired after 15 minutes
+    * [x] Redirect to dashboard from expired game page
+  * [ ] Style
+    * [ ] Style NEW GAME button
+    * [ ] Show blank state when no active games exist
+    * [ ] Fade in fade out transition to game previews
+    * [ ] Highlight already joined games
+* [ ] BUG: Reset losses when 2nd player joins
 * [ ] Game footer
 * [ ] Improve onboarding
   * [ ] Screen 1: Rules
@@ -136,7 +142,6 @@
 
 OPTIMIZATIONS
 
-* [ ] GC old games and game actions on server
 * [ ] Minimize network communication: Don't send noop actions
 * [ ] Minimize state footprint
 * [ ] Profile browser performance (detect unnecessary renders)

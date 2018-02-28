@@ -5,6 +5,7 @@ import {
   sessions,
   games,
   gameActions,
+  activeGames,
   insertUser,
   insertSession,
   insertGame
@@ -17,8 +18,9 @@ import type { SessionId } from './db';
 export function addRoutes(app: express$Application) {
   app.get('/dashboard', (req: express$Request, res: express$Response) => {
     res.json({
-      // TODO: Filter out inactive games
-      games
+      // NOTE: This is returned as an array instead of map in order to allow
+      // sorting in the future
+      games: activeGames.map(gameId => games[gameId])
     });
   });
 
@@ -37,8 +39,7 @@ export function addRoutes(app: express$Application) {
       const user = getUserFromReqSession(req);
       const game = insertGame(user);
 
-      const numGames = Object.keys(games).length;
-      console.log(`Create game #${numGames}`, game.id, user);
+      console.log(`Create game`, game.id, user);
 
       res.json(game);
     } catch (err) {
@@ -51,9 +52,14 @@ export function addRoutes(app: express$Application) {
       console.log('Backfill...');
       console.log(JSON.stringify(req.body, null, 2));
 
-      const ranges = extractBackfillRanges(req.body);
-      const actions = getBackfillActions(ranges);
+      const backfillReq = extractBackfillRequest(req.body);
+      const { gameId } = backfillReq;
 
+      if (!games[gameId]) {
+        throw new Error(`Can't backfill missing game ${gameId}`);
+      }
+
+      const actions = getBackfillActions(backfillReq);
       res.json(actions);
     } catch (err) {
       console.log(err);
@@ -98,7 +104,7 @@ function getUserFromReqSession(req: express$Request): User {
   return users[userId];
 }
 
-function extractBackfillRanges(req: mixed): BackfillRequest {
+function extractBackfillRequest(req: mixed): BackfillRequest {
   if (!req || typeof req !== 'object') {
     throw new Error('Invalid backfill ranges');
   }

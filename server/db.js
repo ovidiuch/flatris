@@ -1,8 +1,14 @@
 // @flow
 
 import crypto from 'crypto';
+import { without } from 'lodash';
 import { getBlankGame } from '../reducers/game';
 import { MAX_NAME_LENGTH } from '../constants/user';
+import {
+  GAME_INACTIVE_TIMEOUT,
+  GAME_EXPIRE_TIMEOUT
+} from '../constants/timeouts';
+import { createTimeoutBumper } from '../utils/timeout-bumper';
 
 import type { GameId, Game, UserId, User } from '../types/state';
 import type { GameAction } from '../types/actions';
@@ -14,11 +20,24 @@ export type Users = { [id: UserId]: User };
 export type Sessions = { [id: SessionId]: Session };
 export type Games = { [id: GameId]: Game };
 export type GameActions = { [id: GameId]: Array<GameAction> };
+export type ActiveGames = Array<GameId>;
 
 export const users: Users = {};
 export const sessions: Sessions = {};
 export const games: Games = {};
 export const gameActions: GameActions = {};
+export let activeGames: ActiveGames = [];
+
+export const { bumpTimeout: bumpActiveGame } = createTimeoutBumper(
+  {
+    handler: handleInactiveGame,
+    timeout: GAME_INACTIVE_TIMEOUT
+  },
+  {
+    handler: handleExpiredGame,
+    timeout: GAME_EXPIRE_TIMEOUT
+  }
+);
 
 export function insertUser(name: string): User {
   const userId = genRandUniqId(users);
@@ -42,6 +61,11 @@ export function insertGame(user: User): Game {
   games[gameId] = game;
   gameActions[gameId] = [];
 
+  // Inactive games will not be shown in the dashboard after some time, and
+  // removed completely after more time
+  activeGames.push(gameId);
+  bumpActiveGame(gameId);
+
   return game;
 }
 
@@ -62,4 +86,36 @@ function genRandUniqId(collection: { [id: string]: any }): string {
 
 function genRandId(): string {
   return crypto.randomBytes(4).toString('hex');
+}
+
+function removeGame(gameId: GameId) {
+  console.log(`Removing game ${gameId}...`);
+
+  delete games[gameId];
+  delete gameActions[gameId];
+  markGameInactive(gameId);
+
+  // Show stats after removing a game from memory
+  const gameIds = Object.keys(games);
+  const actionCount = gameIds.reduce(
+    (acc, gameId) => acc + gameActions[gameId].length,
+    0
+  );
+  console.log(`Total games: ${gameIds.length}`);
+  console.log(`Total game actions: ${actionCount}`);
+  console.log(`Active games: ${activeGames.length}`);
+}
+
+function markGameInactive(gameId: GameId) {
+  activeGames = without(activeGames, gameId);
+}
+
+function handleInactiveGame(gameId: GameId) {
+  console.log(`Game marked inactive ${gameId}`);
+  markGameInactive(gameId);
+}
+
+function handleExpiredGame(gameId: GameId) {
+  console.log(`Game expired ${gameId}`);
+  removeGame(gameId);
 }
