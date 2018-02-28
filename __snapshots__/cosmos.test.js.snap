@@ -315,11 +315,29 @@ exports[`Cosmos fixtures: Connect(NewGame):default 1`] = `
           Next
         </div>
         <div
-          className="jsx-215556098 next-tetromino next-tetromino-L"
+          className="jsx-215556098 next-tetromino next-tetromino-S"
         >
           <div
             className="jsx-2115617632 tetromino"
           >
+            <div
+              className="jsx-4287887962 grid-square-block"
+              style={
+                Object {
+                  "left": "25%",
+                  "top": "0%",
+                }
+              }
+            >
+              <div
+                className="jsx-86954139 square-block"
+                style={
+                  Object {
+                    "backgroundColor": "#ecf0f1",
+                  }
+                }
+              />
+            </div>
             <div
               className="jsx-4287887962 grid-square-block"
               style={
@@ -333,7 +351,7 @@ exports[`Cosmos fixtures: Connect(NewGame):default 1`] = `
                 className="jsx-86954139 square-block"
                 style={
                   Object {
-                    "backgroundColor": "#ed652f",
+                    "backgroundColor": "#ecf0f1",
                   }
                 }
               />
@@ -351,7 +369,7 @@ exports[`Cosmos fixtures: Connect(NewGame):default 1`] = `
                 className="jsx-86954139 square-block"
                 style={
                   Object {
-                    "backgroundColor": "#ed652f",
+                    "backgroundColor": "#ecf0f1",
                   }
                 }
               />
@@ -369,25 +387,7 @@ exports[`Cosmos fixtures: Connect(NewGame):default 1`] = `
                 className="jsx-86954139 square-block"
                 style={
                   Object {
-                    "backgroundColor": "#ed652f",
-                  }
-                }
-              />
-            </div>
-            <div
-              className="jsx-4287887962 grid-square-block"
-              style={
-                Object {
-                  "left": "50%",
-                  "top": "25%",
-                }
-              }
-            >
-              <div
-                className="jsx-86954139 square-block"
-                style={
-                  Object {
-                    "backgroundColor": "#ed652f",
+                    "backgroundColor": "#ecf0f1",
                   }
                 }
               />
@@ -543,11 +543,29 @@ exports[`Cosmos fixtures: Connect(NewGame):loading 1`] = `
           Next
         </div>
         <div
-          className="jsx-215556098 next-tetromino next-tetromino-L"
+          className="jsx-215556098 next-tetromino next-tetromino-S"
         >
           <div
             className="jsx-2115617632 tetromino"
           >
+            <div
+              className="jsx-4287887962 grid-square-block"
+              style={
+                Object {
+                  "left": "25%",
+                  "top": "0%",
+                }
+              }
+            >
+              <div
+                className="jsx-86954139 square-block"
+                style={
+                  Object {
+                    "backgroundColor": "#ecf0f1",
+                  }
+                }
+              />
+            </div>
             <div
               className="jsx-4287887962 grid-square-block"
               style={
@@ -561,7 +579,7 @@ exports[`Cosmos fixtures: Connect(NewGame):loading 1`] = `
                 className="jsx-86954139 square-block"
                 style={
                   Object {
-                    "backgroundColor": "#ed652f",
+                    "backgroundColor": "#ecf0f1",
                   }
                 }
               />
@@ -579,7 +597,7 @@ exports[`Cosmos fixtures: Connect(NewGame):loading 1`] = `
                 className="jsx-86954139 square-block"
                 style={
                   Object {
-                    "backgroundColor": "#ed652f",
+                    "backgroundColor": "#ecf0f1",
                   }
                 }
               />
@@ -597,25 +615,7 @@ exports[`Cosmos fixtures: Connect(NewGame):loading 1`] = `
                 className="jsx-86954139 square-block"
                 style={
                   Object {
-                    "backgroundColor": "#ed652f",
-                  }
-                }
-              />
-            </div>
-            <div
-              className="jsx-4287887962 grid-square-block"
-              style={
-                Object {
-                  "left": "50%",
-                  "top": "25%",
-                }
-              }
-            >
-              <div
-                className="jsx-86954139 square-block"
-                style={
-                  Object {
-                    "backgroundColor": "#ed652f",
+                    "backgroundColor": "#ecf0f1",
                   }
                 }
               />

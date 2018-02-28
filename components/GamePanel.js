@@ -39,7 +39,7 @@ export default class GamePanel extends Component<Props> {
         <div className={getNextTetrominoClass(nextTetromino)}>
           <Tetromino
             key={nextTetromino}
-            color={COLORS[nextTetromino]}
+            color={game ? COLORS[nextTetromino] : '#ecf0f1'}
             grid={SHAPES[nextTetromino]}
           />
         </div>
@@ -135,7 +135,7 @@ export default class GamePanel extends Component<Props> {
     const { curUser, game } = this.props;
 
     if (!game) {
-      return 'L';
+      return 'S';
     }
 
     const curPlayer = getCurPlayer(game, curUser);
