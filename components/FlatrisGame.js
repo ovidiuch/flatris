@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import _ from 'lodash';
 import { UP, DOWN, LEFT, RIGHT, SPACE } from '../constants/keys';
+import { GAME_INACTIVE_TIMEOUT } from '../constants/timeouts';
 import {
   isPlayer,
   getPlayer,
@@ -45,7 +46,7 @@ import WaitingForOther from './screens/WaitingForOther';
 import GameOver from './screens/GameOver';
 
 import type { Node } from 'react';
-import type { User, Game, State } from '../types/state';
+import type { User, GameId, Game, State } from '../types/state';
 import type { RoomId } from '../types/api';
 
 type Props = {
@@ -53,6 +54,7 @@ type Props = {
   curUser: ?User,
   game: Game,
   subscribe: (roomId: RoomId) => mixed,
+  keepAlive: (gameId: GameId) => mixed,
   joinGame: typeof joinGame,
   playerReady: typeof playerReady,
   playerPause: typeof playerPause,
@@ -79,6 +81,8 @@ class FlatrisGame extends Component<Props, LocalState> {
     isMobile: false
   };
 
+  keepAliveTimeout: ?TimeoutID;
+
   componentDidMount() {
     const { curUser, game, subscribe } = this.props;
 
@@ -95,6 +99,8 @@ class FlatrisGame extends Component<Props, LocalState> {
         isMobile: true
       });
     }
+
+    this.keepAlive();
   }
 
   componentDidUpdate(prevProps) {
@@ -123,6 +129,21 @@ class FlatrisGame extends Component<Props, LocalState> {
 
   componentWillUnmount() {
     this.stopGame();
+    this.cancelKeepAlive();
+  }
+
+  keepAlive = () => {
+    const { game, keepAlive } = this.props;
+    keepAlive(game.id);
+
+    const timeout = GAME_INACTIVE_TIMEOUT - 1000;
+    this.keepAliveTimeout = setTimeout(this.keepAlive, timeout);
+  };
+
+  cancelKeepAlive() {
+    if (this.keepAliveTimeout) {
+      clearTimeout(this.keepAliveTimeout);
+    }
   }
 
   attachKeyEvents() {

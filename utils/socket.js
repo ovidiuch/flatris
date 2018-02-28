@@ -8,6 +8,7 @@ import type { Action, GameAction } from '../types/actions';
 import type { RoomId } from '../types/api';
 
 type GameActionHandler = (action: GameAction) => void;
+type GameKeepAliveHandler = (gameId: GameId) => void;
 type GameRemovedHandler = (gameId: GameId) => void;
 
 let socket;
@@ -22,12 +23,25 @@ export function getSocket() {
     socket.emit('subscribe', roomId);
   }
 
+  function keepAlive(gameId: RoomId) {
+    console.log('[SOCKET] keep-alive', gameId);
+    socket.emit('keep-alive', gameId);
+  }
+
   function onGameAction(handler: GameActionHandler) {
     socket.on('game-action', handler);
   }
 
   function offGameAction(handler: GameActionHandler) {
     socket.off('game-action', handler);
+  }
+
+  function onGameKeepAlive(handler: GameKeepAliveHandler) {
+    socket.on('game-keep-alive', handler);
+  }
+
+  function offGameKeepAlive(handler: GameKeepAliveHandler) {
+    socket.off('game-keep-alive', handler);
   }
 
   function onGameRemoved(handler: GameRemovedHandler) {
@@ -45,8 +59,11 @@ export function getSocket() {
 
   return {
     subscribe,
+    keepAlive,
     onGameAction,
     offGameAction,
+    onGameKeepAlive,
+    offGameKeepAlive,
     onGameRemoved,
     offGameRemoved,
     broadcastAction

@@ -128,7 +128,7 @@
     * [x] Show blank state when no active games exist
     * [x] Fade in fade out transition game previews
     * [x] Highlight already joined games
-* [ ] BUG: Broadcast new game to `global` (without requiring an action)
+* [x] BUG: Broadcast new game to `global` (without requiring an action)
 * [x] BUG: Reset losses when 2nd player joins
 * [ ] Game footer
 * [ ] Improve onboarding

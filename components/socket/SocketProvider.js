@@ -18,8 +18,11 @@ import type { RoomId, BackfillResponse } from '../../types/api';
 
 const {
   subscribe,
+  keepAlive,
   onGameAction,
   offGameAction,
+  onGameKeepAlive,
+  offGameKeepAlive,
   onGameRemoved,
   offGameRemoved,
   broadcastAction
@@ -39,6 +42,7 @@ type LocalState = {
 class SocketProviderInner extends Component<Props, LocalState> {
   static childContextTypes = {
     subscribe: func.isRequired,
+    keepAlive: func.isRequired,
     broadcastGameAction: func.isRequired
   };
 
@@ -50,12 +54,14 @@ class SocketProviderInner extends Component<Props, LocalState> {
   getChildContext() {
     return {
       subscribe: this.handleSubscribe,
+      keepAlive: this.handleKeepAlive,
       broadcastGameAction: this.handleBroadcastGameAction
     };
   }
 
   componentDidMount() {
     onGameAction(this.handleGameAction);
+    onGameKeepAlive(this.handleGameKeepAlive);
     onGameRemoved(this.handleGameRemoved);
   }
 
@@ -63,6 +69,7 @@ class SocketProviderInner extends Component<Props, LocalState> {
     const { backfillId } = this.state;
 
     offGameAction(this.handleGameAction);
+    offGameKeepAlive(this.handleGameKeepAlive);
     offGameRemoved(this.handleGameRemoved);
 
     if (backfillId) {
@@ -101,6 +108,15 @@ class SocketProviderInner extends Component<Props, LocalState> {
     }
   };
 
+  handleGameKeepAlive = (gameId: GameId) => {
+    const { games } = this.props.state;
+
+    if (!games[gameId]) {
+      console.log(`Detected new game via keep-alive ${gameId}`);
+      this.startBackfill(gameId);
+    }
+  };
+
   handleGameRemoved = (gameId: GameId) => {
     console.log(`Received server notice of removed game ${gameId}`);
 
@@ -114,6 +130,10 @@ class SocketProviderInner extends Component<Props, LocalState> {
     if (roomId !== 'global') {
       this.startBackfill(roomId);
     }
+  };
+
+  handleKeepAlive = (gameId: GameId) => {
+    keepAlive(gameId);
   };
 
   async loadGame(gameId: GameId) {

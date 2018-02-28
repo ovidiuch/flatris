@@ -20,6 +20,7 @@ export function withSocket(
 
     static contextTypes = {
       subscribe: func.isRequired,
+      keepAlive: func.isRequired,
       broadcastGameAction: func.isRequired
     };
 
@@ -32,7 +33,7 @@ export function withSocket(
     };
 
     render() {
-      const { subscribe } = this.context;
+      const { subscribe, keepAlive } = this.context;
       const actions = Object.keys(syncActions).reduce(
         (acc, actionName) => {
           return {
@@ -40,7 +41,7 @@ export function withSocket(
             [actionName]: this.createActionHandler(actionName)
           };
         },
-        { subscribe }
+        { subscribe, keepAlive }
       );
 
       return <CompType {...this.props} {...actions} />;
