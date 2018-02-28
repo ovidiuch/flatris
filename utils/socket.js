@@ -25,7 +25,7 @@ export function getSocket() {
 
   function keepAlive(gameId: RoomId) {
     console.log('[SOCKET] keep-alive', gameId);
-    socket.emit('keep-alive', gameId);
+    socket.emit('game-keep-alive', gameId);
   }
 
   function onGameAction(handler: GameActionHandler) {
