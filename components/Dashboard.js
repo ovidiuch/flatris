@@ -22,14 +22,20 @@ type Props = {
 
 class Dashboard extends Component<Props> {
   bumpTimeout: (id: string) => mixed;
+  cancelAllTimeouts: () => mixed;
 
   constructor(props) {
     super(props);
 
-    this.bumpTimeout = createTimeoutBumper({
-      handlerCreator: this.createGameInactiveHandler,
+    // We're tracking game activity here because this is also the (only)
+    // component that subscribes to `global` (all game rooms)
+    const { bumpTimeout, cancelAllTimeouts } = createTimeoutBumper({
+      handler: this.handleInactiveGame,
       timeout: GAME_INACTIVE_TIMEOUT
     });
+
+    this.bumpTimeout = bumpTimeout;
+    this.cancelAllTimeouts = cancelAllTimeouts;
   }
 
   componentDidMount() {
@@ -54,8 +60,20 @@ class Dashboard extends Component<Props> {
     });
   }
 
-  createGameInactiveHandler = (gameId: GameId) => () => {
-    this.props.removeGame(gameId);
+  componentWillUnmount() {
+    this.cancelAllTimeouts();
+  }
+
+  handleInactiveGame = (gameId: GameId) => {
+    const { curGame } = this.props;
+
+    if (gameId === curGame) {
+      // In theory this should never be reached
+      console.warn('Detected current game as inactive');
+    } else {
+      console.log(`Removing inactive game ${gameId}`);
+      this.props.removeGame(gameId);
+    }
   };
 
   render() {
