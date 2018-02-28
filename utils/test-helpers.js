@@ -22,3 +22,12 @@ export function getSampleUser3(): User {
     name: 'Bill'
   };
 }
+
+export async function doAfter(delay: number, fn: () => mixed) {
+  return new Promise(res => {
+    setTimeout(() => {
+      fn();
+      res();
+    }, delay);
+  });
+}

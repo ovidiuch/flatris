@@ -91,6 +91,7 @@ class Layout extends Component<Props> {
             font-family: -apple-system, BlinkMacSystemFont, Ubuntu,
               'Helvetica Neue', sans-serif;
             font-size: 16px;
+            background: #fff;
           }
         `}</style>
         <div className={layoutClasses}>{children}</div>

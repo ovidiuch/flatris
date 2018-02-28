@@ -126,8 +126,9 @@
     * [x] Style NEW GAME button
     * [x] Add Flatris header
     * [x] Show blank state when no active games exist
-    * [ ] Fade in fade out transition to game previews
+    * [x] Fade in fade out transition game previews
     * [ ] Highlight already joined games
+* [ ] BUG: Broadcast new game to `global` (without requiring an action)
 * [ ] BUG: Reset losses when 2nd player joins
 * [ ] Game footer
 * [ ] Improve onboarding
@@ -143,6 +144,7 @@
 
 OPTIMIZATIONS
 
+* [ ] Throttle key down events
 * [ ] Minimize network communication: Don't send noop actions
 * [ ] Minimize state footprint
 * [ ] Profile browser performance (detect unnecessary renders)
@@ -150,10 +152,10 @@ OPTIMIZATIONS
 
 BACKLOG
 
+* [ ] Custom 404 page
 * [ ] Notify 1p when 2p arrives via web Notifications API
       https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API/
 * [ ] Freeze game on player disconnect (Keep seat taken in case user returns)
-* [ ] Throttle key down events
 * [ ] Create drop shadow from active Tetromino
 * [ ] Algorithm for distributing bundled actions in relative time
 * [ ] Sounds

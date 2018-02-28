@@ -1,5 +1,7 @@
 // @flow
 
+import { difference } from 'lodash';
+import classNames from 'classnames';
 import React, { Component } from 'react';
 import Link from 'next/link';
 import { connect } from 'react-redux';
@@ -22,12 +24,24 @@ type Props = {
   removeGame: (gameId: GameId) => mixed
 };
 
-class Dashboard extends Component<Props> {
+type LocalState = {
+  gamesCopy: Games,
+  added: Array<GameId>
+};
+
+class Dashboard extends Component<Props, LocalState> {
+  transitionTimeout: ?TimeoutID;
+
   bumpTimeout: (id: string) => mixed;
   cancelAllTimeouts: () => mixed;
 
   constructor(props) {
     super(props);
+
+    this.state = {
+      gamesCopy: props.games,
+      added: []
+    };
 
     // We're tracking game activity here because this is also the (only)
     // component that subscribes to `global` (all game rooms)
@@ -55,7 +69,22 @@ class Dashboard extends Component<Props> {
 
   componentDidUpdate({ games: prevGames }) {
     const { games } = this.props;
-    Object.keys(games).forEach(gameId => {
+
+    const ids = Object.keys(games);
+    const prevIds = Object.keys(prevGames);
+    const added = difference(ids, prevIds);
+    const removed = difference(prevIds, ids);
+
+    if (added.length || removed.length) {
+      const newState = {
+        // Keep current games as well as just-removed games in state
+        gamesCopy: { ...this.state.gamesCopy, ...games },
+        added: [...this.state.added, ...added]
+      };
+      this.setState(newState, this.scheduleTransitionTimeout);
+    }
+
+    ids.forEach(gameId => {
       if (games[gameId] !== prevGames[gameId]) {
         this.bumpTimeout(gameId);
       }
@@ -63,8 +92,29 @@ class Dashboard extends Component<Props> {
   }
 
   componentWillUnmount() {
+    this.cancelTransitionTimeout();
     this.cancelAllTimeouts();
   }
+
+  scheduleTransitionTimeout = () => {
+    this.cancelTransitionTimeout();
+    this.transitionTimeout = setTimeout(this.handleClearTransitions, 550);
+  };
+
+  cancelTransitionTimeout() {
+    if (this.transitionTimeout) {
+      clearTimeout(this.transitionTimeout);
+    }
+  }
+
+  handleClearTransitions = () => {
+    const { games } = this.props;
+
+    this.setState({
+      gamesCopy: games,
+      added: []
+    });
+  };
 
   handleInactiveGame = (gameId: GameId) => {
     const { curGame } = this.props;
@@ -80,6 +130,7 @@ class Dashboard extends Component<Props> {
 
   render() {
     const { games } = this.props;
+    const { gamesCopy, added } = this.state;
     const hasGames = Object.keys(games).length > 0;
 
     return (
@@ -102,37 +153,41 @@ class Dashboard extends Component<Props> {
           )}
         </div>
         <div className="game-grid">
-          {Object.keys(games).map(gameId => (
-            <Link
-              key={gameId}
-              prefetch
-              href={`/join?g=${gameId}`}
-              as={`/join/${gameId}`}
-            >
-              <div className="game-preview">
-                <GamePreview curUser={null} game={games[gameId]} />
-              </div>
-            </Link>
-          ))}
+          {Object.keys(gamesCopy).map(gameId => {
+            const classes = classNames('game-preview', {
+              'game-added': added.indexOf(gameId) !== -1,
+              'game-removed': !games[gameId]
+            });
+
+            return (
+              <Link
+                key={gameId}
+                href={`/join?g=${gameId}`}
+                as={`/join/${gameId}`}
+              >
+                <div className={classes}>
+                  <GamePreview curUser={null} game={gamesCopy[gameId]} />
+                </div>
+              </Link>
+            );
+          })}
         </div>
         <style jsx>{`
           .root {
-            background: #fff;
             font-size: 18px;
           }
 
           .header {
             padding: 20px;
+            min-width: 280px;
             height: 60px;
           }
-
           .new-game-button {
             float: left;
             position: relative;
             width: 160px;
             height: 60px;
           }
-
           .logo {
             float: right;
             position: relative;
@@ -150,7 +205,6 @@ class Dashboard extends Component<Props> {
           .game-grid {
             overflow: hidden; /* clear the floats old school style */
           }
-
           .game-preview {
             float: left;
             position: relative;
@@ -159,6 +213,34 @@ class Dashboard extends Component<Props> {
             margin: 0 0 20px 20px;
             font-size: 12px;
             cursor: pointer;
+            transition: opacity 0.2s ease-in, transform 0.2s ease-in;
+          }
+          .game-added {
+            animation: 0.5s added forwards;
+          }
+          .game-removed {
+            animation: 0.5s removed forwards;
+          }
+
+          @keyframes added {
+            0% {
+              opacity: 0;
+              transform: scale(0.9);
+            }
+            100% {
+              opacity: 1;
+              transform: scale(1);
+            }
+          }
+          @keyframes removed {
+            0% {
+              opacity: 1;
+              transform: scale(1);
+            }
+            100% {
+              opacity: 0;
+              transform: scale(0.9);
+            }
           }
         `}</style>
       </div>
