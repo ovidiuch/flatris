@@ -29,7 +29,7 @@ import {
 import { runGameFrame, cancelGameFrame } from '../actions/game-frame';
 import { withSocket } from './socket/SocketConnect';
 import { isMobileDevice } from '../utils/events';
-import GameContainer from './containers/GameContainer';
+import GameContainer from './GameContainer';
 import Button from './Button';
 import GamePreview from './GamePreview';
 import PortraitControls from './controls/PortraitControls';
