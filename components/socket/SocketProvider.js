@@ -112,8 +112,7 @@ class SocketProviderInner extends Component<Props, LocalState> {
     const { games } = this.props.state;
 
     if (!games[gameId]) {
-      console.log('Detected new game via keep-alive', gameId);
-      this.startBackfill(gameId);
+      this.loadGame(gameId);
     }
   };
 
