@@ -1,9 +1,10 @@
 // @flow
 
-import React, { Fragment, Component } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Router from 'next/router';
 import { createGame } from '../utils/api';
+import GameContainer from './GameContainer';
 import GamePanel from './GamePanel';
 import Auth from './screens/Auth';
 
@@ -53,7 +54,7 @@ class NewGame extends Component<Props, LocalState> {
     const { requireAuth } = this.state;
 
     return (
-      <Fragment>
+      <GameContainer>
         <div className="screen-container">{requireAuth && <Auth />}</div>
         <div className="side-container">
           <GamePanel curUser={null} game={null} />
@@ -76,7 +77,7 @@ class NewGame extends Component<Props, LocalState> {
             background: #fff;
           }
         `}</style>
-      </Fragment>
+      </GameContainer>
     );
   }
 }
