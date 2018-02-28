@@ -27,13 +27,22 @@ export function createTimeoutBumper(...configs: Array<TimeoutConfig>) {
     }, timeout);
   }
 
-  return function bumpTimeout(id: string) {
+  function cancelTimeout(id: string) {
     const prevTimeout = timeouts[id];
     if (prevTimeout) {
       clearTimeout(prevTimeout);
     }
+  }
+
+  function bumpTimeout(id: string) {
+    cancelTimeout(id);
 
     timeoutStep[id] = 0;
     schedule(id);
+  }
+
+  return {
+    bumpTimeout,
+    cancelTimeout
   };
 }
