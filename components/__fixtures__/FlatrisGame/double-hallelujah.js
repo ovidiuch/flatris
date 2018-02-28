@@ -2,7 +2,11 @@
 
 import until from 'async-until';
 import { Component } from 'react';
-import { getSampleUser, getSampleUser2 } from '../../../utils/test-helpers';
+import {
+  getSampleUser,
+  getSampleUser2,
+  doAfter
+} from '../../../utils/test-helpers';
 import {
   getBlankGame,
   addUserToGame,
@@ -256,15 +260,6 @@ export default {
     curGame: game.id
   }
 };
-
-async function doAfter(delay, fn) {
-  return new Promise(res => {
-    setTimeout(() => {
-      fn();
-      res();
-    }, delay);
-  });
-}
 
 function getLastActionId(getState, userId) {
   const curGame = getCurGame(getState());
