@@ -28,7 +28,7 @@ export const games: Games = {};
 export const gameActions: GameActions = {};
 export let activeGames: ActiveGames = [];
 
-export const { bumpTimeout: bumpActiveGame } = createTimeoutBumper(
+export const { bumpTimeout } = createTimeoutBumper(
   {
     handler: handleInactiveGame,
     timeout: GAME_INACTIVE_TIMEOUT
@@ -60,10 +60,6 @@ export function insertGame(user: User): Game {
   const game = getBlankGame({ id: gameId, user });
   games[gameId] = game;
   gameActions[gameId] = [];
-
-  // Inactive games will not be shown in the dashboard after some time, and
-  // removed completely after more time
-  activeGames.push(gameId);
   bumpActiveGame(gameId);
 
   return game;
@@ -73,6 +69,16 @@ export function saveGameAction(action: GameAction): void {
   const { gameId } = action.payload;
 
   gameActions[gameId].push(action);
+}
+
+export function bumpActiveGame(gameId: GameId) {
+  // Inactive games will not be shown in the dashboard after some time, and
+  // removed completely after more time
+  if (activeGames.indexOf(gameId) === -1) {
+    activeGames.push(gameId);
+  }
+
+  bumpTimeout(gameId);
 }
 
 function genRandUniqId(collection: { [id: string]: any }): string {
