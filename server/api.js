@@ -39,8 +39,7 @@ export function addRoutes(app: express$Application) {
       const user = getUserFromReqSession(req);
       const game = insertGame(user);
 
-      const numGames = Object.keys(games).length;
-      console.log(`Create game #${numGames}`, game.id, user);
+      console.log(`Create game`, game.id, user);
 
       res.json(game);
     } catch (err) {
