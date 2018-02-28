@@ -48,9 +48,11 @@ export function gameReducer(prevState: void | Game, action: GameAction): Game {
     const { user } = action.payload;
     const { players: [player1] } = prevState;
 
-    // Stop player1's game when player2 arrives
     const game = updatePlayer(prevState, player1.user.id, {
-      status: 'PENDING'
+      // Stop player1's game when player2 arrives
+      status: 'PENDING',
+      // Previous losses are irrelevant to 1vs1 game
+      losses: 0
     });
     return addUserToGame(game, user);
   }

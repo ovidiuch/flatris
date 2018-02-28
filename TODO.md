@@ -129,7 +129,7 @@
     * [x] Fade in fade out transition game previews
     * [x] Highlight already joined games
 * [ ] BUG: Broadcast new game to `global` (without requiring an action)
-* [ ] BUG: Reset losses when 2nd player joins
+* [x] BUG: Reset losses when 2nd player joins
 * [ ] Game footer
 * [ ] Improve onboarding
   * [ ] Screen 1: Rules
