@@ -16,7 +16,14 @@ import type { GameId, State } from '../../types/state';
 import type { Action, GameAction } from '../../types/actions';
 import type { RoomId, BackfillResponse } from '../../types/api';
 
-const { subscribe, onGameAction, offGameAction, broadcastAction } = getSocket();
+const {
+  subscribe,
+  onGameAction,
+  offGameAction,
+  onGameRemoved,
+  offGameRemoved,
+  broadcastAction
+} = getSocket();
 
 type Props = {
   children: Node,
@@ -48,20 +55,22 @@ class SocketProviderInner extends Component<Props, LocalState> {
   }
 
   componentDidMount() {
-    onGameAction(this.handleReceiveGameAction);
+    onGameAction(this.handleGameAction);
+    onGameRemoved(this.handleGameRemoved);
   }
 
   componentWillUnmount() {
     const { backfillId } = this.state;
 
-    offGameAction(this.handleReceiveGameAction);
+    offGameAction(this.handleGameAction);
+    offGameRemoved(this.handleGameRemoved);
 
     if (backfillId) {
       cancelBackfill(backfillId);
     }
   }
 
-  handleReceiveGameAction = (action: GameAction) => {
+  handleGameAction = (action: GameAction) => {
     // console.log('[SOCKET] On game-action', action);
 
     const { state, dispatch } = this.props;
@@ -90,6 +99,13 @@ class SocketProviderInner extends Component<Props, LocalState> {
         }
       }
     }
+  };
+
+  handleGameRemoved = (gameId: GameId) => {
+    console.log(`Received server notice of removed game ${gameId}`);
+
+    const { dispatch } = this.props;
+    dispatch(removeGame(gameId));
   };
 
   handleSubscribe = (roomId: RoomId) => {

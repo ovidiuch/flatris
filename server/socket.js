@@ -30,7 +30,12 @@ export function attachSocket(server: net$Server) {
 
       const { gameId } = action.payload;
       if (!games[gameId]) {
+        // NOTE: This message can easily flood the logs if expired games are
+        // kept open
         console.error('Received message for missing game', gameId);
+
+        // Notify clients to leave expired game page
+        socket.emit('game-removed', gameId);
       } else {
         saveGameAction(action);
         games[gameId] = gameReducer(games[gameId], action);

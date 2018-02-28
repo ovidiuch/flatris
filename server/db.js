@@ -111,11 +111,11 @@ function markGameInactive(gameId: GameId) {
 }
 
 function handleInactiveGame(gameId: GameId) {
-  console.log(`Game marked as inactive ${gameId}`);
+  console.log(`Game marked inactive ${gameId}`);
   markGameInactive(gameId);
 }
 
 function handleExpiredGame(gameId: GameId) {
-  console.log(`Removing expired game ${gameId}`);
+  console.log(`Game expired ${gameId}`);
   removeGame(gameId);
 }
