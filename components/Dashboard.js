@@ -70,13 +70,10 @@ class Dashboard extends Component<Props, LocalState> {
 
   componentDidUpdate({ games: prevGames }) {
     const { games } = this.props;
-
     const ids = Object.keys(games);
-    const prevIds = Object.keys(prevGames);
-    const added = difference(ids, prevIds);
-    const removed = difference(prevIds, ids);
 
-    if (added.length || removed.length) {
+    if (games !== prevGames) {
+      const added = difference(ids, Object.keys(prevGames));
       const newState = {
         // Keep current games as well as just-removed games in state
         gamesCopy: { ...this.state.gamesCopy, ...games },
