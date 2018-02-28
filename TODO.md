@@ -119,8 +119,8 @@
   * [x] Strip game effects when going back to index page
   * [x] Push new games to dashboard
   * [ ] Remove inactive games
-    * [x] Mark inactive after 60 seconds
-    * [x] Remove expired after 60 minutes
+    * [x] Mark inactive after 30 seconds
+    * [x] Remove expired after 15 minutes
     * [ ] What happens when user left tab open with removed game?
   * [ ] Style
     * [ ] Style NEW GAME button

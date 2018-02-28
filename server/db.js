@@ -28,13 +28,13 @@ export const games: Games = {};
 export const gameActions: GameActions = {};
 export let activeGames: ActiveGames = [];
 
-export const bumpActiveGame = createTimeoutBumper(
+export const { bumpTimeout: bumpActiveGame } = createTimeoutBumper(
   {
-    handlerCreator: createGameInactiveHandler,
+    handler: handleInactiveGame,
     timeout: GAME_INACTIVE_TIMEOUT
   },
   {
-    handlerCreator: createGameExpiredHandler,
+    handler: handleExpiredGame,
     timeout: GAME_EXPIRE_TIMEOUT
   }
 );
@@ -110,16 +110,12 @@ function markGameInactive(gameId: GameId) {
   activeGames = without(activeGames, gameId);
 }
 
-function createGameInactiveHandler(gameId: GameId) {
-  return () => {
-    console.log(`Game marked as inactive ${gameId}`);
-    markGameInactive(gameId);
-  };
+function handleInactiveGame(gameId: GameId) {
+  console.log(`Game marked as inactive ${gameId}`);
+  markGameInactive(gameId);
 }
 
-function createGameExpiredHandler(gameId: GameId) {
-  return () => {
-    console.log(`Removing expired game ${gameId}`);
-    removeGame(gameId);
-  };
+function handleExpiredGame(gameId: GameId) {
+  console.log(`Removing expired game ${gameId}`);
+  removeGame(gameId);
 }

@@ -1,7 +1,7 @@
 // @flow
 
 type TimeoutConfig = {
-  handlerCreator: (id: string) => () => mixed,
+  handler: (id: string) => mixed,
   timeout: number
 };
 
@@ -12,10 +12,10 @@ export function createTimeoutBumper(...configs: Array<TimeoutConfig>) {
   function schedule(id: string) {
     const step = timeoutStep[id];
     const config = configs[step];
-    const { handlerCreator, timeout } = config;
+    const { handler, timeout } = config;
 
     timeouts[id] = setTimeout(() => {
-      handlerCreator(id)();
+      handler(id);
 
       if (configs.length > step + 1) {
         timeoutStep[id]++;
@@ -31,7 +31,14 @@ export function createTimeoutBumper(...configs: Array<TimeoutConfig>) {
     const prevTimeout = timeouts[id];
     if (prevTimeout) {
       clearTimeout(prevTimeout);
+
+      delete timeoutStep[id];
+      delete timeouts[id];
     }
+  }
+
+  function cancelAllTimeouts() {
+    Object.keys(timeouts).forEach(cancelTimeout);
   }
 
   function bumpTimeout(id: string) {
@@ -43,6 +50,6 @@ export function createTimeoutBumper(...configs: Array<TimeoutConfig>) {
 
   return {
     bumpTimeout,
-    cancelTimeout
+    cancelAllTimeouts
   };
 }
