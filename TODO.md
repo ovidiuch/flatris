@@ -111,7 +111,7 @@
   * [x] screens/NewGame Play and Copy
   * [x] screens/WaitingForOther Ping
 * [x] Add pause & end game state for solo players with invite screen
-* [ ] Index page
+* [x] Index page
   * [x] Create reduxState.games
   * [x] List all games
   * [x] Beautiful grid
@@ -122,12 +122,12 @@
     * [x] Mark inactive after 30 seconds
     * [x] Remove expired after 15 minutes
     * [x] Redirect to dashboard from expired game page
-  * [ ] Style
+  * [x] Style
     * [x] Style NEW GAME button
     * [x] Add Flatris header
     * [x] Show blank state when no active games exist
     * [x] Fade in fade out transition game previews
-    * [ ] Highlight already joined games
+    * [x] Highlight already joined games
 * [ ] BUG: Broadcast new game to `global` (without requiring an action)
 * [ ] BUG: Reset losses when 2nd player joins
 * [ ] Game footer

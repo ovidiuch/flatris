@@ -2,7 +2,7 @@
 
 import { difference } from 'lodash';
 import classNames from 'classnames';
-import React, { Component } from 'react';
+import React, { Fragment, Component } from 'react';
 import Link from 'next/link';
 import { connect } from 'react-redux';
 import { GAME_INACTIVE_TIMEOUT } from '../constants/timeouts';
@@ -13,10 +13,11 @@ import GamePreview from './GamePreview';
 import Button from './Button';
 import Logo from './Logo';
 
-import type { GameId, Games, State } from '../types/state';
+import type { User, GameId, Game, Games, State } from '../types/state';
 import type { RoomId } from '../types/api';
 
 type Props = {
+  curUser: ?User,
   games: Games,
   curGame: ?GameId,
   subscribe: (roomId: RoomId) => mixed,
@@ -129,9 +130,19 @@ class Dashboard extends Component<Props, LocalState> {
   };
 
   render() {
-    const { games } = this.props;
-    const { gamesCopy, added } = this.state;
-    const hasGames = Object.keys(games).length > 0;
+    const { curUser } = this.props;
+    const { gamesCopy } = this.state;
+
+    const ownGames = [];
+    const otherGames = [];
+    Object.keys(gamesCopy).forEach(gameId => {
+      const game = gamesCopy[gameId];
+      if (curUser && game.players.some(p => p.user.id === curUser.id)) {
+        ownGames.push(game);
+      } else {
+        otherGames.push(game);
+      }
+    });
 
     return (
       <div className="root">
@@ -145,33 +156,28 @@ class Dashboard extends Component<Props, LocalState> {
             <Logo color="#ecf0f1" />
           </div>
         </div>
-        <div className="message">
-          {hasGames ? (
-            <span>Join a game below or create a new one.</span>
-          ) : (
-            <span>No active games. Create a game and break the silence!</span>
+        {!ownGames.length &&
+          !otherGames.length && (
+            <div className="message">Create a game and break the silence!</div>
           )}
-        </div>
-        <div className="game-grid">
-          {Object.keys(gamesCopy).map(gameId => {
-            const classes = classNames('game-preview', {
-              'game-added': added.indexOf(gameId) !== -1,
-              'game-removed': !games[gameId]
-            });
-
-            return (
-              <Link
-                key={gameId}
-                href={`/join?g=${gameId}`}
-                as={`/join/${gameId}`}
-              >
-                <div className={classes}>
-                  <GamePreview curUser={null} game={gamesCopy[gameId]} />
-                </div>
-              </Link>
-            );
-          })}
-        </div>
+        {ownGames.length > 0 && (
+          <Fragment>
+            <div className="message">Your games</div>
+            {this.renderGameGrid(ownGames)}
+          </Fragment>
+        )}
+        {otherGames.length > 0 && (
+          <Fragment>
+            {!ownGames.length ? (
+              <div className="message">
+                Join a game below or create a new one
+              </div>
+            ) : (
+              <div className="message">Other games</div>
+            )}
+            {this.renderGameGrid(otherGames)}
+          </Fragment>
+        )}
         <style jsx>{`
           .root {
             font-size: 18px;
@@ -201,7 +207,32 @@ class Dashboard extends Component<Props, LocalState> {
             line-height: 1.5em;
             color: #9ba4ab;
           }
+        `}</style>
+      </div>
+    );
+  }
 
+  renderGameGrid(games: Array<Game>) {
+    const { added } = this.state;
+
+    return (
+      <div className="game-grid">
+        {games.map(game => {
+          const { id } = game;
+          const classes = classNames('game-preview', {
+            'game-added': added.indexOf(id) !== -1,
+            'game-removed': !this.props.games[id]
+          });
+
+          return (
+            <Link key={id} href={`/join?g=${id}`} as={`/join/${id}`}>
+              <div className={classes}>
+                <GamePreview curUser={null} game={game} />
+              </div>
+            </Link>
+          );
+        })}
+        <style jsx>{`
           .game-grid {
             overflow: hidden; /* clear the floats old school style */
           }
@@ -248,8 +279,9 @@ class Dashboard extends Component<Props, LocalState> {
   }
 }
 
-function mapStateToProps({ games, curGame }: State): $Shape<Props> {
+function mapStateToProps({ curUser, games, curGame }: State): $Shape<Props> {
   return {
+    curUser,
     games,
     curGame
   };
