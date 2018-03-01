@@ -216,4 +216,8 @@ export type ThunkAction = (
   getState: GetState
 ) => void | Action;
 
-export type Dispatch = (Action | ThunkAction) => Action;
+type DispatchRegular<A: Action> = (action: A) => Action;
+
+type DispatchThunk = ThunkAction => void | Action;
+
+export type Dispatch = DispatchRegular<Action> & DispatchThunk;

@@ -17,9 +17,8 @@ import {
 } from '../../actions/global';
 
 import type { Node } from 'react';
-import type { Dispatch } from 'redux'; // eslint-disable-line import/named
 import type { GameId, State } from '../../types/state';
-import type { Action, GameAction } from '../../types/actions';
+import type { Action, GameAction, Dispatch } from '../../types/actions';
 import type { RoomId, BackfillResponse } from '../../types/api';
 
 const {
@@ -37,7 +36,7 @@ const {
 type Props = {
   children: Node,
   state: State,
-  dispatch: Dispatch<Action>
+  dispatch: Dispatch
 };
 
 class SocketProviderInner extends Component<Props> {
