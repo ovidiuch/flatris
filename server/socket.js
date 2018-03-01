@@ -5,6 +5,7 @@ import { omit, difference } from 'lodash';
 import { gameReducer } from '../reducers/game';
 import { games, saveGameAction, bumpActiveGame } from './db';
 
+import type { GameId } from '../types/state';
 import type { GameAction } from '../types/actions';
 import type { RoomId } from '../types/api';
 
@@ -25,16 +26,32 @@ export function attachSocket(server: net$Server) {
       roomsToLeave.forEach(gameId => socket.leave(gameId));
     });
 
+    socket.on('game-keep-alive', (gameId: GameId) => {
+      console.log(`[SOCKET] game-keep-alive ${gameId}`);
+
+      if (!games[gameId]) {
+        // NOTE: This message can flood the logs if client gets stuck
+        console.error('Received keep-alive for missing game', gameId);
+
+        // Notify client to leave expired game page
+        socket.emit('game-removed', gameId);
+      } else {
+        // As long as games are open they are marked as active
+        bumpActiveGame(gameId);
+
+        socket.to('global').broadcast.emit('game-keep-alive', gameId);
+      }
+    });
+
     socket.on('game-action', (action: GameAction) => {
       // console.log('[SOCKET] game-action', action);
 
       const { gameId } = action.payload;
       if (!games[gameId]) {
-        // NOTE: This message can easily flood the logs if expired games are
-        // kept open
+        // NOTE: This message can flood the logs if client gets stuck
         console.error('Received message for missing game', gameId);
 
-        // Notify clients to leave expired game page
+        // Notify client to leave expired game page
         socket.emit('game-removed', gameId);
       } else {
         saveGameAction(action);

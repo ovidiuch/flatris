@@ -8,7 +8,7 @@ import type { BackfillRequest, BackfillResponse } from '../types/api';
 let lastBackfillId = 0;
 let backfillCanceled = false;
 
-export function startBackfill(
+export function requestBackfill(
   game: Game,
   onComplete: (result: BackfillResponse) => mixed,
   onError: (gameId: GameId) => mixed
@@ -17,17 +17,19 @@ export function startBackfill(
   backfillCanceled = false;
 
   const req = getBackfillReq(game);
-  backfillGameActions(req)
-    .then(res => {
+  const { gameId } = req;
+  backfillGameActions(req).then(
+    res => {
       // Backfill will be cancelled either via cancelBackfill or if a new
       // backfill is requested (ie. only one backfill can occur at the same time)
       if (lastBackfillId === backfillId && !backfillCanceled) {
         onComplete(res);
       }
-    })
-    .catch(() => {
-      onError(req.gameId);
-    });
+    },
+    () => {
+      onError(gameId);
+    }
+  );
 
   return backfillId;
 }

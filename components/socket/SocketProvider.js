@@ -1,14 +1,20 @@
 // @flow
 
 import { func } from 'prop-types';
-import { uniqWith } from 'lodash';
+import { uniqWith, sortBy } from 'lodash';
 import { Component } from 'react';
 import { connect } from 'react-redux';
 import { getGame } from '../../utils/api';
 import { getSocket } from '../../utils/socket';
-import { startBackfill, cancelBackfill } from '../../utils/backfill';
-import { isValidGameAction } from '../../reducers/game';
-import { addGame, removeGame } from '../../actions/global';
+import { requestBackfill, cancelBackfill } from '../../utils/backfill';
+import { getGameActionOffset } from '../../reducers/game';
+import {
+  addGame,
+  removeGame,
+  startBackfill,
+  endBackfill,
+  queueGameAction
+} from '../../actions/global';
 
 import type { Node } from 'react';
 import type { Dispatch } from 'redux'; // eslint-disable-line import/named
@@ -18,8 +24,11 @@ import type { RoomId, BackfillResponse } from '../../types/api';
 
 const {
   subscribe,
+  keepGameAlive,
   onGameAction,
   offGameAction,
+  onGameKeepAlive,
+  offGameKeepAlive,
   onGameRemoved,
   offGameRemoved,
   broadcastAction
@@ -31,42 +40,42 @@ type Props = {
   dispatch: Dispatch<Action>
 };
 
-type LocalState = {
-  backfillId: ?number,
-  pendingActions: Array<GameAction>
-};
-
-class SocketProviderInner extends Component<Props, LocalState> {
+class SocketProviderInner extends Component<Props> {
   static childContextTypes = {
     subscribe: func.isRequired,
-    broadcastGameAction: func.isRequired
-  };
-
-  state = {
-    backfillId: null,
-    pendingActions: []
+    keepGameAlive: func.isRequired,
+    broadcastGameAction: func.isRequired,
+    onGameKeepAlive: func.isRequired,
+    offGameKeepAlive: func.isRequired
   };
 
   getChildContext() {
     return {
       subscribe: this.handleSubscribe,
-      broadcastGameAction: this.handleBroadcastGameAction
+      keepGameAlive: keepGameAlive,
+      broadcastGameAction: this.handleBroadcastGameAction,
+      onGameKeepAlive: onGameKeepAlive,
+      offGameKeepAlive: offGameKeepAlive
     };
   }
 
   componentDidMount() {
     onGameAction(this.handleGameAction);
+    onGameKeepAlive(this.handleGameKeepAlive);
     onGameRemoved(this.handleGameRemoved);
   }
 
   componentWillUnmount() {
-    const { backfillId } = this.state;
+    const { state, dispatch } = this.props;
+    const { backfill } = state;
 
     offGameAction(this.handleGameAction);
+    offGameKeepAlive(this.handleGameKeepAlive);
     offGameRemoved(this.handleGameRemoved);
 
-    if (backfillId) {
-      cancelBackfill(backfillId);
+    if (backfill) {
+      cancelBackfill(backfill.backfillId);
+      dispatch(endBackfill());
     }
   }
 
@@ -74,35 +83,45 @@ class SocketProviderInner extends Component<Props, LocalState> {
     // console.log('[SOCKET] On game-action', action);
 
     const { state, dispatch } = this.props;
-    const { backfillId, pendingActions } = this.state;
+    const { backfill } = state;
 
-    if (backfillId) {
-      this.setState({
-        pendingActions: [...pendingActions, action]
-      });
+    if (backfill) {
+      dispatch(queueGameAction(action));
     } else {
-      if (action.type === 'JOIN_GAME') {
-        // There's no previous player action to follow when user just joined
-        dispatch(action);
-      } else {
-        const { gameId } = action.payload;
-        const game = state.games[gameId];
+      const { actionId, gameId } = action.payload;
+      const game = state.games[gameId];
 
-        if (!game) {
-          this.loadGame(gameId);
-        } else if (isValidGameAction(game, action)) {
-          dispatch(action);
-        } else {
+      if (!game) {
+        this.loadGame(gameId);
+      } else {
+        const offset = getGameActionOffset(game, action);
+
+        if (offset > 0) {
           // The action will be discarded for now, but it will show up again
           // during backfill
+          console.log(`Requesting backfill due to detached action ${actionId}`);
           this.startBackfill(gameId);
+        } else if (offset < 0) {
+          // Sometimes we get receive some delayed actions via websocket that
+          // were already returned by latest backfill
+          console.log(`Discarding past game action ${actionId}`);
+        } else {
+          dispatch(action);
         }
       }
     }
   };
 
+  handleGameKeepAlive = (gameId: GameId) => {
+    const { games } = this.props.state;
+
+    if (!games[gameId]) {
+      this.loadGame(gameId);
+    }
+  };
+
   handleGameRemoved = (gameId: GameId) => {
-    console.log(`Received server notice of removed game ${gameId}`);
+    console.log('Received server notice of removed game', gameId);
 
     const { dispatch } = this.props;
     dispatch(removeGame(gameId));
@@ -128,40 +147,38 @@ class SocketProviderInner extends Component<Props, LocalState> {
     console.log(`Backfilling ${gameId}...`);
 
     const { games } = this.props.state;
-    const backfillId = startBackfill(
+    const backfillId = requestBackfill(
       games[gameId],
       this.handleBackfillComplete,
       this.handleBackfillError
     );
 
-    this.setState({
-      backfillId,
-      pendingActions: []
-    });
+    this.props.dispatch(startBackfill(backfillId));
   }
 
   handleBackfillComplete = (res: BackfillResponse) => {
-    const { dispatch } = this.props;
-    const { pendingActions } = this.state;
+    const { state, dispatch } = this.props;
+    const { backfill } = state;
 
-    const mergedActions = [...res, ...pendingActions];
+    if (!backfill) {
+      throw new Error(`Backfill is missing in state upon completion`);
+    }
+
+    const { queuedActions } = backfill;
+    const mergedActions = [...res, ...queuedActions];
     const uniqActions = uniqWith(mergedActions, compareGameActions);
+    const sortedActions = sortBy(uniqActions, act => act.payload.actionId);
 
-    this.setState({
-      backfillId: null,
-      pendingActions: []
-    });
-
-    // TODO: Determine if actions are compatible with game state, and if not
-    // remove game from state completely
     // TODO: Dispatch events at an interval, to convey the rhythm in
     // which the actions were originally performed
-    uniqActions.forEach(dispatch);
+    sortedActions.forEach(dispatch);
 
     const numDupes = mergedActions.length - uniqActions.length;
     console.log(
       `Backfilled ${uniqActions.length} actions (${numDupes} dupes).`
     );
+
+    dispatch(endBackfill());
   };
 
   handleBackfillError = (gameId: GameId) => {
@@ -172,11 +189,11 @@ class SocketProviderInner extends Component<Props, LocalState> {
   };
 
   handleBroadcastGameAction = (action: GameAction) => {
-    const { dispatch } = this.props;
-    const { backfillId } = this.state;
+    const { state, dispatch } = this.props;
+    const { backfill } = state;
 
     // Disallow user to mutate state until it's up to date with server
-    if (backfillId !== null) {
+    if (backfill) {
       console.warn('Action broadcast denied while backfilling.');
       return;
     }

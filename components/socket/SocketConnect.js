@@ -20,7 +20,10 @@ export function withSocket(
 
     static contextTypes = {
       subscribe: func.isRequired,
-      broadcastGameAction: func.isRequired
+      keepGameAlive: func.isRequired,
+      broadcastGameAction: func.isRequired,
+      onGameKeepAlive: func.isRequired,
+      offGameKeepAlive: func.isRequired
     };
 
     createActionHandler = (actionName: string) => async (...args: any) => {
@@ -31,19 +34,23 @@ export function withSocket(
       return broadcastGameAction(actionCreator(...args));
     };
 
-    render() {
-      const { subscribe } = this.context;
-      const actions = Object.keys(syncActions).reduce(
-        (acc, actionName) => {
-          return {
-            ...acc,
-            [actionName]: this.createActionHandler(actionName)
-          };
-        },
-        { subscribe }
-      );
+    getBoundHandlers() {
+      return Object.keys(syncActions).reduce((acc, actionName) => {
+        return {
+          ...acc,
+          [actionName]: this.createActionHandler(actionName)
+        };
+      }, {});
+    }
 
-      return <CompType {...this.props} {...actions} />;
+    render() {
+      return (
+        <CompType
+          {...this.props}
+          {...this.context}
+          {...this.getBoundHandlers()}
+        />
+      );
     }
   }
 

@@ -58,14 +58,16 @@ export function gameReducer(prevState: void | Game, action: GameAction): Game {
   }
 
   // Ensure action consistency
-  const { actionId, prevActionId, userId } = action.payload;
-  const player = getPlayer(prevState, userId);
+  const { actionId, userId } = action.payload;
+  const offset = getGameActionOffset(prevState, action);
 
-  if (prevActionId !== player.lastActionId) {
-    console.log('Game', prevState.id);
-    console.log('User', userId);
-    console.log('Action', action);
-    throw new Error(`action.prevActionId doesn't point to player.lastStateId`);
+  if (offset > 0) {
+    throw new Error(`Refusing detached game action (${offset}ms delta)`);
+  }
+  if (offset < 0) {
+    console.warn(`Past game action ${actionId} ignored (${offset}ms delta)`);
+
+    return prevState;
   }
 
   // Update player.lastActionId for any game action
@@ -496,11 +498,20 @@ export function updatePlayer(
   };
 }
 
-export function isValidGameAction(game: Game, action: GameAction): boolean {
+// This function can have three responses:
+// - 0, which means the action points to game state
+// - <0, which means the action is from the past and will be discarded
+// - >0, which means the action is detached and backfill is required
+export function getGameActionOffset(game: Game, action: GameAction): number {
+  // There's no previous player action to follow when user just joined
+  if (action.type === 'JOIN_GAME') {
+    return 0;
+  }
+
   const { userId, prevActionId } = action.payload;
   const player = getPlayer(game, userId);
 
-  return prevActionId === player.lastActionId;
+  return prevActionId - player.lastActionId;
 }
 
 function rewardClearedBlocks(game: Game, userId: UserId): Game {

@@ -128,9 +128,11 @@
     * [x] Show blank state when no active games exist
     * [x] Fade in fade out transition game previews
     * [x] Highlight already joined games
-* [ ] BUG: Broadcast new game to `global` (without requiring an action)
+* [x] BUG: Broadcast new game to `global` (without requiring an action)
 * [x] BUG: Reset losses when 2nd player joins
-* [ ] Game footer
+* [ ] Minimize network communication: Don't send noop actions
+* [ ] Throttle key down events
+* [ ] Profile browser performance (detect unnecessary renders)
 * [ ] Improve onboarding
   * [ ] Screen 1: Rules
     * [ ] Other player shadow (not connected)
@@ -138,17 +140,10 @@
   * [ ] Screen 2: Controls
     * [ ] Keyboard (arrows and space bar)
     * [ ] Touch (portrait and landscape)
+* [ ] Game footer
 * [ ] Log errors and stats
   * [ ] componentDidCatch
 * [ ] [1.0]
-
-OPTIMIZATIONS
-
-* [ ] Throttle key down events
-* [ ] Minimize network communication: Don't send noop actions
-* [ ] Minimize state footprint
-* [ ] Profile browser performance (detect unnecessary renders)
-* [ ] Batch actions
 
 BACKLOG
 
@@ -159,3 +154,8 @@ BACKLOG
 * [ ] Create drop shadow from active Tetromino
 * [ ] Algorithm for distributing bundled actions in relative time
 * [ ] Sounds
+
+PERF
+
+* [ ] Minimize state footprint
+* [ ] Batch actions
