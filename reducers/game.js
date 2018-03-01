@@ -62,7 +62,7 @@ export function gameReducer(prevState: void | Game, action: GameAction): Game {
   const offset = getGameActionOffset(prevState, action);
 
   if (offset > 0) {
-    throw new Error(`Refusing detatched game action (${offset}ms delta)`);
+    throw new Error(`Refusing detached game action (${offset}ms delta)`);
   }
   if (offset < 0) {
     console.warn(`Past game action ${actionId} ignored (${offset}ms delta)`);
