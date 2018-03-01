@@ -81,6 +81,11 @@ export default class Screen extends Component<Props> {
             opacity: 0.8;
           }
 
+          .message :global(.highlight) {
+            background: rgba(245, 228, 129, 1);
+            padding: 0.15em 0;
+          }
+
           .actions {
             position: absolute;
             top: calc(100% / 20 * 17);

@@ -5,9 +5,12 @@ import { connect } from 'react-redux';
 import { auth } from '../../actions/global';
 import { MAX_NAME_LENGTH } from '../../constants/user';
 import { createUserSession } from '../../utils/api';
-import { isMobileDevice } from '../../utils/events';
 import Button from '../Button';
 import Screen from './Screen';
+import FlatrisIntro from './onboarding/FlatrisIntro';
+import Multiplayer from './onboarding/Multiplayer';
+import ZeroSum from './onboarding/ZeroSum';
+import HowToPlay from './onboarding/HowToPlay';
 
 import type { User, State } from '../../types/state';
 
@@ -16,35 +19,35 @@ type Props = {
   auth: typeof auth
 };
 
+type OnboardingStep = 'intro' | '1vs1' | '0sum' | 'howto';
+
 type LocalState = {
-  isMobile: boolean,
   name: string,
   pendingAuth: boolean,
-  hasSubmitted: boolean,
-  user: ?User
+  user: ?User,
+  onboardingStep: OnboardingStep,
+  hasSubmitted: boolean
 };
+
+const ONBOARDING_SCREENS = {
+  intro: FlatrisIntro,
+  '1vs1': Multiplayer,
+  '0sum': ZeroSum,
+  howto: HowToPlay
+};
+
+const ONBOARDING_STEPS = Object.keys(ONBOARDING_SCREENS);
 
 class Auth extends Component<Props, LocalState> {
   nameField: ?HTMLInputElement;
 
   state = {
-    isMobile: false,
     name: '',
     pendingAuth: false,
     user: null,
+    onboardingStep: 'intro',
     hasSubmitted: false
   };
-
-  componentDidMount() {
-    // TODO: Create DetectDevice component with two render props:
-    // - hasMounted: boolean (false on the server)
-    // - isMobile: boolean (only reliable once hasMounted is true)
-    if (isMobileDevice()) {
-      this.setState({
-        isMobile: true
-      });
-    }
-  }
 
   componentDidUpdate(prevProps) {
     if (this.props.jsReady && !prevProps.jsReady) {
@@ -89,73 +92,48 @@ class Auth extends Component<Props, LocalState> {
     }
   };
 
-  handleConfirmOnboarding = () => {
+  handleOnboardingNext = () => {
     const { auth } = this.props;
-    const { user } = this.state;
+    const { user, onboardingStep } = this.state;
 
     if (!user) {
       throw new Error('Onboarding with missing user');
     }
 
-    this.setState({
-      hasSubmitted: true
-    });
+    const step = ONBOARDING_STEPS.indexOf(onboardingStep);
+    const nextStep = ONBOARDING_STEPS[step + 1];
 
-    auth(user);
+    if (nextStep) {
+      this.setState({
+        onboardingStep: nextStep
+      });
+    } else {
+      this.setState({
+        hasSubmitted: true
+      });
+
+      auth(user);
+    }
   };
 
   render() {
     const { jsReady } = this.props;
-    const { name, pendingAuth, user, hasSubmitted, isMobile } = this.state;
-
-    const ctrlInstruction = isMobile ? (
-      <Fragment>
-        Press the <strong>left</strong>, <strong>right</strong>,<br />
-        <strong>rotate</strong> & <strong>drop</strong> buttons to<br />
-        control the falling piece.
-      </Fragment>
-    ) : (
-      <Fragment>
-        Use the <strong>arrow keys</strong>
-        <br />and the <strong>space bar</strong> to<br />control the falling
-        piece.
-      </Fragment>
-    );
+    const {
+      name,
+      pendingAuth,
+      user,
+      onboardingStep,
+      hasSubmitted
+    } = this.state;
 
     // Greet user with onboarding after they authenticate
     if (user) {
+      const OnboardingScreen = ONBOARDING_SCREENS[onboardingStep];
+
       return (
-        <Screen
-          title="Welcome!"
-          message={
-            <Fragment>
-              <p>{ctrlInstruction}</p>
-              <p>
-                <strong>Multiplayer twist</strong>:
-                <br />
-                <span className="highlight">
-                  Every line you clear<br />will be added to your<br />
-                  opponent
-                </span>{' '}
-                and viceversa.
-              </p>
-              <p>Play fast to survive!</p>
-              <style jsx>{`
-                .highlight {
-                  background: rgba(245, 228, 129, 1);
-                  padding: 0.15em 0;
-                }
-              `}</style>
-            </Fragment>
-          }
-          actions={[
-            <Button
-              disabled={hasSubmitted}
-              onClick={this.handleConfirmOnboarding}
-            >
-              Got it
-            </Button>
-          ]}
+        <OnboardingScreen
+          disabled={hasSubmitted}
+          onNext={this.handleOnboardingNext}
         />
       );
     }

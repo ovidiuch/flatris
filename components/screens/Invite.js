@@ -25,7 +25,7 @@ export default class Invite extends Component<Props> {
             <p>
               <strong>
                 Playing with a <del>friend</del>
-                <br />enemy is more fun!
+                <br />rival is more fun!
               </strong>
             </p>
             <div className="copy">

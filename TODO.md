@@ -133,13 +133,11 @@
 * [x] Minimize network communication: Don't send noop actions
 * [x] Throttle key down events
 * [x] Profile browser performance (detect unnecessary renders)
-* [ ] Improve onboarding
-  * [ ] Screen 1: Rules
-    * [ ] Other player shadow (not connected)
-    * [ ] Line transferring
-  * [ ] Screen 2: Controls
-    * [ ] Keyboard (arrows and space bar)
-    * [ ] Touch (portrait and landscape)
+* [x] Redesign onboarding
+  * [x] Screen 1: Game intro
+  * [x] Screen 2: Multiplayer game
+  * [x] Screen 3: Line transferring
+  * [x] Screen 4: Controls
 * [ ] Game footer
 * [ ] Log errors and stats
   * [ ] componentDidCatch
@@ -148,15 +146,13 @@
 
 BACKLOG
 
-* [ ] Custom 404 page
-* [ ] Notify 1p when 2p arrives via web Notifications API
-      https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API/
-* [ ] Freeze game on player disconnect (Keep seat taken in case user returns)
+* [ ] Custom 404 page (or just redirect to home)
+* [ ] Freeze game on player disconnect
 * [ ] Create drop shadow from active Tetromino
-* [ ] Algorithm for distributing bundled actions in relative time
+* [ ] Algorithm for dispatching bundled actions at time interval
 * [ ] Sounds
 
 PERF
 
 * [ ] Minimize state footprint
-* [ ] Batch actions
+* [ ] Batch dashboard actions
