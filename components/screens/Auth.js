@@ -25,10 +25,6 @@ type LocalState = {
 };
 
 class Auth extends Component<Props, LocalState> {
-  static defaultProps = {
-    disabled: false
-  };
-
   nameField: ?HTMLInputElement;
 
   state = {
@@ -50,13 +46,19 @@ class Auth extends Component<Props, LocalState> {
     }
   }
 
+  componentDidUpdate(prevProps) {
+    if (this.props.jsReady && !prevProps.jsReady) {
+      this.focusOnNameField();
+    }
+  }
+
   handleInputRef = node => {
     this.nameField = node;
     this.focusOnNameField();
   };
 
   focusOnNameField = () => {
-    if (this.nameField && !this.props.disabled) {
+    if (this.nameField && this.props.jsReady) {
       this.nameField.focus();
     }
   };
@@ -199,6 +201,7 @@ class Auth extends Component<Props, LocalState> {
             font-size: 1em;
             text-transform: uppercase;
             outline: none;
+            transition: box-shadow 0.5s;
           }
           input:focus {
             box-shadow: inset 0.25em 0.25em 0 0 #3993d0;

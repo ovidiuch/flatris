@@ -61,7 +61,7 @@ exports[`Cosmos fixtures: Connect(Auth):default 1`] = `
       }
     >
       <form
-        className="jsx-1749762593"
+        className="jsx-1986851731"
         onSubmit={[Function]}
       >
         <div
@@ -79,16 +79,16 @@ exports[`Cosmos fixtures: Connect(Auth):default 1`] = `
               className="jsx-2362338977 message"
             >
               <p
-                className="jsx-1749762593"
+                className="jsx-1986851731"
                 onClick={[Function]}
               >
                 Enter your name
               </p>
               <p
-                className="jsx-1749762593"
+                className="jsx-1986851731"
               >
                 <input
-                  className="jsx-1749762593"
+                  className="jsx-1986851731"
                   disabled={false}
                   maxLength={14}
                   onChange={[Function]}
@@ -98,10 +98,10 @@ exports[`Cosmos fixtures: Connect(Auth):default 1`] = `
                 />
               </p>
               <p
-                className="jsx-1749762593"
+                className="jsx-1986851731"
               >
                 <small
-                  className="jsx-1749762593"
+                  className="jsx-1986851731"
                 >
                   Fake names allowed ;-)
                 </small>
@@ -149,7 +149,7 @@ exports[`Cosmos fixtures: Connect(Auth):disabled 1`] = `
       }
     >
       <form
-        className="jsx-1749762593"
+        className="jsx-1986851731"
         onSubmit={[Function]}
       >
         <div
@@ -167,16 +167,16 @@ exports[`Cosmos fixtures: Connect(Auth):disabled 1`] = `
               className="jsx-2362338977 message"
             >
               <p
-                className="jsx-1749762593"
+                className="jsx-1986851731"
                 onClick={[Function]}
               >
                 Enter your name
               </p>
               <p
-                className="jsx-1749762593"
+                className="jsx-1986851731"
               >
                 <input
-                  className="jsx-1749762593"
+                  className="jsx-1986851731"
                   disabled={true}
                   maxLength={14}
                   onChange={[Function]}
@@ -186,10 +186,10 @@ exports[`Cosmos fixtures: Connect(Auth):disabled 1`] = `
                 />
               </p>
               <p
-                className="jsx-1749762593"
+                className="jsx-1986851731"
               >
                 <small
-                  className="jsx-1749762593"
+                  className="jsx-1986851731"
                 >
                   Fake names allowed ;-)
                 </small>
@@ -229,7 +229,7 @@ exports[`Cosmos fixtures: Connect(NewGame):default 1`] = `
       className="jsx-3372609668 screen-container"
     >
       <form
-        className="jsx-1749762593"
+        className="jsx-1986851731"
         onSubmit={[Function]}
       >
         <div
@@ -247,16 +247,16 @@ exports[`Cosmos fixtures: Connect(NewGame):default 1`] = `
               className="jsx-2362338977 message"
             >
               <p
-                className="jsx-1749762593"
+                className="jsx-1986851731"
                 onClick={[Function]}
               >
                 Enter your name
               </p>
               <p
-                className="jsx-1749762593"
+                className="jsx-1986851731"
               >
                 <input
-                  className="jsx-1749762593"
+                  className="jsx-1986851731"
                   disabled={false}
                   maxLength={14}
                   onChange={[Function]}
@@ -266,10 +266,10 @@ exports[`Cosmos fixtures: Connect(NewGame):default 1`] = `
                 />
               </p>
               <p
-                className="jsx-1749762593"
+                className="jsx-1986851731"
               >
                 <small
-                  className="jsx-1749762593"
+                  className="jsx-1986851731"
                 >
                   Fake names allowed ;-)
                 </small>
@@ -457,7 +457,7 @@ exports[`Cosmos fixtures: Connect(NewGame):loading 1`] = `
       className="jsx-3372609668 screen-container"
     >
       <form
-        className="jsx-1749762593"
+        className="jsx-1986851731"
         onSubmit={[Function]}
       >
         <div
@@ -475,16 +475,16 @@ exports[`Cosmos fixtures: Connect(NewGame):loading 1`] = `
               className="jsx-2362338977 message"
             >
               <p
-                className="jsx-1749762593"
+                className="jsx-1986851731"
                 onClick={[Function]}
               >
                 Enter your name
               </p>
               <p
-                className="jsx-1749762593"
+                className="jsx-1986851731"
               >
                 <input
-                  className="jsx-1749762593"
+                  className="jsx-1986851731"
                   disabled={true}
                   maxLength={14}
                   onChange={[Function]}
@@ -494,10 +494,10 @@ exports[`Cosmos fixtures: Connect(NewGame):loading 1`] = `
                 />
               </p>
               <p
-                className="jsx-1749762593"
+                className="jsx-1986851731"
               >
                 <small
-                  className="jsx-1749762593"
+                  className="jsx-1986851731"
                 >
                   Fake names allowed ;-)
                 </small>
