@@ -74,14 +74,18 @@ class SocketProviderRaw extends Component<SocketProviderProps> {
   static childContextTypes = {
     subscribe: func.isRequired,
     keepGameAlive: func.isRequired,
-    broadcastGameAction: func.isRequired
+    broadcastGameAction: func.isRequired,
+    onGameKeepAlive: func.isRequired,
+    offGameKeepAlive: func.isRequired
   };
 
   getChildContext() {
     return {
       subscribe: this.handleSubscribe,
       keepGameAlive: this.handleKeepGameAlive,
-      broadcastGameAction: this.handleBroadcastGameAction
+      broadcastGameAction: this.handleBroadcastGameAction,
+      onGameKeepAlive: this.handleOnGameKeepAlive,
+      offGameKeepAlive: this.handleOffGameKeepAlive
     };
   }
 
@@ -98,6 +102,14 @@ class SocketProviderRaw extends Component<SocketProviderProps> {
 
     // The final action is returned from async thunk actions
     dispatch(action);
+  };
+
+  handleOnGameKeepAlive = () => {
+    console.log('Subscribe to game-keep-alive');
+  };
+
+  handleOffGameKeepAlive = () => {
+    console.log('Unsubscribe from game-keep-alive');
   };
 
   render() {
