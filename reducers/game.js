@@ -501,7 +501,7 @@ export function updatePlayer(
 // This function can have three responses:
 // - 0, which means the action points to game state
 // - <0, which means the action is from the past and will be discarded
-// - >0, wihch means the action is detached and backfill is required
+// - >0, which means the action is detached and backfill is required
 export function getGameActionOffset(game: Game, action: GameAction): number {
   // There's no previous player action to follow when user just joined
   if (action.type === 'JOIN_GAME') {
