@@ -132,7 +132,7 @@
 * [x] BUG: Reset losses when 2nd player joins
 * [x] Minimize network communication: Don't send noop actions
 * [x] Throttle key down events
-* [ ] Profile browser performance (detect unnecessary renders)
+* [x] Profile browser performance (detect unnecessary renders)
 * [ ] Improve onboarding
   * [ ] Screen 1: Rules
     * [ ] Other player shadow (not connected)
@@ -143,6 +143,7 @@
 * [ ] Game footer
 * [ ] Log errors and stats
   * [ ] componentDidCatch
+* [ ] Link to Github
 * [ ] [1.0]
 
 BACKLOG
