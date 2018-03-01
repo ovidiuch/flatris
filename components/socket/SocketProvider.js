@@ -102,7 +102,7 @@ class SocketProviderInner extends Component<Props> {
           console.log(`Requesting backfill due to detached action ${actionId}`);
           this.startBackfill(gameId);
         } else if (offset < 0) {
-          // Sometimes we get receive some delayed actions with websocket that
+          // Sometimes we get receive some delayed actions via websocket that
           // were already returned by latest backfill
           console.log(`Discarding past game action ${actionId}`);
         } else {
