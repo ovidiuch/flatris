@@ -46,13 +46,14 @@ import WaitingForOther from './screens/WaitingForOther';
 import GameOver from './screens/GameOver';
 
 import type { Node } from 'react';
-import type { User, GameId, Game, State } from '../types/state';
+import type { User, GameId, Game, Backfill, State } from '../types/state';
 import type { RoomId } from '../types/api';
 
 type Props = {
   jsReady: boolean,
   curUser: ?User,
   game: Game,
+  backfill: ?Backfill,
   subscribe: (roomId: RoomId) => mixed,
   keepGameAlive: (gameId: GameId) => mixed,
   joinGame: typeof joinGame,
@@ -264,9 +265,10 @@ class FlatrisGame extends Component<Props, LocalState> {
   };
 
   renderScreens() {
-    const { jsReady, curUser, game } = this.props;
+    const { jsReady, curUser, game, backfill } = this.props;
     const { isWatching } = this.state;
     const hasJoined = isPlayer(game, curUser);
+    const disabled = Boolean(!jsReady || backfill);
 
     // P1 is the current user's player, P2 is the other (in multiplayer games)
     const curPlayer = getCurPlayer(game, curUser);
@@ -278,7 +280,7 @@ class FlatrisGame extends Component<Props, LocalState> {
 
     if (!hasJoined && otherPlayer) {
       return this.renderScreen(
-        <GameFull disabled={!jsReady} onWatch={this.handleWatch} />
+        <GameFull disabled={disabled} onWatch={this.handleWatch} />
       );
     }
 
@@ -289,7 +291,7 @@ class FlatrisGame extends Component<Props, LocalState> {
     if (!hasJoined) {
       return this.renderScreen(
         <JoinGame
-          disabled={!jsReady}
+          disabled={disabled}
           onWatch={this.handleWatch}
           onJoin={this.handleJoin}
         />
@@ -304,7 +306,7 @@ class FlatrisGame extends Component<Props, LocalState> {
     if (curPlayer.status === 'LOST' || curPlayer.status === 'WON') {
       return this.renderScreen(
         <GameOver
-          disabled={!jsReady}
+          disabled={disabled}
           curUser={curUser}
           game={game}
           onRestart={this.handleReady}
@@ -316,7 +318,7 @@ class FlatrisGame extends Component<Props, LocalState> {
       if (curPlayer.status === 'PAUSE') {
         return this.renderScreen(
           <Invite
-            disabled={!jsReady}
+            disabled={disabled}
             gameId={game.id}
             onPlay={this.handleReady}
           />
@@ -327,8 +329,7 @@ class FlatrisGame extends Component<Props, LocalState> {
       // allPlayersReady(game) would've returned true
       return this.renderScreen(
         <NewGame
-          disabled={!jsReady}
-          jsReady={jsReady}
+          disabled={disabled}
           gameId={game.id}
           onPlay={this.handleReady}
         />
@@ -338,7 +339,7 @@ class FlatrisGame extends Component<Props, LocalState> {
     if (curPlayer.status === 'READY') {
       return this.renderScreen(
         <WaitingForOther
-          disabled={!jsReady}
+          disabled={disabled}
           curPlayer={curPlayer}
           onPing={this.handlePing}
         />
@@ -348,7 +349,7 @@ class FlatrisGame extends Component<Props, LocalState> {
     // curPlayer.status === 'PENDING'
     return this.renderScreen(
       <GetReady
-        disabled={!jsReady}
+        disabled={disabled}
         otherPlayer={otherPlayer}
         onReady={this.handleReady}
       />
@@ -434,11 +435,16 @@ class FlatrisGame extends Component<Props, LocalState> {
   }
 }
 
-const mapStateToProps = (state: State): $Shape<Props> => ({
-  jsReady: state.jsReady,
-  curUser: state.curUser,
-  game: getCurGame(state)
-});
+const mapStateToProps = (state: State): $Shape<Props> => {
+  const { jsReady, curUser, backfill } = state;
+
+  return {
+    jsReady: jsReady,
+    curUser: curUser,
+    game: getCurGame(state),
+    backfill
+  };
+};
 
 const mapDispatchToProps = {
   runGameFrame

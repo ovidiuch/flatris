@@ -18,11 +18,12 @@ import Right from './Right';
 import Rotate from './Rotate';
 import Drop from './Drop';
 
-import type { User, Game, State } from '../../types/state';
+import type { User, Game, Backfill, State } from '../../types/state';
 
 type Props = {
   curUser: ?User,
   game: Game,
+  backfill: ?Backfill,
   moveLeft: typeof moveLeft,
   moveRight: typeof moveRight,
   rotate: typeof rotate,
@@ -60,28 +61,26 @@ class LandscapeControls extends Component<Props> {
   };
 
   render() {
-    const { curUser, game } = this.props;
+    const { curUser, game, backfill } = this.props;
     const isGameRunning = isPlayer(game, curUser) && allPlayersReady(game);
+    const disabled = Boolean(!isGameRunning || backfill);
 
     return (
       <Fragment>
         <div className="ctrl-side left">
           <div className="button">
-            <Left disabled={!isGameRunning} onPress={this.handleLeftPress} />
+            <Left disabled={disabled} onPress={this.handleLeftPress} />
           </div>
           <div className="button">
-            <Rotate
-              disabled={!isGameRunning}
-              onPress={this.handleRotatePress}
-            />
+            <Rotate disabled={disabled} onPress={this.handleRotatePress} />
           </div>
         </div>
         <div className="ctrl-side right">
           <div className="button">
-            <Right disabled={!isGameRunning} onPress={this.handleRightPress} />
+            <Right disabled={disabled} onPress={this.handleRightPress} />
           </div>
           <div className="button">
-            <Drop disabled={!isGameRunning} onPress={this.handleDropPress} />
+            <Drop disabled={disabled} onPress={this.handleDropPress} />
           </div>
         </div>
         <style jsx>{`
@@ -110,10 +109,15 @@ class LandscapeControls extends Component<Props> {
   }
 }
 
-const mapStateToProps = (state: State): $Shape<Props> => ({
-  curUser: state.curUser,
-  game: getCurGame(state)
-});
+const mapStateToProps = (state: State): $Shape<Props> => {
+  const { curUser, backfill } = state;
+
+  return {
+    curUser,
+    game: getCurGame(state),
+    backfill
+  };
+};
 
 const syncActions = {
   moveLeft,
