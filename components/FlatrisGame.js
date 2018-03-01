@@ -3,8 +3,8 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import _ from 'lodash';
-import { UP, DOWN, LEFT, RIGHT, SPACE } from '../constants/keys';
+import { throttle } from 'lodash';
+import { UP, DOWN, LEFT, RIGHT, SPACE, KEY_DELAY } from '../constants/keys';
 import { GAME_INACTIVE_TIMEOUT } from '../constants/timeouts';
 import {
   isPlayer,
@@ -227,31 +227,46 @@ class FlatrisGame extends Component<Props, LocalState> {
     }
   };
 
+  // This has multiple benefits, in this order:
+  // 1. Prevent flooding the network with too many actions per second
+  // 2. Provide level playing field between users with different keyboard config
+  // 3. Prevent client pref degradation due to too many actions per second
+  tEnableAcceleration = throttle(this.props.enableAcceleration, KEY_DELAY);
+  tRotate = throttle(this.props.rotate, KEY_DELAY);
+  tMoveLeft = throttle(this.props.moveLeft, KEY_DELAY);
+  tMoveRight = throttle(this.props.moveRight, KEY_DELAY);
+
   handleKeyDown = e => {
     // Prevent page from scrolling when pressing arrow keys
-    if (_.values([UP, DOWN, LEFT, RIGHT]).indexOf(e.keyCode) !== -1) {
+    if ([UP, DOWN, LEFT, RIGHT, SPACE].indexOf(e.keyCode) !== -1) {
       e.preventDefault();
     }
 
-    const { enableAcceleration, rotate, moveLeft, moveRight } = this.props;
-
     switch (e.keyCode) {
-      case 88: // X key
-        // TEMP: Escape hatch to stop the game. Remove in final version
-        cancelGameFrame();
-        break;
       case DOWN:
       case SPACE:
-        enableAcceleration();
+        this.tRotate.cancel();
+        this.tMoveLeft.cancel();
+        this.tMoveRight.cancel();
+        this.tEnableAcceleration();
         break;
       case UP:
-        rotate();
+        this.tEnableAcceleration.cancel();
+        this.tMoveLeft.cancel();
+        this.tMoveRight.cancel();
+        this.tRotate();
         break;
       case LEFT:
-        moveLeft();
+        this.tEnableAcceleration.cancel();
+        this.tRotate.cancel();
+        this.tMoveRight.cancel();
+        this.tMoveLeft();
         break;
       case RIGHT:
-        moveRight();
+        this.tEnableAcceleration.cancel();
+        this.tRotate.cancel();
+        this.tMoveLeft.cancel();
+        this.tMoveRight();
         break;
       default:
     }
@@ -259,6 +274,11 @@ class FlatrisGame extends Component<Props, LocalState> {
 
   handleKeyUp = e => {
     if (e.keyCode === DOWN) {
+      this.tEnableAcceleration.cancel();
+      this.tRotate.cancel();
+      this.tMoveLeft.cancel();
+      this.tMoveRight.cancel();
+
       const { disableAcceleration } = this.props;
       disableAcceleration();
     }

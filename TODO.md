@@ -131,7 +131,7 @@
 * [x] BUG: Broadcast new game to `global` (without requiring an action)
 * [x] BUG: Reset losses when 2nd player joins
 * [x] Minimize network communication: Don't send noop actions
-* [ ] Throttle key down events
+* [x] Throttle key down events
 * [ ] Profile browser performance (detect unnecessary renders)
 * [ ] Improve onboarding
   * [ ] Screen 1: Rules
