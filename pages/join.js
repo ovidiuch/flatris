@@ -5,7 +5,7 @@ import Router from 'next/router';
 import Error from 'next/error';
 import withRedux from 'next-redux-wrapper';
 import { createStore } from '../store';
-import { addGame, openGame } from '../actions/global';
+import { addGame, openGame, stripGameEffects } from '../actions/global';
 import { addCurUserToState, getGame } from '../utils/api';
 import { SocketProvider } from '../components/socket/SocketProvider';
 import Layout from '../components/Layout';
@@ -45,6 +45,10 @@ class JoinPage extends Component<Props> {
 
         return { statusCode };
       }
+    } else {
+      // Strip game effects to prevent triggering the last effect whenever
+      // opening an existing game
+      dispatch(stripGameEffects());
     }
 
     dispatch(openGame(gameId));
