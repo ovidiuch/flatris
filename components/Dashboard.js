@@ -251,7 +251,6 @@ class Dashboard extends Component<Props, LocalState> {
             margin: 0 0 20px 20px;
             font-size: 12px;
             cursor: pointer;
-            transition: opacity 0.2s ease-in, transform 0.2s ease-in;
           }
           .game-added {
             animation: 0.5s added forwards;

@@ -17,7 +17,7 @@ import {
 
 import type { Node } from 'react';
 import type { GameId, State } from '../../types/state';
-import type { Action, GameAction, Dispatch } from '../../types/actions';
+import type { GameAction, Dispatch } from '../../types/actions';
 import type { RoomId, BackfillResponse } from '../../types/api';
 
 const {

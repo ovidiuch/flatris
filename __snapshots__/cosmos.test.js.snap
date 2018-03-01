@@ -783,10 +783,10 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):game 1`] = `
     Join a game below or create a new one
   </div>
   <div
-    className="jsx-3205026305 game-grid"
+    className="jsx-1821874668 game-grid"
   >
     <div
-      className="jsx-3205026305 game-preview"
+      className="jsx-1821874668 game-preview"
       onClick={[Function]}
     >
       <div
@@ -1192,10 +1192,10 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-added 1`] = `
     Join a game below or create a new one
   </div>
   <div
-    className="jsx-3205026305 game-grid"
+    className="jsx-1821874668 game-grid"
   >
     <div
-      className="jsx-3205026305 game-preview game-added"
+      className="jsx-1821874668 game-preview game-added"
       onClick={[Function]}
     >
       <div
@@ -1489,7 +1489,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-added 1`] = `
       </div>
     </div>
     <div
-      className="jsx-3205026305 game-preview game-added"
+      className="jsx-1821874668 game-preview game-added"
       onClick={[Function]}
     >
       <div
@@ -1783,7 +1783,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-added 1`] = `
       </div>
     </div>
     <div
-      className="jsx-3205026305 game-preview game-added"
+      className="jsx-1821874668 game-preview game-added"
       onClick={[Function]}
     >
       <div
@@ -2189,10 +2189,10 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed 1`] = 
     Join a game below or create a new one
   </div>
   <div
-    className="jsx-3205026305 game-grid"
+    className="jsx-1821874668 game-grid"
   >
     <div
-      className="jsx-3205026305 game-preview game-removed"
+      className="jsx-1821874668 game-preview game-removed"
       onClick={[Function]}
     >
       <div
@@ -2486,7 +2486,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed 1`] = 
       </div>
     </div>
     <div
-      className="jsx-3205026305 game-preview game-removed"
+      className="jsx-1821874668 game-preview game-removed"
       onClick={[Function]}
     >
       <div
@@ -2780,7 +2780,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed 1`] = 
       </div>
     </div>
     <div
-      className="jsx-3205026305 game-preview game-removed"
+      className="jsx-1821874668 game-preview game-removed"
       onClick={[Function]}
     >
       <div
@@ -3186,10 +3186,10 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed-and-ad
     Join a game below or create a new one
   </div>
   <div
-    className="jsx-3205026305 game-grid"
+    className="jsx-1821874668 game-grid"
   >
     <div
-      className="jsx-3205026305 game-preview game-removed"
+      className="jsx-1821874668 game-preview game-removed"
       onClick={[Function]}
     >
       <div
@@ -3483,7 +3483,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed-and-ad
       </div>
     </div>
     <div
-      className="jsx-3205026305 game-preview game-removed"
+      className="jsx-1821874668 game-preview game-removed"
       onClick={[Function]}
     >
       <div
@@ -3777,7 +3777,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed-and-ad
       </div>
     </div>
     <div
-      className="jsx-3205026305 game-preview game-added"
+      className="jsx-1821874668 game-preview game-added"
       onClick={[Function]}
     >
       <div
@@ -4294,10 +4294,10 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):own-game 1`] = `
     Your games
   </div>
   <div
-    className="jsx-3205026305 game-grid"
+    className="jsx-1821874668 game-grid"
   >
     <div
-      className="jsx-3205026305 game-preview"
+      className="jsx-1821874668 game-preview"
       onClick={[Function]}
     >
       <div
@@ -4597,10 +4597,10 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):own-game 1`] = `
     Other games
   </div>
   <div
-    className="jsx-3205026305 game-grid"
+    className="jsx-1821874668 game-grid"
   >
     <div
-      className="jsx-3205026305 game-preview"
+      className="jsx-1821874668 game-preview"
       onClick={[Function]}
     >
       <div
@@ -5006,10 +5006,10 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):own-game-removed 1`]
     Your games
   </div>
   <div
-    className="jsx-3205026305 game-grid"
+    className="jsx-1821874668 game-grid"
   >
     <div
-      className="jsx-3205026305 game-preview game-removed"
+      className="jsx-1821874668 game-preview game-removed"
       onClick={[Function]}
     >
       <div
@@ -5309,10 +5309,10 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):own-game-removed 1`]
     Other games
   </div>
   <div
-    className="jsx-3205026305 game-grid"
+    className="jsx-1821874668 game-grid"
   >
     <div
-      className="jsx-3205026305 game-preview"
+      className="jsx-1821874668 game-preview"
       onClick={[Function]}
     >
       <div
