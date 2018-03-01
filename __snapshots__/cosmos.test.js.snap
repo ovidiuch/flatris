@@ -805,16 +805,14 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):game 1`] = `
                 className="jsx-124931555 flash"
               >
                 <div
-                  className="jsx-2881654396 well"
+                  className="jsx-2914085764 well"
                 >
                   <div
-                    className="jsx-2881654396 active-tetromino"
+                    className="jsx-2914085764 active-tetromino"
                     style={
                       Object {
-                        "height": "20%",
                         "left": "30%",
                         "top": "-10%",
-                        "width": "40%",
                       }
                     }
                   >
@@ -1214,16 +1212,14 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-added 1`] = `
                 className="jsx-124931555 flash"
               >
                 <div
-                  className="jsx-2881654396 well"
+                  className="jsx-2914085764 well"
                 >
                   <div
-                    className="jsx-2881654396 active-tetromino"
+                    className="jsx-2914085764 active-tetromino"
                     style={
                       Object {
-                        "height": "20%",
                         "left": "30%",
                         "top": "-10%",
-                        "width": "40%",
                       }
                     }
                   >
@@ -1508,16 +1504,14 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-added 1`] = `
                 className="jsx-124931555 flash"
               >
                 <div
-                  className="jsx-2881654396 well"
+                  className="jsx-2914085764 well"
                 >
                   <div
-                    className="jsx-2881654396 active-tetromino"
+                    className="jsx-2914085764 active-tetromino"
                     style={
                       Object {
-                        "height": "20%",
                         "left": "40%",
                         "top": "-10%",
-                        "width": "40%",
                       }
                     }
                   >
@@ -1802,16 +1796,14 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-added 1`] = `
                 className="jsx-124931555 flash"
               >
                 <div
-                  className="jsx-2881654396 well"
+                  className="jsx-2914085764 well"
                 >
                   <div
-                    className="jsx-2881654396 active-tetromino"
+                    className="jsx-2914085764 active-tetromino"
                     style={
                       Object {
-                        "height": "20%",
                         "left": "30%",
                         "top": "-10%",
-                        "width": "40%",
                       }
                     }
                   >
@@ -2211,16 +2203,14 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed 1`] = 
                 className="jsx-124931555 flash"
               >
                 <div
-                  className="jsx-2881654396 well"
+                  className="jsx-2914085764 well"
                 >
                   <div
-                    className="jsx-2881654396 active-tetromino"
+                    className="jsx-2914085764 active-tetromino"
                     style={
                       Object {
-                        "height": "20%",
                         "left": "30%",
                         "top": "-10%",
-                        "width": "40%",
                       }
                     }
                   >
@@ -2505,16 +2495,14 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed 1`] = 
                 className="jsx-124931555 flash"
               >
                 <div
-                  className="jsx-2881654396 well"
+                  className="jsx-2914085764 well"
                 >
                   <div
-                    className="jsx-2881654396 active-tetromino"
+                    className="jsx-2914085764 active-tetromino"
                     style={
                       Object {
-                        "height": "20%",
                         "left": "40%",
                         "top": "-10%",
-                        "width": "40%",
                       }
                     }
                   >
@@ -2799,16 +2787,14 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed 1`] = 
                 className="jsx-124931555 flash"
               >
                 <div
-                  className="jsx-2881654396 well"
+                  className="jsx-2914085764 well"
                 >
                   <div
-                    className="jsx-2881654396 active-tetromino"
+                    className="jsx-2914085764 active-tetromino"
                     style={
                       Object {
-                        "height": "20%",
                         "left": "30%",
                         "top": "-10%",
-                        "width": "40%",
                       }
                     }
                   >
@@ -3208,16 +3194,14 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed-and-ad
                 className="jsx-124931555 flash"
               >
                 <div
-                  className="jsx-2881654396 well"
+                  className="jsx-2914085764 well"
                 >
                   <div
-                    className="jsx-2881654396 active-tetromino"
+                    className="jsx-2914085764 active-tetromino"
                     style={
                       Object {
-                        "height": "20%",
                         "left": "30%",
                         "top": "-10%",
-                        "width": "40%",
                       }
                     }
                   >
@@ -3502,16 +3486,14 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed-and-ad
                 className="jsx-124931555 flash"
               >
                 <div
-                  className="jsx-2881654396 well"
+                  className="jsx-2914085764 well"
                 >
                   <div
-                    className="jsx-2881654396 active-tetromino"
+                    className="jsx-2914085764 active-tetromino"
                     style={
                       Object {
-                        "height": "20%",
                         "left": "40%",
                         "top": "-10%",
-                        "width": "40%",
                       }
                     }
                   >
@@ -3796,16 +3778,14 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed-and-ad
                 className="jsx-124931555 flash"
               >
                 <div
-                  className="jsx-2881654396 well"
+                  className="jsx-2914085764 well"
                 >
                   <div
-                    className="jsx-2881654396 active-tetromino"
+                    className="jsx-2914085764 active-tetromino"
                     style={
                       Object {
-                        "height": "20%",
                         "left": "30%",
                         "top": "-10%",
-                        "width": "40%",
                       }
                     }
                   >
@@ -4316,16 +4296,14 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):own-game 1`] = `
                 className="jsx-124931555 flash"
               >
                 <div
-                  className="jsx-2881654396 well"
+                  className="jsx-2914085764 well"
                 >
                   <div
-                    className="jsx-2881654396 active-tetromino"
+                    className="jsx-2914085764 active-tetromino"
                     style={
                       Object {
-                        "height": "20%",
                         "left": "30%",
                         "top": "-10%",
-                        "width": "40%",
                       }
                     }
                   >
@@ -4619,16 +4597,14 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):own-game 1`] = `
                 className="jsx-124931555 flash"
               >
                 <div
-                  className="jsx-2881654396 well"
+                  className="jsx-2914085764 well"
                 >
                   <div
-                    className="jsx-2881654396 active-tetromino"
+                    className="jsx-2914085764 active-tetromino"
                     style={
                       Object {
-                        "height": "20%",
                         "left": "40%",
                         "top": "-10%",
-                        "width": "40%",
                       }
                     }
                   >
@@ -5028,16 +5004,14 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):own-game-removed 1`]
                 className="jsx-124931555 flash"
               >
                 <div
-                  className="jsx-2881654396 well"
+                  className="jsx-2914085764 well"
                 >
                   <div
-                    className="jsx-2881654396 active-tetromino"
+                    className="jsx-2914085764 active-tetromino"
                     style={
                       Object {
-                        "height": "20%",
                         "left": "30%",
                         "top": "-10%",
-                        "width": "40%",
                       }
                     }
                   >
@@ -5331,16 +5305,14 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):own-game-removed 1`]
                 className="jsx-124931555 flash"
               >
                 <div
-                  className="jsx-2881654396 well"
+                  className="jsx-2914085764 well"
                 >
                   <div
-                    className="jsx-2881654396 active-tetromino"
+                    className="jsx-2914085764 active-tetromino"
                     style={
                       Object {
-                        "height": "20%",
                         "left": "40%",
                         "top": "-10%",
-                        "width": "40%",
                       }
                     }
                   >
@@ -5629,16 +5601,14 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):double-hallelujah 
             className="jsx-608550019 enemy-well"
           >
             <div
-              className="jsx-2881654396 well"
+              className="jsx-2914085764 well"
             >
               <div
-                className="jsx-2881654396 active-tetromino"
+                className="jsx-2914085764 active-tetromino"
                 style={
                   Object {
-                    "height": "20%",
                     "left": "30%",
                     "top": "-10%",
-                    "width": "40%",
                   }
                 }
               >
@@ -7352,16 +7322,14 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):double-hallelujah 
               className="jsx-124931555 flash nay-b"
             >
               <div
-                className="jsx-2881654396 well"
+                className="jsx-2914085764 well"
               >
                 <div
-                  className="jsx-2881654396 active-tetromino"
+                  className="jsx-2914085764 active-tetromino"
                   style={
                     Object {
-                      "height": "20%",
                       "left": "30%",
                       "top": "-10%",
-                      "width": "40%",
                     }
                   }
                 >
@@ -8801,16 +8769,14 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):enemy-hallelujah 1
             className="jsx-608550019 enemy-well"
           >
             <div
-              className="jsx-2881654396 well"
+              className="jsx-2914085764 well"
             >
               <div
-                className="jsx-2881654396 active-tetromino"
+                className="jsx-2914085764 active-tetromino"
                 style={
                   Object {
-                    "height": "20%",
                     "left": "70%",
                     "top": "75%",
-                    "width": "40%",
                   }
                 }
               >
@@ -10264,16 +10230,14 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):enemy-hallelujah 1
               className="jsx-124931555 flash"
             >
               <div
-                className="jsx-2881654396 well"
+                className="jsx-2914085764 well"
               >
                 <div
-                  className="jsx-2881654396 active-tetromino"
+                  className="jsx-2914085764 active-tetromino"
                   style={
                     Object {
-                      "height": "20%",
                       "left": "30%",
                       "top": "-10%",
-                      "width": "40%",
                     }
                   }
                 >
@@ -10756,16 +10720,14 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah 1`] = `
               className="jsx-124931555 flash"
             >
               <div
-                className="jsx-2881654396 well"
+                className="jsx-2914085764 well"
               >
                 <div
-                  className="jsx-2881654396 active-tetromino"
+                  className="jsx-2914085764 active-tetromino"
                   style={
                     Object {
-                      "height": "20%",
                       "left": "70%",
                       "top": "40%",
-                      "width": "40%",
                     }
                   }
                 >
@@ -13062,16 +13024,14 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah-guest 1
               className="jsx-124931555 flash"
             >
               <div
-                className="jsx-2881654396 well"
+                className="jsx-2914085764 well"
               >
                 <div
-                  className="jsx-2881654396 active-tetromino"
+                  className="jsx-2914085764 active-tetromino"
                   style={
                     Object {
-                      "height": "20%",
                       "left": "70%",
                       "top": "40%",
-                      "width": "40%",
                     }
                   }
                 >
@@ -15430,16 +15390,14 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
               className="jsx-124931555 flash"
             >
               <div
-                className="jsx-2881654396 well"
+                className="jsx-2914085764 well"
               >
                 <div
-                  className="jsx-2881654396 active-tetromino"
+                  className="jsx-2914085764 active-tetromino"
                   style={
                     Object {
-                      "height": "20%",
                       "left": "70%",
                       "top": "5%",
-                      "width": "40%",
                     }
                   }
                 >
@@ -18258,16 +18216,14 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
               className="jsx-124931555 flash"
             >
               <div
-                className="jsx-2881654396 well"
+                className="jsx-2914085764 well"
               >
                 <div
-                  className="jsx-2881654396 active-tetromino"
+                  className="jsx-2914085764 active-tetromino"
                   style={
                     Object {
-                      "height": "20%",
                       "left": "30%",
                       "top": "-10%",
-                      "width": "40%",
                     }
                   }
                 >
@@ -18720,16 +18676,14 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game-running 1
               className="jsx-124931555 flash"
             >
               <div
-                className="jsx-2881654396 well"
+                className="jsx-2914085764 well"
               >
                 <div
-                  className="jsx-2881654396 active-tetromino"
+                  className="jsx-2914085764 active-tetromino"
                   style={
                     Object {
-                      "height": "20%",
                       "left": "30%",
                       "top": "-10%",
-                      "width": "40%",
                     }
                   }
                 >
@@ -20354,16 +20308,14 @@ exports[`Cosmos fixtures: GamePreview:default 1`] = `
                 className="jsx-124931555 flash"
               >
                 <div
-                  className="jsx-2881654396 well"
+                  className="jsx-2914085764 well"
                 >
                   <div
-                    className="jsx-2881654396 active-tetromino"
+                    className="jsx-2914085764 active-tetromino"
                     style={
                       Object {
-                        "height": "20%",
                         "left": "30%",
                         "top": "-10%",
-                        "width": "40%",
                       }
                     }
                   >
@@ -23223,16 +23175,14 @@ exports[`Cosmos fixtures: WaitingForOther:ping 1`] = `
 
 exports[`Cosmos fixtures: Well:s-coming-atcha 1`] = `
 <div
-  className="jsx-2881654396 well"
+  className="jsx-2914085764 well"
 >
   <div
-    className="jsx-2881654396 active-tetromino"
+    className="jsx-2914085764 active-tetromino"
     style={
       Object {
-        "height": "20%",
         "left": "40%",
         "top": "30%",
-        "width": "40%",
       }
     }
   >
@@ -23842,16 +23792,14 @@ exports[`Cosmos fixtures: Well:s-coming-atcha 1`] = `
 
 exports[`Cosmos fixtures: Well:t-bone 1`] = `
 <div
-  className="jsx-2881654396 well"
+  className="jsx-2914085764 well"
 >
   <div
-    className="jsx-2881654396 active-tetromino"
+    className="jsx-2914085764 active-tetromino"
     style={
       Object {
-        "height": "20%",
         "left": "20%",
         "top": "65%",
-        "width": "40%",
       }
     }
   >

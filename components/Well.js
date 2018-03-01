@@ -50,16 +50,14 @@ class Well extends Component<Props> {
     return this.props.grid[0].length;
   }
 
-  getActiveTetrominoestyles() {
+  getActiveTetrominoStyles() {
     const rows = this.getNumberOfRows();
     const cols = this.getNumberOfCols();
     const { x, y } = getExactPosition(this.props.activeTetrominoPosition);
 
     return {
       top: `${100 / rows * y}%`,
-      left: `${100 / cols * x}%`,
-      width: `${100 / cols * 4}%`,
-      height: `${100 / rows * 4}%`
+      left: `${100 / cols * x}%`
     };
   }
 
@@ -77,7 +75,7 @@ class Well extends Component<Props> {
         {activeTetromino ? (
           <div
             className="active-tetromino"
-            style={this.getActiveTetrominoestyles()}
+            style={this.getActiveTetrominoStyles()}
           >
             <TetrominoComponent
               color={COLORS[activeTetromino]}
@@ -100,6 +98,9 @@ class Well extends Component<Props> {
 
           .well .active-tetromino {
             position: absolute;
+            width: 40%;
+            height: 20%;
+            will-change: top, left;
           }
         `}</style>
       </div>
