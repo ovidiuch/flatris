@@ -13,6 +13,13 @@ type GameRemovedHandler = (gameId: GameId) => void;
 
 let socket;
 
+// NOTE: We'd wouldn't need all these proxy methods if Flow supported
+// overloading and we'd be able to do:
+//
+//    type Subscribe = ('subscribe', (gameId: number) => mixed) => void;
+//    type KeepGameAlive = ('keep-game-alive', (gameId: number) => mixed) => void;
+//    type Emit = Subscribe | KeepGameAlive;
+//
 export function getSocket() {
   if (!socket) {
     socket = io(getApiUrl());

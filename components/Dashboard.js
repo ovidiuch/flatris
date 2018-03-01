@@ -21,6 +21,8 @@ type Props = {
   games: Games,
   curGame: ?GameId,
   subscribe: (roomId: RoomId) => mixed,
+  onGameKeepAlive: (handler: (gameId: GameId) => void) => mixed,
+  offGameKeepAlive: (handler: (gameId: GameId) => void) => mixed,
   closeGame: () => mixed,
   removeGame: (gameId: GameId) => mixed
 };
@@ -33,8 +35,8 @@ type LocalState = {
 class Dashboard extends Component<Props, LocalState> {
   transitionTimeout: ?TimeoutID;
 
-  bumpTimeout: (id: string) => mixed;
-  cancelAllTimeouts: () => mixed;
+  bumpInactiveTimeout: (id: string) => mixed;
+  cancelInactiveTimeouts: () => mixed;
 
   constructor(props) {
     super(props);
@@ -51,21 +53,30 @@ class Dashboard extends Component<Props, LocalState> {
       timeout: GAME_INACTIVE_TIMEOUT
     });
 
-    this.bumpTimeout = bumpTimeout;
-    this.cancelAllTimeouts = cancelAllTimeouts;
+    this.bumpInactiveTimeout = bumpTimeout;
+    this.cancelInactiveTimeouts = cancelAllTimeouts;
   }
 
   componentDidMount() {
-    const { games, curGame, subscribe, closeGame } = this.props;
+    const {
+      games,
+      curGame,
+      subscribe,
+      onGameKeepAlive,
+      closeGame
+    } = this.props;
 
     subscribe('global');
+
+    // Bump inactive timeout on every game keep-alive signal
+    onGameKeepAlive(this.handleGameKeepAlive);
 
     // clear state.curGame when navigating back to dashboard from game page
     if (curGame) {
       closeGame();
     }
 
-    Object.keys(games).forEach(this.bumpTimeout);
+    Object.keys(games).forEach(this.bumpInactiveTimeout);
   }
 
   componentDidUpdate({ games: prevGames }) {
@@ -82,17 +93,20 @@ class Dashboard extends Component<Props, LocalState> {
       this.setState(newState, this.scheduleTransitionTimeout);
     }
 
-    ids.forEach(gameId => {
-      if (games[gameId] !== prevGames[gameId]) {
-        this.bumpTimeout(gameId);
-      }
-    });
+    ids
+      .filter(gameId => games[gameId] !== prevGames[gameId])
+      .forEach(this.bumpInactiveTimeout);
   }
 
   componentWillUnmount() {
+    this.props.offGameKeepAlive(this.handleGameKeepAlive);
     this.cancelTransitionTimeout();
-    this.cancelAllTimeouts();
+    this.cancelInactiveTimeouts();
   }
+
+  handleGameKeepAlive = (gameId: GameId) => {
+    this.bumpInactiveTimeout(gameId);
+  };
 
   scheduleTransitionTimeout = () => {
     this.cancelTransitionTimeout();
