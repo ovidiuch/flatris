@@ -19609,12 +19609,9 @@ exports[`Cosmos fixtures: FlatrisIntro:default 1`] = `
               <span
                 className="highlight"
               >
-                <strong>
-                  Flatris
-                </strong>
-                 is a fast-paced
+                Flatris is a fast-paced
                 <br />
-                two-player puzzle game.
+                two-player game.
                 <br />
               </span>
             </p>
@@ -19622,22 +19619,22 @@ exports[`Cosmos fixtures: FlatrisIntro:default 1`] = `
               <strong>
                 Geometric shapes
               </strong>
-               fall
               <br />
-              from above until they
+              fall from above until
               <br />
-              hit the ground.
+              they hit the ground.
             </p>
             <p>
-              Use them to 
+              Place them to
+               
               <strong>
-                form lines
+                form
+                <br />
+                lines
               </strong>
-              ,
+              , which clears
               <br />
-              which eliminates blocks
-              <br />
-              and buys you time!
+              blocks and buys time!
             </p>
           </div>
         </div>

@@ -19,18 +19,23 @@ export default class FlatrisIntro extends Component<Props> {
           <Fragment>
             <p>
               <span className="highlight">
-                <strong>Flatris</strong> is a fast-paced<br />
-                two-player puzzle game.<br />
+                Flatris is a fast-paced<br />
+                two-player game.<br />
               </span>
             </p>
             <p>
-              <strong>Geometric shapes</strong> fall<br />
-              from above until they<br />
-              hit the ground.
+              <strong>Geometric shapes</strong>
+              <br />
+              fall from above until<br />
+              they hit the ground.
             </p>
             <p>
-              Use them to <strong>form lines</strong>,<br />
-              which eliminates blocks<br />and buys you time!
+              Place them to{' '}
+              <strong>
+                form<br />
+                lines
+              </strong>, which clears<br />
+              blocks and buys time!
             </p>
           </Fragment>
         }
