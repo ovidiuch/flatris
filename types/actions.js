@@ -51,6 +51,24 @@ export type StripGameEffectsAction = {
   type: 'STRIP_GAME_EFFECTS'
 };
 
+export type StartBackfillAction = {
+  type: 'START_BACKFILL',
+  payload: {
+    backfillId: number
+  }
+};
+
+export type EndBackfillAction = {
+  type: 'END_BACKFILL'
+};
+
+export type QueueGameAction = {
+  type: 'QUEUE_GAME_ACTION',
+  payload: {
+    action: GameAction
+  }
+};
+
 export type JoinGameAction = {
   type: 'JOIN_GAME',
   payload: {
@@ -186,6 +204,9 @@ export type Action =
   | OpenGameAction
   | CloseGameAction
   | StripGameEffectsAction
+  | StartBackfillAction
+  | EndBackfillAction
+  | QueueGameAction
   | GameAction;
 
 export type GetState = () => State;

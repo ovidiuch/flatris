@@ -1,6 +1,6 @@
 // @flow
 
-import type { ActionId } from './actions';
+import type { ActionId, GameAction } from './actions';
 
 export type Color = string; // #ff0000
 
@@ -65,9 +65,15 @@ export type Games = {
   [id: GameId]: Game
 };
 
+export type Backfill = {
+  backfillId: number,
+  queuedActions: Array<GameAction>
+};
+
 export type State = {
   jsReady: boolean,
   curUser: ?User,
   games: Games,
-  curGame: ?GameId
+  curGame: ?GameId,
+  backfill: ?Backfill
 };

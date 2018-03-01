@@ -8,7 +8,11 @@ import type {
   RemoveGameAction,
   OpenGameAction,
   CloseGameAction,
-  StripGameEffectsAction
+  StripGameEffectsAction,
+  StartBackfillAction,
+  EndBackfillAction,
+  QueueGameAction,
+  GameAction
 } from '../types/actions';
 
 export function auth(user: User): AuthAction {
@@ -67,5 +71,25 @@ export function closeGame(): CloseGameAction {
 export function stripGameEffects(): StripGameEffectsAction {
   return {
     type: 'STRIP_GAME_EFFECTS'
+  };
+}
+
+export function startBackfill(backfillId: number): StartBackfillAction {
+  return {
+    type: 'START_BACKFILL',
+    payload: { backfillId }
+  };
+}
+
+export function endBackfill(): EndBackfillAction {
+  return {
+    type: 'END_BACKFILL'
+  };
+}
+
+export function queueGameAction(action: GameAction): QueueGameAction {
+  return {
+    type: 'QUEUE_GAME_ACTION',
+    payload: { action }
   };
 }

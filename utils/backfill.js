@@ -8,7 +8,7 @@ import type { BackfillRequest, BackfillResponse } from '../types/api';
 let lastBackfillId = 0;
 let backfillCanceled = false;
 
-export function startBackfill(
+export function requestBackfill(
   game: Game,
   onComplete: (result: BackfillResponse) => mixed,
   onError: (gameId: GameId) => mixed

@@ -6,9 +6,15 @@ import { Component } from 'react';
 import { connect } from 'react-redux';
 import { getGame } from '../../utils/api';
 import { getSocket } from '../../utils/socket';
-import { startBackfill, cancelBackfill } from '../../utils/backfill';
+import { requestBackfill, cancelBackfill } from '../../utils/backfill';
 import { getGameActionOffset } from '../../reducers/game';
-import { addGame, removeGame } from '../../actions/global';
+import {
+  addGame,
+  removeGame,
+  startBackfill,
+  endBackfill,
+  queueGameAction
+} from '../../actions/global';
 
 import type { Node } from 'react';
 import type { Dispatch } from 'redux'; // eslint-disable-line import/named
@@ -34,23 +40,13 @@ type Props = {
   dispatch: Dispatch<Action>
 };
 
-type LocalState = {
-  backfillId: ?number,
-  pendingActions: Array<GameAction>
-};
-
-class SocketProviderInner extends Component<Props, LocalState> {
+class SocketProviderInner extends Component<Props> {
   static childContextTypes = {
     subscribe: func.isRequired,
     keepGameAlive: func.isRequired,
     broadcastGameAction: func.isRequired,
     onGameKeepAlive: func.isRequired,
     offGameKeepAlive: func.isRequired
-  };
-
-  state = {
-    backfillId: null,
-    pendingActions: []
   };
 
   getChildContext() {
@@ -70,14 +66,16 @@ class SocketProviderInner extends Component<Props, LocalState> {
   }
 
   componentWillUnmount() {
-    const { backfillId } = this.state;
+    const { state, dispatch } = this.props;
+    const { backfill } = state;
 
     offGameAction(this.handleGameAction);
     offGameKeepAlive(this.handleGameKeepAlive);
     offGameRemoved(this.handleGameRemoved);
 
-    if (backfillId) {
-      cancelBackfill(backfillId);
+    if (backfill) {
+      cancelBackfill(backfill.backfillId);
+      dispatch(endBackfill());
     }
   }
 
@@ -85,12 +83,10 @@ class SocketProviderInner extends Component<Props, LocalState> {
     // console.log('[SOCKET] On game-action', action);
 
     const { state, dispatch } = this.props;
-    const { backfillId, pendingActions } = this.state;
+    const { backfill } = state;
 
-    if (backfillId) {
-      this.setState({
-        pendingActions: [...pendingActions, action]
-      });
+    if (backfill) {
+      dispatch(queueGameAction(action));
     } else {
       const { actionId, gameId } = action.payload;
       const game = state.games[gameId];
@@ -151,23 +147,25 @@ class SocketProviderInner extends Component<Props, LocalState> {
     console.log(`Backfilling ${gameId}...`);
 
     const { games } = this.props.state;
-    const backfillId = startBackfill(
+    const backfillId = requestBackfill(
       games[gameId],
       this.handleBackfillComplete,
       this.handleBackfillError
     );
 
-    this.setState({
-      backfillId,
-      pendingActions: []
-    });
+    this.props.dispatch(startBackfill(backfillId));
   }
 
   handleBackfillComplete = (res: BackfillResponse) => {
-    const { dispatch } = this.props;
-    const { pendingActions } = this.state;
+    const { state, dispatch } = this.props;
+    const { backfill } = state;
 
-    const mergedActions = [...res, ...pendingActions];
+    if (!backfill) {
+      throw new Error(`Backfill is missing in state upon completion`);
+    }
+
+    const { queuedActions } = backfill;
+    const mergedActions = [...res, ...queuedActions];
     const uniqActions = uniqWith(mergedActions, compareGameActions);
     const sortedActions = sortBy(uniqActions, act => act.payload.actionId);
 
@@ -180,10 +178,7 @@ class SocketProviderInner extends Component<Props, LocalState> {
       `Backfilled ${uniqActions.length} actions (${numDupes} dupes).`
     );
 
-    this.setState({
-      backfillId: null,
-      pendingActions: []
-    });
+    dispatch(endBackfill());
   };
 
   handleBackfillError = (gameId: GameId) => {
@@ -194,11 +189,11 @@ class SocketProviderInner extends Component<Props, LocalState> {
   };
 
   handleBroadcastGameAction = (action: GameAction) => {
-    const { dispatch } = this.props;
-    const { backfillId } = this.state;
+    const { state, dispatch } = this.props;
+    const { backfill } = state;
 
     // Disallow user to mutate state until it's up to date with server
-    if (backfillId !== null) {
+    if (backfill) {
       console.warn('Action broadcast denied while backfilling.');
       return;
     }
