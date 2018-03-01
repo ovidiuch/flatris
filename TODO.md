@@ -130,7 +130,7 @@
     * [x] Highlight already joined games
 * [x] BUG: Broadcast new game to `global` (without requiring an action)
 * [x] BUG: Reset losses when 2nd player joins
-* [ ] Minimize network communication: Don't send noop actions
+* [x] Minimize network communication: Don't send noop actions
 * [ ] Throttle key down events
 * [ ] Profile browser performance (detect unnecessary renders)
 * [ ] Improve onboarding

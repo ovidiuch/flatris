@@ -1,9 +1,8 @@
 // @flow
 
-import { func } from 'prop-types';
+import { object, func } from 'prop-types';
 import { uniqWith, sortBy } from 'lodash';
 import { Component } from 'react';
-import { connect } from 'react-redux';
 import { getGame } from '../../utils/api';
 import { getSocket } from '../../utils/socket';
 import { requestBackfill, cancelBackfill } from '../../utils/backfill';
@@ -34,12 +33,20 @@ const {
 } = getSocket();
 
 type Props = {
-  children: Node,
-  state: State,
-  dispatch: Dispatch
+  children: Node
 };
 
-class SocketProviderInner extends Component<Props> {
+export class SocketProvider extends Component<Props> {
+  static contextTypes = {
+    // XXX: Instead of using connect like suckers, we pretend WE'RE CONNECT
+    // and get direct access to the store.
+    // Why? Because we need to check if the state changes right after we
+    // dispatch an action (without waiting a render loop), thus identifying
+    // "noop" actions and not broacasting them across the network needlessly.
+    // Do not try this at home!
+    store: object.isRequired
+  };
+
   static childContextTypes = {
     subscribe: func.isRequired,
     keepGameAlive: func.isRequired,
@@ -65,8 +72,8 @@ class SocketProviderInner extends Component<Props> {
   }
 
   componentWillUnmount() {
-    const { state, dispatch } = this.props;
-    const { backfill } = state;
+    const { getState, dispatch } = this.getStore();
+    const { backfill } = getState();
 
     offGameAction(this.handleGameAction);
     offGameKeepAlive(this.handleGameKeepAlive);
@@ -81,7 +88,8 @@ class SocketProviderInner extends Component<Props> {
   handleGameAction = (action: GameAction) => {
     // console.log('[SOCKET] On game-action', action);
 
-    const { state, dispatch } = this.props;
+    const { getState, dispatch } = this.getStore();
+    const state = getState();
     const { backfill } = state;
 
     if (backfill) {
@@ -112,7 +120,8 @@ class SocketProviderInner extends Component<Props> {
   };
 
   handleGameKeepAlive = (gameId: GameId) => {
-    const { games } = this.props.state;
+    const { getState } = this.getStore();
+    const { games } = getState();
 
     if (!games[gameId]) {
       this.loadGame(gameId);
@@ -122,7 +131,7 @@ class SocketProviderInner extends Component<Props> {
   handleGameRemoved = (gameId: GameId) => {
     console.log('Received server notice of removed game', gameId);
 
-    const { dispatch } = this.props;
+    const { dispatch } = this.getStore();
     dispatch(removeGame(gameId));
   };
 
@@ -137,7 +146,7 @@ class SocketProviderInner extends Component<Props> {
   async loadGame(gameId: GameId) {
     console.log(`Detected new game ${gameId}...`);
 
-    const { dispatch } = this.props;
+    const { dispatch } = this.getStore();
     const game = await getGame(gameId);
     dispatch(addGame(game));
   }
@@ -145,19 +154,20 @@ class SocketProviderInner extends Component<Props> {
   startBackfill(gameId: GameId) {
     console.log(`Backfilling ${gameId}...`);
 
-    const { games } = this.props.state;
+    const { getState, dispatch } = this.getStore();
+    const { games } = getState();
     const backfillId = requestBackfill(
       games[gameId],
       this.handleBackfillComplete,
       this.handleBackfillError
     );
 
-    this.props.dispatch(startBackfill(backfillId));
+    dispatch(startBackfill(backfillId));
   }
 
   handleBackfillComplete = (res: BackfillResponse) => {
-    const { state, dispatch } = this.props;
-    const { backfill } = state;
+    const { getState, dispatch } = this.getStore();
+    const { backfill } = getState();
 
     if (!backfill) {
       throw new Error(`Backfill is missing in state upon completion`);
@@ -183,13 +193,13 @@ class SocketProviderInner extends Component<Props> {
   handleBackfillError = (gameId: GameId) => {
     console.warn(`Backfill failed, removing game ${gameId} from state`);
 
-    const { dispatch } = this.props;
+    const { dispatch } = this.getStore();
     dispatch(removeGame(gameId));
   };
 
   handleBroadcastGameAction = (action: GameAction) => {
-    const { state, dispatch } = this.props;
-    const { backfill } = state;
+    const { getState, dispatch } = this.getStore();
+    const { backfill } = getState();
 
     // Disallow user to mutate state until it's up to date with server
     if (backfill) {
@@ -197,9 +207,24 @@ class SocketProviderInner extends Component<Props> {
       return;
     }
 
+    const prevGames = getState().games;
+
     // The final action is returned from async thunk actions
-    const resAction: Action = dispatch(action);
-    broadcastAction(resAction);
+    // XXX: Don't know how to tell Flow that dispatching regular actions (non
+    // redux-thunk) returns the same type of action that was passed in
+    // $FlowFixMe
+    const resAction: GameAction = dispatch(action);
+    const { payload: { gameId } } = resAction;
+
+    // COOL: Don't broacast actions that don't alter the state (ie. MOVE_RIGHT
+    // actions when the falling Tetromino is already hitting the right wall)
+    if (getState().games[gameId] === prevGames[gameId]) {
+      // The following console.log call is only useful for debugging (it floods
+      // the console!)
+      // console.log(`Not broadcasting noop action ${resAction.type}`);
+    } else {
+      broadcastAction(resAction);
+    }
 
     // Allow callers to chain broadcasted actions
     return resAction;
@@ -207,6 +232,13 @@ class SocketProviderInner extends Component<Props> {
 
   render() {
     return this.props.children;
+  }
+
+  getStore(): {
+    getState: () => State,
+    dispatch: Dispatch
+  } {
+    return this.context.store;
   }
 }
 
@@ -217,10 +249,3 @@ function compareGameActions(a1: GameAction, a2: GameAction): boolean {
     a1.payload.gameId === a2.payload.gameId
   );
 }
-
-function mapStateToProps(state: State) {
-  return { state };
-}
-
-// We only need connect to obtain the `dispatch` store method via props
-export const SocketProvider = connect(mapStateToProps)(SocketProviderInner);

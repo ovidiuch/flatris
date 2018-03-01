@@ -37,18 +37,18 @@ import type {
   FlashSuffix,
   QuakeSuffix
 } from '../types/state';
-import type { GameAction } from '../types/actions';
+import type { ActionId, GameAction } from '../types/actions';
 
-export function gameReducer(prevState: void | Game, action: GameAction): Game {
-  if (!prevState) {
+export function gameReducer(state: void | Game, action: GameAction): Game {
+  if (!state) {
     throw new Error(`Game action ${action.type} called on void state`);
   }
 
   if (action.type === 'JOIN_GAME') {
     const { user } = action.payload;
-    const { players: [player1] } = prevState;
+    const { players: [player1] } = state;
 
-    const game = updatePlayer(prevState, player1.user.id, {
+    const game = updatePlayer(state, player1.user.id, {
       // Stop player1's game when player2 arrives
       status: 'PENDING',
       // Previous losses are irrelevant to 1vs1 game
@@ -59,7 +59,7 @@ export function gameReducer(prevState: void | Game, action: GameAction): Game {
 
   // Ensure action consistency
   const { actionId, userId } = action.payload;
-  const offset = getGameActionOffset(prevState, action);
+  const offset = getGameActionOffset(state, action);
 
   if (offset > 0) {
     throw new Error(`Refusing detached game action (${offset}ms delta)`);
@@ -67,11 +67,20 @@ export function gameReducer(prevState: void | Game, action: GameAction): Game {
   if (offset < 0) {
     console.warn(`Past game action ${actionId} ignored (${offset}ms delta)`);
 
-    return prevState;
+    return state;
   }
 
-  // Update player.lastActionId for any game action
-  const state = updatePlayer(prevState, userId, { lastActionId: actionId });
+  const newState = gameJoinedReducer(state, action);
+
+  // Don't bump player.lastActionId if action left state intact. This allows us
+  // to avoid broacasting "noop" actions and minimize network activity
+  return newState === state
+    ? newState
+    : bumpActionId(newState, userId, actionId);
+}
+
+export function gameJoinedReducer(state: Game, action: GameAction): Game {
+  const { userId } = action.payload;
 
   switch (action.type) {
     case 'PLAYER_READY': {
@@ -319,12 +328,24 @@ export function gameReducer(prevState: void | Game, action: GameAction): Game {
     }
 
     case 'ENABLE_ACCELERATION': {
+      const player = getPlayer(state, userId);
+
+      if (player.dropAcceleration) {
+        return state;
+      }
+
       return updatePlayer(state, userId, {
         dropAcceleration: true
       });
     }
 
     case 'DISABLE_ACCELERATION': {
+      const player = getPlayer(state, userId);
+
+      if (!player.dropAcceleration) {
+        return state;
+      }
+
       return updatePlayer(state, userId, {
         dropAcceleration: false
       });
@@ -339,7 +360,7 @@ export function gameReducer(prevState: void | Game, action: GameAction): Game {
     }
 
     default:
-      return prevState;
+      return state;
   }
 }
 
@@ -594,4 +615,8 @@ function getBlankPlayerEffects() {
     quake: null,
     ping: null
   };
+}
+
+function bumpActionId(game: Game, userId: UserId, actionId: ActionId): Game {
+  return updatePlayer(game, userId, { lastActionId: actionId });
 }
