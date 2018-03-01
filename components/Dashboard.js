@@ -35,8 +35,8 @@ type LocalState = {
 class Dashboard extends Component<Props, LocalState> {
   transitionTimeout: ?TimeoutID;
 
-  bumpInactiveTimeout: (id: string) => mixed;
-  cancelInactiveTimeouts: () => mixed;
+  bumpInactiveTimeout: (id: string) => void;
+  cancelInactiveTimeouts: () => void;
 
   constructor(props) {
     super(props);
@@ -69,7 +69,7 @@ class Dashboard extends Component<Props, LocalState> {
     subscribe('global');
 
     // Bump inactive timeout on every game keep-alive signal
-    onGameKeepAlive(this.handleGameKeepAlive);
+    onGameKeepAlive(this.bumpInactiveTimeout);
 
     // clear state.curGame when navigating back to dashboard from game page
     if (curGame) {
@@ -99,14 +99,10 @@ class Dashboard extends Component<Props, LocalState> {
   }
 
   componentWillUnmount() {
-    this.props.offGameKeepAlive(this.handleGameKeepAlive);
+    this.props.offGameKeepAlive(this.bumpInactiveTimeout);
     this.cancelTransitionTimeout();
     this.cancelInactiveTimeouts();
   }
-
-  handleGameKeepAlive = (gameId: GameId) => {
-    this.bumpInactiveTimeout(gameId);
-  };
 
   scheduleTransitionTimeout = () => {
     this.cancelTransitionTimeout();
