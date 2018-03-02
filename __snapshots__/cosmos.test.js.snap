@@ -19521,6 +19521,31 @@ exports[`Cosmos fixtures: CopyButton:disabled 1`] = `
 </div>
 `;
 
+exports[`Cosmos fixtures: CopyGameLinkButton:default 1`] = `
+<div
+  data-clipboard-text="about:///join/1337"
+>
+  <button
+    className="jsx-2544857778 button hover-button"
+    type="button"
+  >
+    Copy link
+  </button>
+</div>
+`;
+
+exports[`Cosmos fixtures: CopyGameLinkButton:disabled 1`] = `
+<div>
+  <button
+    className="jsx-2544857778 button hover-button"
+    disabled={true}
+    type="button"
+  >
+    Copy link
+  </button>
+</div>
+`;
+
 exports[`Cosmos fixtures: Drop:default 1`] = `
 <button
   className="jsx-1959258272 button"
