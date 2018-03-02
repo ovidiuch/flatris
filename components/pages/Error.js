@@ -56,10 +56,6 @@ export default class Error extends Component<Props> {
             <p>
               <strong>Something broke :/</strong>
             </p>
-            <p>
-              At least this page<br />
-              works, right?
-            </p>
             {errorText && (
               <Fragment>
                 <div className="copy">
@@ -73,14 +69,18 @@ export default class Error extends Component<Props> {
                 </div>
                 <p>
                   <span className="highlight">
-                    Please click{' '}
+                    Please{' '}
                     <a href={getGithubIssueUrl(errorText)} target="_blank">
-                      here
+                      click here
                     </a>{' '}
                     to
                     <br />
                     share what happened.
                   </span>
+                </p>
+                <p>
+                  At least this page<br />
+                  works, right?
                 </p>
               </Fragment>
             )}

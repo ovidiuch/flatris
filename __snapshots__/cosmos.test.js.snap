@@ -19597,15 +19597,6 @@ exports[`Cosmos fixtures: Error:has-error-text 1`] = `
                 Something broke :/
               </strong>
             </p>
-            <p
-              className="jsx-1832570087"
-            >
-              At least this page
-              <br
-                className="jsx-1832570087"
-              />
-              works, right?
-            </p>
             <div
               className="jsx-1832570087 copy"
             >
@@ -19626,14 +19617,14 @@ exports[`Cosmos fixtures: Error:has-error-text 1`] = `
               <span
                 className="jsx-1832570087 highlight"
               >
-                Please click
+                Please
                  
                 <a
                   className="jsx-1832570087"
                   href="https://github.com/skidding/flatris/issues/new?title=Check%20out%20this%20error&body=undefined%20is%20not%20a%20function"
                   target="_blank"
                 >
-                  here
+                  click here
                 </a>
                  
                 to
@@ -19642,6 +19633,15 @@ exports[`Cosmos fixtures: Error:has-error-text 1`] = `
                 />
                 share what happened.
               </span>
+            </p>
+            <p
+              className="jsx-1832570087"
+            >
+              At least this page
+              <br
+                className="jsx-1832570087"
+              />
+              works, right?
             </p>
           </div>
         </div>
@@ -20049,15 +20049,6 @@ exports[`Cosmos fixtures: Error:unknown 1`] = `
               >
                 Something broke :/
               </strong>
-            </p>
-            <p
-              className="jsx-1832570087"
-            >
-              At least this page
-              <br
-                className="jsx-1832570087"
-              />
-              works, right?
             </p>
           </div>
         </div>
