@@ -25,7 +25,7 @@ export default class HowToPlay extends Component<Props> {
               <strong>down</strong> to drop faster.
             </p>
             <p>
-              <span class="highlight">
+              <span className="highlight">
                 Use the keyboard on<br />
                 desktop or the screen<br />buttons on mobile.
               </span>

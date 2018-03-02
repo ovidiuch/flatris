@@ -6,7 +6,7 @@ import { createStore } from '../store';
 import { SocketProvider } from '../components/socket/SocketProvider';
 import { addCurUserToState } from '../utils/api';
 import Layout from '../components/Layout';
-import NewGame from '../components/NewGame';
+import NewGame from '../components/pages/NewGame';
 
 type Props = {};
 

@@ -1,9 +1,10 @@
 // @flow
 
 import React, { Fragment, Component } from 'react';
-import Screen from './Screen';
+import { getShareUrl } from '../../utils/url';
 import Button from '../Button';
-import CopyLink from '../CopyLink';
+import CopyButton from '../CopyButton';
+import Screen from './Screen';
 
 import type { GameId } from '../../types/state';
 
@@ -29,7 +30,13 @@ export default class Invite extends Component<Props> {
               </strong>
             </p>
             <div className="copy">
-              <CopyLink disabled={disabled} gameId={gameId} />
+              <CopyButton
+                disabled={disabled}
+                copyText={getShareUrl(gameId)}
+                defaultLabel="Copy link"
+                successLabel="Link copied!"
+                errorLabel="Copy failed :("
+              />
             </div>
             <p>
               Send the link and<br />warm up until the<br />other person

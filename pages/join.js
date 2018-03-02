@@ -2,7 +2,6 @@
 
 import React, { Component } from 'react';
 import Router from 'next/router';
-import Error from 'next/error';
 import withRedux from 'next-redux-wrapper';
 import { createStore } from '../store';
 import { addGame, openGame, stripGameEffects } from '../actions/global';
@@ -11,6 +10,7 @@ import { SocketProvider } from '../components/socket/SocketProvider';
 import Layout from '../components/Layout';
 import CurGameOfElse from '../components/CurGameOfElse';
 import FlatrisGame from '../components/FlatrisGame';
+import Error from '../components/pages/Error';
 
 type Props = {
   statusCode: false | number
@@ -61,7 +61,11 @@ class JoinPage extends Component<Props> {
   render() {
     const { statusCode } = this.props;
     if (statusCode) {
-      return <Error statusCode={404} />;
+      return (
+        <Layout>
+          <Error statusCode={statusCode} />
+        </Layout>
+      );
     }
 
     return (
