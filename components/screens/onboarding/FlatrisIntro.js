@@ -34,8 +34,8 @@ export default class FlatrisIntro extends Component<Props> {
               <strong>
                 form<br />
                 lines
-              </strong>, which clears<br />
-              blocks and buys time!
+              </strong>, clearing blocks<br />
+              and buying you time!
             </p>
           </Fragment>
         }

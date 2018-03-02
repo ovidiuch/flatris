@@ -21,7 +21,7 @@ export default class Multiplayer extends Component<Props> {
               <span className="highlight">
                 Both players receive<br />
                 the same sequence of<br />
-                of geometric shapes.
+                geometric shapes.
               </span>
             </p>
             <p>
