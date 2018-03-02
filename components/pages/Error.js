@@ -7,9 +7,11 @@ import CopyButton from '../CopyButton';
 import Screen from '../screens/Screen';
 import GameFrame from './GameFrame';
 
+import type { ComponentError } from '../../types/error';
+
 type Props = {
-  statusCode: ?number,
-  errorText?: string
+  statusCode?: number,
+  error?: ComponentError
 };
 
 export default class Error extends Component<Props> {
@@ -46,7 +48,7 @@ export default class Error extends Component<Props> {
   }
 
   renderMisc() {
-    const { errorText } = this.props;
+    const { error } = this.props;
 
     return (
       <Screen
@@ -56,12 +58,12 @@ export default class Error extends Component<Props> {
             <p>
               <strong>Something broke :/</strong>
             </p>
-            {errorText && (
+            {error && (
               <Fragment>
                 <div className="copy">
                   <CopyButton
                     disabled={false}
-                    copyText={errorText}
+                    copyText={`${error.message}\n\n${error.stack}`}
                     defaultLabel="Copy error"
                     successLabel="Error copied!"
                     errorLabel="Copy failed :("
@@ -70,7 +72,7 @@ export default class Error extends Component<Props> {
                 <p>
                   <span className="highlight">
                     Please{' '}
-                    <a href={getGithubIssueUrl(errorText)} target="_blank">
+                    <a href={getGithubIssueUrl(error)} target="_blank">
                       click here
                     </a>{' '}
                     to
@@ -104,10 +106,21 @@ export default class Error extends Component<Props> {
   }
 }
 
-function getGithubIssueUrl(errorText: string) {
-  const issueTitle = 'Check out this error';
+function getGithubIssueUrl(error: ComponentError) {
+  const title = 'Check out this error';
+  const body = getGithubIssueBody(error);
 
   return `https://github.com/skidding/flatris/issues/new?title=${encodeURIComponent(
-    issueTitle
-  )}&body=${encodeURIComponent(errorText)}`;
+    title
+  )}&body=${encodeURIComponent(body)}`;
+}
+
+function getGithubIssueBody({ message, stack }: ComponentError) {
+  return `## Error
+
+${message}
+
+## Component stack trace
+
+${stack}`;
 }

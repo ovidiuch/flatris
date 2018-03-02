@@ -9,6 +9,7 @@ import Error from './pages/Error';
 import type { Node } from 'react';
 import type { State } from '../types/state';
 import type { Action, Dispatch } from '../types/actions';
+import type { ComponentError } from '../types/error';
 
 type Props = {
   jsReady: boolean,
@@ -18,10 +19,7 @@ type Props = {
 };
 
 type LocalState = {
-  error: ?{
-    message: string,
-    stack: string
-  }
+  error: ?ComponentError
 };
 
 class Layout extends Component<Props, LocalState> {
@@ -118,14 +116,7 @@ class Layout extends Component<Props, LocalState> {
           }
         `}</style>
         <div className={layoutClasses}>
-          {error ? (
-            <Error
-              statusCode={null}
-              errorText={getErrorText(error.message, error.stack)}
-            />
-          ) : (
-            children
-          )}
+          {error ? <Error error={error} /> : children}
         </div>
         <style jsx>{`
           .layout {
@@ -138,16 +129,6 @@ class Layout extends Component<Props, LocalState> {
       </div>
     );
   }
-}
-
-function getErrorText(error, stack) {
-  return `## Error
-
-${error}
-
-## Component stack trace
-
-${stack}`;
 }
 
 function mapStateToProps({ jsReady }: State): $Shape<Props> {

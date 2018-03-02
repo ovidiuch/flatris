@@ -6,7 +6,5 @@ import Error from '../../Error';
 export default createFixture({
   component: Error,
 
-  props: {
-    statusCode: 500
-  }
+  props: {}
 });
