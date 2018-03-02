@@ -19539,7 +19539,7 @@ exports[`Cosmos fixtures: Drop:default 1`] = `
 </button>
 `;
 
-exports[`Cosmos fixtures: Error:404 1`] = `
+exports[`Cosmos fixtures: Error:has-error-text 1`] = `
 <div
   className="jsx-1613050951 outer"
 >
@@ -19558,18 +19558,65 @@ exports[`Cosmos fixtures: Error:404 1`] = `
           <h2
             className="jsx-1152015136 title"
           >
-            Not Found
+            Oh Noes!
           </h2>
           <div
             className="jsx-1152015136 message"
           >
-            <p>
-              Hmm...
+            <p
+              className="jsx-1832570087"
+            >
+              <strong
+                className="jsx-1832570087"
+              >
+                Something broke :/
+              </strong>
             </p>
-            <p>
-              It's either gone or
-              <br />
-              it never was ¯\\_(ツ)_/¯
+            <p
+              className="jsx-1832570087"
+            >
+              At least this page
+              <br
+                className="jsx-1832570087"
+              />
+              works, right?
+            </p>
+            <div
+              className="jsx-1832570087 copy"
+            >
+              <div
+                data-clipboard-text="undefined is not a function"
+              >
+                <button
+                  className="jsx-2544857778 button hover-button"
+                  type="button"
+                >
+                  Copy error
+                </button>
+              </div>
+            </div>
+            <p
+              className="jsx-1832570087"
+            >
+              <span
+                className="jsx-1832570087 highlight"
+              >
+                Please click
+                 
+                <a
+                  className="jsx-1832570087"
+                  href="https://github.com/skidding/flatris/issues/new?title=Check%20out%20this%20error&body=undefined%20is%20not%20a%20function"
+                  target="_blank"
+                >
+                  here
+                </a>
+                 
+                to
+                <br
+                  className="jsx-1832570087"
+                />
+                share what happened.
+              </span>
             </p>
           </div>
         </div>
@@ -19742,7 +19789,7 @@ exports[`Cosmos fixtures: Error:404 1`] = `
 </div>
 `;
 
-exports[`Cosmos fixtures: Error:has-error-text 1`] = `
+exports[`Cosmos fixtures: Error:not-found 1`] = `
 <div
   className="jsx-1613050951 outer"
 >
@@ -19761,64 +19808,18 @@ exports[`Cosmos fixtures: Error:has-error-text 1`] = `
           <h2
             className="jsx-1152015136 title"
           >
-            Oh Noes!
+            Not Found
           </h2>
           <div
             className="jsx-1152015136 message"
           >
-            <p
-              className="jsx-1832570087"
-            >
-              <strong
-                className="jsx-1832570087"
-              >
-                Something broke :/
-              </strong>
+            <p>
+              Hmm...
             </p>
-            <p
-              className="jsx-1832570087"
-            >
-              At least this page
-              <br
-                className="jsx-1832570087"
-              />
-              works, right?
-            </p>
-            <div
-              className="jsx-1832570087 copy"
-            >
-              <div
-                data-clipboard-text="undefined is not a function"
-              >
-                <button
-                  className="jsx-2544857778 button hover-button"
-                  type="button"
-                >
-                  Copy error
-                </button>
-              </div>
-            </div>
-            <p
-              className="jsx-1832570087"
-            >
-              <span
-                className="jsx-1832570087 highlight"
-              >
-                Copy and paste the
-                <br
-                  className="jsx-1832570087"
-                />
-                error
-                 
-                <a
-                  className="jsx-1832570087"
-                  href="https://github.com/skidding/flatris/issues/new"
-                  target="_blank"
-                >
-                  here
-                </a>
-                , please!
-              </span>
+            <p>
+              It's either gone or
+              <br />
+              it never was ¯\\_(ツ)_/¯
             </p>
           </div>
         </div>

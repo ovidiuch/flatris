@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Head from 'next/head';
+import Error from './pages/Error';
 
 import type { Node } from 'react';
 import type { State } from '../types/state';
@@ -16,9 +17,20 @@ type Props = {
   jsLoad: () => Action
 };
 
-class Layout extends Component<Props> {
+type LocalState = {
+  error: ?{
+    message: string,
+    stack: string
+  }
+};
+
+class Layout extends Component<Props, LocalState> {
   static defaultProps = {
     title: 'Flatris'
+  };
+
+  state = {
+    error: null
   };
 
   componentDidMount() {
@@ -29,8 +41,19 @@ class Layout extends Component<Props> {
     }
   }
 
+  componentDidCatch(error, { componentStack }) {
+    this.setState({
+      error: {
+        message: error.toString(),
+        stack: componentStack
+      }
+    });
+  }
+
   render() {
     const { jsReady, title, children } = this.props;
+    const { error } = this.state;
+
     const layoutClasses = classNames('layout', {
       'layout-static': !jsReady
     });
@@ -94,7 +117,16 @@ class Layout extends Component<Props> {
             background: #fff;
           }
         `}</style>
-        <div className={layoutClasses}>{children}</div>
+        <div className={layoutClasses}>
+          {error ? (
+            <Error
+              statusCode={null}
+              errorText={getErrorText(error.message, error.stack)}
+            />
+          ) : (
+            children
+          )}
+        </div>
         <style jsx>{`
           .layout {
             transition: filter 1s;
@@ -106,6 +138,16 @@ class Layout extends Component<Props> {
       </div>
     );
   }
+}
+
+function getErrorText(error, stack) {
+  return `## Error
+
+${error}
+
+## Component stack trace
+
+${stack}`;
 }
 
 function mapStateToProps({ jsReady }: State): $Shape<Props> {

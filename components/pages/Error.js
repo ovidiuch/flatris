@@ -73,14 +73,13 @@ export default class Error extends Component<Props> {
                 </div>
                 <p>
                   <span className="highlight">
-                    Copy and paste the
-                    <br />error{' '}
-                    <a
-                      href="https://github.com/skidding/flatris/issues/new"
-                      target="_blank"
-                    >
+                    Please click{' '}
+                    <a href={getGithubIssueUrl(errorText)} target="_blank">
                       here
-                    </a>, please!
+                    </a>{' '}
+                    to
+                    <br />
+                    share what happened.
                   </span>
                 </p>
               </Fragment>
@@ -103,4 +102,12 @@ export default class Error extends Component<Props> {
       />
     );
   }
+}
+
+function getGithubIssueUrl(errorText: string) {
+  const issueTitle = 'Check out this error';
+
+  return `https://github.com/skidding/flatris/issues/new?title=${encodeURIComponent(
+    issueTitle
+  )}&body=${encodeURIComponent(errorText)}`;
 }
