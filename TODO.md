@@ -139,7 +139,7 @@
   * [x] Screen 3: Line transferring
   * [x] Screen 4: Controls
 * [x] Custom 404 page
-* [ ] Error page (via componentDidCatch)
+* [x] Error page (via componentDidCatch)
 * [ ] Link to Github
 * [ ] Game footer
 * [ ] Log stats
