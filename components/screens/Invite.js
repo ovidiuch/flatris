@@ -1,9 +1,9 @@
 // @flow
 
 import React, { Fragment, Component } from 'react';
-import Screen from './Screen';
 import Button from '../Button';
-import CopyLink from '../CopyLink';
+import CopyGameLinkButton from '../CopyGameLinkButton';
+import Screen from './Screen';
 
 import type { GameId } from '../../types/state';
 
@@ -29,7 +29,7 @@ export default class Invite extends Component<Props> {
               </strong>
             </p>
             <div className="copy">
-              <CopyLink disabled={disabled} gameId={gameId} />
+              <CopyGameLinkButton disabled={disabled} gameId={gameId} />
             </div>
             <p>
               Send the link and<br />warm up until the<br />other person

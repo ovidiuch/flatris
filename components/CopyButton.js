@@ -1,4 +1,3 @@
-/* global window */
 // @flow
 
 import React, { Component } from 'react';
@@ -6,18 +5,19 @@ import Clipboard from 'clipboard';
 import { COLORS } from '../constants/tetromino';
 import Button from './Button';
 
-import type { GameId } from '../types/state';
-
 type Props = {
   disabled: boolean,
-  gameId: GameId
+  copyText: string,
+  defaultLabel: string,
+  successLabel: string,
+  errorLabel: string
 };
 
 type LocalState = {
   copyStatus: null | 'success' | 'error'
 };
 
-export default class CopyLink extends Component<Props, LocalState> {
+export default class CopyButton extends Component<Props, LocalState> {
   clipboard: ?typeof Clipboard;
 
   state = {
@@ -53,7 +53,13 @@ export default class CopyLink extends Component<Props, LocalState> {
   };
 
   render() {
-    const { disabled } = this.props;
+    const {
+      disabled,
+      copyText,
+      defaultLabel,
+      successLabel,
+      errorLabel
+    } = this.props;
     const { copyStatus } = this.state;
 
     let bgColor;
@@ -69,28 +75,19 @@ export default class CopyLink extends Component<Props, LocalState> {
     }
 
     return !disabled ? (
-      <div ref={this.handleCopyBtnRef} data-clipboard-text={this.getShareUrl()}>
+      <div ref={this.handleCopyBtnRef} data-clipboard-text={copyText}>
         <Button bgColor={bgColor} color="#fff">
-          {!copyStatus && 'Copy link'}
-          {copyStatus === 'success' && 'Link copied!'}
-          {copyStatus === 'error' && 'Copy error :('}
+          {!copyStatus && defaultLabel}
+          {copyStatus === 'success' && successLabel}
+          {copyStatus === 'error' && errorLabel}
         </Button>
       </div>
     ) : (
       <div>
         <Button disabled bgColor={bgColor} color="#fff">
-          Copy link
+          {defaultLabel}
         </Button>
       </div>
     );
-  }
-
-  getShareUrl() {
-    // NOTE: This code only works in to browser (ie. not on the server). SSR
-    // will return a disabled copy button.
-    const { gameId } = this.props;
-    const { protocol, host } = window.location;
-
-    return `${protocol}//${host}/join/${gameId}`;
   }
 }

@@ -138,17 +138,21 @@
   * [x] Screen 2: Multiplayer game
   * [x] Screen 3: Line transferring
   * [x] Screen 4: Controls
-* [ ] Game footer
-* [ ] Log errors and stats
-  * [ ] componentDidCatch
+* [x] Custom 404 page
+* [x] Error page (via componentDidCatch)
 * [ ] Link to Github
+* [ ] Game footer
+* [ ] Log stats
+* [ ] Log errors
 * [ ] [1.0]
+  * [ ] Merge to master
+  * [ ] https://flatris.space
 
 BACKLOG
 
-* [ ] Custom 404 page (or just redirect to home)
 * [ ] Freeze game on player disconnect
 * [ ] Create drop shadow from active Tetromino
+* [ ] Zoom in animation when opening dashboard game
 * [ ] Algorithm for dispatching bundled actions at time interval
 * [ ] Sounds
 

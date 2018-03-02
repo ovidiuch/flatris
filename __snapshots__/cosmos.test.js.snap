@@ -19470,22 +19470,22 @@ exports[`Cosmos fixtures: Connect(SocketConnect(PortraitControls)):disabled 1`] 
 </div>
 `;
 
-exports[`Cosmos fixtures: CopyLink:copy-error 1`] = `
+exports[`Cosmos fixtures: CopyButton:copy-error 1`] = `
 <div
-  data-clipboard-text="about:///join/1337"
+  data-clipboard-text="I made you copy me!"
 >
   <button
     className="jsx-1565648149 button hover-button"
     type="button"
   >
-    Copy error :(
+    Copy failed :(
   </button>
 </div>
 `;
 
-exports[`Cosmos fixtures: CopyLink:copy-success 1`] = `
+exports[`Cosmos fixtures: CopyButton:copy-success 1`] = `
 <div
-  data-clipboard-text="about:///join/1337"
+  data-clipboard-text="I made you copy me!"
 >
   <button
     className="jsx-3398295050 button hover-button"
@@ -19496,7 +19496,32 @@ exports[`Cosmos fixtures: CopyLink:copy-success 1`] = `
 </div>
 `;
 
-exports[`Cosmos fixtures: CopyLink:default 1`] = `
+exports[`Cosmos fixtures: CopyButton:default 1`] = `
+<div
+  data-clipboard-text="I made you copy me!"
+>
+  <button
+    className="jsx-2544857778 button hover-button"
+    type="button"
+  >
+    Copy link
+  </button>
+</div>
+`;
+
+exports[`Cosmos fixtures: CopyButton:disabled 1`] = `
+<div>
+  <button
+    className="jsx-2544857778 button hover-button"
+    disabled={true}
+    type="button"
+  >
+    Copy link
+  </button>
+</div>
+`;
+
+exports[`Cosmos fixtures: CopyGameLinkButton:default 1`] = `
 <div
   data-clipboard-text="about:///join/1337"
 >
@@ -19509,7 +19534,7 @@ exports[`Cosmos fixtures: CopyLink:default 1`] = `
 </div>
 `;
 
-exports[`Cosmos fixtures: CopyLink:disabled 1`] = `
+exports[`Cosmos fixtures: CopyGameLinkButton:disabled 1`] = `
 <div>
   <button
     className="jsx-2544857778 button hover-button"
@@ -19537,6 +19562,679 @@ exports[`Cosmos fixtures: Drop:default 1`] = `
     />
   </svg>
 </button>
+`;
+
+exports[`Cosmos fixtures: Error:component-error 1`] = `
+<div
+  className="jsx-1613050951 outer"
+>
+  <div
+    className="jsx-1613050951 container"
+  >
+    <div
+      className="jsx-3372609668 screen-container"
+    >
+      <div
+        className="jsx-1152015136 screen"
+      >
+        <div
+          className="jsx-1497761764 fade-in"
+        >
+          <h2
+            className="jsx-1152015136 title"
+          >
+            Oh Noes!
+          </h2>
+          <div
+            className="jsx-1152015136 message"
+          >
+            <p
+              className="jsx-1832570087"
+            >
+              <strong
+                className="jsx-1832570087"
+              >
+                Something broke :/
+              </strong>
+            </p>
+            <div
+              className="jsx-1832570087 copy"
+            >
+              <div
+                data-clipboard-text="ReferenceError: xxx is not defined
+
+
+      in NewGame (created by Connect(NewGame))
+      in Connect(NewGame) (at new.js?entry:25)
+      in SocketProvider (at new.js?entry:24)
+      in div (at Layout.js:118)
+      in div (at Layout.js:62)
+      in Layout (created by Connect(Layout))
+      in Connect(Layout) (at new.js?entry:23)
+      in CreatePage (created by Connect(CreatePage))
+      in Connect(CreatePage) (created by WrappedCmp)
+      in Provider (created by WrappedCmp)
+      in WrappedCmp (created by Container)
+      in AppContainer (created by Container)
+      in Container (created by App)
+      in App"
+              >
+                <button
+                  className="jsx-2544857778 button hover-button"
+                  type="button"
+                >
+                  Copy error
+                </button>
+              </div>
+            </div>
+            <p
+              className="jsx-1832570087"
+            >
+              <span
+                className="jsx-1832570087 highlight"
+              >
+                Please
+                 
+                <a
+                  className="jsx-1832570087"
+                  href="https://github.com/skidding/flatris/issues/new?title=Check%20out%20this%20error&body=%23%23%20Error%0A%0AReferenceError%3A%20xxx%20is%20not%20defined%0A%0A%23%23%20Component%20stack%20trace%0A%0A%0A%20%20%20%20%20%20in%20NewGame%20(created%20by%20Connect(NewGame))%0A%20%20%20%20%20%20in%20Connect(NewGame)%20(at%20new.js%3Fentry%3A25)%0A%20%20%20%20%20%20in%20SocketProvider%20(at%20new.js%3Fentry%3A24)%0A%20%20%20%20%20%20in%20div%20(at%20Layout.js%3A118)%0A%20%20%20%20%20%20in%20div%20(at%20Layout.js%3A62)%0A%20%20%20%20%20%20in%20Layout%20(created%20by%20Connect(Layout))%0A%20%20%20%20%20%20in%20Connect(Layout)%20(at%20new.js%3Fentry%3A23)%0A%20%20%20%20%20%20in%20CreatePage%20(created%20by%20Connect(CreatePage))%0A%20%20%20%20%20%20in%20Connect(CreatePage)%20(created%20by%20WrappedCmp)%0A%20%20%20%20%20%20in%20Provider%20(created%20by%20WrappedCmp)%0A%20%20%20%20%20%20in%20WrappedCmp%20(created%20by%20Container)%0A%20%20%20%20%20%20in%20AppContainer%20(created%20by%20Container)%0A%20%20%20%20%20%20in%20Container%20(created%20by%20App)%0A%20%20%20%20%20%20in%20App"
+                  target="_blank"
+                >
+                  click here
+                </a>
+                 
+                to
+                <br
+                  className="jsx-1832570087"
+                />
+                share what happened.
+              </span>
+            </p>
+            <p
+              className="jsx-1832570087"
+            >
+              At least this page
+              <br
+                className="jsx-1832570087"
+              />
+              works, right?
+            </p>
+          </div>
+        </div>
+        <div
+          className="jsx-1152015136 actions"
+        >
+          <div
+            className="jsx-1152015136 button"
+          >
+            <button
+              className="jsx-2576755423 button hover-button"
+              onClick={[Function]}
+              type="button"
+            >
+              Home
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="jsx-3372609668 side-container"
+    >
+      <div
+        className="jsx-215556098 game-panel"
+      >
+        <div
+          className="jsx-215556098 title"
+        >
+          <h1
+            className="jsx-215556098"
+          >
+            Flatris
+          </h1>
+        </div>
+        <div
+          className="jsx-215556098 next-label"
+        >
+          Next
+        </div>
+        <div
+          className="jsx-215556098 next-tetromino next-tetromino-S"
+        >
+          <div
+            className="jsx-2115617632 tetromino"
+          >
+            <div
+              className="jsx-4287887962 grid-square-block"
+              style={
+                Object {
+                  "left": "25%",
+                  "top": "0%",
+                }
+              }
+            >
+              <div
+                className="jsx-86954139 square-block"
+                style={
+                  Object {
+                    "backgroundColor": "#ecf0f1",
+                  }
+                }
+              />
+            </div>
+            <div
+              className="jsx-4287887962 grid-square-block"
+              style={
+                Object {
+                  "left": "50%",
+                  "top": "0%",
+                }
+              }
+            >
+              <div
+                className="jsx-86954139 square-block"
+                style={
+                  Object {
+                    "backgroundColor": "#ecf0f1",
+                  }
+                }
+              />
+            </div>
+            <div
+              className="jsx-4287887962 grid-square-block"
+              style={
+                Object {
+                  "left": "0%",
+                  "top": "25%",
+                }
+              }
+            >
+              <div
+                className="jsx-86954139 square-block"
+                style={
+                  Object {
+                    "backgroundColor": "#ecf0f1",
+                  }
+                }
+              />
+            </div>
+            <div
+              className="jsx-4287887962 grid-square-block"
+              style={
+                Object {
+                  "left": "25%",
+                  "top": "25%",
+                }
+              }
+            >
+              <div
+                className="jsx-86954139 square-block"
+                style={
+                  Object {
+                    "backgroundColor": "#ecf0f1",
+                  }
+                }
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          className="jsx-215556098 player1"
+        >
+          <div
+            className="jsx-1285042675 player-info"
+            onClick={undefined}
+          >
+            <div
+              className="jsx-1285042675 centered"
+            >
+              <div
+                className="jsx-1285042675 player"
+              >
+                1p
+              </div>
+              <div
+                className="jsx-1285042675 insert-coin"
+              >
+                insert coin
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="jsx-215556098 player2"
+        >
+          <div
+            className="jsx-1285042675 player-info"
+            onClick={undefined}
+          >
+            <div
+              className="jsx-1285042675 centered"
+            >
+              <div
+                className="jsx-1285042675 player"
+              >
+                2p
+              </div>
+              <div
+                className="jsx-1285042675 insert-coin"
+              >
+                insert coin
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Cosmos fixtures: Error:not-found 1`] = `
+<div
+  className="jsx-1613050951 outer"
+>
+  <div
+    className="jsx-1613050951 container"
+  >
+    <div
+      className="jsx-3372609668 screen-container"
+    >
+      <div
+        className="jsx-1152015136 screen"
+      >
+        <div
+          className="jsx-1497761764 fade-in"
+        >
+          <h2
+            className="jsx-1152015136 title"
+          >
+            Not Found
+          </h2>
+          <div
+            className="jsx-1152015136 message"
+          >
+            <p>
+              Hmm...
+            </p>
+            <p>
+              It's either gone or
+              <br />
+              it never was ¯\\_(ツ)_/¯
+            </p>
+          </div>
+        </div>
+        <div
+          className="jsx-1152015136 actions"
+        >
+          <div
+            className="jsx-1152015136 button"
+          >
+            <button
+              className="jsx-2576755423 button hover-button"
+              onClick={[Function]}
+              type="button"
+            >
+              Home
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="jsx-3372609668 side-container"
+    >
+      <div
+        className="jsx-215556098 game-panel"
+      >
+        <div
+          className="jsx-215556098 title"
+        >
+          <h1
+            className="jsx-215556098"
+          >
+            Flatris
+          </h1>
+        </div>
+        <div
+          className="jsx-215556098 next-label"
+        >
+          Next
+        </div>
+        <div
+          className="jsx-215556098 next-tetromino next-tetromino-S"
+        >
+          <div
+            className="jsx-2115617632 tetromino"
+          >
+            <div
+              className="jsx-4287887962 grid-square-block"
+              style={
+                Object {
+                  "left": "25%",
+                  "top": "0%",
+                }
+              }
+            >
+              <div
+                className="jsx-86954139 square-block"
+                style={
+                  Object {
+                    "backgroundColor": "#ecf0f1",
+                  }
+                }
+              />
+            </div>
+            <div
+              className="jsx-4287887962 grid-square-block"
+              style={
+                Object {
+                  "left": "50%",
+                  "top": "0%",
+                }
+              }
+            >
+              <div
+                className="jsx-86954139 square-block"
+                style={
+                  Object {
+                    "backgroundColor": "#ecf0f1",
+                  }
+                }
+              />
+            </div>
+            <div
+              className="jsx-4287887962 grid-square-block"
+              style={
+                Object {
+                  "left": "0%",
+                  "top": "25%",
+                }
+              }
+            >
+              <div
+                className="jsx-86954139 square-block"
+                style={
+                  Object {
+                    "backgroundColor": "#ecf0f1",
+                  }
+                }
+              />
+            </div>
+            <div
+              className="jsx-4287887962 grid-square-block"
+              style={
+                Object {
+                  "left": "25%",
+                  "top": "25%",
+                }
+              }
+            >
+              <div
+                className="jsx-86954139 square-block"
+                style={
+                  Object {
+                    "backgroundColor": "#ecf0f1",
+                  }
+                }
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          className="jsx-215556098 player1"
+        >
+          <div
+            className="jsx-1285042675 player-info"
+            onClick={undefined}
+          >
+            <div
+              className="jsx-1285042675 centered"
+            >
+              <div
+                className="jsx-1285042675 player"
+              >
+                1p
+              </div>
+              <div
+                className="jsx-1285042675 insert-coin"
+              >
+                insert coin
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="jsx-215556098 player2"
+        >
+          <div
+            className="jsx-1285042675 player-info"
+            onClick={undefined}
+          >
+            <div
+              className="jsx-1285042675 centered"
+            >
+              <div
+                className="jsx-1285042675 player"
+              >
+                2p
+              </div>
+              <div
+                className="jsx-1285042675 insert-coin"
+              >
+                insert coin
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Cosmos fixtures: Error:unknown 1`] = `
+<div
+  className="jsx-1613050951 outer"
+>
+  <div
+    className="jsx-1613050951 container"
+  >
+    <div
+      className="jsx-3372609668 screen-container"
+    >
+      <div
+        className="jsx-1152015136 screen"
+      >
+        <div
+          className="jsx-1497761764 fade-in"
+        >
+          <h2
+            className="jsx-1152015136 title"
+          >
+            Oh Noes!
+          </h2>
+          <div
+            className="jsx-1152015136 message"
+          >
+            <p
+              className="jsx-1832570087"
+            >
+              <strong
+                className="jsx-1832570087"
+              >
+                Something broke :/
+              </strong>
+            </p>
+          </div>
+        </div>
+        <div
+          className="jsx-1152015136 actions"
+        >
+          <div
+            className="jsx-1152015136 button"
+          >
+            <button
+              className="jsx-2576755423 button hover-button"
+              onClick={[Function]}
+              type="button"
+            >
+              Home
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="jsx-3372609668 side-container"
+    >
+      <div
+        className="jsx-215556098 game-panel"
+      >
+        <div
+          className="jsx-215556098 title"
+        >
+          <h1
+            className="jsx-215556098"
+          >
+            Flatris
+          </h1>
+        </div>
+        <div
+          className="jsx-215556098 next-label"
+        >
+          Next
+        </div>
+        <div
+          className="jsx-215556098 next-tetromino next-tetromino-S"
+        >
+          <div
+            className="jsx-2115617632 tetromino"
+          >
+            <div
+              className="jsx-4287887962 grid-square-block"
+              style={
+                Object {
+                  "left": "25%",
+                  "top": "0%",
+                }
+              }
+            >
+              <div
+                className="jsx-86954139 square-block"
+                style={
+                  Object {
+                    "backgroundColor": "#ecf0f1",
+                  }
+                }
+              />
+            </div>
+            <div
+              className="jsx-4287887962 grid-square-block"
+              style={
+                Object {
+                  "left": "50%",
+                  "top": "0%",
+                }
+              }
+            >
+              <div
+                className="jsx-86954139 square-block"
+                style={
+                  Object {
+                    "backgroundColor": "#ecf0f1",
+                  }
+                }
+              />
+            </div>
+            <div
+              className="jsx-4287887962 grid-square-block"
+              style={
+                Object {
+                  "left": "0%",
+                  "top": "25%",
+                }
+              }
+            >
+              <div
+                className="jsx-86954139 square-block"
+                style={
+                  Object {
+                    "backgroundColor": "#ecf0f1",
+                  }
+                }
+              />
+            </div>
+            <div
+              className="jsx-4287887962 grid-square-block"
+              style={
+                Object {
+                  "left": "25%",
+                  "top": "25%",
+                }
+              }
+            >
+              <div
+                className="jsx-86954139 square-block"
+                style={
+                  Object {
+                    "backgroundColor": "#ecf0f1",
+                  }
+                }
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          className="jsx-215556098 player1"
+        >
+          <div
+            className="jsx-1285042675 player-info"
+            onClick={undefined}
+          >
+            <div
+              className="jsx-1285042675 centered"
+            >
+              <div
+                className="jsx-1285042675 player"
+              >
+                1p
+              </div>
+              <div
+                className="jsx-1285042675 insert-coin"
+              >
+                insert coin
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="jsx-215556098 player2"
+        >
+          <div
+            className="jsx-1285042675 player-info"
+            onClick={undefined}
+          >
+            <div
+              className="jsx-1285042675 centered"
+            >
+              <div
+                className="jsx-1285042675 player"
+              >
+                2p
+              </div>
+              <div
+                className="jsx-1285042675 insert-coin"
+              >
+                insert coin
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 `;
 
 exports[`Cosmos fixtures: FadeIn:default 1`] = `
@@ -20930,7 +21628,7 @@ exports[`Cosmos fixtures: HowToPlay:default 1`] = `
             </p>
             <p>
               <span
-                class="highlight"
+                className="highlight"
               >
                 Use the keyboard on
                 <br />
@@ -21024,7 +21722,7 @@ exports[`Cosmos fixtures: HowToPlay:disabled 1`] = `
             </p>
             <p>
               <span
-                class="highlight"
+                className="highlight"
               >
                 Use the keyboard on
                 <br />

@@ -1,10 +1,10 @@
 // @flow
 
 import { createFixture } from '../../../utils/create-fixture';
-import CopyLink from '../../CopyLink';
+import CopyGameLinkButton from '../../CopyGameLinkButton';
 
 export default createFixture({
-  component: CopyLink,
+  component: CopyGameLinkButton,
 
   props: {
     disabled: false,
