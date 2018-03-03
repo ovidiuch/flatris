@@ -8,18 +8,15 @@ import Dashboard from '../../Dashboard';
 
 import type { ElementRef } from 'react';
 
-const user1 = getSampleUser();
-const game1 = getBlankGame({ id: 'dce6b11e', user: user1 });
+const user = getSampleUser();
+const game1 = getBlankGame({ id: 'dce6b11e', user });
 
 export default createFixture({
   component: Dashboard,
 
   reduxState: {
     jsReady: true,
-    curUser: user1,
-    games: {
-      [game1.id]: game1
-    }
+    games: {}
   },
 
   async init({ compRef }: { compRef: ElementRef<typeof Component> }) {
@@ -27,8 +24,8 @@ export default createFixture({
 
     await doAfter(200, () => {
       dispatch({
-        type: 'REMOVE_GAME',
-        payload: { gameId: game1.id }
+        type: 'ADD_GAME',
+        payload: { game: game1 }
       });
     });
   }

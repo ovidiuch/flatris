@@ -780,7 +780,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):game 1`] = `
   <div
     className="jsx-2133970626 message"
   >
-    Join a game below or create a new one
+    Join a game or create a new one
   </div>
   <div
     className="jsx-1821874668 game-grid"
@@ -1077,6 +1077,725 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):game 1`] = `
         </div>
       </div>
     </div>
+    <div
+      className="jsx-1821874668 game-preview"
+      onClick={[Function]}
+    >
+      <div
+        className="jsx-608550019 well-container"
+      />
+      <div
+        className="jsx-608550019 side-container"
+      >
+        <div
+          className="jsx-215556098 game-panel"
+        >
+          <div
+            className="jsx-215556098 title"
+          >
+            <h1
+              className="jsx-215556098"
+            >
+              Flatris
+            </h1>
+          </div>
+          <div
+            className="jsx-215556098 next-label"
+          >
+            Next
+          </div>
+          <div
+            className="jsx-215556098 next-tetromino next-tetromino-S"
+          >
+            <div
+              className="jsx-2115617632 tetromino"
+            >
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "25%",
+                    "top": "0%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-86954139 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#ecf0f1",
+                    }
+                  }
+                />
+              </div>
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "50%",
+                    "top": "0%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-86954139 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#ecf0f1",
+                    }
+                  }
+                />
+              </div>
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "0%",
+                    "top": "25%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-86954139 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#ecf0f1",
+                    }
+                  }
+                />
+              </div>
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "25%",
+                    "top": "25%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-86954139 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#ecf0f1",
+                    }
+                  }
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            className="jsx-215556098 player1"
+          >
+            <div
+              className="jsx-1285042675 player-info"
+              onClick={undefined}
+            >
+              <div
+                className="jsx-1285042675 centered"
+              >
+                <div
+                  className="jsx-1285042675 player"
+                >
+                  1p
+                </div>
+                <div
+                  className="jsx-1285042675 insert-coin"
+                >
+                  insert coin
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="jsx-215556098 player2"
+          >
+            <div
+              className="jsx-1285042675 player-info"
+              onClick={undefined}
+            >
+              <div
+                className="jsx-1285042675 centered"
+              >
+                <div
+                  className="jsx-1285042675 player"
+                >
+                  2p
+                </div>
+                <div
+                  className="jsx-1285042675 insert-coin"
+                >
+                  insert coin
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):game-added 1`] = `
+<div
+  className="jsx-2133970626 root"
+>
+  <div
+    className="jsx-2133970626 header"
+  >
+    <div
+      className="jsx-2133970626 new-game-button"
+    >
+      <button
+        className="jsx-2576755423 button hover-button"
+        onClick={[Function]}
+        type="button"
+      >
+        New game
+      </button>
+    </div>
+    <div
+      className="jsx-2133970626 logo"
+    >
+      <div
+        className="jsx-1917779880 logo"
+      >
+        <div
+          className="jsx-2115617632 tetromino"
+        >
+          <div
+            className="jsx-4287887962 grid-square-block"
+            style={
+              Object {
+                "left": "25%",
+                "top": "0%",
+              }
+            }
+          >
+            <div
+              className="jsx-86954139 square-block"
+              style={
+                Object {
+                  "backgroundColor": "#ecf0f1",
+                }
+              }
+            />
+          </div>
+          <div
+            className="jsx-4287887962 grid-square-block"
+            style={
+              Object {
+                "left": "50%",
+                "top": "0%",
+              }
+            }
+          >
+            <div
+              className="jsx-86954139 square-block"
+              style={
+                Object {
+                  "backgroundColor": "#ecf0f1",
+                }
+              }
+            />
+          </div>
+          <div
+            className="jsx-4287887962 grid-square-block"
+            style={
+              Object {
+                "left": "0%",
+                "top": "25%",
+              }
+            }
+          >
+            <div
+              className="jsx-86954139 square-block"
+              style={
+                Object {
+                  "backgroundColor": "#ecf0f1",
+                }
+              }
+            />
+          </div>
+          <div
+            className="jsx-4287887962 grid-square-block"
+            style={
+              Object {
+                "left": "25%",
+                "top": "25%",
+              }
+            }
+          >
+            <div
+              className="jsx-86954139 square-block"
+              style={
+                Object {
+                  "backgroundColor": "#ecf0f1",
+                }
+              }
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="jsx-2133970626 message"
+  >
+    Join a game or create a new one
+  </div>
+  <div
+    className="jsx-1821874668 game-grid"
+  >
+    <div
+      className="jsx-1821874668 game-preview game-added"
+      onClick={[Function]}
+    >
+      <div
+        className="jsx-2611135330 quake"
+      >
+        <div
+          className="jsx-2611135330 quake"
+        >
+          <div
+            className="jsx-608550019 well-container"
+          >
+            <div
+              className="jsx-124931555 flash"
+            >
+              <div
+                className="jsx-124931555 flash"
+              >
+                <div
+                  className="jsx-2914085764 well"
+                >
+                  <div
+                    className="jsx-2914085764 active-tetromino"
+                    style={
+                      Object {
+                        "left": "30%",
+                        "top": "-10%",
+                      }
+                    }
+                  >
+                    <div
+                      className="jsx-2115617632 tetromino"
+                    >
+                      <div
+                        className="jsx-4287887962 grid-square-block"
+                        style={
+                          Object {
+                            "left": "0%",
+                            "top": "0%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#e84138",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-4287887962 grid-square-block"
+                        style={
+                          Object {
+                            "left": "25%",
+                            "top": "0%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#e84138",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-4287887962 grid-square-block"
+                        style={
+                          Object {
+                            "left": "25%",
+                            "top": "25%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#e84138",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-4287887962 grid-square-block"
+                        style={
+                          Object {
+                            "left": "50%",
+                            "top": "25%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#e84138",
+                            }
+                          }
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="jsx-1915500079 well-grid"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="jsx-608550019 side-container"
+          >
+            <div
+              className="jsx-215556098 game-panel"
+            >
+              <div
+                className="jsx-215556098 title"
+              >
+                <h1
+                  className="jsx-215556098"
+                >
+                  Flatris
+                </h1>
+              </div>
+              <div
+                className="jsx-215556098 next-label"
+              >
+                Next
+              </div>
+              <div
+                className="jsx-215556098 next-tetromino next-tetromino-L"
+              >
+                <div
+                  className="jsx-2115617632 tetromino"
+                >
+                  <div
+                    className="jsx-4287887962 grid-square-block"
+                    style={
+                      Object {
+                        "left": "50%",
+                        "top": "0%",
+                      }
+                    }
+                  >
+                    <div
+                      className="jsx-86954139 square-block"
+                      style={
+                        Object {
+                          "backgroundColor": "#ed652f",
+                        }
+                      }
+                    />
+                  </div>
+                  <div
+                    className="jsx-4287887962 grid-square-block"
+                    style={
+                      Object {
+                        "left": "0%",
+                        "top": "25%",
+                      }
+                    }
+                  >
+                    <div
+                      className="jsx-86954139 square-block"
+                      style={
+                        Object {
+                          "backgroundColor": "#ed652f",
+                        }
+                      }
+                    />
+                  </div>
+                  <div
+                    className="jsx-4287887962 grid-square-block"
+                    style={
+                      Object {
+                        "left": "25%",
+                        "top": "25%",
+                      }
+                    }
+                  >
+                    <div
+                      className="jsx-86954139 square-block"
+                      style={
+                        Object {
+                          "backgroundColor": "#ed652f",
+                        }
+                      }
+                    />
+                  </div>
+                  <div
+                    className="jsx-4287887962 grid-square-block"
+                    style={
+                      Object {
+                        "left": "50%",
+                        "top": "25%",
+                      }
+                    }
+                  >
+                    <div
+                      className="jsx-86954139 square-block"
+                      style={
+                        Object {
+                          "backgroundColor": "#ed652f",
+                        }
+                      }
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                className="jsx-215556098 player1"
+              >
+                <div
+                  className="jsx-1517809321 player-info"
+                >
+                  <div
+                    className="jsx-1517809321 name"
+                  >
+                    <div
+                      className="jsx-1517809321 vcentered"
+                    >
+                      Tig
+                    </div>
+                  </div>
+                  <div
+                    className="jsx-1517809321 score"
+                  >
+                    <div
+                      className="jsx-1517809321 score-row"
+                    >
+                      <div
+                        className="jsx-1517809321 label vcentered"
+                      >
+                        Score
+                      </div>
+                      <div
+                        className="jsx-1517809321 value vcentered"
+                      >
+                        0
+                      </div>
+                    </div>
+                    <div
+                      className="jsx-1517809321 score-row"
+                    >
+                      <div
+                        className="jsx-1517809321 label vcentered"
+                      >
+                        Lines
+                      </div>
+                      <div
+                        className="jsx-1517809321 value vcentered"
+                      >
+                        0
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="jsx-215556098 player2"
+              >
+                <div
+                  className="jsx-1285042675 player-info"
+                  onClick={undefined}
+                >
+                  <div
+                    className="jsx-1285042675 centered"
+                  >
+                    <div
+                      className="jsx-1285042675 player"
+                    >
+                      2p
+                    </div>
+                    <div
+                      className="jsx-1285042675 insert-coin"
+                    >
+                      insert coin
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="jsx-1821874668 game-preview"
+      onClick={[Function]}
+    >
+      <div
+        className="jsx-608550019 well-container"
+      />
+      <div
+        className="jsx-608550019 side-container"
+      >
+        <div
+          className="jsx-215556098 game-panel"
+        >
+          <div
+            className="jsx-215556098 title"
+          >
+            <h1
+              className="jsx-215556098"
+            >
+              Flatris
+            </h1>
+          </div>
+          <div
+            className="jsx-215556098 next-label"
+          >
+            Next
+          </div>
+          <div
+            className="jsx-215556098 next-tetromino next-tetromino-S"
+          >
+            <div
+              className="jsx-2115617632 tetromino"
+            >
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "25%",
+                    "top": "0%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-86954139 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#ecf0f1",
+                    }
+                  }
+                />
+              </div>
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "50%",
+                    "top": "0%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-86954139 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#ecf0f1",
+                    }
+                  }
+                />
+              </div>
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "0%",
+                    "top": "25%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-86954139 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#ecf0f1",
+                    }
+                  }
+                />
+              </div>
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "25%",
+                    "top": "25%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-86954139 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#ecf0f1",
+                    }
+                  }
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            className="jsx-215556098 player1"
+          >
+            <div
+              className="jsx-1285042675 player-info"
+              onClick={undefined}
+            >
+              <div
+                className="jsx-1285042675 centered"
+              >
+                <div
+                  className="jsx-1285042675 player"
+                >
+                  1p
+                </div>
+                <div
+                  className="jsx-1285042675 insert-coin"
+                >
+                  insert coin
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="jsx-215556098 player2"
+          >
+            <div
+              className="jsx-1285042675 player-info"
+              onClick={undefined}
+            >
+              <div
+                className="jsx-1285042675 centered"
+              >
+                <div
+                  className="jsx-1285042675 player"
+                >
+                  2p
+                </div>
+                <div
+                  className="jsx-1285042675 insert-coin"
+                >
+                  insert coin
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 `;
@@ -1187,7 +1906,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-added 1`] = `
   <div
     className="jsx-2133970626 message"
   >
-    Join a game below or create a new one
+    Join a game or create a new one
   </div>
   <div
     className="jsx-1821874668 game-grid"
@@ -2061,6 +2780,162 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-added 1`] = `
                       insert coin
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="jsx-1821874668 game-preview"
+      onClick={[Function]}
+    >
+      <div
+        className="jsx-608550019 well-container"
+      />
+      <div
+        className="jsx-608550019 side-container"
+      >
+        <div
+          className="jsx-215556098 game-panel"
+        >
+          <div
+            className="jsx-215556098 title"
+          >
+            <h1
+              className="jsx-215556098"
+            >
+              Flatris
+            </h1>
+          </div>
+          <div
+            className="jsx-215556098 next-label"
+          >
+            Next
+          </div>
+          <div
+            className="jsx-215556098 next-tetromino next-tetromino-S"
+          >
+            <div
+              className="jsx-2115617632 tetromino"
+            >
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "25%",
+                    "top": "0%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-86954139 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#ecf0f1",
+                    }
+                  }
+                />
+              </div>
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "50%",
+                    "top": "0%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-86954139 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#ecf0f1",
+                    }
+                  }
+                />
+              </div>
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "0%",
+                    "top": "25%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-86954139 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#ecf0f1",
+                    }
+                  }
+                />
+              </div>
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "25%",
+                    "top": "25%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-86954139 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#ecf0f1",
+                    }
+                  }
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            className="jsx-215556098 player1"
+          >
+            <div
+              className="jsx-1285042675 player-info"
+              onClick={undefined}
+            >
+              <div
+                className="jsx-1285042675 centered"
+              >
+                <div
+                  className="jsx-1285042675 player"
+                >
+                  1p
+                </div>
+                <div
+                  className="jsx-1285042675 insert-coin"
+                >
+                  insert coin
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="jsx-215556098 player2"
+          >
+            <div
+              className="jsx-1285042675 player-info"
+              onClick={undefined}
+            >
+              <div
+                className="jsx-1285042675 centered"
+              >
+                <div
+                  className="jsx-1285042675 player"
+                >
+                  2p
+                </div>
+                <div
+                  className="jsx-1285042675 insert-coin"
+                >
+                  insert coin
                 </div>
               </div>
             </div>
@@ -2178,7 +3053,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed 1`] = 
   <div
     className="jsx-2133970626 message"
   >
-    Join a game below or create a new one
+    Join a game or create a new one
   </div>
   <div
     className="jsx-1821874668 game-grid"
@@ -3059,6 +3934,162 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed 1`] = 
         </div>
       </div>
     </div>
+    <div
+      className="jsx-1821874668 game-preview"
+      onClick={[Function]}
+    >
+      <div
+        className="jsx-608550019 well-container"
+      />
+      <div
+        className="jsx-608550019 side-container"
+      >
+        <div
+          className="jsx-215556098 game-panel"
+        >
+          <div
+            className="jsx-215556098 title"
+          >
+            <h1
+              className="jsx-215556098"
+            >
+              Flatris
+            </h1>
+          </div>
+          <div
+            className="jsx-215556098 next-label"
+          >
+            Next
+          </div>
+          <div
+            className="jsx-215556098 next-tetromino next-tetromino-S"
+          >
+            <div
+              className="jsx-2115617632 tetromino"
+            >
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "25%",
+                    "top": "0%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-86954139 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#ecf0f1",
+                    }
+                  }
+                />
+              </div>
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "50%",
+                    "top": "0%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-86954139 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#ecf0f1",
+                    }
+                  }
+                />
+              </div>
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "0%",
+                    "top": "25%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-86954139 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#ecf0f1",
+                    }
+                  }
+                />
+              </div>
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "25%",
+                    "top": "25%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-86954139 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#ecf0f1",
+                    }
+                  }
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            className="jsx-215556098 player1"
+          >
+            <div
+              className="jsx-1285042675 player-info"
+              onClick={undefined}
+            >
+              <div
+                className="jsx-1285042675 centered"
+              >
+                <div
+                  className="jsx-1285042675 player"
+                >
+                  1p
+                </div>
+                <div
+                  className="jsx-1285042675 insert-coin"
+                >
+                  insert coin
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="jsx-215556098 player2"
+          >
+            <div
+              className="jsx-1285042675 player-info"
+              onClick={undefined}
+            >
+              <div
+                className="jsx-1285042675 centered"
+              >
+                <div
+                  className="jsx-1285042675 player"
+                >
+                  2p
+                </div>
+                <div
+                  className="jsx-1285042675 insert-coin"
+                >
+                  insert coin
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 `;
@@ -3169,7 +4200,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed-and-ad
   <div
     className="jsx-2133970626 message"
   >
-    Join a game below or create a new one
+    Join a game or create a new one
   </div>
   <div
     className="jsx-1821874668 game-grid"
@@ -4050,122 +5081,167 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed-and-ad
         </div>
       </div>
     </div>
-  </div>
-</div>
-`;
-
-exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):no-games 1`] = `
-<div
-  className="jsx-2133970626 root"
->
-  <div
-    className="jsx-2133970626 header"
-  >
     <div
-      className="jsx-2133970626 new-game-button"
-    >
-      <button
-        className="jsx-2576755423 button hover-button"
-        onClick={[Function]}
-        type="button"
-      >
-        New game
-      </button>
-    </div>
-    <div
-      className="jsx-2133970626 logo"
+      className="jsx-1821874668 game-preview"
+      onClick={[Function]}
     >
       <div
-        className="jsx-1917779880 logo"
+        className="jsx-608550019 well-container"
+      />
+      <div
+        className="jsx-608550019 side-container"
       >
         <div
-          className="jsx-2115617632 tetromino"
+          className="jsx-215556098 game-panel"
         >
           <div
-            className="jsx-4287887962 grid-square-block"
-            style={
-              Object {
-                "left": "25%",
-                "top": "0%",
-              }
-            }
+            className="jsx-215556098 title"
           >
-            <div
-              className="jsx-86954139 square-block"
-              style={
-                Object {
-                  "backgroundColor": "#ecf0f1",
-                }
-              }
-            />
+            <h1
+              className="jsx-215556098"
+            >
+              Flatris
+            </h1>
           </div>
           <div
-            className="jsx-4287887962 grid-square-block"
-            style={
-              Object {
-                "left": "50%",
-                "top": "0%",
-              }
-            }
+            className="jsx-215556098 next-label"
           >
-            <div
-              className="jsx-86954139 square-block"
-              style={
-                Object {
-                  "backgroundColor": "#ecf0f1",
-                }
-              }
-            />
+            Next
           </div>
           <div
-            className="jsx-4287887962 grid-square-block"
-            style={
-              Object {
-                "left": "0%",
-                "top": "25%",
-              }
-            }
+            className="jsx-215556098 next-tetromino next-tetromino-S"
           >
             <div
-              className="jsx-86954139 square-block"
-              style={
-                Object {
-                  "backgroundColor": "#ecf0f1",
+              className="jsx-2115617632 tetromino"
+            >
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "25%",
+                    "top": "0%",
+                  }
                 }
-              }
-            />
+              >
+                <div
+                  className="jsx-86954139 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#ecf0f1",
+                    }
+                  }
+                />
+              </div>
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "50%",
+                    "top": "0%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-86954139 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#ecf0f1",
+                    }
+                  }
+                />
+              </div>
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "0%",
+                    "top": "25%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-86954139 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#ecf0f1",
+                    }
+                  }
+                />
+              </div>
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "25%",
+                    "top": "25%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-86954139 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#ecf0f1",
+                    }
+                  }
+                />
+              </div>
+            </div>
           </div>
           <div
-            className="jsx-4287887962 grid-square-block"
-            style={
-              Object {
-                "left": "25%",
-                "top": "25%",
-              }
-            }
+            className="jsx-215556098 player1"
           >
             <div
-              className="jsx-86954139 square-block"
-              style={
-                Object {
-                  "backgroundColor": "#ecf0f1",
-                }
-              }
-            />
+              className="jsx-1285042675 player-info"
+              onClick={undefined}
+            >
+              <div
+                className="jsx-1285042675 centered"
+              >
+                <div
+                  className="jsx-1285042675 player"
+                >
+                  1p
+                </div>
+                <div
+                  className="jsx-1285042675 insert-coin"
+                >
+                  insert coin
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="jsx-215556098 player2"
+          >
+            <div
+              className="jsx-1285042675 player-info"
+              onClick={undefined}
+            >
+              <div
+                className="jsx-1285042675 centered"
+              >
+                <div
+                  className="jsx-1285042675 player"
+                >
+                  2p
+                </div>
+                <div
+                  className="jsx-1285042675 insert-coin"
+                >
+                  insert coin
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div
-    className="jsx-2133970626 message"
-  >
-    Create a game and break the silence!
-  </div>
 </div>
 `;
 
-exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):own-game 1`] = `
+exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):mixed-games 1`] = `
 <div
   className="jsx-2133970626 root"
 >
@@ -4862,6 +5938,1559 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):own-game 1`] = `
                       insert coin
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="jsx-1821874668 game-preview"
+      onClick={[Function]}
+    >
+      <div
+        className="jsx-608550019 well-container"
+      />
+      <div
+        className="jsx-608550019 side-container"
+      >
+        <div
+          className="jsx-215556098 game-panel"
+        >
+          <div
+            className="jsx-215556098 title"
+          >
+            <h1
+              className="jsx-215556098"
+            >
+              Flatris
+            </h1>
+          </div>
+          <div
+            className="jsx-215556098 next-label"
+          >
+            Next
+          </div>
+          <div
+            className="jsx-215556098 next-tetromino next-tetromino-S"
+          >
+            <div
+              className="jsx-2115617632 tetromino"
+            >
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "25%",
+                    "top": "0%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-86954139 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#ecf0f1",
+                    }
+                  }
+                />
+              </div>
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "50%",
+                    "top": "0%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-86954139 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#ecf0f1",
+                    }
+                  }
+                />
+              </div>
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "0%",
+                    "top": "25%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-86954139 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#ecf0f1",
+                    }
+                  }
+                />
+              </div>
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "25%",
+                    "top": "25%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-86954139 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#ecf0f1",
+                    }
+                  }
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            className="jsx-215556098 player1"
+          >
+            <div
+              className="jsx-1285042675 player-info"
+              onClick={undefined}
+            >
+              <div
+                className="jsx-1285042675 centered"
+              >
+                <div
+                  className="jsx-1285042675 player"
+                >
+                  1p
+                </div>
+                <div
+                  className="jsx-1285042675 insert-coin"
+                >
+                  insert coin
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="jsx-215556098 player2"
+          >
+            <div
+              className="jsx-1285042675 player-info"
+              onClick={undefined}
+            >
+              <div
+                className="jsx-1285042675 centered"
+              >
+                <div
+                  className="jsx-1285042675 player"
+                >
+                  2p
+                </div>
+                <div
+                  className="jsx-1285042675 insert-coin"
+                >
+                  insert coin
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):mixed-games-removed 1`] = `
+<div
+  className="jsx-2133970626 root"
+>
+  <div
+    className="jsx-2133970626 header"
+  >
+    <div
+      className="jsx-2133970626 new-game-button"
+    >
+      <button
+        className="jsx-2576755423 button hover-button"
+        onClick={[Function]}
+        type="button"
+      >
+        New game
+      </button>
+    </div>
+    <div
+      className="jsx-2133970626 logo"
+    >
+      <div
+        className="jsx-1917779880 logo"
+      >
+        <div
+          className="jsx-2115617632 tetromino"
+        >
+          <div
+            className="jsx-4287887962 grid-square-block"
+            style={
+              Object {
+                "left": "25%",
+                "top": "0%",
+              }
+            }
+          >
+            <div
+              className="jsx-86954139 square-block"
+              style={
+                Object {
+                  "backgroundColor": "#ecf0f1",
+                }
+              }
+            />
+          </div>
+          <div
+            className="jsx-4287887962 grid-square-block"
+            style={
+              Object {
+                "left": "50%",
+                "top": "0%",
+              }
+            }
+          >
+            <div
+              className="jsx-86954139 square-block"
+              style={
+                Object {
+                  "backgroundColor": "#ecf0f1",
+                }
+              }
+            />
+          </div>
+          <div
+            className="jsx-4287887962 grid-square-block"
+            style={
+              Object {
+                "left": "0%",
+                "top": "25%",
+              }
+            }
+          >
+            <div
+              className="jsx-86954139 square-block"
+              style={
+                Object {
+                  "backgroundColor": "#ecf0f1",
+                }
+              }
+            />
+          </div>
+          <div
+            className="jsx-4287887962 grid-square-block"
+            style={
+              Object {
+                "left": "25%",
+                "top": "25%",
+              }
+            }
+          >
+            <div
+              className="jsx-86954139 square-block"
+              style={
+                Object {
+                  "backgroundColor": "#ecf0f1",
+                }
+              }
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="jsx-2133970626 message"
+  >
+    Your games
+  </div>
+  <div
+    className="jsx-1821874668 game-grid"
+  >
+    <div
+      className="jsx-1821874668 game-preview game-removed"
+      onClick={[Function]}
+    >
+      <div
+        className="jsx-2611135330 quake"
+      >
+        <div
+          className="jsx-2611135330 quake"
+        >
+          <div
+            className="jsx-608550019 well-container"
+          >
+            <div
+              className="jsx-124931555 flash"
+            >
+              <div
+                className="jsx-124931555 flash"
+              >
+                <div
+                  className="jsx-2914085764 well"
+                >
+                  <div
+                    className="jsx-2914085764 active-tetromino"
+                    style={
+                      Object {
+                        "left": "30%",
+                        "top": "-10%",
+                      }
+                    }
+                  >
+                    <div
+                      className="jsx-2115617632 tetromino"
+                    >
+                      <div
+                        className="jsx-4287887962 grid-square-block"
+                        style={
+                          Object {
+                            "left": "0%",
+                            "top": "0%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#e84138",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-4287887962 grid-square-block"
+                        style={
+                          Object {
+                            "left": "25%",
+                            "top": "0%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#e84138",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-4287887962 grid-square-block"
+                        style={
+                          Object {
+                            "left": "25%",
+                            "top": "25%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#e84138",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-4287887962 grid-square-block"
+                        style={
+                          Object {
+                            "left": "50%",
+                            "top": "25%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#e84138",
+                            }
+                          }
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="jsx-1915500079 well-grid"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="jsx-608550019 side-container"
+          >
+            <div
+              className="jsx-215556098 game-panel"
+            >
+              <div
+                className="jsx-215556098 title"
+              >
+                <h1
+                  className="jsx-215556098"
+                >
+                  Flatris
+                </h1>
+              </div>
+              <div
+                className="jsx-215556098 next-label"
+              >
+                Next
+              </div>
+              <div
+                className="jsx-215556098 next-tetromino next-tetromino-L"
+              >
+                <div
+                  className="jsx-2115617632 tetromino"
+                >
+                  <div
+                    className="jsx-4287887962 grid-square-block"
+                    style={
+                      Object {
+                        "left": "50%",
+                        "top": "0%",
+                      }
+                    }
+                  >
+                    <div
+                      className="jsx-86954139 square-block"
+                      style={
+                        Object {
+                          "backgroundColor": "#ed652f",
+                        }
+                      }
+                    />
+                  </div>
+                  <div
+                    className="jsx-4287887962 grid-square-block"
+                    style={
+                      Object {
+                        "left": "0%",
+                        "top": "25%",
+                      }
+                    }
+                  >
+                    <div
+                      className="jsx-86954139 square-block"
+                      style={
+                        Object {
+                          "backgroundColor": "#ed652f",
+                        }
+                      }
+                    />
+                  </div>
+                  <div
+                    className="jsx-4287887962 grid-square-block"
+                    style={
+                      Object {
+                        "left": "25%",
+                        "top": "25%",
+                      }
+                    }
+                  >
+                    <div
+                      className="jsx-86954139 square-block"
+                      style={
+                        Object {
+                          "backgroundColor": "#ed652f",
+                        }
+                      }
+                    />
+                  </div>
+                  <div
+                    className="jsx-4287887962 grid-square-block"
+                    style={
+                      Object {
+                        "left": "50%",
+                        "top": "25%",
+                      }
+                    }
+                  >
+                    <div
+                      className="jsx-86954139 square-block"
+                      style={
+                        Object {
+                          "backgroundColor": "#ed652f",
+                        }
+                      }
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                className="jsx-215556098 player1"
+              >
+                <div
+                  className="jsx-1517809321 player-info"
+                >
+                  <div
+                    className="jsx-1517809321 name"
+                  >
+                    <div
+                      className="jsx-1517809321 vcentered"
+                    >
+                      Tig
+                    </div>
+                  </div>
+                  <div
+                    className="jsx-1517809321 score"
+                  >
+                    <div
+                      className="jsx-1517809321 score-row"
+                    >
+                      <div
+                        className="jsx-1517809321 label vcentered"
+                      >
+                        Score
+                      </div>
+                      <div
+                        className="jsx-1517809321 value vcentered"
+                      >
+                        0
+                      </div>
+                    </div>
+                    <div
+                      className="jsx-1517809321 score-row"
+                    >
+                      <div
+                        className="jsx-1517809321 label vcentered"
+                      >
+                        Lines
+                      </div>
+                      <div
+                        className="jsx-1517809321 value vcentered"
+                      >
+                        0
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="jsx-215556098 player2"
+              >
+                <div
+                  className="jsx-1285042675 player-info"
+                  onClick={undefined}
+                >
+                  <div
+                    className="jsx-1285042675 centered"
+                  >
+                    <div
+                      className="jsx-1285042675 player"
+                    >
+                      2p
+                    </div>
+                    <div
+                      className="jsx-1285042675 insert-coin"
+                    >
+                      insert coin
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="jsx-1821874668 game-preview"
+      onClick={[Function]}
+    >
+      <div
+        className="jsx-608550019 well-container"
+      />
+      <div
+        className="jsx-608550019 side-container"
+      >
+        <div
+          className="jsx-215556098 game-panel"
+        >
+          <div
+            className="jsx-215556098 title"
+          >
+            <h1
+              className="jsx-215556098"
+            >
+              Flatris
+            </h1>
+          </div>
+          <div
+            className="jsx-215556098 next-label"
+          >
+            Next
+          </div>
+          <div
+            className="jsx-215556098 next-tetromino next-tetromino-S"
+          >
+            <div
+              className="jsx-2115617632 tetromino"
+            >
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "25%",
+                    "top": "0%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-86954139 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#ecf0f1",
+                    }
+                  }
+                />
+              </div>
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "50%",
+                    "top": "0%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-86954139 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#ecf0f1",
+                    }
+                  }
+                />
+              </div>
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "0%",
+                    "top": "25%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-86954139 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#ecf0f1",
+                    }
+                  }
+                />
+              </div>
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "25%",
+                    "top": "25%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-86954139 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#ecf0f1",
+                    }
+                  }
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            className="jsx-215556098 player1"
+          >
+            <div
+              className="jsx-1285042675 player-info"
+              onClick={undefined}
+            >
+              <div
+                className="jsx-1285042675 centered"
+              >
+                <div
+                  className="jsx-1285042675 player"
+                >
+                  1p
+                </div>
+                <div
+                  className="jsx-1285042675 insert-coin"
+                >
+                  insert coin
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="jsx-215556098 player2"
+          >
+            <div
+              className="jsx-1285042675 player-info"
+              onClick={undefined}
+            >
+              <div
+                className="jsx-1285042675 centered"
+              >
+                <div
+                  className="jsx-1285042675 player"
+                >
+                  2p
+                </div>
+                <div
+                  className="jsx-1285042675 insert-coin"
+                >
+                  insert coin
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):no-games 1`] = `
+<div
+  className="jsx-2133970626 root"
+>
+  <div
+    className="jsx-2133970626 header"
+  >
+    <div
+      className="jsx-2133970626 new-game-button"
+    >
+      <button
+        className="jsx-2576755423 button hover-button"
+        onClick={[Function]}
+        type="button"
+      >
+        New game
+      </button>
+    </div>
+    <div
+      className="jsx-2133970626 logo"
+    >
+      <div
+        className="jsx-1917779880 logo"
+      >
+        <div
+          className="jsx-2115617632 tetromino"
+        >
+          <div
+            className="jsx-4287887962 grid-square-block"
+            style={
+              Object {
+                "left": "25%",
+                "top": "0%",
+              }
+            }
+          >
+            <div
+              className="jsx-86954139 square-block"
+              style={
+                Object {
+                  "backgroundColor": "#ecf0f1",
+                }
+              }
+            />
+          </div>
+          <div
+            className="jsx-4287887962 grid-square-block"
+            style={
+              Object {
+                "left": "50%",
+                "top": "0%",
+              }
+            }
+          >
+            <div
+              className="jsx-86954139 square-block"
+              style={
+                Object {
+                  "backgroundColor": "#ecf0f1",
+                }
+              }
+            />
+          </div>
+          <div
+            className="jsx-4287887962 grid-square-block"
+            style={
+              Object {
+                "left": "0%",
+                "top": "25%",
+              }
+            }
+          >
+            <div
+              className="jsx-86954139 square-block"
+              style={
+                Object {
+                  "backgroundColor": "#ecf0f1",
+                }
+              }
+            />
+          </div>
+          <div
+            className="jsx-4287887962 grid-square-block"
+            style={
+              Object {
+                "left": "25%",
+                "top": "25%",
+              }
+            }
+          >
+            <div
+              className="jsx-86954139 square-block"
+              style={
+                Object {
+                  "backgroundColor": "#ecf0f1",
+                }
+              }
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="jsx-2133970626 message"
+  >
+    Create a game and break the silence!
+  </div>
+  <div
+    className="jsx-1821874668 game-grid"
+  >
+    <div
+      className="jsx-1821874668 game-preview"
+      onClick={[Function]}
+    >
+      <div
+        className="jsx-608550019 well-container"
+      />
+      <div
+        className="jsx-608550019 side-container"
+      >
+        <div
+          className="jsx-215556098 game-panel"
+        >
+          <div
+            className="jsx-215556098 title"
+          >
+            <h1
+              className="jsx-215556098"
+            >
+              Flatris
+            </h1>
+          </div>
+          <div
+            className="jsx-215556098 next-label"
+          >
+            Next
+          </div>
+          <div
+            className="jsx-215556098 next-tetromino next-tetromino-S"
+          >
+            <div
+              className="jsx-2115617632 tetromino"
+            >
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "25%",
+                    "top": "0%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-86954139 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#ecf0f1",
+                    }
+                  }
+                />
+              </div>
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "50%",
+                    "top": "0%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-86954139 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#ecf0f1",
+                    }
+                  }
+                />
+              </div>
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "0%",
+                    "top": "25%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-86954139 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#ecf0f1",
+                    }
+                  }
+                />
+              </div>
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "25%",
+                    "top": "25%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-86954139 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#ecf0f1",
+                    }
+                  }
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            className="jsx-215556098 player1"
+          >
+            <div
+              className="jsx-1285042675 player-info"
+              onClick={undefined}
+            >
+              <div
+                className="jsx-1285042675 centered"
+              >
+                <div
+                  className="jsx-1285042675 player"
+                >
+                  1p
+                </div>
+                <div
+                  className="jsx-1285042675 insert-coin"
+                >
+                  insert coin
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="jsx-215556098 player2"
+          >
+            <div
+              className="jsx-1285042675 player-info"
+              onClick={undefined}
+            >
+              <div
+                className="jsx-1285042675 centered"
+              >
+                <div
+                  className="jsx-1285042675 player"
+                >
+                  2p
+                </div>
+                <div
+                  className="jsx-1285042675 insert-coin"
+                >
+                  insert coin
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):own-game 1`] = `
+<div
+  className="jsx-2133970626 root"
+>
+  <div
+    className="jsx-2133970626 header"
+  >
+    <div
+      className="jsx-2133970626 new-game-button"
+    >
+      <button
+        className="jsx-2576755423 button hover-button"
+        onClick={[Function]}
+        type="button"
+      >
+        New game
+      </button>
+    </div>
+    <div
+      className="jsx-2133970626 logo"
+    >
+      <div
+        className="jsx-1917779880 logo"
+      >
+        <div
+          className="jsx-2115617632 tetromino"
+        >
+          <div
+            className="jsx-4287887962 grid-square-block"
+            style={
+              Object {
+                "left": "25%",
+                "top": "0%",
+              }
+            }
+          >
+            <div
+              className="jsx-86954139 square-block"
+              style={
+                Object {
+                  "backgroundColor": "#ecf0f1",
+                }
+              }
+            />
+          </div>
+          <div
+            className="jsx-4287887962 grid-square-block"
+            style={
+              Object {
+                "left": "50%",
+                "top": "0%",
+              }
+            }
+          >
+            <div
+              className="jsx-86954139 square-block"
+              style={
+                Object {
+                  "backgroundColor": "#ecf0f1",
+                }
+              }
+            />
+          </div>
+          <div
+            className="jsx-4287887962 grid-square-block"
+            style={
+              Object {
+                "left": "0%",
+                "top": "25%",
+              }
+            }
+          >
+            <div
+              className="jsx-86954139 square-block"
+              style={
+                Object {
+                  "backgroundColor": "#ecf0f1",
+                }
+              }
+            />
+          </div>
+          <div
+            className="jsx-4287887962 grid-square-block"
+            style={
+              Object {
+                "left": "25%",
+                "top": "25%",
+              }
+            }
+          >
+            <div
+              className="jsx-86954139 square-block"
+              style={
+                Object {
+                  "backgroundColor": "#ecf0f1",
+                }
+              }
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="jsx-2133970626 message"
+  >
+    Your games
+  </div>
+  <div
+    className="jsx-1821874668 game-grid"
+  >
+    <div
+      className="jsx-1821874668 game-preview"
+      onClick={[Function]}
+    >
+      <div
+        className="jsx-2611135330 quake"
+      >
+        <div
+          className="jsx-2611135330 quake"
+        >
+          <div
+            className="jsx-608550019 well-container"
+          >
+            <div
+              className="jsx-124931555 flash"
+            >
+              <div
+                className="jsx-124931555 flash"
+              >
+                <div
+                  className="jsx-2914085764 well"
+                >
+                  <div
+                    className="jsx-2914085764 active-tetromino"
+                    style={
+                      Object {
+                        "left": "30%",
+                        "top": "-10%",
+                      }
+                    }
+                  >
+                    <div
+                      className="jsx-2115617632 tetromino"
+                    >
+                      <div
+                        className="jsx-4287887962 grid-square-block"
+                        style={
+                          Object {
+                            "left": "0%",
+                            "top": "0%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#e84138",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-4287887962 grid-square-block"
+                        style={
+                          Object {
+                            "left": "25%",
+                            "top": "0%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#e84138",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-4287887962 grid-square-block"
+                        style={
+                          Object {
+                            "left": "25%",
+                            "top": "25%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#e84138",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="jsx-4287887962 grid-square-block"
+                        style={
+                          Object {
+                            "left": "50%",
+                            "top": "25%",
+                          }
+                        }
+                      >
+                        <div
+                          className="jsx-86954139 square-block"
+                          style={
+                            Object {
+                              "backgroundColor": "#e84138",
+                            }
+                          }
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="jsx-1915500079 well-grid"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="jsx-608550019 side-container"
+          >
+            <div
+              className="jsx-215556098 game-panel"
+            >
+              <div
+                className="jsx-215556098 title"
+              >
+                <h1
+                  className="jsx-215556098"
+                >
+                  Flatris
+                </h1>
+              </div>
+              <div
+                className="jsx-215556098 next-label"
+              >
+                Next
+              </div>
+              <div
+                className="jsx-215556098 next-tetromino next-tetromino-L"
+              >
+                <div
+                  className="jsx-2115617632 tetromino"
+                >
+                  <div
+                    className="jsx-4287887962 grid-square-block"
+                    style={
+                      Object {
+                        "left": "50%",
+                        "top": "0%",
+                      }
+                    }
+                  >
+                    <div
+                      className="jsx-86954139 square-block"
+                      style={
+                        Object {
+                          "backgroundColor": "#ed652f",
+                        }
+                      }
+                    />
+                  </div>
+                  <div
+                    className="jsx-4287887962 grid-square-block"
+                    style={
+                      Object {
+                        "left": "0%",
+                        "top": "25%",
+                      }
+                    }
+                  >
+                    <div
+                      className="jsx-86954139 square-block"
+                      style={
+                        Object {
+                          "backgroundColor": "#ed652f",
+                        }
+                      }
+                    />
+                  </div>
+                  <div
+                    className="jsx-4287887962 grid-square-block"
+                    style={
+                      Object {
+                        "left": "25%",
+                        "top": "25%",
+                      }
+                    }
+                  >
+                    <div
+                      className="jsx-86954139 square-block"
+                      style={
+                        Object {
+                          "backgroundColor": "#ed652f",
+                        }
+                      }
+                    />
+                  </div>
+                  <div
+                    className="jsx-4287887962 grid-square-block"
+                    style={
+                      Object {
+                        "left": "50%",
+                        "top": "25%",
+                      }
+                    }
+                  >
+                    <div
+                      className="jsx-86954139 square-block"
+                      style={
+                        Object {
+                          "backgroundColor": "#ed652f",
+                        }
+                      }
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                className="jsx-215556098 player1"
+              >
+                <div
+                  className="jsx-1517809321 player-info"
+                >
+                  <div
+                    className="jsx-1517809321 name"
+                  >
+                    <div
+                      className="jsx-1517809321 vcentered"
+                    >
+                      Tig
+                    </div>
+                  </div>
+                  <div
+                    className="jsx-1517809321 score"
+                  >
+                    <div
+                      className="jsx-1517809321 score-row"
+                    >
+                      <div
+                        className="jsx-1517809321 label vcentered"
+                      >
+                        Score
+                      </div>
+                      <div
+                        className="jsx-1517809321 value vcentered"
+                      >
+                        0
+                      </div>
+                    </div>
+                    <div
+                      className="jsx-1517809321 score-row"
+                    >
+                      <div
+                        className="jsx-1517809321 label vcentered"
+                      >
+                        Lines
+                      </div>
+                      <div
+                        className="jsx-1517809321 value vcentered"
+                      >
+                        0
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="jsx-215556098 player2"
+              >
+                <div
+                  className="jsx-1285042675 player-info"
+                  onClick={undefined}
+                >
+                  <div
+                    className="jsx-1285042675 centered"
+                  >
+                    <div
+                      className="jsx-1285042675 player"
+                    >
+                      2p
+                    </div>
+                    <div
+                      className="jsx-1285042675 insert-coin"
+                    >
+                      insert coin
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="jsx-1821874668 game-preview"
+      onClick={[Function]}
+    >
+      <div
+        className="jsx-608550019 well-container"
+      />
+      <div
+        className="jsx-608550019 side-container"
+      >
+        <div
+          className="jsx-215556098 game-panel"
+        >
+          <div
+            className="jsx-215556098 title"
+          >
+            <h1
+              className="jsx-215556098"
+            >
+              Flatris
+            </h1>
+          </div>
+          <div
+            className="jsx-215556098 next-label"
+          >
+            Next
+          </div>
+          <div
+            className="jsx-215556098 next-tetromino next-tetromino-S"
+          >
+            <div
+              className="jsx-2115617632 tetromino"
+            >
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "25%",
+                    "top": "0%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-86954139 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#ecf0f1",
+                    }
+                  }
+                />
+              </div>
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "50%",
+                    "top": "0%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-86954139 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#ecf0f1",
+                    }
+                  }
+                />
+              </div>
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "0%",
+                    "top": "25%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-86954139 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#ecf0f1",
+                    }
+                  }
+                />
+              </div>
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "25%",
+                    "top": "25%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-86954139 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#ecf0f1",
+                    }
+                  }
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            className="jsx-215556098 player1"
+          >
+            <div
+              className="jsx-1285042675 player-info"
+              onClick={undefined}
+            >
+              <div
+                className="jsx-1285042675 centered"
+              >
+                <div
+                  className="jsx-1285042675 player"
+                >
+                  1p
+                </div>
+                <div
+                  className="jsx-1285042675 insert-coin"
+                >
+                  insert coin
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="jsx-215556098 player2"
+          >
+            <div
+              className="jsx-1285042675 player-info"
+              onClick={undefined}
+            >
+              <div
+                className="jsx-1285042675 centered"
+              >
+                <div
+                  className="jsx-1285042675 player"
+                >
+                  2p
+                </div>
+                <div
+                  className="jsx-1285042675 insert-coin"
+                >
+                  insert coin
                 </div>
               </div>
             </div>
@@ -5276,300 +7905,155 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):own-game-removed 1`]
         </div>
       </div>
     </div>
-  </div>
-  <div
-    className="jsx-2133970626 message"
-  >
-    Other games
-  </div>
-  <div
-    className="jsx-1821874668 game-grid"
-  >
     <div
       className="jsx-1821874668 game-preview"
       onClick={[Function]}
     >
       <div
-        className="jsx-2611135330 quake"
+        className="jsx-608550019 well-container"
+      />
+      <div
+        className="jsx-608550019 side-container"
       >
         <div
-          className="jsx-2611135330 quake"
+          className="jsx-215556098 game-panel"
         >
           <div
-            className="jsx-608550019 well-container"
+            className="jsx-215556098 title"
+          >
+            <h1
+              className="jsx-215556098"
+            >
+              Flatris
+            </h1>
+          </div>
+          <div
+            className="jsx-215556098 next-label"
+          >
+            Next
+          </div>
+          <div
+            className="jsx-215556098 next-tetromino next-tetromino-S"
           >
             <div
-              className="jsx-124931555 flash"
+              className="jsx-2115617632 tetromino"
             >
               <div
-                className="jsx-124931555 flash"
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "25%",
+                    "top": "0%",
+                  }
+                }
               >
                 <div
-                  className="jsx-2914085764 well"
-                >
-                  <div
-                    className="jsx-2914085764 active-tetromino"
-                    style={
-                      Object {
-                        "left": "40%",
-                        "top": "-10%",
-                      }
+                  className="jsx-86954139 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#ecf0f1",
                     }
-                  >
-                    <div
-                      className="jsx-2115617632 tetromino"
-                    >
-                      <div
-                        className="jsx-4287887962 grid-square-block"
-                        style={
-                          Object {
-                            "left": "0%",
-                            "top": "0%",
-                          }
-                        }
-                      >
-                        <div
-                          className="jsx-86954139 square-block"
-                          style={
-                            Object {
-                              "backgroundColor": "#fbb414",
-                            }
-                          }
-                        />
-                      </div>
-                      <div
-                        className="jsx-4287887962 grid-square-block"
-                        style={
-                          Object {
-                            "left": "25%",
-                            "top": "0%",
-                          }
-                        }
-                      >
-                        <div
-                          className="jsx-86954139 square-block"
-                          style={
-                            Object {
-                              "backgroundColor": "#fbb414",
-                            }
-                          }
-                        />
-                      </div>
-                      <div
-                        className="jsx-4287887962 grid-square-block"
-                        style={
-                          Object {
-                            "left": "0%",
-                            "top": "25%",
-                          }
-                        }
-                      >
-                        <div
-                          className="jsx-86954139 square-block"
-                          style={
-                            Object {
-                              "backgroundColor": "#fbb414",
-                            }
-                          }
-                        />
-                      </div>
-                      <div
-                        className="jsx-4287887962 grid-square-block"
-                        style={
-                          Object {
-                            "left": "25%",
-                            "top": "25%",
-                          }
-                        }
-                      >
-                        <div
-                          className="jsx-86954139 square-block"
-                          style={
-                            Object {
-                              "backgroundColor": "#fbb414",
-                            }
-                          }
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    className="jsx-1915500079 well-grid"
-                  />
+                  }
+                />
+              </div>
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "50%",
+                    "top": "0%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-86954139 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#ecf0f1",
+                    }
+                  }
+                />
+              </div>
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "0%",
+                    "top": "25%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-86954139 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#ecf0f1",
+                    }
+                  }
+                />
+              </div>
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "25%",
+                    "top": "25%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-86954139 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#ecf0f1",
+                    }
+                  }
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            className="jsx-215556098 player1"
+          >
+            <div
+              className="jsx-1285042675 player-info"
+              onClick={undefined}
+            >
+              <div
+                className="jsx-1285042675 centered"
+              >
+                <div
+                  className="jsx-1285042675 player"
+                >
+                  1p
+                </div>
+                <div
+                  className="jsx-1285042675 insert-coin"
+                >
+                  insert coin
                 </div>
               </div>
             </div>
           </div>
           <div
-            className="jsx-608550019 side-container"
+            className="jsx-215556098 player2"
           >
             <div
-              className="jsx-215556098 game-panel"
+              className="jsx-1285042675 player-info"
+              onClick={undefined}
             >
               <div
-                className="jsx-215556098 title"
-              >
-                <h1
-                  className="jsx-215556098"
-                >
-                  Flatris
-                </h1>
-              </div>
-              <div
-                className="jsx-215556098 next-label"
-              >
-                Next
-              </div>
-              <div
-                className="jsx-215556098 next-tetromino next-tetromino-J"
+                className="jsx-1285042675 centered"
               >
                 <div
-                  className="jsx-2115617632 tetromino"
+                  className="jsx-1285042675 player"
                 >
-                  <div
-                    className="jsx-4287887962 grid-square-block"
-                    style={
-                      Object {
-                        "left": "0%",
-                        "top": "0%",
-                      }
-                    }
-                  >
-                    <div
-                      className="jsx-86954139 square-block"
-                      style={
-                        Object {
-                          "backgroundColor": "#3993d0",
-                        }
-                      }
-                    />
-                  </div>
-                  <div
-                    className="jsx-4287887962 grid-square-block"
-                    style={
-                      Object {
-                        "left": "0%",
-                        "top": "25%",
-                      }
-                    }
-                  >
-                    <div
-                      className="jsx-86954139 square-block"
-                      style={
-                        Object {
-                          "backgroundColor": "#3993d0",
-                        }
-                      }
-                    />
-                  </div>
-                  <div
-                    className="jsx-4287887962 grid-square-block"
-                    style={
-                      Object {
-                        "left": "25%",
-                        "top": "25%",
-                      }
-                    }
-                  >
-                    <div
-                      className="jsx-86954139 square-block"
-                      style={
-                        Object {
-                          "backgroundColor": "#3993d0",
-                        }
-                      }
-                    />
-                  </div>
-                  <div
-                    className="jsx-4287887962 grid-square-block"
-                    style={
-                      Object {
-                        "left": "50%",
-                        "top": "25%",
-                      }
-                    }
-                  >
-                    <div
-                      className="jsx-86954139 square-block"
-                      style={
-                        Object {
-                          "backgroundColor": "#3993d0",
-                        }
-                      }
-                    />
-                  </div>
+                  2p
                 </div>
-              </div>
-              <div
-                className="jsx-215556098 player1"
-              >
                 <div
-                  className="jsx-1517809321 player-info"
+                  className="jsx-1285042675 insert-coin"
                 >
-                  <div
-                    className="jsx-1517809321 name"
-                  >
-                    <div
-                      className="jsx-1517809321 vcentered"
-                    >
-                      Louie
-                    </div>
-                  </div>
-                  <div
-                    className="jsx-1517809321 score"
-                  >
-                    <div
-                      className="jsx-1517809321 score-row"
-                    >
-                      <div
-                        className="jsx-1517809321 label vcentered"
-                      >
-                        Score
-                      </div>
-                      <div
-                        className="jsx-1517809321 value vcentered"
-                      >
-                        0
-                      </div>
-                    </div>
-                    <div
-                      className="jsx-1517809321 score-row"
-                    >
-                      <div
-                        className="jsx-1517809321 label vcentered"
-                      >
-                        Lines
-                      </div>
-                      <div
-                        className="jsx-1517809321 value vcentered"
-                      >
-                        0
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                className="jsx-215556098 player2"
-              >
-                <div
-                  className="jsx-1285042675 player-info"
-                  onClick={undefined}
-                >
-                  <div
-                    className="jsx-1285042675 centered"
-                  >
-                    <div
-                      className="jsx-1285042675 player"
-                    >
-                      2p
-                    </div>
-                    <div
-                      className="jsx-1285042675 insert-coin"
-                    >
-                      insert coin
-                    </div>
-                  </div>
+                  insert coin
                 </div>
               </div>
             </div>
@@ -21357,6 +23841,179 @@ exports[`Cosmos fixtures: GamePreview:default 1`] = `
                       insert coin
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Cosmos fixtures: GamePreviewShell:default 1`] = `
+<div
+  className="jsx-1613050951 outer"
+>
+  <div
+    className="jsx-1613050951 container"
+  >
+    <div
+      className="jsx-1294220987 inner-container"
+      style={
+        Object {
+          "backgroundColor": "#fff",
+          "opacity": 1,
+          "position": "absolute",
+        }
+      }
+    >
+      <div
+        className="jsx-608550019 well-container"
+      />
+      <div
+        className="jsx-608550019 side-container"
+      >
+        <div
+          className="jsx-215556098 game-panel"
+        >
+          <div
+            className="jsx-215556098 title"
+          >
+            <h1
+              className="jsx-215556098"
+            >
+              Flatris
+            </h1>
+          </div>
+          <div
+            className="jsx-215556098 next-label"
+          >
+            Next
+          </div>
+          <div
+            className="jsx-215556098 next-tetromino next-tetromino-S"
+          >
+            <div
+              className="jsx-2115617632 tetromino"
+            >
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "25%",
+                    "top": "0%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-86954139 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#ecf0f1",
+                    }
+                  }
+                />
+              </div>
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "50%",
+                    "top": "0%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-86954139 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#ecf0f1",
+                    }
+                  }
+                />
+              </div>
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "0%",
+                    "top": "25%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-86954139 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#ecf0f1",
+                    }
+                  }
+                />
+              </div>
+              <div
+                className="jsx-4287887962 grid-square-block"
+                style={
+                  Object {
+                    "left": "25%",
+                    "top": "25%",
+                  }
+                }
+              >
+                <div
+                  className="jsx-86954139 square-block"
+                  style={
+                    Object {
+                      "backgroundColor": "#ecf0f1",
+                    }
+                  }
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            className="jsx-215556098 player1"
+          >
+            <div
+              className="jsx-1285042675 player-info"
+              onClick={undefined}
+            >
+              <div
+                className="jsx-1285042675 centered"
+              >
+                <div
+                  className="jsx-1285042675 player"
+                >
+                  1p
+                </div>
+                <div
+                  className="jsx-1285042675 insert-coin"
+                >
+                  insert coin
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="jsx-215556098 player2"
+          >
+            <div
+              className="jsx-1285042675 player-info"
+              onClick={undefined}
+            >
+              <div
+                className="jsx-1285042675 centered"
+              >
+                <div
+                  className="jsx-1285042675 player"
+                >
+                  2p
+                </div>
+                <div
+                  className="jsx-1285042675 insert-coin"
+                >
+                  insert coin
                 </div>
               </div>
             </div>
