@@ -140,6 +140,7 @@
   * [x] Screen 4: Controls
 * [x] Custom 404 page
 * [x] Error page (via componentDidCatch)
+* [x] Add empty game shell to Dashboard blank state
 * [ ] Link to Github
 * [ ] Game footer
 * [ ] Log stats

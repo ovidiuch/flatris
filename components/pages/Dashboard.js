@@ -5,16 +5,17 @@ import classNames from 'classnames';
 import React, { Fragment, Component } from 'react';
 import Link from 'next/link';
 import { connect } from 'react-redux';
-import { GAME_INACTIVE_TIMEOUT } from '../constants/timeouts';
-import { createTimeoutBumper } from '../utils/timeout-bumper';
-import { closeGame, removeGame } from '../actions/global';
-import { withSocket } from './socket/SocketConnect';
-import GamePreview from './GamePreview';
-import Button from './Button';
-import Logo from './Logo';
+import { GAME_INACTIVE_TIMEOUT } from '../../constants/timeouts';
+import { createTimeoutBumper } from '../../utils/timeout-bumper';
+import { closeGame, removeGame } from '../../actions/global';
+import { withSocket } from '../socket/SocketConnect';
+import GamePreview from '../GamePreview';
+import GamePreviewShell from '../GamePreviewShell';
+import Button from '../Button';
+import Logo from '../Logo';
 
-import type { User, GameId, Game, Games, State } from '../types/state';
-import type { RoomId } from '../types/api';
+import type { User, GameId, Game, Games, State } from '../../types/state';
+import type { RoomId } from '../../types/api';
 
 type Props = {
   curUser: ?User,
@@ -150,6 +151,9 @@ class Dashboard extends Component<Props, LocalState> {
         otherGames.push(game);
       }
     });
+    const hasOwnGames = ownGames.length > 0;
+    const hasOtherGames = otherGames.length > 0;
+    const hasAnyGames = hasOwnGames || hasOtherGames;
 
     return (
       <div className="root">
@@ -163,26 +167,26 @@ class Dashboard extends Component<Props, LocalState> {
             <Logo color="#ecf0f1" />
           </div>
         </div>
-        {!ownGames.length &&
-          !otherGames.length && (
-            <div className="message">Create a game and break the silence!</div>
-          )}
-        {ownGames.length > 0 && (
+        {!hasAnyGames && (
           <Fragment>
-            <div className="message">Your games</div>
-            {this.renderGameGrid(ownGames)}
+            <div className="message">Create a game and break the silence!</div>
+            {this.renderGameGrid([], true)}
           </Fragment>
         )}
-        {otherGames.length > 0 && (
+        {hasOwnGames && (
           <Fragment>
-            {!ownGames.length ? (
-              <div className="message">
-                Join a game below or create a new one
-              </div>
+            <div className="message">Your games</div>
+            {this.renderGameGrid(ownGames, !hasOtherGames)}
+          </Fragment>
+        )}
+        {hasOtherGames && (
+          <Fragment>
+            {!hasOwnGames ? (
+              <div className="message">Join a game or create a new one</div>
             ) : (
               <div className="message">Other games</div>
             )}
-            {this.renderGameGrid(otherGames)}
+            {this.renderGameGrid(otherGames, true)}
           </Fragment>
         )}
         <style jsx>{`
@@ -219,7 +223,8 @@ class Dashboard extends Component<Props, LocalState> {
     );
   }
 
-  renderGameGrid(games: Array<Game>) {
+  renderGameGrid(games: Array<Game>, showTrailingShell = false) {
+    const { curUser } = this.props;
     const { added } = this.state;
 
     return (
@@ -234,11 +239,18 @@ class Dashboard extends Component<Props, LocalState> {
           return (
             <Link key={id} href={`/join?g=${id}`} as={`/join/${id}`}>
               <div className={classes}>
-                <GamePreview curUser={null} game={game} />
+                <GamePreview curUser={curUser} game={game} />
               </div>
             </Link>
           );
         })}
+        {showTrailingShell && (
+          <Link key="new-game" href="/new">
+            <div className="game-preview">
+              <GamePreviewShell />
+            </div>
+          </Link>
+        )}
         <style jsx>{`
           .game-grid {
             overflow: hidden; /* clear the floats old school style */

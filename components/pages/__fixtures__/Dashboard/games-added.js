@@ -1,9 +1,9 @@
 // @flow
 
 import { Component } from 'react';
-import { createFixture } from '../../../utils/create-fixture';
-import { getSampleUser, doAfter } from '../../../utils/test-helpers';
-import { getBlankGame } from '../../../reducers/game';
+import { createFixture } from '../../../../utils/create-fixture';
+import { getSampleUser, doAfter } from '../../../../utils/test-helpers';
+import { getBlankGame } from '../../../../reducers/game';
 import Dashboard from '../../Dashboard';
 
 import type { ElementRef } from 'react';
@@ -18,32 +18,28 @@ export default createFixture({
 
   reduxState: {
     jsReady: true,
-    games: {
-      [game1.id]: game1,
-      [game2.id]: game2,
-      [game3.id]: game3
-    }
+    games: {}
   },
 
   async init({ compRef }: { compRef: ElementRef<typeof Component> }) {
     const { dispatch } = compRef.context.store;
 
     dispatch({
-      type: 'REMOVE_GAME',
-      payload: { gameId: game1.id }
+      type: 'ADD_GAME',
+      payload: { game: game1 }
     });
 
     await doAfter(100, () => {
       dispatch({
-        type: 'REMOVE_GAME',
-        payload: { gameId: game2.id }
+        type: 'ADD_GAME',
+        payload: { game: game2 }
       });
     });
 
     await doAfter(100, () => {
       dispatch({
-        type: 'REMOVE_GAME',
-        payload: { gameId: game3.id }
+        type: 'ADD_GAME',
+        payload: { game: game3 }
       });
     });
   }
