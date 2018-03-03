@@ -62,6 +62,7 @@
     "nodemon": "^1.14.11",
     "prettier": "^1.10.2",
     "react-cosmos": "^3.7.1",
+    "react-cosmos-fetch-proxy": "^3.6.1",
     "react-cosmos-redux-proxy": "^3.6.1",
     "react-cosmos-telescope": "^3.7.0",
     "react-test-renderer": "^16.2.0",

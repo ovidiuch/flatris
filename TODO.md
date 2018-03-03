@@ -143,8 +143,6 @@
 * [x] Add empty game shell to Dashboard blank state
 * [ ] Link to Github
 * [ ] Game footer
-* [ ] Log stats
-* [ ] Log errors
 * [ ] [1.0]
   * [ ] Merge to master
   * [ ] https://flatris.space
@@ -161,3 +159,7 @@ PERF
 
 * [ ] Minimize state footprint
 * [ ] Batch dashboard actions
+
+CHORES
+
+* [ ] Extract ReduxActions Cosmos proxy

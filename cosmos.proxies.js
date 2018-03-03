@@ -4,6 +4,7 @@ import { func } from 'prop-types';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import createReduxProxy from 'react-cosmos-redux-proxy';
+import createFetchProxy from 'react-cosmos-fetch-proxy';
 import GameContainer from './components/GameContainer';
 import { createStore } from './store';
 
@@ -130,6 +131,7 @@ const SocketProviderProxy = (props: ProxyProps) => {
 };
 
 export default [
+  createFetchProxy(),
   GameContainerProxy,
   createReduxProxy({
     createStore
