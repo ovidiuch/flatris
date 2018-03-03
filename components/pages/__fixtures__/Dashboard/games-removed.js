@@ -1,9 +1,9 @@
 // @flow
 
 import { Component } from 'react';
-import { createFixture } from '../../../utils/create-fixture';
-import { getSampleUser, doAfter } from '../../../utils/test-helpers';
-import { getBlankGame } from '../../../reducers/game';
+import { createFixture } from '../../../../utils/create-fixture';
+import { getSampleUser, doAfter } from '../../../../utils/test-helpers';
+import { getBlankGame } from '../../../../reducers/game';
 import Dashboard from '../../Dashboard';
 
 import type { ElementRef } from 'react';
@@ -20,7 +20,8 @@ export default createFixture({
     jsReady: true,
     games: {
       [game1.id]: game1,
-      [game2.id]: game2
+      [game2.id]: game2,
+      [game3.id]: game3
     }
   },
 
@@ -34,15 +35,15 @@ export default createFixture({
 
     await doAfter(100, () => {
       dispatch({
-        type: 'ADD_GAME',
-        payload: { game: game3 }
+        type: 'REMOVE_GAME',
+        payload: { gameId: game2.id }
       });
     });
 
     await doAfter(100, () => {
       dispatch({
         type: 'REMOVE_GAME',
-        payload: { gameId: game2.id }
+        payload: { gameId: game3.id }
       });
     });
   }

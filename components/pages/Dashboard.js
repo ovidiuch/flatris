@@ -5,17 +5,17 @@ import classNames from 'classnames';
 import React, { Fragment, Component } from 'react';
 import Link from 'next/link';
 import { connect } from 'react-redux';
-import { GAME_INACTIVE_TIMEOUT } from '../constants/timeouts';
-import { createTimeoutBumper } from '../utils/timeout-bumper';
-import { closeGame, removeGame } from '../actions/global';
-import { withSocket } from './socket/SocketConnect';
-import GamePreview from './GamePreview';
-import GamePreviewShell from './GamePreviewShell';
-import Button from './Button';
-import Logo from './Logo';
+import { GAME_INACTIVE_TIMEOUT } from '../../constants/timeouts';
+import { createTimeoutBumper } from '../../utils/timeout-bumper';
+import { closeGame, removeGame } from '../../actions/global';
+import { withSocket } from '../socket/SocketConnect';
+import GamePreview from '../GamePreview';
+import GamePreviewShell from '../GamePreviewShell';
+import Button from '../Button';
+import Logo from '../Logo';
 
-import type { User, GameId, Game, Games, State } from '../types/state';
-import type { RoomId } from '../types/api';
+import type { User, GameId, Game, Games, State } from '../../types/state';
+import type { RoomId } from '../../types/api';
 
 type Props = {
   curUser: ?User,
@@ -33,7 +33,6 @@ type LocalState = {
   added: Array<GameId>
 };
 
-// TODO: Move to pages
 class Dashboard extends Component<Props, LocalState> {
   transitionTimeout: ?TimeoutID;
 

@@ -1,8 +1,8 @@
 // @flow
 
-import { createFixture } from '../../../utils/create-fixture';
-import { getSampleUser, getSampleUser2 } from '../../../utils/test-helpers';
-import { getBlankGame } from '../../../reducers/game';
+import { createFixture } from '../../../../utils/create-fixture';
+import { getSampleUser, getSampleUser2 } from '../../../../utils/test-helpers';
+import { getBlankGame } from '../../../../reducers/game';
 import Dashboard from '../../Dashboard';
 
 const user1 = getSampleUser();
