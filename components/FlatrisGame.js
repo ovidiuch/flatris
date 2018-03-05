@@ -448,6 +448,7 @@ class FlatrisGame extends Component<Props, LocalState> {
               ? this.handleSelectP2
               : undefined
           }
+          showFooter
         />
         <PortraitControls />
       </GameContainer>

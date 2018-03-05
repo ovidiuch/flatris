@@ -164,7 +164,20 @@ class Dashboard extends Component<Props, LocalState> {
             </Link>
           </div>
           <div className="logo">
-            <Logo color="#ecf0f1" />
+            <a href="https://github.com/skidding/flatris" target="_blank">
+              <Logo color="#ecf0f1" />
+            </a>
+          </div>
+          <div className="view-source">
+            <a href="https://github.com/skidding/flatris" target="_blank">
+              <Button
+                bgColor="#ecf0f1"
+                color="#34495f"
+                colorDisabled="rgba(52, 73, 95, 0.6)"
+              >
+                Github
+              </Button>
+            </a>
           </div>
         </div>
         {!hasAnyGames && (
@@ -204,6 +217,25 @@ class Dashboard extends Component<Props, LocalState> {
             position: relative;
             width: 160px;
             height: 60px;
+          }
+          .view-source {
+            display: none;
+            position: relative;
+            float: right;
+            width: 120px;
+            height: 60px;
+            margin-right: 20px;
+            line-height: 60px;
+            text-align: center;
+          }
+          .view-source a {
+            color: #9ba4ab;
+            text-align: center;
+          }
+          @media (min-width: 450px) {
+            .view-source {
+              display: block;
+            }
           }
           .logo {
             float: right;
