@@ -10,6 +10,7 @@ import {
   insertSession,
   insertGame
 } from './db';
+import { rollbar } from './rollbar';
 
 import type { User } from '../types/state';
 import type { BackfillRequest, BackfillResponse } from '../types/api';
@@ -30,6 +31,7 @@ export function addRoutes(app: express$Application) {
     if (gameId && games[gameId]) {
       res.json(games[gameId]);
     } else {
+      rollbar.warning(`Missing game ${gameId}`);
       res.sendStatus(404);
     }
   });
@@ -43,6 +45,7 @@ export function addRoutes(app: express$Application) {
 
       res.json(game);
     } catch (err) {
+      rollbar.error(err);
       res.sendStatus(400);
     }
   });
@@ -62,7 +65,7 @@ export function addRoutes(app: express$Application) {
       const actions = getBackfillActions(backfillReq);
       res.json(actions);
     } catch (err) {
-      console.log(err);
+      rollbar.error(err);
       res.sendStatus(400);
     }
   });
@@ -92,6 +95,7 @@ export function addRoutes(app: express$Application) {
       res.cookie('sessionId', session.id);
       res.json(user);
     } catch (err) {
+      rollbar.error(err);
       res.sendStatus(400);
     }
   });
