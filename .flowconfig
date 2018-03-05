@@ -1,0 +1,14 @@
+[ignore]
+.*/node_modules/config-chain/test/broken.json
+.*/node_modules/npmconf/test/fixtures/package.json
+
+[include]
+
+[libs]
+flow-typed
+
+[lints]
+
+[options]
+
+[strict]
