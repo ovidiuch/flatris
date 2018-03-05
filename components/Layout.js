@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Head from 'next/head';
 import Error from './pages/Error';
+import { logError } from '../utils/rollbar-client';
 
 import type { Node } from 'react';
 import type { State } from '../types/state';
@@ -40,6 +41,8 @@ class Layout extends Component<Props, LocalState> {
   }
 
   componentDidCatch(error, { componentStack }) {
+    logError(error);
+
     this.setState({
       error: {
         message: error.toString(),
