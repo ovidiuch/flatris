@@ -158,26 +158,26 @@ class Dashboard extends Component<Props, LocalState> {
     return (
       <div className="root">
         <div className="header">
-          <div className="new-game-button">
+          <div className="left new-game-button">
             <Link href="/new">
               <Button>New game</Button>
             </Link>
           </div>
-          <div className="logo">
-            <a href="https://github.com/skidding/flatris" target="_blank">
+          <div className="right">
+            <div className="view-source left">
+              <a href="https://github.com/skidding/flatris" target="_blank">
+                <Button
+                  bgColor="#ecf0f1"
+                  color="#34495f"
+                  colorDisabled="rgba(52, 73, 95, 0.6)"
+                >
+                  Github
+                </Button>
+              </a>
+            </div>
+            <div className="logo left">
               <Logo color="#ecf0f1" />
-            </a>
-          </div>
-          <div className="view-source">
-            <a href="https://github.com/skidding/flatris" target="_blank">
-              <Button
-                bgColor="#ecf0f1"
-                color="#34495f"
-                colorDisabled="rgba(52, 73, 95, 0.6)"
-              >
-                Github
-              </Button>
-            </a>
+            </div>
           </div>
         </div>
         {!hasAnyGames && (
@@ -207,24 +207,27 @@ class Dashboard extends Component<Props, LocalState> {
             font-size: 18px;
           }
 
+          .left {
+            float: left;
+          }
+          .right {
+            float: right;
+          }
+
           .header {
             padding: 20px;
             min-width: 270px;
             height: 60px;
           }
           .new-game-button {
-            float: left;
             position: relative;
             width: 160px;
             height: 60px;
           }
           .view-source {
-            display: none;
             position: relative;
-            float: right;
             width: 120px;
             height: 60px;
-            margin-right: 20px;
             line-height: 60px;
             text-align: center;
           }
@@ -232,16 +235,18 @@ class Dashboard extends Component<Props, LocalState> {
             color: #9ba4ab;
             text-align: center;
           }
-          @media (min-width: 450px) {
-            .view-source {
-              display: block;
-            }
-          }
+
           .logo {
             float: right;
             position: relative;
             width: 90px;
             height: 60px;
+            margin-left: 20px;
+          }
+          @media (max-width: 449px) {
+            .logo {
+              display: none;
+            }
           }
 
           .message {
