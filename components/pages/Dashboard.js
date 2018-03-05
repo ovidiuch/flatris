@@ -231,10 +231,6 @@ class Dashboard extends Component<Props, LocalState> {
             line-height: 60px;
             text-align: center;
           }
-          .view-source a {
-            color: #9ba4ab;
-            text-align: center;
-          }
 
           .logo {
             float: right;
