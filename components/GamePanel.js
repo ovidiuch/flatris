@@ -11,10 +11,15 @@ import type { User, Game } from '../types/state';
 type Props = {
   curUser: ?User,
   game: ?Game,
-  onSelectP2?: Function
+  onSelectP2?: Function,
+  showFooter?: boolean
 };
 
 export default class GamePanel extends Component<Props> {
+  static defaultProps = {
+    showFooter: false
+  };
+
   /**
    * The game panel contains:
    * - The logo
@@ -23,7 +28,7 @@ export default class GamePanel extends Component<Props> {
    * - Footer with credits
    */
   render() {
-    const { game, onSelectP2 } = this.props;
+    const { game, onSelectP2, showFooter } = this.props;
     const player1 = game && game.players[0];
     const player2 = game && game.players[1];
     const nextTetromino = this.getNextTetromino();
@@ -60,6 +65,14 @@ export default class GamePanel extends Component<Props> {
             onSelect={onSelectP2}
           />
         </div>
+        {showFooter && (
+          <div className="footer">
+            By{' '}
+            <a href="https://twitter.com/skidding" target="_blank">
+              skidding
+            </a>
+          </div>
+        )}
         <style jsx>{`
           .game-panel {
             position: absolute;
@@ -94,14 +107,13 @@ export default class GamePanel extends Component<Props> {
           .next-label {
             top: calc(100% / 20 * 4);
             margin-top: -0.25em;
-            color: #9ba4ab;
+            color: rgba(155, 164, 171, 0.8); /* #9ba4ab */
             font-family: 'Teko', sans-serif;
             font-weight: 300;
             font-size: 1.8em;
             line-height: 1em;
             letter-spacing: 0.02em;
             text-transform: uppercase;
-            opacity: 0.8;
           }
 
           .next-tetromino {
@@ -125,6 +137,24 @@ export default class GamePanel extends Component<Props> {
             position: absolute;
             top: calc(100% / 20 * 13);
             height: calc(100% / 20 * 4);
+          }
+
+          .footer {
+            position: absolute;
+            top: calc(100% / 20 * 18);
+            height: calc(100% / 20);
+            color: rgba(155, 164, 171, 0.8); /* #9ba4ab */
+            font-family: 'Teko', sans-serif;
+            font-weight: 300;
+            font-size: 1.8em;
+            line-height: 1.2em;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            text-align: center;
+            white-space: nowrap;
+          }
+          .footer a {
+            color: #9ba4ab;
           }
         `}</style>
       </div>

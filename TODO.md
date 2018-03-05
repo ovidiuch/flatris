@@ -141,17 +141,20 @@
 * [x] Custom 404 page
 * [x] Error page (via componentDidCatch)
 * [x] Add empty game shell to Dashboard blank state
-* [ ] Link to Github
-* [ ] Game footer
+* [x] Link to Github
+* [x] Game footer
+* [ ] Bug: Stop active Tetromino movement when game over (check mobile)
+* [ ] UX: Discard empty games when going back to dashboard
 * [ ] [1.0]
   * [ ] Merge to master
   * [ ] https://flatris.space
 
 BACKLOG
 
+* [ ] Embed Teko font in JS bundle
 * [ ] Freeze game on player disconnect
 * [ ] Create drop shadow from active Tetromino
-* [ ] Zoom in animation when opening dashboard game
+* [ ] Zoom in animation when opening game from dashboard
 * [ ] Algorithm for dispatching bundled actions at time interval
 * [ ] Sounds
 

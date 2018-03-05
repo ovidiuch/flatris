@@ -14,12 +14,17 @@ type Props = {
   curUser: ?User,
   game: Game,
   screen?: Node,
-  onSelectP2?: Function
+  onSelectP2?: Function,
+  showFooter?: boolean
 };
 
 class GamePreview extends Component<Props> {
+  static defaultProps = {
+    showFooter: false
+  };
+
   render() {
-    const { curUser, game, screen, onSelectP2 } = this.props;
+    const { curUser, game, screen, onSelectP2, showFooter } = this.props;
     const curPlayer = getCurPlayer(game, curUser);
     const otherPlayer = getOtherPlayer(game, curPlayer);
 
@@ -33,7 +38,12 @@ class GamePreview extends Component<Props> {
         </div>
         {screen}
         <div className="side-container">
-          <GamePanel curUser={curUser} game={game} onSelectP2={onSelectP2} />
+          <GamePanel
+            curUser={curUser}
+            game={game}
+            onSelectP2={onSelectP2}
+            showFooter={showFooter}
+          />
         </div>
         <style jsx>{`
           .well-container {

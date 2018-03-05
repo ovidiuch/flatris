@@ -167,8 +167,7 @@ export default class PlayerInfo extends Component<Props> {
             position: absolute;
             top: 0;
             left: 0;
-            color: #9ba4ab;
-            opacity: 0.8;
+            color: rgba(155, 164, 171, 0.8); /* #9ba4ab */
           }
 
           .value {
