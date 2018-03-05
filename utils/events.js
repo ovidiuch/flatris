@@ -1,31 +1,25 @@
+// @flow
+
 export function isMobileDevice() {
   return getWindow() && 'ontouchstart' in getWindow();
 }
 
-export function attachPointerDownEvent(eventHandler) {
+export function getPointerDownEvent(): ?string {
   // SSR
   if (!getWindow()) {
-    return {};
+    return null;
   }
 
-  if (isMobileDevice()) {
-    return { onTouchStart: eventHandler };
-  }
-
-  return { onMouseDown: eventHandler };
+  return isMobileDevice() ? 'onTouchStart' : 'onMouseDown';
 }
 
-export function attachPointerUpEvent(eventHandler) {
+export function getPointerUpEvent(): ?string {
   // SSR
   if (!getWindow()) {
-    return {};
+    return null;
   }
 
-  if (isMobileDevice()) {
-    return { onTouchEnd: eventHandler };
-  }
-
-  return { onMouseUp: eventHandler };
+  return isMobileDevice() ? 'onTouchEnd' : 'onMouseUp';
 }
 
 function getWindow() {

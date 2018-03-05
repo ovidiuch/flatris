@@ -18023,7 +18023,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah-guest 1
         <button
           className="jsx-1959258272 button"
           disabled={true}
-          onMouseDown={[Function]}
           type="button"
         >
           <svg
@@ -18043,7 +18042,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah-guest 1
         <button
           className="jsx-1959258272 button"
           disabled={true}
-          onMouseDown={[Function]}
           type="button"
         >
           <svg
@@ -18063,7 +18061,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah-guest 1
         <button
           className="jsx-1959258272 button"
           disabled={true}
-          onMouseDown={[Function]}
           type="button"
         >
           <svg
@@ -18083,8 +18080,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah-guest 1
         <button
           className="jsx-1959258272 button"
           disabled={true}
-          onMouseDown={[Function]}
-          onMouseUp={[Function]}
           type="button"
         >
           <svg
@@ -20862,7 +20857,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
         <button
           className="jsx-1959258272 button"
           disabled={true}
-          onMouseDown={[Function]}
           type="button"
         >
           <svg
@@ -20882,7 +20876,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
         <button
           className="jsx-1959258272 button"
           disabled={true}
-          onMouseDown={[Function]}
           type="button"
         >
           <svg
@@ -20902,7 +20895,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
         <button
           className="jsx-1959258272 button"
           disabled={true}
-          onMouseDown={[Function]}
           type="button"
         >
           <svg
@@ -20922,8 +20914,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
         <button
           className="jsx-1959258272 button"
           disabled={true}
-          onMouseDown={[Function]}
-          onMouseUp={[Function]}
           type="button"
         >
           <svg
@@ -21335,7 +21325,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
         <button
           className="jsx-1959258272 button"
           disabled={true}
-          onMouseDown={[Function]}
           type="button"
         >
           <svg
@@ -21355,7 +21344,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
         <button
           className="jsx-1959258272 button"
           disabled={true}
-          onMouseDown={[Function]}
           type="button"
         >
           <svg
@@ -21375,7 +21363,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
         <button
           className="jsx-1959258272 button"
           disabled={true}
-          onMouseDown={[Function]}
           type="button"
         >
           <svg
@@ -21395,8 +21382,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
         <button
           className="jsx-1959258272 button"
           disabled={true}
-          onMouseDown={[Function]}
-          onMouseUp={[Function]}
           type="button"
         >
           <svg
@@ -21947,7 +21932,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(LandscapeControls)):disabled 1`]
           <button
             className="jsx-1959258272 button"
             disabled={true}
-            onMouseDown={[Function]}
             type="button"
           >
             <svg
@@ -21967,7 +21951,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(LandscapeControls)):disabled 1`]
           <button
             className="jsx-1959258272 button"
             disabled={true}
-            onMouseDown={[Function]}
             type="button"
           >
             <svg
@@ -21991,7 +21974,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(LandscapeControls)):disabled 1`]
           <button
             className="jsx-1959258272 button"
             disabled={true}
-            onMouseDown={[Function]}
             type="button"
           >
             <svg
@@ -22011,7 +21993,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(LandscapeControls)):disabled 1`]
           <button
             className="jsx-1959258272 button"
             disabled={true}
-            onMouseDown={[Function]}
             type="button"
           >
             <svg
@@ -22164,7 +22145,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(PortraitControls)):disabled 1`] 
           <button
             className="jsx-1959258272 button"
             disabled={true}
-            onMouseDown={[Function]}
             type="button"
           >
             <svg
@@ -22184,7 +22164,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(PortraitControls)):disabled 1`] 
           <button
             className="jsx-1959258272 button"
             disabled={true}
-            onMouseDown={[Function]}
             type="button"
           >
             <svg
@@ -22204,7 +22183,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(PortraitControls)):disabled 1`] 
           <button
             className="jsx-1959258272 button"
             disabled={true}
-            onMouseDown={[Function]}
             type="button"
           >
             <svg
@@ -22224,8 +22202,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(PortraitControls)):disabled 1`] 
           <button
             className="jsx-1959258272 button"
             disabled={true}
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
             type="button"
           >
             <svg

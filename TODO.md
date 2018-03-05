@@ -143,8 +143,7 @@
 * [x] Add empty game shell to Dashboard blank state
 * [x] Link to Github
 * [x] Game footer
-* [ ] Bug: Stop active Tetromino movement when game over (check mobile)
-* [ ] UX: Discard empty games when going back to dashboard
+* [x] Disable active Tetromino movement when game over (via mobile buttons)
 * [ ] [1.0]
   * [ ] Merge to master
   * [ ] https://flatris.space
