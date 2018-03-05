@@ -1,5 +1,6 @@
 // @flow
 
+import { find } from 'lodash';
 import {
   users,
   sessions,
@@ -140,7 +141,8 @@ function extractBackfillRequest(req: mixed): BackfillRequest {
 
 function getBackfillActions(req: BackfillRequest): BackfillResponse {
   return gameActions[req.gameId].filter(action => {
-    const player = req.players.find(
+    const player = find(
+      req.players,
       ({ userId }) => userId === action.payload.userId
     );
 

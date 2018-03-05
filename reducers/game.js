@@ -1,5 +1,6 @@
 // @flow
 
+import { find } from 'lodash';
 import {
   WELL_ROWS,
   WELL_COLS,
@@ -460,7 +461,7 @@ export function isPlayer(game: Game, curUser: ?User): boolean {
 }
 
 export function getPlayer(game: Game, userId: UserId): Player {
-  const player = game.players.find(p => p.user.id === userId);
+  const player = find(game.players, p => p.user.id === userId);
 
   if (!player) {
     throw new Error(`Player with userId ${userId} does not exist`);
@@ -481,7 +482,7 @@ export function getCurPlayer(game: Game, curUser: ?User): Player {
 
 export function getOtherPlayer(game: Game, curPlayer: Player): ?Player {
   // NOTE: This only works with max 2 players per game
-  return game.players.find(p => p !== curPlayer);
+  return find(game.players, p => p !== curPlayer);
 }
 
 export function allPlayersReady(game: Game) {
