@@ -26,6 +26,7 @@
         "jest.framework-setup.js",
         "cosmos.config.js",
         "cosmos.test.js",
+        "next.config.js",
         "server.js",
         "server/**/*.js"
       ],
