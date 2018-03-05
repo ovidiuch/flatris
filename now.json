@@ -1,0 +1,8 @@
+{
+  "env": {
+    "ROLLBAR_POST_SERVER_ITEM_ACCESS_TOKEN":
+      "@rollbar-post-server-item-access-token",
+    "ROLLBAR_POST_CLIENT_ITEM_ACCESS_TOKEN":
+      "@rollbar-post-client-item-access-token"
+  }
+}

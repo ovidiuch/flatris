@@ -9,6 +9,7 @@ import {
   GAME_EXPIRE_TIMEOUT
 } from '../constants/timeouts';
 import { createTimeoutBumper } from '../utils/timeout-bumper';
+import { rollbar } from './rollbar';
 
 import type { GameId, Game, UserId, User } from '../types/state';
 import type { GameAction } from '../types/actions';
@@ -44,6 +45,8 @@ export function insertUser(name: string): User {
   const user = { id: userId, name: name.substring(0, MAX_NAME_LENGTH) };
   users[userId] = user;
 
+  rollbar.info('New user', { user });
+
   return user;
 }
 
@@ -61,6 +64,8 @@ export function insertGame(user: User): Game {
   games[gameId] = game;
   gameActions[gameId] = [];
   bumpActiveGame(gameId);
+
+  rollbar.info('New game', { gameId, user });
 
   return game;
 }

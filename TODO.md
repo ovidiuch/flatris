@@ -146,7 +146,8 @@
 * [x] Disable active Tetromino movement when game over (via mobile buttons)
 * [ ] [1.0]
   * [x] Merge to master
-  * [ ] Integrate Rollbar
+  * [x] Rollbar server
+  * [ ] Rollbar client
   * [ ] https://flatris.space
 
 BACKLOG
