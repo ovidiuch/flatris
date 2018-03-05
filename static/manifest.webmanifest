@@ -1,7 +1,7 @@
 {
   "name": "Flatris",
   "short_name": "Flatris",
-  "description": "A classic game with a multiplayer twist",
+  "description": "A fast-paced two-player web game",
   "start_url": "/?app=true",
   "display": "fullscreen",
   "orientation": "portrait-primary",

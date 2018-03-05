@@ -2,7 +2,7 @@
   "name": "flatris",
   "license": "MIT",
   "version": "1.0.0",
-  "description": "A classic game with a multiplayer twist",
+  "description": "A fast-paced two-player web game",
   "repository": {
     "type": "git",
     "url": "https://github.com/skidding/flatris.git"

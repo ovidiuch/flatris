@@ -145,7 +145,8 @@
 * [x] Game footer
 * [x] Disable active Tetromino movement when game over (via mobile buttons)
 * [ ] [1.0]
-  * [ ] Merge to master
+  * [x] Merge to master
+  * [ ] Integrate Rollbar
   * [ ] https://flatris.space
 
 BACKLOG
