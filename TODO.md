@@ -147,7 +147,7 @@
 * [ ] [1.0]
   * [x] Merge to master
   * [x] Rollbar server
-  * [ ] Rollbar client
+  * [x] Rollbar client
   * [ ] https://flatris.space
 
 BACKLOG
