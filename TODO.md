@@ -144,11 +144,11 @@
 * [x] Link to Github
 * [x] Game footer
 * [x] Disable active Tetromino movement when game over (via mobile buttons)
-* [ ] [1.0]
+* [x] [1.0]
   * [x] Merge to master
   * [x] Rollbar server
   * [x] Rollbar client
-  * [ ] https://flatris.space
+  * [x] https://flatris.space
 
 BACKLOG
 
