@@ -298,24 +298,24 @@ exports[`Cosmos fixtures: Connect(NewGame):default 1`] = `
       className="jsx-3372609668 side-container"
     >
       <div
-        className="jsx-2929774959 game-panel"
+        className="jsx-2764329408 game-panel"
       >
         <div
-          className="jsx-2929774959 title"
+          className="jsx-2764329408 title"
         >
           <h1
-            className="jsx-2929774959"
+            className="jsx-2764329408"
           >
             Flatris
           </h1>
         </div>
         <div
-          className="jsx-2929774959 next-label"
+          className="jsx-2764329408 next-label"
         >
           Next
         </div>
         <div
-          className="jsx-2929774959 next-tetromino next-tetromino-S"
+          className="jsx-2764329408 next-tetromino next-tetromino-S"
         >
           <div
             className="jsx-2115617632 tetromino"
@@ -395,7 +395,7 @@ exports[`Cosmos fixtures: Connect(NewGame):default 1`] = `
           </div>
         </div>
         <div
-          className="jsx-2929774959 player1"
+          className="jsx-2764329408 player1"
         >
           <div
             className="jsx-1285042675 player-info"
@@ -418,7 +418,7 @@ exports[`Cosmos fixtures: Connect(NewGame):default 1`] = `
           </div>
         </div>
         <div
-          className="jsx-2929774959 player2"
+          className="jsx-2764329408 player2"
         >
           <div
             className="jsx-1285042675 player-info"
@@ -526,24 +526,24 @@ exports[`Cosmos fixtures: Connect(NewGame):loading 1`] = `
       className="jsx-3372609668 side-container"
     >
       <div
-        className="jsx-2929774959 game-panel"
+        className="jsx-2764329408 game-panel"
       >
         <div
-          className="jsx-2929774959 title"
+          className="jsx-2764329408 title"
         >
           <h1
-            className="jsx-2929774959"
+            className="jsx-2764329408"
           >
             Flatris
           </h1>
         </div>
         <div
-          className="jsx-2929774959 next-label"
+          className="jsx-2764329408 next-label"
         >
           Next
         </div>
         <div
-          className="jsx-2929774959 next-tetromino next-tetromino-S"
+          className="jsx-2764329408 next-tetromino next-tetromino-S"
         >
           <div
             className="jsx-2115617632 tetromino"
@@ -623,7 +623,7 @@ exports[`Cosmos fixtures: Connect(NewGame):loading 1`] = `
           </div>
         </div>
         <div
-          className="jsx-2929774959 player1"
+          className="jsx-2764329408 player1"
         >
           <div
             className="jsx-1285042675 player-info"
@@ -646,7 +646,7 @@ exports[`Cosmos fixtures: Connect(NewGame):loading 1`] = `
           </div>
         </div>
         <div
-          className="jsx-2929774959 player2"
+          className="jsx-2764329408 player2"
         >
           <div
             className="jsx-1285042675 player-info"
@@ -924,24 +924,24 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):game 1`] = `
             className="jsx-608550019 side-container"
           >
             <div
-              className="jsx-2929774959 game-panel"
+              className="jsx-2764329408 game-panel"
             >
               <div
-                className="jsx-2929774959 title"
+                className="jsx-2764329408 title"
               >
                 <h1
-                  className="jsx-2929774959"
+                  className="jsx-2764329408"
                 >
                   Flatris
                 </h1>
               </div>
               <div
-                className="jsx-2929774959 next-label"
+                className="jsx-2764329408 next-label"
               >
                 Next
               </div>
               <div
-                className="jsx-2929774959 next-tetromino next-tetromino-L"
+                className="jsx-2764329408 next-tetromino next-tetromino-L"
               >
                 <div
                   className="jsx-2115617632 tetromino"
@@ -1021,7 +1021,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):game 1`] = `
                 </div>
               </div>
               <div
-                className="jsx-2929774959 player1"
+                className="jsx-2764329408 player1"
               >
                 <div
                   className="jsx-4076982114 player-info"
@@ -1070,7 +1070,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):game 1`] = `
                 </div>
               </div>
               <div
-                className="jsx-2929774959 player2"
+                className="jsx-2764329408 player2"
               >
                 <div
                   className="jsx-1285042675 player-info"
@@ -1108,24 +1108,24 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):game 1`] = `
         className="jsx-608550019 side-container"
       >
         <div
-          className="jsx-2929774959 game-panel"
+          className="jsx-2764329408 game-panel"
         >
           <div
-            className="jsx-2929774959 title"
+            className="jsx-2764329408 title"
           >
             <h1
-              className="jsx-2929774959"
+              className="jsx-2764329408"
             >
               Flatris
             </h1>
           </div>
           <div
-            className="jsx-2929774959 next-label"
+            className="jsx-2764329408 next-label"
           >
             Next
           </div>
           <div
-            className="jsx-2929774959 next-tetromino next-tetromino-S"
+            className="jsx-2764329408 next-tetromino next-tetromino-S"
           >
             <div
               className="jsx-2115617632 tetromino"
@@ -1205,7 +1205,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):game 1`] = `
             </div>
           </div>
           <div
-            className="jsx-2929774959 player1"
+            className="jsx-2764329408 player1"
           >
             <div
               className="jsx-1285042675 player-info"
@@ -1228,7 +1228,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):game 1`] = `
             </div>
           </div>
           <div
-            className="jsx-2929774959 player2"
+            className="jsx-2764329408 player2"
           >
             <div
               className="jsx-1285042675 player-info"
@@ -1507,24 +1507,24 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):game-added 1`] = `
             className="jsx-608550019 side-container"
           >
             <div
-              className="jsx-2929774959 game-panel"
+              className="jsx-2764329408 game-panel"
             >
               <div
-                className="jsx-2929774959 title"
+                className="jsx-2764329408 title"
               >
                 <h1
-                  className="jsx-2929774959"
+                  className="jsx-2764329408"
                 >
                   Flatris
                 </h1>
               </div>
               <div
-                className="jsx-2929774959 next-label"
+                className="jsx-2764329408 next-label"
               >
                 Next
               </div>
               <div
-                className="jsx-2929774959 next-tetromino next-tetromino-L"
+                className="jsx-2764329408 next-tetromino next-tetromino-L"
               >
                 <div
                   className="jsx-2115617632 tetromino"
@@ -1604,7 +1604,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):game-added 1`] = `
                 </div>
               </div>
               <div
-                className="jsx-2929774959 player1"
+                className="jsx-2764329408 player1"
               >
                 <div
                   className="jsx-4076982114 player-info"
@@ -1653,7 +1653,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):game-added 1`] = `
                 </div>
               </div>
               <div
-                className="jsx-2929774959 player2"
+                className="jsx-2764329408 player2"
               >
                 <div
                   className="jsx-1285042675 player-info"
@@ -1691,24 +1691,24 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):game-added 1`] = `
         className="jsx-608550019 side-container"
       >
         <div
-          className="jsx-2929774959 game-panel"
+          className="jsx-2764329408 game-panel"
         >
           <div
-            className="jsx-2929774959 title"
+            className="jsx-2764329408 title"
           >
             <h1
-              className="jsx-2929774959"
+              className="jsx-2764329408"
             >
               Flatris
             </h1>
           </div>
           <div
-            className="jsx-2929774959 next-label"
+            className="jsx-2764329408 next-label"
           >
             Next
           </div>
           <div
-            className="jsx-2929774959 next-tetromino next-tetromino-S"
+            className="jsx-2764329408 next-tetromino next-tetromino-S"
           >
             <div
               className="jsx-2115617632 tetromino"
@@ -1788,7 +1788,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):game-added 1`] = `
             </div>
           </div>
           <div
-            className="jsx-2929774959 player1"
+            className="jsx-2764329408 player1"
           >
             <div
               className="jsx-1285042675 player-info"
@@ -1811,7 +1811,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):game-added 1`] = `
             </div>
           </div>
           <div
-            className="jsx-2929774959 player2"
+            className="jsx-2764329408 player2"
           >
             <div
               className="jsx-1285042675 player-info"
@@ -2090,24 +2090,24 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-added 1`] = `
             className="jsx-608550019 side-container"
           >
             <div
-              className="jsx-2929774959 game-panel"
+              className="jsx-2764329408 game-panel"
             >
               <div
-                className="jsx-2929774959 title"
+                className="jsx-2764329408 title"
               >
                 <h1
-                  className="jsx-2929774959"
+                  className="jsx-2764329408"
                 >
                   Flatris
                 </h1>
               </div>
               <div
-                className="jsx-2929774959 next-label"
+                className="jsx-2764329408 next-label"
               >
                 Next
               </div>
               <div
-                className="jsx-2929774959 next-tetromino next-tetromino-L"
+                className="jsx-2764329408 next-tetromino next-tetromino-L"
               >
                 <div
                   className="jsx-2115617632 tetromino"
@@ -2187,7 +2187,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-added 1`] = `
                 </div>
               </div>
               <div
-                className="jsx-2929774959 player1"
+                className="jsx-2764329408 player1"
               >
                 <div
                   className="jsx-4076982114 player-info"
@@ -2236,7 +2236,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-added 1`] = `
                 </div>
               </div>
               <div
-                className="jsx-2929774959 player2"
+                className="jsx-2764329408 player2"
               >
                 <div
                   className="jsx-1285042675 player-info"
@@ -2382,24 +2382,24 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-added 1`] = `
             className="jsx-608550019 side-container"
           >
             <div
-              className="jsx-2929774959 game-panel"
+              className="jsx-2764329408 game-panel"
             >
               <div
-                className="jsx-2929774959 title"
+                className="jsx-2764329408 title"
               >
                 <h1
-                  className="jsx-2929774959"
+                  className="jsx-2764329408"
                 >
                   Flatris
                 </h1>
               </div>
               <div
-                className="jsx-2929774959 next-label"
+                className="jsx-2764329408 next-label"
               >
                 Next
               </div>
               <div
-                className="jsx-2929774959 next-tetromino next-tetromino-Z"
+                className="jsx-2764329408 next-tetromino next-tetromino-Z"
               >
                 <div
                   className="jsx-2115617632 tetromino"
@@ -2479,7 +2479,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-added 1`] = `
                 </div>
               </div>
               <div
-                className="jsx-2929774959 player1"
+                className="jsx-2764329408 player1"
               >
                 <div
                   className="jsx-4076982114 player-info"
@@ -2528,7 +2528,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-added 1`] = `
                 </div>
               </div>
               <div
-                className="jsx-2929774959 player2"
+                className="jsx-2764329408 player2"
               >
                 <div
                   className="jsx-1285042675 player-info"
@@ -2674,24 +2674,24 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-added 1`] = `
             className="jsx-608550019 side-container"
           >
             <div
-              className="jsx-2929774959 game-panel"
+              className="jsx-2764329408 game-panel"
             >
               <div
-                className="jsx-2929774959 title"
+                className="jsx-2764329408 title"
               >
                 <h1
-                  className="jsx-2929774959"
+                  className="jsx-2764329408"
                 >
                   Flatris
                 </h1>
               </div>
               <div
-                className="jsx-2929774959 next-label"
+                className="jsx-2764329408 next-label"
               >
                 Next
               </div>
               <div
-                className="jsx-2929774959 next-tetromino next-tetromino-T"
+                className="jsx-2764329408 next-tetromino next-tetromino-T"
               >
                 <div
                   className="jsx-2115617632 tetromino"
@@ -2771,7 +2771,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-added 1`] = `
                 </div>
               </div>
               <div
-                className="jsx-2929774959 player1"
+                className="jsx-2764329408 player1"
               >
                 <div
                   className="jsx-4076982114 player-info"
@@ -2820,7 +2820,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-added 1`] = `
                 </div>
               </div>
               <div
-                className="jsx-2929774959 player2"
+                className="jsx-2764329408 player2"
               >
                 <div
                   className="jsx-1285042675 player-info"
@@ -2858,24 +2858,24 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-added 1`] = `
         className="jsx-608550019 side-container"
       >
         <div
-          className="jsx-2929774959 game-panel"
+          className="jsx-2764329408 game-panel"
         >
           <div
-            className="jsx-2929774959 title"
+            className="jsx-2764329408 title"
           >
             <h1
-              className="jsx-2929774959"
+              className="jsx-2764329408"
             >
               Flatris
             </h1>
           </div>
           <div
-            className="jsx-2929774959 next-label"
+            className="jsx-2764329408 next-label"
           >
             Next
           </div>
           <div
-            className="jsx-2929774959 next-tetromino next-tetromino-S"
+            className="jsx-2764329408 next-tetromino next-tetromino-S"
           >
             <div
               className="jsx-2115617632 tetromino"
@@ -2955,7 +2955,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-added 1`] = `
             </div>
           </div>
           <div
-            className="jsx-2929774959 player1"
+            className="jsx-2764329408 player1"
           >
             <div
               className="jsx-1285042675 player-info"
@@ -2978,7 +2978,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-added 1`] = `
             </div>
           </div>
           <div
-            className="jsx-2929774959 player2"
+            className="jsx-2764329408 player2"
           >
             <div
               className="jsx-1285042675 player-info"
@@ -3257,24 +3257,24 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed 1`] = 
             className="jsx-608550019 side-container"
           >
             <div
-              className="jsx-2929774959 game-panel"
+              className="jsx-2764329408 game-panel"
             >
               <div
-                className="jsx-2929774959 title"
+                className="jsx-2764329408 title"
               >
                 <h1
-                  className="jsx-2929774959"
+                  className="jsx-2764329408"
                 >
                   Flatris
                 </h1>
               </div>
               <div
-                className="jsx-2929774959 next-label"
+                className="jsx-2764329408 next-label"
               >
                 Next
               </div>
               <div
-                className="jsx-2929774959 next-tetromino next-tetromino-L"
+                className="jsx-2764329408 next-tetromino next-tetromino-L"
               >
                 <div
                   className="jsx-2115617632 tetromino"
@@ -3354,7 +3354,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed 1`] = 
                 </div>
               </div>
               <div
-                className="jsx-2929774959 player1"
+                className="jsx-2764329408 player1"
               >
                 <div
                   className="jsx-4076982114 player-info"
@@ -3403,7 +3403,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed 1`] = 
                 </div>
               </div>
               <div
-                className="jsx-2929774959 player2"
+                className="jsx-2764329408 player2"
               >
                 <div
                   className="jsx-1285042675 player-info"
@@ -3549,24 +3549,24 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed 1`] = 
             className="jsx-608550019 side-container"
           >
             <div
-              className="jsx-2929774959 game-panel"
+              className="jsx-2764329408 game-panel"
             >
               <div
-                className="jsx-2929774959 title"
+                className="jsx-2764329408 title"
               >
                 <h1
-                  className="jsx-2929774959"
+                  className="jsx-2764329408"
                 >
                   Flatris
                 </h1>
               </div>
               <div
-                className="jsx-2929774959 next-label"
+                className="jsx-2764329408 next-label"
               >
                 Next
               </div>
               <div
-                className="jsx-2929774959 next-tetromino next-tetromino-Z"
+                className="jsx-2764329408 next-tetromino next-tetromino-Z"
               >
                 <div
                   className="jsx-2115617632 tetromino"
@@ -3646,7 +3646,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed 1`] = 
                 </div>
               </div>
               <div
-                className="jsx-2929774959 player1"
+                className="jsx-2764329408 player1"
               >
                 <div
                   className="jsx-4076982114 player-info"
@@ -3695,7 +3695,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed 1`] = 
                 </div>
               </div>
               <div
-                className="jsx-2929774959 player2"
+                className="jsx-2764329408 player2"
               >
                 <div
                   className="jsx-1285042675 player-info"
@@ -3841,24 +3841,24 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed 1`] = 
             className="jsx-608550019 side-container"
           >
             <div
-              className="jsx-2929774959 game-panel"
+              className="jsx-2764329408 game-panel"
             >
               <div
-                className="jsx-2929774959 title"
+                className="jsx-2764329408 title"
               >
                 <h1
-                  className="jsx-2929774959"
+                  className="jsx-2764329408"
                 >
                   Flatris
                 </h1>
               </div>
               <div
-                className="jsx-2929774959 next-label"
+                className="jsx-2764329408 next-label"
               >
                 Next
               </div>
               <div
-                className="jsx-2929774959 next-tetromino next-tetromino-T"
+                className="jsx-2764329408 next-tetromino next-tetromino-T"
               >
                 <div
                   className="jsx-2115617632 tetromino"
@@ -3938,7 +3938,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed 1`] = 
                 </div>
               </div>
               <div
-                className="jsx-2929774959 player1"
+                className="jsx-2764329408 player1"
               >
                 <div
                   className="jsx-4076982114 player-info"
@@ -3987,7 +3987,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed 1`] = 
                 </div>
               </div>
               <div
-                className="jsx-2929774959 player2"
+                className="jsx-2764329408 player2"
               >
                 <div
                   className="jsx-1285042675 player-info"
@@ -4025,24 +4025,24 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed 1`] = 
         className="jsx-608550019 side-container"
       >
         <div
-          className="jsx-2929774959 game-panel"
+          className="jsx-2764329408 game-panel"
         >
           <div
-            className="jsx-2929774959 title"
+            className="jsx-2764329408 title"
           >
             <h1
-              className="jsx-2929774959"
+              className="jsx-2764329408"
             >
               Flatris
             </h1>
           </div>
           <div
-            className="jsx-2929774959 next-label"
+            className="jsx-2764329408 next-label"
           >
             Next
           </div>
           <div
-            className="jsx-2929774959 next-tetromino next-tetromino-S"
+            className="jsx-2764329408 next-tetromino next-tetromino-S"
           >
             <div
               className="jsx-2115617632 tetromino"
@@ -4122,7 +4122,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed 1`] = 
             </div>
           </div>
           <div
-            className="jsx-2929774959 player1"
+            className="jsx-2764329408 player1"
           >
             <div
               className="jsx-1285042675 player-info"
@@ -4145,7 +4145,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed 1`] = 
             </div>
           </div>
           <div
-            className="jsx-2929774959 player2"
+            className="jsx-2764329408 player2"
           >
             <div
               className="jsx-1285042675 player-info"
@@ -4424,24 +4424,24 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed-and-ad
             className="jsx-608550019 side-container"
           >
             <div
-              className="jsx-2929774959 game-panel"
+              className="jsx-2764329408 game-panel"
             >
               <div
-                className="jsx-2929774959 title"
+                className="jsx-2764329408 title"
               >
                 <h1
-                  className="jsx-2929774959"
+                  className="jsx-2764329408"
                 >
                   Flatris
                 </h1>
               </div>
               <div
-                className="jsx-2929774959 next-label"
+                className="jsx-2764329408 next-label"
               >
                 Next
               </div>
               <div
-                className="jsx-2929774959 next-tetromino next-tetromino-L"
+                className="jsx-2764329408 next-tetromino next-tetromino-L"
               >
                 <div
                   className="jsx-2115617632 tetromino"
@@ -4521,7 +4521,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed-and-ad
                 </div>
               </div>
               <div
-                className="jsx-2929774959 player1"
+                className="jsx-2764329408 player1"
               >
                 <div
                   className="jsx-4076982114 player-info"
@@ -4570,7 +4570,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed-and-ad
                 </div>
               </div>
               <div
-                className="jsx-2929774959 player2"
+                className="jsx-2764329408 player2"
               >
                 <div
                   className="jsx-1285042675 player-info"
@@ -4716,24 +4716,24 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed-and-ad
             className="jsx-608550019 side-container"
           >
             <div
-              className="jsx-2929774959 game-panel"
+              className="jsx-2764329408 game-panel"
             >
               <div
-                className="jsx-2929774959 title"
+                className="jsx-2764329408 title"
               >
                 <h1
-                  className="jsx-2929774959"
+                  className="jsx-2764329408"
                 >
                   Flatris
                 </h1>
               </div>
               <div
-                className="jsx-2929774959 next-label"
+                className="jsx-2764329408 next-label"
               >
                 Next
               </div>
               <div
-                className="jsx-2929774959 next-tetromino next-tetromino-Z"
+                className="jsx-2764329408 next-tetromino next-tetromino-Z"
               >
                 <div
                   className="jsx-2115617632 tetromino"
@@ -4813,7 +4813,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed-and-ad
                 </div>
               </div>
               <div
-                className="jsx-2929774959 player1"
+                className="jsx-2764329408 player1"
               >
                 <div
                   className="jsx-4076982114 player-info"
@@ -4862,7 +4862,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed-and-ad
                 </div>
               </div>
               <div
-                className="jsx-2929774959 player2"
+                className="jsx-2764329408 player2"
               >
                 <div
                   className="jsx-1285042675 player-info"
@@ -5008,24 +5008,24 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed-and-ad
             className="jsx-608550019 side-container"
           >
             <div
-              className="jsx-2929774959 game-panel"
+              className="jsx-2764329408 game-panel"
             >
               <div
-                className="jsx-2929774959 title"
+                className="jsx-2764329408 title"
               >
                 <h1
-                  className="jsx-2929774959"
+                  className="jsx-2764329408"
                 >
                   Flatris
                 </h1>
               </div>
               <div
-                className="jsx-2929774959 next-label"
+                className="jsx-2764329408 next-label"
               >
                 Next
               </div>
               <div
-                className="jsx-2929774959 next-tetromino next-tetromino-T"
+                className="jsx-2764329408 next-tetromino next-tetromino-T"
               >
                 <div
                   className="jsx-2115617632 tetromino"
@@ -5105,7 +5105,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed-and-ad
                 </div>
               </div>
               <div
-                className="jsx-2929774959 player1"
+                className="jsx-2764329408 player1"
               >
                 <div
                   className="jsx-4076982114 player-info"
@@ -5154,7 +5154,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed-and-ad
                 </div>
               </div>
               <div
-                className="jsx-2929774959 player2"
+                className="jsx-2764329408 player2"
               >
                 <div
                   className="jsx-1285042675 player-info"
@@ -5192,24 +5192,24 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed-and-ad
         className="jsx-608550019 side-container"
       >
         <div
-          className="jsx-2929774959 game-panel"
+          className="jsx-2764329408 game-panel"
         >
           <div
-            className="jsx-2929774959 title"
+            className="jsx-2764329408 title"
           >
             <h1
-              className="jsx-2929774959"
+              className="jsx-2764329408"
             >
               Flatris
             </h1>
           </div>
           <div
-            className="jsx-2929774959 next-label"
+            className="jsx-2764329408 next-label"
           >
             Next
           </div>
           <div
-            className="jsx-2929774959 next-tetromino next-tetromino-S"
+            className="jsx-2764329408 next-tetromino next-tetromino-S"
           >
             <div
               className="jsx-2115617632 tetromino"
@@ -5289,7 +5289,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed-and-ad
             </div>
           </div>
           <div
-            className="jsx-2929774959 player1"
+            className="jsx-2764329408 player1"
           >
             <div
               className="jsx-1285042675 player-info"
@@ -5312,7 +5312,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed-and-ad
             </div>
           </div>
           <div
-            className="jsx-2929774959 player2"
+            className="jsx-2764329408 player2"
           >
             <div
               className="jsx-1285042675 player-info"
@@ -5591,24 +5591,24 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):mixed-games 1`] = `
             className="jsx-608550019 side-container"
           >
             <div
-              className="jsx-2929774959 game-panel"
+              className="jsx-2764329408 game-panel"
             >
               <div
-                className="jsx-2929774959 title"
+                className="jsx-2764329408 title"
               >
                 <h1
-                  className="jsx-2929774959"
+                  className="jsx-2764329408"
                 >
                   Flatris
                 </h1>
               </div>
               <div
-                className="jsx-2929774959 next-label"
+                className="jsx-2764329408 next-label"
               >
                 Next
               </div>
               <div
-                className="jsx-2929774959 next-tetromino next-tetromino-L"
+                className="jsx-2764329408 next-tetromino next-tetromino-L"
               >
                 <div
                   className="jsx-2115617632 tetromino"
@@ -5688,7 +5688,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):mixed-games 1`] = `
                 </div>
               </div>
               <div
-                className="jsx-2929774959 player1"
+                className="jsx-2764329408 player1"
               >
                 <div
                   className="jsx-4076982114 player-info"
@@ -5737,7 +5737,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):mixed-games 1`] = `
                 </div>
               </div>
               <div
-                className="jsx-2929774959 player2"
+                className="jsx-2764329408 player2"
               >
                 <div
                   className="jsx-1285042675 player-info"
@@ -5892,24 +5892,24 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):mixed-games 1`] = `
             className="jsx-608550019 side-container"
           >
             <div
-              className="jsx-2929774959 game-panel"
+              className="jsx-2764329408 game-panel"
             >
               <div
-                className="jsx-2929774959 title"
+                className="jsx-2764329408 title"
               >
                 <h1
-                  className="jsx-2929774959"
+                  className="jsx-2764329408"
                 >
                   Flatris
                 </h1>
               </div>
               <div
-                className="jsx-2929774959 next-label"
+                className="jsx-2764329408 next-label"
               >
                 Next
               </div>
               <div
-                className="jsx-2929774959 next-tetromino next-tetromino-J"
+                className="jsx-2764329408 next-tetromino next-tetromino-J"
               >
                 <div
                   className="jsx-2115617632 tetromino"
@@ -5989,7 +5989,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):mixed-games 1`] = `
                 </div>
               </div>
               <div
-                className="jsx-2929774959 player1"
+                className="jsx-2764329408 player1"
               >
                 <div
                   className="jsx-4076982114 player-info"
@@ -6038,7 +6038,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):mixed-games 1`] = `
                 </div>
               </div>
               <div
-                className="jsx-2929774959 player2"
+                className="jsx-2764329408 player2"
               >
                 <div
                   className="jsx-1285042675 player-info"
@@ -6076,24 +6076,24 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):mixed-games 1`] = `
         className="jsx-608550019 side-container"
       >
         <div
-          className="jsx-2929774959 game-panel"
+          className="jsx-2764329408 game-panel"
         >
           <div
-            className="jsx-2929774959 title"
+            className="jsx-2764329408 title"
           >
             <h1
-              className="jsx-2929774959"
+              className="jsx-2764329408"
             >
               Flatris
             </h1>
           </div>
           <div
-            className="jsx-2929774959 next-label"
+            className="jsx-2764329408 next-label"
           >
             Next
           </div>
           <div
-            className="jsx-2929774959 next-tetromino next-tetromino-S"
+            className="jsx-2764329408 next-tetromino next-tetromino-S"
           >
             <div
               className="jsx-2115617632 tetromino"
@@ -6173,7 +6173,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):mixed-games 1`] = `
             </div>
           </div>
           <div
-            className="jsx-2929774959 player1"
+            className="jsx-2764329408 player1"
           >
             <div
               className="jsx-1285042675 player-info"
@@ -6196,7 +6196,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):mixed-games 1`] = `
             </div>
           </div>
           <div
-            className="jsx-2929774959 player2"
+            className="jsx-2764329408 player2"
           >
             <div
               className="jsx-1285042675 player-info"
@@ -6475,24 +6475,24 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):mixed-games-removed 
             className="jsx-608550019 side-container"
           >
             <div
-              className="jsx-2929774959 game-panel"
+              className="jsx-2764329408 game-panel"
             >
               <div
-                className="jsx-2929774959 title"
+                className="jsx-2764329408 title"
               >
                 <h1
-                  className="jsx-2929774959"
+                  className="jsx-2764329408"
                 >
                   Flatris
                 </h1>
               </div>
               <div
-                className="jsx-2929774959 next-label"
+                className="jsx-2764329408 next-label"
               >
                 Next
               </div>
               <div
-                className="jsx-2929774959 next-tetromino next-tetromino-L"
+                className="jsx-2764329408 next-tetromino next-tetromino-L"
               >
                 <div
                   className="jsx-2115617632 tetromino"
@@ -6572,7 +6572,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):mixed-games-removed 
                 </div>
               </div>
               <div
-                className="jsx-2929774959 player1"
+                className="jsx-2764329408 player1"
               >
                 <div
                   className="jsx-4076982114 player-info"
@@ -6621,7 +6621,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):mixed-games-removed 
                 </div>
               </div>
               <div
-                className="jsx-2929774959 player2"
+                className="jsx-2764329408 player2"
               >
                 <div
                   className="jsx-1285042675 player-info"
@@ -6659,24 +6659,24 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):mixed-games-removed 
         className="jsx-608550019 side-container"
       >
         <div
-          className="jsx-2929774959 game-panel"
+          className="jsx-2764329408 game-panel"
         >
           <div
-            className="jsx-2929774959 title"
+            className="jsx-2764329408 title"
           >
             <h1
-              className="jsx-2929774959"
+              className="jsx-2764329408"
             >
               Flatris
             </h1>
           </div>
           <div
-            className="jsx-2929774959 next-label"
+            className="jsx-2764329408 next-label"
           >
             Next
           </div>
           <div
-            className="jsx-2929774959 next-tetromino next-tetromino-S"
+            className="jsx-2764329408 next-tetromino next-tetromino-S"
           >
             <div
               className="jsx-2115617632 tetromino"
@@ -6756,7 +6756,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):mixed-games-removed 
             </div>
           </div>
           <div
-            className="jsx-2929774959 player1"
+            className="jsx-2764329408 player1"
           >
             <div
               className="jsx-1285042675 player-info"
@@ -6779,7 +6779,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):mixed-games-removed 
             </div>
           </div>
           <div
-            className="jsx-2929774959 player2"
+            className="jsx-2764329408 player2"
           >
             <div
               className="jsx-1285042675 player-info"
@@ -6950,24 +6950,24 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):no-games 1`] = `
         className="jsx-608550019 side-container"
       >
         <div
-          className="jsx-2929774959 game-panel"
+          className="jsx-2764329408 game-panel"
         >
           <div
-            className="jsx-2929774959 title"
+            className="jsx-2764329408 title"
           >
             <h1
-              className="jsx-2929774959"
+              className="jsx-2764329408"
             >
               Flatris
             </h1>
           </div>
           <div
-            className="jsx-2929774959 next-label"
+            className="jsx-2764329408 next-label"
           >
             Next
           </div>
           <div
-            className="jsx-2929774959 next-tetromino next-tetromino-S"
+            className="jsx-2764329408 next-tetromino next-tetromino-S"
           >
             <div
               className="jsx-2115617632 tetromino"
@@ -7047,7 +7047,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):no-games 1`] = `
             </div>
           </div>
           <div
-            className="jsx-2929774959 player1"
+            className="jsx-2764329408 player1"
           >
             <div
               className="jsx-1285042675 player-info"
@@ -7070,7 +7070,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):no-games 1`] = `
             </div>
           </div>
           <div
-            className="jsx-2929774959 player2"
+            className="jsx-2764329408 player2"
           >
             <div
               className="jsx-1285042675 player-info"
@@ -7349,24 +7349,24 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):own-game 1`] = `
             className="jsx-608550019 side-container"
           >
             <div
-              className="jsx-2929774959 game-panel"
+              className="jsx-2764329408 game-panel"
             >
               <div
-                className="jsx-2929774959 title"
+                className="jsx-2764329408 title"
               >
                 <h1
-                  className="jsx-2929774959"
+                  className="jsx-2764329408"
                 >
                   Flatris
                 </h1>
               </div>
               <div
-                className="jsx-2929774959 next-label"
+                className="jsx-2764329408 next-label"
               >
                 Next
               </div>
               <div
-                className="jsx-2929774959 next-tetromino next-tetromino-L"
+                className="jsx-2764329408 next-tetromino next-tetromino-L"
               >
                 <div
                   className="jsx-2115617632 tetromino"
@@ -7446,7 +7446,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):own-game 1`] = `
                 </div>
               </div>
               <div
-                className="jsx-2929774959 player1"
+                className="jsx-2764329408 player1"
               >
                 <div
                   className="jsx-4076982114 player-info"
@@ -7495,7 +7495,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):own-game 1`] = `
                 </div>
               </div>
               <div
-                className="jsx-2929774959 player2"
+                className="jsx-2764329408 player2"
               >
                 <div
                   className="jsx-1285042675 player-info"
@@ -7533,24 +7533,24 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):own-game 1`] = `
         className="jsx-608550019 side-container"
       >
         <div
-          className="jsx-2929774959 game-panel"
+          className="jsx-2764329408 game-panel"
         >
           <div
-            className="jsx-2929774959 title"
+            className="jsx-2764329408 title"
           >
             <h1
-              className="jsx-2929774959"
+              className="jsx-2764329408"
             >
               Flatris
             </h1>
           </div>
           <div
-            className="jsx-2929774959 next-label"
+            className="jsx-2764329408 next-label"
           >
             Next
           </div>
           <div
-            className="jsx-2929774959 next-tetromino next-tetromino-S"
+            className="jsx-2764329408 next-tetromino next-tetromino-S"
           >
             <div
               className="jsx-2115617632 tetromino"
@@ -7630,7 +7630,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):own-game 1`] = `
             </div>
           </div>
           <div
-            className="jsx-2929774959 player1"
+            className="jsx-2764329408 player1"
           >
             <div
               className="jsx-1285042675 player-info"
@@ -7653,7 +7653,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):own-game 1`] = `
             </div>
           </div>
           <div
-            className="jsx-2929774959 player2"
+            className="jsx-2764329408 player2"
           >
             <div
               className="jsx-1285042675 player-info"
@@ -7932,24 +7932,24 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):own-game-removed 1`]
             className="jsx-608550019 side-container"
           >
             <div
-              className="jsx-2929774959 game-panel"
+              className="jsx-2764329408 game-panel"
             >
               <div
-                className="jsx-2929774959 title"
+                className="jsx-2764329408 title"
               >
                 <h1
-                  className="jsx-2929774959"
+                  className="jsx-2764329408"
                 >
                   Flatris
                 </h1>
               </div>
               <div
-                className="jsx-2929774959 next-label"
+                className="jsx-2764329408 next-label"
               >
                 Next
               </div>
               <div
-                className="jsx-2929774959 next-tetromino next-tetromino-L"
+                className="jsx-2764329408 next-tetromino next-tetromino-L"
               >
                 <div
                   className="jsx-2115617632 tetromino"
@@ -8029,7 +8029,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):own-game-removed 1`]
                 </div>
               </div>
               <div
-                className="jsx-2929774959 player1"
+                className="jsx-2764329408 player1"
               >
                 <div
                   className="jsx-4076982114 player-info"
@@ -8078,7 +8078,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):own-game-removed 1`]
                 </div>
               </div>
               <div
-                className="jsx-2929774959 player2"
+                className="jsx-2764329408 player2"
               >
                 <div
                   className="jsx-1285042675 player-info"
@@ -8116,24 +8116,24 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):own-game-removed 1`]
         className="jsx-608550019 side-container"
       >
         <div
-          className="jsx-2929774959 game-panel"
+          className="jsx-2764329408 game-panel"
         >
           <div
-            className="jsx-2929774959 title"
+            className="jsx-2764329408 title"
           >
             <h1
-              className="jsx-2929774959"
+              className="jsx-2764329408"
             >
               Flatris
             </h1>
           </div>
           <div
-            className="jsx-2929774959 next-label"
+            className="jsx-2764329408 next-label"
           >
             Next
           </div>
           <div
-            className="jsx-2929774959 next-tetromino next-tetromino-S"
+            className="jsx-2764329408 next-tetromino next-tetromino-S"
           >
             <div
               className="jsx-2115617632 tetromino"
@@ -8213,7 +8213,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):own-game-removed 1`]
             </div>
           </div>
           <div
-            className="jsx-2929774959 player1"
+            className="jsx-2764329408 player1"
           >
             <div
               className="jsx-1285042675 player-info"
@@ -8236,7 +8236,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):own-game-removed 1`]
             </div>
           </div>
           <div
-            className="jsx-2929774959 player2"
+            className="jsx-2764329408 player2"
           >
             <div
               className="jsx-1285042675 player-info"
@@ -11146,24 +11146,24 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):double-hallelujah 
           className="jsx-608550019 side-container"
         >
           <div
-            className="jsx-2929774959 game-panel"
+            className="jsx-2764329408 game-panel"
           >
             <div
-              className="jsx-2929774959 title"
+              className="jsx-2764329408 title"
             >
               <h1
-                className="jsx-2929774959"
+                className="jsx-2764329408"
               >
                 Flatris
               </h1>
             </div>
             <div
-              className="jsx-2929774959 next-label"
+              className="jsx-2764329408 next-label"
             >
               Next
             </div>
             <div
-              className="jsx-2929774959 next-tetromino next-tetromino-I"
+              className="jsx-2764329408 next-tetromino next-tetromino-I"
             >
               <div
                 className="jsx-2115617632 tetromino"
@@ -11243,7 +11243,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):double-hallelujah 
               </div>
             </div>
             <div
-              className="jsx-2929774959 player1"
+              className="jsx-2764329408 player1"
             >
               <div
                 className="jsx-4076982114 player-info"
@@ -11292,7 +11292,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):double-hallelujah 
               </div>
             </div>
             <div
-              className="jsx-2929774959 player2"
+              className="jsx-2764329408 player2"
             >
               <div
                 className="jsx-4076982114 player-info"
@@ -11341,12 +11341,12 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):double-hallelujah 
               </div>
             </div>
             <div
-              className="jsx-2929774959 footer"
+              className="jsx-2764329408 footer"
             >
               By
                
               <a
-                className="jsx-2929774959"
+                className="jsx-2764329408"
                 href="https://twitter.com/skidding"
                 target="_blank"
               >
@@ -13107,24 +13107,24 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):enemy-hallelujah 1
           className="jsx-608550019 side-container"
         >
           <div
-            className="jsx-2929774959 game-panel"
+            className="jsx-2764329408 game-panel"
           >
             <div
-              className="jsx-2929774959 title"
+              className="jsx-2764329408 title"
             >
               <h1
-                className="jsx-2929774959"
+                className="jsx-2764329408"
               >
                 Flatris
               </h1>
             </div>
             <div
-              className="jsx-2929774959 next-label"
+              className="jsx-2764329408 next-label"
             >
               Next
             </div>
             <div
-              className="jsx-2929774959 next-tetromino next-tetromino-L"
+              className="jsx-2764329408 next-tetromino next-tetromino-L"
             >
               <div
                 className="jsx-2115617632 tetromino"
@@ -13204,7 +13204,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):enemy-hallelujah 1
               </div>
             </div>
             <div
-              className="jsx-2929774959 player1"
+              className="jsx-2764329408 player1"
             >
               <div
                 className="jsx-4076982114 player-info"
@@ -13253,7 +13253,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):enemy-hallelujah 1
               </div>
             </div>
             <div
-              className="jsx-2929774959 player2"
+              className="jsx-2764329408 player2"
             >
               <div
                 className="jsx-4076982114 player-info"
@@ -13302,12 +13302,12 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):enemy-hallelujah 1
               </div>
             </div>
             <div
-              className="jsx-2929774959 footer"
+              className="jsx-2764329408 footer"
             >
               By
                
               <a
-                className="jsx-2929774959"
+                className="jsx-2764329408"
                 href="https://twitter.com/skidding"
                 target="_blank"
               >
@@ -15450,24 +15450,24 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah 1`] = `
           className="jsx-608550019 side-container"
         >
           <div
-            className="jsx-2929774959 game-panel"
+            className="jsx-2764329408 game-panel"
           >
             <div
-              className="jsx-2929774959 title"
+              className="jsx-2764329408 title"
             >
               <h1
-                className="jsx-2929774959"
+                className="jsx-2764329408"
               >
                 Flatris
               </h1>
             </div>
             <div
-              className="jsx-2929774959 next-label"
+              className="jsx-2764329408 next-label"
             >
               Next
             </div>
             <div
-              className="jsx-2929774959 next-tetromino next-tetromino-L"
+              className="jsx-2764329408 next-tetromino next-tetromino-L"
             >
               <div
                 className="jsx-2115617632 tetromino"
@@ -15547,7 +15547,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah 1`] = `
               </div>
             </div>
             <div
-              className="jsx-2929774959 player1"
+              className="jsx-2764329408 player1"
             >
               <div
                 className="jsx-4076982114 player-info"
@@ -15596,7 +15596,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah 1`] = `
               </div>
             </div>
             <div
-              className="jsx-2929774959 player2"
+              className="jsx-2764329408 player2"
             >
               <div
                 className="jsx-1285042675 player-info selectable"
@@ -15619,12 +15619,12 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah 1`] = `
               </div>
             </div>
             <div
-              className="jsx-2929774959 footer"
+              className="jsx-2764329408 footer"
             >
               By
                
               <a
-                className="jsx-2929774959"
+                className="jsx-2764329408"
                 href="https://twitter.com/skidding"
                 target="_blank"
               >
@@ -17829,24 +17829,24 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah-guest 1
           className="jsx-608550019 side-container"
         >
           <div
-            className="jsx-2929774959 game-panel"
+            className="jsx-2764329408 game-panel"
           >
             <div
-              className="jsx-2929774959 title"
+              className="jsx-2764329408 title"
             >
               <h1
-                className="jsx-2929774959"
+                className="jsx-2764329408"
               >
                 Flatris
               </h1>
             </div>
             <div
-              className="jsx-2929774959 next-label"
+              className="jsx-2764329408 next-label"
             >
               Next
             </div>
             <div
-              className="jsx-2929774959 next-tetromino next-tetromino-L"
+              className="jsx-2764329408 next-tetromino next-tetromino-L"
             >
               <div
                 className="jsx-2115617632 tetromino"
@@ -17926,7 +17926,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah-guest 1
               </div>
             </div>
             <div
-              className="jsx-2929774959 player1"
+              className="jsx-2764329408 player1"
             >
               <div
                 className="jsx-4076982114 player-info"
@@ -17975,7 +17975,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah-guest 1
               </div>
             </div>
             <div
-              className="jsx-2929774959 player2"
+              className="jsx-2764329408 player2"
             >
               <div
                 className="jsx-1285042675 player-info"
@@ -17998,12 +17998,12 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah-guest 1
               </div>
             </div>
             <div
-              className="jsx-2929774959 footer"
+              className="jsx-2764329408 footer"
             >
               By
                
               <a
-                className="jsx-2929774959"
+                className="jsx-2764329408"
                 href="https://twitter.com/skidding"
                 target="_blank"
               >
@@ -20668,24 +20668,24 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
           className="jsx-608550019 side-container"
         >
           <div
-            className="jsx-2929774959 game-panel"
+            className="jsx-2764329408 game-panel"
           >
             <div
-              className="jsx-2929774959 title"
+              className="jsx-2764329408 title"
             >
               <h1
-                className="jsx-2929774959"
+                className="jsx-2764329408"
               >
                 Flatris
               </h1>
             </div>
             <div
-              className="jsx-2929774959 next-label"
+              className="jsx-2764329408 next-label"
             >
               Next
             </div>
             <div
-              className="jsx-2929774959 next-tetromino next-tetromino-L"
+              className="jsx-2764329408 next-tetromino next-tetromino-L"
             >
               <div
                 className="jsx-2115617632 tetromino"
@@ -20765,7 +20765,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
               </div>
             </div>
             <div
-              className="jsx-2929774959 player1"
+              className="jsx-2764329408 player1"
             >
               <div
                 className="jsx-4076982114 player-info"
@@ -20814,7 +20814,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
               </div>
             </div>
             <div
-              className="jsx-2929774959 player2"
+              className="jsx-2764329408 player2"
             >
               <div
                 className="jsx-1285042675 player-info"
@@ -20837,12 +20837,12 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
               </div>
             </div>
             <div
-              className="jsx-2929774959 footer"
+              className="jsx-2764329408 footer"
             >
               By
                
               <a
-                className="jsx-2929774959"
+                className="jsx-2764329408"
                 href="https://twitter.com/skidding"
                 target="_blank"
               >
@@ -21141,24 +21141,24 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
           className="jsx-608550019 side-container"
         >
           <div
-            className="jsx-2929774959 game-panel"
+            className="jsx-2764329408 game-panel"
           >
             <div
-              className="jsx-2929774959 title"
+              className="jsx-2764329408 title"
             >
               <h1
-                className="jsx-2929774959"
+                className="jsx-2764329408"
               >
                 Flatris
               </h1>
             </div>
             <div
-              className="jsx-2929774959 next-label"
+              className="jsx-2764329408 next-label"
             >
               Next
             </div>
             <div
-              className="jsx-2929774959 next-tetromino next-tetromino-L"
+              className="jsx-2764329408 next-tetromino next-tetromino-L"
             >
               <div
                 className="jsx-2115617632 tetromino"
@@ -21238,7 +21238,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
               </div>
             </div>
             <div
-              className="jsx-2929774959 player1"
+              className="jsx-2764329408 player1"
             >
               <div
                 className="jsx-4076982114 player-info"
@@ -21287,7 +21287,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
               </div>
             </div>
             <div
-              className="jsx-2929774959 player2"
+              className="jsx-2764329408 player2"
             >
               <div
                 className="jsx-1285042675 player-info"
@@ -21310,12 +21310,12 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
               </div>
             </div>
             <div
-              className="jsx-2929774959 footer"
+              className="jsx-2764329408 footer"
             >
               By
                
               <a
-                className="jsx-2929774959"
+                className="jsx-2764329408"
                 href="https://twitter.com/skidding"
                 target="_blank"
               >
@@ -21537,24 +21537,24 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game-running 1
           className="jsx-608550019 side-container"
         >
           <div
-            className="jsx-2929774959 game-panel"
+            className="jsx-2764329408 game-panel"
           >
             <div
-              className="jsx-2929774959 title"
+              className="jsx-2764329408 title"
             >
               <h1
-                className="jsx-2929774959"
+                className="jsx-2764329408"
               >
                 Flatris
               </h1>
             </div>
             <div
-              className="jsx-2929774959 next-label"
+              className="jsx-2764329408 next-label"
             >
               Next
             </div>
             <div
-              className="jsx-2929774959 next-tetromino next-tetromino-L"
+              className="jsx-2764329408 next-tetromino next-tetromino-L"
             >
               <div
                 className="jsx-2115617632 tetromino"
@@ -21634,7 +21634,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game-running 1
               </div>
             </div>
             <div
-              className="jsx-2929774959 player1"
+              className="jsx-2764329408 player1"
             >
               <div
                 className="jsx-4076982114 player-info"
@@ -21683,7 +21683,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game-running 1
               </div>
             </div>
             <div
-              className="jsx-2929774959 player2"
+              className="jsx-2764329408 player2"
             >
               <div
                 className="jsx-1285042675 player-info selectable"
@@ -21706,12 +21706,12 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game-running 1
               </div>
             </div>
             <div
-              className="jsx-2929774959 footer"
+              className="jsx-2764329408 footer"
             >
               By
                
               <a
-                className="jsx-2929774959"
+                className="jsx-2764329408"
                 href="https://twitter.com/skidding"
                 target="_blank"
               >
@@ -22457,24 +22457,24 @@ exports[`Cosmos fixtures: Error:component-error 1`] = `
       className="jsx-3372609668 side-container"
     >
       <div
-        className="jsx-2929774959 game-panel"
+        className="jsx-2764329408 game-panel"
       >
         <div
-          className="jsx-2929774959 title"
+          className="jsx-2764329408 title"
         >
           <h1
-            className="jsx-2929774959"
+            className="jsx-2764329408"
           >
             Flatris
           </h1>
         </div>
         <div
-          className="jsx-2929774959 next-label"
+          className="jsx-2764329408 next-label"
         >
           Next
         </div>
         <div
-          className="jsx-2929774959 next-tetromino next-tetromino-S"
+          className="jsx-2764329408 next-tetromino next-tetromino-S"
         >
           <div
             className="jsx-2115617632 tetromino"
@@ -22554,7 +22554,7 @@ exports[`Cosmos fixtures: Error:component-error 1`] = `
           </div>
         </div>
         <div
-          className="jsx-2929774959 player1"
+          className="jsx-2764329408 player1"
         >
           <div
             className="jsx-1285042675 player-info"
@@ -22577,7 +22577,7 @@ exports[`Cosmos fixtures: Error:component-error 1`] = `
           </div>
         </div>
         <div
-          className="jsx-2929774959 player2"
+          className="jsx-2764329408 player2"
         >
           <div
             className="jsx-1285042675 player-info"
@@ -22660,24 +22660,24 @@ exports[`Cosmos fixtures: Error:not-found 1`] = `
       className="jsx-3372609668 side-container"
     >
       <div
-        className="jsx-2929774959 game-panel"
+        className="jsx-2764329408 game-panel"
       >
         <div
-          className="jsx-2929774959 title"
+          className="jsx-2764329408 title"
         >
           <h1
-            className="jsx-2929774959"
+            className="jsx-2764329408"
           >
             Flatris
           </h1>
         </div>
         <div
-          className="jsx-2929774959 next-label"
+          className="jsx-2764329408 next-label"
         >
           Next
         </div>
         <div
-          className="jsx-2929774959 next-tetromino next-tetromino-S"
+          className="jsx-2764329408 next-tetromino next-tetromino-S"
         >
           <div
             className="jsx-2115617632 tetromino"
@@ -22757,7 +22757,7 @@ exports[`Cosmos fixtures: Error:not-found 1`] = `
           </div>
         </div>
         <div
-          className="jsx-2929774959 player1"
+          className="jsx-2764329408 player1"
         >
           <div
             className="jsx-1285042675 player-info"
@@ -22780,7 +22780,7 @@ exports[`Cosmos fixtures: Error:not-found 1`] = `
           </div>
         </div>
         <div
-          className="jsx-2929774959 player2"
+          className="jsx-2764329408 player2"
         >
           <div
             className="jsx-1285042675 player-info"
@@ -22864,24 +22864,24 @@ exports[`Cosmos fixtures: Error:unknown 1`] = `
       className="jsx-3372609668 side-container"
     >
       <div
-        className="jsx-2929774959 game-panel"
+        className="jsx-2764329408 game-panel"
       >
         <div
-          className="jsx-2929774959 title"
+          className="jsx-2764329408 title"
         >
           <h1
-            className="jsx-2929774959"
+            className="jsx-2764329408"
           >
             Flatris
           </h1>
         </div>
         <div
-          className="jsx-2929774959 next-label"
+          className="jsx-2764329408 next-label"
         >
           Next
         </div>
         <div
-          className="jsx-2929774959 next-tetromino next-tetromino-S"
+          className="jsx-2764329408 next-tetromino next-tetromino-S"
         >
           <div
             className="jsx-2115617632 tetromino"
@@ -22961,7 +22961,7 @@ exports[`Cosmos fixtures: Error:unknown 1`] = `
           </div>
         </div>
         <div
-          className="jsx-2929774959 player1"
+          className="jsx-2764329408 player1"
         >
           <div
             className="jsx-1285042675 player-info"
@@ -22984,7 +22984,7 @@ exports[`Cosmos fixtures: Error:unknown 1`] = `
           </div>
         </div>
         <div
-          className="jsx-2929774959 player2"
+          className="jsx-2764329408 player2"
         >
           <div
             className="jsx-1285042675 player-info"
@@ -23660,24 +23660,24 @@ exports[`Cosmos fixtures: GamePanel:default 1`] = `
       }
     >
       <div
-        className="jsx-2929774959 game-panel"
+        className="jsx-2764329408 game-panel"
       >
         <div
-          className="jsx-2929774959 title"
+          className="jsx-2764329408 title"
         >
           <h1
-            className="jsx-2929774959"
+            className="jsx-2764329408"
           >
             Flatris
           </h1>
         </div>
         <div
-          className="jsx-2929774959 next-label"
+          className="jsx-2764329408 next-label"
         >
           Next
         </div>
         <div
-          className="jsx-2929774959 next-tetromino next-tetromino-L"
+          className="jsx-2764329408 next-tetromino next-tetromino-L"
         >
           <div
             className="jsx-2115617632 tetromino"
@@ -23757,7 +23757,7 @@ exports[`Cosmos fixtures: GamePanel:default 1`] = `
           </div>
         </div>
         <div
-          className="jsx-2929774959 player1"
+          className="jsx-2764329408 player1"
         >
           <div
             className="jsx-4076982114 player-info"
@@ -23806,7 +23806,7 @@ exports[`Cosmos fixtures: GamePanel:default 1`] = `
           </div>
         </div>
         <div
-          className="jsx-2929774959 player2"
+          className="jsx-2764329408 player2"
         >
           <div
             className="jsx-1285042675 player-info selectable"
@@ -23853,24 +23853,24 @@ exports[`Cosmos fixtures: GamePanel:with-footer 1`] = `
       }
     >
       <div
-        className="jsx-2929774959 game-panel"
+        className="jsx-2764329408 game-panel"
       >
         <div
-          className="jsx-2929774959 title"
+          className="jsx-2764329408 title"
         >
           <h1
-            className="jsx-2929774959"
+            className="jsx-2764329408"
           >
             Flatris
           </h1>
         </div>
         <div
-          className="jsx-2929774959 next-label"
+          className="jsx-2764329408 next-label"
         >
           Next
         </div>
         <div
-          className="jsx-2929774959 next-tetromino next-tetromino-L"
+          className="jsx-2764329408 next-tetromino next-tetromino-L"
         >
           <div
             className="jsx-2115617632 tetromino"
@@ -23950,7 +23950,7 @@ exports[`Cosmos fixtures: GamePanel:with-footer 1`] = `
           </div>
         </div>
         <div
-          className="jsx-2929774959 player1"
+          className="jsx-2764329408 player1"
         >
           <div
             className="jsx-4076982114 player-info"
@@ -23999,7 +23999,7 @@ exports[`Cosmos fixtures: GamePanel:with-footer 1`] = `
           </div>
         </div>
         <div
-          className="jsx-2929774959 player2"
+          className="jsx-2764329408 player2"
         >
           <div
             className="jsx-1285042675 player-info selectable"
@@ -24022,12 +24022,12 @@ exports[`Cosmos fixtures: GamePanel:with-footer 1`] = `
           </div>
         </div>
         <div
-          className="jsx-2929774959 footer"
+          className="jsx-2764329408 footer"
         >
           By
            
           <a
-            className="jsx-2929774959"
+            className="jsx-2764329408"
             href="https://twitter.com/skidding"
             target="_blank"
           >
@@ -24172,24 +24172,24 @@ exports[`Cosmos fixtures: GamePreview:default 1`] = `
             className="jsx-608550019 side-container"
           >
             <div
-              className="jsx-2929774959 game-panel"
+              className="jsx-2764329408 game-panel"
             >
               <div
-                className="jsx-2929774959 title"
+                className="jsx-2764329408 title"
               >
                 <h1
-                  className="jsx-2929774959"
+                  className="jsx-2764329408"
                 >
                   Flatris
                 </h1>
               </div>
               <div
-                className="jsx-2929774959 next-label"
+                className="jsx-2764329408 next-label"
               >
                 Next
               </div>
               <div
-                className="jsx-2929774959 next-tetromino next-tetromino-L"
+                className="jsx-2764329408 next-tetromino next-tetromino-L"
               >
                 <div
                   className="jsx-2115617632 tetromino"
@@ -24269,7 +24269,7 @@ exports[`Cosmos fixtures: GamePreview:default 1`] = `
                 </div>
               </div>
               <div
-                className="jsx-2929774959 player1"
+                className="jsx-2764329408 player1"
               >
                 <div
                   className="jsx-4076982114 player-info"
@@ -24318,7 +24318,7 @@ exports[`Cosmos fixtures: GamePreview:default 1`] = `
                 </div>
               </div>
               <div
-                className="jsx-2929774959 player2"
+                className="jsx-2764329408 player2"
               >
                 <div
                   className="jsx-1285042675 player-info selectable"
@@ -24481,24 +24481,24 @@ exports[`Cosmos fixtures: GamePreview:with-footer 1`] = `
             className="jsx-608550019 side-container"
           >
             <div
-              className="jsx-2929774959 game-panel"
+              className="jsx-2764329408 game-panel"
             >
               <div
-                className="jsx-2929774959 title"
+                className="jsx-2764329408 title"
               >
                 <h1
-                  className="jsx-2929774959"
+                  className="jsx-2764329408"
                 >
                   Flatris
                 </h1>
               </div>
               <div
-                className="jsx-2929774959 next-label"
+                className="jsx-2764329408 next-label"
               >
                 Next
               </div>
               <div
-                className="jsx-2929774959 next-tetromino next-tetromino-L"
+                className="jsx-2764329408 next-tetromino next-tetromino-L"
               >
                 <div
                   className="jsx-2115617632 tetromino"
@@ -24578,7 +24578,7 @@ exports[`Cosmos fixtures: GamePreview:with-footer 1`] = `
                 </div>
               </div>
               <div
-                className="jsx-2929774959 player1"
+                className="jsx-2764329408 player1"
               >
                 <div
                   className="jsx-4076982114 player-info"
@@ -24627,7 +24627,7 @@ exports[`Cosmos fixtures: GamePreview:with-footer 1`] = `
                 </div>
               </div>
               <div
-                className="jsx-2929774959 player2"
+                className="jsx-2764329408 player2"
               >
                 <div
                   className="jsx-1285042675 player-info selectable"
@@ -24650,12 +24650,12 @@ exports[`Cosmos fixtures: GamePreview:with-footer 1`] = `
                 </div>
               </div>
               <div
-                className="jsx-2929774959 footer"
+                className="jsx-2764329408 footer"
               >
                 By
                  
                 <a
-                  className="jsx-2929774959"
+                  className="jsx-2764329408"
                   href="https://twitter.com/skidding"
                   target="_blank"
                 >
@@ -24695,24 +24695,24 @@ exports[`Cosmos fixtures: GamePreviewShell:default 1`] = `
         className="jsx-608550019 side-container"
       >
         <div
-          className="jsx-2929774959 game-panel"
+          className="jsx-2764329408 game-panel"
         >
           <div
-            className="jsx-2929774959 title"
+            className="jsx-2764329408 title"
           >
             <h1
-              className="jsx-2929774959"
+              className="jsx-2764329408"
             >
               Flatris
             </h1>
           </div>
           <div
-            className="jsx-2929774959 next-label"
+            className="jsx-2764329408 next-label"
           >
             Next
           </div>
           <div
-            className="jsx-2929774959 next-tetromino next-tetromino-S"
+            className="jsx-2764329408 next-tetromino next-tetromino-S"
           >
             <div
               className="jsx-2115617632 tetromino"
@@ -24792,7 +24792,7 @@ exports[`Cosmos fixtures: GamePreviewShell:default 1`] = `
             </div>
           </div>
           <div
-            className="jsx-2929774959 player1"
+            className="jsx-2764329408 player1"
           >
             <div
               className="jsx-1285042675 player-info"
@@ -24815,7 +24815,7 @@ exports[`Cosmos fixtures: GamePreviewShell:default 1`] = `
             </div>
           </div>
           <div
-            className="jsx-2929774959 player2"
+            className="jsx-2764329408 player2"
           >
             <div
               className="jsx-1285042675 player-info"

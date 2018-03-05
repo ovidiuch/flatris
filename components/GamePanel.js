@@ -154,7 +154,7 @@ export default class GamePanel extends Component<Props> {
             white-space: nowrap;
           }
           .footer a {
-            color: #3993d0;
+            color: #9ba4ab;
           }
         `}</style>
       </div>
