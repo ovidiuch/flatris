@@ -5,6 +5,7 @@ import { uniqWith, sortBy } from 'lodash';
 import { Component } from 'react';
 import { getGame } from '../../utils/api';
 import { getSocket } from '../../utils/socket';
+import { logError } from '../../utils/rollbar-client';
 import { requestBackfill, cancelBackfill } from '../../utils/backfill';
 import { getGameActionOffset } from '../../reducers/game';
 import {
@@ -165,7 +166,7 @@ export class SocketProvider extends Component<Props> {
     dispatch(startBackfill(backfillId));
   }
 
-  handleBackfillComplete = (res: BackfillResponse) => {
+  handleBackfillComplete = (backfillRes: BackfillResponse) => {
     const { getState, dispatch } = this.getStore();
     const { backfill } = getState();
 
@@ -174,18 +175,38 @@ export class SocketProvider extends Component<Props> {
     }
 
     const { queuedActions } = backfill;
-    const mergedActions = [...res, ...queuedActions];
+    const mergedActions = [...backfillRes, ...queuedActions];
     const uniqActions = uniqWith(mergedActions, compareGameActions);
     const sortedActions = sortBy(uniqActions, act => act.payload.actionId);
 
+    // Validate action chain
+    const validActions = [];
+    sortedActions.forEach(act => {
+      if (
+        validActions.length === 0 ||
+        act.payload.prevActionId ===
+          validActions[validActions.length - 1].payload.actionId
+      ) {
+        validActions.push(act);
+      }
+    });
+
     // TODO: Dispatch events at an interval, to convey the rhythm in
     // which the actions were originally performed
-    sortedActions.forEach(dispatch);
+    validActions.forEach(dispatch);
 
     const numDupes = mergedActions.length - uniqActions.length;
     console.log(
       `Backfilled ${uniqActions.length} actions (${numDupes} dupes).`
     );
+
+    const numInvalid = uniqActions.length - validActions.length;
+    if (numInvalid) {
+      logError(`Corrupt backlog: ${numInvalid} actions discarded`, {
+        backfillRes,
+        queuedActions
+      });
+    }
 
     dispatch(endBackfill());
   };
