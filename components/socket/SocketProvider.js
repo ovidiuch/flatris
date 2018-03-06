@@ -1,7 +1,7 @@
 // @flow
 
 import { object, func } from 'prop-types';
-import { uniqWith, sortBy } from 'lodash';
+import { uniqWith, sortBy, findLast } from 'lodash';
 import { Component } from 'react';
 import { getGame } from '../../utils/api';
 import { getSocket } from '../../utils/socket';
@@ -182,11 +182,13 @@ export class SocketProvider extends Component<Props> {
     // Validate action chain
     const validActions = [];
     sortedActions.forEach(act => {
-      if (
-        validActions.length === 0 ||
-        act.payload.prevActionId ===
-          validActions[validActions.length - 1].payload.actionId
-      ) {
+      const { userId } = act.payload;
+      const prevAct = findLast(
+        validActions,
+        act2 => act2.payload.userId === userId
+      );
+
+      if (!prevAct || act.payload.prevActionId === prevAct.payload.actionId) {
         validActions.push(act);
       }
     });
