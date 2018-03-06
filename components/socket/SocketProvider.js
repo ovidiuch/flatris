@@ -202,7 +202,7 @@ export class SocketProvider extends Component<Props> {
 
     const numInvalid = uniqActions.length - validActions.length;
     if (numInvalid) {
-      logError(`Corrupt backlog: ${numInvalid} actions discarded`, {
+      logError(`Corrupt backfill: ${numInvalid} actions discarded`, {
         backfillRes,
         queuedActions
       });
