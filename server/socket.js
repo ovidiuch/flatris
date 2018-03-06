@@ -55,8 +55,12 @@ export function attachSocket(server: net$Server) {
         // Notify client to leave expired game page
         socket.emit('game-removed', gameId);
       } else {
-        saveGameAction(action);
+        // When the reducer throws an exception it will reach the global error
+        // log handler and the next actions from this handler will be ignored
         games[gameId] = gameReducer(games[gameId], action);
+
+        // Only save game action after game reducer was run successfully
+        saveGameAction(action);
 
         // As long as games receive actions they are marked as active
         bumpActiveGame(gameId);
