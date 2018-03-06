@@ -149,10 +149,10 @@
   * [x] Rollbar server
   * [x] Rollbar client
   * [x] https://flatris.space
+* [x] Embed Teko font in JS bundle
 
 BACKLOG
 
-* [ ] Embed Teko font in JS bundle
 * [ ] Freeze game on player disconnect
 * [ ] Create drop shadow from active Tetromino
 * [ ] Zoom in animation when opening game from dashboard
