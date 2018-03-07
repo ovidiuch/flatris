@@ -63,8 +63,8 @@ export function addRoutes(app: express$Application) {
         throw new Error(`Can't backfill missing game ${gameId}`);
       }
 
-      const actions = getBackfillActions(backfillReq);
-      res.json(actions);
+      const backfillRes = getBackfillRes(backfillReq);
+      res.json(backfillRes);
     } catch (err) {
       rollbar.error(err);
       res.sendStatus(400);
@@ -104,7 +104,16 @@ export function addRoutes(app: express$Application) {
 
 function getUserFromReqSession(req: express$Request): User {
   const sessionId: SessionId = req.cookies.sessionId;
-  const { userId } = sessions[sessionId];
+  if (!sessionId) {
+    throw new Error(`Session not found in cookies`);
+  }
+
+  const session = sessions[sessionId];
+  if (!session) {
+    throw new Error(`Invalid session id ${sessionId}`);
+  }
+
+  const { userId } = session;
 
   return users[userId];
 }
@@ -139,10 +148,11 @@ function extractBackfillRequest(req: mixed): BackfillRequest {
   };
 }
 
-function getBackfillActions(req: BackfillRequest): BackfillResponse {
-  return gameActions[req.gameId].filter(action => {
+function getBackfillRes(req: BackfillRequest): BackfillResponse {
+  const { gameId, players } = req;
+  const actions = gameActions[gameId].filter(action => {
     const player = find(
-      req.players,
+      players,
       ({ userId }) => userId === action.payload.userId
     );
 
@@ -152,4 +162,6 @@ function getBackfillActions(req: BackfillRequest): BackfillResponse {
       !player || (player && action.payload.actionId > player.from)
     );
   });
+
+  return { gameId, actions };
 }
