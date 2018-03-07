@@ -21,7 +21,7 @@ export default class Error extends Component<Props> {
 
     return (
       <GameFrame>
-        <Title title="Error :/" />
+        <Title>Error :/</Title>
         {statusCode === 404 ? this.render404() : this.renderMisc()}
       </GameFrame>
     );

@@ -161,7 +161,7 @@ class Dashboard extends Component<Props, LocalState> {
 
     return (
       <Fragment>
-        <Title title={title} />
+        <Title>{title}</Title>
         <div className="root">
           <div className="header">
             <div className="left new-game-button">

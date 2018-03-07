@@ -53,7 +53,7 @@ class NewGame extends Component<Props, LocalState> {
 
     return (
       <Fragment>
-        <Title title="New game | Flatris" />
+        <Title>New game | Flatris</Title>
         <GameFrame>{requireAuth && <Auth />}</GameFrame>
       </Fragment>
     );

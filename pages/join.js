@@ -71,7 +71,7 @@ class JoinPage extends Component<Props> {
 
     return (
       <Layout>
-        <Title title="Play Flatris" />
+        <Title>Play Flatris</Title>
         <SocketProvider>
           <CurGameOfElse else={() => Router.replace('/')}>
             <FlatrisGame />

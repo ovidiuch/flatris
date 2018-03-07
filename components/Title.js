@@ -4,16 +4,14 @@ import React, { Component } from 'react';
 import Head from 'next/head';
 
 type Props = {
-  title: string
+  children: string
 };
 
 export default class Title extends Component<Props> {
   render() {
-    const { title } = this.props;
-
     return (
       <Head>
-        <title>{title}</title>
+        <title>{this.props.children}</title>
       </Head>
     );
   }
