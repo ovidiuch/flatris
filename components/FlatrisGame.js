@@ -46,14 +46,14 @@ import WaitingForOther from './screens/WaitingForOther';
 import GameOver from './screens/GameOver';
 
 import type { Node } from 'react';
-import type { User, GameId, Game, Backfill, State } from '../types/state';
+import type { User, GameId, Game, Backfills, State } from '../types/state';
 import type { RoomId } from '../types/api';
 
 type Props = {
   jsReady: boolean,
   curUser: ?User,
   game: Game,
-  backfill: ?Backfill,
+  backfills: Backfills,
   subscribe: (roomId: RoomId) => mixed,
   keepGameAlive: (gameId: GameId) => mixed,
   joinGame: typeof joinGame,
@@ -285,10 +285,10 @@ class FlatrisGame extends Component<Props, LocalState> {
   };
 
   renderScreens() {
-    const { jsReady, curUser, game, backfill } = this.props;
+    const { jsReady, curUser, game, backfills } = this.props;
     const { isWatching } = this.state;
     const hasJoined = isPlayer(game, curUser);
-    const disabled = Boolean(!jsReady || backfill);
+    const disabled = Boolean(!jsReady || backfills[game.id]);
 
     // P1 is the current user's player, P2 is the other (in multiplayer games)
     const curPlayer = getCurPlayer(game, curUser);
@@ -457,13 +457,13 @@ class FlatrisGame extends Component<Props, LocalState> {
 }
 
 const mapStateToProps = (state: State): $Shape<Props> => {
-  const { jsReady, curUser, backfill } = state;
+  const { jsReady, curUser, backfills } = state;
 
   return {
     jsReady: jsReady,
     curUser: curUser,
     game: getCurGame(state),
-    backfill
+    backfills
   };
 };
 

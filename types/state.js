@@ -70,10 +70,14 @@ export type Backfill = {
   queuedActions: Array<GameAction>
 };
 
+export type Backfills = {
+  [gameId: GameId]: Backfill
+};
+
 export type State = {
   jsReady: boolean,
   curUser: ?User,
   games: Games,
   curGame: ?GameId,
-  backfill: ?Backfill
+  backfills: Backfills
 };

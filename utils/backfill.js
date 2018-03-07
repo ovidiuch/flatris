@@ -1,28 +1,32 @@
 // @flow
 
+import { omit } from 'lodash';
 import { backfillGameActions } from '../utils/api';
 
 import type { GameId, Game } from '../types/state';
 import type { BackfillRequest, BackfillResponse } from '../types/api';
 
 let lastBackfillId = 0;
-let backfillCanceled = false;
+let backfills: { [gameId: GameId]: number } = {};
 
 export function requestBackfill(
   game: Game,
   onComplete: (result: BackfillResponse) => mixed,
   onError: (gameId: GameId) => mixed
 ): number {
+  const { id: gameId } = game;
   const backfillId = ++lastBackfillId;
-  backfillCanceled = false;
+  backfills = {
+    ...backfills,
+    [gameId]: backfillId
+  };
 
   const req = getBackfillReq(game);
-  const { gameId } = req;
   backfillGameActions(req).then(
     res => {
       // Backfill will be cancelled either via cancelBackfill or if a new
       // backfill is requested (ie. only one backfill can occur at the same time)
-      if (lastBackfillId === backfillId && !backfillCanceled) {
+      if (backfills[gameId] === backfillId) {
         onComplete(res);
       }
     },
@@ -34,10 +38,8 @@ export function requestBackfill(
   return backfillId;
 }
 
-export function cancelBackfill(backfillId: number) {
-  if (lastBackfillId === backfillId) {
-    backfillCanceled = true;
-  }
+export function cancelBackfill(gameId: GameId) {
+  backfills = omit(backfills, gameId);
 }
 
 function getBackfillReq(game: Game): BackfillRequest {

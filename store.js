@@ -11,7 +11,7 @@ import { jsReadyReducer } from './reducers/js-ready';
 import { curUserReducer } from './reducers/cur-user';
 import { gamesReducer } from './reducers/games';
 import { curGameReducer } from './reducers/cur-game';
-import { backfillReducer } from './reducers/backfill';
+import { backfillsReducer } from './reducers/backfills';
 
 import type { Store } from 'redux'; // eslint-disable-line import/named
 import type { State } from './types/state';
@@ -22,7 +22,7 @@ const rootReducer = combineReducers({
   curUser: curUserReducer,
   games: gamesReducer,
   curGame: curGameReducer,
-  backfill: backfillReducer
+  backfills: backfillsReducer
 });
 
 export function createStore(initialState: State): Store<State, Action> {

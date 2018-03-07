@@ -74,16 +74,16 @@ export class SocketProvider extends Component<Props> {
 
   componentWillUnmount() {
     const { getState, dispatch } = this.getStore();
-    const { backfill } = getState();
+    const { backfills } = getState();
 
     offGameAction(this.handleGameAction);
     offGameKeepAlive(this.handleGameKeepAlive);
     offGameRemoved(this.handleGameRemoved);
 
-    if (backfill) {
-      cancelBackfill(backfill.backfillId);
-      dispatch(endBackfill());
-    }
+    Object.keys(backfills).forEach(gameId => {
+      cancelBackfill(gameId);
+      dispatch(endBackfill(gameId));
+    });
   }
 
   handleGameAction = (action: GameAction) => {
@@ -91,12 +91,12 @@ export class SocketProvider extends Component<Props> {
 
     const { getState, dispatch } = this.getStore();
     const state = getState();
-    const { backfill } = state;
+    const { backfills } = state;
+    const { actionId, gameId } = action.payload;
 
-    if (backfill) {
+    if (backfills[gameId]) {
       dispatch(queueGameAction(action));
     } else {
-      const { actionId, gameId } = action.payload;
       const game = state.games[gameId];
 
       if (!game) {
@@ -163,22 +163,22 @@ export class SocketProvider extends Component<Props> {
       this.handleBackfillError
     );
 
-    dispatch(startBackfill(backfillId));
+    dispatch(startBackfill(gameId, backfillId));
   }
 
   handleBackfillComplete = ({ gameId, actions }: BackfillResponse) => {
     const { getState, dispatch } = this.getStore();
-    const { backfill, games } = getState();
+    const { backfills, games } = getState();
 
-    if (!backfill) {
-      throw new Error(`Backfill is missing in state upon completion`);
+    if (!backfills[gameId]) {
+      throw new Error(`Backfill state for game ${gameId} missing on complete`);
     }
 
     if (!games[gameId]) {
       throw new Error(`Backfill completed for missing game ${gameId}`);
     }
 
-    const { queuedActions } = backfill;
+    const { queuedActions } = backfills[gameId];
     const mergedActions = [...actions, ...queuedActions];
     const uniqActions = uniqWith(mergedActions, compareGameActions);
     const validActions = getValidActionChain(uniqActions, games[gameId]);
@@ -202,7 +202,7 @@ export class SocketProvider extends Component<Props> {
       });
     }
 
-    dispatch(endBackfill());
+    dispatch(endBackfill(gameId));
   };
 
   handleBackfillError = (gameId: GameId) => {
@@ -214,11 +214,16 @@ export class SocketProvider extends Component<Props> {
 
   handleBroadcastGameAction = (action: GameAction) => {
     const { getState, dispatch } = this.getStore();
-    const { backfill } = getState();
+    const { backfills, curGame } = getState();
+
+    if (!curGame) {
+      logError('Action broadcast with no current game denied');
+      return;
+    }
 
     // Disallow user to mutate state until it's up to date with server
-    if (backfill) {
-      console.warn('Action broadcast denied while backfilling.');
+    if (backfills[curGame]) {
+      logError('Action broadcast denied while backfilling');
       return;
     }
 

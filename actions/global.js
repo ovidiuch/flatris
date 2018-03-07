@@ -74,16 +74,25 @@ export function stripGameEffects(): StripGameEffectsAction {
   };
 }
 
-export function startBackfill(backfillId: number): StartBackfillAction {
+export function startBackfill(
+  gameId: GameId,
+  backfillId: number
+): StartBackfillAction {
   return {
     type: 'START_BACKFILL',
-    payload: { backfillId }
+    payload: {
+      gameId,
+      backfillId
+    }
   };
 }
 
-export function endBackfill(): EndBackfillAction {
+export function endBackfill(gameId: GameId): EndBackfillAction {
   return {
-    type: 'END_BACKFILL'
+    type: 'END_BACKFILL',
+    payload: {
+      gameId
+    }
   };
 }
 
