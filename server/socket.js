@@ -55,17 +55,23 @@ export function attachSocket(server: net$Server) {
         // Notify client to leave expired game page
         socket.emit('game-removed', gameId);
       } else {
-        saveGameAction(action);
-        games[gameId] = gameReducer(games[gameId], action);
+        try {
+          games[gameId] = gameReducer(games[gameId], action);
 
-        // As long as games receive actions they are marked as active
-        bumpActiveGame(gameId);
+          // Only save game action after game reducer was run successfully
+          saveGameAction(action);
 
-        socket
-          .to(gameId)
-          // TODO: Filter which actions get sent to `global` if volume is high
-          .to('global')
-          .broadcast.emit('game-action', action);
+          // As long as games receive actions they are marked as active
+          bumpActiveGame(gameId);
+
+          socket
+            .to(gameId)
+            // TODO: Filter which actions get sent to `global` if volume is high
+            .to('global')
+            .broadcast.emit('game-action', action);
+        } catch (err) {
+          rollbar.error(err, { action });
+        }
       }
     });
   });

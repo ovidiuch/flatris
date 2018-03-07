@@ -22,6 +22,7 @@ export default class MyDocument extends Document {
                   )},
                   captureUncaught: true,
                   captureUnhandledRejections: true,
+                  verbose: true,
                   payload: {
                     environment: ${JSON.stringify(NODE_ENV)}
                   }

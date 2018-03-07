@@ -13,4 +13,7 @@ export type BackfillRequest = {
   }>
 };
 
-export type BackfillResponse = Array<GameAction>;
+export type BackfillResponse = {
+  gameId: GameId,
+  actions: Array<GameAction>
+};

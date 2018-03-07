@@ -153,6 +153,7 @@
 
 BACKLOG
 
+* [ ] Don't show onboarding after every deploy
 * [ ] Freeze game on player disconnect
 * [ ] Create drop shadow from active Tetromino
 * [ ] Zoom in animation when opening game from dashboard

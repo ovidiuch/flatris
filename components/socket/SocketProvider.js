@@ -1,12 +1,13 @@
 // @flow
 
 import { object, func } from 'prop-types';
-import { uniqWith, sortBy } from 'lodash';
+import { uniqWith, sortBy, findLast } from 'lodash';
 import { Component } from 'react';
 import { getGame } from '../../utils/api';
 import { getSocket } from '../../utils/socket';
+import { logError } from '../../utils/rollbar-client';
 import { requestBackfill, cancelBackfill } from '../../utils/backfill';
-import { getGameActionOffset } from '../../reducers/game';
+import { getPlayer, getGameActionOffset } from '../../reducers/game';
 import {
   addGame,
   removeGame,
@@ -16,7 +17,7 @@ import {
 } from '../../actions/global';
 
 import type { Node } from 'react';
-import type { GameId, State } from '../../types/state';
+import type { GameId, Game, State } from '../../types/state';
 import type { GameAction, Dispatch } from '../../types/actions';
 import type { RoomId, BackfillResponse } from '../../types/api';
 
@@ -165,27 +166,41 @@ export class SocketProvider extends Component<Props> {
     dispatch(startBackfill(backfillId));
   }
 
-  handleBackfillComplete = (res: BackfillResponse) => {
+  handleBackfillComplete = ({ gameId, actions }: BackfillResponse) => {
     const { getState, dispatch } = this.getStore();
-    const { backfill } = getState();
+    const { backfill, games } = getState();
 
     if (!backfill) {
       throw new Error(`Backfill is missing in state upon completion`);
     }
 
+    if (!games[gameId]) {
+      throw new Error(`Backfill completed for missing game ${gameId}`);
+    }
+
     const { queuedActions } = backfill;
-    const mergedActions = [...res, ...queuedActions];
+    const mergedActions = [...actions, ...queuedActions];
     const uniqActions = uniqWith(mergedActions, compareGameActions);
-    const sortedActions = sortBy(uniqActions, act => act.payload.actionId);
+    const validActions = getValidActionChain(uniqActions, games[gameId]);
 
     // TODO: Dispatch events at an interval, to convey the rhythm in
     // which the actions were originally performed
-    sortedActions.forEach(dispatch);
+    validActions.forEach(dispatch);
 
     const numDupes = mergedActions.length - uniqActions.length;
     console.log(
       `Backfilled ${uniqActions.length} actions (${numDupes} dupes).`
     );
+
+    const numInvalid = uniqActions.length - validActions.length;
+    if (numInvalid) {
+      logError(`Corrupt backfill: ${numInvalid} actions discarded`, {
+        games,
+        gameId,
+        actions,
+        queuedActions
+      });
+    }
 
     dispatch(endBackfill());
   };
@@ -248,4 +263,42 @@ function compareGameActions(a1: GameAction, a2: GameAction): boolean {
     a1.payload.userId === a2.payload.userId &&
     a1.payload.gameId === a2.payload.gameId
   );
+}
+
+function getValidActionChain(
+  actions: Array<GameAction>,
+  game: Game
+): Array<GameAction> {
+  const sortedActions = sortBy(actions, a => a.payload.actionId);
+  const validActions = [];
+
+  // Return the longest link of actions (where each action points to the
+  // previous action), from earliest to latest. As soon as a link is missing
+  // between two actions, the newer actions are discarded.
+  sortedActions.forEach(action => {
+    const { userId, gameId, actionId, prevActionId } = action.payload;
+
+    if (gameId !== game.id) {
+      console.warn(
+        `Action ${actionId} from chain doesn't belong to game ${gameId}`
+      );
+    } else {
+      // The action must point to the previous action OF THE SAME USER
+      const prevAction = findLast(
+        validActions,
+        a => a.payload.userId === userId
+      );
+
+      if (!prevAction) {
+        const player = getPlayer(game, userId);
+        if (prevActionId === player.lastActionId) {
+          validActions.push(action);
+        }
+      } else if (prevActionId === prevAction.payload.actionId) {
+        validActions.push(action);
+      }
+    }
+  });
+
+  return validActions;
 }
