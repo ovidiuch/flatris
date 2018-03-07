@@ -676,13 +676,13 @@ exports[`Cosmos fixtures: Connect(NewGame):loading 1`] = `
 
 exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):game 1`] = `
 <div
-  className="jsx-3182364006 root"
+  className="jsx-1867168289 root"
 >
   <div
-    className="jsx-3182364006 header"
+    className="jsx-1867168289 header"
   >
     <div
-      className="jsx-3182364006 left new-game-button"
+      className="jsx-1867168289 left new-game-button"
     >
       <button
         className="jsx-2576755423 button hover-button"
@@ -693,13 +693,13 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):game 1`] = `
       </button>
     </div>
     <div
-      className="jsx-3182364006 right"
+      className="jsx-1867168289 right"
     >
       <div
-        className="jsx-3182364006 view-source left"
+        className="jsx-1867168289 view-source left"
       >
         <a
-          className="jsx-3182364006"
+          className="jsx-1867168289"
           href="https://github.com/skidding/flatris"
           target="_blank"
         >
@@ -712,7 +712,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):game 1`] = `
         </a>
       </div>
       <div
-        className="jsx-3182364006 logo left"
+        className="jsx-1867168289 logo left"
       >
         <div
           className="jsx-1917779880 logo"
@@ -798,7 +798,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):game 1`] = `
     </div>
   </div>
   <div
-    className="jsx-3182364006 message"
+    className="jsx-1867168289 message"
   >
     Join a game or create a new one
   </div>
@@ -1259,13 +1259,13 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):game 1`] = `
 
 exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):game-added 1`] = `
 <div
-  className="jsx-3182364006 root"
+  className="jsx-1867168289 root"
 >
   <div
-    className="jsx-3182364006 header"
+    className="jsx-1867168289 header"
   >
     <div
-      className="jsx-3182364006 left new-game-button"
+      className="jsx-1867168289 left new-game-button"
     >
       <button
         className="jsx-2576755423 button hover-button"
@@ -1276,13 +1276,13 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):game-added 1`] = `
       </button>
     </div>
     <div
-      className="jsx-3182364006 right"
+      className="jsx-1867168289 right"
     >
       <div
-        className="jsx-3182364006 view-source left"
+        className="jsx-1867168289 view-source left"
       >
         <a
-          className="jsx-3182364006"
+          className="jsx-1867168289"
           href="https://github.com/skidding/flatris"
           target="_blank"
         >
@@ -1295,7 +1295,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):game-added 1`] = `
         </a>
       </div>
       <div
-        className="jsx-3182364006 logo left"
+        className="jsx-1867168289 logo left"
       >
         <div
           className="jsx-1917779880 logo"
@@ -1381,7 +1381,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):game-added 1`] = `
     </div>
   </div>
   <div
-    className="jsx-3182364006 message"
+    className="jsx-1867168289 message"
   >
     Join a game or create a new one
   </div>
@@ -1842,13 +1842,13 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):game-added 1`] = `
 
 exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-added 1`] = `
 <div
-  className="jsx-3182364006 root"
+  className="jsx-1867168289 root"
 >
   <div
-    className="jsx-3182364006 header"
+    className="jsx-1867168289 header"
   >
     <div
-      className="jsx-3182364006 left new-game-button"
+      className="jsx-1867168289 left new-game-button"
     >
       <button
         className="jsx-2576755423 button hover-button"
@@ -1859,13 +1859,13 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-added 1`] = `
       </button>
     </div>
     <div
-      className="jsx-3182364006 right"
+      className="jsx-1867168289 right"
     >
       <div
-        className="jsx-3182364006 view-source left"
+        className="jsx-1867168289 view-source left"
       >
         <a
-          className="jsx-3182364006"
+          className="jsx-1867168289"
           href="https://github.com/skidding/flatris"
           target="_blank"
         >
@@ -1878,7 +1878,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-added 1`] = `
         </a>
       </div>
       <div
-        className="jsx-3182364006 logo left"
+        className="jsx-1867168289 logo left"
       >
         <div
           className="jsx-1917779880 logo"
@@ -1964,7 +1964,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-added 1`] = `
     </div>
   </div>
   <div
-    className="jsx-3182364006 message"
+    className="jsx-1867168289 message"
   >
     Join a game or create a new one
   </div>
@@ -3009,13 +3009,13 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-added 1`] = `
 
 exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed 1`] = `
 <div
-  className="jsx-3182364006 root"
+  className="jsx-1867168289 root"
 >
   <div
-    className="jsx-3182364006 header"
+    className="jsx-1867168289 header"
   >
     <div
-      className="jsx-3182364006 left new-game-button"
+      className="jsx-1867168289 left new-game-button"
     >
       <button
         className="jsx-2576755423 button hover-button"
@@ -3026,13 +3026,13 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed 1`] = 
       </button>
     </div>
     <div
-      className="jsx-3182364006 right"
+      className="jsx-1867168289 right"
     >
       <div
-        className="jsx-3182364006 view-source left"
+        className="jsx-1867168289 view-source left"
       >
         <a
-          className="jsx-3182364006"
+          className="jsx-1867168289"
           href="https://github.com/skidding/flatris"
           target="_blank"
         >
@@ -3045,7 +3045,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed 1`] = 
         </a>
       </div>
       <div
-        className="jsx-3182364006 logo left"
+        className="jsx-1867168289 logo left"
       >
         <div
           className="jsx-1917779880 logo"
@@ -3131,305 +3131,13 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed 1`] = 
     </div>
   </div>
   <div
-    className="jsx-3182364006 message"
+    className="jsx-1867168289 message"
   >
     Join a game or create a new one
   </div>
   <div
     className="jsx-1821874668 game-grid"
   >
-    <div
-      className="jsx-1821874668 game-preview game-removed"
-      onClick={[Function]}
-    >
-      <div
-        className="jsx-2611135330 quake"
-      >
-        <div
-          className="jsx-2611135330 quake"
-        >
-          <div
-            className="jsx-608550019 well-container"
-          >
-            <div
-              className="jsx-124931555 flash"
-            >
-              <div
-                className="jsx-124931555 flash"
-              >
-                <div
-                  className="jsx-2914085764 well"
-                >
-                  <div
-                    className="jsx-2914085764 active-tetromino"
-                    style={
-                      Object {
-                        "left": "30%",
-                        "top": "-10%",
-                      }
-                    }
-                  >
-                    <div
-                      className="jsx-2115617632 tetromino"
-                    >
-                      <div
-                        className="jsx-4287887962 grid-square-block"
-                        style={
-                          Object {
-                            "left": "0%",
-                            "top": "0%",
-                          }
-                        }
-                      >
-                        <div
-                          className="jsx-86954139 square-block"
-                          style={
-                            Object {
-                              "backgroundColor": "#e84138",
-                            }
-                          }
-                        />
-                      </div>
-                      <div
-                        className="jsx-4287887962 grid-square-block"
-                        style={
-                          Object {
-                            "left": "25%",
-                            "top": "0%",
-                          }
-                        }
-                      >
-                        <div
-                          className="jsx-86954139 square-block"
-                          style={
-                            Object {
-                              "backgroundColor": "#e84138",
-                            }
-                          }
-                        />
-                      </div>
-                      <div
-                        className="jsx-4287887962 grid-square-block"
-                        style={
-                          Object {
-                            "left": "25%",
-                            "top": "25%",
-                          }
-                        }
-                      >
-                        <div
-                          className="jsx-86954139 square-block"
-                          style={
-                            Object {
-                              "backgroundColor": "#e84138",
-                            }
-                          }
-                        />
-                      </div>
-                      <div
-                        className="jsx-4287887962 grid-square-block"
-                        style={
-                          Object {
-                            "left": "50%",
-                            "top": "25%",
-                          }
-                        }
-                      >
-                        <div
-                          className="jsx-86954139 square-block"
-                          style={
-                            Object {
-                              "backgroundColor": "#e84138",
-                            }
-                          }
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    className="jsx-1915500079 well-grid"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            className="jsx-608550019 side-container"
-          >
-            <div
-              className="jsx-2764329408 game-panel"
-            >
-              <div
-                className="jsx-2764329408 title"
-              >
-                <h1
-                  className="jsx-2764329408"
-                >
-                  Flatris
-                </h1>
-              </div>
-              <div
-                className="jsx-2764329408 next-label"
-              >
-                Next
-              </div>
-              <div
-                className="jsx-2764329408 next-tetromino next-tetromino-L"
-              >
-                <div
-                  className="jsx-2115617632 tetromino"
-                >
-                  <div
-                    className="jsx-4287887962 grid-square-block"
-                    style={
-                      Object {
-                        "left": "50%",
-                        "top": "0%",
-                      }
-                    }
-                  >
-                    <div
-                      className="jsx-86954139 square-block"
-                      style={
-                        Object {
-                          "backgroundColor": "#ed652f",
-                        }
-                      }
-                    />
-                  </div>
-                  <div
-                    className="jsx-4287887962 grid-square-block"
-                    style={
-                      Object {
-                        "left": "0%",
-                        "top": "25%",
-                      }
-                    }
-                  >
-                    <div
-                      className="jsx-86954139 square-block"
-                      style={
-                        Object {
-                          "backgroundColor": "#ed652f",
-                        }
-                      }
-                    />
-                  </div>
-                  <div
-                    className="jsx-4287887962 grid-square-block"
-                    style={
-                      Object {
-                        "left": "25%",
-                        "top": "25%",
-                      }
-                    }
-                  >
-                    <div
-                      className="jsx-86954139 square-block"
-                      style={
-                        Object {
-                          "backgroundColor": "#ed652f",
-                        }
-                      }
-                    />
-                  </div>
-                  <div
-                    className="jsx-4287887962 grid-square-block"
-                    style={
-                      Object {
-                        "left": "50%",
-                        "top": "25%",
-                      }
-                    }
-                  >
-                    <div
-                      className="jsx-86954139 square-block"
-                      style={
-                        Object {
-                          "backgroundColor": "#ed652f",
-                        }
-                      }
-                    />
-                  </div>
-                </div>
-              </div>
-              <div
-                className="jsx-2764329408 player1"
-              >
-                <div
-                  className="jsx-4076982114 player-info"
-                >
-                  <div
-                    className="jsx-4076982114 name"
-                  >
-                    <div
-                      className="jsx-4076982114 vcentered"
-                    >
-                      Tig
-                    </div>
-                  </div>
-                  <div
-                    className="jsx-4076982114 score"
-                  >
-                    <div
-                      className="jsx-4076982114 score-row"
-                    >
-                      <div
-                        className="jsx-4076982114 label vcentered"
-                      >
-                        Score
-                      </div>
-                      <div
-                        className="jsx-4076982114 value vcentered"
-                      >
-                        0
-                      </div>
-                    </div>
-                    <div
-                      className="jsx-4076982114 score-row"
-                    >
-                      <div
-                        className="jsx-4076982114 label vcentered"
-                      >
-                        Lines
-                      </div>
-                      <div
-                        className="jsx-4076982114 value vcentered"
-                      >
-                        0
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                className="jsx-2764329408 player2"
-              >
-                <div
-                  className="jsx-1285042675 player-info"
-                  onClick={undefined}
-                >
-                  <div
-                    className="jsx-1285042675 centered"
-                  >
-                    <div
-                      className="jsx-1285042675 player"
-                    >
-                      2p
-                    </div>
-                    <div
-                      className="jsx-1285042675 insert-coin"
-                    >
-                      insert coin
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
     <div
       className="jsx-1821874668 game-preview game-removed"
       onClick={[Function]}
@@ -4176,13 +3884,13 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed 1`] = 
 
 exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed-and-added 1`] = `
 <div
-  className="jsx-3182364006 root"
+  className="jsx-1867168289 root"
 >
   <div
-    className="jsx-3182364006 header"
+    className="jsx-1867168289 header"
   >
     <div
-      className="jsx-3182364006 left new-game-button"
+      className="jsx-1867168289 left new-game-button"
     >
       <button
         className="jsx-2576755423 button hover-button"
@@ -4193,13 +3901,13 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed-and-ad
       </button>
     </div>
     <div
-      className="jsx-3182364006 right"
+      className="jsx-1867168289 right"
     >
       <div
-        className="jsx-3182364006 view-source left"
+        className="jsx-1867168289 view-source left"
       >
         <a
-          className="jsx-3182364006"
+          className="jsx-1867168289"
           href="https://github.com/skidding/flatris"
           target="_blank"
         >
@@ -4212,7 +3920,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed-and-ad
         </a>
       </div>
       <div
-        className="jsx-3182364006 logo left"
+        className="jsx-1867168289 logo left"
       >
         <div
           className="jsx-1917779880 logo"
@@ -4298,7 +4006,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed-and-ad
     </div>
   </div>
   <div
-    className="jsx-3182364006 message"
+    className="jsx-1867168289 message"
   >
     Join a game or create a new one
   </div>
@@ -5343,13 +5051,13 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed-and-ad
 
 exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):mixed-games 1`] = `
 <div
-  className="jsx-3182364006 root"
+  className="jsx-1867168289 root"
 >
   <div
-    className="jsx-3182364006 header"
+    className="jsx-1867168289 header"
   >
     <div
-      className="jsx-3182364006 left new-game-button"
+      className="jsx-1867168289 left new-game-button"
     >
       <button
         className="jsx-2576755423 button hover-button"
@@ -5360,13 +5068,13 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):mixed-games 1`] = `
       </button>
     </div>
     <div
-      className="jsx-3182364006 right"
+      className="jsx-1867168289 right"
     >
       <div
-        className="jsx-3182364006 view-source left"
+        className="jsx-1867168289 view-source left"
       >
         <a
-          className="jsx-3182364006"
+          className="jsx-1867168289"
           href="https://github.com/skidding/flatris"
           target="_blank"
         >
@@ -5379,7 +5087,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):mixed-games 1`] = `
         </a>
       </div>
       <div
-        className="jsx-3182364006 logo left"
+        className="jsx-1867168289 logo left"
       >
         <div
           className="jsx-1917779880 logo"
@@ -5465,7 +5173,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):mixed-games 1`] = `
     </div>
   </div>
   <div
-    className="jsx-3182364006 message"
+    className="jsx-1867168289 message"
   >
     Your games
   </div>
@@ -5766,7 +5474,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):mixed-games 1`] = `
     </div>
   </div>
   <div
-    className="jsx-3182364006 message"
+    className="jsx-1867168289 message"
   >
     Other games
   </div>
@@ -6227,13 +5935,13 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):mixed-games 1`] = `
 
 exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):mixed-games-removed 1`] = `
 <div
-  className="jsx-3182364006 root"
+  className="jsx-1867168289 root"
 >
   <div
-    className="jsx-3182364006 header"
+    className="jsx-1867168289 header"
   >
     <div
-      className="jsx-3182364006 left new-game-button"
+      className="jsx-1867168289 left new-game-button"
     >
       <button
         className="jsx-2576755423 button hover-button"
@@ -6244,13 +5952,13 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):mixed-games-removed 
       </button>
     </div>
     <div
-      className="jsx-3182364006 right"
+      className="jsx-1867168289 right"
     >
       <div
-        className="jsx-3182364006 view-source left"
+        className="jsx-1867168289 view-source left"
       >
         <a
-          className="jsx-3182364006"
+          className="jsx-1867168289"
           href="https://github.com/skidding/flatris"
           target="_blank"
         >
@@ -6263,7 +5971,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):mixed-games-removed 
         </a>
       </div>
       <div
-        className="jsx-3182364006 logo left"
+        className="jsx-1867168289 logo left"
       >
         <div
           className="jsx-1917779880 logo"
@@ -6349,7 +6057,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):mixed-games-removed 
     </div>
   </div>
   <div
-    className="jsx-3182364006 message"
+    className="jsx-1867168289 message"
   >
     Your games
   </div>
@@ -6810,13 +6518,13 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):mixed-games-removed 
 
 exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):no-games 1`] = `
 <div
-  className="jsx-3182364006 root"
+  className="jsx-1867168289 root"
 >
   <div
-    className="jsx-3182364006 header"
+    className="jsx-1867168289 header"
   >
     <div
-      className="jsx-3182364006 left new-game-button"
+      className="jsx-1867168289 left new-game-button"
     >
       <button
         className="jsx-2576755423 button hover-button"
@@ -6827,13 +6535,13 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):no-games 1`] = `
       </button>
     </div>
     <div
-      className="jsx-3182364006 right"
+      className="jsx-1867168289 right"
     >
       <div
-        className="jsx-3182364006 view-source left"
+        className="jsx-1867168289 view-source left"
       >
         <a
-          className="jsx-3182364006"
+          className="jsx-1867168289"
           href="https://github.com/skidding/flatris"
           target="_blank"
         >
@@ -6846,7 +6554,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):no-games 1`] = `
         </a>
       </div>
       <div
-        className="jsx-3182364006 logo left"
+        className="jsx-1867168289 logo left"
       >
         <div
           className="jsx-1917779880 logo"
@@ -6932,7 +6640,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):no-games 1`] = `
     </div>
   </div>
   <div
-    className="jsx-3182364006 message"
+    className="jsx-1867168289 message"
   >
     Create a game and break the silence!
   </div>
@@ -7101,13 +6809,13 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):no-games 1`] = `
 
 exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):own-game 1`] = `
 <div
-  className="jsx-3182364006 root"
+  className="jsx-1867168289 root"
 >
   <div
-    className="jsx-3182364006 header"
+    className="jsx-1867168289 header"
   >
     <div
-      className="jsx-3182364006 left new-game-button"
+      className="jsx-1867168289 left new-game-button"
     >
       <button
         className="jsx-2576755423 button hover-button"
@@ -7118,13 +6826,13 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):own-game 1`] = `
       </button>
     </div>
     <div
-      className="jsx-3182364006 right"
+      className="jsx-1867168289 right"
     >
       <div
-        className="jsx-3182364006 view-source left"
+        className="jsx-1867168289 view-source left"
       >
         <a
-          className="jsx-3182364006"
+          className="jsx-1867168289"
           href="https://github.com/skidding/flatris"
           target="_blank"
         >
@@ -7137,7 +6845,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):own-game 1`] = `
         </a>
       </div>
       <div
-        className="jsx-3182364006 logo left"
+        className="jsx-1867168289 logo left"
       >
         <div
           className="jsx-1917779880 logo"
@@ -7223,7 +6931,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):own-game 1`] = `
     </div>
   </div>
   <div
-    className="jsx-3182364006 message"
+    className="jsx-1867168289 message"
   >
     Your games
   </div>
@@ -7684,13 +7392,13 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):own-game 1`] = `
 
 exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):own-game-removed 1`] = `
 <div
-  className="jsx-3182364006 root"
+  className="jsx-1867168289 root"
 >
   <div
-    className="jsx-3182364006 header"
+    className="jsx-1867168289 header"
   >
     <div
-      className="jsx-3182364006 left new-game-button"
+      className="jsx-1867168289 left new-game-button"
     >
       <button
         className="jsx-2576755423 button hover-button"
@@ -7701,13 +7409,13 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):own-game-removed 1`]
       </button>
     </div>
     <div
-      className="jsx-3182364006 right"
+      className="jsx-1867168289 right"
     >
       <div
-        className="jsx-3182364006 view-source left"
+        className="jsx-1867168289 view-source left"
       >
         <a
-          className="jsx-3182364006"
+          className="jsx-1867168289"
           href="https://github.com/skidding/flatris"
           target="_blank"
         >
@@ -7720,7 +7428,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):own-game-removed 1`]
         </a>
       </div>
       <div
-        className="jsx-3182364006 logo left"
+        className="jsx-1867168289 logo left"
       >
         <div
           className="jsx-1917779880 logo"
@@ -7806,7 +7514,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):own-game-removed 1`]
     </div>
   </div>
   <div
-    className="jsx-3182364006 message"
+    className="jsx-1867168289 message"
   >
     Your games
   </div>

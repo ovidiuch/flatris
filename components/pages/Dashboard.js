@@ -1,6 +1,6 @@
 // @flow
 
-import { difference } from 'lodash';
+import { without, omit, difference } from 'lodash';
 import classNames from 'classnames';
 import React, { Fragment, Component } from 'react';
 import Link from 'next/link';
@@ -17,6 +17,8 @@ import Logo from '../Logo';
 
 import type { User, GameId, Game, Games, State } from '../../types/state';
 import type { RoomId } from '../../types/api';
+
+const TRANSITION_TIMEOUT = 550; // CSS transition takes 500ms (added 50ms buffer)
 
 type Props = {
   curUser: ?User,
@@ -35,7 +37,7 @@ type LocalState = {
 };
 
 class Dashboard extends Component<Props, LocalState> {
-  transitionTimeout: ?TimeoutID;
+  transitionTimeouts: Array<TimeoutID> = [];
 
   bumpInactiveTimeout: (id: string) => void;
   cancelInactiveTimeouts: () => void;
@@ -84,15 +86,23 @@ class Dashboard extends Component<Props, LocalState> {
   componentDidUpdate({ games: prevGames }) {
     const { games } = this.props;
     const ids = Object.keys(games);
+    const prevIds = Object.keys(prevGames);
 
     if (games !== prevGames) {
-      const added = difference(ids, Object.keys(prevGames));
+      const justAdded = difference(ids, prevIds);
+      const justRemoved = difference(prevIds, ids);
+
+      const { gamesCopy, added } = this.state;
       const newState = {
         // Keep current games as well as just-removed games in state
-        gamesCopy: { ...this.state.gamesCopy, ...games },
-        added: [...this.state.added, ...added]
+        gamesCopy: { ...gamesCopy, ...games },
+        added: [...added, ...justAdded]
       };
-      this.setState(newState, this.scheduleTransitionTimeout);
+
+      this.setState(newState, () => {
+        justAdded.forEach(this.scheduleClearAdded);
+        justRemoved.forEach(this.scheduleClearRemoved);
+      });
     }
 
     ids
@@ -102,29 +112,31 @@ class Dashboard extends Component<Props, LocalState> {
 
   componentWillUnmount() {
     this.props.offGameKeepAlive(this.bumpInactiveTimeout);
-    this.cancelTransitionTimeout();
+    this.transitionTimeouts.forEach(clearTimeout);
     this.cancelInactiveTimeouts();
   }
 
-  scheduleTransitionTimeout = () => {
-    this.cancelTransitionTimeout();
-    this.transitionTimeout = setTimeout(this.handleClearTransitions, 550);
+  createTransClearScheduler = (clearHandler: (gameId: GameId) => void) => (
+    gameId: GameId
+  ) => {
+    const timeoutId = setTimeout(() => {
+      clearHandler(gameId);
+      this.transitionTimeouts = without(this.transitionTimeouts, timeoutId);
+    }, TRANSITION_TIMEOUT);
+    this.transitionTimeouts = [...this.transitionTimeouts, timeoutId];
   };
 
-  cancelTransitionTimeout() {
-    if (this.transitionTimeout) {
-      clearTimeout(this.transitionTimeout);
-    }
-  }
-
-  handleClearTransitions = () => {
-    const { games } = this.props;
-
+  scheduleClearAdded = this.createTransClearScheduler((gameId: GameId) => {
     this.setState({
-      gamesCopy: games,
-      added: []
+      added: without(this.state.added, gameId)
     });
-  };
+  });
+
+  scheduleClearRemoved = this.createTransClearScheduler((gameId: GameId) => {
+    this.setState({
+      gamesCopy: omit(this.state.gamesCopy, gameId)
+    });
+  });
 
   handleInactiveGame = (gameId: GameId) => {
     const { curGame } = this.props;
@@ -224,7 +236,7 @@ class Dashboard extends Component<Props, LocalState> {
 
             .header {
               padding: 20px;
-              min-width: 270px;
+              min-width: 300px;
               height: 60px;
             }
             .new-game-button {
