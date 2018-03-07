@@ -9,6 +9,7 @@ import { GAME_INACTIVE_TIMEOUT } from '../../constants/timeouts';
 import { createTimeoutBumper } from '../../utils/timeout-bumper';
 import { closeGame, removeGame } from '../../actions/global';
 import { withSocket } from '../socket/SocketConnect';
+import Title from '../Title';
 import GamePreview from '../GamePreview';
 import GamePreviewShell from '../GamePreviewShell';
 import Button from '../Button';
@@ -154,105 +155,113 @@ class Dashboard extends Component<Props, LocalState> {
     const hasOwnGames = ownGames.length > 0;
     const hasOtherGames = otherGames.length > 0;
     const hasAnyGames = hasOwnGames || hasOtherGames;
+    const title = hasAnyGames
+      ? `(${ownGames.length + otherGames.length}) Flatris`
+      : 'Flatris';
 
     return (
-      <div className="root">
-        <div className="header">
-          <div className="left new-game-button">
-            <Link href="/new">
-              <Button>New game</Button>
-            </Link>
-          </div>
-          <div className="right">
-            <div className="view-source left">
-              <a href="https://github.com/skidding/flatris" target="_blank">
-                <Button
-                  bgColor="#ecf0f1"
-                  color="#34495f"
-                  colorDisabled="rgba(52, 73, 95, 0.6)"
-                >
-                  Github
-                </Button>
-              </a>
+      <Fragment>
+        <Title>{title}</Title>
+        <div className="root">
+          <div className="header">
+            <div className="left new-game-button">
+              <Link href="/new">
+                <Button>New game</Button>
+              </Link>
             </div>
-            <div className="logo left">
-              <Logo color="#ecf0f1" />
+            <div className="right">
+              <div className="view-source left">
+                <a href="https://github.com/skidding/flatris" target="_blank">
+                  <Button
+                    bgColor="#ecf0f1"
+                    color="#34495f"
+                    colorDisabled="rgba(52, 73, 95, 0.6)"
+                  >
+                    Github
+                  </Button>
+                </a>
+              </div>
+              <div className="logo left">
+                <Logo color="#ecf0f1" />
+              </div>
             </div>
           </div>
-        </div>
-        {!hasAnyGames && (
-          <Fragment>
-            <div className="message">Create a game and break the silence!</div>
-            {this.renderGameGrid([], true)}
-          </Fragment>
-        )}
-        {hasOwnGames && (
-          <Fragment>
-            <div className="message">Your games</div>
-            {this.renderGameGrid(ownGames, !hasOtherGames)}
-          </Fragment>
-        )}
-        {hasOtherGames && (
-          <Fragment>
-            {!hasOwnGames ? (
-              <div className="message">Join a game or create a new one</div>
-            ) : (
-              <div className="message">Other games</div>
-            )}
-            {this.renderGameGrid(otherGames, true)}
-          </Fragment>
-        )}
-        <style jsx>{`
-          .root {
-            font-size: 18px;
-          }
-
-          .left {
-            float: left;
-          }
-          .right {
-            float: right;
-          }
-
-          .header {
-            padding: 20px;
-            min-width: 270px;
-            height: 60px;
-          }
-          .new-game-button {
-            position: relative;
-            width: 160px;
-            height: 60px;
-          }
-          .view-source {
-            position: relative;
-            width: 120px;
-            height: 60px;
-            line-height: 60px;
-            text-align: center;
-          }
-
-          .logo {
-            float: right;
-            position: relative;
-            width: 90px;
-            height: 60px;
-            margin-left: 20px;
-          }
-          @media (max-width: 449px) {
-            .logo {
-              display: none;
+          {!hasAnyGames && (
+            <Fragment>
+              <div className="message">
+                Create a game and break the silence!
+              </div>
+              {this.renderGameGrid([], true)}
+            </Fragment>
+          )}
+          {hasOwnGames && (
+            <Fragment>
+              <div className="message">Your games</div>
+              {this.renderGameGrid(ownGames, !hasOtherGames)}
+            </Fragment>
+          )}
+          {hasOtherGames && (
+            <Fragment>
+              {!hasOwnGames ? (
+                <div className="message">Join a game or create a new one</div>
+              ) : (
+                <div className="message">Other games</div>
+              )}
+              {this.renderGameGrid(otherGames, true)}
+            </Fragment>
+          )}
+          <style jsx>{`
+            .root {
+              font-size: 18px;
             }
-          }
 
-          .message {
-            padding: 20px;
-            padding-top: 0;
-            line-height: 1.5em;
-            color: #9ba4ab;
-          }
-        `}</style>
-      </div>
+            .left {
+              float: left;
+            }
+            .right {
+              float: right;
+            }
+
+            .header {
+              padding: 20px;
+              min-width: 270px;
+              height: 60px;
+            }
+            .new-game-button {
+              position: relative;
+              width: 160px;
+              height: 60px;
+            }
+            .view-source {
+              position: relative;
+              width: 120px;
+              height: 60px;
+              line-height: 60px;
+              text-align: center;
+            }
+
+            .logo {
+              float: right;
+              position: relative;
+              width: 90px;
+              height: 60px;
+              margin-left: 20px;
+            }
+            @media (max-width: 449px) {
+              .logo {
+                display: none;
+              }
+            }
+
+            .message {
+              padding: 20px;
+              padding-top: 0;
+              line-height: 1.5em;
+              color: #9ba4ab;
+            }
+          `}</style>
+        </div>
+      </Fragment>
     );
   }
 

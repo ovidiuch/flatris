@@ -7,6 +7,7 @@ import { createStore } from '../store';
 import { addGame, openGame, stripGameEffects } from '../actions/global';
 import { addCurUserToState, getGame } from '../utils/api';
 import { SocketProvider } from '../components/socket/SocketProvider';
+import Title from '../components/Title';
 import Layout from '../components/Layout';
 import CurGameOfElse from '../components/CurGameOfElse';
 import FlatrisGame from '../components/FlatrisGame';
@@ -70,6 +71,7 @@ class JoinPage extends Component<Props> {
 
     return (
       <Layout>
+        <Title>Play Flatris</Title>
         <SocketProvider>
           <CurGameOfElse else={() => Router.replace('/')}>
             <FlatrisGame />

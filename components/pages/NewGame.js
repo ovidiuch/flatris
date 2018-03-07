@@ -1,9 +1,10 @@
 // @flow
 
-import React, { Component } from 'react';
+import React, { Fragment, Component } from 'react';
 import { connect } from 'react-redux';
 import Router from 'next/router';
 import { createGame } from '../../utils/api';
+import Title from '../Title';
 import Auth from '../screens/Auth';
 import GameFrame from './GameFrame';
 
@@ -50,7 +51,12 @@ class NewGame extends Component<Props, LocalState> {
   render() {
     const { requireAuth } = this.state;
 
-    return <GameFrame>{requireAuth && <Auth />}</GameFrame>;
+    return (
+      <Fragment>
+        <Title>New game | Flatris</Title>
+        <GameFrame>{requireAuth && <Auth />}</GameFrame>
+      </Fragment>
+    );
   }
 }
 

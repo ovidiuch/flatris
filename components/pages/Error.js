@@ -2,6 +2,7 @@
 
 import React, { Fragment, Component } from 'react';
 import Link from 'next/link';
+import Title from '../Title';
 import Button from '../Button';
 import CopyButton from '../CopyButton';
 import Screen from '../screens/Screen';
@@ -20,6 +21,7 @@ export default class Error extends Component<Props> {
 
     return (
       <GameFrame>
+        <Title>Error :/</Title>
         {statusCode === 404 ? this.render404() : this.renderMisc()}
       </GameFrame>
     );
