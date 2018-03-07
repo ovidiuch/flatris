@@ -15,7 +15,6 @@ import type { ComponentError } from '../types/error';
 type Props = {
   jsReady: boolean,
   children: Node,
-  title?: string,
   jsLoad: () => Action
 };
 
@@ -24,10 +23,6 @@ type LocalState = {
 };
 
 class Layout extends Component<Props, LocalState> {
-  static defaultProps = {
-    title: 'Flatris'
-  };
-
   state = {
     error: null
   };
@@ -52,19 +47,16 @@ class Layout extends Component<Props, LocalState> {
   }
 
   render() {
-    const { jsReady, title, children } = this.props;
+    const { jsReady, children } = this.props;
     const { error } = this.state;
 
     const layoutClasses = classNames('layout', {
       'layout-static': !jsReady
     });
 
-    // TODO: Embed fonts
-    // http://www.sameratiani.com/2011/10/16/embed-inline-webfonts-in-css.html
     return (
       <div>
         <Head>
-          <title>{title}</title>
           <meta charSet="utf-8" />
           <meta name="description" content="A fast-paced two-player web game" />
           <meta
