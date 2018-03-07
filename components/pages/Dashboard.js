@@ -92,19 +92,17 @@ class Dashboard extends Component<Props, LocalState> {
       const justAdded = difference(ids, prevIds);
       const justRemoved = difference(prevIds, ids);
 
-      if (justAdded.length || justRemoved.length) {
-        const { gamesCopy, added } = this.state;
-        const newState = {
-          // Keep current games as well as just-removed games in state
-          gamesCopy: { ...gamesCopy, ...games },
-          added: [...added, ...justAdded]
-        };
+      const { gamesCopy, added } = this.state;
+      const newState = {
+        // Keep current games as well as just-removed games in state
+        gamesCopy: { ...gamesCopy, ...games },
+        added: [...added, ...justAdded]
+      };
 
-        this.setState(newState, () => {
-          justAdded.forEach(this.scheduleClearAdded);
-          justRemoved.forEach(this.scheduleClearRemoved);
-        });
-      }
+      this.setState(newState, () => {
+        justAdded.forEach(this.scheduleClearAdded);
+        justRemoved.forEach(this.scheduleClearRemoved);
+      });
     }
 
     ids
