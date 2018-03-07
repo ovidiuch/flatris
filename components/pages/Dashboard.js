@@ -236,7 +236,7 @@ class Dashboard extends Component<Props, LocalState> {
 
             .header {
               padding: 20px;
-              min-width: 270px;
+              min-width: 300px;
               height: 60px;
             }
             .new-game-button {
