@@ -33,14 +33,14 @@ export default createFixture({
       payload: { gameId: game1.id }
     });
 
-    await doAfter(100, () => {
+    await doAfter(500, () => {
       dispatch({
         type: 'REMOVE_GAME',
         payload: { gameId: game2.id }
       });
     });
 
-    await doAfter(100, () => {
+    await doAfter(500, () => {
       dispatch({
         type: 'REMOVE_GAME',
         payload: { gameId: game3.id }
