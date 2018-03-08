@@ -18,7 +18,12 @@ import {
 
 import type { Node } from 'react';
 import type { GameId, Game, State } from '../../types/state';
-import type { GameAction, Dispatch } from '../../types/actions';
+import type {
+  JoinGameAction,
+  GameAction,
+  ThunkAction,
+  Dispatch
+} from '../../types/actions';
 import type { RoomId, BackfillResponse } from '../../types/api';
 
 const {
@@ -212,7 +217,7 @@ export class SocketProvider extends Component<Props> {
     dispatch(removeGame(gameId));
   };
 
-  handleBroadcastGameAction = (action: GameAction) => {
+  handleBroadcastGameAction = (action: JoinGameAction | ThunkAction) => {
     const { getState, dispatch } = this.getStore();
     const { backfills, curGame } = getState();
 
@@ -229,10 +234,8 @@ export class SocketProvider extends Component<Props> {
 
     const prevGames = getState().games;
 
-    // The final action is returned from async thunk actions
-    // XXX: Don't know how to tell Flow that dispatching regular actions (non
-    // redux-thunk) returns the same type of action that was passed in
-    // $FlowFixMe
+    // I don't know how to statically determine that the game related thunk
+    // actions will return a GameAction type $FlowFixMe
     const resAction: GameAction = dispatch(action);
     const { payload: { gameId } } = resAction;
 
