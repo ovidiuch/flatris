@@ -1,7 +1,7 @@
 // @flow
 
 import { object, func } from 'prop-types';
-import { uniqWith, sortBy, findLast, omit } from 'lodash';
+import { uniqWith, sortBy, findLast, omit, without } from 'lodash';
 import { Component } from 'react';
 import { getGame } from '../../utils/api';
 import { getSocket } from '../../utils/socket';
@@ -63,6 +63,7 @@ export class SocketProvider extends Component<Props> {
   };
 
   pendingBackfills: { [gameId: GameId]: BackfillId } = {};
+  pendingGames: Array<GameId> = [];
 
   getChildContext() {
     return {
@@ -154,11 +155,21 @@ export class SocketProvider extends Component<Props> {
   };
 
   async loadGame(gameId: GameId) {
+    if (this.pendingGames.indexOf(gameId) !== -1) {
+      // Already fetching game...
+      return;
+    }
+
     console.log(`Detected new game ${gameId}...`);
+
+    // Actions come quick, so make sure to not request the game multiple times
+    this.pendingGames = [...this.pendingGames, gameId];
 
     const { dispatch } = this.getStore();
     const game = await getGame(gameId);
     dispatch(addGame(game));
+
+    this.pendingGames = without(this.pendingGames, gameId);
   }
 
   startBackfill(gameId: GameId) {
