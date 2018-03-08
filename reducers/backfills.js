@@ -13,14 +13,11 @@ export function backfillsReducer(
 ): Backfills {
   switch (action.type) {
     case 'START_BACKFILL': {
-      const { gameId, backfillId } = action.payload;
+      const { gameId } = action.payload;
 
       return {
         ...state,
-        [gameId]: {
-          backfillId,
-          queuedActions: []
-        }
+        [gameId]: []
       };
     }
 
@@ -42,14 +39,9 @@ export function backfillsReducer(
         return state;
       }
 
-      const { backfillId, queuedActions } = backfill;
-
       return {
         ...state,
-        [gameId]: {
-          backfillId,
-          queuedActions: [...queuedActions, queuedAction]
-        }
+        [gameId]: [...backfill, queuedAction]
       };
     }
 

@@ -157,13 +157,13 @@ export class SocketProvider extends Component<Props> {
 
     const { getState, dispatch } = this.getStore();
     const { games } = getState();
-    const backfillId = requestBackfill(
+
+    requestBackfill(
       games[gameId],
       this.handleBackfillComplete,
       this.handleBackfillError
     );
-
-    dispatch(startBackfill(gameId, backfillId));
+    dispatch(startBackfill(gameId));
   }
 
   handleBackfillComplete = ({ gameId, actions }: BackfillResponse) => {
@@ -178,7 +178,7 @@ export class SocketProvider extends Component<Props> {
       throw new Error(`Backfill completed for missing game ${gameId}`);
     }
 
-    const { queuedActions } = backfills[gameId];
+    const queuedActions = backfills[gameId];
     const mergedActions = [...actions, ...queuedActions];
     const uniqActions = uniqWith(mergedActions, compareGameActions);
     const validActions = getValidActionChain(uniqActions, games[gameId]);

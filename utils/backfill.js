@@ -6,36 +6,34 @@ import { backfillGameActions } from '../utils/api';
 import type { GameId, Game } from '../types/state';
 import type { BackfillRequest, BackfillResponse } from '../types/api';
 
-let lastBackfillId = 0;
-let backfills: { [gameId: GameId]: number } = {};
+let backfills: Array<GameId> = [];
 
 export function requestBackfill(
   game: Game,
   onComplete: (result: BackfillResponse) => mixed,
   onError: (gameId: GameId) => mixed
-): number {
-  const { id: gameId } = game;
-  const backfillId = ++lastBackfillId;
-  backfills = {
-    ...backfills,
-    [gameId]: backfillId
-  };
+) {
+  // Disallow more than one backfill for the same game at once
+  if (existsBackfill(game.id)) {
+    console.warn(`Disallowing multiple backfill for ${game.id}`);
+    return;
+  }
 
   const req = getBackfillReq(game);
+
+  backfills = [...backfills, game.id];
+
   backfillGameActions(req).then(
     res => {
-      // Backfill will be cancelled either via cancelBackfill or if a new
-      // backfill is requested (ie. only one backfill can occur at the same time)
-      if (backfills[gameId] === backfillId) {
+      // Only call the complete handler if the backfill wasn't cancelled
+      if (existsBackfill(game.id)) {
         onComplete(res);
       }
     },
     () => {
-      onError(gameId);
+      onError(game.id);
     }
   );
-
-  return backfillId;
 }
 
 export function cancelBackfill(gameId: GameId) {
@@ -50,4 +48,8 @@ function getBackfillReq(game: Game): BackfillRequest {
       from: p.lastActionId
     }))
   };
+}
+
+function existsBackfill(gameId: GameId) {
+  return backfills.indexOf(gameId) !== -1;
 }

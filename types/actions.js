@@ -54,8 +54,7 @@ export type StripGameEffectsAction = {
 export type StartBackfillAction = {
   type: 'START_BACKFILL',
   payload: {
-    gameId: GameId,
-    backfillId: number
+    gameId: GameId
   }
 };
 
