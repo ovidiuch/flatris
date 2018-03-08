@@ -171,6 +171,8 @@ export class SocketProvider extends Component<Props> {
       games[gameId],
       this.handleBackfillComplete
     );
+
+    this.pendingBackfills[gameId] = backfillId;
     dispatch(startBackfill(gameId, backfillId));
   }
 
