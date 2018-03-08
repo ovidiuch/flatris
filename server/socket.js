@@ -32,7 +32,7 @@ export function attachSocket(server: net$Server) {
 
       if (!games[gameId]) {
         // NOTE: This message can flood the logs if client gets stuck
-        rollbar.warning(`Received keep-alive for missing game ${gameId}`);
+        // console.warn(`Received keep-alive for missing game ${gameId}`);
 
         // Notify client to leave expired game page
         socket.emit('game-removed', gameId);
@@ -50,7 +50,7 @@ export function attachSocket(server: net$Server) {
       const { gameId } = action.payload;
       if (!games[gameId]) {
         // NOTE: This message can flood the logs if client gets stuck
-        rollbar.warning(`Received keep-alive for missing game ${gameId}`);
+        // console.warn(`Received keep-alive for missing game ${gameId}`);
 
         // Notify client to leave expired game page
         socket.emit('game-removed', gameId);
