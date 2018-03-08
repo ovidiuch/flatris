@@ -295,7 +295,7 @@ class FlatrisGame extends Component<Props, LocalState> {
     const otherPlayer = getOtherPlayer(game, curPlayer);
 
     if (isWatching) {
-      return this.renderScreen(this.renderMenuBtn());
+      return this.renderScreen(this.renderMenuBtn(), false);
     }
 
     if (!hasJoined && otherPlayer) {
@@ -376,7 +376,7 @@ class FlatrisGame extends Component<Props, LocalState> {
     );
   }
 
-  renderScreen(content: Node) {
+  renderScreen(content: Node, showOverlay: boolean = true) {
     return (
       <div className="screen-container">
         {content}
@@ -387,7 +387,9 @@ class FlatrisGame extends Component<Props, LocalState> {
             bottom: 0;
             left: 0;
             right: calc(100% / 16 * 6);
-            background: rgba(236, 240, 241, 0.85);
+            background: ${showOverlay
+              ? 'rgba(236, 240, 241, 0.85)'
+              : 'transparent'};
           }
         `}</style>
       </div>
