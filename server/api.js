@@ -32,7 +32,6 @@ export function addRoutes(app: express$Application) {
     if (gameId && games[gameId]) {
       res.json(games[gameId]);
     } else {
-      rollbar.warning(`Missing game ${gameId}`);
       res.sendStatus(404);
     }
   });

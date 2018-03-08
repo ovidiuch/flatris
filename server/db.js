@@ -45,8 +45,6 @@ export function insertUser(name: string): User {
   const user = { id: userId, name: name.substring(0, MAX_NAME_LENGTH) };
   users[userId] = user;
 
-  rollbar.info('New user', { user });
-
   return user;
 }
 
