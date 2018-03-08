@@ -2,42 +2,37 @@
 
 import { backfillGameActions } from '../utils/api';
 
-import type { GameId, Game } from '../types/state';
+import type { GameId, Game, BackfillId } from '../types/state';
 import type { BackfillRequest, BackfillResponse } from '../types/api';
 
-let lastBackfillId = 0;
-let backfillCanceled = false;
+let lastBackfillId: BackfillId = 0;
+
+export type OnBackfillCompleteArgs = {
+  gameId: GameId,
+  backfillId: BackfillId,
+  backfillRes: ?BackfillResponse
+};
 
 export function requestBackfill(
   game: Game,
-  onComplete: (result: BackfillResponse) => mixed,
-  onError: (gameId: GameId) => mixed
-): number {
-  const backfillId = ++lastBackfillId;
-  backfillCanceled = false;
+  onComplete: OnBackfillCompleteArgs => void
+): BackfillId {
+  const { id: gameId } = game;
 
-  const req = getBackfillReq(game);
-  const { gameId } = req;
-  backfillGameActions(req).then(
-    res => {
-      // Backfill will be cancelled either via cancelBackfill or if a new
-      // backfill is requested (ie. only one backfill can occur at the same time)
-      if (lastBackfillId === backfillId && !backfillCanceled) {
-        onComplete(res);
-      }
+  const backfillId = ++lastBackfillId;
+  const backfillReq = getBackfillReq(game);
+
+  backfillGameActions(backfillReq).then(
+    backfillRes => {
+      onComplete({ gameId, backfillId, backfillRes });
     },
     () => {
-      onError(gameId);
+      // A null backfillRes will signal an error
+      onComplete({ gameId, backfillId, backfillRes: null });
     }
   );
 
   return backfillId;
-}
-
-export function cancelBackfill(backfillId: number) {
-  if (lastBackfillId === backfillId) {
-    backfillCanceled = true;
-  }
 }
 
 function getBackfillReq(game: Game): BackfillRequest {

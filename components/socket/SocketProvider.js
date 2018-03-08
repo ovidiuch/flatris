@@ -1,12 +1,12 @@
 // @flow
 
 import { object, func } from 'prop-types';
-import { uniqWith, sortBy, findLast } from 'lodash';
+import { uniqWith, sortBy, findLast, omit } from 'lodash';
 import { Component } from 'react';
 import { getGame } from '../../utils/api';
 import { getSocket } from '../../utils/socket';
 import { logError } from '../../utils/rollbar-client';
-import { requestBackfill, cancelBackfill } from '../../utils/backfill';
+import { requestBackfill } from '../../utils/backfill';
 import { getPlayer, getGameActionOffset } from '../../reducers/game';
 import {
   addGame,
@@ -17,9 +17,15 @@ import {
 } from '../../actions/global';
 
 import type { Node } from 'react';
-import type { GameId, Game, State } from '../../types/state';
-import type { GameAction, Dispatch } from '../../types/actions';
-import type { RoomId, BackfillResponse } from '../../types/api';
+import type { GameId, Game, BackfillId, State } from '../../types/state';
+import type {
+  JoinGameAction,
+  GameAction,
+  ThunkAction,
+  Dispatch
+} from '../../types/actions';
+import type { RoomId } from '../../types/api';
+import type { OnBackfillCompleteArgs } from '../../utils/backfill';
 
 const {
   subscribe,
@@ -39,7 +45,7 @@ type Props = {
 
 export class SocketProvider extends Component<Props> {
   static contextTypes = {
-    // XXX: Instead of using connect like suckers, we pretend WE'RE CONNECT
+    // XXX: Instead of using connect like SUCKERS, we pretend we *are* connect
     // and get direct access to the store.
     // Why? Because we need to check if the state changes right after we
     // dispatch an action (without waiting a render loop), thus identifying
@@ -55,6 +61,8 @@ export class SocketProvider extends Component<Props> {
     onGameKeepAlive: func.isRequired,
     offGameKeepAlive: func.isRequired
   };
+
+  pendingBackfills: { [gameId: GameId]: BackfillId } = {};
 
   getChildContext() {
     return {
@@ -73,17 +81,18 @@ export class SocketProvider extends Component<Props> {
   }
 
   componentWillUnmount() {
-    const { getState, dispatch } = this.getStore();
-    const { backfill } = getState();
+    const { dispatch } = this.getStore();
 
     offGameAction(this.handleGameAction);
     offGameKeepAlive(this.handleGameKeepAlive);
     offGameRemoved(this.handleGameRemoved);
 
-    if (backfill) {
-      cancelBackfill(backfill.backfillId);
-      dispatch(endBackfill());
-    }
+    Object.keys(this.pendingBackfills).forEach(gameId => {
+      dispatch(endBackfill(this.pendingBackfills[gameId]));
+    });
+
+    // All future backfill callbacks will be ignored
+    this.pendingBackfills = {};
   }
 
   handleGameAction = (action: GameAction) => {
@@ -91,12 +100,12 @@ export class SocketProvider extends Component<Props> {
 
     const { getState, dispatch } = this.getStore();
     const state = getState();
-    const { backfill } = state;
+    const { backfills } = state;
+    const { actionId, gameId } = action.payload;
 
-    if (backfill) {
+    if (backfills[gameId]) {
       dispatch(queueGameAction(action));
     } else {
-      const { actionId, gameId } = action.payload;
       const game = state.games[gameId];
 
       if (!game) {
@@ -157,28 +166,53 @@ export class SocketProvider extends Component<Props> {
 
     const { getState, dispatch } = this.getStore();
     const { games } = getState();
+
     const backfillId = requestBackfill(
       games[gameId],
-      this.handleBackfillComplete,
-      this.handleBackfillError
+      this.handleBackfillComplete
     );
 
-    dispatch(startBackfill(backfillId));
+    this.pendingBackfills[gameId] = backfillId;
+    dispatch(startBackfill(gameId, backfillId));
   }
 
-  handleBackfillComplete = ({ gameId, actions }: BackfillResponse) => {
-    const { getState, dispatch } = this.getStore();
-    const { backfill, games } = getState();
+  handleBackfillComplete = ({
+    gameId,
+    backfillId,
+    backfillRes
+  }: OnBackfillCompleteArgs) => {
+    if (!this.pendingBackfills[gameId]) {
+      console.warn(`Game id for completed backfill missing`);
+      return;
+    }
 
-    if (!backfill) {
-      throw new Error(`Backfill is missing in state upon completion`);
+    if (backfillId !== this.pendingBackfills[gameId]) {
+      console.warn(`Completed backfill doesn't match pending backfill id`);
+      return;
+    }
+
+    // Up to this point we can consider the backfill to have been canceled (via
+    // unmount) or invalidated (via newer backfill for same gamed id). From here
+    // on the backfill either succeded or failed, but the response is expected.
+    const { getState, dispatch } = this.getStore();
+    const { backfills, games } = getState();
+
+    this.pendingBackfills = omit(this.pendingBackfills, gameId);
+    dispatch(endBackfill(backfillId));
+
+    if (!backfillRes) {
+      console.warn(`Backfill failed, removing game ${gameId} from state`);
+      dispatch(removeGame(gameId));
+      return;
     }
 
     if (!games[gameId]) {
-      throw new Error(`Backfill completed for missing game ${gameId}`);
+      console.warn(`Backfill completed for missing game ${gameId}`);
+      return;
     }
 
-    const { queuedActions } = backfill;
+    const { actions } = backfillRes;
+    const { queuedActions } = backfills[gameId];
     const mergedActions = [...actions, ...queuedActions];
     const uniqActions = uniqWith(mergedActions, compareGameActions);
     const validActions = getValidActionChain(uniqActions, games[gameId]);
@@ -201,33 +235,27 @@ export class SocketProvider extends Component<Props> {
         queuedActions
       });
     }
-
-    dispatch(endBackfill());
   };
 
-  handleBackfillError = (gameId: GameId) => {
-    console.warn(`Backfill failed, removing game ${gameId} from state`);
-
-    const { dispatch } = this.getStore();
-    dispatch(removeGame(gameId));
-  };
-
-  handleBroadcastGameAction = (action: GameAction) => {
+  handleBroadcastGameAction = (action: JoinGameAction | ThunkAction) => {
     const { getState, dispatch } = this.getStore();
-    const { backfill } = getState();
+    const { backfills, curGame } = getState();
+
+    if (!curGame) {
+      console.warn('Action broadcast with no current game denied');
+      return;
+    }
 
     // Disallow user to mutate state until it's up to date with server
-    if (backfill) {
-      console.warn('Action broadcast denied while backfilling.');
+    if (backfills[curGame]) {
+      console.warn('Action broadcast denied while backfilling');
       return;
     }
 
     const prevGames = getState().games;
 
-    // The final action is returned from async thunk actions
-    // XXX: Don't know how to tell Flow that dispatching regular actions (non
-    // redux-thunk) returns the same type of action that was passed in
-    // $FlowFixMe
+    // I don't know how to statically determine that the game related thunk
+    // actions will return a GameAction type $FlowFixMe
     const resAction: GameAction = dispatch(action);
     const { payload: { gameId } } = resAction;
 

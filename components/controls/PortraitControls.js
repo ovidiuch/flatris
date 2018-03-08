@@ -18,12 +18,12 @@ import Right from './Right';
 import Rotate from './Rotate';
 import Drop from './Drop';
 
-import type { User, Game, Backfill, State } from '../../types/state';
+import type { User, Game, Backfills, State } from '../../types/state';
 
 type Props = {
   curUser: ?User,
   game: Game,
-  backfill: ?Backfill,
+  backfills: Backfills,
   moveLeft: typeof moveLeft,
   moveRight: typeof moveRight,
   rotate: typeof rotate,
@@ -68,9 +68,9 @@ class PortraitControls extends Component<Props> {
   };
 
   render() {
-    const { curUser, game, backfill } = this.props;
+    const { curUser, game, backfills } = this.props;
     const isGameRunning = isPlayer(game, curUser) && allPlayersReady(game);
-    const disabled = Boolean(!isGameRunning || backfill);
+    const disabled = Boolean(!isGameRunning || backfills[game.id]);
 
     return (
       <div className="controls">
@@ -113,12 +113,12 @@ class PortraitControls extends Component<Props> {
 }
 
 const mapStateToProps = (state: State): $Shape<Props> => {
-  const { curUser, backfill } = state;
+  const { curUser, backfills } = state;
 
   return {
     curUser,
     game: getCurGame(state),
-    backfill
+    backfills
   };
 };
 

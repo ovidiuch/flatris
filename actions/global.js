@@ -1,6 +1,6 @@
 // @flow
 
-import type { User, GameId, Game } from '../types/state';
+import type { User, GameId, Game, BackfillId } from '../types/state';
 import type {
   AuthAction,
   DashboardLoadAction,
@@ -74,16 +74,25 @@ export function stripGameEffects(): StripGameEffectsAction {
   };
 }
 
-export function startBackfill(backfillId: number): StartBackfillAction {
+export function startBackfill(
+  gameId: GameId,
+  backfillId: BackfillId
+): StartBackfillAction {
   return {
     type: 'START_BACKFILL',
-    payload: { backfillId }
+    payload: {
+      gameId,
+      backfillId
+    }
   };
 }
 
-export function endBackfill(): EndBackfillAction {
+export function endBackfill(backfillId: BackfillId): EndBackfillAction {
   return {
-    type: 'END_BACKFILL'
+    type: 'END_BACKFILL',
+    payload: {
+      backfillId
+    }
   };
 }
 

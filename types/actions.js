@@ -1,6 +1,6 @@
 // @flow
 
-import type { UserId, User, GameId, Game, State } from './state';
+import type { UserId, User, GameId, Game, BackfillId, State } from './state';
 
 export type ActionId = number;
 
@@ -54,12 +54,16 @@ export type StripGameEffectsAction = {
 export type StartBackfillAction = {
   type: 'START_BACKFILL',
   payload: {
-    backfillId: number
+    gameId: GameId,
+    backfillId: BackfillId
   }
 };
 
 export type EndBackfillAction = {
-  type: 'END_BACKFILL'
+  type: 'END_BACKFILL',
+  payload: {
+    backfillId: BackfillId
+  }
 };
 
 export type QueueGameAction = {
@@ -69,115 +73,70 @@ export type QueueGameAction = {
   }
 };
 
+type GameActionPayload = {
+  actionId: ActionId,
+  prevActionId: ActionId,
+  gameId: GameId,
+  userId: UserId
+};
+
 export type JoinGameAction = {
   type: 'JOIN_GAME',
-  payload: {
-    actionId: ActionId,
-    prevActionId: 0,
-    gameId: GameId,
-    userId: UserId,
+  payload: GameActionPayload & {
     user: User
   }
 };
 
 export type PlayerReadyAction = {
   type: 'PLAYER_READY',
-  payload: {
-    actionId: ActionId,
-    prevActionId: ActionId,
-    gameId: GameId,
-    userId: UserId
-  }
+  payload: GameActionPayload
 };
 
 export type PlayerPauseAction = {
   type: 'PLAYER_PAUSE',
-  payload: {
-    actionId: ActionId,
-    prevActionId: ActionId,
-    gameId: GameId,
-    userId: UserId
-  }
+  payload: GameActionPayload
 };
 
 export type MoveLeftAction = {
   type: 'MOVE_LEFT',
-  payload: {
-    actionId: ActionId,
-    prevActionId: ActionId,
-    gameId: GameId,
-    userId: UserId
-  }
+  payload: GameActionPayload
 };
 
 export type MoveRightAction = {
   type: 'MOVE_RIGHT',
-  payload: {
-    actionId: ActionId,
-    prevActionId: ActionId,
-    gameId: GameId,
-    userId: UserId
-  }
+  payload: GameActionPayload
 };
 
 export type RotateAction = {
   type: 'ROTATE',
-  payload: {
-    actionId: ActionId,
-    prevActionId: ActionId,
-    gameId: GameId,
-    userId: UserId
-  }
+  payload: GameActionPayload
 };
 
 export type DropAction = {
   type: 'DROP',
-  payload: {
-    actionId: ActionId,
-    prevActionId: ActionId,
-    gameId: GameId,
-    userId: UserId,
+  payload: GameActionPayload & {
     rows: number
   }
 };
 
 export type EnableAccelerationAction = {
   type: 'ENABLE_ACCELERATION',
-  payload: {
-    actionId: ActionId,
-    prevActionId: ActionId,
-    gameId: GameId,
-    userId: UserId
-  }
+  payload: GameActionPayload
 };
 
 export type DisableAccelerationAction = {
   type: 'DISABLE_ACCELERATION',
-  payload: {
-    actionId: ActionId,
-    prevActionId: ActionId,
-    gameId: GameId,
-    userId: UserId
-  }
+  payload: GameActionPayload
 };
 
 export type AppendPendingBlocksAction = {
   type: 'APPEND_PENDING_BLOCKS',
-  payload: {
-    actionId: ActionId,
-    prevActionId: ActionId,
-    gameId: GameId,
-    userId: UserId
-  }
+  payload: GameActionPayload
 };
 
 export type PingAction = {
   type: 'PING',
-  payload: {
-    actionId: ActionId,
-    prevActionId: ActionId,
-    gameId: GameId,
-    userId: UserId,
+  payload: GameActionPayload & {
     time: number
   }
 };
