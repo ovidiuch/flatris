@@ -1,6 +1,6 @@
 // @flow
 
-import { omit } from 'lodash';
+import { omit, findKey } from 'lodash';
 
 import type { Backfills } from '../types/state';
 import type { Action } from '../types/actions';
@@ -13,35 +13,47 @@ export function backfillsReducer(
 ): Backfills {
   switch (action.type) {
     case 'START_BACKFILL': {
-      const { gameId } = action.payload;
+      const { gameId, backfillId } = action.payload;
 
       return {
         ...state,
-        [gameId]: []
+        [gameId]: {
+          backfillId,
+          queuedActions: []
+        }
       };
     }
 
     case 'END_BACKFILL': {
-      const { gameId } = action.payload;
+      const { backfillId } = action.payload;
+
+      const gameId = findKey(state, b => b.backfillId === backfillId);
+      if (!gameId) {
+        return state;
+      }
 
       return omit(state, gameId);
     }
 
     case 'QUEUE_GAME_ACTION': {
       const { action: queuedAction } = action.payload;
-      const { gameId } = queuedAction.payload;
-      const backfill = state[gameId];
+      const { actionId, gameId } = queuedAction.payload;
 
+      const backfill = state[gameId];
       if (!backfill) {
-        const { actionId } = queuedAction.payload;
         console.warn(`Trying to queue action ${actionId} outside backfill`);
 
         return state;
       }
 
+      const { backfillId, queuedActions } = backfill;
+
       return {
         ...state,
-        [gameId]: [...backfill, queuedAction]
+        [gameId]: {
+          backfillId,
+          queuedActions: [...queuedActions, queuedAction]
+        }
       };
     }
 

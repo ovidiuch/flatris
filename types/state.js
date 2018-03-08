@@ -65,8 +65,15 @@ export type Games = {
   [id: GameId]: Game
 };
 
+export type BackfillId = number;
+
+export type Backfill = {
+  backfillId: BackfillId,
+  queuedActions: Array<GameAction>
+};
+
 export type Backfills = {
-  [gameId: GameId]: Array<GameAction>
+  [gameId: GameId]: Backfill
 };
 
 export type State = {

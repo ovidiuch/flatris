@@ -1,6 +1,6 @@
 // @flow
 
-import type { UserId, User, GameId, Game, State } from './state';
+import type { UserId, User, GameId, Game, BackfillId, State } from './state';
 
 export type ActionId = number;
 
@@ -54,14 +54,15 @@ export type StripGameEffectsAction = {
 export type StartBackfillAction = {
   type: 'START_BACKFILL',
   payload: {
-    gameId: GameId
+    gameId: GameId,
+    backfillId: BackfillId
   }
 };
 
 export type EndBackfillAction = {
   type: 'END_BACKFILL',
   payload: {
-    gameId: GameId
+    backfillId: BackfillId
   }
 };
 

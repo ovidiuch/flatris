@@ -1,43 +1,38 @@
 // @flow
 
-import { omit } from 'lodash';
 import { backfillGameActions } from '../utils/api';
 
-import type { GameId, Game } from '../types/state';
+import type { GameId, Game, BackfillId } from '../types/state';
 import type { BackfillRequest, BackfillResponse } from '../types/api';
 
-let backfills: Array<GameId> = [];
+let lastBackfillId: BackfillId = 0;
+
+export type OnBackfillCompleteArgs = {
+  gameId: GameId,
+  backfillId: BackfillId,
+  backfillRes: ?BackfillResponse
+};
 
 export function requestBackfill(
   game: Game,
-  onComplete: (result: BackfillResponse) => mixed,
-  onError: (gameId: GameId) => mixed
-) {
-  // Disallow more than one backfill for the same game at once
-  if (existsBackfill(game.id)) {
-    console.warn(`Disallowing multiple backfill for ${game.id}`);
-    return;
-  }
+  onComplete: OnBackfillCompleteArgs => void
+): BackfillId {
+  const { id: gameId } = game;
 
-  const req = getBackfillReq(game);
+  const backfillId = ++lastBackfillId;
+  const backfillReq = getBackfillReq(game);
 
-  backfills = [...backfills, game.id];
-
-  backfillGameActions(req).then(
-    res => {
-      // Only call the complete handler if the backfill wasn't cancelled
-      if (existsBackfill(game.id)) {
-        onComplete(res);
-      }
+  backfillGameActions(backfillReq).then(
+    backfillRes => {
+      onComplete({ gameId, backfillId, backfillRes });
     },
     () => {
-      onError(game.id);
+      // A null backfillRes will signal an error
+      onComplete({ gameId, backfillId, backfillRes: null });
     }
   );
-}
 
-export function cancelBackfill(gameId: GameId) {
-  backfills = omit(backfills, gameId);
+  return backfillId;
 }
 
 function getBackfillReq(game: Game): BackfillRequest {
@@ -48,8 +43,4 @@ function getBackfillReq(game: Game): BackfillRequest {
       from: p.lastActionId
     }))
   };
-}
-
-function existsBackfill(gameId: GameId) {
-  return backfills.indexOf(gameId) !== -1;
 }
