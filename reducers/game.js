@@ -47,8 +47,19 @@ export function gameReducer(state: void | Game, action: GameAction): Game {
 
   if (action.type === 'JOIN_GAME') {
     const { user } = action.payload;
-    const { players: [player1] } = state;
+    const { players } = state;
 
+    if (players.length > 1) {
+      if (isPlayer(state, user)) {
+        console.warn(`User ${user.id} tried to join game more than once`);
+      } else {
+        console.warn(`User ${user.id} tried to join already full game`);
+      }
+
+      return state;
+    }
+
+    const [player1] = players;
     const game = updatePlayer(state, player1.user.id, {
       // Stop player1's game when player2 arrives
       status: 'PENDING',
