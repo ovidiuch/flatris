@@ -240,13 +240,13 @@ export class SocketProvider extends Component<Props> {
     const { backfills, curGame } = getState();
 
     if (!curGame) {
-      logError('Action broadcast with no current game denied');
+      console.warn('Action broadcast with no current game denied');
       return;
     }
 
     // Disallow user to mutate state until it's up to date with server
     if (backfills[curGame]) {
-      logError('Action broadcast denied while backfilling');
+      console.warn('Action broadcast denied while backfilling');
       return;
     }
 
