@@ -1,10 +1,25 @@
 module.exports = {
-  webpack(cfg) {
+  webpack(config, { dev, isServer }) {
+    // Enable source maps in production
+    if (!dev) {
+      config.devtool = 'source-map';
+
+      if (!isServer) {
+        config.plugins.map(p => {
+          if (p.constructor.name === 'UglifyJsPlugin') {
+            p.options.sourceMap = true;
+          }
+
+          return p;
+        });
+      }
+    }
+
     // XXX: Uncomment to generate unminified production code
-    // cfg.plugins = cfg.plugins.filter(
+    // config.plugins = config.plugins.filter(
     //   plugin => plugin.constructor.name !== 'UglifyJsPlugin'
     // );
 
-    return cfg;
+    return config;
   }
 };
