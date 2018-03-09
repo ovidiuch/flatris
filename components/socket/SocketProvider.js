@@ -315,29 +315,47 @@ function getValidActionChain(
   // previous action), from earliest to latest. As soon as a link is missing
   // between two actions, the newer actions are discarded.
   sortedActions.forEach(action => {
-    const { userId, gameId, actionId, prevActionId } = action.payload;
+    const { gameId, actionId } = action.payload;
 
     if (gameId !== game.id) {
       console.warn(
         `Action ${actionId} from chain doesn't belong to game ${gameId}`
       );
-    } else {
-      // The action must point to the previous action OF THE SAME USER
-      const prevAction = findLast(
-        validActions,
-        a => a.payload.userId === userId
-      );
-
-      if (!prevAction) {
-        const player = getPlayer(game, userId);
-        if (prevActionId === player.lastActionId) {
-          validActions.push(action);
-        }
-      } else if (prevActionId === prevAction.payload.actionId) {
-        validActions.push(action);
-      }
+    } else if (isActionValid(action, validActions, game)) {
+      validActions.push(action);
     }
   });
 
   return validActions;
+}
+
+function isActionValid(
+  action: GameAction,
+  prevSortedActions: Array<GameAction>,
+  game: Game
+) {
+  const { type, payload } = action;
+  const { userId, prevActionId } = payload;
+
+  // JOIN_GAME actions don't point to any previous action (they have
+  // prevActionId = 0)
+  if (type === 'JOIN_GAME') {
+    return true;
+  }
+
+  // The action must point to the previous action OF THE SAME USER
+  const prevAction = findLast(
+    prevSortedActions,
+    a => a.payload.userId === userId
+  );
+
+  if (!prevAction) {
+    const player = getPlayer(game, userId);
+
+    // Does this action link to the last seen action of player?
+    return prevActionId === player.lastActionId;
+  }
+
+  // Does this action link to the most recent prev action?
+  return prevActionId === prevAction.payload.actionId;
 }
