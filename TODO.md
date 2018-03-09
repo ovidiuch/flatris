@@ -150,6 +150,10 @@
   * [x] Rollbar client
   * [x] https://flatris.space
 * [x] Embed Teko font in JS bundle
+* [ ] BUG: Move game.dropFrames to player.dropFrames to prevent out of sync states
+* [ ] Show current player visually
+* [ ] Allow watcher to select current player
+* [ ] Store stats permanently (Firebase?)
 
 BACKLOG
 
@@ -162,6 +166,7 @@ BACKLOG
 
 PERF
 
+* [ ] Separate client from server (and run multiple instances of client)
 * [ ] Minimize state footprint
 * [ ] Batch dashboard actions
 
