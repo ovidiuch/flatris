@@ -150,10 +150,10 @@
   * [x] Rollbar client
   * [x] https://flatris.space
 * [x] Embed Teko font in JS bundle
-* [ ] BUG: Move game.dropFrames to player.dropFrames to prevent out of sync states
+* [ ] Store stats permanently (Firebase?)
+* [ ] Only set LOST player status and open up possibility for draw
 * [ ] Show current player visually
 * [ ] Allow watcher to select current player
-* [ ] Store stats permanently (Firebase?)
 
 BACKLOG
 

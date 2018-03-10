@@ -207,6 +207,7 @@ export class SocketProvider extends Component<Props> {
     // on the backfill either succeded or failed, but the response is expected.
     const { getState, dispatch } = this.getStore();
     const { backfills, games } = getState();
+    const game = games[gameId];
 
     this.pendingBackfills = omit(this.pendingBackfills, gameId);
     dispatch(endBackfill(backfillId));
@@ -217,7 +218,7 @@ export class SocketProvider extends Component<Props> {
       return;
     }
 
-    if (!games[gameId]) {
+    if (!game) {
       console.warn(`Backfill completed for missing game ${gameId}`);
       return;
     }
@@ -226,7 +227,7 @@ export class SocketProvider extends Component<Props> {
     const { queuedActions } = backfills[gameId];
     const mergedActions = [...actions, ...queuedActions];
     const uniqActions = uniqWith(mergedActions, compareGameActions);
-    const validActions = getValidActionChain(uniqActions, games[gameId]);
+    const validActions = getValidActionChain(uniqActions, game);
 
     // TODO: Dispatch events at an interval, to convey the rhythm in
     // which the actions were originally performed
@@ -240,10 +241,10 @@ export class SocketProvider extends Component<Props> {
     const numInvalid = uniqActions.length - validActions.length;
     if (numInvalid) {
       logError(`Corrupt backfill: ${numInvalid} actions discarded`, {
-        games,
-        gameId,
+        game,
         actions,
-        queuedActions
+        queuedActions,
+        validActions
       });
     }
   };
