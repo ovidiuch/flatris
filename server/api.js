@@ -40,15 +40,19 @@ export function addRoutes(app: express$Application) {
   app.post('/game', (req: express$Request, res: express$Response) => {
     try {
       const user = getUserFromReqSession(req);
-      const game = insertGame(user);
+      try {
+        const game = insertGame(user);
 
-      console.log('Create game', game.id, user);
-      incrementGameCount();
+        console.log('Create game', game.id, user);
+        incrementGameCount();
 
-      res.json(game);
+        res.json(game);
+      } catch (err) {
+        rollbar.error(err);
+        res.sendStatus(400);
+      }
     } catch (err) {
-      rollbar.error(err);
-      res.sendStatus(400);
+      res.sendStatus(401);
     }
   });
 
@@ -63,10 +67,10 @@ export function addRoutes(app: express$Application) {
       if (!games[gameId]) {
         console.warn(`Can't backfill missing game ${gameId}`);
         res.sendStatus(404);
+      } else {
+        const backfillRes = getBackfillRes(backfillReq);
+        res.json(backfillRes);
       }
-
-      const backfillRes = getBackfillRes(backfillReq);
-      res.json(backfillRes);
     } catch (err) {
       rollbar.error(err);
       res.sendStatus(400);

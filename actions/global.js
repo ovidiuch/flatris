@@ -3,6 +3,7 @@
 import type { User, GameId, Game, BackfillId } from '../types/state';
 import type {
   AuthAction,
+  UnauthAction,
   DashboardLoadAction,
   AddGameAction,
   RemoveGameAction,
@@ -19,6 +20,12 @@ export function auth(user: User): AuthAction {
   return {
     type: 'AUTH',
     payload: { user }
+  };
+}
+
+export function unauth(): UnauthAction {
+  return {
+    type: 'UNAUTH'
   };
 }
 

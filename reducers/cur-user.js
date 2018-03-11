@@ -16,6 +16,10 @@ export function curUserReducer(
       return user;
     }
 
+    case 'UNAUTH': {
+      return null;
+    }
+
     default:
       return state;
   }

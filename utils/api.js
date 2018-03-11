@@ -64,6 +64,11 @@ export function getApiUrl(path?: string) {
   return path ? `${baseUrl}${path}` : `${baseUrl}/`;
 }
 
+export function Unauthorized() {
+  this.name = 'Unauthorized';
+  this.message = 'Invalid user session';
+}
+
 function getProdBaseUrl() {
   // Relative paths allow us to serve the prod app from any proxy address (eg.
   // via ngrok), but server-side requests need to contain the host address
@@ -71,7 +76,7 @@ function getProdBaseUrl() {
 }
 
 function fetchJson(urlPath: string, options?: Object): Promise<any> {
-  return fetch(getApiUrl(urlPath), options).then(res => res.json());
+  return fetch(getApiUrl(urlPath), options).then(parseResponse);
 }
 
 function fetchPost(urlPath: string, body: Object = {}): Promise<any> {
@@ -83,4 +88,26 @@ function fetchPost(urlPath: string, body: Object = {}): Promise<any> {
     },
     body: JSON.stringify(body)
   });
+}
+
+function parseResponse(response) {
+  if (response.status >= 200 && response.status < 300) {
+    return response.json();
+  } else {
+    if (response.status === 401) {
+      throw new Unauthorized();
+    }
+
+    // TODO: Forward server error if response is parsable
+    // return response.json().then(
+    //   response => {
+    //     throw new Error(response.error);
+    //   },
+    //   () => {
+    //     throw new Error('Server error');
+    //   }
+    // );
+
+    throw new Error('Server error');
+  }
 }

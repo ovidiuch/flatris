@@ -15,6 +15,10 @@ export type AuthAction = {
   }
 };
 
+export type UnauthAction = {
+  type: 'UNAUTH'
+};
+
 export type DashboardLoadAction = {
   type: 'LOAD_DASHBOARD',
   payload: {
@@ -157,6 +161,7 @@ export type GameAction =
 export type Action =
   | JsLoadAction
   | AuthAction
+  | UnauthAction
   | DashboardLoadAction
   | AddGameAction
   | RemoveGameAction
