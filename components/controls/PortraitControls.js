@@ -75,13 +75,10 @@ class PortraitControls extends Component<Props> {
     return (
       <div className="controls">
         <div className="button">
-          <Rotate disabled={disabled} onPress={this.handleRotatePress} />
-        </div>
-        <div className="button">
           <Left disabled={disabled} onPress={this.handleLeftPress} />
         </div>
         <div className="button">
-          <Right disabled={disabled} onPress={this.handleRightPress} />
+          <Rotate disabled={disabled} onPress={this.handleRotatePress} />
         </div>
         <div className="button">
           <Drop
@@ -89,6 +86,9 @@ class PortraitControls extends Component<Props> {
             onPress={this.handleDropPress}
             onRelease={this.handleDropRelease}
           />
+        </div>
+        <div className="button">
+          <Right disabled={disabled} onPress={this.handleRightPress} />
         </div>
         <style jsx>{`
           .controls {
