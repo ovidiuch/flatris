@@ -25,6 +25,10 @@ export function incrementTurnCount() {
   incrementCount('turns');
 }
 
+export function incrementLineCount(lines: number) {
+  incrementCount('lines', lines);
+}
+
 const { FIREBASE_SERVICE_ACCOUNT } = process.env;
 const cert = FIREBASE_SERVICE_ACCOUNT
   ? JSON.parse(FIREBASE_SERVICE_ACCOUNT)

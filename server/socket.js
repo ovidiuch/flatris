@@ -2,9 +2,9 @@
 
 import socketIo from 'socket.io';
 import { omit, difference } from 'lodash';
-import { gameReducer, getTurnCount } from '../reducers/game';
+import { gameReducer, getTurnCount, getLineCount } from '../reducers/game';
 import { games, saveGameAction, bumpActiveGame } from './db';
-import { incrementTurnCount } from './firebase';
+import { incrementTurnCount, incrementLineCount } from './firebase';
 import { rollbar } from './rollbar';
 
 import type { GameId } from '../types/state';
@@ -58,7 +58,8 @@ export function attachSocket(server: net$Server) {
         socket.emit('game-removed', gameId);
       } else {
         try {
-          games[gameId] = gameReducer(prevGame, action);
+          const game = gameReducer(prevGame, action);
+          games[gameId] = game;
 
           // Only save game action after game reducer was run successfully
           saveGameAction(action);
@@ -73,8 +74,12 @@ export function attachSocket(server: net$Server) {
             .broadcast.emit('game-action', action);
 
           // Did the player(s) start another turn?
-          if (getTurnCount(games[gameId]) > getTurnCount(prevGame)) {
+          if (getTurnCount(game) > getTurnCount(prevGame)) {
             incrementTurnCount();
+            incrementLineCount(getLineCount(prevGame));
+          } else if (game.players.length !== prevGame.players.length) {
+            // Still count lines when solo game becomes multi
+            incrementLineCount(getLineCount(prevGame));
           }
         } catch (err) {
           rollbar.error(err, { action });
