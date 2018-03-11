@@ -1,7 +1,7 @@
 // @flow
 
 import crypto from 'crypto';
-import { without } from 'lodash';
+import { without, sortBy } from 'lodash';
 import { getBlankGame } from '../reducers/game';
 import { MAX_NAME_LENGTH } from '../constants/user';
 import {
@@ -13,7 +13,8 @@ import {
   incrementActionLeft,
   incrementActionRight,
   incrementActionAcc,
-  incrementActionRotate
+  incrementActionRotate,
+  incrementGameTime
 } from './firebase';
 
 import type { GameId, Game, UserId, User } from '../types/state';
@@ -104,6 +105,7 @@ function removeGame(gameId: GameId) {
   console.log(`Removing game ${gameId}...`);
 
   countGameActions(gameActions[gameId]);
+  countGameTime(games[gameId], gameActions[gameId]);
 
   delete games[gameId];
   delete gameActions[gameId];
@@ -166,6 +168,45 @@ function countGameActions(actions: Array<GameAction>) {
   if (rotate) {
     incrementActionRotate(rotate);
   }
+}
+
+function countGameTime(game: Game, actions: Array<GameAction>) {
+  const times = [];
+
+  game.players.forEach(({ user }) => {
+    const playerActions = actions.filter(a => a.payload.userId === user.id);
+    if (playerActions.length > 1) {
+      times.push(countPlayerSeconds(playerActions));
+    }
+  });
+
+  // Choose the longer timeframe of the players
+  if (times.length > 0) {
+    incrementGameTime(Math.max(...times));
+  }
+}
+
+function countPlayerSeconds(playerActions: Array<GameAction>) {
+  const sortedActions = sortBy(playerActions, a => a.payload.actionId);
+  let prevAction;
+  let ms = 0;
+
+  sortedActions.forEach(action => {
+    if (prevAction) {
+      const timeBetweenActions =
+        action.payload.actionId - prevAction.payload.actionId;
+
+      // Don't count any break bigger than 30s between action as play time.
+      // That would be cheating ;)
+      if (timeBetweenActions < 30000) {
+        ms += timeBetweenActions;
+      }
+    }
+
+    prevAction = action;
+  });
+
+  return Math.round(ms / 1000);
 }
 
 function showGameStats() {

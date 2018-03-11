@@ -150,11 +150,11 @@
   * [x] Rollbar client
   * [x] https://flatris.space
 * [x] Embed Teko font in JS bundle
-* [ ] Record stats
+* [x] Record stats
   * [x] Store in Firebase (users, games)
   * [x] Count Turns and lines
   * [x] Count actions (left, right, accelerate, rotate)
-  * [ ] Count time
+  * [x] Count time
 * [ ] Change controls order (arrows left, rotate/drop right)
 * [ ] Only set LOST player status and open up possibility for draw
 * [ ] Show current player visually

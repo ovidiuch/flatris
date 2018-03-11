@@ -45,6 +45,10 @@ export function incrementActionRotate(times: number) {
   incrementCount('actionRotate', times);
 }
 
+export function incrementGameTime(seconds: number) {
+  incrementCount('seconds', seconds);
+}
+
 const { FIREBASE_SERVICE_ACCOUNT } = process.env;
 const cert = FIREBASE_SERVICE_ACCOUNT
   ? JSON.parse(FIREBASE_SERVICE_ACCOUNT)
