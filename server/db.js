@@ -9,6 +9,12 @@ import {
   GAME_EXPIRE_TIMEOUT
 } from '../constants/timeouts';
 import { createTimeoutBumper } from '../utils/timeout-bumper';
+import {
+  incrementActionLeft,
+  incrementActionRight,
+  incrementActionAcc,
+  incrementActionRotate
+} from './firebase';
 
 import type { GameId, Game, UserId, User } from '../types/state';
 import type { GameAction } from '../types/actions';
@@ -97,19 +103,14 @@ function genRandId(): string {
 function removeGame(gameId: GameId) {
   console.log(`Removing game ${gameId}...`);
 
+  countGameActions(gameActions[gameId]);
+
   delete games[gameId];
   delete gameActions[gameId];
   markGameInactive(gameId);
 
   // Show stats after removing a game from memory
-  const gameIds = Object.keys(games);
-  const actionCount = gameIds.reduce(
-    (acc, gameId) => acc + gameActions[gameId].length,
-    0
-  );
-  console.log(`Total games: ${gameIds.length}`);
-  console.log(`Total game actions: ${actionCount}`);
-  console.log(`Active games: ${activeGames.length}`);
+  showGameStats();
 }
 
 function markGameInactive(gameId: GameId) {
@@ -124,4 +125,56 @@ function handleInactiveGame(gameId: GameId) {
 function handleExpiredGame(gameId: GameId) {
   console.log(`Game expired ${gameId}`);
   removeGame(gameId);
+}
+
+function countGameActions(actions: Array<GameAction>) {
+  let left = 0;
+  let right = 0;
+  let acc = 0;
+  let rotate = 0;
+
+  actions.forEach(action => {
+    switch (action.type) {
+      case 'MOVE_LEFT': {
+        left++;
+        break;
+      }
+      case 'MOVE_RIGHT': {
+        right++;
+        break;
+      }
+      case 'ENABLE_ACCELERATION': {
+        acc++;
+        break;
+      }
+      case 'ROTATE': {
+        rotate++;
+        break;
+      }
+    }
+  });
+
+  if (left) {
+    incrementActionLeft(left);
+  }
+  if (right) {
+    incrementActionRight(right);
+  }
+  if (acc) {
+    incrementActionAcc(acc);
+  }
+  if (rotate) {
+    incrementActionRotate(rotate);
+  }
+}
+
+function showGameStats() {
+  const gameIds = Object.keys(games);
+  const actionCount = gameIds.reduce(
+    (acc, gameId) => acc + gameActions[gameId].length,
+    0
+  );
+  console.log(`Total games: ${gameIds.length}`);
+  console.log(`Total game actions: ${actionCount}`);
+  console.log(`Active games: ${activeGames.length}`);
 }

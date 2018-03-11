@@ -29,6 +29,22 @@ export function incrementLineCount(lines: number) {
   incrementCount('lines', lines);
 }
 
+export function incrementActionLeft(times: number) {
+  incrementCount('actionLeft', times);
+}
+
+export function incrementActionRight(times: number) {
+  incrementCount('actionRight', times);
+}
+
+export function incrementActionAcc(times: number) {
+  incrementCount('actionAcc', times);
+}
+
+export function incrementActionRotate(times: number) {
+  incrementCount('actionRotate', times);
+}
+
 const { FIREBASE_SERVICE_ACCOUNT } = process.env;
 const cert = FIREBASE_SERVICE_ACCOUNT
   ? JSON.parse(FIREBASE_SERVICE_ACCOUNT)
