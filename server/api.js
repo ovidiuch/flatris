@@ -12,6 +12,7 @@ import {
   insertGame
 } from './db';
 import { rollbar } from './rollbar';
+import { getCounts, incrementUserCount, incrementGameCount } from './firebase';
 
 import type { User } from '../types/state';
 import type { BackfillRequest, BackfillResponse } from '../types/api';
@@ -42,6 +43,7 @@ export function addRoutes(app: express$Application) {
       const game = insertGame(user);
 
       console.log('Create game', game.id, user);
+      incrementGameCount();
 
       res.json(game);
     } catch (err) {
@@ -59,7 +61,8 @@ export function addRoutes(app: express$Application) {
       const { gameId } = backfillReq;
 
       if (!games[gameId]) {
-        throw new Error(`Can't backfill missing game ${gameId}`);
+        console.warn(`Can't backfill missing game ${gameId}`);
+        res.sendStatus(404);
       }
 
       const backfillRes = getBackfillRes(backfillReq);
@@ -91,12 +94,21 @@ export function addRoutes(app: express$Application) {
 
       const numSessions = Object.keys(sessions).length;
       console.log(`Create session #${numSessions}`, session.id, user);
+      incrementUserCount();
 
       res.cookie('sessionId', session.id);
       res.json(user);
     } catch (err) {
       rollbar.error(err);
       res.sendStatus(400);
+    }
+  });
+
+  app.get('/stats', async (req: express$Request, res: express$Response) => {
+    try {
+      res.json(await getCounts());
+    } catch (err) {
+      res.sendStatus(500);
     }
   });
 }
