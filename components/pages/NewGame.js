@@ -3,15 +3,18 @@
 import React, { Fragment, Component } from 'react';
 import { connect } from 'react-redux';
 import Router from 'next/router';
-import { createGame } from '../../utils/api';
+import { createGame, Unauthorized } from '../../utils/api';
+import { unauth } from '../../actions/global';
 import Title from '../Title';
 import Auth from '../screens/Auth';
 import GameFrame from './GameFrame';
 
 import type { User, State } from '../../types/state';
+import type { UnauthAction } from '../../types/actions';
 
 type Props = {
-  curUser: ?User
+  curUser: ?User,
+  unauth: () => UnauthAction
 };
 
 type LocalState = {
@@ -38,13 +41,33 @@ class NewGame extends Component<Props, LocalState> {
   componentDidUpdate(prevProps) {
     if (this.props.curUser && !prevProps.curUser) {
       this.createGame();
+    } else if (!this.props.curUser && prevProps.curUser) {
+      // This happens when user session existed but was invalidated to due
+      // server deploy (which flushes all user sessions)
+      this.setState({
+        requireAuth: true,
+        pendingCreate: false
+      });
     }
   }
 
   createGame() {
-    if (!this.state.pendingCreate) {
+    const { unauth } = this.props;
+    const { pendingCreate } = this.state;
+
+    if (!pendingCreate) {
       // The user will be picked up from the session on the server
-      this.setState({ pendingCreate: true }, createAndOpenGame);
+      this.setState({ pendingCreate: true }, async () => {
+        try {
+          await createAndOpenGame();
+        } catch (err) {
+          if (err instanceof Unauthorized) {
+            unauth();
+          } else {
+            throw err;
+          }
+        }
+      });
     }
   }
 
@@ -69,4 +92,8 @@ const mapStateToProps = ({ curUser }: State): $Shape<Props> => ({
   curUser
 });
 
-export default connect(mapStateToProps)(NewGame);
+const mapDispatchToProps = {
+  unauth
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(NewGame);
