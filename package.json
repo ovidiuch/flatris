@@ -28,6 +28,7 @@
     "cookie-parser": "^1.4.3",
     "crc-32": "^1.2.0",
     "express": "^4.16.2",
+    "firebase-admin": "^5.10.0",
     "isomorphic-unfetch": "^2.0.0",
     "lodash": "^4.17.4",
     "next": "^5.0.1-canary.13",

@@ -151,6 +151,7 @@
   * [x] https://flatris.space
 * [x] Embed Teko font in JS bundle
 * [ ] Store stats permanently (Firebase?)
+* [ ] Change controls order (arrows left, rotate/drop right)
 * [ ] Only set LOST player status and open up possibility for draw
 * [ ] Show current player visually
 * [ ] Allow watcher to select current player
