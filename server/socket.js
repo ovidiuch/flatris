@@ -2,8 +2,9 @@
 
 import socketIo from 'socket.io';
 import { omit, difference } from 'lodash';
-import { gameReducer } from '../reducers/game';
+import { gameReducer, getTurnCount } from '../reducers/game';
 import { games, saveGameAction, bumpActiveGame } from './db';
+import { incrementTurnCount } from './firebase';
 import { rollbar } from './rollbar';
 
 import type { GameId } from '../types/state';
@@ -48,7 +49,8 @@ export function attachSocket(server: net$Server) {
       // console.log('[SOCKET] game-action', action);
 
       const { gameId } = action.payload;
-      if (!games[gameId]) {
+      const prevGame = games[gameId];
+      if (!prevGame) {
         // NOTE: This message can flood the logs if client gets stuck
         // console.warn(`Received keep-alive for missing game ${gameId}`);
 
@@ -56,7 +58,7 @@ export function attachSocket(server: net$Server) {
         socket.emit('game-removed', gameId);
       } else {
         try {
-          games[gameId] = gameReducer(games[gameId], action);
+          games[gameId] = gameReducer(prevGame, action);
 
           // Only save game action after game reducer was run successfully
           saveGameAction(action);
@@ -69,6 +71,11 @@ export function attachSocket(server: net$Server) {
             // TODO: Filter which actions get sent to `global` if volume is high
             .to('global')
             .broadcast.emit('game-action', action);
+
+          // Did the player(s) start another turn?
+          if (getTurnCount(games[gameId]) > getTurnCount(prevGame)) {
+            incrementTurnCount();
+          }
         } catch (err) {
           rollbar.error(err, { action });
         }

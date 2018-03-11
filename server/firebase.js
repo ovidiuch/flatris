@@ -21,6 +21,10 @@ export function incrementGameCount() {
   incrementCount('games');
 }
 
+export function incrementTurnCount() {
+  incrementCount('turns');
+}
+
 const { FIREBASE_SERVICE_ACCOUNT } = process.env;
 const cert = FIREBASE_SERVICE_ACCOUNT
   ? JSON.parse(FIREBASE_SERVICE_ACCOUNT)
@@ -51,11 +55,11 @@ function getDb() {
   return db;
 }
 
-function incrementCount(collection: string) {
+function incrementCount(collection: string, by = 1) {
   const db = getDb();
   if (db) {
     const ref = db.ref('counts').child(collection);
     // If it has never been set it returns null
-    ref.transaction(curCount => (curCount === null ? 1 : curCount + 1));
+    ref.transaction(curCount => (curCount === null ? by : curCount + by));
   }
 }
