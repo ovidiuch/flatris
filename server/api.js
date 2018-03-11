@@ -67,10 +67,10 @@ export function addRoutes(app: express$Application) {
       if (!games[gameId]) {
         console.warn(`Can't backfill missing game ${gameId}`);
         res.sendStatus(404);
+      } else {
+        const backfillRes = getBackfillRes(backfillReq);
+        res.json(backfillRes);
       }
-
-      const backfillRes = getBackfillRes(backfillReq);
-      res.json(backfillRes);
     } catch (err) {
       rollbar.error(err);
       res.sendStatus(400);
