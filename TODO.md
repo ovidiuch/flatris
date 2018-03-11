@@ -150,11 +150,15 @@
   * [x] Rollbar client
   * [x] https://flatris.space
 * [x] Embed Teko font in JS bundle
-* [ ] Store stats permanently (Firebase?)
+* [ ] Stats
+  * [x] Store in Firebase (users, games)
+  * [ ] More metrics: Turns, seconds, actions (left, right, rotate, drop), lines
 * [ ] Change controls order (arrows left, rotate/drop right)
 * [ ] Only set LOST player status and open up possibility for draw
 * [ ] Show current player visually
 * [ ] Allow watcher to select current player
+* [ ] [2.0]
+  * [ ] Share on HN, PH, Reddit, etc
 
 BACKLOG
 
