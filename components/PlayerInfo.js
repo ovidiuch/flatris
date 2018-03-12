@@ -102,7 +102,7 @@ export default class PlayerInfo extends Component<Props> {
     return (
       <div className="player-info">
         <div className="name">
-          <div className="vcentered">{user.name}</div>
+          <div className="vcentered ellipsis">{user.name}</div>
         </div>
         <div className="score">
           {showWins && (
@@ -145,9 +145,12 @@ export default class PlayerInfo extends Component<Props> {
             position: relative;
             height: calc(100% / 3);
             white-space: nowrap;
+            font-weight: 400;
+          }
+
+          .ellipsis {
             overflow: hidden;
             text-overflow: ellipsis;
-            font-weight: 400;
           }
 
           .score {
@@ -200,6 +203,7 @@ export default class PlayerInfo extends Component<Props> {
 
           .vcentered {
             position: absolute;
+            max-width: 100%;
             top: 50%;
             transform: translate(0, -40%);
           }

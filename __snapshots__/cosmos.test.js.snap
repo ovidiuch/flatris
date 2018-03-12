@@ -1024,44 +1024,44 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):game 1`] = `
                 className="jsx-2764329408 player1"
               >
                 <div
-                  className="jsx-4076982114 player-info"
+                  className="jsx-2355917317 player-info"
                 >
                   <div
-                    className="jsx-4076982114 name"
+                    className="jsx-2355917317 name"
                   >
                     <div
-                      className="jsx-4076982114 vcentered"
+                      className="jsx-2355917317 vcentered ellipsis"
                     >
                       Tig
                     </div>
                   </div>
                   <div
-                    className="jsx-4076982114 score"
+                    className="jsx-2355917317 score"
                   >
                     <div
-                      className="jsx-4076982114 score-row"
+                      className="jsx-2355917317 score-row"
                     >
                       <div
-                        className="jsx-4076982114 label vcentered"
+                        className="jsx-2355917317 label vcentered"
                       >
                         Score
                       </div>
                       <div
-                        className="jsx-4076982114 value vcentered"
+                        className="jsx-2355917317 value vcentered"
                       >
                         0
                       </div>
                     </div>
                     <div
-                      className="jsx-4076982114 score-row"
+                      className="jsx-2355917317 score-row"
                     >
                       <div
-                        className="jsx-4076982114 label vcentered"
+                        className="jsx-2355917317 label vcentered"
                       >
                         Lines
                       </div>
                       <div
-                        className="jsx-4076982114 value vcentered"
+                        className="jsx-2355917317 value vcentered"
                       >
                         0
                       </div>
@@ -1607,44 +1607,44 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):game-added 1`] = `
                 className="jsx-2764329408 player1"
               >
                 <div
-                  className="jsx-4076982114 player-info"
+                  className="jsx-2355917317 player-info"
                 >
                   <div
-                    className="jsx-4076982114 name"
+                    className="jsx-2355917317 name"
                   >
                     <div
-                      className="jsx-4076982114 vcentered"
+                      className="jsx-2355917317 vcentered ellipsis"
                     >
                       Tig
                     </div>
                   </div>
                   <div
-                    className="jsx-4076982114 score"
+                    className="jsx-2355917317 score"
                   >
                     <div
-                      className="jsx-4076982114 score-row"
+                      className="jsx-2355917317 score-row"
                     >
                       <div
-                        className="jsx-4076982114 label vcentered"
+                        className="jsx-2355917317 label vcentered"
                       >
                         Score
                       </div>
                       <div
-                        className="jsx-4076982114 value vcentered"
+                        className="jsx-2355917317 value vcentered"
                       >
                         0
                       </div>
                     </div>
                     <div
-                      className="jsx-4076982114 score-row"
+                      className="jsx-2355917317 score-row"
                     >
                       <div
-                        className="jsx-4076982114 label vcentered"
+                        className="jsx-2355917317 label vcentered"
                       >
                         Lines
                       </div>
                       <div
-                        className="jsx-4076982114 value vcentered"
+                        className="jsx-2355917317 value vcentered"
                       >
                         0
                       </div>
@@ -2190,44 +2190,44 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-added 1`] = `
                 className="jsx-2764329408 player1"
               >
                 <div
-                  className="jsx-4076982114 player-info"
+                  className="jsx-2355917317 player-info"
                 >
                   <div
-                    className="jsx-4076982114 name"
+                    className="jsx-2355917317 name"
                   >
                     <div
-                      className="jsx-4076982114 vcentered"
+                      className="jsx-2355917317 vcentered ellipsis"
                     >
                       Tig
                     </div>
                   </div>
                   <div
-                    className="jsx-4076982114 score"
+                    className="jsx-2355917317 score"
                   >
                     <div
-                      className="jsx-4076982114 score-row"
+                      className="jsx-2355917317 score-row"
                     >
                       <div
-                        className="jsx-4076982114 label vcentered"
+                        className="jsx-2355917317 label vcentered"
                       >
                         Score
                       </div>
                       <div
-                        className="jsx-4076982114 value vcentered"
+                        className="jsx-2355917317 value vcentered"
                       >
                         0
                       </div>
                     </div>
                     <div
-                      className="jsx-4076982114 score-row"
+                      className="jsx-2355917317 score-row"
                     >
                       <div
-                        className="jsx-4076982114 label vcentered"
+                        className="jsx-2355917317 label vcentered"
                       >
                         Lines
                       </div>
                       <div
-                        className="jsx-4076982114 value vcentered"
+                        className="jsx-2355917317 value vcentered"
                       >
                         0
                       </div>
@@ -2482,44 +2482,44 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-added 1`] = `
                 className="jsx-2764329408 player1"
               >
                 <div
-                  className="jsx-4076982114 player-info"
+                  className="jsx-2355917317 player-info"
                 >
                   <div
-                    className="jsx-4076982114 name"
+                    className="jsx-2355917317 name"
                   >
                     <div
-                      className="jsx-4076982114 vcentered"
+                      className="jsx-2355917317 vcentered ellipsis"
                     >
                       Tig
                     </div>
                   </div>
                   <div
-                    className="jsx-4076982114 score"
+                    className="jsx-2355917317 score"
                   >
                     <div
-                      className="jsx-4076982114 score-row"
+                      className="jsx-2355917317 score-row"
                     >
                       <div
-                        className="jsx-4076982114 label vcentered"
+                        className="jsx-2355917317 label vcentered"
                       >
                         Score
                       </div>
                       <div
-                        className="jsx-4076982114 value vcentered"
+                        className="jsx-2355917317 value vcentered"
                       >
                         0
                       </div>
                     </div>
                     <div
-                      className="jsx-4076982114 score-row"
+                      className="jsx-2355917317 score-row"
                     >
                       <div
-                        className="jsx-4076982114 label vcentered"
+                        className="jsx-2355917317 label vcentered"
                       >
                         Lines
                       </div>
                       <div
-                        className="jsx-4076982114 value vcentered"
+                        className="jsx-2355917317 value vcentered"
                       >
                         0
                       </div>
@@ -2774,44 +2774,44 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-added 1`] = `
                 className="jsx-2764329408 player1"
               >
                 <div
-                  className="jsx-4076982114 player-info"
+                  className="jsx-2355917317 player-info"
                 >
                   <div
-                    className="jsx-4076982114 name"
+                    className="jsx-2355917317 name"
                   >
                     <div
-                      className="jsx-4076982114 vcentered"
+                      className="jsx-2355917317 vcentered ellipsis"
                     >
                       Tig
                     </div>
                   </div>
                   <div
-                    className="jsx-4076982114 score"
+                    className="jsx-2355917317 score"
                   >
                     <div
-                      className="jsx-4076982114 score-row"
+                      className="jsx-2355917317 score-row"
                     >
                       <div
-                        className="jsx-4076982114 label vcentered"
+                        className="jsx-2355917317 label vcentered"
                       >
                         Score
                       </div>
                       <div
-                        className="jsx-4076982114 value vcentered"
+                        className="jsx-2355917317 value vcentered"
                       >
                         0
                       </div>
                     </div>
                     <div
-                      className="jsx-4076982114 score-row"
+                      className="jsx-2355917317 score-row"
                     >
                       <div
-                        className="jsx-4076982114 label vcentered"
+                        className="jsx-2355917317 label vcentered"
                       >
                         Lines
                       </div>
                       <div
-                        className="jsx-4076982114 value vcentered"
+                        className="jsx-2355917317 value vcentered"
                       >
                         0
                       </div>
@@ -3357,44 +3357,44 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed 1`] = 
                 className="jsx-2764329408 player1"
               >
                 <div
-                  className="jsx-4076982114 player-info"
+                  className="jsx-2355917317 player-info"
                 >
                   <div
-                    className="jsx-4076982114 name"
+                    className="jsx-2355917317 name"
                   >
                     <div
-                      className="jsx-4076982114 vcentered"
+                      className="jsx-2355917317 vcentered ellipsis"
                     >
                       Tig
                     </div>
                   </div>
                   <div
-                    className="jsx-4076982114 score"
+                    className="jsx-2355917317 score"
                   >
                     <div
-                      className="jsx-4076982114 score-row"
+                      className="jsx-2355917317 score-row"
                     >
                       <div
-                        className="jsx-4076982114 label vcentered"
+                        className="jsx-2355917317 label vcentered"
                       >
                         Score
                       </div>
                       <div
-                        className="jsx-4076982114 value vcentered"
+                        className="jsx-2355917317 value vcentered"
                       >
                         0
                       </div>
                     </div>
                     <div
-                      className="jsx-4076982114 score-row"
+                      className="jsx-2355917317 score-row"
                     >
                       <div
-                        className="jsx-4076982114 label vcentered"
+                        className="jsx-2355917317 label vcentered"
                       >
                         Lines
                       </div>
                       <div
-                        className="jsx-4076982114 value vcentered"
+                        className="jsx-2355917317 value vcentered"
                       >
                         0
                       </div>
@@ -3649,44 +3649,44 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed 1`] = 
                 className="jsx-2764329408 player1"
               >
                 <div
-                  className="jsx-4076982114 player-info"
+                  className="jsx-2355917317 player-info"
                 >
                   <div
-                    className="jsx-4076982114 name"
+                    className="jsx-2355917317 name"
                   >
                     <div
-                      className="jsx-4076982114 vcentered"
+                      className="jsx-2355917317 vcentered ellipsis"
                     >
                       Tig
                     </div>
                   </div>
                   <div
-                    className="jsx-4076982114 score"
+                    className="jsx-2355917317 score"
                   >
                     <div
-                      className="jsx-4076982114 score-row"
+                      className="jsx-2355917317 score-row"
                     >
                       <div
-                        className="jsx-4076982114 label vcentered"
+                        className="jsx-2355917317 label vcentered"
                       >
                         Score
                       </div>
                       <div
-                        className="jsx-4076982114 value vcentered"
+                        className="jsx-2355917317 value vcentered"
                       >
                         0
                       </div>
                     </div>
                     <div
-                      className="jsx-4076982114 score-row"
+                      className="jsx-2355917317 score-row"
                     >
                       <div
-                        className="jsx-4076982114 label vcentered"
+                        className="jsx-2355917317 label vcentered"
                       >
                         Lines
                       </div>
                       <div
-                        className="jsx-4076982114 value vcentered"
+                        className="jsx-2355917317 value vcentered"
                       >
                         0
                       </div>
@@ -4232,44 +4232,44 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed-and-ad
                 className="jsx-2764329408 player1"
               >
                 <div
-                  className="jsx-4076982114 player-info"
+                  className="jsx-2355917317 player-info"
                 >
                   <div
-                    className="jsx-4076982114 name"
+                    className="jsx-2355917317 name"
                   >
                     <div
-                      className="jsx-4076982114 vcentered"
+                      className="jsx-2355917317 vcentered ellipsis"
                     >
                       Tig
                     </div>
                   </div>
                   <div
-                    className="jsx-4076982114 score"
+                    className="jsx-2355917317 score"
                   >
                     <div
-                      className="jsx-4076982114 score-row"
+                      className="jsx-2355917317 score-row"
                     >
                       <div
-                        className="jsx-4076982114 label vcentered"
+                        className="jsx-2355917317 label vcentered"
                       >
                         Score
                       </div>
                       <div
-                        className="jsx-4076982114 value vcentered"
+                        className="jsx-2355917317 value vcentered"
                       >
                         0
                       </div>
                     </div>
                     <div
-                      className="jsx-4076982114 score-row"
+                      className="jsx-2355917317 score-row"
                     >
                       <div
-                        className="jsx-4076982114 label vcentered"
+                        className="jsx-2355917317 label vcentered"
                       >
                         Lines
                       </div>
                       <div
-                        className="jsx-4076982114 value vcentered"
+                        className="jsx-2355917317 value vcentered"
                       >
                         0
                       </div>
@@ -4524,44 +4524,44 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed-and-ad
                 className="jsx-2764329408 player1"
               >
                 <div
-                  className="jsx-4076982114 player-info"
+                  className="jsx-2355917317 player-info"
                 >
                   <div
-                    className="jsx-4076982114 name"
+                    className="jsx-2355917317 name"
                   >
                     <div
-                      className="jsx-4076982114 vcentered"
+                      className="jsx-2355917317 vcentered ellipsis"
                     >
                       Tig
                     </div>
                   </div>
                   <div
-                    className="jsx-4076982114 score"
+                    className="jsx-2355917317 score"
                   >
                     <div
-                      className="jsx-4076982114 score-row"
+                      className="jsx-2355917317 score-row"
                     >
                       <div
-                        className="jsx-4076982114 label vcentered"
+                        className="jsx-2355917317 label vcentered"
                       >
                         Score
                       </div>
                       <div
-                        className="jsx-4076982114 value vcentered"
+                        className="jsx-2355917317 value vcentered"
                       >
                         0
                       </div>
                     </div>
                     <div
-                      className="jsx-4076982114 score-row"
+                      className="jsx-2355917317 score-row"
                     >
                       <div
-                        className="jsx-4076982114 label vcentered"
+                        className="jsx-2355917317 label vcentered"
                       >
                         Lines
                       </div>
                       <div
-                        className="jsx-4076982114 value vcentered"
+                        className="jsx-2355917317 value vcentered"
                       >
                         0
                       </div>
@@ -4816,44 +4816,44 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed-and-ad
                 className="jsx-2764329408 player1"
               >
                 <div
-                  className="jsx-4076982114 player-info"
+                  className="jsx-2355917317 player-info"
                 >
                   <div
-                    className="jsx-4076982114 name"
+                    className="jsx-2355917317 name"
                   >
                     <div
-                      className="jsx-4076982114 vcentered"
+                      className="jsx-2355917317 vcentered ellipsis"
                     >
                       Tig
                     </div>
                   </div>
                   <div
-                    className="jsx-4076982114 score"
+                    className="jsx-2355917317 score"
                   >
                     <div
-                      className="jsx-4076982114 score-row"
+                      className="jsx-2355917317 score-row"
                     >
                       <div
-                        className="jsx-4076982114 label vcentered"
+                        className="jsx-2355917317 label vcentered"
                       >
                         Score
                       </div>
                       <div
-                        className="jsx-4076982114 value vcentered"
+                        className="jsx-2355917317 value vcentered"
                       >
                         0
                       </div>
                     </div>
                     <div
-                      className="jsx-4076982114 score-row"
+                      className="jsx-2355917317 score-row"
                     >
                       <div
-                        className="jsx-4076982114 label vcentered"
+                        className="jsx-2355917317 label vcentered"
                       >
                         Lines
                       </div>
                       <div
-                        className="jsx-4076982114 value vcentered"
+                        className="jsx-2355917317 value vcentered"
                       >
                         0
                       </div>
@@ -5399,44 +5399,44 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):mixed-games 1`] = `
                 className="jsx-2764329408 player1"
               >
                 <div
-                  className="jsx-4076982114 player-info"
+                  className="jsx-2355917317 player-info"
                 >
                   <div
-                    className="jsx-4076982114 name"
+                    className="jsx-2355917317 name"
                   >
                     <div
-                      className="jsx-4076982114 vcentered"
+                      className="jsx-2355917317 vcentered ellipsis"
                     >
                       Tig
                     </div>
                   </div>
                   <div
-                    className="jsx-4076982114 score"
+                    className="jsx-2355917317 score"
                   >
                     <div
-                      className="jsx-4076982114 score-row"
+                      className="jsx-2355917317 score-row"
                     >
                       <div
-                        className="jsx-4076982114 label vcentered"
+                        className="jsx-2355917317 label vcentered"
                       >
                         Score
                       </div>
                       <div
-                        className="jsx-4076982114 value vcentered"
+                        className="jsx-2355917317 value vcentered"
                       >
                         0
                       </div>
                     </div>
                     <div
-                      className="jsx-4076982114 score-row"
+                      className="jsx-2355917317 score-row"
                     >
                       <div
-                        className="jsx-4076982114 label vcentered"
+                        className="jsx-2355917317 label vcentered"
                       >
                         Lines
                       </div>
                       <div
-                        className="jsx-4076982114 value vcentered"
+                        className="jsx-2355917317 value vcentered"
                       >
                         0
                       </div>
@@ -5700,44 +5700,44 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):mixed-games 1`] = `
                 className="jsx-2764329408 player1"
               >
                 <div
-                  className="jsx-4076982114 player-info"
+                  className="jsx-2355917317 player-info"
                 >
                   <div
-                    className="jsx-4076982114 name"
+                    className="jsx-2355917317 name"
                   >
                     <div
-                      className="jsx-4076982114 vcentered"
+                      className="jsx-2355917317 vcentered ellipsis"
                     >
                       Louie
                     </div>
                   </div>
                   <div
-                    className="jsx-4076982114 score"
+                    className="jsx-2355917317 score"
                   >
                     <div
-                      className="jsx-4076982114 score-row"
+                      className="jsx-2355917317 score-row"
                     >
                       <div
-                        className="jsx-4076982114 label vcentered"
+                        className="jsx-2355917317 label vcentered"
                       >
                         Score
                       </div>
                       <div
-                        className="jsx-4076982114 value vcentered"
+                        className="jsx-2355917317 value vcentered"
                       >
                         0
                       </div>
                     </div>
                     <div
-                      className="jsx-4076982114 score-row"
+                      className="jsx-2355917317 score-row"
                     >
                       <div
-                        className="jsx-4076982114 label vcentered"
+                        className="jsx-2355917317 label vcentered"
                       >
                         Lines
                       </div>
                       <div
-                        className="jsx-4076982114 value vcentered"
+                        className="jsx-2355917317 value vcentered"
                       >
                         0
                       </div>
@@ -6283,44 +6283,44 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):mixed-games-removed 
                 className="jsx-2764329408 player1"
               >
                 <div
-                  className="jsx-4076982114 player-info"
+                  className="jsx-2355917317 player-info"
                 >
                   <div
-                    className="jsx-4076982114 name"
+                    className="jsx-2355917317 name"
                   >
                     <div
-                      className="jsx-4076982114 vcentered"
+                      className="jsx-2355917317 vcentered ellipsis"
                     >
                       Tig
                     </div>
                   </div>
                   <div
-                    className="jsx-4076982114 score"
+                    className="jsx-2355917317 score"
                   >
                     <div
-                      className="jsx-4076982114 score-row"
+                      className="jsx-2355917317 score-row"
                     >
                       <div
-                        className="jsx-4076982114 label vcentered"
+                        className="jsx-2355917317 label vcentered"
                       >
                         Score
                       </div>
                       <div
-                        className="jsx-4076982114 value vcentered"
+                        className="jsx-2355917317 value vcentered"
                       >
                         0
                       </div>
                     </div>
                     <div
-                      className="jsx-4076982114 score-row"
+                      className="jsx-2355917317 score-row"
                     >
                       <div
-                        className="jsx-4076982114 label vcentered"
+                        className="jsx-2355917317 label vcentered"
                       >
                         Lines
                       </div>
                       <div
-                        className="jsx-4076982114 value vcentered"
+                        className="jsx-2355917317 value vcentered"
                       >
                         0
                       </div>
@@ -7157,44 +7157,44 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):own-game 1`] = `
                 className="jsx-2764329408 player1"
               >
                 <div
-                  className="jsx-4076982114 player-info"
+                  className="jsx-2355917317 player-info"
                 >
                   <div
-                    className="jsx-4076982114 name"
+                    className="jsx-2355917317 name"
                   >
                     <div
-                      className="jsx-4076982114 vcentered"
+                      className="jsx-2355917317 vcentered ellipsis"
                     >
                       Tig
                     </div>
                   </div>
                   <div
-                    className="jsx-4076982114 score"
+                    className="jsx-2355917317 score"
                   >
                     <div
-                      className="jsx-4076982114 score-row"
+                      className="jsx-2355917317 score-row"
                     >
                       <div
-                        className="jsx-4076982114 label vcentered"
+                        className="jsx-2355917317 label vcentered"
                       >
                         Score
                       </div>
                       <div
-                        className="jsx-4076982114 value vcentered"
+                        className="jsx-2355917317 value vcentered"
                       >
                         0
                       </div>
                     </div>
                     <div
-                      className="jsx-4076982114 score-row"
+                      className="jsx-2355917317 score-row"
                     >
                       <div
-                        className="jsx-4076982114 label vcentered"
+                        className="jsx-2355917317 label vcentered"
                       >
                         Lines
                       </div>
                       <div
-                        className="jsx-4076982114 value vcentered"
+                        className="jsx-2355917317 value vcentered"
                       >
                         0
                       </div>
@@ -7740,44 +7740,44 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):own-game-removed 1`]
                 className="jsx-2764329408 player1"
               >
                 <div
-                  className="jsx-4076982114 player-info"
+                  className="jsx-2355917317 player-info"
                 >
                   <div
-                    className="jsx-4076982114 name"
+                    className="jsx-2355917317 name"
                   >
                     <div
-                      className="jsx-4076982114 vcentered"
+                      className="jsx-2355917317 vcentered ellipsis"
                     >
                       Tig
                     </div>
                   </div>
                   <div
-                    className="jsx-4076982114 score"
+                    className="jsx-2355917317 score"
                   >
                     <div
-                      className="jsx-4076982114 score-row"
+                      className="jsx-2355917317 score-row"
                     >
                       <div
-                        className="jsx-4076982114 label vcentered"
+                        className="jsx-2355917317 label vcentered"
                       >
                         Score
                       </div>
                       <div
-                        className="jsx-4076982114 value vcentered"
+                        className="jsx-2355917317 value vcentered"
                       >
                         0
                       </div>
                     </div>
                     <div
-                      className="jsx-4076982114 score-row"
+                      className="jsx-2355917317 score-row"
                     >
                       <div
-                        className="jsx-4076982114 label vcentered"
+                        className="jsx-2355917317 label vcentered"
                       >
                         Lines
                       </div>
                       <div
-                        className="jsx-4076982114 value vcentered"
+                        className="jsx-2355917317 value vcentered"
                       >
                         0
                       </div>
@@ -10954,44 +10954,44 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):double-hallelujah 
               className="jsx-2764329408 player1"
             >
               <div
-                className="jsx-4076982114 player-info"
+                className="jsx-2355917317 player-info"
               >
                 <div
-                  className="jsx-4076982114 name"
+                  className="jsx-2355917317 name"
                 >
                   <div
-                    className="jsx-4076982114 vcentered"
+                    className="jsx-2355917317 vcentered ellipsis"
                   >
                     Tig
                   </div>
                 </div>
                 <div
-                  className="jsx-4076982114 score"
+                  className="jsx-2355917317 score"
                 >
                   <div
-                    className="jsx-4076982114 score-row"
+                    className="jsx-2355917317 score-row"
                   >
                     <div
-                      className="jsx-4076982114 label vcentered"
+                      className="jsx-2355917317 label vcentered"
                     >
                       Wins
                     </div>
                     <div
-                      className="jsx-4076982114 value vcentered"
+                      className="jsx-2355917317 value vcentered"
                     >
                       0
                     </div>
                   </div>
                   <div
-                    className="jsx-4076982114 score-row"
+                    className="jsx-2355917317 score-row"
                   >
                     <div
-                      className="jsx-4076982114 label vcentered"
+                      className="jsx-2355917317 label vcentered"
                     >
                       Score
                     </div>
                     <div
-                      className="jsx-4076982114 value vcentered"
+                      className="jsx-2355917317 value vcentered"
                     >
                       104
                     </div>
@@ -11003,44 +11003,44 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):double-hallelujah 
               className="jsx-2764329408 player2"
             >
               <div
-                className="jsx-4076982114 player-info"
+                className="jsx-2355917317 player-info"
               >
                 <div
-                  className="jsx-4076982114 name"
+                  className="jsx-2355917317 name"
                 >
                   <div
-                    className="jsx-4076982114 vcentered"
+                    className="jsx-2355917317 vcentered ellipsis"
                   >
                     Louie
                   </div>
                 </div>
                 <div
-                  className="jsx-4076982114 score"
+                  className="jsx-2355917317 score"
                 >
                   <div
-                    className="jsx-4076982114 score-row"
+                    className="jsx-2355917317 score-row"
                   >
                     <div
-                      className="jsx-4076982114 label vcentered"
+                      className="jsx-2355917317 label vcentered"
                     >
                       Wins
                     </div>
                     <div
-                      className="jsx-4076982114 value vcentered"
+                      className="jsx-2355917317 value vcentered"
                     >
                       0
                     </div>
                   </div>
                   <div
-                    className="jsx-4076982114 score-row"
+                    className="jsx-2355917317 score-row"
                   >
                     <div
-                      className="jsx-4076982114 label vcentered"
+                      className="jsx-2355917317 label vcentered"
                     >
                       Score
                     </div>
                     <div
-                      className="jsx-4076982114 value vcentered"
+                      className="jsx-2355917317 value vcentered"
                     >
                       988
                     </div>
@@ -12915,44 +12915,44 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):enemy-hallelujah 1
               className="jsx-2764329408 player1"
             >
               <div
-                className="jsx-4076982114 player-info"
+                className="jsx-2355917317 player-info"
               >
                 <div
-                  className="jsx-4076982114 name"
+                  className="jsx-2355917317 name"
                 >
                   <div
-                    className="jsx-4076982114 vcentered"
+                    className="jsx-2355917317 vcentered ellipsis"
                   >
                     Tig
                   </div>
                 </div>
                 <div
-                  className="jsx-4076982114 score"
+                  className="jsx-2355917317 score"
                 >
                   <div
-                    className="jsx-4076982114 score-row"
+                    className="jsx-2355917317 score-row"
                   >
                     <div
-                      className="jsx-4076982114 label vcentered"
+                      className="jsx-2355917317 label vcentered"
                     >
                       Wins
                     </div>
                     <div
-                      className="jsx-4076982114 value vcentered"
+                      className="jsx-2355917317 value vcentered"
                     >
                       0
                     </div>
                   </div>
                   <div
-                    className="jsx-4076982114 score-row"
+                    className="jsx-2355917317 score-row"
                   >
                     <div
-                      className="jsx-4076982114 label vcentered"
+                      className="jsx-2355917317 label vcentered"
                     >
                       Score
                     </div>
                     <div
-                      className="jsx-4076982114 value vcentered"
+                      className="jsx-2355917317 value vcentered"
                     >
                       0
                     </div>
@@ -12964,44 +12964,44 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):enemy-hallelujah 1
               className="jsx-2764329408 player2"
             >
               <div
-                className="jsx-4076982114 player-info"
+                className="jsx-2355917317 player-info"
               >
                 <div
-                  className="jsx-4076982114 name"
+                  className="jsx-2355917317 name"
                 >
                   <div
-                    className="jsx-4076982114 vcentered"
+                    className="jsx-2355917317 vcentered ellipsis"
                   >
                     Louie
                   </div>
                 </div>
                 <div
-                  className="jsx-4076982114 score"
+                  className="jsx-2355917317 score"
                 >
                   <div
-                    className="jsx-4076982114 score-row"
+                    className="jsx-2355917317 score-row"
                   >
                     <div
-                      className="jsx-4076982114 label vcentered"
+                      className="jsx-2355917317 label vcentered"
                     >
                       Wins
                     </div>
                     <div
-                      className="jsx-4076982114 value vcentered"
+                      className="jsx-2355917317 value vcentered"
                     >
                       0
                     </div>
                   </div>
                   <div
-                    className="jsx-4076982114 score-row"
+                    className="jsx-2355917317 score-row"
                   >
                     <div
-                      className="jsx-4076982114 label vcentered"
+                      className="jsx-2355917317 label vcentered"
                     >
                       Score
                     </div>
                     <div
-                      className="jsx-4076982114 value vcentered"
+                      className="jsx-2355917317 value vcentered"
                     >
                       184
                     </div>
@@ -15258,44 +15258,44 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah 1`] = `
               className="jsx-2764329408 player1"
             >
               <div
-                className="jsx-4076982114 player-info"
+                className="jsx-2355917317 player-info"
               >
                 <div
-                  className="jsx-4076982114 name"
+                  className="jsx-2355917317 name"
                 >
                   <div
-                    className="jsx-4076982114 vcentered"
+                    className="jsx-2355917317 vcentered ellipsis"
                   >
                     Tig
                   </div>
                 </div>
                 <div
-                  className="jsx-4076982114 score"
+                  className="jsx-2355917317 score"
                 >
                   <div
-                    className="jsx-4076982114 score-row"
+                    className="jsx-2355917317 score-row"
                   >
                     <div
-                      className="jsx-4076982114 label vcentered"
+                      className="jsx-2355917317 label vcentered"
                     >
                       Score
                     </div>
                     <div
-                      className="jsx-4076982114 value vcentered"
+                      className="jsx-2355917317 value vcentered"
                     >
                       184
                     </div>
                   </div>
                   <div
-                    className="jsx-4076982114 score-row"
+                    className="jsx-2355917317 score-row"
                   >
                     <div
-                      className="jsx-4076982114 label vcentered"
+                      className="jsx-2355917317 label vcentered"
                     >
                       Lines
                     </div>
                     <div
-                      className="jsx-4076982114 value vcentered"
+                      className="jsx-2355917317 value vcentered"
                     >
                       0
                     </div>
@@ -17637,44 +17637,44 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah-guest 1
               className="jsx-2764329408 player1"
             >
               <div
-                className="jsx-4076982114 player-info"
+                className="jsx-2355917317 player-info"
               >
                 <div
-                  className="jsx-4076982114 name"
+                  className="jsx-2355917317 name"
                 >
                   <div
-                    className="jsx-4076982114 vcentered"
+                    className="jsx-2355917317 vcentered ellipsis"
                   >
                     Tig
                   </div>
                 </div>
                 <div
-                  className="jsx-4076982114 score"
+                  className="jsx-2355917317 score"
                 >
                   <div
-                    className="jsx-4076982114 score-row"
+                    className="jsx-2355917317 score-row"
                   >
                     <div
-                      className="jsx-4076982114 label vcentered"
+                      className="jsx-2355917317 label vcentered"
                     >
                       Score
                     </div>
                     <div
-                      className="jsx-4076982114 value vcentered"
+                      className="jsx-2355917317 value vcentered"
                     >
                       184
                     </div>
                   </div>
                   <div
-                    className="jsx-4076982114 score-row"
+                    className="jsx-2355917317 score-row"
                   >
                     <div
-                      className="jsx-4076982114 label vcentered"
+                      className="jsx-2355917317 label vcentered"
                     >
                       Lines
                     </div>
                     <div
-                      className="jsx-4076982114 value vcentered"
+                      className="jsx-2355917317 value vcentered"
                     >
                       0
                     </div>
@@ -20471,44 +20471,44 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
               className="jsx-2764329408 player1"
             >
               <div
-                className="jsx-4076982114 player-info"
+                className="jsx-2355917317 player-info"
               >
                 <div
-                  className="jsx-4076982114 name"
+                  className="jsx-2355917317 name"
                 >
                   <div
-                    className="jsx-4076982114 vcentered"
+                    className="jsx-2355917317 vcentered ellipsis"
                   >
                     Tig
                   </div>
                 </div>
                 <div
-                  className="jsx-4076982114 score"
+                  className="jsx-2355917317 score"
                 >
                   <div
-                    className="jsx-4076982114 score-row"
+                    className="jsx-2355917317 score-row"
                   >
                     <div
-                      className="jsx-4076982114 label vcentered"
+                      className="jsx-2355917317 label vcentered"
                     >
                       Score
                     </div>
                     <div
-                      className="jsx-4076982114 value vcentered"
+                      className="jsx-2355917317 value vcentered"
                     >
                       352
                     </div>
                   </div>
                   <div
-                    className="jsx-4076982114 score-row"
+                    className="jsx-2355917317 score-row"
                   >
                     <div
-                      className="jsx-4076982114 label vcentered"
+                      className="jsx-2355917317 label vcentered"
                     >
                       Lines
                     </div>
                     <div
-                      className="jsx-4076982114 value vcentered"
+                      className="jsx-2355917317 value vcentered"
                     >
                       1
                     </div>
@@ -20939,44 +20939,44 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
               className="jsx-2764329408 player1"
             >
               <div
-                className="jsx-4076982114 player-info"
+                className="jsx-2355917317 player-info"
               >
                 <div
-                  className="jsx-4076982114 name"
+                  className="jsx-2355917317 name"
                 >
                   <div
-                    className="jsx-4076982114 vcentered"
+                    className="jsx-2355917317 vcentered ellipsis"
                   >
                     Tig
                   </div>
                 </div>
                 <div
-                  className="jsx-4076982114 score"
+                  className="jsx-2355917317 score"
                 >
                   <div
-                    className="jsx-4076982114 score-row"
+                    className="jsx-2355917317 score-row"
                   >
                     <div
-                      className="jsx-4076982114 label vcentered"
+                      className="jsx-2355917317 label vcentered"
                     >
                       Score
                     </div>
                     <div
-                      className="jsx-4076982114 value vcentered"
+                      className="jsx-2355917317 value vcentered"
                     >
                       0
                     </div>
                   </div>
                   <div
-                    className="jsx-4076982114 score-row"
+                    className="jsx-2355917317 score-row"
                   >
                     <div
-                      className="jsx-4076982114 label vcentered"
+                      className="jsx-2355917317 label vcentered"
                     >
                       Lines
                     </div>
                     <div
-                      className="jsx-4076982114 value vcentered"
+                      className="jsx-2355917317 value vcentered"
                     >
                       0
                     </div>
@@ -21330,44 +21330,44 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game-running 1
               className="jsx-2764329408 player1"
             >
               <div
-                className="jsx-4076982114 player-info"
+                className="jsx-2355917317 player-info"
               >
                 <div
-                  className="jsx-4076982114 name"
+                  className="jsx-2355917317 name"
                 >
                   <div
-                    className="jsx-4076982114 vcentered"
+                    className="jsx-2355917317 vcentered ellipsis"
                   >
                     Tig
                   </div>
                 </div>
                 <div
-                  className="jsx-4076982114 score"
+                  className="jsx-2355917317 score"
                 >
                   <div
-                    className="jsx-4076982114 score-row"
+                    className="jsx-2355917317 score-row"
                   >
                     <div
-                      className="jsx-4076982114 label vcentered"
+                      className="jsx-2355917317 label vcentered"
                     >
                       Score
                     </div>
                     <div
-                      className="jsx-4076982114 value vcentered"
+                      className="jsx-2355917317 value vcentered"
                     >
                       0
                     </div>
                   </div>
                   <div
-                    className="jsx-4076982114 score-row"
+                    className="jsx-2355917317 score-row"
                   >
                     <div
-                      className="jsx-4076982114 label vcentered"
+                      className="jsx-2355917317 label vcentered"
                     >
                       Lines
                     </div>
                     <div
-                      className="jsx-4076982114 value vcentered"
+                      className="jsx-2355917317 value vcentered"
                     >
                       0
                     </div>
@@ -23444,44 +23444,44 @@ exports[`Cosmos fixtures: GamePanel:default 1`] = `
           className="jsx-2764329408 player1"
         >
           <div
-            className="jsx-4076982114 player-info"
+            className="jsx-2355917317 player-info"
           >
             <div
-              className="jsx-4076982114 name"
+              className="jsx-2355917317 name"
             >
               <div
-                className="jsx-4076982114 vcentered"
+                className="jsx-2355917317 vcentered ellipsis"
               >
                 Tig
               </div>
             </div>
             <div
-              className="jsx-4076982114 score"
+              className="jsx-2355917317 score"
             >
               <div
-                className="jsx-4076982114 score-row"
+                className="jsx-2355917317 score-row"
               >
                 <div
-                  className="jsx-4076982114 label vcentered"
+                  className="jsx-2355917317 label vcentered"
                 >
                   Score
                 </div>
                 <div
-                  className="jsx-4076982114 value vcentered"
+                  className="jsx-2355917317 value vcentered"
                 >
                   0
                 </div>
               </div>
               <div
-                className="jsx-4076982114 score-row"
+                className="jsx-2355917317 score-row"
               >
                 <div
-                  className="jsx-4076982114 label vcentered"
+                  className="jsx-2355917317 label vcentered"
                 >
                   Lines
                 </div>
                 <div
-                  className="jsx-4076982114 value vcentered"
+                  className="jsx-2355917317 value vcentered"
                 >
                   0
                 </div>
@@ -23637,44 +23637,44 @@ exports[`Cosmos fixtures: GamePanel:with-footer 1`] = `
           className="jsx-2764329408 player1"
         >
           <div
-            className="jsx-4076982114 player-info"
+            className="jsx-2355917317 player-info"
           >
             <div
-              className="jsx-4076982114 name"
+              className="jsx-2355917317 name"
             >
               <div
-                className="jsx-4076982114 vcentered"
+                className="jsx-2355917317 vcentered ellipsis"
               >
                 Tig
               </div>
             </div>
             <div
-              className="jsx-4076982114 score"
+              className="jsx-2355917317 score"
             >
               <div
-                className="jsx-4076982114 score-row"
+                className="jsx-2355917317 score-row"
               >
                 <div
-                  className="jsx-4076982114 label vcentered"
+                  className="jsx-2355917317 label vcentered"
                 >
                   Score
                 </div>
                 <div
-                  className="jsx-4076982114 value vcentered"
+                  className="jsx-2355917317 value vcentered"
                 >
                   0
                 </div>
               </div>
               <div
-                className="jsx-4076982114 score-row"
+                className="jsx-2355917317 score-row"
               >
                 <div
-                  className="jsx-4076982114 label vcentered"
+                  className="jsx-2355917317 label vcentered"
                 >
                   Lines
                 </div>
                 <div
-                  className="jsx-4076982114 value vcentered"
+                  className="jsx-2355917317 value vcentered"
                 >
                   0
                 </div>
@@ -23956,44 +23956,44 @@ exports[`Cosmos fixtures: GamePreview:default 1`] = `
                 className="jsx-2764329408 player1"
               >
                 <div
-                  className="jsx-4076982114 player-info"
+                  className="jsx-2355917317 player-info"
                 >
                   <div
-                    className="jsx-4076982114 name"
+                    className="jsx-2355917317 name"
                   >
                     <div
-                      className="jsx-4076982114 vcentered"
+                      className="jsx-2355917317 vcentered ellipsis"
                     >
                       Tig
                     </div>
                   </div>
                   <div
-                    className="jsx-4076982114 score"
+                    className="jsx-2355917317 score"
                   >
                     <div
-                      className="jsx-4076982114 score-row"
+                      className="jsx-2355917317 score-row"
                     >
                       <div
-                        className="jsx-4076982114 label vcentered"
+                        className="jsx-2355917317 label vcentered"
                       >
                         Score
                       </div>
                       <div
-                        className="jsx-4076982114 value vcentered"
+                        className="jsx-2355917317 value vcentered"
                       >
                         0
                       </div>
                     </div>
                     <div
-                      className="jsx-4076982114 score-row"
+                      className="jsx-2355917317 score-row"
                     >
                       <div
-                        className="jsx-4076982114 label vcentered"
+                        className="jsx-2355917317 label vcentered"
                       >
                         Lines
                       </div>
                       <div
-                        className="jsx-4076982114 value vcentered"
+                        className="jsx-2355917317 value vcentered"
                       >
                         0
                       </div>
@@ -24265,44 +24265,44 @@ exports[`Cosmos fixtures: GamePreview:with-footer 1`] = `
                 className="jsx-2764329408 player1"
               >
                 <div
-                  className="jsx-4076982114 player-info"
+                  className="jsx-2355917317 player-info"
                 >
                   <div
-                    className="jsx-4076982114 name"
+                    className="jsx-2355917317 name"
                   >
                     <div
-                      className="jsx-4076982114 vcentered"
+                      className="jsx-2355917317 vcentered ellipsis"
                     >
                       Tig
                     </div>
                   </div>
                   <div
-                    className="jsx-4076982114 score"
+                    className="jsx-2355917317 score"
                   >
                     <div
-                      className="jsx-4076982114 score-row"
+                      className="jsx-2355917317 score-row"
                     >
                       <div
-                        className="jsx-4076982114 label vcentered"
+                        className="jsx-2355917317 label vcentered"
                       >
                         Score
                       </div>
                       <div
-                        className="jsx-4076982114 value vcentered"
+                        className="jsx-2355917317 value vcentered"
                       >
                         0
                       </div>
                     </div>
                     <div
-                      className="jsx-4076982114 score-row"
+                      className="jsx-2355917317 score-row"
                     >
                       <div
-                        className="jsx-4076982114 label vcentered"
+                        className="jsx-2355917317 label vcentered"
                       >
                         Lines
                       </div>
                       <div
-                        className="jsx-4076982114 value vcentered"
+                        className="jsx-2355917317 value vcentered"
                       >
                         0
                       </div>
@@ -25733,44 +25733,44 @@ exports[`Cosmos fixtures: PlayerInfo:player-multi 1`] = `
       }
     >
       <div
-        className="jsx-4076982114 player-info"
+        className="jsx-2355917317 player-info"
       >
         <div
-          className="jsx-4076982114 name"
+          className="jsx-2355917317 name"
         >
           <div
-            className="jsx-4076982114 vcentered"
+            className="jsx-2355917317 vcentered ellipsis"
           >
             Treznik
           </div>
         </div>
         <div
-          className="jsx-4076982114 score"
+          className="jsx-2355917317 score"
         >
           <div
-            className="jsx-4076982114 score-row"
+            className="jsx-2355917317 score-row"
           >
             <div
-              className="jsx-4076982114 label vcentered"
+              className="jsx-2355917317 label vcentered"
             >
               Wins
             </div>
             <div
-              className="jsx-4076982114 value vcentered"
+              className="jsx-2355917317 value vcentered"
             >
               2
             </div>
           </div>
           <div
-            className="jsx-4076982114 score-row"
+            className="jsx-2355917317 score-row"
           >
             <div
-              className="jsx-4076982114 label vcentered"
+              className="jsx-2355917317 label vcentered"
             >
               Score
             </div>
             <div
-              className="jsx-4076982114 value vcentered"
+              className="jsx-2355917317 value vcentered"
             >
               355
             </div>
@@ -25802,54 +25802,54 @@ exports[`Cosmos fixtures: PlayerInfo:player-ready 1`] = `
       }
     >
       <div
-        className="jsx-4076982114 player-info"
+        className="jsx-2355917317 player-info"
       >
         <div
-          className="jsx-4076982114 name"
+          className="jsx-2355917317 name"
         >
           <div
-            className="jsx-4076982114 vcentered"
+            className="jsx-2355917317 vcentered ellipsis"
           >
             Treznik
           </div>
         </div>
         <div
-          className="jsx-4076982114 score"
+          className="jsx-2355917317 score"
         >
           <div
-            className="jsx-4076982114 score-row"
+            className="jsx-2355917317 score-row"
           >
             <div
-              className="jsx-4076982114 label vcentered"
+              className="jsx-2355917317 label vcentered"
             >
               Wins
             </div>
             <div
-              className="jsx-4076982114 value vcentered"
+              className="jsx-2355917317 value vcentered"
             >
               3
             </div>
           </div>
           <div
-            className="jsx-4076982114 score-row"
+            className="jsx-2355917317 score-row"
           >
             <div
-              className="jsx-4076982114 label vcentered"
+              className="jsx-2355917317 label vcentered"
             >
               Score
             </div>
             <div
-              className="jsx-4076982114 value vcentered"
+              className="jsx-2355917317 value vcentered"
             >
               1337
             </div>
           </div>
         </div>
         <div
-          className="jsx-4076982114 status ready"
+          className="jsx-2355917317 status ready"
         >
           <span
-            className="jsx-4076982114"
+            className="jsx-2355917317"
           >
             Ready
           </span>
@@ -25880,44 +25880,44 @@ exports[`Cosmos fixtures: PlayerInfo:player-solo 1`] = `
       }
     >
       <div
-        className="jsx-4076982114 player-info"
+        className="jsx-2355917317 player-info"
       >
         <div
-          className="jsx-4076982114 name"
+          className="jsx-2355917317 name"
         >
           <div
-            className="jsx-4076982114 vcentered"
+            className="jsx-2355917317 vcentered ellipsis"
           >
             Treznik
           </div>
         </div>
         <div
-          className="jsx-4076982114 score"
+          className="jsx-2355917317 score"
         >
           <div
-            className="jsx-4076982114 score-row"
+            className="jsx-2355917317 score-row"
           >
             <div
-              className="jsx-4076982114 label vcentered"
+              className="jsx-2355917317 label vcentered"
             >
               Score
             </div>
             <div
-              className="jsx-4076982114 value vcentered"
+              className="jsx-2355917317 value vcentered"
             >
               355
             </div>
           </div>
           <div
-            className="jsx-4076982114 score-row"
+            className="jsx-2355917317 score-row"
           >
             <div
-              className="jsx-4076982114 label vcentered"
+              className="jsx-2355917317 label vcentered"
             >
               Lines
             </div>
             <div
-              className="jsx-4076982114 value vcentered"
+              className="jsx-2355917317 value vcentered"
             >
               5
             </div>
@@ -25949,46 +25949,115 @@ exports[`Cosmos fixtures: PlayerInfo:player-solo-big-score 1`] = `
       }
     >
       <div
-        className="jsx-4076982114 player-info"
+        className="jsx-2355917317 player-info"
       >
         <div
-          className="jsx-4076982114 name"
+          className="jsx-2355917317 name"
         >
           <div
-            className="jsx-4076982114 vcentered"
+            className="jsx-2355917317 vcentered ellipsis"
           >
             Treznik
           </div>
         </div>
         <div
-          className="jsx-4076982114 score"
+          className="jsx-2355917317 score"
         >
           <div
-            className="jsx-4076982114 score-row"
+            className="jsx-2355917317 score-row"
           >
             <div
-              className="jsx-4076982114 label vcentered"
+              className="jsx-2355917317 label vcentered"
             >
               Score
             </div>
             <div
-              className="jsx-4076982114 value vcentered"
+              className="jsx-2355917317 value vcentered"
             >
               442K
             </div>
           </div>
           <div
-            className="jsx-4076982114 score-row"
+            className="jsx-2355917317 score-row"
           >
             <div
-              className="jsx-4076982114 label vcentered"
+              className="jsx-2355917317 label vcentered"
             >
               Lines
             </div>
             <div
-              className="jsx-4076982114 value vcentered"
+              className="jsx-2355917317 value vcentered"
             >
               226
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Cosmos fixtures: PlayerInfo:player-solo-long-name 1`] = `
+<div
+  className="jsx-1613050951 outer"
+>
+  <div
+    className="jsx-1613050951 container"
+  >
+    <div
+      className="jsx-1294220987 inner-container"
+      style={
+        Object {
+          "backgroundColor": "#fff",
+          "height": "calc(100% / 20 * 4)",
+          "opacity": 1,
+          "position": "absolute",
+          "width": "calc(100% / 16 * 4)",
+        }
+      }
+    >
+      <div
+        className="jsx-2355917317 player-info"
+      >
+        <div
+          className="jsx-2355917317 name"
+        >
+          <div
+            className="jsx-2355917317 vcentered ellipsis"
+          >
+            Lorem ipsum
+          </div>
+        </div>
+        <div
+          className="jsx-2355917317 score"
+        >
+          <div
+            className="jsx-2355917317 score-row"
+          >
+            <div
+              className="jsx-2355917317 label vcentered"
+            >
+              Score
+            </div>
+            <div
+              className="jsx-2355917317 value vcentered"
+            >
+              355
+            </div>
+          </div>
+          <div
+            className="jsx-2355917317 score-row"
+          >
+            <div
+              className="jsx-2355917317 label vcentered"
+            >
+              Lines
+            </div>
+            <div
+              className="jsx-2355917317 value vcentered"
+            >
+              5
             </div>
           </div>
         </div>
