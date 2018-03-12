@@ -115,6 +115,19 @@ export function addRoutes(app: express$Application) {
       res.sendStatus(500);
     }
   });
+
+  app.get('/debug/:gameId', (req: express$Request, res: express$Response) => {
+    const gameId = req.params.gameId;
+
+    if (gameId && games[gameId]) {
+      res.json({
+        game: games[gameId],
+        actions: gameActions[gameId]
+      });
+    } else {
+      res.sendStatus(404);
+    }
+  });
 }
 
 function getUserFromReqSession(req: express$Request): User {
