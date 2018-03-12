@@ -156,7 +156,6 @@
   * [x] Count actions (left, right, accelerate, rotate)
   * [x] Count time
 * [x] BUG: Gracefully invalidate session after re-deploy
-* [ ] Only set LOST player status and open up possibility for draw
 * [ ] Change controls order (left, right, drop, rotate)
 * [ ] Show current player visually
 * [ ] Allow watcher to select current player
@@ -169,6 +168,7 @@ BACKLOG
 * [ ] Don't show onboarding after every deploy
 * [ ] Freeze game on player disconnect
 * [ ] Create drop shadow from active Tetromino
+* [ ] Draw game status
 * [ ] Zoom in animation when opening game from dashboard
 * [ ] Algorithm for dispatching bundled actions at time interval
 * [ ] Sounds

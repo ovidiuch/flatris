@@ -46,7 +46,7 @@ export function gameReducer(state: void | Game, action: GameAction): Game {
   }
 
   if (action.type === 'JOIN_GAME') {
-    const { user } = action.payload;
+    const { actionId, userId, user } = action.payload;
     const { players } = state;
 
     if (players.length > 1) {
@@ -66,7 +66,8 @@ export function gameReducer(state: void | Game, action: GameAction): Game {
       // Previous losses are irrelevant to 1vs1 game
       losses: 0
     });
-    return addUserToGame(game, user);
+
+    return bumpActionId(addUserToGame(game, user), userId, actionId);
   }
 
   // Ensure action consistency
@@ -553,8 +554,14 @@ export function getGameActionOffset(game: Game, action: GameAction): number {
     return 0;
   }
 
-  const { userId, prevActionId } = action.payload;
-  const player = getPlayer(game, userId);
+  const { userId, actionId, prevActionId } = action.payload;
+  const player = find(game.players, p => p.user.id === userId);
+
+  // Sometimes we get actions from players that aren't found in the state
+  // snapshot, because it's from a time before they joined
+  if (!player) {
+    return actionId;
+  }
 
   return prevActionId - player.lastActionId;
 }
