@@ -156,15 +156,14 @@
   * [x] Count actions (left, right, accelerate, rotate)
   * [x] Count time
 * [x] BUG: Gracefully invalidate session after re-deploy
-* [ ] Change controls order (left, right, drop, rotate)
-* [ ] Show current player visually
-* [ ] Allow watcher to select current player
 * [ ] [2.0]
   * [ ] Share on HN, PH, Reddit, etc
 * [ ] Real time stats page
 
 BACKLOG
 
+* [ ] Allow watcher to select current player
+  * [ ] Show current player visually
 * [ ] Don't show onboarding after every deploy
 * [ ] Freeze game on player disconnect
 * [ ] Create drop shadow from active Tetromino
