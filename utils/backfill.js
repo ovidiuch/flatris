@@ -22,6 +22,7 @@ export function requestBackfill(
   const backfillId = ++lastBackfillId;
   const backfillReq = getBackfillReq(game);
 
+  console.log('Backfill request', backfillReq);
   backfillGameActions(backfillReq).then(
     backfillRes => {
       onComplete({ gameId, backfillId, backfillRes });
