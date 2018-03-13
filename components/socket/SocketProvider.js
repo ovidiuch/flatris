@@ -246,6 +246,11 @@ export class SocketProvider extends Component<Props> {
         queuedActions,
         validActions
       });
+
+      if (!validActions.length) {
+        console.warn(`Backfill invalid, removing game ${gameId} from state`);
+        dispatch(removeGame(gameId));
+      }
     }
   };
 
