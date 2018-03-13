@@ -78,6 +78,7 @@ export type Backfills = {
 
 export type State = {
   jsReady: boolean,
+  // TODO: connected: boolean,
   curUser: ?User,
   games: Games,
   curGame: ?GameId,

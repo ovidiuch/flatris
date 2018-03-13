@@ -28,6 +28,22 @@ export function getSocket() {
     socket.emit('game-keep-alive', gameId);
   }
 
+  function onConnect(handler: () => void) {
+    socket.on('connect', handler);
+  }
+
+  function offConnect(handler: () => void) {
+    socket.off('connect', handler);
+  }
+
+  function onDisconnect(handler: () => void) {
+    socket.on('disconnect', handler);
+  }
+
+  function offDisconnect(handler: () => void) {
+    socket.off('disconnect', handler);
+  }
+
   function onGameAction(handler: GameActionHandler) {
     socket.on('game-action', handler);
   }
@@ -60,6 +76,10 @@ export function getSocket() {
   return {
     subscribe,
     keepGameAlive,
+    onConnect,
+    offConnect,
+    onDisconnect,
+    offDisconnect,
     onGameAction,
     offGameAction,
     onGameKeepAlive,
