@@ -83,8 +83,7 @@ export function gameReducer(state: void | Game, action: GameAction): Game {
     // keep getting applied to state, while the server will remain behind. Once
     // the connection is back the server will receive "future" actions and will
     // never reconcile.
-    // throw new Error(`Refusing detached game action (${offset}ms delta)`);
-    console.error(`Refusing detached game action (${offset}ms delta)`);
+    throw new Error(`Refusing detached game action (${offset}ms delta)`);
 
     return state;
   }

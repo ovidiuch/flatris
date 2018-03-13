@@ -162,10 +162,10 @@
 
 BACKLOG
 
+* [ ] Freeze game on player disconnect
 * [ ] Allow watcher to select current player
   * [ ] Show current player visually
 * [ ] Don't show onboarding after every deploy
-* [ ] Freeze game on player disconnect
 * [ ] Create drop shadow from active Tetromino
 * [ ] Draw game status
 * [ ] Zoom in animation when opening game from dashboard
