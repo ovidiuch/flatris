@@ -256,16 +256,19 @@ export class SocketProvider extends Component<Props> {
       `Backfilled ${uniqActions.length} actions (${numDupes} dupes).`
     );
 
-    const numInvalid = uniqActions.length - validActions.length;
+    const numValid = validActions.length;
+    const numInvalid = uniqActions.length - numValid;
     if (numInvalid) {
-      logError(`Corrupt backfill: ${numInvalid} actions discarded`, {
+      logError(`Corrupt backfill`, {
         game,
         actions,
         queuedActions,
-        validActions
+        validActions,
+        numValid,
+        numInvalid
       });
 
-      if (!validActions.length) {
+      if (!numValid) {
         console.warn(`Backfill invalid, removing game ${gameId} from state`);
         dispatch(removeGame(gameId));
       }
