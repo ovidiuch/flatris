@@ -301,9 +301,7 @@ export class SocketProvider extends Component<Props> {
       // the console!)
       // console.log(`Not broadcasting noop action ${resAction.type}`);
     } else {
-      if (!window.isOffline) {
-        broadcastAction(resAction);
-      }
+      broadcastAction(resAction);
     }
 
     // Allow callers to chain broadcasted actions
