@@ -2,7 +2,12 @@
 
 import socketIo from 'socket.io';
 import { omit, difference } from 'lodash';
-import { gameReducer, getTurnCount, getLineCount } from '../reducers/game';
+import {
+  gameReducer,
+  getPlayer,
+  getTurnCount,
+  getLineCount
+} from '../reducers/game';
 import { games, saveGameAction, bumpActiveGame } from './db';
 import { incrementTurnCount, incrementLineCount } from './firebase';
 import { rollbar } from './rollbar';
@@ -82,22 +87,33 @@ export function attachSocket(server: net$Server) {
             incrementLineCount(getLineCount(prevGame));
           }
         } catch (err) {
-          // TODO: Only sync game once for a batch of actions
-          // Identify batch by
-          //  gameId + game.players[action.payload.userId].lastActionId
-          //  (What about JOIN_GAME actions?)
-          // NOTE: This is not enough if client doesn't join game room on reconnect
+          const player = getPlayer(prevGame, action.payload.userId);
+          const syncId = `${prevGame.id}-${player.lastActionId}`;
 
-          rollbar.error(err, { action });
+          // Prevent syncing more than once for the same player. Context: After
+          // going offline and back online, often many messages are queued and
+          // sent all at once. In the past this would flood the logs and
+          // trigger hundreds of game-sync events at once.
+          if (!gameSync[syncId]) {
+            gameSync[syncId] = true;
 
-          // Sync client state with server state. This happens when one client
-          // goes offline for a while and then goes back online. Upon
-          // reconnecting the client will have a going-back-in-time experience,
-          // as all their actions that were performed during the offline period
-          // will be canceled
-          socket.emit('game-sync', prevGame);
+            rollbar.error(err, { action });
+
+            // Sync client state with server state. This happens when one client
+            // goes offline for a while and then goes back online. Upon
+            // reconnecting the client will have a going-back-in-time experience,
+            // as all their actions that were performed during the offline period
+            // will be canceled
+            // NOTE: This is not enough if client doesn't also join game room
+            // again upon reconnect
+            socket.emit('game-sync', prevGame);
+          }
         }
       }
     });
   });
 }
+
+const gameSync: {
+  [id: string]: true
+} = {};

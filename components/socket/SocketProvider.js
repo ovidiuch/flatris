@@ -249,7 +249,11 @@ export class SocketProvider extends Component<Props> {
 
     // TODO: Dispatch events at an interval, to convey the rhythm in
     // which the actions were originally performed
-    validActions.forEach(dispatch);
+    try {
+      validActions.forEach(dispatch);
+    } catch (err) {
+      console.error('Applying backfill actions failed');
+    }
 
     const numDupes = mergedActions.length - uniqActions.length;
     console.log(
