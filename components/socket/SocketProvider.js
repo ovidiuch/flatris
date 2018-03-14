@@ -30,13 +30,15 @@ import type { OnBackfillCompleteArgs } from '../../utils/backfill';
 const {
   subscribe,
   keepGameAlive,
+  broadcastAction,
   onGameAction,
   offGameAction,
   onGameKeepAlive,
   offGameKeepAlive,
   onGameRemoved,
   offGameRemoved,
-  broadcastAction
+  onGameSync,
+  offGameSync
 } = getSocket();
 
 type Props = {
@@ -79,6 +81,7 @@ export class SocketProvider extends Component<Props> {
     onGameAction(this.handleGameAction);
     onGameKeepAlive(this.handleGameKeepAlive);
     onGameRemoved(this.handleGameRemoved);
+    onGameSync(this.handleGameSync);
   }
 
   componentWillUnmount() {
@@ -87,6 +90,7 @@ export class SocketProvider extends Component<Props> {
     offGameAction(this.handleGameAction);
     offGameKeepAlive(this.handleGameKeepAlive);
     offGameRemoved(this.handleGameRemoved);
+    offGameSync(this.handleGameSync);
 
     Object.keys(this.pendingBackfills).forEach(gameId => {
       dispatch(endBackfill(this.pendingBackfills[gameId]));
@@ -144,6 +148,20 @@ export class SocketProvider extends Component<Props> {
 
     const { dispatch } = this.getStore();
     dispatch(removeGame(gameId));
+  };
+
+  handleGameSync = (game: Game) => {
+    console.log('Received game state from server', game.id);
+
+    const { getState, dispatch } = this.getStore();
+    const { games } = getState();
+
+    if (games[game.id]) {
+      // NOTE: Use ADD_GAME action to update an existing game
+      dispatch(addGame(game));
+    } else {
+      console.warn('Recevied game sync for missing game', game.id);
+    }
   };
 
   handleSubscribe = (roomId: RoomId) => {
@@ -246,6 +264,11 @@ export class SocketProvider extends Component<Props> {
         queuedActions,
         validActions
       });
+
+      if (!validActions.length) {
+        console.warn(`Backfill invalid, removing game ${gameId} from state`);
+        dispatch(removeGame(gameId));
+      }
     }
   };
 

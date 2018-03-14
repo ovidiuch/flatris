@@ -83,6 +83,13 @@ export function attachSocket(server: net$Server) {
           }
         } catch (err) {
           rollbar.error(err, { action });
+
+          // Sync client state with server state. This happens when one client
+          // goes offline for a while and then goes back online. Upon
+          // reconnecting the client will have a going-back-in-time experience,
+          // as all their actions that were performed during the offline period
+          // will be canceled
+          socket.emit('game-sync', prevGame);
         }
       }
     });

@@ -3,13 +3,14 @@
 import io from 'socket.io-client';
 import { getApiUrl } from '../utils/api';
 
-import type { GameId } from '../types/state';
+import type { GameId, Game } from '../types/state';
 import type { Action, GameAction } from '../types/actions';
 import type { RoomId } from '../types/api';
 
 type GameActionHandler = (action: GameAction) => void;
 type GameKeepAliveHandler = (gameId: GameId) => void;
 type GameRemovedHandler = (gameId: GameId) => void;
+type GameSyncHandler = (game: Game) => void;
 
 let socket;
 
@@ -26,6 +27,11 @@ export function getSocket() {
   function keepGameAlive(gameId: RoomId) {
     console.log('[SOCKET] keep-alive', gameId);
     socket.emit('game-keep-alive', gameId);
+  }
+
+  function broadcastAction(action: Action) {
+    // console.log('[SOCKET] game-action', resAction);
+    socket.emit('game-action', action);
   }
 
   function onGameAction(handler: GameActionHandler) {
@@ -52,20 +58,25 @@ export function getSocket() {
     socket.off('game-removed', handler);
   }
 
-  function broadcastAction(action: Action) {
-    // console.log('[SOCKET] Emit game-action', resAction);
-    socket.emit('game-action', action);
+  function onGameSync(handler: GameSyncHandler) {
+    socket.on('game-sync', handler);
+  }
+
+  function offGameSync(handler: GameSyncHandler) {
+    socket.off('game-sync', handler);
   }
 
   return {
     subscribe,
     keepGameAlive,
+    broadcastAction,
     onGameAction,
     offGameAction,
     onGameKeepAlive,
     offGameKeepAlive,
     onGameRemoved,
     offGameRemoved,
-    broadcastAction
+    onGameSync,
+    offGameSync
   };
 }
