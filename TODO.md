@@ -156,6 +156,7 @@
   * [x] Count actions (left, right, accelerate, rotate)
   * [x] Count time
 * [x] BUG: Gracefully invalidate session after re-deploy
+* [x] Sync game after player disconnect
 * [ ] [2.0]
   * [ ] Share on HN, PH, Reddit, etc
 * [ ] Real time stats page
