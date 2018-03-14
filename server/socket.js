@@ -82,6 +82,12 @@ export function attachSocket(server: net$Server) {
             incrementLineCount(getLineCount(prevGame));
           }
         } catch (err) {
+          // TODO: Only sync game once for a batch of actions
+          // Identify batch by
+          //  gameId + game.players[action.payload.userId].lastActionId
+          //  (What about JOIN_GAME actions?)
+          // NOTE: This is not enough if client doesn't join game room on reconnect
+
           rollbar.error(err, { action });
 
           // Sync client state with server state. This happens when one client
