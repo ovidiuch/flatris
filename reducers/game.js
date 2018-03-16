@@ -87,6 +87,12 @@ export function gameReducer(state: void | Game, action: GameAction): Game {
 
   // Don't bump player.lastActionId if action left state intact. This allows us
   // to avoid broacasting "noop" actions and minimize network activity
+  // FIXME: Sometimes actions were recorded that seemed like "noop" actions when
+  // played back from backfill response. Eg. Often an `ENABLE_ACCELERATION`
+  // action would be recorded and then when played back it followed a state
+  // that had `player.dropAcceleration: true`, which made it noop and entered
+  // an infinite loop of crashed backfills. Disabling this optimization until
+  // I understand what is going on.
   return newState === state
     ? newState
     : bumpActionId(newState, userId, actionId);
