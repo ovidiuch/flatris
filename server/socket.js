@@ -3,7 +3,10 @@
 import socketIo from 'socket.io';
 import { omit, difference } from 'lodash';
 import { gameReducer, getPlayer } from '../reducers/game';
-import { ACTION_STATS_FLUSH_INTERVAL } from '../constants/timeouts';
+import {
+  ACTION_STATS_FLUSH_INTERVAL,
+  ACTION_STATS_FLUSH_DELAY
+} from '../constants/timeouts';
 import { games, saveGameAction, bumpActiveGame } from './db';
 import {
   onStatsChange,
@@ -184,23 +187,35 @@ function countGameTime(action: GameAction) {
   }
 }
 
-function flushCounts() {
+function flushLeftCounts() {
   if (pendingLeftCount) {
     incrementActionLeft(pendingLeftCount);
     pendingLeftCount = 0;
   }
+}
+
+function flushRightCount() {
   if (pendingRightCount) {
     incrementActionRight(pendingRightCount);
     pendingRightCount = 0;
   }
+}
+
+function flushAccCount() {
   if (pendingAccCount) {
     incrementActionAcc(pendingAccCount);
     pendingAccCount = 0;
   }
+}
+
+function flushRotateCount() {
   if (pendingRotateCount) {
     incrementActionRotate(pendingRotateCount);
     pendingRotateCount = 0;
   }
+}
+
+function flushTimeCount() {
   if (pendingTimeCount) {
     const rounded = Math.round(pendingTimeCount / 1000);
     incrementGameTime(rounded);
@@ -208,4 +223,24 @@ function flushCounts() {
   }
 }
 
-setInterval(flushCounts, ACTION_STATS_FLUSH_INTERVAL);
+// Flush counts alternatively to make the stats update more lively :)
+setTimeout(
+  () => setInterval(flushLeftCounts, ACTION_STATS_FLUSH_INTERVAL),
+  ACTION_STATS_FLUSH_DELAY * 0
+);
+setTimeout(
+  () => setInterval(flushRightCount, ACTION_STATS_FLUSH_INTERVAL),
+  ACTION_STATS_FLUSH_DELAY * 1
+);
+setTimeout(
+  () => setInterval(flushAccCount, ACTION_STATS_FLUSH_INTERVAL),
+  ACTION_STATS_FLUSH_DELAY * 2
+);
+setTimeout(
+  () => setInterval(flushRotateCount, ACTION_STATS_FLUSH_INTERVAL),
+  ACTION_STATS_FLUSH_DELAY * 3
+);
+setTimeout(
+  () => setInterval(flushTimeCount, ACTION_STATS_FLUSH_INTERVAL),
+  ACTION_STATS_FLUSH_DELAY * 4
+);
