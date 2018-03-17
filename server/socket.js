@@ -83,8 +83,7 @@ export function attachSocket(server: net$Server) {
             .broadcast.emit('game-action', action);
 
           // Did the player(s) start another turn?
-          if (getTurnCount(game) > getTurnCount(prevGame)) {
-            // TODO: Increment only when the next turn starts...
+          if (game.players[0].drops === 0 && prevGame.players[0].drops > 0) {
             incrementTurnCount();
             incrementLineCount(getLineCount(prevGame));
           } else if (game.players.length !== prevGame.players.length) {
