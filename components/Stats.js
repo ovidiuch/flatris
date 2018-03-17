@@ -63,7 +63,6 @@ class Stats extends Component<Props, LocalState> {
         </p>
         <style jsx>{`
           .stats {
-            margin: 20px;
             overflow: hidden;
             background: #ecf0f1;
             color: #34495f;
@@ -71,7 +70,7 @@ class Stats extends Component<Props, LocalState> {
           }
 
           p {
-            margin: 15px 20px;
+            margin: 10px 20px;
             line-height: 30px;
           }
         `}</style>

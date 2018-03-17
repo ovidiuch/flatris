@@ -1,6 +1,6 @@
 // @flow
 
-import type { User, GameId, Game, BackfillId } from '../types/state';
+import type { User, GameId, Game, BackfillId, Stats } from '../types/state';
 import type {
   AuthAction,
   UnauthAction,
@@ -30,14 +30,17 @@ export function unauth(): UnauthAction {
 }
 
 export function loadDashboard({
-  games
+  games,
+  stats
 }: {
-  games: Array<Game>
+  games: Array<Game>,
+  stats: Stats
 }): DashboardLoadAction {
   return {
     type: 'LOAD_DASHBOARD',
     payload: {
-      games
+      games,
+      stats
     }
   };
 }

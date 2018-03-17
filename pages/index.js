@@ -19,11 +19,10 @@ class IndexPage extends Component<Props> {
     // Food for thought: How to not duplicate this on every page
     if (req) {
       await addCurUserToState(req, store);
-
-      // Only do this on the server. Get new games via `global` websocket room
-      const dashboardState = await getDashboard();
-      dispatch(loadDashboard(dashboardState));
     }
+
+    const dashboardState = await getDashboard();
+    dispatch(loadDashboard(dashboardState));
 
     // Client-side: Strip game effects before loading dashboard when going back
     // from game page

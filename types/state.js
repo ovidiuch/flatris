@@ -91,5 +91,6 @@ export type State = {
   curUser: ?User,
   games: Games,
   curGame: ?GameId,
-  backfills: Backfills
+  backfills: Backfills,
+  stats: Stats
 };

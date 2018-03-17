@@ -1,6 +1,14 @@
 // @flow
 
-import type { UserId, User, GameId, Game, BackfillId, State } from './state';
+import type {
+  UserId,
+  User,
+  GameId,
+  Game,
+  BackfillId,
+  Stats,
+  State
+} from './state';
 
 export type ActionId = number;
 
@@ -22,7 +30,8 @@ export type UnauthAction = {
 export type DashboardLoadAction = {
   type: 'LOAD_DASHBOARD',
   payload: {
-    games: Array<Game>
+    games: Array<Game>,
+    stats: Stats
   }
 };
 

@@ -2,14 +2,34 @@
 
 import admin from 'firebase-admin';
 
-export async function getCounts() {
+export async function getStats() {
   const db = getDb();
   if (!db) {
     return {};
   } else {
     const ref = db.ref('counts');
     const res = await ref.once('value');
-    return res.val();
+    const rawCounts = res.val();
+    const {
+      actionAcc,
+      actionLeft,
+      actionRight,
+      actionRotate,
+      games,
+      lines,
+      seconds,
+      turns
+    } = rawCounts;
+
+    return {
+      actionAcc,
+      actionLeft,
+      actionRight,
+      actionRotate,
+      games: games + turns,
+      lines,
+      seconds
+    };
   }
 }
 
