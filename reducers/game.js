@@ -138,6 +138,12 @@ export function gameJoinedReducer(state: Game, action: GameAction): Game {
     }
 
     case 'DROP': {
+      if (!allPlayersReady(state)) {
+        console.warn(`DROP action denied when game isn't running`);
+
+        return state;
+      }
+
       const { rows } = action.payload;
       const player = getPlayer(state, userId);
       const {
