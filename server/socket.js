@@ -12,7 +12,8 @@ import {
   incrementActionLeft,
   incrementActionRight,
   incrementActionAcc,
-  incrementActionRotate
+  incrementActionRotate,
+  incrementGameTime
 } from './firebase';
 import { rollbar } from './rollbar';
 
@@ -82,9 +83,10 @@ export function attachSocket(server: net$Server) {
             .to('global')
             .broadcast.emit('game-action', action);
 
+          countTurns(game, prevGame);
           countControlAction(action);
           countLines(action, game, prevGame);
-          countTurns(game, prevGame);
+          countGameTime(action);
         } catch (err) {
           const player = getPlayer(prevGame, action.payload.userId);
           const syncId = `${prevGame.id}-${player.lastActionId}`;
@@ -125,6 +127,27 @@ let pendingLeftCount = 0;
 let pendingRightCount = 0;
 let pendingAccCount = 0;
 let pendingRotateCount = 0;
+let pendingTimeCount = 0;
+
+function countTurns(game: Game, prevGame: Game) {
+  // Did the player(s) start another turn?
+  if (game.players[0].drops === 0 && prevGame.players[0].drops > 0) {
+    incrementTurnCount();
+  }
+}
+
+function countLines(action: GameAction, game: Game, prevGame: Game) {
+  // Did the players make any line(s)?
+  if (action.type !== 'JOIN_GAME') {
+    const { userId } = action.payload;
+    const prevPlayer = getPlayer(prevGame, userId);
+    const player = getPlayer(game, userId);
+
+    if (player.lines > prevPlayer.lines) {
+      incrementLineCount(player.lines - prevPlayer.lines);
+    }
+  }
+}
 
 function countControlAction(action: GameAction) {
   // Did the players make any control action?
@@ -148,27 +171,20 @@ function countControlAction(action: GameAction) {
   }
 }
 
-function countLines(action: GameAction, game: Game, prevGame: Game) {
-  // Did the players make any line(s)?
+function countGameTime(action: GameAction) {
   if (action.type !== 'JOIN_GAME') {
-    const { userId } = action.payload;
-    const prevPlayer = getPlayer(prevGame, userId);
-    const player = getPlayer(game, userId);
+    const { actionId, prevActionId } = action.payload;
+    const time = actionId - prevActionId;
 
-    if (player.lines > prevPlayer.lines) {
-      incrementLineCount(player.lines - prevPlayer.lines);
+    // Don't count any break bigger than 30s between action as play time.
+    // That would be cheating ;)
+    if (time > 0 && time < 30000) {
+      pendingTimeCount += Math.round(time / 1000);
     }
   }
 }
 
-function countTurns(game: Game, prevGame: Game) {
-  // Did the player(s) start another turn?
-  if (game.players[0].drops === 0 && prevGame.players[0].drops > 0) {
-    incrementTurnCount();
-  }
-}
-
-function flushGameActionCounts() {
+function flushCounts() {
   if (pendingLeftCount) {
     incrementActionLeft(pendingLeftCount);
     pendingLeftCount = 0;
@@ -185,6 +201,10 @@ function flushGameActionCounts() {
     incrementActionRotate(pendingRotateCount);
     pendingRotateCount = 0;
   }
+  if (pendingTimeCount) {
+    incrementGameTime(pendingTimeCount);
+    pendingTimeCount = 0;
+  }
 }
 
-setInterval(flushGameActionCounts, ACTION_STATS_FLUSH_INTERVAL);
+setInterval(flushCounts, ACTION_STATS_FLUSH_INTERVAL);
