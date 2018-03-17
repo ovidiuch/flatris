@@ -1,13 +1,13 @@
 // @flow
 
 import { object, func } from 'prop-types';
-import { uniqWith, sortBy, findLast, omit, without } from 'lodash';
+import { uniqWith, sortBy, omit, without } from 'lodash';
 import { Component } from 'react';
 import { getGame } from '../../utils/api';
 import { getSocket } from '../../utils/socket';
 import { logError } from '../../utils/rollbar-client';
 import { requestBackfill } from '../../utils/backfill';
-import { getPlayer, getGameActionOffset } from '../../reducers/game';
+import { getGameActionOffset } from '../../reducers/game';
 import {
   addGame,
   removeGame,
@@ -245,33 +245,29 @@ export class SocketProvider extends Component<Props> {
     const { queuedActions } = backfills[gameId];
     const mergedActions = [...actions, ...queuedActions];
     const uniqActions = uniqWith(mergedActions, compareGameActions);
-    const validActions = getValidActionChain(uniqActions, game);
+    const sortedActions = sortBy(uniqActions, a => a.payload.actionId);
 
     // TODO: Dispatch events at an interval, to convey the rhythm in
     // which the actions were originally performed
-    validActions.forEach(dispatch);
+    try {
+      sortedActions.forEach(dispatch);
 
-    const numDupes = mergedActions.length - uniqActions.length;
-    console.log(
-      `Backfilled ${uniqActions.length} actions (${numDupes} dupes).`
-    );
+      const numDupes = mergedActions.length - uniqActions.length;
+      console.log(
+        `Backfilled ${uniqActions.length} actions (${numDupes} dupes).`
+      );
+    } catch (err) {
+      // Error minigation: Sometimes client state gets out of sync with server
+      // state. In this case we remove the client state and await for a new
+      // game action, which will then fetch the game from scratch from server.
+      dispatch(removeGame(gameId));
 
-    const numValid = validActions.length;
-    const numInvalid = uniqActions.length - numValid;
-    if (numInvalid) {
-      logError(`Corrupt backfill`, {
+      logError(`Backfill failed`, {
         game,
-        actions,
+        backfillRes,
         queuedActions,
-        validActions,
-        numValid,
-        numInvalid
+        sortedActions
       });
-
-      if (!numValid) {
-        console.warn(`Backfill invalid, removing game ${gameId} from state`);
-        dispatch(removeGame(gameId));
-      }
     }
   };
 
@@ -329,60 +325,4 @@ function compareGameActions(a1: GameAction, a2: GameAction): boolean {
     a1.payload.userId === a2.payload.userId &&
     a1.payload.gameId === a2.payload.gameId
   );
-}
-
-function getValidActionChain(
-  actions: Array<GameAction>,
-  game: Game
-): Array<GameAction> {
-  const sortedActions = sortBy(actions, a => a.payload.actionId);
-  const validActions = [];
-
-  // Return the longest link of actions (where each action points to the
-  // previous action), from earliest to latest. As soon as a link is missing
-  // between two actions, the newer actions are discarded.
-  sortedActions.forEach(action => {
-    const { gameId, actionId } = action.payload;
-
-    if (gameId !== game.id) {
-      console.warn(
-        `Action ${actionId} from chain doesn't belong to game ${gameId}`
-      );
-    } else if (isActionValid(action, validActions, game)) {
-      validActions.push(action);
-    }
-  });
-
-  return validActions;
-}
-
-function isActionValid(
-  action: GameAction,
-  prevSortedActions: Array<GameAction>,
-  game: Game
-) {
-  const { type, payload } = action;
-  const { userId, prevActionId } = payload;
-
-  // JOIN_GAME actions don't point to any previous action (they have
-  // prevActionId = 0)
-  if (type === 'JOIN_GAME') {
-    return true;
-  }
-
-  // The action must point to the previous action OF THE SAME USER
-  const prevAction = findLast(
-    prevSortedActions,
-    a => a.payload.userId === userId
-  );
-
-  if (!prevAction) {
-    const player = getPlayer(game, userId);
-
-    // Does this action link to the last seen action of player?
-    return prevActionId === player.lastActionId;
-  }
-
-  // Does this action link to the most recent prev action?
-  return prevActionId === prevAction.payload.actionId;
 }

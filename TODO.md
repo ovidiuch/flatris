@@ -163,6 +163,7 @@
 
 BACKLOG
 
+* [ ] Back/home button in end game screen
 * [ ] Allow watcher to select current player
   * [ ] Show current player visually
 * [ ] Don't show onboarding after every deploy

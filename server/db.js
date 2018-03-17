@@ -180,9 +180,10 @@ function countGameTime(game: Game, actions: Array<GameAction>) {
     }
   });
 
-  // Choose the longer timeframe of the players
-  if (times.length > 0) {
-    incrementGameTime(Math.max(...times));
+  // Count play time of each player
+  const time = times.reduce((a, b) => a + b, 0);
+  if (time > 0) {
+    incrementGameTime(time);
   }
 }
 
