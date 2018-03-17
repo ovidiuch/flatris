@@ -2,7 +2,7 @@
 
 import socketIo from 'socket.io';
 import { omit, difference } from 'lodash';
-import { gameReducer, getPlayer, getLineCount } from '../reducers/game';
+import { gameReducer, getPlayer } from '../reducers/game';
 import { games, saveGameAction, bumpActiveGame } from './db';
 import {
   onStatsChange,
@@ -77,13 +77,20 @@ export function attachSocket(server: net$Server) {
             .to('global')
             .broadcast.emit('game-action', action);
 
+          // Did the players make any line(s)?
+          if (action.type !== 'JOIN_GAME') {
+            const { userId } = action.payload;
+            const prevPlayer = getPlayer(prevGame, userId);
+            const player = getPlayer(game, userId);
+
+            if (player.lines > prevPlayer.lines) {
+              incrementLineCount(player.lines - prevPlayer.lines);
+            }
+          }
+
           // Did the player(s) start another turn?
           if (game.players[0].drops === 0 && prevGame.players[0].drops > 0) {
             incrementTurnCount();
-            incrementLineCount(getLineCount(prevGame));
-          } else if (game.players.length !== prevGame.players.length) {
-            // Still count lines when solo game becomes multi
-            incrementLineCount(getLineCount(prevGame));
           }
         } catch (err) {
           const player = getPlayer(prevGame, action.payload.userId);
