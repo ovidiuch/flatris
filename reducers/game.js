@@ -561,10 +561,6 @@ export function getGameActionOffset(game: Game, action: GameAction): number {
   return prevActionId - player.lastActionId;
 }
 
-export function getTurnCount(game: Game) {
-  return game.players.reduce((total, p) => total + p.losses, 0);
-}
-
 export function getLineCount(game: Game) {
   return game.players.reduce((total, p) => total + p.lines, 0);
 }

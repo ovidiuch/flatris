@@ -2,12 +2,7 @@
 
 import socketIo from 'socket.io';
 import { omit, difference } from 'lodash';
-import {
-  gameReducer,
-  getPlayer,
-  getTurnCount,
-  getLineCount
-} from '../reducers/game';
+import { gameReducer, getPlayer, getLineCount } from '../reducers/game';
 import { games, saveGameAction, bumpActiveGame } from './db';
 import {
   onStatsChange,
