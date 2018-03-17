@@ -150,8 +150,8 @@ export function gameJoinedReducer(state: Game, action: GameAction): Game {
         quake
       } = player;
 
-      if (player.status !== 'READY') {
-        console.warn(`DROP action denied for player status ${player.status}`);
+      if (player.status === 'LOST') {
+        console.warn(`DROP action denied for loosing player`);
 
         return state;
       }
