@@ -179,7 +179,7 @@ function countGameTime(action: GameAction) {
     // Don't count any break bigger than 30s between action as play time.
     // That would be cheating ;)
     if (time > 0 && time < 30000) {
-      pendingTimeCount += Math.round(time / 1000);
+      pendingTimeCount += time;
     }
   }
 }
@@ -202,8 +202,9 @@ function flushCounts() {
     pendingRotateCount = 0;
   }
   if (pendingTimeCount) {
-    incrementGameTime(pendingTimeCount);
-    pendingTimeCount = 0;
+    const rounded = Math.round(pendingTimeCount / 1000);
+    incrementGameTime(rounded);
+    pendingTimeCount -= rounded * 1000;
   }
 }
 

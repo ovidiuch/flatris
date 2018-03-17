@@ -157,7 +157,7 @@
   * [x] Count time
 * [x] BUG: Gracefully invalidate session after re-deploy
 * [x] Sync game after player disconnect
-* [ ] Real time stats page
+* [x] Real time stats page
 * [ ] Ask for permission to join game
   * [ ] "Waiting for permission..." screen
   * [ ] "Allow player to join?" screen
