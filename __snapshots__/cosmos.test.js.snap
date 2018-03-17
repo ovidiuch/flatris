@@ -812,7 +812,18 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):game 1`] = `
           0
         </span>
       </span>
-       Flatris games played.
+       games played in
+       
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       seconds.
     </p>
     <p
       className="jsx-1735621698"
@@ -873,18 +884,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):game 1`] = `
           0
         </span>
       </span>
-       lines cleared in
-       
-      <span
-        className="jsx-761873922 count"
-      >
-        <span
-          className="jsx-761873922 total"
-        >
-          0
-        </span>
-      </span>
-       seconds of play time.
+       lines cleared.
     </p>
   </div>
   <div
@@ -1485,7 +1485,18 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):game-added 1`] = `
           0
         </span>
       </span>
-       Flatris games played.
+       games played in
+       
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       seconds.
     </p>
     <p
       className="jsx-1735621698"
@@ -1546,18 +1557,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):game-added 1`] = `
           0
         </span>
       </span>
-       lines cleared in
-       
-      <span
-        className="jsx-761873922 count"
-      >
-        <span
-          className="jsx-761873922 total"
-        >
-          0
-        </span>
-      </span>
-       seconds of play time.
+       lines cleared.
     </p>
   </div>
   <div
@@ -2158,7 +2158,18 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-added 1`] = `
           0
         </span>
       </span>
-       Flatris games played.
+       games played in
+       
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       seconds.
     </p>
     <p
       className="jsx-1735621698"
@@ -2219,18 +2230,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-added 1`] = `
           0
         </span>
       </span>
-       lines cleared in
-       
-      <span
-        className="jsx-761873922 count"
-      >
-        <span
-          className="jsx-761873922 total"
-        >
-          0
-        </span>
-      </span>
-       seconds of play time.
+       lines cleared.
     </p>
   </div>
   <div
@@ -3415,7 +3415,18 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed 1`] = 
           0
         </span>
       </span>
-       Flatris games played.
+       games played in
+       
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       seconds.
     </p>
     <p
       className="jsx-1735621698"
@@ -3476,18 +3487,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed 1`] = 
           0
         </span>
       </span>
-       lines cleared in
-       
-      <span
-        className="jsx-761873922 count"
-      >
-        <span
-          className="jsx-761873922 total"
-        >
-          0
-        </span>
-      </span>
-       seconds of play time.
+       lines cleared.
     </p>
   </div>
   <div
@@ -4380,7 +4380,18 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed-and-ad
           0
         </span>
       </span>
-       Flatris games played.
+       games played in
+       
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       seconds.
     </p>
     <p
       className="jsx-1735621698"
@@ -4441,18 +4452,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed-and-ad
           0
         </span>
       </span>
-       lines cleared in
-       
-      <span
-        className="jsx-761873922 count"
-      >
-        <span
-          className="jsx-761873922 total"
-        >
-          0
-        </span>
-      </span>
-       seconds of play time.
+       lines cleared.
     </p>
   </div>
   <div
@@ -5637,7 +5637,18 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):mixed-games 1`] = `
           0
         </span>
       </span>
-       Flatris games played.
+       games played in
+       
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       seconds.
     </p>
     <p
       className="jsx-1735621698"
@@ -5698,18 +5709,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):mixed-games 1`] = `
           0
         </span>
       </span>
-       lines cleared in
-       
-      <span
-        className="jsx-761873922 count"
-      >
-        <span
-          className="jsx-761873922 total"
-        >
-          0
-        </span>
-      </span>
-       seconds of play time.
+       lines cleared.
     </p>
   </div>
   <div
@@ -6611,7 +6611,18 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):mixed-games-removed 
           0
         </span>
       </span>
-       Flatris games played.
+       games played in
+       
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       seconds.
     </p>
     <p
       className="jsx-1735621698"
@@ -6672,18 +6683,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):mixed-games-removed 
           0
         </span>
       </span>
-       lines cleared in
-       
-      <span
-        className="jsx-761873922 count"
-      >
-        <span
-          className="jsx-761873922 total"
-        >
-          0
-        </span>
-      </span>
-       seconds of play time.
+       lines cleared.
     </p>
   </div>
   <div
@@ -7284,7 +7284,18 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):no-games 1`] = `
           0
         </span>
       </span>
-       Flatris games played.
+       games played in
+       
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       seconds.
     </p>
     <p
       className="jsx-1735621698"
@@ -7345,18 +7356,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):no-games 1`] = `
           0
         </span>
       </span>
-       lines cleared in
-       
-      <span
-        className="jsx-761873922 count"
-      >
-        <span
-          className="jsx-761873922 total"
-        >
-          0
-        </span>
-      </span>
-       seconds of play time.
+       lines cleared.
     </p>
   </div>
   <div
@@ -7665,7 +7665,18 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):own-game 1`] = `
           0
         </span>
       </span>
-       Flatris games played.
+       games played in
+       
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       seconds.
     </p>
     <p
       className="jsx-1735621698"
@@ -7726,18 +7737,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):own-game 1`] = `
           0
         </span>
       </span>
-       lines cleared in
-       
-      <span
-        className="jsx-761873922 count"
-      >
-        <span
-          className="jsx-761873922 total"
-        >
-          0
-        </span>
-      </span>
-       seconds of play time.
+       lines cleared.
     </p>
   </div>
   <div
@@ -8338,7 +8338,18 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):own-game-removed 1`]
           0
         </span>
       </span>
-       Flatris games played.
+       games played in
+       
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       seconds.
     </p>
     <p
       className="jsx-1735621698"
@@ -8399,18 +8410,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):own-game-removed 1`]
           0
         </span>
       </span>
-       lines cleared in
-       
-      <span
-        className="jsx-761873922 count"
-      >
-        <span
-          className="jsx-761873922 total"
-        >
-          0
-        </span>
-      </span>
-       seconds of play time.
+       lines cleared.
     </p>
   </div>
   <div
@@ -27293,7 +27293,18 @@ exports[`Cosmos fixtures: Stats:default 1`] = `
         1906
       </span>
     </span>
-     Flatris games played.
+     games played in
+     
+    <span
+      className="jsx-761873922 count"
+    >
+      <span
+        className="jsx-761873922 total"
+      >
+        150275
+      </span>
+    </span>
+     seconds.
   </p>
   <p
     className="jsx-1735621698"
@@ -27354,18 +27365,7 @@ exports[`Cosmos fixtures: Stats:default 1`] = `
         14599
       </span>
     </span>
-     lines cleared in
-     
-    <span
-      className="jsx-761873922 count"
-    >
-      <span
-        className="jsx-761873922 total"
-      >
-        150275
-      </span>
-    </span>
-     seconds of play time.
+     lines cleared.
   </p>
 </div>
 `;
@@ -27391,7 +27391,23 @@ exports[`Cosmos fixtures: Stats:update 1`] = `
         3
       </span>
     </span>
-     Flatris games played.
+     games played in
+     
+    <span
+      className="jsx-761873922 count"
+    >
+      <span
+        className="jsx-761873922 total"
+      >
+        150275
+      </span>
+      <span
+        className="jsx-761873922 diff"
+      >
+        35
+      </span>
+    </span>
+     seconds.
   </p>
   <p
     className="jsx-1735621698"
@@ -27477,23 +27493,7 @@ exports[`Cosmos fixtures: Stats:update 1`] = `
         51
       </span>
     </span>
-     lines cleared in
-     
-    <span
-      className="jsx-761873922 count"
-    >
-      <span
-        className="jsx-761873922 total"
-      >
-        150275
-      </span>
-      <span
-        className="jsx-761873922 diff"
-      >
-        35
-      </span>
-    </span>
-     seconds of play time.
+     lines cleared.
   </p>
 </div>
 `;

@@ -45,17 +45,17 @@ class Stats extends Component<Props, LocalState> {
   render() {
     return (
       <div className="stats">
-        <p>{this.renderCount('games')} Flatris games played.</p>
+        <p>
+          {this.renderCount('games')} games played in{' '}
+          {this.renderCount('seconds')} seconds.
+        </p>
         <p>
           {this.renderCount('actionLeft')} left and{' '}
           {this.renderCount('actionRight')} right moves.{' '}
           {this.renderCount('actionAcc')} drops and{' '}
           {this.renderCount('actionRotate')} rotations.
         </p>
-        <p>
-          {this.renderCount('lines')} lines cleared in{' '}
-          {this.renderCount('seconds')} seconds of play time.
-        </p>
+        <p>{this.renderCount('lines')} lines cleared.</p>
         <style jsx>{`
           .stats {
             overflow: hidden;
