@@ -13,6 +13,7 @@ import type {
   StartBackfillAction,
   EndBackfillAction,
   QueueGameAction,
+  UpdateStatsAction,
   GameAction
 } from '../types/actions';
 
@@ -110,5 +111,12 @@ export function queueGameAction(action: GameAction): QueueGameAction {
   return {
     type: 'QUEUE_GAME_ACTION',
     payload: { action }
+  };
+}
+
+export function updateStats(stats: Stats): UpdateStatsAction {
+  return {
+    type: 'UPDATE_STATS',
+    payload: { stats }
   };
 }

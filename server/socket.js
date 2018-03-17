@@ -9,7 +9,11 @@ import {
   getLineCount
 } from '../reducers/game';
 import { games, saveGameAction, bumpActiveGame } from './db';
-import { incrementTurnCount, incrementLineCount } from './firebase';
+import {
+  onStatsChange,
+  incrementTurnCount,
+  incrementLineCount
+} from './firebase';
 import { rollbar } from './rollbar';
 
 import type { GameId } from '../types/state';
@@ -80,6 +84,7 @@ export function attachSocket(server: net$Server) {
 
           // Did the player(s) start another turn?
           if (getTurnCount(game) > getTurnCount(prevGame)) {
+            // TODO: Increment only when the next turn starts...
             incrementTurnCount();
             incrementLineCount(getLineCount(prevGame));
           } else if (game.players.length !== prevGame.players.length) {
@@ -111,6 +116,10 @@ export function attachSocket(server: net$Server) {
         }
       }
     });
+  });
+
+  onStatsChange(stats => {
+    io.to('global').emit('stats', stats);
   });
 }
 

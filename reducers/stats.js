@@ -18,7 +18,8 @@ export function statsReducer(
   action: Action
 ): Stats {
   switch (action.type) {
-    case 'LOAD_DASHBOARD': {
+    case 'LOAD_DASHBOARD':
+    case 'UPDATE_STATS': {
       const { stats } = action.payload;
 
       return stats;

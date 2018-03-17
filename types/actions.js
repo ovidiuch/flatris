@@ -86,6 +86,13 @@ export type QueueGameAction = {
   }
 };
 
+export type UpdateStatsAction = {
+  type: 'UPDATE_STATS',
+  payload: {
+    stats: Stats
+  }
+};
+
 type GameActionPayload = {
   actionId: ActionId,
   prevActionId: ActionId,
@@ -180,6 +187,7 @@ export type Action =
   | StartBackfillAction
   | EndBackfillAction
   | QueueGameAction
+  | UpdateStatsAction
   | GameAction;
 
 export type GetState = () => State;
