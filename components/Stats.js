@@ -9,40 +9,35 @@ type Props = {
 };
 
 type LocalState = {
-  lastUpdated: number,
-  statsDiff: StatsType
+  statsDiff: {
+    [stat: $Keys<StatsType>]: [number, number] // [diff, updatedAt]
+  }
 };
 
 class Stats extends Component<Props, LocalState> {
   state = {
-    lastUpdated: Date.now(),
-    statsDiff: {
-      actionAcc: 0,
-      actionLeft: 0,
-      actionRight: 0,
-      actionRotate: 0,
-      games: 0,
-      lines: 0,
-      seconds: 0
-    }
+    statsDiff: {}
   };
 
   componentDidUpdate({ stats: prevStats }: Props) {
     const { stats } = this.props;
 
     if (stats !== prevStats) {
+      let statsDiff = this.state.statsDiff;
+
+      Object.keys(stats).forEach((stat: $Keys<StatsType>) => {
+        const diff = stats[stat] - prevStats[stat];
+
+        if (diff > 0) {
+          statsDiff = {
+            ...statsDiff,
+            [stat]: [diff, Date.now()]
+          };
+        }
+      });
+
       this.setState({
-        statsDiff: {
-          // Thank you Flow for making my life B O R I N G!
-          actionAcc: stats.actionAcc - prevStats.actionAcc,
-          actionLeft: stats.actionLeft - prevStats.actionLeft,
-          actionRight: stats.actionRight - prevStats.actionRight,
-          actionRotate: stats.actionRotate - prevStats.actionRotate,
-          games: stats.games - prevStats.games,
-          lines: stats.lines - prevStats.lines,
-          seconds: stats.seconds - prevStats.seconds
-        },
-        lastUpdated: Date.now()
+        statsDiff
       });
     }
   }
@@ -80,15 +75,15 @@ class Stats extends Component<Props, LocalState> {
 
   renderCount(stat: $Keys<StatsType>) {
     const { stats } = this.props;
-    const { lastUpdated, statsDiff } = this.state;
+    const { statsDiff } = this.state;
     const diff = statsDiff[stat];
 
     return (
       <span className="count">
         <span className="total">{stats[stat]}</span>
-        {diff > 0 && (
-          <span className="diff" key={lastUpdated}>
-            {diff}
+        {diff && (
+          <span className="diff" key={`${stat}-${diff[1]}`}>
+            {diff[0]}
           </span>
         )}
         <style jsx>{`
