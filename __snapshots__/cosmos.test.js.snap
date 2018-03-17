@@ -26377,6 +26377,227 @@ exports[`Cosmos fixtures: SquareBlock:color-of-the-Z-tetromino 1`] = `
 />
 `;
 
+exports[`Cosmos fixtures: Stats:default 1`] = `
+<div
+  className="jsx-850158512 stats"
+>
+  <p
+    className="jsx-850158512"
+  >
+    <span
+      className="jsx-761873922 count"
+    >
+      <span
+        className="jsx-761873922 total"
+      >
+        1906
+      </span>
+    </span>
+     Flatris games played.
+  </p>
+  <p
+    className="jsx-850158512"
+  >
+    <span
+      className="jsx-761873922 count"
+    >
+      <span
+        className="jsx-761873922 total"
+      >
+        89339
+      </span>
+    </span>
+     left and
+     
+    <span
+      className="jsx-761873922 count"
+    >
+      <span
+        className="jsx-761873922 total"
+      >
+        101170
+      </span>
+    </span>
+     right moves.
+     
+    <span
+      className="jsx-761873922 count"
+    >
+      <span
+        className="jsx-761873922 total"
+      >
+        78324
+      </span>
+    </span>
+     drops and
+     
+    <span
+      className="jsx-761873922 count"
+    >
+      <span
+        className="jsx-761873922 total"
+      >
+        79418
+      </span>
+    </span>
+     rotations.
+  </p>
+  <p
+    className="jsx-850158512"
+  >
+    <span
+      className="jsx-761873922 count"
+    >
+      <span
+        className="jsx-761873922 total"
+      >
+        14599
+      </span>
+    </span>
+     lines cleared in
+     
+    <span
+      className="jsx-761873922 count"
+    >
+      <span
+        className="jsx-761873922 total"
+      >
+        150275
+      </span>
+    </span>
+     seconds of play time.
+  </p>
+</div>
+`;
+
+exports[`Cosmos fixtures: Stats:update 1`] = `
+<div
+  className="jsx-850158512 stats"
+>
+  <p
+    className="jsx-850158512"
+  >
+    <span
+      className="jsx-761873922 count"
+    >
+      <span
+        className="jsx-761873922 total"
+      >
+        1906
+      </span>
+      <span
+        className="jsx-761873922 diff"
+      >
+        3
+      </span>
+    </span>
+     Flatris games played.
+  </p>
+  <p
+    className="jsx-850158512"
+  >
+    <span
+      className="jsx-761873922 count"
+    >
+      <span
+        className="jsx-761873922 total"
+      >
+        89339
+      </span>
+      <span
+        className="jsx-761873922 diff"
+      >
+        155
+      </span>
+    </span>
+     left and
+     
+    <span
+      className="jsx-761873922 count"
+    >
+      <span
+        className="jsx-761873922 total"
+      >
+        101170
+      </span>
+      <span
+        className="jsx-761873922 diff"
+      >
+        167
+      </span>
+    </span>
+     right moves.
+     
+    <span
+      className="jsx-761873922 count"
+    >
+      <span
+        className="jsx-761873922 total"
+      >
+        78324
+      </span>
+      <span
+        className="jsx-761873922 diff"
+      >
+        211
+      </span>
+    </span>
+     drops and
+     
+    <span
+      className="jsx-761873922 count"
+    >
+      <span
+        className="jsx-761873922 total"
+      >
+        79418
+      </span>
+      <span
+        className="jsx-761873922 diff"
+      >
+        123
+      </span>
+    </span>
+     rotations.
+  </p>
+  <p
+    className="jsx-850158512"
+  >
+    <span
+      className="jsx-761873922 count"
+    >
+      <span
+        className="jsx-761873922 total"
+      >
+        14599
+      </span>
+      <span
+        className="jsx-761873922 diff"
+      >
+        51
+      </span>
+    </span>
+     lines cleared in
+     
+    <span
+      className="jsx-761873922 count"
+    >
+      <span
+        className="jsx-761873922 total"
+      >
+        150275
+      </span>
+      <span
+        className="jsx-761873922 diff"
+      >
+        35
+      </span>
+    </span>
+     seconds of play time.
+  </p>
+</div>
+`;
+
 exports[`Cosmos fixtures: Tetromino:I-tetromino 1`] = `
 <div
   className="jsx-2115617632 tetromino"

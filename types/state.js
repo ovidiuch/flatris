@@ -76,6 +76,16 @@ export type Backfills = {
   [gameId: GameId]: Backfill
 };
 
+export type Stats = {
+  actionAcc: number,
+  actionLeft: number,
+  actionRight: number,
+  actionRotate: number,
+  games: number,
+  lines: number,
+  seconds: number
+};
+
 export type State = {
   jsReady: boolean,
   curUser: ?User,
