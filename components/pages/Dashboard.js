@@ -14,8 +14,16 @@ import GamePreview from '../GamePreview';
 import GamePreviewShell from '../GamePreviewShell';
 import Button from '../Button';
 import Logo from '../Logo';
+import Stats from '../Stats';
 
-import type { User, GameId, Game, Games, State } from '../../types/state';
+import type {
+  User,
+  GameId,
+  Game,
+  Games,
+  Stats as StatsType,
+  State
+} from '../../types/state';
 import type { RoomId } from '../../types/api';
 
 const TRANSITION_TIMEOUT = 550; // CSS transition takes 500ms (added 50ms buffer)
@@ -24,6 +32,7 @@ type Props = {
   curUser: ?User,
   games: Games,
   curGame: ?GameId,
+  stats: StatsType,
   subscribe: (roomId: RoomId) => mixed,
   onGameKeepAlive: (handler: (gameId: GameId) => void) => mixed,
   offGameKeepAlive: (handler: (gameId: GameId) => void) => mixed,
@@ -151,7 +160,7 @@ class Dashboard extends Component<Props, LocalState> {
   };
 
   render() {
-    const { curUser } = this.props;
+    const { curUser, stats } = this.props;
     const { gamesCopy } = this.state;
 
     const ownGames = [];
@@ -198,6 +207,7 @@ class Dashboard extends Component<Props, LocalState> {
               </div>
             </div>
           </div>
+          <Stats stats={stats} />
           {!hasAnyGames && (
             <Fragment>
               <div className="message">
@@ -267,7 +277,6 @@ class Dashboard extends Component<Props, LocalState> {
 
             .message {
               padding: 20px;
-              padding-top: 0;
               line-height: 1.5em;
               color: #9ba4ab;
             }
@@ -351,11 +360,17 @@ class Dashboard extends Component<Props, LocalState> {
   }
 }
 
-function mapStateToProps({ curUser, games, curGame }: State): $Shape<Props> {
+function mapStateToProps({
+  curUser,
+  games,
+  curGame,
+  stats
+}: State): $Shape<Props> {
   return {
     curUser,
     games,
-    curGame
+    curGame,
+    stats
   };
 }
 

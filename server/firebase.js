@@ -2,14 +2,35 @@
 
 import admin from 'firebase-admin';
 
-export async function getCounts() {
+import type { Stats } from '../types/state';
+
+export async function getStats(): Promise<Stats> {
   const db = getDb();
   if (!db) {
-    return {};
+    return {
+      actionAcc: 0,
+      actionLeft: 0,
+      actionRight: 0,
+      actionRotate: 0,
+      games: 0,
+      lines: 0,
+      seconds: 0
+    };
   } else {
     const ref = db.ref('counts');
     const res = await ref.once('value');
-    return res.val();
+
+    return prepareStats(res.val());
+  }
+}
+
+export function onStatsChange(changeHandler: (stats: Stats) => void) {
+  const db = getDb();
+  if (db) {
+    const ref = db.ref('counts');
+    ref.on('value', snapshot => {
+      changeHandler(prepareStats(snapshot.val()));
+    });
   }
 }
 
@@ -86,4 +107,27 @@ function incrementCount(collection: string, by = 1) {
     // If it has never been set it returns null
     ref.transaction(curCount => (curCount === null ? by : curCount + by));
   }
+}
+
+function prepareStats(rawStats) {
+  const {
+    actionAcc,
+    actionLeft,
+    actionRight,
+    actionRotate,
+    games,
+    lines,
+    seconds,
+    turns
+  } = rawStats;
+
+  return {
+    actionAcc,
+    actionLeft,
+    actionRight,
+    actionRotate,
+    games: games + turns,
+    lines,
+    seconds
+  };
 }

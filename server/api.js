@@ -12,19 +12,24 @@ import {
   insertGame
 } from './db';
 import { rollbar } from './rollbar';
-import { getCounts, incrementUserCount, incrementGameCount } from './firebase';
+import { getStats, incrementUserCount, incrementGameCount } from './firebase';
 
 import type { User } from '../types/state';
 import type { BackfillRequest, BackfillResponse } from '../types/api';
 import type { SessionId } from './db';
 
 export function addRoutes(app: express$Application) {
-  app.get('/dashboard', (req: express$Request, res: express$Response) => {
-    res.json({
-      // NOTE: This is returned as an array instead of map in order to allow
-      // sorting in the future
-      games: activeGames.map(gameId => games[gameId])
-    });
+  app.get('/dashboard', async (req: express$Request, res: express$Response) => {
+    try {
+      res.json({
+        // NOTE: This is returned as an array instead of map in order to allow
+        // sorting in the future
+        games: activeGames.map(gameId => games[gameId]),
+        stats: await getStats()
+      });
+    } catch (err) {
+      res.sendStatus(500);
+    }
   });
 
   app.get('/game/:gameId', (req: express$Request, res: express$Response) => {
@@ -105,14 +110,6 @@ export function addRoutes(app: express$Application) {
     } catch (err) {
       rollbar.error(err);
       res.sendStatus(400);
-    }
-  });
-
-  app.get('/stats', async (req: express$Request, res: express$Response) => {
-    try {
-      res.json(await getCounts());
-    } catch (err) {
-      res.sendStatus(500);
     }
   });
 

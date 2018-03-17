@@ -676,13 +676,13 @@ exports[`Cosmos fixtures: Connect(NewGame):loading 1`] = `
 
 exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):game 1`] = `
 <div
-  className="jsx-1867168289 root"
+  className="jsx-3365034459 root"
 >
   <div
-    className="jsx-1867168289 header"
+    className="jsx-3365034459 header"
   >
     <div
-      className="jsx-1867168289 left new-game-button"
+      className="jsx-3365034459 left new-game-button"
     >
       <button
         className="jsx-2576755423 button hover-button"
@@ -693,13 +693,13 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):game 1`] = `
       </button>
     </div>
     <div
-      className="jsx-1867168289 right"
+      className="jsx-3365034459 right"
     >
       <div
-        className="jsx-1867168289 view-source left"
+        className="jsx-3365034459 view-source left"
       >
         <a
-          className="jsx-1867168289"
+          className="jsx-3365034459"
           href="https://github.com/skidding/flatris"
           target="_blank"
         >
@@ -712,7 +712,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):game 1`] = `
         </a>
       </div>
       <div
-        className="jsx-1867168289 logo left"
+        className="jsx-3365034459 logo left"
       >
         <div
           className="jsx-1917779880 logo"
@@ -798,7 +798,97 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):game 1`] = `
     </div>
   </div>
   <div
-    className="jsx-1867168289 message"
+    className="jsx-1735621698 stats"
+  >
+    <p
+      className="jsx-1735621698"
+    >
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       games played in
+       
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       seconds.
+    </p>
+    <p
+      className="jsx-1735621698"
+    >
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       left and
+       
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       right moves.
+       
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       drops and
+       
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       rotations.
+    </p>
+    <p
+      className="jsx-1735621698"
+    >
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       lines cleared.
+    </p>
+  </div>
+  <div
+    className="jsx-3365034459 message"
   >
     Join a game or create a new one
   </div>
@@ -1259,13 +1349,13 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):game 1`] = `
 
 exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):game-added 1`] = `
 <div
-  className="jsx-1867168289 root"
+  className="jsx-3365034459 root"
 >
   <div
-    className="jsx-1867168289 header"
+    className="jsx-3365034459 header"
   >
     <div
-      className="jsx-1867168289 left new-game-button"
+      className="jsx-3365034459 left new-game-button"
     >
       <button
         className="jsx-2576755423 button hover-button"
@@ -1276,13 +1366,13 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):game-added 1`] = `
       </button>
     </div>
     <div
-      className="jsx-1867168289 right"
+      className="jsx-3365034459 right"
     >
       <div
-        className="jsx-1867168289 view-source left"
+        className="jsx-3365034459 view-source left"
       >
         <a
-          className="jsx-1867168289"
+          className="jsx-3365034459"
           href="https://github.com/skidding/flatris"
           target="_blank"
         >
@@ -1295,7 +1385,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):game-added 1`] = `
         </a>
       </div>
       <div
-        className="jsx-1867168289 logo left"
+        className="jsx-3365034459 logo left"
       >
         <div
           className="jsx-1917779880 logo"
@@ -1381,7 +1471,97 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):game-added 1`] = `
     </div>
   </div>
   <div
-    className="jsx-1867168289 message"
+    className="jsx-1735621698 stats"
+  >
+    <p
+      className="jsx-1735621698"
+    >
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       games played in
+       
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       seconds.
+    </p>
+    <p
+      className="jsx-1735621698"
+    >
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       left and
+       
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       right moves.
+       
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       drops and
+       
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       rotations.
+    </p>
+    <p
+      className="jsx-1735621698"
+    >
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       lines cleared.
+    </p>
+  </div>
+  <div
+    className="jsx-3365034459 message"
   >
     Join a game or create a new one
   </div>
@@ -1842,13 +2022,13 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):game-added 1`] = `
 
 exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-added 1`] = `
 <div
-  className="jsx-1867168289 root"
+  className="jsx-3365034459 root"
 >
   <div
-    className="jsx-1867168289 header"
+    className="jsx-3365034459 header"
   >
     <div
-      className="jsx-1867168289 left new-game-button"
+      className="jsx-3365034459 left new-game-button"
     >
       <button
         className="jsx-2576755423 button hover-button"
@@ -1859,13 +2039,13 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-added 1`] = `
       </button>
     </div>
     <div
-      className="jsx-1867168289 right"
+      className="jsx-3365034459 right"
     >
       <div
-        className="jsx-1867168289 view-source left"
+        className="jsx-3365034459 view-source left"
       >
         <a
-          className="jsx-1867168289"
+          className="jsx-3365034459"
           href="https://github.com/skidding/flatris"
           target="_blank"
         >
@@ -1878,7 +2058,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-added 1`] = `
         </a>
       </div>
       <div
-        className="jsx-1867168289 logo left"
+        className="jsx-3365034459 logo left"
       >
         <div
           className="jsx-1917779880 logo"
@@ -1964,7 +2144,97 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-added 1`] = `
     </div>
   </div>
   <div
-    className="jsx-1867168289 message"
+    className="jsx-1735621698 stats"
+  >
+    <p
+      className="jsx-1735621698"
+    >
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       games played in
+       
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       seconds.
+    </p>
+    <p
+      className="jsx-1735621698"
+    >
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       left and
+       
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       right moves.
+       
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       drops and
+       
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       rotations.
+    </p>
+    <p
+      className="jsx-1735621698"
+    >
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       lines cleared.
+    </p>
+  </div>
+  <div
+    className="jsx-3365034459 message"
   >
     Join a game or create a new one
   </div>
@@ -3009,13 +3279,13 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-added 1`] = `
 
 exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed 1`] = `
 <div
-  className="jsx-1867168289 root"
+  className="jsx-3365034459 root"
 >
   <div
-    className="jsx-1867168289 header"
+    className="jsx-3365034459 header"
   >
     <div
-      className="jsx-1867168289 left new-game-button"
+      className="jsx-3365034459 left new-game-button"
     >
       <button
         className="jsx-2576755423 button hover-button"
@@ -3026,13 +3296,13 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed 1`] = 
       </button>
     </div>
     <div
-      className="jsx-1867168289 right"
+      className="jsx-3365034459 right"
     >
       <div
-        className="jsx-1867168289 view-source left"
+        className="jsx-3365034459 view-source left"
       >
         <a
-          className="jsx-1867168289"
+          className="jsx-3365034459"
           href="https://github.com/skidding/flatris"
           target="_blank"
         >
@@ -3045,7 +3315,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed 1`] = 
         </a>
       </div>
       <div
-        className="jsx-1867168289 logo left"
+        className="jsx-3365034459 logo left"
       >
         <div
           className="jsx-1917779880 logo"
@@ -3131,7 +3401,97 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed 1`] = 
     </div>
   </div>
   <div
-    className="jsx-1867168289 message"
+    className="jsx-1735621698 stats"
+  >
+    <p
+      className="jsx-1735621698"
+    >
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       games played in
+       
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       seconds.
+    </p>
+    <p
+      className="jsx-1735621698"
+    >
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       left and
+       
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       right moves.
+       
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       drops and
+       
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       rotations.
+    </p>
+    <p
+      className="jsx-1735621698"
+    >
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       lines cleared.
+    </p>
+  </div>
+  <div
+    className="jsx-3365034459 message"
   >
     Join a game or create a new one
   </div>
@@ -3884,13 +4244,13 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed 1`] = 
 
 exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed-and-added 1`] = `
 <div
-  className="jsx-1867168289 root"
+  className="jsx-3365034459 root"
 >
   <div
-    className="jsx-1867168289 header"
+    className="jsx-3365034459 header"
   >
     <div
-      className="jsx-1867168289 left new-game-button"
+      className="jsx-3365034459 left new-game-button"
     >
       <button
         className="jsx-2576755423 button hover-button"
@@ -3901,13 +4261,13 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed-and-ad
       </button>
     </div>
     <div
-      className="jsx-1867168289 right"
+      className="jsx-3365034459 right"
     >
       <div
-        className="jsx-1867168289 view-source left"
+        className="jsx-3365034459 view-source left"
       >
         <a
-          className="jsx-1867168289"
+          className="jsx-3365034459"
           href="https://github.com/skidding/flatris"
           target="_blank"
         >
@@ -3920,7 +4280,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed-and-ad
         </a>
       </div>
       <div
-        className="jsx-1867168289 logo left"
+        className="jsx-3365034459 logo left"
       >
         <div
           className="jsx-1917779880 logo"
@@ -4006,7 +4366,97 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed-and-ad
     </div>
   </div>
   <div
-    className="jsx-1867168289 message"
+    className="jsx-1735621698 stats"
+  >
+    <p
+      className="jsx-1735621698"
+    >
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       games played in
+       
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       seconds.
+    </p>
+    <p
+      className="jsx-1735621698"
+    >
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       left and
+       
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       right moves.
+       
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       drops and
+       
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       rotations.
+    </p>
+    <p
+      className="jsx-1735621698"
+    >
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       lines cleared.
+    </p>
+  </div>
+  <div
+    className="jsx-3365034459 message"
   >
     Join a game or create a new one
   </div>
@@ -5051,13 +5501,13 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed-and-ad
 
 exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):mixed-games 1`] = `
 <div
-  className="jsx-1867168289 root"
+  className="jsx-3365034459 root"
 >
   <div
-    className="jsx-1867168289 header"
+    className="jsx-3365034459 header"
   >
     <div
-      className="jsx-1867168289 left new-game-button"
+      className="jsx-3365034459 left new-game-button"
     >
       <button
         className="jsx-2576755423 button hover-button"
@@ -5068,13 +5518,13 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):mixed-games 1`] = `
       </button>
     </div>
     <div
-      className="jsx-1867168289 right"
+      className="jsx-3365034459 right"
     >
       <div
-        className="jsx-1867168289 view-source left"
+        className="jsx-3365034459 view-source left"
       >
         <a
-          className="jsx-1867168289"
+          className="jsx-3365034459"
           href="https://github.com/skidding/flatris"
           target="_blank"
         >
@@ -5087,7 +5537,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):mixed-games 1`] = `
         </a>
       </div>
       <div
-        className="jsx-1867168289 logo left"
+        className="jsx-3365034459 logo left"
       >
         <div
           className="jsx-1917779880 logo"
@@ -5173,7 +5623,97 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):mixed-games 1`] = `
     </div>
   </div>
   <div
-    className="jsx-1867168289 message"
+    className="jsx-1735621698 stats"
+  >
+    <p
+      className="jsx-1735621698"
+    >
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       games played in
+       
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       seconds.
+    </p>
+    <p
+      className="jsx-1735621698"
+    >
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       left and
+       
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       right moves.
+       
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       drops and
+       
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       rotations.
+    </p>
+    <p
+      className="jsx-1735621698"
+    >
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       lines cleared.
+    </p>
+  </div>
+  <div
+    className="jsx-3365034459 message"
   >
     Your games
   </div>
@@ -5474,7 +6014,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):mixed-games 1`] = `
     </div>
   </div>
   <div
-    className="jsx-1867168289 message"
+    className="jsx-3365034459 message"
   >
     Other games
   </div>
@@ -5935,13 +6475,13 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):mixed-games 1`] = `
 
 exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):mixed-games-removed 1`] = `
 <div
-  className="jsx-1867168289 root"
+  className="jsx-3365034459 root"
 >
   <div
-    className="jsx-1867168289 header"
+    className="jsx-3365034459 header"
   >
     <div
-      className="jsx-1867168289 left new-game-button"
+      className="jsx-3365034459 left new-game-button"
     >
       <button
         className="jsx-2576755423 button hover-button"
@@ -5952,13 +6492,13 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):mixed-games-removed 
       </button>
     </div>
     <div
-      className="jsx-1867168289 right"
+      className="jsx-3365034459 right"
     >
       <div
-        className="jsx-1867168289 view-source left"
+        className="jsx-3365034459 view-source left"
       >
         <a
-          className="jsx-1867168289"
+          className="jsx-3365034459"
           href="https://github.com/skidding/flatris"
           target="_blank"
         >
@@ -5971,7 +6511,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):mixed-games-removed 
         </a>
       </div>
       <div
-        className="jsx-1867168289 logo left"
+        className="jsx-3365034459 logo left"
       >
         <div
           className="jsx-1917779880 logo"
@@ -6057,7 +6597,97 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):mixed-games-removed 
     </div>
   </div>
   <div
-    className="jsx-1867168289 message"
+    className="jsx-1735621698 stats"
+  >
+    <p
+      className="jsx-1735621698"
+    >
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       games played in
+       
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       seconds.
+    </p>
+    <p
+      className="jsx-1735621698"
+    >
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       left and
+       
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       right moves.
+       
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       drops and
+       
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       rotations.
+    </p>
+    <p
+      className="jsx-1735621698"
+    >
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       lines cleared.
+    </p>
+  </div>
+  <div
+    className="jsx-3365034459 message"
   >
     Your games
   </div>
@@ -6518,13 +7148,13 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):mixed-games-removed 
 
 exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):no-games 1`] = `
 <div
-  className="jsx-1867168289 root"
+  className="jsx-3365034459 root"
 >
   <div
-    className="jsx-1867168289 header"
+    className="jsx-3365034459 header"
   >
     <div
-      className="jsx-1867168289 left new-game-button"
+      className="jsx-3365034459 left new-game-button"
     >
       <button
         className="jsx-2576755423 button hover-button"
@@ -6535,13 +7165,13 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):no-games 1`] = `
       </button>
     </div>
     <div
-      className="jsx-1867168289 right"
+      className="jsx-3365034459 right"
     >
       <div
-        className="jsx-1867168289 view-source left"
+        className="jsx-3365034459 view-source left"
       >
         <a
-          className="jsx-1867168289"
+          className="jsx-3365034459"
           href="https://github.com/skidding/flatris"
           target="_blank"
         >
@@ -6554,7 +7184,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):no-games 1`] = `
         </a>
       </div>
       <div
-        className="jsx-1867168289 logo left"
+        className="jsx-3365034459 logo left"
       >
         <div
           className="jsx-1917779880 logo"
@@ -6640,7 +7270,97 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):no-games 1`] = `
     </div>
   </div>
   <div
-    className="jsx-1867168289 message"
+    className="jsx-1735621698 stats"
+  >
+    <p
+      className="jsx-1735621698"
+    >
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       games played in
+       
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       seconds.
+    </p>
+    <p
+      className="jsx-1735621698"
+    >
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       left and
+       
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       right moves.
+       
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       drops and
+       
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       rotations.
+    </p>
+    <p
+      className="jsx-1735621698"
+    >
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       lines cleared.
+    </p>
+  </div>
+  <div
+    className="jsx-3365034459 message"
   >
     Create a game and break the silence!
   </div>
@@ -6809,13 +7529,13 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):no-games 1`] = `
 
 exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):own-game 1`] = `
 <div
-  className="jsx-1867168289 root"
+  className="jsx-3365034459 root"
 >
   <div
-    className="jsx-1867168289 header"
+    className="jsx-3365034459 header"
   >
     <div
-      className="jsx-1867168289 left new-game-button"
+      className="jsx-3365034459 left new-game-button"
     >
       <button
         className="jsx-2576755423 button hover-button"
@@ -6826,13 +7546,13 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):own-game 1`] = `
       </button>
     </div>
     <div
-      className="jsx-1867168289 right"
+      className="jsx-3365034459 right"
     >
       <div
-        className="jsx-1867168289 view-source left"
+        className="jsx-3365034459 view-source left"
       >
         <a
-          className="jsx-1867168289"
+          className="jsx-3365034459"
           href="https://github.com/skidding/flatris"
           target="_blank"
         >
@@ -6845,7 +7565,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):own-game 1`] = `
         </a>
       </div>
       <div
-        className="jsx-1867168289 logo left"
+        className="jsx-3365034459 logo left"
       >
         <div
           className="jsx-1917779880 logo"
@@ -6931,7 +7651,97 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):own-game 1`] = `
     </div>
   </div>
   <div
-    className="jsx-1867168289 message"
+    className="jsx-1735621698 stats"
+  >
+    <p
+      className="jsx-1735621698"
+    >
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       games played in
+       
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       seconds.
+    </p>
+    <p
+      className="jsx-1735621698"
+    >
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       left and
+       
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       right moves.
+       
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       drops and
+       
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       rotations.
+    </p>
+    <p
+      className="jsx-1735621698"
+    >
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       lines cleared.
+    </p>
+  </div>
+  <div
+    className="jsx-3365034459 message"
   >
     Your games
   </div>
@@ -7392,13 +8202,13 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):own-game 1`] = `
 
 exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):own-game-removed 1`] = `
 <div
-  className="jsx-1867168289 root"
+  className="jsx-3365034459 root"
 >
   <div
-    className="jsx-1867168289 header"
+    className="jsx-3365034459 header"
   >
     <div
-      className="jsx-1867168289 left new-game-button"
+      className="jsx-3365034459 left new-game-button"
     >
       <button
         className="jsx-2576755423 button hover-button"
@@ -7409,13 +8219,13 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):own-game-removed 1`]
       </button>
     </div>
     <div
-      className="jsx-1867168289 right"
+      className="jsx-3365034459 right"
     >
       <div
-        className="jsx-1867168289 view-source left"
+        className="jsx-3365034459 view-source left"
       >
         <a
-          className="jsx-1867168289"
+          className="jsx-3365034459"
           href="https://github.com/skidding/flatris"
           target="_blank"
         >
@@ -7428,7 +8238,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):own-game-removed 1`]
         </a>
       </div>
       <div
-        className="jsx-1867168289 logo left"
+        className="jsx-3365034459 logo left"
       >
         <div
           className="jsx-1917779880 logo"
@@ -7514,7 +8324,97 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):own-game-removed 1`]
     </div>
   </div>
   <div
-    className="jsx-1867168289 message"
+    className="jsx-1735621698 stats"
+  >
+    <p
+      className="jsx-1735621698"
+    >
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       games played in
+       
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       seconds.
+    </p>
+    <p
+      className="jsx-1735621698"
+    >
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       left and
+       
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       right moves.
+       
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       drops and
+       
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       rotations.
+    </p>
+    <p
+      className="jsx-1735621698"
+    >
+      <span
+        className="jsx-761873922 count"
+      >
+        <span
+          className="jsx-761873922 total"
+        >
+          0
+        </span>
+      </span>
+       lines cleared.
+    </p>
+  </div>
+  <div
+    className="jsx-3365034459 message"
   >
     Your games
   </div>
@@ -26375,6 +27275,227 @@ exports[`Cosmos fixtures: SquareBlock:color-of-the-Z-tetromino 1`] = `
     }
   }
 />
+`;
+
+exports[`Cosmos fixtures: Stats:default 1`] = `
+<div
+  className="jsx-1735621698 stats"
+>
+  <p
+    className="jsx-1735621698"
+  >
+    <span
+      className="jsx-761873922 count"
+    >
+      <span
+        className="jsx-761873922 total"
+      >
+        1906
+      </span>
+    </span>
+     games played in
+     
+    <span
+      className="jsx-761873922 count"
+    >
+      <span
+        className="jsx-761873922 total"
+      >
+        150275
+      </span>
+    </span>
+     seconds.
+  </p>
+  <p
+    className="jsx-1735621698"
+  >
+    <span
+      className="jsx-761873922 count"
+    >
+      <span
+        className="jsx-761873922 total"
+      >
+        89339
+      </span>
+    </span>
+     left and
+     
+    <span
+      className="jsx-761873922 count"
+    >
+      <span
+        className="jsx-761873922 total"
+      >
+        101170
+      </span>
+    </span>
+     right moves.
+     
+    <span
+      className="jsx-761873922 count"
+    >
+      <span
+        className="jsx-761873922 total"
+      >
+        78324
+      </span>
+    </span>
+     drops and
+     
+    <span
+      className="jsx-761873922 count"
+    >
+      <span
+        className="jsx-761873922 total"
+      >
+        79418
+      </span>
+    </span>
+     rotations.
+  </p>
+  <p
+    className="jsx-1735621698"
+  >
+    <span
+      className="jsx-761873922 count"
+    >
+      <span
+        className="jsx-761873922 total"
+      >
+        14599
+      </span>
+    </span>
+     lines cleared.
+  </p>
+</div>
+`;
+
+exports[`Cosmos fixtures: Stats:update 1`] = `
+<div
+  className="jsx-1735621698 stats"
+>
+  <p
+    className="jsx-1735621698"
+  >
+    <span
+      className="jsx-761873922 count"
+    >
+      <span
+        className="jsx-761873922 total"
+      >
+        1906
+      </span>
+      <span
+        className="jsx-761873922 diff"
+      >
+        3
+      </span>
+    </span>
+     games played in
+     
+    <span
+      className="jsx-761873922 count"
+    >
+      <span
+        className="jsx-761873922 total"
+      >
+        150275
+      </span>
+      <span
+        className="jsx-761873922 diff"
+      >
+        35
+      </span>
+    </span>
+     seconds.
+  </p>
+  <p
+    className="jsx-1735621698"
+  >
+    <span
+      className="jsx-761873922 count"
+    >
+      <span
+        className="jsx-761873922 total"
+      >
+        89339
+      </span>
+      <span
+        className="jsx-761873922 diff"
+      >
+        155
+      </span>
+    </span>
+     left and
+     
+    <span
+      className="jsx-761873922 count"
+    >
+      <span
+        className="jsx-761873922 total"
+      >
+        101170
+      </span>
+      <span
+        className="jsx-761873922 diff"
+      >
+        167
+      </span>
+    </span>
+     right moves.
+     
+    <span
+      className="jsx-761873922 count"
+    >
+      <span
+        className="jsx-761873922 total"
+      >
+        78324
+      </span>
+      <span
+        className="jsx-761873922 diff"
+      >
+        211
+      </span>
+    </span>
+     drops and
+     
+    <span
+      className="jsx-761873922 count"
+    >
+      <span
+        className="jsx-761873922 total"
+      >
+        79418
+      </span>
+      <span
+        className="jsx-761873922 diff"
+      >
+        123
+      </span>
+    </span>
+     rotations.
+  </p>
+  <p
+    className="jsx-1735621698"
+  >
+    <span
+      className="jsx-761873922 count"
+    >
+      <span
+        className="jsx-761873922 total"
+      >
+        14599
+      </span>
+      <span
+        className="jsx-761873922 diff"
+      >
+        51
+      </span>
+    </span>
+     lines cleared.
+  </p>
+</div>
 `;
 
 exports[`Cosmos fixtures: Tetromino:I-tetromino 1`] = `

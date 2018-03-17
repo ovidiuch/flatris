@@ -3,7 +3,7 @@
 import io from 'socket.io-client';
 import { getApiUrl } from '../utils/api';
 
-import type { GameId, Game } from '../types/state';
+import type { GameId, Game, Stats } from '../types/state';
 import type { Action, GameAction } from '../types/actions';
 import type { RoomId } from '../types/api';
 
@@ -11,6 +11,7 @@ type GameActionHandler = (action: GameAction) => void;
 type GameKeepAliveHandler = (gameId: GameId) => void;
 type GameRemovedHandler = (gameId: GameId) => void;
 type GameSyncHandler = (game: Game) => void;
+type StatsUpdateHandler = (stats: Stats) => void;
 
 let socket;
 
@@ -66,6 +67,14 @@ export function getSocket() {
     socket.off('game-sync', handler);
   }
 
+  function onStatsUpdate(handler: StatsUpdateHandler) {
+    socket.on('stats', handler);
+  }
+
+  function offStatsUpdate(handler: StatsUpdateHandler) {
+    socket.off('stats', handler);
+  }
+
   return {
     subscribe,
     keepGameAlive,
@@ -77,6 +86,8 @@ export function getSocket() {
     onGameRemoved,
     offGameRemoved,
     onGameSync,
-    offGameSync
+    offGameSync,
+    onStatsUpdate,
+    offStatsUpdate
   };
 }

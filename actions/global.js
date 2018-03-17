@@ -1,6 +1,6 @@
 // @flow
 
-import type { User, GameId, Game, BackfillId } from '../types/state';
+import type { User, GameId, Game, BackfillId, Stats } from '../types/state';
 import type {
   AuthAction,
   UnauthAction,
@@ -13,6 +13,7 @@ import type {
   StartBackfillAction,
   EndBackfillAction,
   QueueGameAction,
+  UpdateStatsAction,
   GameAction
 } from '../types/actions';
 
@@ -30,14 +31,17 @@ export function unauth(): UnauthAction {
 }
 
 export function loadDashboard({
-  games
+  games,
+  stats
 }: {
-  games: Array<Game>
+  games: Array<Game>,
+  stats: Stats
 }): DashboardLoadAction {
   return {
     type: 'LOAD_DASHBOARD',
     payload: {
-      games
+      games,
+      stats
     }
   };
 }
@@ -107,5 +111,12 @@ export function queueGameAction(action: GameAction): QueueGameAction {
   return {
     type: 'QUEUE_GAME_ACTION',
     payload: { action }
+  };
+}
+
+export function updateStats(stats: Stats): UpdateStatsAction {
+  return {
+    type: 'UPDATE_STATS',
+    payload: { stats }
   };
 }

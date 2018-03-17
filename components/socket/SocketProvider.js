@@ -13,11 +13,12 @@ import {
   removeGame,
   startBackfill,
   endBackfill,
-  queueGameAction
+  queueGameAction,
+  updateStats
 } from '../../actions/global';
 
 import type { Node } from 'react';
-import type { GameId, Game, BackfillId, State } from '../../types/state';
+import type { GameId, Game, BackfillId, Stats, State } from '../../types/state';
 import type {
   JoinGameAction,
   GameAction,
@@ -38,7 +39,9 @@ const {
   onGameRemoved,
   offGameRemoved,
   onGameSync,
-  offGameSync
+  offGameSync,
+  onStatsUpdate,
+  offStatsUpdate
 } = getSocket();
 
 type Props = {
@@ -82,6 +85,7 @@ export class SocketProvider extends Component<Props> {
     onGameKeepAlive(this.handleGameKeepAlive);
     onGameRemoved(this.handleGameRemoved);
     onGameSync(this.handleGameSync);
+    onStatsUpdate(this.handleStatsUpdate);
   }
 
   componentWillUnmount() {
@@ -91,6 +95,7 @@ export class SocketProvider extends Component<Props> {
     offGameKeepAlive(this.handleGameKeepAlive);
     offGameRemoved(this.handleGameRemoved);
     offGameSync(this.handleGameSync);
+    offStatsUpdate(this.handleStatsUpdate);
 
     Object.keys(this.pendingBackfills).forEach(gameId => {
       dispatch(endBackfill(this.pendingBackfills[gameId]));
@@ -162,6 +167,11 @@ export class SocketProvider extends Component<Props> {
     } else {
       console.warn('Recevied game sync for missing game', game.id);
     }
+  };
+
+  handleStatsUpdate = (stats: Stats) => {
+    const { dispatch } = this.getStore();
+    dispatch(updateStats(stats));
   };
 
   handleSubscribe = (roomId: RoomId) => {

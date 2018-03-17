@@ -2,17 +2,25 @@
 
 import socketIo from 'socket.io';
 import { omit, difference } from 'lodash';
+import { gameReducer, getPlayer } from '../reducers/game';
 import {
-  gameReducer,
-  getPlayer,
-  getTurnCount,
-  getLineCount
-} from '../reducers/game';
+  ACTION_STATS_FLUSH_INTERVAL,
+  ACTION_STATS_FLUSH_DELAY
+} from '../constants/timeouts';
 import { games, saveGameAction, bumpActiveGame } from './db';
-import { incrementTurnCount, incrementLineCount } from './firebase';
+import {
+  onStatsChange,
+  incrementTurnCount,
+  incrementLineCount,
+  incrementActionLeft,
+  incrementActionRight,
+  incrementActionAcc,
+  incrementActionRotate,
+  incrementGameTime
+} from './firebase';
 import { rollbar } from './rollbar';
 
-import type { GameId } from '../types/state';
+import type { GameId, Game } from '../types/state';
 import type { GameAction } from '../types/actions';
 import type { RoomId } from '../types/api';
 
@@ -78,14 +86,10 @@ export function attachSocket(server: net$Server) {
             .to('global')
             .broadcast.emit('game-action', action);
 
-          // Did the player(s) start another turn?
-          if (getTurnCount(game) > getTurnCount(prevGame)) {
-            incrementTurnCount();
-            incrementLineCount(getLineCount(prevGame));
-          } else if (game.players.length !== prevGame.players.length) {
-            // Still count lines when solo game becomes multi
-            incrementLineCount(getLineCount(prevGame));
-          }
+          countTurns(game, prevGame);
+          countControlAction(action);
+          countLines(action, game, prevGame);
+          countGameTime(action);
         } catch (err) {
           const player = getPlayer(prevGame, action.payload.userId);
           const syncId = `${prevGame.id}-${player.lastActionId}`;
@@ -112,8 +116,131 @@ export function attachSocket(server: net$Server) {
       }
     });
   });
+
+  onStatsChange(stats => {
+    io.to('global').emit('stats', stats);
+  });
 }
 
 const gameSync: {
   [id: string]: true
 } = {};
+
+let pendingLeftCount = 0;
+let pendingRightCount = 0;
+let pendingAccCount = 0;
+let pendingRotateCount = 0;
+let pendingTimeCount = 0;
+
+function countTurns(game: Game, prevGame: Game) {
+  // Did the player(s) start another turn?
+  if (game.players[0].drops === 0 && prevGame.players[0].drops > 0) {
+    incrementTurnCount();
+  }
+}
+
+function countLines(action: GameAction, game: Game, prevGame: Game) {
+  // Did the players make any line(s)?
+  if (action.type !== 'JOIN_GAME') {
+    const { userId } = action.payload;
+    const prevPlayer = getPlayer(prevGame, userId);
+    const player = getPlayer(game, userId);
+
+    if (player.lines > prevPlayer.lines) {
+      incrementLineCount(player.lines - prevPlayer.lines);
+    }
+  }
+}
+
+function countControlAction(action: GameAction) {
+  // Did the players make any control action?
+  switch (action.type) {
+    case 'MOVE_LEFT': {
+      pendingLeftCount++;
+      break;
+    }
+    case 'MOVE_RIGHT': {
+      pendingRightCount++;
+      break;
+    }
+    case 'ENABLE_ACCELERATION': {
+      pendingAccCount++;
+      break;
+    }
+    case 'ROTATE': {
+      pendingRotateCount++;
+      break;
+    }
+  }
+}
+
+function countGameTime(action: GameAction) {
+  if (action.type !== 'JOIN_GAME') {
+    const { actionId, prevActionId } = action.payload;
+    const time = actionId - prevActionId;
+
+    // Don't count any break bigger than 30s between action as play time.
+    // That would be cheating ;)
+    if (time > 0 && time < 30000) {
+      pendingTimeCount += time;
+    }
+  }
+}
+
+function flushLeftCounts() {
+  if (pendingLeftCount) {
+    incrementActionLeft(pendingLeftCount);
+    pendingLeftCount = 0;
+  }
+}
+
+function flushRightCount() {
+  if (pendingRightCount) {
+    incrementActionRight(pendingRightCount);
+    pendingRightCount = 0;
+  }
+}
+
+function flushAccCount() {
+  if (pendingAccCount) {
+    incrementActionAcc(pendingAccCount);
+    pendingAccCount = 0;
+  }
+}
+
+function flushRotateCount() {
+  if (pendingRotateCount) {
+    incrementActionRotate(pendingRotateCount);
+    pendingRotateCount = 0;
+  }
+}
+
+function flushTimeCount() {
+  if (pendingTimeCount) {
+    const rounded = Math.round(pendingTimeCount / 1000);
+    incrementGameTime(rounded);
+    pendingTimeCount -= rounded * 1000;
+  }
+}
+
+// Flush counts alternatively to make the stats update more lively :)
+setTimeout(
+  () => setInterval(flushLeftCounts, ACTION_STATS_FLUSH_INTERVAL),
+  ACTION_STATS_FLUSH_DELAY * 0
+);
+setTimeout(
+  () => setInterval(flushRightCount, ACTION_STATS_FLUSH_INTERVAL),
+  ACTION_STATS_FLUSH_DELAY * 1
+);
+setTimeout(
+  () => setInterval(flushAccCount, ACTION_STATS_FLUSH_INTERVAL),
+  ACTION_STATS_FLUSH_DELAY * 2
+);
+setTimeout(
+  () => setInterval(flushRotateCount, ACTION_STATS_FLUSH_INTERVAL),
+  ACTION_STATS_FLUSH_DELAY * 3
+);
+setTimeout(
+  () => setInterval(flushTimeCount, ACTION_STATS_FLUSH_INTERVAL),
+  ACTION_STATS_FLUSH_DELAY * 4
+);
