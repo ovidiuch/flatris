@@ -158,12 +158,14 @@
 * [x] BUG: Gracefully invalidate session after re-deploy
 * [x] Sync game after player disconnect
 * [x] Real time stats page
+* [x] [2.0]
+  * [x] Share on HN, PH, Reddit, etc
+* [ ] "Paused" state for solo players (useful in dashboard to see if person paused or disappeared)
+  * [ ] How about "idle" state?
 * [ ] Ask for permission to join game
   * [ ] "Waiting for permission..." screen
   * [ ] "Allow player to join?" screen
   * [ ] "Denied" screen
-* [ ] [2.0]
-  * [ ] Share on HN, PH, Reddit, etc
 
 BACKLOG
 
