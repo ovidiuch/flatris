@@ -101,7 +101,7 @@ export function getBottomMostPosition(
     y -= 1;
   }
 
-  return Object.assign({}, position, { y });
+  return { ...position, y };
 }
 
 export function transferTetrominoToGrid(

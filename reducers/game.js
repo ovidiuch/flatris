@@ -313,9 +313,10 @@ export function gameJoinedReducer(state: Game, action: GameAction): Game {
       const direction = action.type === 'MOVE_LEFT' ? -1 : 1;
       const player = getPlayer(state, userId);
       const { grid, activeTetrominoGrid, activeTetrominoPosition } = player;
-      const newPosition = Object.assign({}, activeTetrominoPosition, {
+      const newPosition = {
+        ...activeTetrominoPosition,
         x: activeTetrominoPosition.x + direction
-      });
+      };
 
       // Attempting to move the Tetromino outside the Well bounds or over landed
       // Tetrominoes will be ignored
