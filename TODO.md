@@ -160,6 +160,8 @@
 * [x] Real time stats page
 * [x] [2.0]
   * [x] Share on HN, PH, Reddit, etc
+* [ ] Fix: Polyfill Set/Map https://reactjs.org/docs/javascript-environment-requirements.html
+* [ ] Increase speed logarithmically (game currently ends too abruptly)
 * [ ] "Paused" state for solo players (useful in dashboard to see if person paused or disappeared)
   * [ ] How about "idle" state?
 * [ ] Ask for permission to join game
