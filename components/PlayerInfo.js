@@ -219,9 +219,17 @@ function humanizeNumber(nr: number): string {
   }
 
   const { round } = Math;
-  const thousands = nr / 1000;
-  const rounded =
-    thousands > 100 ? round(thousands) : round(thousands * 10) / 10;
 
-  return `${rounded}K`;
+  if (nr < 1000000) {
+    const thousands = nr / 1000;
+    const rounded =
+      thousands > 100 ? round(thousands) : round(thousands * 10) / 10;
+
+    return `${rounded}K`;
+  }
+
+  const millions = nr / 1000000;
+  const rounded = millions > 100 ? round(millions) : round(millions * 10) / 10;
+
+  return `${rounded}M`;
 }

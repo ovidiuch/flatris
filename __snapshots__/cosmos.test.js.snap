@@ -26898,6 +26898,75 @@ exports[`Cosmos fixtures: PlayerInfo:player-solo-big-score 1`] = `
 </div>
 `;
 
+exports[`Cosmos fixtures: PlayerInfo:player-solo-huge-score 1`] = `
+<div
+  className="jsx-1613050951 outer"
+>
+  <div
+    className="jsx-1613050951 container"
+  >
+    <div
+      className="jsx-1294220987 inner-container"
+      style={
+        Object {
+          "backgroundColor": "#fff",
+          "height": "calc(100% / 20 * 4)",
+          "opacity": 1,
+          "position": "absolute",
+          "width": "calc(100% / 16 * 4)",
+        }
+      }
+    >
+      <div
+        className="jsx-2355917317 player-info"
+      >
+        <div
+          className="jsx-2355917317 name"
+        >
+          <div
+            className="jsx-2355917317 vcentered ellipsis"
+          >
+            Treznik
+          </div>
+        </div>
+        <div
+          className="jsx-2355917317 score"
+        >
+          <div
+            className="jsx-2355917317 score-row"
+          >
+            <div
+              className="jsx-2355917317 label vcentered"
+            >
+              Score
+            </div>
+            <div
+              className="jsx-2355917317 value vcentered"
+            >
+              1.4M
+            </div>
+          </div>
+          <div
+            className="jsx-2355917317 score-row"
+          >
+            <div
+              className="jsx-2355917317 label vcentered"
+            >
+              Lines
+            </div>
+            <div
+              className="jsx-2355917317 value vcentered"
+            >
+              226
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Cosmos fixtures: PlayerInfo:player-solo-long-name 1`] = `
 <div
   className="jsx-1613050951 outer"
