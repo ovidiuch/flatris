@@ -585,9 +585,11 @@ function rewardClearedBlocks(game: Game, userId: UserId): Game {
   }
 
   const decrement =
-    dropFrames <= 10
-      ? DROP_FRAMES_DECREMENT3
-      : dropFrames <= 18 ? DROP_FRAMES_DECREMENT2 : DROP_FRAMES_DECREMENT1;
+    dropFrames <= 3
+      ? 0
+      : dropFrames <= 10
+        ? DROP_FRAMES_DECREMENT3
+        : dropFrames <= 18 ? DROP_FRAMES_DECREMENT2 : DROP_FRAMES_DECREMENT1;
 
   return {
     ...updatePlayer(game, userId, {
