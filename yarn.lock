@@ -7141,6 +7141,10 @@ react-cosmos-fetch-proxy@^4.0.0-beta.11:
     fetch-mock "^5.12.2"
     react-cosmos-shared "^4.0.0-beta.11"
 
+react-cosmos-flow@^4.0.0-beta.11:
+  version "4.0.0-beta.11"
+  resolved "https://registry.yarnpkg.com/react-cosmos-flow/-/react-cosmos-flow-4.0.0-beta.11.tgz#6e0fe454a9bf18ee08bf92ee5484e7963ae6492a"
+
 react-cosmos-loader@^4.0.0-beta.11:
   version "4.0.0-beta.11"
   resolved "https://registry.yarnpkg.com/react-cosmos-loader/-/react-cosmos-loader-4.0.0-beta.11.tgz#0cea24507686758ec728a2642aa6df26afa93618"

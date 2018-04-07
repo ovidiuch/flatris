@@ -8,20 +8,9 @@ import createFetchProxy from 'react-cosmos-fetch-proxy';
 import GameContainer from './components/GameContainer';
 import { createStore } from './store';
 
-import type { ComponentType, Node } from 'react';
+import type { Node } from 'react';
+import type { ProxyProps } from 'react-cosmos-flow/proxy';
 import type { Action, ThunkAction } from './types/actions';
-
-type LinkedItem<Item> = {
-  value: Item,
-  next: () => LinkedItem<Item>
-};
-
-type ProxyProps = {
-  nextProxy: LinkedItem<ComponentType<ProxyProps>>,
-  fixture: Object,
-  onComponentRef: Function,
-  onFixtureUpdate: Function
-};
 
 class GameContainerProxy extends Component<ProxyProps> {
   render() {
