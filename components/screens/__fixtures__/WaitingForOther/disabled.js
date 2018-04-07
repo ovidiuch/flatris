@@ -2,7 +2,7 @@
 
 import WaitingForOther from '../../WaitingForOther';
 
-import { createFixture } from '../../../../utils/create-fixture';
+import { createFixture } from 'react-cosmos-flow/fixture';
 import { getSampleUser } from '../../../../utils/test-helpers';
 import { getBlankPlayer } from '../../../../reducers/game';
 

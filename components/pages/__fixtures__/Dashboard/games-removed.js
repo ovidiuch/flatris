@@ -1,12 +1,9 @@
 // @flow
 
-import { Component } from 'react';
-import { createFixture } from '../../../../utils/create-fixture';
+import { createFixture } from 'react-cosmos-flow/fixture';
 import { getSampleUser, doAfter } from '../../../../utils/test-helpers';
 import { getBlankGame } from '../../../../reducers/game';
 import Dashboard from '../../Dashboard';
-
-import type { ElementRef } from 'react';
 
 const user = getSampleUser();
 const game1 = getBlankGame({ id: 'dce6b11e', user });
@@ -25,7 +22,11 @@ export default createFixture({
     }
   },
 
-  async init({ compRef }: { compRef: ElementRef<typeof Component> }) {
+  async init({ compRef }) {
+    if (!compRef) {
+      return;
+    }
+
     const { dispatch } = compRef.context.store;
 
     dispatch({
