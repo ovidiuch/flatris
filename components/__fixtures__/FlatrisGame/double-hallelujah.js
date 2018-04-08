@@ -1,7 +1,7 @@
 // @flow
 
 import until from 'async-until';
-import { Component } from 'react';
+import { createFixture } from 'react-cosmos-flow/fixture';
 import {
   getSampleUser,
   getSampleUser2,
@@ -15,8 +15,6 @@ import {
 } from '../../../reducers/game';
 import { getCurGame } from '../../../reducers/cur-game';
 import FlatrisGame from '../../FlatrisGame';
-
-import type { ElementRef } from 'react';
 
 const user1 = getSampleUser();
 let game = getBlankGame({
@@ -206,10 +204,14 @@ game = updatePlayer(game, user2.id, {
   dropAcceleration: true
 });
 
-export default {
+export default createFixture({
   component: FlatrisGame,
 
-  async init({ compRef }: { compRef: ElementRef<typeof Component> }) {
+  async init({ compRef }) {
+    if (!compRef) {
+      return;
+    }
+
     const { dispatch, getState } = compRef.context.store;
 
     // 1: Player1's drop will be dispatched automatically, so we just wait for
@@ -259,7 +261,7 @@ export default {
     },
     curGame: game.id
   }
-};
+});
 
 function getLastActionId(getState, userId) {
   const curGame = getCurGame(getState());

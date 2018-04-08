@@ -1,7 +1,15 @@
 // @flow
 
 import { createFixture } from 'react-cosmos-flow/fixture';
+import { getBlankPlayer } from '../../../reducers/game';
 import PlayerInfo from '../../PlayerInfo';
+
+const user = { id: 'mock', name: 'Treznik' };
+const player = {
+  ...getBlankPlayer('mock', user),
+  score: 1442387,
+  lines: 226
+};
 
 export default createFixture({
   component: PlayerInfo,
@@ -12,10 +20,9 @@ export default createFixture({
   },
 
   props: {
-    player: null,
+    player,
     wins: null,
-    isPlayer1: false,
-    showReadyState: false,
-    onSelect: () => console.log('Select P2')
+    isPlayer1: true,
+    showReadyState: false
   }
 });

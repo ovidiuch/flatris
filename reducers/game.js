@@ -5,7 +5,9 @@ import {
   WELL_ROWS,
   WELL_COLS,
   DROP_FRAMES_DEFAULT,
-  DROP_FRAMES_DECREMENT,
+  DROP_FRAMES_DECREMENT1,
+  DROP_FRAMES_DECREMENT2,
+  DROP_FRAMES_DECREMENT3,
   LINE_CLEAR_BONUSES
 } from '../constants/grid';
 import { SHAPES, COLORS } from '../constants/tetromino';
@@ -582,15 +584,20 @@ function rewardClearedBlocks(game: Game, userId: UserId): Game {
     points += LINE_CLEAR_BONUSES[blocksCleared.length - 1] * (lines + 1);
   }
 
+  const decrement =
+    dropFrames <= 3
+      ? 0
+      : dropFrames <= 10
+        ? DROP_FRAMES_DECREMENT3
+        : dropFrames <= 18 ? DROP_FRAMES_DECREMENT2 : DROP_FRAMES_DECREMENT1;
+
   return {
     ...updatePlayer(game, userId, {
       score: score + points,
       lines: lines + blocksCleared.length
     }),
     // Increase speed whenever a line is cleared (fast game)
-    dropFrames: blocksCleared.length
-      ? dropFrames - DROP_FRAMES_DECREMENT
-      : dropFrames
+    dropFrames: blocksCleared.length ? dropFrames - decrement : dropFrames
   };
 }
 

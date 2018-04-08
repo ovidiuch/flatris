@@ -1,6 +1,6 @@
 // @flow
 
-import { createFixture } from '../../../utils/create-fixture';
+import { createFixture } from 'react-cosmos-flow/fixture';
 import { getSampleUser } from '../../../utils/test-helpers';
 import { getBlankGame } from '../../../reducers/game';
 import GamePanel from '../../GamePanel';
