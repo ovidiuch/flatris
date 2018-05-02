@@ -1,4 +1,5 @@
 {
+  "regions": ["bru"],
   "env": {
     "ROLLBAR_POST_SERVER_ITEM_ACCESS_TOKEN":
       "@rollbar-post-server-item-access-token",

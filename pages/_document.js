@@ -20,7 +20,7 @@ export default class MyDocument extends Document {
                   accessToken: ${JSON.stringify(
                     ROLLBAR_POST_CLIENT_ITEM_ACCESS_TOKEN
                   )},
-                  ignoredMessages: ['(unknown): Script error'],
+                  ignoredMessages: ['(unknown): Script error', '(unknown): [unhandledrejection]'],
                   captureUncaught: true,
                   captureUnhandledRejections: true,
                   verbose: true,
