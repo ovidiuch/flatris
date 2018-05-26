@@ -24,11 +24,10 @@
       "files": [
         "jest.config.js",
         "jest.framework-setup.js",
-        "cosmos.config.js",
-        "cosmos.test.js",
-        "next.config.js",
-        "server.js",
-        "server/**/*.js"
+        "packages/web/cosmos.config.js",
+        "packages/web/cosmos.test.js",
+        "packages/web/next.config.js",
+        "packages/server/**/*.js"
       ],
       "env": {
         "node": true
@@ -42,9 +41,8 @@
     },
     {
       "files": [
-        "components/**/*.js",
-        "pages/**/*.js",
-        "utils/socket-connect.js",
+        "packages/web/components/**/*.js",
+        "packages/web/pages/**/*.js",
         "cosmos.proxies.js"
       ],
       "rules": {
@@ -53,7 +51,7 @@
       }
     },
     {
-      "files": ["**/__fixtures__/**/*.js", "server.js"]
+      "files": ["**/__fixtures__/**/*.js"]
     }
   ]
 }

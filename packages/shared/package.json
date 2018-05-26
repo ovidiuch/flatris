@@ -1,0 +1,14 @@
+{
+  "name": "shared",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/skidding/flatris.git"
+  },
+  "scripts": {},
+  "dependencies": {
+    "crc-32": "^1.2.0",
+    "lodash": "^4.17.10"
+  },
+  "devDependencies": {}
+}
