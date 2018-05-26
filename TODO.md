@@ -191,3 +191,9 @@ PERF
 CHORES
 
 * [ ] Extract ReduxActions Cosmos proxy
+
+When Babel7 is stable
+
+* [ ] Find better solution for managing config(s)
+  * [ ] Share config between packages
+  * [ ] Bundle Next without compiling modules
