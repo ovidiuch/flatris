@@ -301,7 +301,9 @@ export class SocketProvider extends Component<Props> {
     // I don't know how to statically determine that the game related thunk
     // actions will return a GameAction type $FlowFixMe
     const resAction: GameAction = dispatch(action);
-    const { payload: { gameId } } = resAction;
+    const {
+      payload: { gameId }
+    } = resAction;
 
     // COOL: Don't broacast actions that don't alter the state (ie. MOVE_RIGHT
     // actions when the falling Tetromino is already hitting the right wall)

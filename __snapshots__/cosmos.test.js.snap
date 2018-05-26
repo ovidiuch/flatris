@@ -399,7 +399,6 @@ exports[`Cosmos fixtures: Connect(NewGame):default 1`] = `
         >
           <div
             className="jsx-1285042675 player-info"
-            onClick={undefined}
           >
             <div
               className="jsx-1285042675 centered"
@@ -422,7 +421,6 @@ exports[`Cosmos fixtures: Connect(NewGame):default 1`] = `
         >
           <div
             className="jsx-1285042675 player-info"
-            onClick={undefined}
           >
             <div
               className="jsx-1285042675 centered"
@@ -627,7 +625,6 @@ exports[`Cosmos fixtures: Connect(NewGame):loading 1`] = `
         >
           <div
             className="jsx-1285042675 player-info"
-            onClick={undefined}
           >
             <div
               className="jsx-1285042675 centered"
@@ -650,7 +647,6 @@ exports[`Cosmos fixtures: Connect(NewGame):loading 1`] = `
         >
           <div
             className="jsx-1285042675 player-info"
-            onClick={undefined}
           >
             <div
               className="jsx-1285042675 centered"
@@ -1164,7 +1160,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):game 1`] = `
               >
                 <div
                   className="jsx-1285042675 player-info"
-                  onClick={undefined}
                 >
                   <div
                     className="jsx-1285042675 centered"
@@ -1299,7 +1294,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):game 1`] = `
           >
             <div
               className="jsx-1285042675 player-info"
-              onClick={undefined}
             >
               <div
                 className="jsx-1285042675 centered"
@@ -1322,7 +1316,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):game 1`] = `
           >
             <div
               className="jsx-1285042675 player-info"
-              onClick={undefined}
             >
               <div
                 className="jsx-1285042675 centered"
@@ -1837,7 +1830,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):game-added 1`] = `
               >
                 <div
                   className="jsx-1285042675 player-info"
-                  onClick={undefined}
                 >
                   <div
                     className="jsx-1285042675 centered"
@@ -1972,7 +1964,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):game-added 1`] = `
           >
             <div
               className="jsx-1285042675 player-info"
-              onClick={undefined}
             >
               <div
                 className="jsx-1285042675 centered"
@@ -1995,7 +1986,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):game-added 1`] = `
           >
             <div
               className="jsx-1285042675 player-info"
-              onClick={undefined}
             >
               <div
                 className="jsx-1285042675 centered"
@@ -2510,7 +2500,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-added 1`] = `
               >
                 <div
                   className="jsx-1285042675 player-info"
-                  onClick={undefined}
                 >
                   <div
                     className="jsx-1285042675 centered"
@@ -2802,7 +2791,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-added 1`] = `
               >
                 <div
                   className="jsx-1285042675 player-info"
-                  onClick={undefined}
                 >
                   <div
                     className="jsx-1285042675 centered"
@@ -3094,7 +3082,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-added 1`] = `
               >
                 <div
                   className="jsx-1285042675 player-info"
-                  onClick={undefined}
                 >
                   <div
                     className="jsx-1285042675 centered"
@@ -3229,7 +3216,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-added 1`] = `
           >
             <div
               className="jsx-1285042675 player-info"
-              onClick={undefined}
             >
               <div
                 className="jsx-1285042675 centered"
@@ -3252,7 +3238,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-added 1`] = `
           >
             <div
               className="jsx-1285042675 player-info"
-              onClick={undefined}
             >
               <div
                 className="jsx-1285042675 centered"
@@ -3767,7 +3752,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed 1`] = 
               >
                 <div
                   className="jsx-1285042675 player-info"
-                  onClick={undefined}
                 >
                   <div
                     className="jsx-1285042675 centered"
@@ -4059,7 +4043,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed 1`] = 
               >
                 <div
                   className="jsx-1285042675 player-info"
-                  onClick={undefined}
                 >
                   <div
                     className="jsx-1285042675 centered"
@@ -4194,7 +4177,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed 1`] = 
           >
             <div
               className="jsx-1285042675 player-info"
-              onClick={undefined}
             >
               <div
                 className="jsx-1285042675 centered"
@@ -4217,7 +4199,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed 1`] = 
           >
             <div
               className="jsx-1285042675 player-info"
-              onClick={undefined}
             >
               <div
                 className="jsx-1285042675 centered"
@@ -4732,7 +4713,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed-and-ad
               >
                 <div
                   className="jsx-1285042675 player-info"
-                  onClick={undefined}
                 >
                   <div
                     className="jsx-1285042675 centered"
@@ -5024,7 +5004,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed-and-ad
               >
                 <div
                   className="jsx-1285042675 player-info"
-                  onClick={undefined}
                 >
                   <div
                     className="jsx-1285042675 centered"
@@ -5316,7 +5295,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed-and-ad
               >
                 <div
                   className="jsx-1285042675 player-info"
-                  onClick={undefined}
                 >
                   <div
                     className="jsx-1285042675 centered"
@@ -5451,7 +5429,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed-and-ad
           >
             <div
               className="jsx-1285042675 player-info"
-              onClick={undefined}
             >
               <div
                 className="jsx-1285042675 centered"
@@ -5474,7 +5451,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed-and-ad
           >
             <div
               className="jsx-1285042675 player-info"
-              onClick={undefined}
             >
               <div
                 className="jsx-1285042675 centered"
@@ -5989,7 +5965,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):mixed-games 1`] = `
               >
                 <div
                   className="jsx-1285042675 player-info"
-                  onClick={undefined}
                 >
                   <div
                     className="jsx-1285042675 centered"
@@ -6290,7 +6265,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):mixed-games 1`] = `
               >
                 <div
                   className="jsx-1285042675 player-info"
-                  onClick={undefined}
                 >
                   <div
                     className="jsx-1285042675 centered"
@@ -6425,7 +6399,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):mixed-games 1`] = `
           >
             <div
               className="jsx-1285042675 player-info"
-              onClick={undefined}
             >
               <div
                 className="jsx-1285042675 centered"
@@ -6448,7 +6421,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):mixed-games 1`] = `
           >
             <div
               className="jsx-1285042675 player-info"
-              onClick={undefined}
             >
               <div
                 className="jsx-1285042675 centered"
@@ -6963,7 +6935,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):mixed-games-removed 
               >
                 <div
                   className="jsx-1285042675 player-info"
-                  onClick={undefined}
                 >
                   <div
                     className="jsx-1285042675 centered"
@@ -7098,7 +7069,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):mixed-games-removed 
           >
             <div
               className="jsx-1285042675 player-info"
-              onClick={undefined}
             >
               <div
                 className="jsx-1285042675 centered"
@@ -7121,7 +7091,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):mixed-games-removed 
           >
             <div
               className="jsx-1285042675 player-info"
-              onClick={undefined}
             >
               <div
                 className="jsx-1285042675 centered"
@@ -7479,7 +7448,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):no-games 1`] = `
           >
             <div
               className="jsx-1285042675 player-info"
-              onClick={undefined}
             >
               <div
                 className="jsx-1285042675 centered"
@@ -7502,7 +7470,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):no-games 1`] = `
           >
             <div
               className="jsx-1285042675 player-info"
-              onClick={undefined}
             >
               <div
                 className="jsx-1285042675 centered"
@@ -8017,7 +7984,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):own-game 1`] = `
               >
                 <div
                   className="jsx-1285042675 player-info"
-                  onClick={undefined}
                 >
                   <div
                     className="jsx-1285042675 centered"
@@ -8152,7 +8118,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):own-game 1`] = `
           >
             <div
               className="jsx-1285042675 player-info"
-              onClick={undefined}
             >
               <div
                 className="jsx-1285042675 centered"
@@ -8175,7 +8140,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):own-game 1`] = `
           >
             <div
               className="jsx-1285042675 player-info"
-              onClick={undefined}
             >
               <div
                 className="jsx-1285042675 centered"
@@ -8690,7 +8654,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):own-game-removed 1`]
               >
                 <div
                   className="jsx-1285042675 player-info"
-                  onClick={undefined}
                 >
                   <div
                     className="jsx-1285042675 centered"
@@ -8825,7 +8788,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):own-game-removed 1`]
           >
             <div
               className="jsx-1285042675 player-info"
-              onClick={undefined}
             >
               <div
                 className="jsx-1285042675 centered"
@@ -8848,7 +8810,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):own-game-removed 1`]
           >
             <div
               className="jsx-1285042675 player-info"
-              onClick={undefined}
             >
               <div
                 className="jsx-1285042675 centered"
@@ -18587,7 +18548,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah-guest 1
             >
               <div
                 className="jsx-1285042675 player-info"
-                onClick={undefined}
               >
                 <div
                   className="jsx-1285042675 centered"
@@ -21421,7 +21381,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
             >
               <div
                 className="jsx-1285042675 player-info"
-                onClick={undefined}
               >
                 <div
                   className="jsx-1285042675 centered"
@@ -21889,7 +21848,6 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
             >
               <div
                 className="jsx-1285042675 player-info"
-                onClick={undefined}
               >
                 <div
                   className="jsx-1285042675 centered"
@@ -23142,7 +23100,6 @@ exports[`Cosmos fixtures: Error:component-error 1`] = `
         >
           <div
             className="jsx-1285042675 player-info"
-            onClick={undefined}
           >
             <div
               className="jsx-1285042675 centered"
@@ -23165,7 +23122,6 @@ exports[`Cosmos fixtures: Error:component-error 1`] = `
         >
           <div
             className="jsx-1285042675 player-info"
-            onClick={undefined}
           >
             <div
               className="jsx-1285042675 centered"
@@ -23345,7 +23301,6 @@ exports[`Cosmos fixtures: Error:not-found 1`] = `
         >
           <div
             className="jsx-1285042675 player-info"
-            onClick={undefined}
           >
             <div
               className="jsx-1285042675 centered"
@@ -23368,7 +23323,6 @@ exports[`Cosmos fixtures: Error:not-found 1`] = `
         >
           <div
             className="jsx-1285042675 player-info"
-            onClick={undefined}
           >
             <div
               className="jsx-1285042675 centered"
@@ -23549,7 +23503,6 @@ exports[`Cosmos fixtures: Error:unknown 1`] = `
         >
           <div
             className="jsx-1285042675 player-info"
-            onClick={undefined}
           >
             <div
               className="jsx-1285042675 centered"
@@ -23572,7 +23525,6 @@ exports[`Cosmos fixtures: Error:unknown 1`] = `
         >
           <div
             className="jsx-1285042675 player-info"
-            onClick={undefined}
           >
             <div
               className="jsx-1285042675 centered"
@@ -25380,7 +25332,6 @@ exports[`Cosmos fixtures: GamePreviewShell:default 1`] = `
           >
             <div
               className="jsx-1285042675 player-info"
-              onClick={undefined}
             >
               <div
                 className="jsx-1285042675 centered"
@@ -25403,7 +25354,6 @@ exports[`Cosmos fixtures: GamePreviewShell:default 1`] = `
           >
             <div
               className="jsx-1285042675 player-info"
-              onClick={undefined}
             >
               <div
                 className="jsx-1285042675 centered"
@@ -26988,7 +26938,6 @@ exports[`Cosmos fixtures: PlayerInfo:player1-missing 1`] = `
     >
       <div
         className="jsx-1285042675 player-info"
-        onClick={undefined}
       >
         <div
           className="jsx-1285042675 centered"
