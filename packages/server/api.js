@@ -93,12 +93,11 @@ export function addRoutes(app: express$Application) {
 
   app.post('/auth', (req: express$Request, res: express$Response) => {
     try {
-      const { userName } = req.body;
-      if (!userName) {
+      if (!req.body || typeof req.body.userName !== 'string') {
         throw new Error('Empty user name');
       }
 
-      const user = insertUser(userName);
+      const user = insertUser(req.body.userName);
       const session = insertSession(user.id);
 
       const numSessions = Object.keys(sessions).length;

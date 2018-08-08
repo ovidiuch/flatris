@@ -1,7 +1,6 @@
 // @flow
 
-import { Component } from 'react';
-import { createFixture } from '../../../../utils/create-fixture';
+import { createFixture } from 'react-cosmos';
 import {
   getSampleUser,
   getSampleUser2,
@@ -29,7 +28,7 @@ export default createFixture({
     }
   },
 
-  async init({ compRef }: { compRef: ElementRef<typeof Component> }) {
+  async init({ compRef }: { compRef: ElementRef<Dashboard> }) {
     const { dispatch } = compRef.context.store;
 
     await doAfter(200, () => {

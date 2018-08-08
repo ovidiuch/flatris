@@ -1,6 +1,6 @@
 // @flow
 
-import { createFixture } from '../../../utils/create-fixture';
+import { createFixture } from 'react-cosmos';
 import GameContainer from '../../GameContainer';
 
 export default createFixture({

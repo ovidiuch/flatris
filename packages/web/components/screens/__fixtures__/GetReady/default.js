@@ -1,6 +1,6 @@
 // @flow
 
-import { createFixture } from '../../../../utils/create-fixture';
+import { createFixture } from 'react-cosmos';
 import { getSampleUser } from '../../../../utils/test-helpers';
 import { getBlankPlayer } from 'shared/reducers/game';
 import GetReady from '../../GetReady';
