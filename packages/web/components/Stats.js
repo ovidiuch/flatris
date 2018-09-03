@@ -74,6 +74,8 @@ class Stats extends Component<Props, LocalState> {
   }
 
   renderCount(stat: $Keys<StatsType>) {
+    // TODO: Add space between number digits
+    // Eg. 1445485 => 1 445 485
     const { stats } = this.props;
     const { statsDiff } = this.state;
     const diff = statsDiff[stat];
