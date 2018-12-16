@@ -12,5 +12,6 @@ flow-typed
 [lints]
 
 [options]
+module.name_mapper='^shared' ->'<PROJECT_ROOT>/shared'
 
 [strict]

@@ -14,8 +14,8 @@ import {
 import { rollbar } from './rollbar';
 import { getStats, incrementUserCount, incrementGameCount } from './firebase';
 
-import type { User } from '../types/state';
-import type { BackfillRequest, BackfillResponse } from '../types/api';
+import type { User } from 'shared/types/state';
+import type { BackfillRequest, BackfillResponse } from 'shared/types/api';
 import type { SessionId } from './db';
 
 export function addRoutes(app: express$Application) {
@@ -93,12 +93,11 @@ export function addRoutes(app: express$Application) {
 
   app.post('/auth', (req: express$Request, res: express$Response) => {
     try {
-      const { userName } = req.body;
-      if (!userName) {
+      if (!req.body || typeof req.body.userName !== 'string') {
         throw new Error('Empty user name');
       }
 
-      const user = insertUser(userName);
+      const user = insertUser(req.body.userName);
       const session = insertSession(user.id);
 
       const numSessions = Object.keys(sessions).length;

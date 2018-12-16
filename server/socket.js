@@ -2,11 +2,11 @@
 
 import socketIo from 'socket.io';
 import { omit, difference } from 'lodash';
-import { gameReducer, getPlayer } from '../reducers/game';
+import { gameReducer, getPlayer } from 'shared/reducers/game';
 import {
   ACTION_STATS_FLUSH_INTERVAL,
   ACTION_STATS_FLUSH_DELAY
-} from '../constants/timeouts';
+} from 'shared/constants/timeouts';
 import { games, saveGameAction, bumpActiveGame } from './db';
 import {
   onStatsChange,
@@ -20,9 +20,9 @@ import {
 } from './firebase';
 import { rollbar } from './rollbar';
 
-import type { GameId, Game } from '../types/state';
-import type { GameAction } from '../types/actions';
-import type { RoomId } from '../types/api';
+import type { GameId, Game } from 'shared/types/state';
+import type { GameAction } from 'shared/types/actions';
+import type { RoomId } from 'shared/types/api';
 
 export function attachSocket(server: net$Server) {
   const io = socketIo(server);

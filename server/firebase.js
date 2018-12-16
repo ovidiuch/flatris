@@ -2,7 +2,7 @@
 
 import admin from 'firebase-admin';
 
-import type { Stats } from '../types/state';
+import type { Stats } from 'shared/types/state';
 
 export async function getStats(): Promise<Stats> {
   const db = getDb();

@@ -2,16 +2,16 @@
 
 import crypto from 'crypto';
 import { without } from 'lodash';
-import { getBlankGame } from '../reducers/game';
-import { MAX_NAME_LENGTH } from '../constants/user';
+import { getBlankGame } from 'shared/reducers/game';
+import { MAX_NAME_LENGTH } from 'shared/constants/user';
 import {
   GAME_INACTIVE_TIMEOUT,
   GAME_EXPIRE_TIMEOUT
-} from '../constants/timeouts';
-import { createTimeoutBumper } from '../utils/timeout-bumper';
+} from 'shared/constants/timeouts';
+import { createTimeoutBumper } from 'shared/utils/timeout-bumper';
 
-import type { GameId, Game, UserId, User } from '../types/state';
-import type { GameAction } from '../types/actions';
+import type { GameId, Game, UserId, User } from 'shared/types/state';
+import type { GameAction } from 'shared/types/actions';
 
 export type SessionId = string;
 export type Session = { id: SessionId, userId: UserId };

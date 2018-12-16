@@ -9,7 +9,7 @@ export async function startNextApp(
   server: net$Server
 ) {
   const dev = process.env.NODE_ENV !== 'production';
-  const nextApp = next({ dev });
+  const nextApp = next({ dev, dir: join(__dirname, '../web') });
   const nextHandler = nextApp.getRequestHandler();
 
   await nextApp.prepare();
