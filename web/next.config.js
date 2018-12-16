@@ -1,12 +1,13 @@
-const { join } = require('path');
+const { join, resolve } = require('path');
 
 module.exports = {
   webpack(config, { dev, isServer }) {
     // Transpile shared code as well
     config.module.rules
-      .filter(rule => rule.use && rule.use.loader === 'babel-loader')
+      .filter(rule => rule.use && rule.use.loader === 'next-babel-loader')
       .forEach(rule => {
         rule.include.push(join(__dirname, '../shared'));
+        rule.use.options.configFile = resolve('./babel.config.js');
       });
 
     // Enable source maps in production

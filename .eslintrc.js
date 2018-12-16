@@ -31,10 +31,10 @@ module.exports = {
         'babel.config.js',
         'jest.config.js',
         'jest.framework-setup.js',
-        'packages/web/cosmos.config.js',
-        'packages/web/cosmos.test.js',
-        'packages/web/next.config.js',
-        'packages/server/**/*.js'
+        'web/next.config.js',
+        'web/cosmos.config.js',
+        'web/cosmos.test.js',
+        'server/**/*.js'
       ],
       env: {
         node: true
@@ -48,8 +48,8 @@ module.exports = {
     },
     {
       files: [
-        'packages/web/components/**/*.js',
-        'packages/web/pages/**/*.js',
+        'web/components/**/*.js',
+        'web/pages/**/*.js',
         'cosmos.proxies.js'
       ],
       rules: {

@@ -1,5 +1,5 @@
 const alias = {
-  shared: './packages/shared'
+  shared: './shared'
 };
 
 module.exports = {
