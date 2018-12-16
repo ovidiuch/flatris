@@ -77,6 +77,9 @@ const cert = FIREBASE_SERVICE_ACCOUNT
 
 if (!cert) {
   console.warn('Firebase not configured');
+} else {
+  // https://stackoverflow.com/a/50376092
+  cert.private_key = cert.private_key.replace(/\\n/g, '\n');
 }
 
 let db;
