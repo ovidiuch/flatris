@@ -73,7 +73,7 @@ export function Unauthorized() {
 function getProdBaseUrl() {
   // Relative paths allow us to serve the prod app from any proxy address (eg.
   // via ngrok), but server-side requests need to contain the host address
-  return typeof window === 'undefined' ? 'http://localhost:3000' : '';
+  return typeof window === 'undefined' ? 'http://localhost:80' : '';
 }
 
 function fetchJson(urlPath: string, options?: Object): Promise<any> {

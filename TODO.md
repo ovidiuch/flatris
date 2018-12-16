@@ -190,9 +190,9 @@ PERF
 
 CHORES
 
-- [ ] Extract ReduxActions Cosmos proxy
 - [x] Upgrade to Babel7
+- [ ] Extract ReduxActions Cosmos proxy
 
 Deployment
 
-- [ ] Change prod port to 80
+- [x] Change client port to 80
