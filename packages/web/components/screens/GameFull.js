@@ -23,10 +23,12 @@ export default class GameFull extends Component<Props> {
               <strong>Game full.</strong>
             </p>
             <p>
-              You can watch, or<br />
+              You can watch, or
+              <br />
               <Link href="/">
                 <a>join another game</a>
-              </Link>.
+              </Link>
+              .
             </p>
           </Fragment>
         }

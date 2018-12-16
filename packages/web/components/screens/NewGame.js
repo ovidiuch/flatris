@@ -24,15 +24,20 @@ export default class NewGame extends Component<Props> {
           <Fragment>
             <p>
               <strong>
-                Invite a friend to<br />battle, or play solo.
+                Invite a friend to
+                <br />
+                battle, or play solo.
               </strong>
             </p>
             <div className="copy">
               <CopyGameLinkButton disabled={disabled} gameId={gameId} />
             </div>
             <p>
-              Send the link and<br />warm up until the<br />other person
-              arrives.
+              Send the link and
+              <br />
+              warm up until the
+              <br />
+              other person arrives.
             </p>
             <style jsx>{`
               .copy {

@@ -14,7 +14,7 @@ type Props = {
   hoverEffect?: boolean
 };
 
-export default ({
+export default function Button({
   type = 'button',
   children,
   bgColor = '#34495f',
@@ -22,7 +22,7 @@ export default ({
   colorDisabled = 'rgba(255, 255, 255, 0.6)',
   hoverEffect = true,
   ...rest
-}: Props) => {
+}: Props) {
   const classes = classNames('button', {
     'hover-button': hoverEffect
   });
@@ -73,4 +73,4 @@ export default ({
       `}</style>
     </button>
   );
-};
+}

@@ -18,7 +18,13 @@ import {
 } from '../../actions/global';
 
 import type { Node } from 'react';
-import type { GameId, Game, BackfillId, Stats, State } from 'shared/types/state';
+import type {
+  GameId,
+  Game,
+  BackfillId,
+  Stats,
+  State
+} from 'shared/types/state';
 import type {
   JoinGameAction,
   GameAction,

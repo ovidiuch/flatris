@@ -376,6 +376,7 @@ function mapStateToProps({
 
 const mapDispatchToProps = { closeGame, removeGame };
 
-export default connect(mapStateToProps, mapDispatchToProps)(
-  withSocket(Dashboard)
-);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withSocket(Dashboard));

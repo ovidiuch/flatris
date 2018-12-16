@@ -17,9 +17,12 @@ export default {
     player1,
     children: (
       <div>
-        I Like To Move It Move It<br />
-        I Like To Move It Move It<br />
-        I Like To Move It Move<br />
+        I Like To Move It Move It
+        <br />
+        I Like To Move It Move It
+        <br />
+        I Like To Move It Move
+        <br />
         It Ya Like To (MOVE IT!)
       </div>
     )

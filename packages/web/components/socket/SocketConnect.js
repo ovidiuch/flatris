@@ -16,7 +16,8 @@ export function withSocket(
 ) {
   class SocketConnect extends Component<Props> {
     static displayName = `SocketConnect(${CompType.displayName ||
-      CompType.name})`;
+      CompType.name ||
+      'UnnamedComponent'})`;
 
     static contextTypes = {
       subscribe: func.isRequired,

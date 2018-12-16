@@ -50,7 +50,9 @@ export default class WaitingForOther extends Component<Props, LocalState> {
         message={
           <Fragment>
             <p>
-              Your friend is a bit<br />slower. I know...
+              Your friend is a bit
+              <br />
+              slower. I know...
             </p>
             <p>
               <strong>Ping them to hurry!</strong>
@@ -58,7 +60,10 @@ export default class WaitingForOther extends Component<Props, LocalState> {
             {isOtherPlayerIdle && (
               <FadeIn>
                 <p>
-                  Maybe your friend<br />left you hanging.<br />
+                  Maybe your friend
+                  <br />
+                  left you hanging.
+                  <br />
                   <Link href="/">
                     <a>Join another game?</a>
                   </Link>

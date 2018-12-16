@@ -25,15 +25,19 @@ export default class Invite extends Component<Props> {
             <p>
               <strong>
                 Playing with a <del>friend</del>
-                <br />rival is more fun!
+                <br />
+                rival is more fun!
               </strong>
             </p>
             <div className="copy">
               <CopyGameLinkButton disabled={disabled} gameId={gameId} />
             </div>
             <p>
-              Send the link and<br />warm up until the<br />other person
-              arrives.
+              Send the link and
+              <br />
+              warm up until the
+              <br />
+              other person arrives.
             </p>
             <style jsx>{`
               .copy {

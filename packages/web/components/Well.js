@@ -56,8 +56,8 @@ class Well extends Component<Props> {
     const { x, y } = getExactPosition(this.props.activeTetrominoPosition);
 
     return {
-      top: `${100 / rows * y}%`,
-      left: `${100 / cols * x}%`
+      top: `${(100 / rows) * y}%`,
+      left: `${(100 / cols) * x}%`
     };
   }
 

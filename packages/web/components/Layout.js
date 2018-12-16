@@ -150,4 +150,7 @@ function mapDispatchToProps(dispatch: Dispatch): $Shape<Props> {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Layout);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Layout);

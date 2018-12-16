@@ -13,7 +13,12 @@ type Props = {
   onRelease?: Function
 };
 
-export default ({ children, onPress, onRelease, ...rest }: Props) => {
+export default function PointerButton({
+  children,
+  onPress,
+  onRelease,
+  ...rest
+}: Props) {
   const pointerDownEvent = getPointerDownEvent();
   const pointerUpEvent = getPointerUpEvent();
   let props = {
@@ -30,4 +35,4 @@ export default ({ children, onPress, onRelease, ...rest }: Props) => {
   }
 
   return <Button {...props}>{children}</Button>;
-};
+}

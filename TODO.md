@@ -197,3 +197,7 @@ When Babel7 is stable
 * [ ] Find better solution for managing config(s)
   * [ ] Share config between packages
   * [ ] Bundle Next without compiling modules
+
+Deployment
+
+* [ ] Change prod port to 80

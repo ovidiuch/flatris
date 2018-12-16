@@ -487,6 +487,7 @@ const syncActions = {
   ping
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(
-  withSocket(FlatrisGame, syncActions)
-);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withSocket(FlatrisGame, syncActions));

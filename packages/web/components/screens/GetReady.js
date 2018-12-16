@@ -23,7 +23,9 @@ export default class GetReady extends Component<Props> {
         message={
           <Fragment>
             <p>
-              Game starts when<br />you're both ready.
+              Game starts when
+              <br />
+              you're both ready.
             </p>
             <p>
               <strong>Good luck!</strong>

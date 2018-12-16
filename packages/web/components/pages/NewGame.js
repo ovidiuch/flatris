@@ -96,4 +96,7 @@ const mapDispatchToProps = {
   unauth
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(NewGame);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(NewGame);

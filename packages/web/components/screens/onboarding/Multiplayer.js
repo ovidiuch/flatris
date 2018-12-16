@@ -19,14 +19,17 @@ export default class Multiplayer extends Component<Props> {
           <Fragment>
             <p>
               <span className="highlight">
-                Both players receive<br />
-                the same sequence of<br />
+                Both players receive
+                <br />
+                the same sequence of
+                <br />
                 geometric shapes.
               </span>
             </p>
             <p>
               Each of you controls a<br />
-              separate game. You see<br />
+              separate game. You see
+              <br />
               <strong>your rival's shadow</strong>,<br />
               but you don't interact.
             </p>

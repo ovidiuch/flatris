@@ -3,7 +3,10 @@
 import React, { Component } from 'react';
 import SquareBlock from './SquareBlock';
 
-import type { WellGrid as WellGridType, WellGridItem } from 'shared/types/state';
+import type {
+  WellGrid as WellGridType,
+  WellGridItem
+} from 'shared/types/state';
 
 type Props = {
   grid: WellGridType,

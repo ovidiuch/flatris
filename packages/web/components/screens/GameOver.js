@@ -56,7 +56,9 @@ function getMultiMessage(curPlayer: Player, otherPlayer: Player) {
     return (
       <Fragment>
         <p>
-          Oh well... better luck<br />next time.
+          Oh well... better luck
+          <br />
+          next time.
         </p>
         <p>
           <strong>{bestOutOfMsg}</strong>

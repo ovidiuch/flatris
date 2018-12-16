@@ -711,7 +711,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):game 1`] = `
         className="jsx-3365034459 logo left"
       >
         <div
-          className="jsx-1917779880 logo"
+          className="jsx-3741043640 logo"
         >
           <div
             className="jsx-2115617632 tetromino"
@@ -1381,7 +1381,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):game-added 1`] = `
         className="jsx-3365034459 logo left"
       >
         <div
-          className="jsx-1917779880 logo"
+          className="jsx-3741043640 logo"
         >
           <div
             className="jsx-2115617632 tetromino"
@@ -2051,7 +2051,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-added 1`] = `
         className="jsx-3365034459 logo left"
       >
         <div
-          className="jsx-1917779880 logo"
+          className="jsx-3741043640 logo"
         >
           <div
             className="jsx-2115617632 tetromino"
@@ -3303,7 +3303,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed 1`] = 
         className="jsx-3365034459 logo left"
       >
         <div
-          className="jsx-1917779880 logo"
+          className="jsx-3741043640 logo"
         >
           <div
             className="jsx-2115617632 tetromino"
@@ -4264,7 +4264,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):games-removed-and-ad
         className="jsx-3365034459 logo left"
       >
         <div
-          className="jsx-1917779880 logo"
+          className="jsx-3741043640 logo"
         >
           <div
             className="jsx-2115617632 tetromino"
@@ -5516,7 +5516,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):mixed-games 1`] = `
         className="jsx-3365034459 logo left"
       >
         <div
-          className="jsx-1917779880 logo"
+          className="jsx-3741043640 logo"
         >
           <div
             className="jsx-2115617632 tetromino"
@@ -6486,7 +6486,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):mixed-games-removed 
         className="jsx-3365034459 logo left"
       >
         <div
-          className="jsx-1917779880 logo"
+          className="jsx-3741043640 logo"
         >
           <div
             className="jsx-2115617632 tetromino"
@@ -7156,7 +7156,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):no-games 1`] = `
         className="jsx-3365034459 logo left"
       >
         <div
-          className="jsx-1917779880 logo"
+          className="jsx-3741043640 logo"
         >
           <div
             className="jsx-2115617632 tetromino"
@@ -7535,7 +7535,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):own-game 1`] = `
         className="jsx-3365034459 logo left"
       >
         <div
-          className="jsx-1917779880 logo"
+          className="jsx-3741043640 logo"
         >
           <div
             className="jsx-2115617632 tetromino"
@@ -8205,7 +8205,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(Dashboard)):own-game-removed 1`]
         className="jsx-3365034459 logo left"
       >
         <div
-          className="jsx-1917779880 logo"
+          className="jsx-3741043640 logo"
         >
           <div
             className="jsx-2115617632 tetromino"
@@ -11939,11 +11939,11 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):double-hallelujah 
           type="button"
         >
           <svg
-            className="jsx-641948776"
+            className="jsx-1513795926"
             viewBox="0 0 24 24"
           >
             <path
-              className="jsx-641948776"
+              className="jsx-1513795926"
               d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"
             />
           </svg>
@@ -11959,11 +11959,11 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):double-hallelujah 
           type="button"
         >
           <svg
-            className="jsx-1332773691"
+            className="jsx-952678030"
             viewBox="0 0 24 24"
           >
             <path
-              className="jsx-1332773691"
+              className="jsx-952678030"
               d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
             />
           </svg>
@@ -11979,11 +11979,11 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):double-hallelujah 
           type="button"
         >
           <svg
-            className="jsx-1332773691"
+            className="jsx-952678030"
             viewBox="0 0 24 24"
           >
             <path
-              className="jsx-1332773691"
+              className="jsx-952678030"
               d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
             />
           </svg>
@@ -12000,11 +12000,11 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):double-hallelujah 
           type="button"
         >
           <svg
-            className="jsx-1332773691"
+            className="jsx-952678030"
             viewBox="0 0 24 24"
           >
             <path
-              className="jsx-1332773691"
+              className="jsx-952678030"
               d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
             />
           </svg>
@@ -13900,11 +13900,11 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):enemy-hallelujah 1
           type="button"
         >
           <svg
-            className="jsx-641948776"
+            className="jsx-1513795926"
             viewBox="0 0 24 24"
           >
             <path
-              className="jsx-641948776"
+              className="jsx-1513795926"
               d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"
             />
           </svg>
@@ -13920,11 +13920,11 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):enemy-hallelujah 1
           type="button"
         >
           <svg
-            className="jsx-1332773691"
+            className="jsx-952678030"
             viewBox="0 0 24 24"
           >
             <path
-              className="jsx-1332773691"
+              className="jsx-952678030"
               d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
             />
           </svg>
@@ -13940,11 +13940,11 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):enemy-hallelujah 1
           type="button"
         >
           <svg
-            className="jsx-1332773691"
+            className="jsx-952678030"
             viewBox="0 0 24 24"
           >
             <path
-              className="jsx-1332773691"
+              className="jsx-952678030"
               d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
             />
           </svg>
@@ -13961,11 +13961,11 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):enemy-hallelujah 1
           type="button"
         >
           <svg
-            className="jsx-1332773691"
+            className="jsx-952678030"
             viewBox="0 0 24 24"
           >
             <path
-              className="jsx-1332773691"
+              className="jsx-952678030"
               d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
             />
           </svg>
@@ -16217,11 +16217,11 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah 1`] = `
           type="button"
         >
           <svg
-            className="jsx-641948776"
+            className="jsx-1513795926"
             viewBox="0 0 24 24"
           >
             <path
-              className="jsx-641948776"
+              className="jsx-1513795926"
               d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"
             />
           </svg>
@@ -16237,11 +16237,11 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah 1`] = `
           type="button"
         >
           <svg
-            className="jsx-1332773691"
+            className="jsx-952678030"
             viewBox="0 0 24 24"
           >
             <path
-              className="jsx-1332773691"
+              className="jsx-952678030"
               d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
             />
           </svg>
@@ -16257,11 +16257,11 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah 1`] = `
           type="button"
         >
           <svg
-            className="jsx-1332773691"
+            className="jsx-952678030"
             viewBox="0 0 24 24"
           >
             <path
-              className="jsx-1332773691"
+              className="jsx-952678030"
               d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
             />
           </svg>
@@ -16278,11 +16278,11 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah 1`] = `
           type="button"
         >
           <svg
-            className="jsx-1332773691"
+            className="jsx-952678030"
             viewBox="0 0 24 24"
           >
             <path
-              className="jsx-1332773691"
+              className="jsx-952678030"
               d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
             />
           </svg>
@@ -18594,11 +18594,11 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah-guest 1
           type="button"
         >
           <svg
-            className="jsx-641948776"
+            className="jsx-1513795926"
             viewBox="0 0 24 24"
           >
             <path
-              className="jsx-641948776"
+              className="jsx-1513795926"
               d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"
             />
           </svg>
@@ -18613,11 +18613,11 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah-guest 1
           type="button"
         >
           <svg
-            className="jsx-1332773691"
+            className="jsx-952678030"
             viewBox="0 0 24 24"
           >
             <path
-              className="jsx-1332773691"
+              className="jsx-952678030"
               d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
             />
           </svg>
@@ -18632,11 +18632,11 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah-guest 1
           type="button"
         >
           <svg
-            className="jsx-1332773691"
+            className="jsx-952678030"
             viewBox="0 0 24 24"
           >
             <path
-              className="jsx-1332773691"
+              className="jsx-952678030"
               d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
             />
           </svg>
@@ -18651,11 +18651,11 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):hallelujah-guest 1
           type="button"
         >
           <svg
-            className="jsx-1332773691"
+            className="jsx-952678030"
             viewBox="0 0 24 24"
           >
             <path
-              className="jsx-1332773691"
+              className="jsx-952678030"
               d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
             />
           </svg>
@@ -21184,7 +21184,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
                   className="jsx-1832570087 copy"
                 >
                   <div
-                    data-clipboard-text="about:///join/dce6b11e"
+                    data-clipboard-text="http://localhost/join/dce6b11e"
                   >
                     <button
                       className="jsx-2544857778 button hover-button"
@@ -21427,11 +21427,11 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
           type="button"
         >
           <svg
-            className="jsx-641948776"
+            className="jsx-1513795926"
             viewBox="0 0 24 24"
           >
             <path
-              className="jsx-641948776"
+              className="jsx-1513795926"
               d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"
             />
           </svg>
@@ -21446,11 +21446,11 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
           type="button"
         >
           <svg
-            className="jsx-1332773691"
+            className="jsx-952678030"
             viewBox="0 0 24 24"
           >
             <path
-              className="jsx-1332773691"
+              className="jsx-952678030"
               d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
             />
           </svg>
@@ -21465,11 +21465,11 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
           type="button"
         >
           <svg
-            className="jsx-1332773691"
+            className="jsx-952678030"
             viewBox="0 0 24 24"
           >
             <path
-              className="jsx-1332773691"
+              className="jsx-952678030"
               d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
             />
           </svg>
@@ -21484,11 +21484,11 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):mission-impossible
           type="button"
         >
           <svg
-            className="jsx-1332773691"
+            className="jsx-952678030"
             viewBox="0 0 24 24"
           >
             <path
-              className="jsx-1332773691"
+              className="jsx-952678030"
               d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
             />
           </svg>
@@ -21651,7 +21651,7 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
                   className="jsx-1832570087 copy"
                 >
                   <div
-                    data-clipboard-text="about:///join/dce6b11e"
+                    data-clipboard-text="http://localhost/join/dce6b11e"
                   >
                     <button
                       className="jsx-2544857778 button hover-button"
@@ -21894,11 +21894,11 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
           type="button"
         >
           <svg
-            className="jsx-641948776"
+            className="jsx-1513795926"
             viewBox="0 0 24 24"
           >
             <path
-              className="jsx-641948776"
+              className="jsx-1513795926"
               d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"
             />
           </svg>
@@ -21913,11 +21913,11 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
           type="button"
         >
           <svg
-            className="jsx-1332773691"
+            className="jsx-952678030"
             viewBox="0 0 24 24"
           >
             <path
-              className="jsx-1332773691"
+              className="jsx-952678030"
               d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
             />
           </svg>
@@ -21932,11 +21932,11 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
           type="button"
         >
           <svg
-            className="jsx-1332773691"
+            className="jsx-952678030"
             viewBox="0 0 24 24"
           >
             <path
-              className="jsx-1332773691"
+              className="jsx-952678030"
               d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
             />
           </svg>
@@ -21951,11 +21951,11 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game 1`] = `
           type="button"
         >
           <svg
-            className="jsx-1332773691"
+            className="jsx-952678030"
             viewBox="0 0 24 24"
           >
             <path
-              className="jsx-1332773691"
+              className="jsx-952678030"
               d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
             />
           </svg>
@@ -22286,11 +22286,11 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game-running 1
           type="button"
         >
           <svg
-            className="jsx-641948776"
+            className="jsx-1513795926"
             viewBox="0 0 24 24"
           >
             <path
-              className="jsx-641948776"
+              className="jsx-1513795926"
               d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"
             />
           </svg>
@@ -22306,11 +22306,11 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game-running 1
           type="button"
         >
           <svg
-            className="jsx-1332773691"
+            className="jsx-952678030"
             viewBox="0 0 24 24"
           >
             <path
-              className="jsx-1332773691"
+              className="jsx-952678030"
               d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
             />
           </svg>
@@ -22326,11 +22326,11 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game-running 1
           type="button"
         >
           <svg
-            className="jsx-1332773691"
+            className="jsx-952678030"
             viewBox="0 0 24 24"
           >
             <path
-              className="jsx-1332773691"
+              className="jsx-952678030"
               d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
             />
           </svg>
@@ -22347,11 +22347,11 @@ exports[`Cosmos fixtures: Connect(SocketConnect(FlatrisGame)):new-game-running 1
           type="button"
         >
           <svg
-            className="jsx-1332773691"
+            className="jsx-952678030"
             viewBox="0 0 24 24"
           >
             <path
-              className="jsx-1332773691"
+              className="jsx-952678030"
               d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
             />
           </svg>
@@ -22392,11 +22392,11 @@ exports[`Cosmos fixtures: Connect(SocketConnect(LandscapeControls)):active 1`] =
             type="button"
           >
             <svg
-              className="jsx-1332773691"
+              className="jsx-952678030"
               viewBox="0 0 24 24"
             >
               <path
-                className="jsx-1332773691"
+                className="jsx-952678030"
                 d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
               />
             </svg>
@@ -22412,11 +22412,11 @@ exports[`Cosmos fixtures: Connect(SocketConnect(LandscapeControls)):active 1`] =
             type="button"
           >
             <svg
-              className="jsx-641948776"
+              className="jsx-1513795926"
               viewBox="0 0 24 24"
             >
               <path
-                className="jsx-641948776"
+                className="jsx-1513795926"
                 d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"
               />
             </svg>
@@ -22436,11 +22436,11 @@ exports[`Cosmos fixtures: Connect(SocketConnect(LandscapeControls)):active 1`] =
             type="button"
           >
             <svg
-              className="jsx-1332773691"
+              className="jsx-952678030"
               viewBox="0 0 24 24"
             >
               <path
-                className="jsx-1332773691"
+                className="jsx-952678030"
                 d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
               />
             </svg>
@@ -22456,11 +22456,11 @@ exports[`Cosmos fixtures: Connect(SocketConnect(LandscapeControls)):active 1`] =
             type="button"
           >
             <svg
-              className="jsx-1332773691"
+              className="jsx-952678030"
               viewBox="0 0 24 24"
             >
               <path
-                className="jsx-1332773691"
+                className="jsx-952678030"
                 d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
               />
             </svg>
@@ -22501,11 +22501,11 @@ exports[`Cosmos fixtures: Connect(SocketConnect(LandscapeControls)):disabled 1`]
             type="button"
           >
             <svg
-              className="jsx-1332773691"
+              className="jsx-952678030"
               viewBox="0 0 24 24"
             >
               <path
-                className="jsx-1332773691"
+                className="jsx-952678030"
                 d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
               />
             </svg>
@@ -22520,11 +22520,11 @@ exports[`Cosmos fixtures: Connect(SocketConnect(LandscapeControls)):disabled 1`]
             type="button"
           >
             <svg
-              className="jsx-641948776"
+              className="jsx-1513795926"
               viewBox="0 0 24 24"
             >
               <path
-                className="jsx-641948776"
+                className="jsx-1513795926"
                 d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"
               />
             </svg>
@@ -22543,11 +22543,11 @@ exports[`Cosmos fixtures: Connect(SocketConnect(LandscapeControls)):disabled 1`]
             type="button"
           >
             <svg
-              className="jsx-1332773691"
+              className="jsx-952678030"
               viewBox="0 0 24 24"
             >
               <path
-                className="jsx-1332773691"
+                className="jsx-952678030"
                 d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
               />
             </svg>
@@ -22562,11 +22562,11 @@ exports[`Cosmos fixtures: Connect(SocketConnect(LandscapeControls)):disabled 1`]
             type="button"
           >
             <svg
-              className="jsx-1332773691"
+              className="jsx-952678030"
               viewBox="0 0 24 24"
             >
               <path
-                className="jsx-1332773691"
+                className="jsx-952678030"
                 d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
               />
             </svg>
@@ -22608,11 +22608,11 @@ exports[`Cosmos fixtures: Connect(SocketConnect(PortraitControls)):active 1`] = 
             type="button"
           >
             <svg
-              className="jsx-641948776"
+              className="jsx-1513795926"
               viewBox="0 0 24 24"
             >
               <path
-                className="jsx-641948776"
+                className="jsx-1513795926"
                 d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"
               />
             </svg>
@@ -22628,11 +22628,11 @@ exports[`Cosmos fixtures: Connect(SocketConnect(PortraitControls)):active 1`] = 
             type="button"
           >
             <svg
-              className="jsx-1332773691"
+              className="jsx-952678030"
               viewBox="0 0 24 24"
             >
               <path
-                className="jsx-1332773691"
+                className="jsx-952678030"
                 d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
               />
             </svg>
@@ -22648,11 +22648,11 @@ exports[`Cosmos fixtures: Connect(SocketConnect(PortraitControls)):active 1`] = 
             type="button"
           >
             <svg
-              className="jsx-1332773691"
+              className="jsx-952678030"
               viewBox="0 0 24 24"
             >
               <path
-                className="jsx-1332773691"
+                className="jsx-952678030"
                 d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
               />
             </svg>
@@ -22669,11 +22669,11 @@ exports[`Cosmos fixtures: Connect(SocketConnect(PortraitControls)):active 1`] = 
             type="button"
           >
             <svg
-              className="jsx-1332773691"
+              className="jsx-952678030"
               viewBox="0 0 24 24"
             >
               <path
-                className="jsx-1332773691"
+                className="jsx-952678030"
                 d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
               />
             </svg>
@@ -22714,11 +22714,11 @@ exports[`Cosmos fixtures: Connect(SocketConnect(PortraitControls)):disabled 1`] 
             type="button"
           >
             <svg
-              className="jsx-641948776"
+              className="jsx-1513795926"
               viewBox="0 0 24 24"
             >
               <path
-                className="jsx-641948776"
+                className="jsx-1513795926"
                 d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"
               />
             </svg>
@@ -22733,11 +22733,11 @@ exports[`Cosmos fixtures: Connect(SocketConnect(PortraitControls)):disabled 1`] 
             type="button"
           >
             <svg
-              className="jsx-1332773691"
+              className="jsx-952678030"
               viewBox="0 0 24 24"
             >
               <path
-                className="jsx-1332773691"
+                className="jsx-952678030"
                 d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
               />
             </svg>
@@ -22752,11 +22752,11 @@ exports[`Cosmos fixtures: Connect(SocketConnect(PortraitControls)):disabled 1`] 
             type="button"
           >
             <svg
-              className="jsx-1332773691"
+              className="jsx-952678030"
               viewBox="0 0 24 24"
             >
               <path
-                className="jsx-1332773691"
+                className="jsx-952678030"
                 d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
               />
             </svg>
@@ -22771,11 +22771,11 @@ exports[`Cosmos fixtures: Connect(SocketConnect(PortraitControls)):disabled 1`] 
             type="button"
           >
             <svg
-              className="jsx-1332773691"
+              className="jsx-952678030"
               viewBox="0 0 24 24"
             >
               <path
-                className="jsx-1332773691"
+                className="jsx-952678030"
                 d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
               />
             </svg>
@@ -22840,7 +22840,7 @@ exports[`Cosmos fixtures: CopyButton:disabled 1`] = `
 
 exports[`Cosmos fixtures: CopyGameLinkButton:default 1`] = `
 <div
-  data-clipboard-text="about:///join/1337"
+  data-clipboard-text="http://localhost/join/1337"
 >
   <button
     className="jsx-2544857778 button hover-button"
@@ -22870,11 +22870,11 @@ exports[`Cosmos fixtures: Drop:default 1`] = `
   type="button"
 >
   <svg
-    className="jsx-1332773691"
+    className="jsx-952678030"
     viewBox="0 0 24 24"
   >
     <path
-      className="jsx-1332773691"
+      className="jsx-952678030"
       d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
     />
   </svg>
@@ -24030,7 +24030,7 @@ exports[`Cosmos fixtures: GameOver:solo 1`] = `
               className="jsx-1832570087 copy"
             >
               <div
-                data-clipboard-text="about:///join/d2f"
+                data-clipboard-text="http://localhost/join/d2f"
               >
                 <button
                   className="jsx-2544857778 button hover-button"
@@ -25822,7 +25822,7 @@ exports[`Cosmos fixtures: Invite:default 1`] = `
               className="jsx-1832570087 copy"
             >
               <div
-                data-clipboard-text="about:///join/1337"
+                data-clipboard-text="http://localhost/join/1337"
               >
                 <button
                   className="jsx-2544857778 button hover-button"
@@ -26138,11 +26138,11 @@ exports[`Cosmos fixtures: Left:default 1`] = `
   type="button"
 >
   <svg
-    className="jsx-1332773691"
+    className="jsx-952678030"
     viewBox="0 0 24 24"
   >
     <path
-      className="jsx-1332773691"
+      className="jsx-952678030"
       d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
     />
   </svg>
@@ -26210,7 +26210,7 @@ exports[`Cosmos fixtures: Loading:default 1`] = `
 
 exports[`Cosmos fixtures: Logo:default 1`] = `
 <div
-  className="jsx-1917779880 logo"
+  className="jsx-3741043640 logo"
 >
   <div
     className="jsx-2115617632 tetromino"
@@ -26421,7 +26421,7 @@ exports[`Cosmos fixtures: NewGame:default 1`] = `
               className="jsx-1832570087 copy"
             >
               <div
-                data-clipboard-text="about:///join/1337"
+                data-clipboard-text="http://localhost/join/1337"
               >
                 <button
                   className="jsx-2544857778 button hover-button"
@@ -27104,11 +27104,11 @@ exports[`Cosmos fixtures: Right:default 1`] = `
   type="button"
 >
   <svg
-    className="jsx-1332773691"
+    className="jsx-952678030"
     viewBox="0 0 24 24"
   >
     <path
-      className="jsx-1332773691"
+      className="jsx-952678030"
       d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
     />
   </svg>
@@ -27122,11 +27122,11 @@ exports[`Cosmos fixtures: Rotate:default 1`] = `
   type="button"
 >
   <svg
-    className="jsx-641948776"
+    className="jsx-1513795926"
     viewBox="0 0 24 24"
   >
     <path
-      className="jsx-641948776"
+      className="jsx-1513795926"
       d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"
     />
   </svg>

@@ -206,4 +206,7 @@ const mapDispatchToProps = {
   auth
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Auth);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Auth);

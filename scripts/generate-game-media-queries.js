@@ -53,7 +53,7 @@ function getMediaQuery(cond, body) {
 
 function getPortraitRules({ width, height }) {
   const numBlocks = GAME_ROWS + CONTROL_BLOCKS;
-  const innerHeight = height / numBlocks * GAME_ROWS;
+  const innerHeight = (height / numBlocks) * GAME_ROWS;
   const topOffset = (height - innerHeight) / 2;
 
   return `.container {

@@ -35,7 +35,8 @@ export default class Error extends Component<Props> {
           <Fragment>
             <p>Hmm...</p>
             <p>
-              It's either gone or<br />
+              It's either gone or
+              <br />
               it never was ¯\_(ツ)_/¯
             </p>
           </Fragment>
@@ -83,7 +84,8 @@ export default class Error extends Component<Props> {
                   </span>
                 </p>
                 <p>
-                  At least this page<br />
+                  At least this page
+                  <br />
                   works, right?
                 </p>
               </Fragment>

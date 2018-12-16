@@ -6,7 +6,8 @@ import { SHAPES } from 'shared/constants/tetromino';
 import type { Tetromino, Position2d, GameId } from 'shared/types/state';
 
 export function getNextTetromino(gameId: GameId, nth: number): Tetromino {
-  const tetrominos = Object.keys(SHAPES);
+  // $FlowFixMe
+  const tetrominos: Tetromino[] = Object.keys(SHAPES);
   const randNum = crc32(gameId + nth);
 
   return tetrominos[Math.abs(randNum) % tetrominos.length];
