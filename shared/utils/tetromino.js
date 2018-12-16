@@ -1,9 +1,9 @@
 // @flow
 
 import { str as crc32 } from 'crc-32';
-import { SHAPES } from 'shared/constants/tetromino';
+import { SHAPES } from '../constants/tetromino';
 
-import type { Tetromino, Position2d, GameId } from 'shared/types/state';
+import type { Tetromino, Position2d, GameId } from '../types/state';
 
 export function getNextTetromino(gameId: GameId, nth: number): Tetromino {
   // $FlowFixMe

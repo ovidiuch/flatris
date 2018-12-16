@@ -6,7 +6,7 @@ import type {
   TetrominoGrid,
   Position2d,
   Player
-} from 'shared/types/state';
+} from '../types/state';
 
 export function generateEmptyGrid(rows: number, cols: number): WellGrid {
   const matrix = [];

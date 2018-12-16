@@ -8,7 +8,7 @@ import {
   DROP_FRAMES_DECREMENT,
   LINE_CLEAR_BONUSES
 } from '../constants/grid';
-import { SHAPES, COLORS } from 'shared/constants/tetromino';
+import { SHAPES, COLORS } from '../constants/tetromino';
 import {
   getNextTetromino,
   getInitialPositionForTetromino
@@ -37,8 +37,8 @@ import type {
   Game,
   FlashSuffix,
   QuakeSuffix
-} from 'shared/types/state';
-import type { ActionId, GameAction } from 'shared/types/actions';
+} from '../types/state';
+import type { ActionId, GameAction } from '../types/actions';
 
 export function gameReducer(state: void | Game, action: GameAction): Game {
   if (!state) {
