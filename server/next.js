@@ -28,5 +28,5 @@ export async function startNextApp(
     return nextHandler(req, res);
   });
 
-  startServer(server, 80);
+  startServer(server, 3000);
 }

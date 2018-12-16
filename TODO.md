@@ -192,7 +192,3 @@ CHORES
 
 - [x] Upgrade to Babel7
 - [ ] Extract ReduxActions Cosmos proxy
-
-Deployment
-
-- [x] Change client port to 80
