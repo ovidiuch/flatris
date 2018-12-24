@@ -168,6 +168,7 @@
   - [ ] "Waiting for permission..." screen
   - [ ] "Allow player to join?" screen
   - [ ] "Denied" screen
+- [ ] End of game screen
 
 BACKLOG
 
@@ -192,3 +193,7 @@ CHORES
 
 - [x] Upgrade to Babel7
 - [ ] Extract ReduxActions Cosmos proxy
+
+UX
+
+- [ ] Reconnect when focusing idle tab (https://github.com/socketio/socket.io-client/issues/1067)
