@@ -1013,6 +1013,14 @@
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@protobufjs/utf8/-/utf8-1.1.0.tgz#a777360b5b39a1a2e5106f8e858f2fd2d060c570"
 
+"@react-mock/state@^0.1.7":
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/@react-mock/state/-/state-0.1.7.tgz#073752397b1bd15c87c7fd120b88fd64a15c2c32"
+  integrity sha512-6XvLPXAceZ7vQS9S5vJOBzxbchwxl3XYALRdGZIklyRp/wFdZbZ3UTN6Dd95kg62Wt/rIZ4qjS1ddkNOEkhYEw==
+  dependencies:
+    "@babel/runtime" "^7.1.2"
+    lodash "^4.17.11"
+
 "@skidding/linked-list@^1.0.2":
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/@skidding/linked-list/-/linked-list-1.0.2.tgz#e3fc74a22a5f745d61a2baae1e396813014ef115"
