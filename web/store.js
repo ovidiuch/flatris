@@ -27,7 +27,7 @@ const rootReducer = combineReducers({
   stats: statsReducer
 });
 
-export function createStore(initialState: State): Store<State, Action> {
+export function createStore(initialState: $Shape<State>): Store<State, Action> {
   return createReduxStore(
     rootReducer,
     initialState,

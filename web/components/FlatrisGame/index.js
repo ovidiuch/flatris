@@ -4,7 +4,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { throttle } from 'lodash';
-import { UP, DOWN, LEFT, RIGHT, SPACE, KEY_DELAY } from '../constants/keys';
+import { UP, DOWN, LEFT, RIGHT, SPACE, KEY_DELAY } from '../../constants/keys';
 import { GAME_INACTIVE_TIMEOUT } from 'shared/constants/timeouts';
 import {
   isPlayer,
@@ -13,7 +13,7 @@ import {
   getOtherPlayer,
   allPlayersReady
 } from 'shared/reducers/game';
-import { getCurGame } from '../reducers/cur-game';
+import { getCurGame } from '../../reducers/cur-game';
 import {
   joinGame,
   playerReady,
@@ -26,24 +26,24 @@ import {
   disableAcceleration,
   appendPendingBlocks,
   ping
-} from '../actions/game';
-import { runGameFrame, cancelGameFrame } from '../actions/game-frame';
-import { withSocket } from './socket/SocketConnect';
-import { isMobileDevice } from '../utils/events';
-import GameContainer from './GameContainer';
-import Button from './Button';
-import GamePreview from './GamePreview';
-import PortraitControls from './controls/PortraitControls';
-import LandscapeControls from './controls/LandscapeControls';
-import FadeIn from './effects/FadeIn';
-import Auth from './screens/Auth';
-import NewGame from './screens/NewGame';
-import Invite from './screens/Invite';
-import JoinGame from './screens/JoinGame';
-import GameFull from './screens/GameFull';
-import GetReady from './screens/GetReady';
-import WaitingForOther from './screens/WaitingForOther';
-import GameOver from './screens/GameOver';
+} from '../../actions/game';
+import { runGameFrame, cancelGameFrame } from '../../actions/game-frame';
+import { withSocket } from '../socket/SocketConnect';
+import { isMobileDevice } from '../../utils/events';
+import GameContainer from '../GameContainer';
+import Button from '../Button';
+import GamePreview from '../GamePreview';
+import PortraitControls from '../controls/PortraitControls';
+import LandscapeControls from '../controls/LandscapeControls';
+import FadeIn from '../effects/FadeIn';
+import Auth from '../screens/Auth';
+import NewGame from '../screens/NewGame';
+import Invite from '../screens/Invite';
+import JoinGame from '../screens/JoinGame';
+import GameFull from '../screens/GameFull';
+import GetReady from '../screens/GetReady';
+import WaitingForOther from '../screens/WaitingForOther';
+import GameOver from '../screens/GameOver';
 
 import type { Node } from 'react';
 import type { User, GameId, Game, Backfills, State } from 'shared/types/state';

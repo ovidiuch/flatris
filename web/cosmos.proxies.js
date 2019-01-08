@@ -1,15 +1,13 @@
 // @flow
 
-import { func } from 'prop-types';
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import createReduxProxy from 'react-cosmos-redux-proxy';
 import createFetchProxy from 'react-cosmos-fetch-proxy';
 import GameContainer from './components/GameContainer';
+import { SocketProvider } from './mocks/SocketProvider';
 import { createStore } from './store';
 
-import type { ComponentType, Node } from 'react';
-import type { Action, ThunkAction } from 'shared/types/actions';
+import type { ComponentType } from 'react';
 
 type LinkedItem<Item> = {
   value: Item,
@@ -65,60 +63,6 @@ class GameContainerProxy extends Component<ProxyProps> {
     );
   }
 }
-
-type SocketProviderProps = {
-  children: Node,
-  dispatch: (Action | ThunkAction) => Action
-};
-
-class SocketProviderRaw extends Component<SocketProviderProps> {
-  static childContextTypes = {
-    subscribe: func.isRequired,
-    keepGameAlive: func.isRequired,
-    broadcastGameAction: func.isRequired,
-    onGameKeepAlive: func.isRequired,
-    offGameKeepAlive: func.isRequired
-  };
-
-  getChildContext() {
-    return {
-      subscribe: this.handleSubscribe,
-      keepGameAlive: this.handleKeepGameAlive,
-      broadcastGameAction: this.handleBroadcastGameAction,
-      onGameKeepAlive: this.handleOnGameKeepAlive,
-      offGameKeepAlive: this.handleOffGameKeepAlive
-    };
-  }
-
-  handleSubscribe = roomId => {
-    console.log('Subscribe', roomId);
-  };
-
-  handleKeepGameAlive = gameId => {
-    console.log('Keep alive', gameId);
-  };
-
-  handleBroadcastGameAction = (action: Action) => {
-    const { dispatch } = this.props;
-
-    // The final action is returned from async thunk actions
-    dispatch(action);
-  };
-
-  handleOnGameKeepAlive = () => {
-    console.log('Subscribe to game-keep-alive');
-  };
-
-  handleOffGameKeepAlive = () => {
-    console.log('Unsubscribe from game-keep-alive');
-  };
-
-  render() {
-    return this.props.children;
-  }
-}
-
-const SocketProvider = connect()(SocketProviderRaw);
 
 const SocketProviderProxy = (props: ProxyProps) => {
   const {
