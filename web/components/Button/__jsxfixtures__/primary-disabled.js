@@ -1,6 +1,6 @@
 // @flow
 
 import React from 'react';
-import Button from '../../Button';
+import Button from '..';
 
 export default <Button children="No chance amigo" disabled />;
