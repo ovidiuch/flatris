@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { getBlankGame } from 'shared/reducers/game';
 import { getSampleUser } from '../../utils/test-helpers';
 import { createStore } from '../../store';
-import { SocketProvider } from '../../mocks/SocketProvider';
+import { SocketProviderMock } from '../../mocks/SocketProviderMock';
 
 import type { Node } from 'react';
 
@@ -23,6 +23,6 @@ const state = {
 
 export default ({ children }: { children: Node }) => (
   <Provider store={createStore(state)}>
-    <SocketProvider>{children}</SocketProvider>
+    <SocketProviderMock>{children}</SocketProviderMock>
   </Provider>
 );

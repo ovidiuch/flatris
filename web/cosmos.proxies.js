@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import createReduxProxy from 'react-cosmos-redux-proxy';
 import createFetchProxy from 'react-cosmos-fetch-proxy';
 import GameContainer from './components/GameContainer';
-import { SocketProvider } from './mocks/SocketProvider';
+import { SocketProviderMock } from './mocks/SocketProviderMock';
 import { createStore } from './store';
 
 import type { ComponentType } from 'react';
@@ -71,7 +71,11 @@ const SocketProviderProxy = (props: ProxyProps) => {
   } = props;
   const nextEl = <NextProxy {...props} nextProxy={next()} />;
 
-  return reduxState ? <SocketProvider>{nextEl}</SocketProvider> : nextEl;
+  return reduxState ? (
+    <SocketProviderMock>{nextEl}</SocketProviderMock>
+  ) : (
+    nextEl
+  );
 };
 
 export default [

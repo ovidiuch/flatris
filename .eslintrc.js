@@ -51,6 +51,7 @@ module.exports = {
       files: [
         'web/components/**/*.js',
         'web/pages/**/*.js',
+        'web/mocks/**/*.js',
         'cosmos.proxies.js'
       ],
       rules: {

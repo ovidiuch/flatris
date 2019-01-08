@@ -12,7 +12,7 @@ type SocketProviderProps = {
   dispatch: (Action | ThunkAction) => Action
 };
 
-class SocketProviderRaw extends Component<SocketProviderProps> {
+class SocketProvider extends Component<SocketProviderProps> {
   static childContextTypes = {
     subscribe: func.isRequired,
     keepGameAlive: func.isRequired,
@@ -59,4 +59,4 @@ class SocketProviderRaw extends Component<SocketProviderProps> {
   }
 }
 
-export const SocketProvider = connect()(SocketProviderRaw);
+export const SocketProviderMock = connect()(SocketProvider);

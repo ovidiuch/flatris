@@ -3,8 +3,8 @@
 import React, { Component } from 'react';
 import { SHAPES, COLORS } from 'shared/constants/tetromino';
 import { getCurPlayer, allPlayersReady } from 'shared/reducers/game';
-import Tetromino from './Tetromino';
-import PlayerInfo from './PlayerInfo';
+import Tetromino from '../Tetromino';
+import PlayerInfo from '../PlayerInfo';
 
 import type { User, Game } from 'shared/types/state';
 
