@@ -1,7 +1,7 @@
 // @flow
 
 import React, { Component } from 'react';
-import SquareBlock from './SquareBlock';
+import SquareBlock from '../SquareBlock';
 
 import type {
   WellGrid as WellGridType,

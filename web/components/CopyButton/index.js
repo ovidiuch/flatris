@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import Clipboard from 'clipboard';
 import { COLORS } from 'shared/constants/tetromino';
-import Button from './Button';
+import Button from '../Button';
 
 type Props = {
   disabled: boolean,

@@ -3,8 +3,8 @@
 import React, { Component } from 'react';
 import { COLORS } from 'shared/constants/tetromino';
 import { getExactPosition } from 'shared/utils/grid';
-import WellGridComponent from './WellGrid';
-import TetrominoComponent from './Tetromino';
+import WellGridComponent from '../WellGrid';
+import TetrominoComponent from '../Tetromino';
 
 import type {
   WellGrid,
