@@ -21,8 +21,10 @@ const state = {
   curGame: game.id
 };
 
+const store = createStore(state);
+
 export default ({ children }: { children: Node }) => (
-  <Provider store={createStore(state)}>
+  <Provider store={store}>
     <SocketProviderMock>{children}</SocketProviderMock>
   </Provider>
 );

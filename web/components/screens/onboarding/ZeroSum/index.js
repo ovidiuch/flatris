@@ -1,8 +1,8 @@
 // @flow
 
 import React, { Fragment, Component } from 'react';
-import Screen from '../Screen';
-import Button from '../../Button';
+import Screen from '../../Screen';
+import Button from '../../../Button';
 
 type Props = {
   onNext: Function
