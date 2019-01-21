@@ -15,6 +15,7 @@
     "cosmos": "cosmos --config web/cosmos.config.js",
     "cosmos:next": "cosmos --config web/cosmos.next.config.js",
     "cosmos:export": "cosmos-export --config web/cosmos.config.js",
+    "cosmos:export:next": "cosmos-export --config web/cosmos.next.config.js",
     "dev:client": "babel-node server/start-dev-client.js",
     "dev:server": "babel-node server/start-dev-server.js",
     "dev:server:watch": "nodemon server/start-dev-server.js  --exec babel-node",
