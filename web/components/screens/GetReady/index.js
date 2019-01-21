@@ -1,9 +1,9 @@
 // @flow
 
 import React, { Fragment, Component } from 'react';
-import Shake from '../effects/Shake';
-import Button from '../Button';
-import Screen from './Screen';
+import Button from '../../Button';
+import Shake from '../../effects/Shake';
+import Screen from '../shared/Screen';
 
 import type { Player } from 'shared/types/state';
 

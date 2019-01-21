@@ -2,10 +2,10 @@
 
 import React, { Fragment, Component } from 'react';
 import Link from 'next/link';
-import Shake from '../effects/Shake';
-import FadeIn from '../effects/FadeIn';
-import Button from '../Button';
-import Screen from './Screen';
+import Shake from '../../effects/Shake';
+import FadeIn from '../../effects/FadeIn';
+import Button from '../../Button';
+import Screen from '../shared/Screen';
 
 import type { Player } from 'shared/types/state';
 

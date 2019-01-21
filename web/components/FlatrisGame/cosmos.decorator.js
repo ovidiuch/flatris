@@ -1,10 +1,9 @@
 // @flow
 
 import React from 'react';
-import { Provider } from 'react-redux';
 import { getBlankGame } from 'shared/reducers/game';
 import { getSampleUser } from '../../utils/test-helpers';
-import { createStore } from '../../store';
+import { ReduxProviderMock } from '../../mocks/ReduxProviderMock';
 import { SocketProviderMock } from '../../mocks/SocketProviderMock';
 
 import type { Node } from 'react';
@@ -21,10 +20,8 @@ const state = {
   curGame: game.id
 };
 
-const store = createStore(state);
-
 export default ({ children }: { children: Node }) => (
-  <Provider store={store}>
+  <ReduxProviderMock state={state}>
     <SocketProviderMock>{children}</SocketProviderMock>
-  </Provider>
+  </ReduxProviderMock>
 );

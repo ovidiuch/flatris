@@ -2,8 +2,8 @@
 
 import React, { Fragment, Component } from 'react';
 import Link from 'next/link';
-import Screen from './Screen';
-import Button from '../Button';
+import Button from '../../Button';
+import Screen from '../shared/Screen';
 
 type Props = {
   disabled: boolean,

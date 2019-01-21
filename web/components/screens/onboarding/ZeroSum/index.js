@@ -1,7 +1,7 @@
 // @flow
 
 import React, { Fragment, Component } from 'react';
-import Screen from '../../Screen';
+import Screen from '../../shared/Screen';
 import Button from '../../../Button';
 
 type Props = {

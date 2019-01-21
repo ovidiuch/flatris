@@ -2,15 +2,15 @@
 
 import React, { Fragment, Component } from 'react';
 import { connect } from 'react-redux';
-import { auth } from '../../actions/global';
+import { auth } from '../../../actions/global';
 import { MAX_NAME_LENGTH } from 'shared/constants/user';
-import { createUserSession } from '../../utils/api';
-import Button from '../Button';
-import Screen from './Screen';
-import FlatrisIntro from './onboarding/FlatrisIntro';
-import Multiplayer from './onboarding/Multiplayer';
-import ZeroSum from './onboarding/ZeroSum';
-import HowToPlay from './onboarding/HowToPlay';
+import { createUserSession } from '../../../utils/api';
+import Button from '../../Button';
+import FlatrisIntro from '../onboarding/FlatrisIntro';
+import Multiplayer from '../onboarding/Multiplayer';
+import ZeroSum from '../onboarding/ZeroSum';
+import HowToPlay from '../onboarding/HowToPlay';
+import Screen from '../shared/Screen';
 
 import type { User, State } from 'shared/types/state';
 
