@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import SquareBlock from './SquareBlock';
+import SquareBlock from '../SquareBlock';
 
-class Tetromino extends React.Component {
+export default class Tetromino extends Component {
+  static propTypes = {
+    color: PropTypes.string.isRequired,
+    grid: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)).isRequired
+  };
+
   /**
    * A Tetromino is a geometric shape composed of four squares, connected
    * orthogonally. Read more at http://en.wikipedia.org/wiki/Tetromino
@@ -56,10 +61,3 @@ class Tetromino extends React.Component {
     );
   }
 }
-
-Tetromino.propTypes = {
-  color: PropTypes.string.isRequired,
-  grid: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)).isRequired
-};
-
-export default Tetromino;

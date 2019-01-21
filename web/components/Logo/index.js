@@ -1,8 +1,8 @@
 // @flow
 
 import React from 'react';
-import Tetromino from './Tetromino';
 import { SHAPES } from 'shared/constants/tetromino';
+import Tetromino from '../Tetromino';
 
 type Props = {
   color?: string

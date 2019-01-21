@@ -1,3 +1,5 @@
+// @flow
+
 import React, { Component } from 'react';
 
 const SHAPES = {
@@ -10,26 +12,36 @@ const SHAPES = {
   Z: [[1, 1, 0], [0, 1, 1], [0, 0, 0]]
 };
 
-const { keys } = Object;
 const { round, random } = Math;
 
 const range = [...Array(4).keys()];
 
-export default class Loading extends Component {
+type Shape = $Keys<typeof SHAPES>;
+
+type State = {
+  currShape: Shape
+};
+
+export default class Loading extends Component<{}, State> {
   state = {
     currShape: 'S'
   };
+
+  timeoutId: ?TimeoutID;
 
   componentDidMount() {
     this.scheduleShapeChange();
   }
 
   componentWillUnmount() {
-    clearInterval(this.timeoutId);
+    if (this.timeoutId) {
+      clearTimeout(this.timeoutId);
+    }
   }
 
   changeShape = () => {
-    const otherShapes = keys(SHAPES).filter(s => s !== this.state.currShape);
+    const allShapes = Object.keys(SHAPES);
+    const otherShapes = allShapes.filter(s => s !== this.state.currShape);
     const currShape = otherShapes[round(random() * (otherShapes.length - 1))];
 
     this.setState({
