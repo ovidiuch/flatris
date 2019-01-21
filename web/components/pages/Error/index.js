@@ -2,11 +2,11 @@
 
 import React, { Fragment, Component } from 'react';
 import Link from 'next/link';
-import Title from '../Title';
-import Button from '../Button';
-import CopyButton from '../CopyButton';
-import Screen from '../screens/shared/Screen';
-import GameFrame from './GameFrame';
+import Title from '../../Title';
+import Button from '../../Button';
+import CopyButton from '../../CopyButton';
+import Screen from '../../screens/shared/Screen';
+import GameFrame from '../GameFrame';
 
 import type { ComponentError } from 'shared/types/error';
 
