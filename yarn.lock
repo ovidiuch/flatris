@@ -7569,15 +7569,15 @@ react-cosmos-fetch-proxy@^4.6.1:
     fetch-mock "^5.12.2"
     react-cosmos-shared "^4.6.1"
 
-react-cosmos-fixture@^4.8.0-alpha.0:
-  version "4.8.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/react-cosmos-fixture/-/react-cosmos-fixture-4.8.0-alpha.0.tgz#f952062c9ed0eef86d740ed1c239f9ef32667114"
-  integrity sha512-0vrlDArYsaXXoXCrCfkaWwAQFaIQqGhiUvS2ayKHntpC/kURp41U3R6tJmRvHlxUTf8hY8j9HB8gXhjkfAOQ8A==
+react-cosmos-fixture@^4.8.0-alpha.1:
+  version "4.8.0-alpha.1"
+  resolved "https://registry.yarnpkg.com/react-cosmos-fixture/-/react-cosmos-fixture-4.8.0-alpha.1.tgz#3d250b3e744ae6a3fa844f3c1bd7617b1e69696b"
+  integrity sha512-SQhYugm1hHl6ZWi1hHaTaJA5Un52oWh0pk3cUxRJGo8TTBf3EFxmT84+WOHurQqKop7DYv+WKERXJFaRvs4/8g==
   dependencies:
     "@babel/runtime-corejs2" "^7.3.1"
     lodash "^4.17.11"
     memoize-one "^5.0.0"
-    react-cosmos-shared2 "^4.8.0-alpha.0"
+    react-cosmos-shared2 "^4.8.0-alpha.1"
     react-is "^16.8.1"
     socket.io-client "^2.2.0"
 
@@ -7615,10 +7615,10 @@ react-cosmos-loader@^4.8.0-alpha.0:
     socket.io-client "^2.2.0"
     url-parse "^1.4.4"
 
-react-cosmos-playground2@^4.8.0-alpha.0:
-  version "4.8.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/react-cosmos-playground2/-/react-cosmos-playground2-4.8.0-alpha.0.tgz#da2d756e65ecec0dbf91d3072372380304a1a27d"
-  integrity sha512-pmnTBta+furMGIJn2eJNmpaKCl3CeSQGxcduZgaMo4wQzX/Vj6N2fP2qI0hBF7ssnp/4Nh9kVsTIfYRk6UQ+WA==
+react-cosmos-playground2@^4.8.0-alpha.1:
+  version "4.8.0-alpha.1"
+  resolved "https://registry.yarnpkg.com/react-cosmos-playground2/-/react-cosmos-playground2-4.8.0-alpha.1.tgz#8dd57500dda1f4b3764ee0cb2ae915bf69fa265d"
+  integrity sha512-vXbspHS2BcFPmMXFLLxMWTCmWexIBAUV2olyE9AZwHfJvIOa8wHREVfZx+YR+PMIbiNVmLsJMKqMXRr0pc7Xrw==
 
 react-cosmos-playground@^4.8.0-alpha.0:
   version "4.8.0-alpha.0"
@@ -7633,10 +7633,10 @@ react-cosmos-redux-proxy@^4.6.1:
     react-cosmos-shared "^4.6.1"
     redux "^4.0.0"
 
-react-cosmos-shared2@^4.8.0-alpha.0:
-  version "4.8.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/react-cosmos-shared2/-/react-cosmos-shared2-4.8.0-alpha.0.tgz#c1c40b12a930b4932094b89bce09da8bd3dbb0dd"
-  integrity sha512-Dhz+FZ/0PHjik21OISgpZSYXV8kcDowgJjfJZYoUNcLQa+NzbDac92DfyuCi7Ss+O7/T2rOn8MBKMA5dm0POVQ==
+react-cosmos-shared2@^4.8.0-alpha.1:
+  version "4.8.0-alpha.1"
+  resolved "https://registry.yarnpkg.com/react-cosmos-shared2/-/react-cosmos-shared2-4.8.0-alpha.1.tgz#f8f26980dcb1d66866b201fc78b9aac22dcd27f4"
+  integrity sha512-/FLW3mumGcR/WWAUm2hU2H8j/QkAAMeCUHoMF4D8dDIgQf4C2zbjWy1pqWp0d095mDHqdsOEjkXBiuhWoLbCUg==
   dependencies:
     "@babel/runtime-corejs2" "^7.3.1"
     lodash "^4.17.11"
@@ -7730,10 +7730,10 @@ react-cosmos-voyager@^4.8.0-alpha.0:
     react-cosmos-shared "^4.8.0-alpha.0"
     traverse "^0.6.6"
 
-react-cosmos@^4.8.0-alpha.0:
-  version "4.8.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/react-cosmos/-/react-cosmos-4.8.0-alpha.0.tgz#1ce04e57448955d9c5e82b96aa1755e20a48b5fc"
-  integrity sha512-Wd9G8tfyeOdAwkKGZcHf+kMBtZ3Zvcxo8EQ08+FR2ct1cMkP+X/ZoTWm+at/eTLqBchJ7A1cSIaApGMeowp/Ww==
+react-cosmos@^4.8.0-alpha.1:
+  version "4.8.0-alpha.1"
+  resolved "https://registry.yarnpkg.com/react-cosmos/-/react-cosmos-4.8.0-alpha.1.tgz#332f036d5dbcb5bac51f0137da83f3a8f5677910"
+  integrity sha512-YzcJtfo4k3GmaXrWI4tGpBOuyus1n2cSrP7aAw9fWQuI/mwewNmcLixYcNbX+KI1TB5vbNFrBE66G8XIwkAEzA==
   dependencies:
     "@babel/runtime-corejs2" "^7.3.1"
     chokidar "^2.0.4"
@@ -7745,12 +7745,12 @@ react-cosmos@^4.8.0-alpha.0:
     lodash "^4.17.11"
     object.values "^1.1.0"
     react-cosmos-config "^4.8.0-alpha.0"
-    react-cosmos-fixture "^4.8.0-alpha.0"
+    react-cosmos-fixture "^4.8.0-alpha.1"
     react-cosmos-loader "^4.8.0-alpha.0"
     react-cosmos-playground "^4.8.0-alpha.0"
-    react-cosmos-playground2 "^4.8.0-alpha.0"
+    react-cosmos-playground2 "^4.8.0-alpha.1"
     react-cosmos-shared "^4.8.0-alpha.0"
-    react-cosmos-shared2 "^4.8.0-alpha.0"
+    react-cosmos-shared2 "^4.8.0-alpha.1"
     react-cosmos-voyager "^4.8.0-alpha.0"
     react-cosmos-voyager2 "^4.8.0-alpha.0"
     react-dev-utils "^6.1.1"
