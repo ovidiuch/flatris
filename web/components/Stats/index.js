@@ -46,16 +46,16 @@ class Stats extends Component<Props, LocalState> {
     return (
       <div className="stats">
         <p>
-          {this.renderCount('games')} games played in{' '}
-          {this.renderCount('seconds')} seconds.
+          {this.renderCount('games')} games {this.renderCount('seconds')}{' '}
+          seconds played
         </p>
         <p>
-          {this.renderCount('actionLeft')} left and{' '}
-          {this.renderCount('actionRight')} right moves.{' '}
-          {this.renderCount('actionAcc')} drops and{' '}
-          {this.renderCount('actionRotate')} rotations.
+          {this.renderCount('actionLeft')} lefts{' '}
+          {this.renderCount('actionRight')} rights{' '}
+          {this.renderCount('actionAcc')} drops{' '}
+          {this.renderCount('actionRotate')} rotations
         </p>
-        <p>{this.renderCount('lines')} lines cleared.</p>
+        <p>{this.renderCount('lines')} lines cleared</p>
         <style jsx>{`
           .stats {
             overflow: hidden;
