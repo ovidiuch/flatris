@@ -74,15 +74,13 @@ class Stats extends Component<Props, LocalState> {
   }
 
   renderCount(stat: $Keys<StatsType>) {
-    // TODO: Add space between number digits
-    // Eg. 1445485 => 1 445 485
     const { stats } = this.props;
     const { statsDiff } = this.state;
     const diff = statsDiff[stat];
 
     return (
       <span className="count">
-        <span className="total">{stats[stat]}</span>
+        <span className="total">{getSpacedNumber(stats[stat])}</span>
         {diff && (
           <span className="diff" key={`${stat}-${diff[1]}`}>
             {diff[0]}
@@ -132,3 +130,7 @@ class Stats extends Component<Props, LocalState> {
 }
 
 export default Stats;
+
+function getSpacedNumber(nr: number) {
+  return nr.toLocaleString('en-EN').replace(/,/g, ' ');
+}
