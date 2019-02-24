@@ -49,6 +49,7 @@ export default function Button({
           outline: none;
           cursor: pointer;
           user-select: none;
+          touch-action: manipulation;
         }
 
         .button:disabled {
