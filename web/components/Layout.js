@@ -64,6 +64,10 @@ class Layout extends Component<Props, LocalState> {
             content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"
           />
           <meta name="apple-mobile-web-app-capable" content="yes" />
+          <meta
+            name="apple-mobile-web-app-status-bar-style"
+            content="default"
+          />
           <meta name="theme-color" content="#34495f" />
           <link rel="manifest" href="/static/manifest.webmanifest" />
           <link
