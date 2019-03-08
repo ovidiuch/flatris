@@ -5,6 +5,7 @@ import classNames from 'classnames';
 import React, { Fragment, Component } from 'react';
 import Link from 'next/link';
 import { connect } from 'react-redux';
+import { COLORS } from 'shared/constants/tetromino';
 import { GAME_INACTIVE_TIMEOUT } from 'shared/constants/timeouts';
 import { createTimeoutBumper } from 'shared/utils/timeout-bumper';
 import { closeGame, removeGame } from '../../actions/global';
@@ -184,6 +185,14 @@ class Dashboard extends Component<Props, LocalState> {
       <Fragment>
         <Title>{title}</Title>
         <div className="root">
+          <div className="feedback-button">
+            <a
+              href="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfB66-8K8gWrj-Mo9sVYqKSgzTwCekXkMlL0zcBdKcSDH6IFA/viewform"
+              target="_blank"
+            >
+              <Button bgColor={COLORS.T}>Help make Flatris better</Button>
+            </a>
+          </div>
           <div className="header">
             <div className="left new-game-button">
               <Link href="/new">
@@ -242,6 +251,25 @@ class Dashboard extends Component<Props, LocalState> {
             }
             .right {
               float: right;
+            }
+
+            .feedback-button {
+              position: relative;
+              min-width: 300px;
+              height: 60px;
+              margin-top: -60px;
+              animation-name: show;
+              animation-duration: 0.5s;
+              animation-fill-mode: forwards;
+              will-change: margin;
+            }
+            @keyframes show {
+              0% {
+                margin-top: -60px;
+              }
+              100% {
+                margin-top: 0;
+              }
             }
 
             .header {

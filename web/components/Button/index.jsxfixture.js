@@ -1,6 +1,7 @@
 // @flow
 
 import React from 'react';
+import { COLORS } from 'shared/constants/tetromino';
 import Button from '.';
 
 export default {
@@ -31,6 +32,15 @@ export default {
       colorDisabled="rgba(52, 73, 95, 0.6)"
     >
       Press me will you
+    </Button>
+  ),
+
+  'feedback form': (
+    <Button
+      bgColor={COLORS.T}
+      onClick={() => console.log('Yay! Button clicked-ed!')}
+    >
+      Help make Flatris better
     </Button>
   )
 };
