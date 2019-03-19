@@ -5,6 +5,8 @@ import { Viewport } from 'react-cosmos-fixture';
 import FlatrisGame from '../../FlatrisGame';
 
 export default {
+  Fullscreen: <FlatrisGame />,
+
   'iPhone 5': (
     <Viewport width={320} height={568}>
       <FlatrisGame />

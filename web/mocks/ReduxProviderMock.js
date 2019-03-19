@@ -13,13 +13,20 @@ type Props = {
   state: $Shape<State>
 };
 
-// TODO: Differentiate between Redux provider in primary vs secondary renderers
+// TODO: s/ReduxProviderMock/ReduxMock
 export function ReduxProviderMock({ children, state: mockedState }: Props) {
   const { fixtureState, setFixtureState } = useContext(FixtureContext);
-  const initialState = (fixtureState && fixtureState.redux) || mockedState;
-  const [contextValue, setContextValue] = useCreateContextValue(initialState);
-  useStoreSubscribe(contextValue.store, setContextValue);
-  useUpdateReduxFixtureState(contextValue.store, setFixtureState);
+
+  const [contextValue, setContextValue] = useState(() => {
+    const initialState = fixtureState.redux
+      ? fixtureState.redux.state
+      : mockedState;
+    return createContextValue(initialState, getChangeTime());
+  });
+
+  useReduxSubscribe(contextValue.store, setContextValue);
+  useSyncFixtureState(contextValue, setFixtureState);
+  useSyncLocalState(contextValue, fixtureState, setContextValue);
 
   return (
     <ReactReduxContext.Provider value={contextValue}>
@@ -30,35 +37,58 @@ export function ReduxProviderMock({ children, state: mockedState }: Props) {
 
 ReduxProviderMock.cosmosCapture = false;
 
-function useCreateContextValue(initialState) {
-  return useState(() => {
-    const store = createStore(initialState);
-    return {
-      storeState: store.getState(),
-      store
-    };
-  });
+function useReduxSubscribe(store, setContextValue) {
+  useEffect(
+    () =>
+      store.subscribe(() => {
+        setContextValue({
+          changedAt: getChangeTime(),
+          storeState: store.getState(),
+          store
+        });
+      }),
+    [store]
+  );
 }
 
-function useStoreSubscribe(store, setContextValue) {
-  useEffect(() => {
-    return store.subscribe(() => {
-      setContextValue({
-        storeState: store.getState(),
-        store
-      });
-    });
-  }, []);
-}
-
-function useUpdateReduxFixtureState(store, setFixtureState) {
+function useSyncFixtureState(contextValue, setFixtureState) {
   useEffect(
     () => {
       setFixtureState(fixtureState => ({
         ...fixtureState,
-        redux: store.getState()
+        redux: {
+          changedAt: contextValue.changedAt,
+          state: contextValue.storeState
+        }
       }));
     },
-    [store.getState()]
+    [contextValue.changedAt]
   );
+}
+
+function useSyncLocalState(contextValue, fixtureState, setContextValue) {
+  useEffect(
+    () => {
+      if (fixtureState.redux) {
+        const { changedAt, state } = fixtureState.redux;
+        if (changedAt > contextValue.changedAt) {
+          setContextValue(createContextValue(state, changedAt));
+        }
+      }
+    },
+    [fixtureState.redux, contextValue.changedAt]
+  );
+}
+
+function createContextValue(reduxState, changedAt) {
+  const store = createStore(reduxState);
+  return {
+    changedAt,
+    storeState: store.getState(),
+    store
+  };
+}
+
+function getChangeTime() {
+  return Date.now();
 }
