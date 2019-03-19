@@ -13,8 +13,7 @@ type Props = {
   state: $Shape<State>
 };
 
-// TODO: s/ReduxProviderMock/ReduxMock
-export function ReduxProviderMock({ children, state: mockedState }: Props) {
+export function ReduxMock({ children, state: mockedState }: Props) {
   const { fixtureState, setFixtureState } = useContext(FixtureContext);
 
   const [contextValue, setContextValue] = useState(() => {
@@ -35,7 +34,7 @@ export function ReduxProviderMock({ children, state: mockedState }: Props) {
   );
 }
 
-ReduxProviderMock.cosmosCapture = false;
+ReduxMock.cosmosCapture = false;
 
 function useReduxSubscribe(store, setContextValue) {
   useEffect(
