@@ -1,11 +1,11 @@
 // @flow
 
 import React from 'react';
-import { ReduxMock } from '../../../../mocks/ReduxMock';
+import { FlatrisReduxMock } from '../../../../mocks/ReduxMock';
 import Auth from '..';
 
 export default (
-  <ReduxMock state={{ jsReady: false }}>
+  <FlatrisReduxMock initialState={{ jsReady: false }}>
     <Auth onAuth={() => console.log('Auth started...')} />
-  </ReduxMock>
+  </FlatrisReduxMock>
 );

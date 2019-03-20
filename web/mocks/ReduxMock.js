@@ -1,8 +1,7 @@
 // @flow
 
-import React, { useState, useContext, useEffect } from 'react';
-import { ReactReduxContext } from 'react-redux';
-import { FixtureContext } from 'react-cosmos-fixture';
+import React from 'react';
+import { ReduxMock } from 'react-cosmos-redux';
 import { createStore } from '../store';
 
 import type { Node } from 'react';
@@ -10,84 +9,13 @@ import type { State } from 'shared/types/state';
 
 type Props = {
   children: Node,
-  state: $Shape<State>
+  initialState: $Shape<State>
 };
 
-export function ReduxMock({ children, state: mockedState }: Props) {
-  const { fixtureState, setFixtureState } = useContext(FixtureContext);
-
-  const [contextValue, setContextValue] = useState(() => {
-    const initialState = fixtureState.redux
-      ? fixtureState.redux.state
-      : mockedState;
-    return createContextValue(initialState, getChangeTime());
-  });
-
-  useReduxSubscribe(contextValue.store, setContextValue);
-  useSyncFixtureState(contextValue, setFixtureState);
-  useSyncLocalState(contextValue, fixtureState, setContextValue);
-
+export function FlatrisReduxMock({ children, initialState }: Props) {
   return (
-    <ReactReduxContext.Provider value={contextValue}>
+    <ReduxMock configureStore={createStore} initialState={initialState}>
       {children}
-    </ReactReduxContext.Provider>
+    </ReduxMock>
   );
-}
-
-ReduxMock.cosmosCapture = false;
-
-function useReduxSubscribe(store, setContextValue) {
-  useEffect(
-    () =>
-      store.subscribe(() => {
-        setContextValue({
-          changedAt: getChangeTime(),
-          storeState: store.getState(),
-          store
-        });
-      }),
-    [store]
-  );
-}
-
-function useSyncFixtureState(contextValue, setFixtureState) {
-  useEffect(
-    () => {
-      setFixtureState(fixtureState => ({
-        ...fixtureState,
-        redux: {
-          changedAt: contextValue.changedAt,
-          state: contextValue.storeState
-        }
-      }));
-    },
-    [contextValue.changedAt]
-  );
-}
-
-function useSyncLocalState(contextValue, fixtureState, setContextValue) {
-  useEffect(
-    () => {
-      if (fixtureState.redux) {
-        const { changedAt, state } = fixtureState.redux;
-        if (changedAt > contextValue.changedAt) {
-          setContextValue(createContextValue(state, changedAt));
-        }
-      }
-    },
-    [fixtureState.redux, contextValue.changedAt]
-  );
-}
-
-function createContextValue(reduxState, changedAt) {
-  const store = createStore(reduxState);
-  return {
-    changedAt,
-    storeState: store.getState(),
-    store
-  };
-}
-
-function getChangeTime() {
-  return Date.now();
 }

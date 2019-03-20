@@ -3,7 +3,7 @@
 import React from 'react';
 import { getBlankGame } from 'shared/reducers/game';
 import { getSampleUser } from '../../utils/test-helpers';
-import { ReduxMock } from '../../mocks/ReduxMock';
+import { FlatrisReduxMock } from '../../mocks/ReduxMock';
 import { SocketProviderMock } from '../../mocks/SocketProviderMock';
 
 import type { Node } from 'react';
@@ -21,7 +21,7 @@ const state = {
 };
 
 export default ({ children }: { children: Node }) => (
-  <ReduxMock state={state}>
+  <FlatrisReduxMock initialState={state}>
     <SocketProviderMock>{children}</SocketProviderMock>
-  </ReduxMock>
+  </FlatrisReduxMock>
 );

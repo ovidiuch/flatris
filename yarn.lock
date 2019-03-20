@@ -7585,10 +7585,10 @@ react-cosmos-fetch-proxy@^4.6.1:
     fetch-mock "^5.12.2"
     react-cosmos-shared "^4.6.1"
 
-react-cosmos-fixture@^4.8.0-alpha.2:
-  version "4.8.0-alpha.2"
-  resolved "https://registry.yarnpkg.com/react-cosmos-fixture/-/react-cosmos-fixture-4.8.0-alpha.2.tgz#e0e4e39f92dd0bc5e0358d3a5fd173e9b3f6772f"
-  integrity sha512-F7CM/rbo6HDPDRgjvHOJZFlGcR1BcTAFEJasxDWiEaBbAhSyUfHjlB07lGHKARZQ2WruGEFD90w3I44M76k0OA==
+react-cosmos-fixture@^4.8.0-alpha.3:
+  version "4.8.0-alpha.3"
+  resolved "https://registry.yarnpkg.com/react-cosmos-fixture/-/react-cosmos-fixture-4.8.0-alpha.3.tgz#15a6110c2a7b0aa0c44fdf5cce1408e5dafc16d3"
+  integrity sha512-/rg5tS+qTaB4EJDbamXwhuaBCpWDuQUhUNHJmdN98UVg9R/c792lwyWZbqECbAMgo158CFXTjmfC6vSYpfhY6w==
   dependencies:
     "@babel/runtime-corejs2" "^7.3.1"
     lodash "^4.17.11"
@@ -7648,6 +7648,13 @@ react-cosmos-redux-proxy@^4.6.1:
     lodash.omit "^4.5.0"
     react-cosmos-shared "^4.6.1"
     redux "^4.0.0"
+
+react-cosmos-redux@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-cosmos-redux/-/react-cosmos-redux-1.0.0.tgz#1173ab2ba3c7fed33ed9439235392510b7b21075"
+  integrity sha512-UQDCRQgIUY18roUxh1vVuI5m+vpPeIQidnzuxnJ/8aOOdz8NcHiOtDW9ffBvQ98p4MBRVNmBtpDf10QWWHv9Eg==
+  dependencies:
+    react-cosmos-fixture "^4.8.0-alpha.3"
 
 react-cosmos-shared2@^4.8.0-alpha.2:
   version "4.8.0-alpha.2"
@@ -7746,10 +7753,10 @@ react-cosmos-voyager@^4.8.0-alpha.0:
     react-cosmos-shared "^4.8.0-alpha.0"
     traverse "^0.6.6"
 
-react-cosmos@^4.8.0-alpha.2:
-  version "4.8.0-alpha.2"
-  resolved "https://registry.yarnpkg.com/react-cosmos/-/react-cosmos-4.8.0-alpha.2.tgz#c1062fb80f8dceca73cb8930383df499ccc470fc"
-  integrity sha512-haW8UszSuaoT6LOmlPZXKzijifcKFvtqTryKiM1NsZuA5f+Ah/UT0sye0dh1FU9+dmJFGUv3aGMqqDMU2n8Fdw==
+react-cosmos@^4.8.0-alpha.3:
+  version "4.8.0-alpha.3"
+  resolved "https://registry.yarnpkg.com/react-cosmos/-/react-cosmos-4.8.0-alpha.3.tgz#de3316cad18bc4f43af0e1184dcc18712d4411a3"
+  integrity sha512-ozDeM/DpDz1xaLg96+oTgIL5CL1jIeBa815FEFgRaNlAFsRGCjQvmvQ0q1hwpp1pHhFaybEmhsUEhTHicbvnuQ==
   dependencies:
     "@babel/runtime-corejs2" "^7.3.1"
     chokidar "^2.0.4"
@@ -7761,7 +7768,7 @@ react-cosmos@^4.8.0-alpha.2:
     lodash "^4.17.11"
     object.values "^1.1.0"
     react-cosmos-config "^4.8.0-alpha.0"
-    react-cosmos-fixture "^4.8.0-alpha.2"
+    react-cosmos-fixture "^4.8.0-alpha.3"
     react-cosmos-loader "^4.8.0-alpha.0"
     react-cosmos-playground "^4.8.0-alpha.0"
     react-cosmos-playground2 "^4.8.0-alpha.2"
