@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { StateMock } from '@react-mock/state';
-import Stats from '..';
+import Stats from '.';
 
 const statsDiff = {
   actionAcc: [211, Date.now() + 1001],
@@ -14,8 +14,8 @@ const statsDiff = {
   seconds: [35, Date.now() + 1007]
 };
 
-export default (
-  <StateMock state={{ statsDiff }}>
+export default {
+  default: (
     <Stats
       stats={{
         actionAcc: 78324,
@@ -27,5 +27,21 @@ export default (
         seconds: 150275
       }}
     />
-  </StateMock>
-);
+  ),
+
+  update: (
+    <StateMock state={{ statsDiff }}>
+      <Stats
+        stats={{
+          actionAcc: 78324,
+          actionLeft: 89339,
+          actionRight: 101170,
+          actionRotate: 79418,
+          games: 1906,
+          lines: 14599,
+          seconds: 150275
+        }}
+      />
+    </StateMock>
+  )
+};
