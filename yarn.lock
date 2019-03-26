@@ -6844,6 +6844,13 @@ opn@5.4.0:
   dependencies:
     is-wsl "^1.1.0"
 
+opn@^5.5.0:
+  version "5.5.0"
+  resolved "https://registry.yarnpkg.com/opn/-/opn-5.5.0.tgz#fc7164fab56d235904c51c3b27da6758ca3b9bfc"
+  integrity sha512-PqHpggC9bLV0VeWcdKhkpxY+3JTzetLSqTCWL/z/tFIbI6G8JCjondXklT1JinczLz2Xib62sSp0T/gKT4KksA==
+  dependencies:
+    is-wsl "^1.1.0"
+
 optimist@^0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/optimist/-/optimist-0.6.1.tgz#da3ea74686fa21a19a111c326e90eb15a0196686"
@@ -7585,15 +7592,14 @@ react-cosmos-fetch-proxy@^4.6.1:
     fetch-mock "^5.12.2"
     react-cosmos-shared "^4.6.1"
 
-react-cosmos-fixture@^4.8.0-alpha.3:
-  version "4.8.0-alpha.3"
-  resolved "https://registry.yarnpkg.com/react-cosmos-fixture/-/react-cosmos-fixture-4.8.0-alpha.3.tgz#15a6110c2a7b0aa0c44fdf5cce1408e5dafc16d3"
-  integrity sha512-/rg5tS+qTaB4EJDbamXwhuaBCpWDuQUhUNHJmdN98UVg9R/c792lwyWZbqECbAMgo158CFXTjmfC6vSYpfhY6w==
+react-cosmos-fixture@^4.8.0:
+  version "4.8.0"
+  resolved "https://registry.yarnpkg.com/react-cosmos-fixture/-/react-cosmos-fixture-4.8.0.tgz#1f0455e9f1e6f3c5742957de0086aeb7a176fa03"
+  integrity sha512-UCukIHmM+JJwI7Wwsj9zlVJB332TrMEV3ezmpqmxh1yimruykcJxy7HOpOmCU1Q0IEbbgMDkl/FSCcAUkAsTcw==
   dependencies:
-    "@babel/runtime-corejs2" "^7.3.1"
     lodash "^4.17.11"
     memoize-one "^5.0.0"
-    react-cosmos-shared2 "^4.8.0-alpha.2"
+    react-cosmos-shared2 "^4.8.0"
     react-is "^16.8.1"
     socket.io-client "^2.2.0"
 
@@ -7631,10 +7637,10 @@ react-cosmos-loader@^4.8.0-alpha.0:
     socket.io-client "^2.2.0"
     url-parse "^1.4.4"
 
-react-cosmos-playground2@^4.8.0-alpha.2:
-  version "4.8.0-alpha.2"
-  resolved "https://registry.yarnpkg.com/react-cosmos-playground2/-/react-cosmos-playground2-4.8.0-alpha.2.tgz#d041b36cb3eb231e6e1b6f746d04ccb90ad6cd14"
-  integrity sha512-atyVJPEE3WryVYLMH9jPrzgovvqmopByG1afHH1s3Qo0rlYIOfeZqWmz1VDbHENGnyO5Fw7tT2v+/JwG5/3DPw==
+react-cosmos-playground2@^4.8.0:
+  version "4.8.0"
+  resolved "https://registry.yarnpkg.com/react-cosmos-playground2/-/react-cosmos-playground2-4.8.0.tgz#01243b464305f3d2d0068354aa216cbac5dfdb5b"
+  integrity sha512-znEWFBvndyNaRI1Dq7N7ATYjxhq4IgtssPkkNN5G30RiotBeeqbdLIDBGjPk+l/rKoVoj225sBXb1NEiwJZdAQ==
 
 react-cosmos-playground@^4.8.0-alpha.0:
   version "4.8.0-alpha.0"
@@ -7649,19 +7655,16 @@ react-cosmos-redux-proxy@^4.6.1:
     react-cosmos-shared "^4.6.1"
     redux "^4.0.0"
 
-react-cosmos-redux@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/react-cosmos-redux/-/react-cosmos-redux-1.0.0.tgz#1173ab2ba3c7fed33ed9439235392510b7b21075"
-  integrity sha512-UQDCRQgIUY18roUxh1vVuI5m+vpPeIQidnzuxnJ/8aOOdz8NcHiOtDW9ffBvQ98p4MBRVNmBtpDf10QWWHv9Eg==
-  dependencies:
-    react-cosmos-fixture "^4.8.0-alpha.3"
+react-cosmos-redux@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/react-cosmos-redux/-/react-cosmos-redux-1.0.2.tgz#11df02afe702322b2cdb6c1c97ece1cace5e7b56"
+  integrity sha512-TEzy8w1ubxf2NJFeLvYIhGFGpEn2QeZotKWOk+2ABJte4+QkspNZScH7zfwtGkaijcQgAo2fTwPB8QwsenF3Xw==
 
-react-cosmos-shared2@^4.8.0-alpha.2:
-  version "4.8.0-alpha.2"
-  resolved "https://registry.yarnpkg.com/react-cosmos-shared2/-/react-cosmos-shared2-4.8.0-alpha.2.tgz#c7d37a3e3c4e7f3bb2afd5665d634ccdc51894e6"
-  integrity sha512-pvWWBuoWoCEpEgJo+3cT8ULVCGdonyRmnGHeJCMajf8sdeXdxVLN1/7dN26xASR44ZHd1wt/h6BjmnbXuDSFVw==
+react-cosmos-shared2@^4.8.0:
+  version "4.8.0"
+  resolved "https://registry.yarnpkg.com/react-cosmos-shared2/-/react-cosmos-shared2-4.8.0.tgz#48d3bdf554ffde243ae899893a1ff654f686da84"
+  integrity sha512-wGPyxDBgBWUXJHhujysO1ai37cDt10Swf1GKL1sUzVlyYdGQUfZU9UVWhE7IVhyuH3oPuAuAKuunJk6f4u4TKQ==
   dependencies:
-    "@babel/runtime-corejs2" "^7.3.1"
     lodash "^4.17.11"
     react-element-to-jsx-string "^14.0.2"
     react-is "^16.8.1"
@@ -7753,10 +7756,10 @@ react-cosmos-voyager@^4.8.0-alpha.0:
     react-cosmos-shared "^4.8.0-alpha.0"
     traverse "^0.6.6"
 
-react-cosmos@^4.8.0-alpha.3:
-  version "4.8.0-alpha.3"
-  resolved "https://registry.yarnpkg.com/react-cosmos/-/react-cosmos-4.8.0-alpha.3.tgz#de3316cad18bc4f43af0e1184dcc18712d4411a3"
-  integrity sha512-ozDeM/DpDz1xaLg96+oTgIL5CL1jIeBa815FEFgRaNlAFsRGCjQvmvQ0q1hwpp1pHhFaybEmhsUEhTHicbvnuQ==
+react-cosmos@^4.8.0:
+  version "4.8.0"
+  resolved "https://registry.yarnpkg.com/react-cosmos/-/react-cosmos-4.8.0.tgz#879595c0b787814878677c57228f7235934d8b17"
+  integrity sha512-A9QLgZF/bG7Rz5GBRXluzFvzRrjH0HAQJHhMFakRD1HuA9oTizGYIDHf+L75x/rXjjUTPScYfJpp76FARkea7g==
   dependencies:
     "@babel/runtime-corejs2" "^7.3.1"
     chokidar "^2.0.4"
@@ -7767,13 +7770,14 @@ react-cosmos@^4.8.0-alpha.3:
     import-from "^2.1.0"
     lodash "^4.17.11"
     object.values "^1.1.0"
+    opn "^5.5.0"
     react-cosmos-config "^4.8.0-alpha.0"
-    react-cosmos-fixture "^4.8.0-alpha.3"
+    react-cosmos-fixture "^4.8.0"
     react-cosmos-loader "^4.8.0-alpha.0"
     react-cosmos-playground "^4.8.0-alpha.0"
-    react-cosmos-playground2 "^4.8.0-alpha.2"
+    react-cosmos-playground2 "^4.8.0"
     react-cosmos-shared "^4.8.0-alpha.0"
-    react-cosmos-shared2 "^4.8.0-alpha.2"
+    react-cosmos-shared2 "^4.8.0"
     react-cosmos-voyager "^4.8.0-alpha.0"
     react-cosmos-voyager2 "^4.8.0-alpha.0"
     react-dev-utils "^6.1.1"
@@ -7814,15 +7818,15 @@ react-dev-utils@^6.1.1:
     strip-ansi "4.0.0"
     text-table "0.2.0"
 
-react-dom@^16.8.4:
-  version "16.8.4"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.8.4.tgz#1061a8e01a2b3b0c8160037441c3bf00a0e3bc48"
-  integrity sha512-Ob2wK7XG2tUDt7ps7LtLzGYYB6DXMCLj0G5fO6WeEICtT4/HdpOi7W/xLzZnR6RCG1tYza60nMdqtxzA8FaPJQ==
+react-dom@^16.8.5:
+  version "16.8.5"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.8.5.tgz#b3e37d152b49e07faaa8de41fdf562be3463335e"
+  integrity sha512-VIEIvZLpFafsfu4kgmftP5L8j7P1f0YThfVTrANMhZUFMDOsA6e0kfR6wxw/8xxKs4NB59TZYbxNdPCDW34x4w==
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
     prop-types "^15.6.2"
-    scheduler "^0.13.4"
+    scheduler "^0.13.5"
 
 react-element-to-jsx-string@^14.0.2:
   version "14.0.2"
@@ -7897,15 +7901,15 @@ react-test-renderer@^16.7.0:
     react-is "^16.7.0"
     scheduler "^0.12.0"
 
-react@^16.8.4:
-  version "16.8.4"
-  resolved "https://registry.yarnpkg.com/react/-/react-16.8.4.tgz#fdf7bd9ae53f03a9c4cd1a371432c206be1c4768"
-  integrity sha512-0GQ6gFXfUH7aZcjGVymlPOASTuSjlQL4ZtVC5YKH+3JL6bBLCVO21DknzmaPlI90LN253ojj02nsapy+j7wIjg==
+react@^16.8.5:
+  version "16.8.5"
+  resolved "https://registry.yarnpkg.com/react/-/react-16.8.5.tgz#49be3b655489d74504ad994016407e8a0445de66"
+  integrity sha512-daCb9TD6FZGvJ3sg8da1tRAtIuw29PbKZW++NN4wqkbEvxL+bZpaaYb4xuftW/SpXmgacf1skXl/ddX6CdOlDw==
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
     prop-types "^15.6.2"
-    scheduler "^0.13.4"
+    scheduler "^0.13.5"
 
 read-pkg-up@^1.0.1:
   version "1.0.1"
@@ -8428,10 +8432,10 @@ scheduler@^0.12.0:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
 
-scheduler@^0.13.4:
-  version "0.13.4"
-  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.13.4.tgz#8fef05e7a3580c76c0364d2df5e550e4c9140298"
-  integrity sha512-cvSOlRPxOHs5dAhP9yiS/6IDmVAVxmk33f0CtTJRkmUWcb1Us+t7b1wqdzoC0REw2muC9V5f1L/w5R5uKGaepA==
+scheduler@^0.13.5:
+  version "0.13.5"
+  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.13.5.tgz#b7226625167041298af3b98088a9dbbf6d7733a8"
+  integrity sha512-K98vjkQX9OIt/riLhp6F+XtDPtMQhqNcf045vsh+pcuvHq+PHy1xCrH3pq1P40m6yR46lpVvVhKdEOtnimuUJw==
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
