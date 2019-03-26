@@ -8,14 +8,14 @@ import { connect } from 'react-redux';
 import { COLORS } from 'shared/constants/tetromino';
 import { GAME_INACTIVE_TIMEOUT } from 'shared/constants/timeouts';
 import { createTimeoutBumper } from 'shared/utils/timeout-bumper';
-import { closeGame, removeGame } from '../../actions/global';
-import { withSocket } from '../socket/SocketConnect';
-import Title from '../Title';
-import GamePreview from '../GamePreview';
-import GamePreviewShell from '../GamePreviewShell';
-import Button from '../Button';
-import Logo from '../Logo';
-import Stats from '../Stats';
+import { closeGame, removeGame } from '../../../actions/global';
+import { withSocket } from '../../socket/SocketConnect';
+import Title from '../../Title';
+import GamePreview from '../../GamePreview';
+import GamePreviewShell from '../../GamePreviewShell';
+import Button from '../../Button';
+import Logo from '../../Logo';
+import Stats from '../../Stats';
 
 import type {
   User,
@@ -161,8 +161,9 @@ class Dashboard extends Component<Props, LocalState> {
   };
 
   render() {
-    const { curUser, stats } = this.props;
+    const { games, curUser, stats } = this.props;
     const { gamesCopy } = this.state;
+    console.log('render', { games });
 
     const ownGames = [];
     const otherGames = [];
