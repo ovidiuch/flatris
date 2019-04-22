@@ -1,6 +1,6 @@
 // @flow
 
-import { createFixture } from 'react-cosmos';
+import { createFixture } from 'react-cosmos-classic';
 import { getSampleUser } from '../../../../utils/test-helpers';
 import { getBlankPlayer } from 'shared/reducers/game';
 import Flash from '../../../effects/Flash';

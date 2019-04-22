@@ -1,6 +1,6 @@
 // @flow
 
-import { createFixture } from 'react-cosmos';
+import { createFixture } from 'react-cosmos-classic';
 import Dashboard from '../../Dashboard';
 
 export default createFixture({

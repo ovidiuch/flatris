@@ -1,6 +1,6 @@
 // @flow
 
-import { createFixture } from 'react-cosmos';
+import { createFixture } from 'react-cosmos-classic';
 import NewGame from '../../NewGame';
 
 // NOTE: A authenticated fixture for NewGame does not exist because it would
