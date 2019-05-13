@@ -1,6 +1,6 @@
 // @flow
 
-import { without, omit, difference } from 'lodash';
+import { sortBy, without, omit, difference } from 'lodash';
 import classNames from 'classnames';
 import React, { Fragment, Component } from 'react';
 import Link from 'next/link';
@@ -305,9 +305,12 @@ class Dashboard extends Component<Props, LocalState> {
     const { curUser } = this.props;
     const { added } = this.state;
 
+    // Sort games consistently between renders
+    // TODO: Add timestamps to games to be able to sort them by age
+    const sortedGames = sortBy(games, game => game.id);
     return (
       <div className="game-grid">
-        {games.map(game => {
+        {sortedGames.map(game => {
           const { id } = game;
           const classes = classNames('game-preview', {
             'game-added': added.indexOf(id) !== -1,
