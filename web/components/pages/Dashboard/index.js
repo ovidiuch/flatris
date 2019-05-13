@@ -161,9 +161,8 @@ class Dashboard extends Component<Props, LocalState> {
   };
 
   render() {
-    const { games, curUser, stats } = this.props;
+    const { curUser, stats } = this.props;
     const { gamesCopy } = this.state;
-    console.log('render', { games });
 
     const ownGames = [];
     const otherGames = [];
