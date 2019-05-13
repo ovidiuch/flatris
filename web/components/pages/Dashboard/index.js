@@ -258,19 +258,6 @@ class Dashboard extends Component<Props, LocalState> {
               position: relative;
               min-width: 300px;
               height: 60px;
-              margin-top: -60px;
-              animation-name: show;
-              animation-duration: 0.5s;
-              animation-fill-mode: forwards;
-              will-change: margin;
-            }
-            @keyframes show {
-              0% {
-                margin-top: -60px;
-              }
-              100% {
-                margin-top: 0;
-              }
             }
 
             .header {
