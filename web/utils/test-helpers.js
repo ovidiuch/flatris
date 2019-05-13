@@ -1,5 +1,8 @@
 // @flow
 
+import React from 'react';
+import { useDispatch } from 'react-redux';
+
 import type { User } from 'shared/types/state';
 
 export function getSampleUser(): User {
@@ -23,6 +26,19 @@ export function getSampleUser3(): User {
   };
 }
 
+export function useTimeout(cb: () => mixed, ms: number) {
+  React.useEffect(() => {
+    const timeoutId = setTimeout(() => cb(), ms);
+    return () => clearTimeout(timeoutId);
+  }, [cb]);
+}
+
+export function useAction(action: {}) {
+  const dispatch = useDispatch();
+  return React.useCallback(() => dispatch(action), [dispatch]);
+}
+
+// TODO: Remove
 export async function doAfter(delay: number, fn: () => mixed) {
   return new Promise(res => {
     setTimeout(() => {
