@@ -48,8 +48,7 @@ module.exports = {
       files: [
         'web/components/**/*.js',
         'web/pages/**/*.js',
-        'web/mocks/**/*.js',
-        'cosmos.proxies.js'
+        'web/mocks/**/*.js'
       ],
       rules: {
         'react/jsx-uses-react': 'error',

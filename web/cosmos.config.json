@@ -1,7 +1,5 @@
 {
-  "fixturesDir": "__jsxfixtures__",
-  "fixtureFileSuffix": "jsxfixture",
   "globalImports": ["./global.css"],
-  "publicPath": "static",
+  "staticPath": "static",
   "publicUrl": "/static/"
 }
