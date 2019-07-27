@@ -32,9 +32,6 @@ module.exports = {
         'jest.config.js',
         'jest.framework-setup.js',
         'web/next.config.js',
-        'web/cosmos.config.js',
-        'web/cosmos.next.config.js',
-        'web/cosmos.test.js',
         'server/**/*.js'
       ],
       env: {
