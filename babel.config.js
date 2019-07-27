@@ -1,5 +1,7 @@
+const path = require('path');
+
 const alias = {
-  shared: './shared'
+  shared: path.join(__dirname, 'shared')
 };
 
 module.exports = {

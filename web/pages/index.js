@@ -1,7 +1,7 @@
 // @flow
 
 import React, { Component } from 'react';
-
+import { ReactReduxContext } from 'react-redux';
 import withRedux from 'next-redux-wrapper';
 import { createStore } from '../store';
 import { loadDashboard, stripGameEffects } from '../actions/global';
@@ -34,9 +34,13 @@ class IndexPage extends Component<Props> {
   render() {
     return (
       <Layout>
-        <SocketProvider>
-          <Dashboard />
-        </SocketProvider>
+        <ReactReduxContext.Consumer>
+          {({ store }) => (
+            <SocketProvider store={store}>
+              <Dashboard />
+            </SocketProvider>
+          )}
+        </ReactReduxContext.Consumer>
       </Layout>
     );
   }

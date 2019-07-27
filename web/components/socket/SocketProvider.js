@@ -1,6 +1,6 @@
 // @flow
 
-import { object, func } from 'prop-types';
+import { func } from 'prop-types';
 import { uniqWith, sortBy, omit, without } from 'lodash';
 import { Component } from 'react';
 import { getGame } from '../../utils/api';
@@ -51,20 +51,11 @@ const {
 } = getSocket();
 
 type Props = {
-  children: Node
+  children: Node,
+  store: { getState: () => State, dispatch: Dispatch }
 };
 
 export class SocketProvider extends Component<Props> {
-  static contextTypes = {
-    // XXX: Instead of using connect like SUCKERS, we pretend we *are* connect
-    // and get direct access to the store.
-    // Why? Because we need to check if the state changes right after we
-    // dispatch an action (without waiting a render loop), thus identifying
-    // "noop" actions and not broacasting them across the network needlessly.
-    // Do not try this at home!
-    store: object.isRequired
-  };
-
   static childContextTypes = {
     subscribe: func.isRequired,
     keepGameAlive: func.isRequired,
@@ -329,11 +320,8 @@ export class SocketProvider extends Component<Props> {
     return this.props.children;
   }
 
-  getStore(): {
-    getState: () => State,
-    dispatch: Dispatch
-  } {
-    return this.context.store;
+  getStore() {
+    return this.props.store;
   }
 }
 

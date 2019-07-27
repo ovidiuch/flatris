@@ -27,7 +27,9 @@ const rootReducer = combineReducers({
   stats: statsReducer
 });
 
-export function createStore(initialState: State): Store<State, Action> {
+export type FlatrisReduxStore = Store<State, Action>;
+
+export function createStore(initialState: $Shape<State>): FlatrisReduxStore {
   return createReduxStore(
     rootReducer,
     initialState,

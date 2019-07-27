@@ -32,8 +32,6 @@ module.exports = {
         'jest.config.js',
         'jest.framework-setup.js',
         'web/next.config.js',
-        'web/cosmos.config.js',
-        'web/cosmos.test.js',
         'server/**/*.js'
       ],
       env: {
@@ -50,7 +48,7 @@ module.exports = {
       files: [
         'web/components/**/*.js',
         'web/pages/**/*.js',
-        'cosmos.proxies.js'
+        'web/mocks/**/*.js'
       ],
       rules: {
         'react/jsx-uses-react': 'error',
