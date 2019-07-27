@@ -24,12 +24,7 @@ function DashboardController() {
 }
 
 export default (
-  <FlatrisReduxMock
-    initialState={{
-      jsReady: true,
-      games: {}
-    }}
-  >
+  <FlatrisReduxMock initialState={{ jsReady: true, games: {} }}>
     <SocketProviderMock>
       <DashboardController />
     </SocketProviderMock>

@@ -6,11 +6,7 @@ import { SocketProviderMock } from '../../../../mocks/SocketProviderMock';
 import Dashboard from '..';
 
 export default (
-  <FlatrisReduxMock
-    initialState={{
-      jsReady: true
-    }}
-  >
+  <FlatrisReduxMock initialState={{ jsReady: true }}>
     <SocketProviderMock>
       <Dashboard />
     </SocketProviderMock>

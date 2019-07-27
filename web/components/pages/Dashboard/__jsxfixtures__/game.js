@@ -12,10 +12,7 @@ const game = getBlankGame({ id: 'dce6b11e', user });
 
 export default (
   <FlatrisReduxMock
-    initialState={{
-      jsReady: true,
-      games: { [game.id]: game }
-    }}
+    initialState={{ jsReady: true, games: { [game.id]: game } }}
   >
     <SocketProviderMock>
       <Dashboard />

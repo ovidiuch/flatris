@@ -1,8 +1,8 @@
 // @flow
 
 import React from 'react';
-import { Viewport } from 'react-cosmos-fixture';
-import FlatrisGame from '../../FlatrisGame';
+import { Viewport } from 'react-cosmos/fixture';
+import FlatrisGame from '.';
 
 export default {
   Fullscreen: <FlatrisGame />,
