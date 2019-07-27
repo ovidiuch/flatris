@@ -2,6 +2,7 @@
 
 import React, { Component } from 'react';
 import Router from 'next/router';
+import { ReactReduxContext } from 'react-redux';
 import withRedux from 'next-redux-wrapper';
 import { createStore } from '../store';
 import { addGame, openGame, stripGameEffects } from '../actions/global';
@@ -72,11 +73,15 @@ class JoinPage extends Component<Props> {
     return (
       <Layout>
         <Title>Play Flatris</Title>
-        <SocketProvider>
-          <CurGameOfElse else={() => Router.replace('/')}>
-            <FlatrisGame />
-          </CurGameOfElse>
-        </SocketProvider>
+        <ReactReduxContext.Consumer>
+          {({ store }) => (
+            <SocketProvider store={store}>
+              <CurGameOfElse else={() => Router.replace('/')}>
+                <FlatrisGame />
+              </CurGameOfElse>
+            </SocketProvider>
+          )}
+        </ReactReduxContext.Consumer>
       </Layout>
     );
   }

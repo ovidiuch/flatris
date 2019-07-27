@@ -1,6 +1,7 @@
 // @flow
 
 import React, { Component } from 'react';
+import { ReactReduxContext } from 'react-redux';
 import withRedux from 'next-redux-wrapper';
 import { createStore } from '../store';
 import { SocketProvider } from '../components/socket/SocketProvider';
@@ -21,9 +22,13 @@ class CreatePage extends Component<Props> {
   render() {
     return (
       <Layout>
-        <SocketProvider>
-          <NewGame />
-        </SocketProvider>
+        <ReactReduxContext.Consumer>
+          {({ store }) => (
+            <SocketProvider store={store}>
+              <NewGame />
+            </SocketProvider>
+          )}
+        </ReactReduxContext.Consumer>
       </Layout>
     );
   }
