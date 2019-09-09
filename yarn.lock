@@ -6329,10 +6329,10 @@ mem@^4.0.0:
     mimic-fn "^1.0.0"
     p-is-promise "^1.1.0"
 
-memoize-one@^5.0.5:
-  version "5.0.5"
-  resolved "https://registry.yarnpkg.com/memoize-one/-/memoize-one-5.0.5.tgz#8cd3809555723a07684afafcd6f756072ac75d7e"
-  integrity sha512-ey6EpYv0tEaIbM/nTDOpHciXUvd+ackQrJgEzBwemhZZIWZjcyodqEcrmqDy2BKRTM3a65kKBV4WtLXJDt26SQ==
+memoize-one@^5.1.1:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/memoize-one/-/memoize-one-5.1.1.tgz#047b6e3199b508eaec03504de71229b8eb1d75c0"
+  integrity sha512-HKeeBpWvqiVJD57ZUAsJNm71eHTykffzcLZVYWiVfQeI1rJtuEaS7hQiEpWfVVk18donPwJEcFKIkCmPJNOhHA==
 
 memory-fs@^0.4.0, memory-fs@^0.4.1, memory-fs@~0.4.1:
   version "0.4.1"
@@ -6430,10 +6430,10 @@ mime@^2.3.1:
   resolved "https://registry.yarnpkg.com/mime/-/mime-2.4.0.tgz#e051fd881358585f3279df333fe694da0bcffdd6"
   integrity sha512-ikBcWwyqXQSHKtciCcctu9YfPbFYZ4+gbHEmE0Q8jzcTYQg5dHCr3g2wwAZjPoJfQVXZq6KXAjpXOTf5/cjT7w==
 
-mime@^2.4.2:
-  version "2.4.3"
-  resolved "https://registry.yarnpkg.com/mime/-/mime-2.4.3.tgz#229687331e86f68924e6cb59e1cdd937f18275fe"
-  integrity sha512-QgrPRJfE+riq5TPZMcHZOtm8c6K/yYrMbKIoRfapfiGLxS8OTeIfRhUGW5LU7MlRa52KOAGCfUNruqLrIBvWZw==
+mime@^2.4.4:
+  version "2.4.4"
+  resolved "https://registry.yarnpkg.com/mime/-/mime-2.4.4.tgz#bd7b91135fc6b01cde3e9bae33d659b63d8857e5"
+  integrity sha512-LRxmNwziLPT828z+4YkNzloCFC2YM4wrB99k+AV5ZbEyfGNWfG8SO1FUXLmLDBSo89NrJZ4DIWeLjy1CHGhMGA==
 
 mimic-fn@^1.0.0:
   version "1.2.0"
@@ -7709,10 +7709,10 @@ query-string@^5.0.1:
     object-assign "^4.1.0"
     strict-uri-encode "^1.0.0"
 
-query-string@^6.8.1:
-  version "6.8.1"
-  resolved "https://registry.yarnpkg.com/query-string/-/query-string-6.8.1.tgz#62c54a7ef37d01b538c8fd56f95740c81d438a26"
-  integrity sha512-g6y0Lbq10a5pPQpjlFuojfMfV1Pd2Jw9h75ypiYPPia3Gcq2rgkKiIwbkS6JxH7c5f5u/B/sB+d13PU+g1eu4Q==
+query-string@^6.8.3:
+  version "6.8.3"
+  resolved "https://registry.yarnpkg.com/query-string/-/query-string-6.8.3.tgz#fd9fb7ffb068b79062b43383685611ee47777d4b"
+  integrity sha512-llcxWccnyaWlODe7A9hRjkvdCKamEKTh+wH8ITdTc3OhchaqUZteiSCX/2ablWHVrkVIe04dntnaZJ7BdyW0lQ==
   dependencies:
     decode-uri-component "^0.2.0"
     split-on-first "^1.0.0"
@@ -7784,40 +7784,41 @@ rc@^1.2.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-cosmos-fixture@^5.0.0-alpha.20:
-  version "5.0.0-alpha.20"
-  resolved "https://registry.yarnpkg.com/react-cosmos-fixture/-/react-cosmos-fixture-5.0.0-alpha.20.tgz#853847f5fcfa3f30411d1b26f7d50020f7e29ebe"
-  integrity sha512-qP5duc4zOi666Hdr8Uqpi5nHCwWh8tTjMufIHXvnfm9OOQumPuVNPLdjPAJKsSi9E5DPA9QCTXYL7CIiHnuRMA==
+react-cosmos-fixture@^5.0.0-beta.0:
+  version "5.0.0-beta.0"
+  resolved "https://registry.yarnpkg.com/react-cosmos-fixture/-/react-cosmos-fixture-5.0.0-beta.0.tgz#1944ea39fc8bf2bede23e770cd9050f84e222e90"
+  integrity sha512-eSwMRtUzAdyAjfAo59rntnkg+ol0kKoAa1tchtYgTCRv9r36AvfeW+qyTsVFXHJJqaNx/UX8PsYX8OSAg3cUzA==
   dependencies:
     lodash "^4.17.15"
-    memoize-one "^5.0.5"
-    react-cosmos-shared2 "^5.0.0-alpha.20"
-    react-is "^16.8.6"
+    memoize-one "^5.1.1"
+    react-cosmos-shared2 "^5.0.0-beta.0"
+    react-is "^16.9.0"
     socket.io-client "^2.2.0"
 
-react-cosmos-playground2@^5.0.0-alpha.21:
-  version "5.0.0-alpha.21"
-  resolved "https://registry.yarnpkg.com/react-cosmos-playground2/-/react-cosmos-playground2-5.0.0-alpha.21.tgz#7577b68080bf8f1fd0617154431f4f7a2b89f66b"
-  integrity sha512-3dT7CvemV5l2+WfAFRYcFzAWlIoR2ilhhparP6c3hkIAyyl6JcgvVj+3gaVAO91am14mY2MYI64U+z4IXE7/FQ==
+react-cosmos-playground2@^5.0.0-beta.0:
+  version "5.0.0-beta.0"
+  resolved "https://registry.yarnpkg.com/react-cosmos-playground2/-/react-cosmos-playground2-5.0.0-beta.0.tgz#547d151aa1a6a9b092b3631028c21002e3051621"
+  integrity sha512-RUo0QK2jm2yph+ywOfV8J9dLM8/HSRMVoH1yQcD/VH/ZAfqO0pzfHHMG8jMyFxzH/ZVvgcJcqOeDq81Bxmz2OQ==
 
 react-cosmos-redux@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/react-cosmos-redux/-/react-cosmos-redux-1.0.2.tgz#11df02afe702322b2cdb6c1c97ece1cace5e7b56"
   integrity sha512-TEzy8w1ubxf2NJFeLvYIhGFGpEn2QeZotKWOk+2ABJte4+QkspNZScH7zfwtGkaijcQgAo2fTwPB8QwsenF3Xw==
 
-react-cosmos-shared2@^5.0.0-alpha.20:
-  version "5.0.0-alpha.20"
-  resolved "https://registry.yarnpkg.com/react-cosmos-shared2/-/react-cosmos-shared2-5.0.0-alpha.20.tgz#ea8daca37959637a9800626ed60969825cfc4490"
-  integrity sha512-m/gKTzP79T07hs2sk++WyBmEgRdTSmkh6iL2p69HSbmpCzZLV4wCoYJk/1aJ8GHKjeNr4wvZfUYlmCpBBJFw4w==
+react-cosmos-shared2@^5.0.0-beta.0:
+  version "5.0.0-beta.0"
+  resolved "https://registry.yarnpkg.com/react-cosmos-shared2/-/react-cosmos-shared2-5.0.0-beta.0.tgz#48debbb86912895f24b4063451c29ba8808507de"
+  integrity sha512-LrvqhS7TwfaCh2XJ34uMW5m+25zMBYR7BI1aU+1QjaFr6Xd+AAmq06/Atgfebd992GpHBlegEuPc1oEea53pJg==
   dependencies:
     lodash "^4.17.15"
+    query-string "^6.8.3"
     react-element-to-jsx-string "^14.0.3"
-    react-is "^16.8.6"
+    react-is "^16.9.0"
 
-react-cosmos@^5.0.0-alpha.21:
-  version "5.0.0-alpha.21"
-  resolved "https://registry.yarnpkg.com/react-cosmos/-/react-cosmos-5.0.0-alpha.21.tgz#f828e33a9fbf924f7e4926be7d6925b07437cbe4"
-  integrity sha512-EaZQidwpyv6k2H4SN89Mgh4g4P1T77vxgsMusm9V6R+WZaB4snTJwetEVESkZx9CwbknNwyFYZtgU9E+P52U3A==
+react-cosmos@^5.0.0-beta.0:
+  version "5.0.0-beta.0"
+  resolved "https://registry.yarnpkg.com/react-cosmos/-/react-cosmos-5.0.0-beta.0.tgz#059e35e38e589cc3222c9e3611b6b8ff83243104"
+  integrity sha512-tR1hWMb0OajvNJg2ZBVJDVvTMww/VTfWuj7S1SRfR2aE5urVsEKgIwD5CmqDHiO6TilL3TFzGJAY+lRcp3Fh0w==
   dependencies:
     "@skidding/launch-editor" "^2.2.3"
     "@skidding/webpack-hot-middleware" "^2.25.0"
@@ -7831,17 +7832,17 @@ react-cosmos@^5.0.0-alpha.21:
     lodash "^4.17.15"
     micromatch "^4.0.2"
     open "^6.4.0"
-    query-string "^6.8.1"
-    react-cosmos-fixture "^5.0.0-alpha.20"
-    react-cosmos-playground2 "^5.0.0-alpha.21"
-    react-cosmos-shared2 "^5.0.0-alpha.20"
-    react-error-overlay "^5.1.6"
+    query-string "^6.8.3"
+    react-cosmos-fixture "^5.0.0-beta.0"
+    react-cosmos-playground2 "^5.0.0-beta.0"
+    react-cosmos-shared2 "^5.0.0-beta.0"
+    react-error-overlay "^6.0.1"
     resolve-from "^5.0.0"
     slash "^3.0.0"
     socket.io "^2.2.0"
     util.promisify "^1.0.0"
-    webpack-dev-middleware "^3.7.0"
-    yargs "^13.3.0"
+    webpack-dev-middleware "^3.7.1"
+    yargs "^14.0.0"
 
 react-dom@^16.8.6:
   version "16.8.6"
@@ -7866,10 +7867,10 @@ react-error-overlay@4.0.0:
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-4.0.0.tgz#d198408a85b4070937a98667f500c832f86bd5d4"
   integrity sha512-FlsPxavEyMuR6TjVbSSywovXSEyOg6ZDj5+Z8nbsRl9EkOzAhEIcS+GLoQDC5fz/t9suhUXWmUrOBrgeUvrMxw==
 
-react-error-overlay@^5.1.6:
-  version "5.1.6"
-  resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-5.1.6.tgz#0cd73407c5d141f9638ae1e0c63e7b2bf7e9929d"
-  integrity sha512-X1Y+0jR47ImDVr54Ab6V9eGk0Hnu7fVWGeHQSOXHf/C2pF9c6uy3gef8QUeuUiWlNb0i08InPSE5a/KJzNzw1Q==
+react-error-overlay@^6.0.1:
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.1.tgz#b8d3cf9bb991c02883225c48044cb3ee20413e0f"
+  integrity sha512-V9yoTr6MeZXPPd4nV/05eCBvGH9cGzc52FN8fs0O0TVQ3HYYf1n7EgZVtHbldRq5xU9zEzoXIITjYNIfxDDdUw==
 
 react-is@^16.7.0:
   version "16.7.0"
@@ -7885,6 +7886,11 @@ react-is@^16.8.4, react-is@^16.8.6:
   version "16.8.6"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.6.tgz#5bbc1e2d29141c9fbdfed456343fe2bc430a6a16"
   integrity sha512-aUk3bHfZ2bRSVFFbbeVS4i+lNPZr3/WM5jT2J5omUVV1zzcs1nAaf3l51ctA5FFvCRbhrH0bdAsRRQddFJZPtA==
+
+react-is@^16.9.0:
+  version "16.9.0"
+  resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.9.0.tgz#21ca9561399aad0ff1a7701c01683e8ca981edcb"
+  integrity sha512-tJBzzzIgnnRfEm046qRcURvwQnZVXmuCbscxUO5RWrGTXpon2d4c8mI0D8WE6ydVIm29JiLB6+RslkIvym9Rjw==
 
 react-redux@^7.1.0:
   version "7.1.0"
@@ -9779,13 +9785,14 @@ webpack-dev-middleware@3.4.0:
     range-parser "^1.0.3"
     webpack-log "^2.0.0"
 
-webpack-dev-middleware@^3.7.0:
-  version "3.7.0"
-  resolved "https://registry.yarnpkg.com/webpack-dev-middleware/-/webpack-dev-middleware-3.7.0.tgz#ef751d25f4e9a5c8a35da600c5fda3582b5c6cff"
-  integrity sha512-qvDesR1QZRIAZHOE3iQ4CXLZZSQ1lAUsSpnQmlB1PBfoN/xdRjmge3Dok0W4IdaVLJOGJy3sGI4sZHwjRU0PCA==
+webpack-dev-middleware@^3.7.1:
+  version "3.7.1"
+  resolved "https://registry.yarnpkg.com/webpack-dev-middleware/-/webpack-dev-middleware-3.7.1.tgz#1167aea02afa034489869b8368fe9fed1aea7d09"
+  integrity sha512-5MWu9SH1z3hY7oHOV6Kbkz5x7hXbxK56mGHNqHTe6d+ewxOwKUxoUJBs7QIaJb33lPjl9bJZ3X0vCoooUzC36A==
   dependencies:
     memory-fs "^0.4.1"
-    mime "^2.4.2"
+    mime "^2.4.4"
+    mkdirp "^0.5.1"
     range-parser "^1.2.1"
     webpack-log "^2.0.0"
 
@@ -10110,12 +10117,13 @@ yargs@^12.0.2:
     y18n "^3.2.1 || ^4.0.0"
     yargs-parser "^11.1.1"
 
-yargs@^13.3.0:
-  version "13.3.0"
-  resolved "https://registry.yarnpkg.com/yargs/-/yargs-13.3.0.tgz#4c657a55e07e5f2cf947f8a366567c04a0dedc83"
-  integrity sha512-2eehun/8ALW8TLoIl7MVaRUrg+yCnenu8B4kBlRxj3GJGDKU1Og7sMXPNm1BYyM1DOJmTZ4YeN/Nwxv+8XJsUA==
+yargs@^14.0.0:
+  version "14.0.0"
+  resolved "https://registry.yarnpkg.com/yargs/-/yargs-14.0.0.tgz#ba4cacc802b3c0b3e36a9e791723763d57a85066"
+  integrity sha512-ssa5JuRjMeZEUjg7bEL99AwpitxU/zWGAGpdj0di41pOEmJti8NR6kyUIJBkR78DTYNPZOU08luUo0GTHuB+ow==
   dependencies:
     cliui "^5.0.0"
+    decamelize "^1.2.0"
     find-up "^3.0.0"
     get-caller-file "^2.0.1"
     require-directory "^2.1.1"
