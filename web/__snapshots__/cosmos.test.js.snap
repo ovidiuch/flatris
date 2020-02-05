@@ -3791,7 +3791,7 @@ exports[`renders fixtures: web/components/Stats/index.fixture.js-default 1`] = `
       </span>
     </span>
      
-    seconds played
+    seconds
   </p>
   <p
     className="jsx-1735621698"
@@ -3894,7 +3894,7 @@ exports[`renders fixtures: web/components/Stats/index.fixture.js-update 1`] = `
       </span>
     </span>
      
-    seconds played
+    seconds
   </p>
   <p
     className="jsx-1735621698"
@@ -7191,13 +7191,13 @@ exports[`renders fixtures: web/components/effects/Shake.fixture.js-still 1`] = `
 
 exports[`renders fixtures: web/components/pages/Dashboard/__fixtures__/game.js 1`] = `
 <div
-  className="jsx-3447036960 root"
+  className="jsx-1500989392 root"
 >
   <div
-    className="jsx-3447036960 feedback-button"
+    className="jsx-1500989392 large-feedback-button"
   >
     <a
-      className="jsx-3447036960"
+      className="jsx-1500989392"
       href="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfB66-8K8gWrj-Mo9sVYqKSgzTwCekXkMlL0zcBdKcSDH6IFA/viewform"
       target="_blank"
     >
@@ -7205,15 +7205,15 @@ exports[`renders fixtures: web/components/pages/Dashboard/__fixtures__/game.js 1
         className="jsx-48536898 button hover-button"
         type="button"
       >
-        Help make Flatris better
+        A penny for your thoughts
       </button>
     </a>
   </div>
   <div
-    className="jsx-3447036960 header"
+    className="jsx-1500989392 header"
   >
     <div
-      className="jsx-3447036960 left new-game-button"
+      className="jsx-1500989392 left new-game-button"
     >
       <button
         className="jsx-2758816807 button hover-button"
@@ -7224,13 +7224,29 @@ exports[`renders fixtures: web/components/pages/Dashboard/__fixtures__/game.js 1
       </button>
     </div>
     <div
-      className="jsx-3447036960 right"
+      className="jsx-1500989392 right"
     >
       <div
-        className="jsx-3447036960 view-source left"
+        className="jsx-1500989392 small-feedback-button"
       >
         <a
-          className="jsx-3447036960"
+          className="jsx-1500989392"
+          href="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfB66-8K8gWrj-Mo9sVYqKSgzTwCekXkMlL0zcBdKcSDH6IFA/viewform"
+          target="_blank"
+        >
+          <button
+            className="jsx-48536898 button hover-button"
+            type="button"
+          >
+            A penny for your thoughts
+          </button>
+        </a>
+      </div>
+      <div
+        className="jsx-1500989392 view-source"
+      >
+        <a
+          className="jsx-1500989392"
           href="https://github.com/skidding/flatris"
           target="_blank"
         >
@@ -7243,7 +7259,7 @@ exports[`renders fixtures: web/components/pages/Dashboard/__fixtures__/game.js 1
         </a>
       </div>
       <div
-        className="jsx-3447036960 logo left"
+        className="jsx-1500989392 logo"
       >
         <div
           className="jsx-3741043640 logo"
@@ -7354,7 +7370,7 @@ exports[`renders fixtures: web/components/pages/Dashboard/__fixtures__/game.js 1
         </span>
       </span>
        
-      seconds played
+      seconds
     </p>
     <p
       className="jsx-1735621698"
@@ -7419,7 +7435,7 @@ exports[`renders fixtures: web/components/pages/Dashboard/__fixtures__/game.js 1
     </p>
   </div>
   <div
-    className="jsx-3447036960 message"
+    className="jsx-1500989392 message"
   >
     Join a game or create a new one
   </div>
@@ -7877,13 +7893,13 @@ exports[`renders fixtures: web/components/pages/Dashboard/__fixtures__/game.js 1
 
 exports[`renders fixtures: web/components/pages/Dashboard/__fixtures__/game-added.js 1`] = `
 <div
-  className="jsx-3447036960 root"
+  className="jsx-1500989392 root"
 >
   <div
-    className="jsx-3447036960 feedback-button"
+    className="jsx-1500989392 large-feedback-button"
   >
     <a
-      className="jsx-3447036960"
+      className="jsx-1500989392"
       href="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfB66-8K8gWrj-Mo9sVYqKSgzTwCekXkMlL0zcBdKcSDH6IFA/viewform"
       target="_blank"
     >
@@ -7891,15 +7907,15 @@ exports[`renders fixtures: web/components/pages/Dashboard/__fixtures__/game-adde
         className="jsx-48536898 button hover-button"
         type="button"
       >
-        Help make Flatris better
+        A penny for your thoughts
       </button>
     </a>
   </div>
   <div
-    className="jsx-3447036960 header"
+    className="jsx-1500989392 header"
   >
     <div
-      className="jsx-3447036960 left new-game-button"
+      className="jsx-1500989392 left new-game-button"
     >
       <button
         className="jsx-2758816807 button hover-button"
@@ -7910,13 +7926,29 @@ exports[`renders fixtures: web/components/pages/Dashboard/__fixtures__/game-adde
       </button>
     </div>
     <div
-      className="jsx-3447036960 right"
+      className="jsx-1500989392 right"
     >
       <div
-        className="jsx-3447036960 view-source left"
+        className="jsx-1500989392 small-feedback-button"
       >
         <a
-          className="jsx-3447036960"
+          className="jsx-1500989392"
+          href="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfB66-8K8gWrj-Mo9sVYqKSgzTwCekXkMlL0zcBdKcSDH6IFA/viewform"
+          target="_blank"
+        >
+          <button
+            className="jsx-48536898 button hover-button"
+            type="button"
+          >
+            A penny for your thoughts
+          </button>
+        </a>
+      </div>
+      <div
+        className="jsx-1500989392 view-source"
+      >
+        <a
+          className="jsx-1500989392"
           href="https://github.com/skidding/flatris"
           target="_blank"
         >
@@ -7929,7 +7961,7 @@ exports[`renders fixtures: web/components/pages/Dashboard/__fixtures__/game-adde
         </a>
       </div>
       <div
-        className="jsx-3447036960 logo left"
+        className="jsx-1500989392 logo"
       >
         <div
           className="jsx-3741043640 logo"
@@ -8040,7 +8072,7 @@ exports[`renders fixtures: web/components/pages/Dashboard/__fixtures__/game-adde
         </span>
       </span>
        
-      seconds played
+      seconds
     </p>
     <p
       className="jsx-1735621698"
@@ -8105,7 +8137,7 @@ exports[`renders fixtures: web/components/pages/Dashboard/__fixtures__/game-adde
     </p>
   </div>
   <div
-    className="jsx-3447036960 message"
+    className="jsx-1500989392 message"
   >
     Create a game and break the silence!
   </div>
@@ -8272,13 +8304,13 @@ exports[`renders fixtures: web/components/pages/Dashboard/__fixtures__/game-adde
 
 exports[`renders fixtures: web/components/pages/Dashboard/__fixtures__/games-added.js 1`] = `
 <div
-  className="jsx-3447036960 root"
+  className="jsx-1500989392 root"
 >
   <div
-    className="jsx-3447036960 feedback-button"
+    className="jsx-1500989392 large-feedback-button"
   >
     <a
-      className="jsx-3447036960"
+      className="jsx-1500989392"
       href="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfB66-8K8gWrj-Mo9sVYqKSgzTwCekXkMlL0zcBdKcSDH6IFA/viewform"
       target="_blank"
     >
@@ -8286,15 +8318,15 @@ exports[`renders fixtures: web/components/pages/Dashboard/__fixtures__/games-add
         className="jsx-48536898 button hover-button"
         type="button"
       >
-        Help make Flatris better
+        A penny for your thoughts
       </button>
     </a>
   </div>
   <div
-    className="jsx-3447036960 header"
+    className="jsx-1500989392 header"
   >
     <div
-      className="jsx-3447036960 left new-game-button"
+      className="jsx-1500989392 left new-game-button"
     >
       <button
         className="jsx-2758816807 button hover-button"
@@ -8305,13 +8337,29 @@ exports[`renders fixtures: web/components/pages/Dashboard/__fixtures__/games-add
       </button>
     </div>
     <div
-      className="jsx-3447036960 right"
+      className="jsx-1500989392 right"
     >
       <div
-        className="jsx-3447036960 view-source left"
+        className="jsx-1500989392 small-feedback-button"
       >
         <a
-          className="jsx-3447036960"
+          className="jsx-1500989392"
+          href="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfB66-8K8gWrj-Mo9sVYqKSgzTwCekXkMlL0zcBdKcSDH6IFA/viewform"
+          target="_blank"
+        >
+          <button
+            className="jsx-48536898 button hover-button"
+            type="button"
+          >
+            A penny for your thoughts
+          </button>
+        </a>
+      </div>
+      <div
+        className="jsx-1500989392 view-source"
+      >
+        <a
+          className="jsx-1500989392"
           href="https://github.com/skidding/flatris"
           target="_blank"
         >
@@ -8324,7 +8372,7 @@ exports[`renders fixtures: web/components/pages/Dashboard/__fixtures__/games-add
         </a>
       </div>
       <div
-        className="jsx-3447036960 logo left"
+        className="jsx-1500989392 logo"
       >
         <div
           className="jsx-3741043640 logo"
@@ -8435,7 +8483,7 @@ exports[`renders fixtures: web/components/pages/Dashboard/__fixtures__/games-add
         </span>
       </span>
        
-      seconds played
+      seconds
     </p>
     <p
       className="jsx-1735621698"
@@ -8500,7 +8548,7 @@ exports[`renders fixtures: web/components/pages/Dashboard/__fixtures__/games-add
     </p>
   </div>
   <div
-    className="jsx-3447036960 message"
+    className="jsx-1500989392 message"
   >
     Create a game and break the silence!
   </div>
@@ -8667,13 +8715,13 @@ exports[`renders fixtures: web/components/pages/Dashboard/__fixtures__/games-add
 
 exports[`renders fixtures: web/components/pages/Dashboard/__fixtures__/no-games.js 1`] = `
 <div
-  className="jsx-3447036960 root"
+  className="jsx-1500989392 root"
 >
   <div
-    className="jsx-3447036960 feedback-button"
+    className="jsx-1500989392 large-feedback-button"
   >
     <a
-      className="jsx-3447036960"
+      className="jsx-1500989392"
       href="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfB66-8K8gWrj-Mo9sVYqKSgzTwCekXkMlL0zcBdKcSDH6IFA/viewform"
       target="_blank"
     >
@@ -8681,15 +8729,15 @@ exports[`renders fixtures: web/components/pages/Dashboard/__fixtures__/no-games.
         className="jsx-48536898 button hover-button"
         type="button"
       >
-        Help make Flatris better
+        A penny for your thoughts
       </button>
     </a>
   </div>
   <div
-    className="jsx-3447036960 header"
+    className="jsx-1500989392 header"
   >
     <div
-      className="jsx-3447036960 left new-game-button"
+      className="jsx-1500989392 left new-game-button"
     >
       <button
         className="jsx-2758816807 button hover-button"
@@ -8700,13 +8748,29 @@ exports[`renders fixtures: web/components/pages/Dashboard/__fixtures__/no-games.
       </button>
     </div>
     <div
-      className="jsx-3447036960 right"
+      className="jsx-1500989392 right"
     >
       <div
-        className="jsx-3447036960 view-source left"
+        className="jsx-1500989392 small-feedback-button"
       >
         <a
-          className="jsx-3447036960"
+          className="jsx-1500989392"
+          href="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfB66-8K8gWrj-Mo9sVYqKSgzTwCekXkMlL0zcBdKcSDH6IFA/viewform"
+          target="_blank"
+        >
+          <button
+            className="jsx-48536898 button hover-button"
+            type="button"
+          >
+            A penny for your thoughts
+          </button>
+        </a>
+      </div>
+      <div
+        className="jsx-1500989392 view-source"
+      >
+        <a
+          className="jsx-1500989392"
           href="https://github.com/skidding/flatris"
           target="_blank"
         >
@@ -8719,7 +8783,7 @@ exports[`renders fixtures: web/components/pages/Dashboard/__fixtures__/no-games.
         </a>
       </div>
       <div
-        className="jsx-3447036960 logo left"
+        className="jsx-1500989392 logo"
       >
         <div
           className="jsx-3741043640 logo"
@@ -8830,7 +8894,7 @@ exports[`renders fixtures: web/components/pages/Dashboard/__fixtures__/no-games.
         </span>
       </span>
        
-      seconds played
+      seconds
     </p>
     <p
       className="jsx-1735621698"
@@ -8895,7 +8959,7 @@ exports[`renders fixtures: web/components/pages/Dashboard/__fixtures__/no-games.
     </p>
   </div>
   <div
-    className="jsx-3447036960 message"
+    className="jsx-1500989392 message"
   >
     Create a game and break the silence!
   </div>
@@ -9062,13 +9126,13 @@ exports[`renders fixtures: web/components/pages/Dashboard/__fixtures__/no-games.
 
 exports[`renders fixtures: web/components/pages/Dashboard/__fixtures__/own-game.js 1`] = `
 <div
-  className="jsx-3447036960 root"
+  className="jsx-1500989392 root"
 >
   <div
-    className="jsx-3447036960 feedback-button"
+    className="jsx-1500989392 large-feedback-button"
   >
     <a
-      className="jsx-3447036960"
+      className="jsx-1500989392"
       href="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfB66-8K8gWrj-Mo9sVYqKSgzTwCekXkMlL0zcBdKcSDH6IFA/viewform"
       target="_blank"
     >
@@ -9076,15 +9140,15 @@ exports[`renders fixtures: web/components/pages/Dashboard/__fixtures__/own-game.
         className="jsx-48536898 button hover-button"
         type="button"
       >
-        Help make Flatris better
+        A penny for your thoughts
       </button>
     </a>
   </div>
   <div
-    className="jsx-3447036960 header"
+    className="jsx-1500989392 header"
   >
     <div
-      className="jsx-3447036960 left new-game-button"
+      className="jsx-1500989392 left new-game-button"
     >
       <button
         className="jsx-2758816807 button hover-button"
@@ -9095,13 +9159,29 @@ exports[`renders fixtures: web/components/pages/Dashboard/__fixtures__/own-game.
       </button>
     </div>
     <div
-      className="jsx-3447036960 right"
+      className="jsx-1500989392 right"
     >
       <div
-        className="jsx-3447036960 view-source left"
+        className="jsx-1500989392 small-feedback-button"
       >
         <a
-          className="jsx-3447036960"
+          className="jsx-1500989392"
+          href="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfB66-8K8gWrj-Mo9sVYqKSgzTwCekXkMlL0zcBdKcSDH6IFA/viewform"
+          target="_blank"
+        >
+          <button
+            className="jsx-48536898 button hover-button"
+            type="button"
+          >
+            A penny for your thoughts
+          </button>
+        </a>
+      </div>
+      <div
+        className="jsx-1500989392 view-source"
+      >
+        <a
+          className="jsx-1500989392"
           href="https://github.com/skidding/flatris"
           target="_blank"
         >
@@ -9114,7 +9194,7 @@ exports[`renders fixtures: web/components/pages/Dashboard/__fixtures__/own-game.
         </a>
       </div>
       <div
-        className="jsx-3447036960 logo left"
+        className="jsx-1500989392 logo"
       >
         <div
           className="jsx-3741043640 logo"
@@ -9225,7 +9305,7 @@ exports[`renders fixtures: web/components/pages/Dashboard/__fixtures__/own-game.
         </span>
       </span>
        
-      seconds played
+      seconds
     </p>
     <p
       className="jsx-1735621698"
@@ -9290,7 +9370,7 @@ exports[`renders fixtures: web/components/pages/Dashboard/__fixtures__/own-game.
     </p>
   </div>
   <div
-    className="jsx-3447036960 message"
+    className="jsx-1500989392 message"
   >
     Your games
   </div>

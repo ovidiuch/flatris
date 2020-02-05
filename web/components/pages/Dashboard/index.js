@@ -185,12 +185,12 @@ class Dashboard extends Component<Props, LocalState> {
       <Fragment>
         <Title>{title}</Title>
         <div className="root">
-          <div className="feedback-button">
+          <div className="large-feedback-button">
             <a
               href="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfB66-8K8gWrj-Mo9sVYqKSgzTwCekXkMlL0zcBdKcSDH6IFA/viewform"
               target="_blank"
             >
-              <Button bgColor={COLORS.T}>Help make Flatris better</Button>
+              <Button bgColor={COLORS.T}>A penny for your thoughts</Button>
             </a>
           </div>
           <div className="header">
@@ -200,7 +200,15 @@ class Dashboard extends Component<Props, LocalState> {
               </Link>
             </div>
             <div className="right">
-              <div className="view-source left">
+              <div className="small-feedback-button">
+                <a
+                  href="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfB66-8K8gWrj-Mo9sVYqKSgzTwCekXkMlL0zcBdKcSDH6IFA/viewform"
+                  target="_blank"
+                >
+                  <Button bgColor={COLORS.T}>A penny for your thoughts</Button>
+                </a>
+              </div>
+              <div className="view-source">
                 <a href="https://github.com/skidding/flatris" target="_blank">
                   <Button
                     bgColor="#ecf0f1"
@@ -211,7 +219,7 @@ class Dashboard extends Component<Props, LocalState> {
                   </Button>
                 </a>
               </div>
-              <div className="logo left">
+              <div className="logo">
                 <Logo color="#ecf0f1" />
               </div>
             </div>
@@ -249,14 +257,23 @@ class Dashboard extends Component<Props, LocalState> {
             .left {
               float: left;
             }
+
             .right {
               float: right;
+              display: flex;
+              flex-direction: row;
             }
 
-            .feedback-button {
+            .large-feedback-button {
+              display: none;
               position: relative;
-              min-width: 300px;
+              min-width: 340px;
               height: 60px;
+            }
+            @media (max-width: 809px) {
+              .large-feedback-button {
+                display: block;
+              }
             }
 
             .header {
@@ -264,11 +281,28 @@ class Dashboard extends Component<Props, LocalState> {
               min-width: 300px;
               height: 60px;
             }
+
             .new-game-button {
               position: relative;
               width: 160px;
               height: 60px;
             }
+
+            .small-feedback-button {
+              display: none;
+              position: relative;
+              width: 340px;
+              height: 60px;
+              margin-right: 20px;
+              line-height: 60px;
+              text-align: center;
+            }
+            @media (min-width: 810px) {
+              .small-feedback-button {
+                display: block;
+              }
+            }
+
             .view-source {
               position: relative;
               width: 120px;
@@ -278,7 +312,6 @@ class Dashboard extends Component<Props, LocalState> {
             }
 
             .logo {
-              float: right;
               position: relative;
               width: 90px;
               height: 60px;
