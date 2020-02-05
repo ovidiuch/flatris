@@ -47,7 +47,7 @@ class Stats extends Component<Props, LocalState> {
       <div className="stats">
         <p>
           {this.renderCount('games')} games {this.renderCount('seconds')}{' '}
-          seconds played
+          seconds
         </p>
         <p>
           {this.renderCount('actionLeft')} lefts{' '}
