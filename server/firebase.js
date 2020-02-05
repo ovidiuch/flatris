@@ -40,6 +40,7 @@ export function incrementUserCount() {
 
 export function incrementGameCount() {
   incrementCount('games');
+  incrementDailyGameCount();
 }
 
 export function incrementTurnCount() {
@@ -112,6 +113,14 @@ function incrementCount(collection: string, by = 1) {
   }
 }
 
+function incrementDailyGameCount() {
+  const db = getDb();
+  if (db) {
+    const ref = db.ref('dailyGameCounts').child(getTodaysDate());
+    ref.transaction(curCount => (curCount === null ? 1 : curCount + 1));
+  }
+}
+
 function prepareStats(rawStats) {
   const {
     actionAcc,
@@ -133,4 +142,8 @@ function prepareStats(rawStats) {
     lines,
     seconds
   };
+}
+
+function getTodaysDate() {
+  return new Date().toISOString().slice(0, 10);
 }
