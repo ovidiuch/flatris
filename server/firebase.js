@@ -2,7 +2,7 @@
 
 import admin from 'firebase-admin';
 
-import type { Stats } from 'shared/types/state';
+import type { Stats, DailyStats } from 'shared/types/state';
 
 export async function getStats(): Promise<Stats> {
   const db = getDb();
@@ -21,6 +21,20 @@ export async function getStats(): Promise<Stats> {
     const res = await ref.once('value');
 
     return prepareStats(res.val());
+  }
+}
+
+export async function getDailyStats(): Promise<DailyStats> {
+  const db = getDb();
+  if (!db) {
+    return {};
+  } else {
+    const gameRef = db.ref('dailyGameCounts');
+    const gameRes = await gameRef.once('value');
+    const turnRef = db.ref('dailyTurnCounts');
+    const turnRes = await turnRef.once('value');
+
+    return prepareDailyStats(gameRes.val(), turnRes.val());
   }
 }
 
@@ -151,6 +165,15 @@ function prepareStats(rawStats) {
     lines,
     seconds
   };
+}
+
+function prepareDailyStats(gameCounts, turnCounts) {
+  const days = Object.keys(gameCounts);
+  const totalCounts = {};
+  days.forEach(day => {
+    totalCounts[day] = gameCounts[day] + (turnCounts[day] || 0);
+  });
+  return totalCounts;
 }
 
 function getTodaysDate() {
