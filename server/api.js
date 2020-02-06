@@ -12,7 +12,12 @@ import {
   insertGame
 } from './db';
 import { rollbar } from './rollbar';
-import { getStats, incrementUserCount, incrementGameCount } from './firebase';
+import {
+  getStats,
+  getDailyStats,
+  incrementUserCount,
+  incrementGameCount
+} from './firebase';
 
 import type { User } from 'shared/types/state';
 import type { BackfillRequest, BackfillResponse } from 'shared/types/api';
@@ -26,6 +31,16 @@ export function addRoutes(app: express$Application) {
         // sorting in the future
         games: activeGames.map(gameId => games[gameId]),
         stats: await getStats()
+      });
+    } catch (err) {
+      res.sendStatus(500);
+    }
+  });
+
+  app.get('/stats', async (req: express$Request, res: express$Response) => {
+    try {
+      res.json({
+        days: await getDailyStats()
       });
     } catch (err) {
       res.sendStatus(500);

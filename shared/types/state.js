@@ -86,6 +86,10 @@ export type Stats = {
   seconds: number
 };
 
+export type DailyStats = {
+  [day: string]: number
+};
+
 export type State = {
   jsReady: boolean,
   curUser: ?User,
