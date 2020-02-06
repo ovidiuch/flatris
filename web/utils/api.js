@@ -6,7 +6,14 @@ import { getValidUser } from '../utils/validation';
 import { auth } from '../actions/global';
 
 import type { Store } from 'redux'; // eslint-disable-line import/named
-import type { User, GameId, Game, Stats, State } from 'shared/types/state';
+import type {
+  User,
+  GameId,
+  Game,
+  Stats,
+  DailyStats,
+  State
+} from 'shared/types/state';
 import type { Action } from 'shared/types/actions';
 import type { BackfillRequest, BackfillResponse } from 'shared/types/api';
 
@@ -54,6 +61,10 @@ export async function backfillGameActions(
   req: BackfillRequest
 ): Promise<BackfillResponse> {
   return fetchPost(`/backfill`, req);
+}
+
+export async function getStats(): Promise<DailyStats> {
+  return fetchJson(`/stats`);
 }
 
 export function getApiUrl(path?: string) {
