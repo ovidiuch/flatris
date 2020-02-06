@@ -36,10 +36,11 @@ class StatsPage extends Component<Props> {
         {sortedDays.map(day => {
           const games = days[day];
           const percentage = Math.round((games / maxGames) * 100);
+          const date = new Date(day);
           return (
             <div key={day}>
               <div className="dayContent">
-                <div>{day}</div>
+                <div>{date.toDateString()}</div>
                 <div>
                   <strong>{games}</strong>
                 </div>
