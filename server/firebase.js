@@ -45,6 +45,7 @@ export function incrementGameCount() {
 
 export function incrementTurnCount() {
   incrementCount('turns');
+  incrementDailyTurnCount();
 }
 
 export function incrementLineCount(lines: number) {
@@ -117,6 +118,14 @@ function incrementDailyGameCount() {
   const db = getDb();
   if (db) {
     const ref = db.ref('dailyGameCounts').child(getTodaysDate());
+    ref.transaction(curCount => (curCount === null ? 1 : curCount + 1));
+  }
+}
+
+function incrementDailyTurnCount() {
+  const db = getDb();
+  if (db) {
+    const ref = db.ref('dailyTurnCounts').child(getTodaysDate());
     ref.transaction(curCount => (curCount === null ? 1 : curCount + 1));
   }
 }
