@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import withRedux from 'next-redux-wrapper';
 import { createStore } from '../store';
-import { addCurUserToState, getStats } from '../utils/api';
+import { addCurUserToState, getDailyStats } from '../utils/api';
 import Layout from '../components/Layout';
 
 import type { DailyStats } from 'shared/types/state';
@@ -19,7 +19,7 @@ class StatsPage extends Component<Props> {
       await addCurUserToState(req, store);
     }
 
-    const { days } = await getStats();
+    const { days } = await getDailyStats();
     return { days };
   }
 
