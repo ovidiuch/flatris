@@ -63,8 +63,8 @@ export async function backfillGameActions(
   return fetchPost(`/backfill`, req);
 }
 
-export async function getStats(): Promise<DailyStats> {
-  return fetchJson(`/stats`);
+export async function getDailyStats(): Promise<DailyStats> {
+  return fetchJson(`/daily-stats`);
 }
 
 export function getApiUrl(path?: string) {

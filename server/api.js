@@ -37,15 +37,18 @@ export function addRoutes(app: express$Application) {
     }
   });
 
-  app.get('/stats', async (req: express$Request, res: express$Response) => {
-    try {
-      res.json({
-        days: await getDailyStats()
-      });
-    } catch (err) {
-      res.sendStatus(500);
+  app.get(
+    '/daily-stats',
+    async (req: express$Request, res: express$Response) => {
+      try {
+        res.json({
+          days: await getDailyStats()
+        });
+      } catch (err) {
+        res.sendStatus(500);
+      }
     }
-  });
+  );
 
   app.get('/game/:gameId', (req: express$Request, res: express$Response) => {
     const gameId = req.params.gameId;
