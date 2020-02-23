@@ -21,6 +21,6 @@ steps:
   displayName: 'npm install and build'
   
 - script: | 
-  echo message from my new build task - line 1
-  echo message from my new build task - line 2
+    echo message from my new build task - line 1
+    echo message from my new build task - line 2
   displayName: 'my build task'
