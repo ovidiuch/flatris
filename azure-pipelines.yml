@@ -20,6 +20,5 @@ steps:
     npm run build
   displayName: 'npm install and build'
   
-- script:
-  echo my test message
+- script: echo my test message
   displayName: 'my custom script'
