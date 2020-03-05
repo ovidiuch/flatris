@@ -1,9 +1,9 @@
 // @flow
 
-import React, { Fragment, Component } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { auth } from '../../../actions/global';
-import { MAX_NAME_LENGTH } from 'shared/constants/user';
+import { MAX_NAME_LENGTH, MAX_EMAIL_LENGTH } from 'shared/constants/user';
 import { createUserSession } from '../../../utils/api';
 import Button from '../../Button';
 import FlatrisIntro from '../onboarding/FlatrisIntro';
@@ -23,6 +23,8 @@ type OnboardingStep = 'intro' | '1vs1' | '0sum' | 'howto';
 
 type LocalState = {
   name: string,
+  email: string,
+  logIn: boolean,
   pendingAuth: boolean,
   user: ?User,
   onboardingStep: OnboardingStep,
@@ -40,9 +42,12 @@ const ONBOARDING_STEPS = Object.keys(ONBOARDING_SCREENS);
 
 class Auth extends Component<Props, LocalState> {
   nameField: ?HTMLInputElement;
+  emailField: ?HTMLInputElement;
 
   state = {
     name: '',
+    email: '',
+    logIn: false,
     pendingAuth: false,
     user: null,
     onboardingStep: 'intro',
@@ -55,9 +60,14 @@ class Auth extends Component<Props, LocalState> {
     }
   }
 
-  handleInputRef = node => {
+  handeNameInputRef = node => {
     this.nameField = node;
     this.focusOnNameField();
+  };
+
+  handeEmailInputRef = node => {
+    this.emailField = node;
+    this.focusOnEmailField();
   };
 
   focusOnNameField = () => {
@@ -66,9 +76,33 @@ class Auth extends Component<Props, LocalState> {
     }
   };
 
+  focusOnEmailField = () => {
+    if (this.emailField && this.props.jsReady) {
+      this.emailField.focus();
+    }
+  };
+
   handleNameChange = e => {
     this.setState({
       name: e.target.value
+    });
+  };
+
+  handleEmailChange = e => {
+    this.setState({
+      email: e.target.value
+    });
+  };
+
+  handleLogin = () => {
+    this.setState({
+      logIn: true
+    });
+  };
+
+  handleCancelLogin = () => {
+    this.setState({
+      logIn: false
     });
   };
 
@@ -120,6 +154,8 @@ class Auth extends Component<Props, LocalState> {
     const { jsReady } = this.props;
     const {
       name,
+      email,
+      logIn,
       pendingAuth,
       user,
       onboardingStep,
@@ -141,29 +177,69 @@ class Auth extends Component<Props, LocalState> {
     return (
       <form onSubmit={this.handleGo}>
         <Screen
-          title="One sec..."
+          title={logIn ? `Welcome` : `One sec...`}
           message={
-            <Fragment>
-              <p onClick={this.focusOnNameField}>Enter your name</p>
-              <p>
-                <input
-                  type="text"
-                  value={name}
-                  onChange={this.handleNameChange}
-                  disabled={!jsReady || pendingAuth}
-                  ref={this.handleInputRef}
-                  placeholder="Monkey"
-                  maxLength={MAX_NAME_LENGTH}
-                />
-              </p>
-              <p>
-                <small>Fake names allowed ;-)</small>
-              </p>
-            </Fragment>
+            logIn ? (
+              <>
+                <p onClick={this.focusOnNameField}>Enter your name</p>
+                <p>
+                  <input
+                    type="text"
+                    value={name}
+                    onChange={this.handleNameChange}
+                    disabled={!jsReady || pendingAuth}
+                    ref={this.handeNameInputRef}
+                    placeholder="Monkey"
+                    maxLength={MAX_NAME_LENGTH}
+                  />
+                </p>
+                <p onClick={this.focusOnEmailField}>Enter your email</p>
+                <p>
+                  <input
+                    type="text"
+                    value={email}
+                    onChange={this.handleEmailChange}
+                    disabled={!jsReady || pendingAuth}
+                    ref={this.handeEmailInputRef}
+                    placeholder="wise@ass.com"
+                    maxLength={MAX_NAME_LENGTH}
+                  />
+                </p>
+                <p>
+                  <small>Fake names allowed ;-)</small>
+                </p>
+              </>
+            ) : (
+              <>
+                <p onClick={this.focusOnNameField}>Enter your name</p>
+                <p>
+                  <input
+                    type="text"
+                    value={name}
+                    onChange={this.handleNameChange}
+                    disabled={!jsReady || pendingAuth}
+                    ref={this.handeNameInputRef}
+                    placeholder="Monkey"
+                    maxLength={MAX_EMAIL_LENGTH}
+                  />
+                </p>
+                <p>
+                  <small>Fake names allowed ;-)</small>
+                </p>
+              </>
+            )
           }
           actions={[
             <Button type="submit" disabled={!jsReady || !name || pendingAuth}>
               Enter
+            </Button>,
+            <Button
+              bgColor="#fff"
+              color="#34495f"
+              colorDisabled="rgba(52, 73, 95, 0.6)"
+              onClick={logIn ? this.handleCancelLogin : this.handleLogin}
+            >
+              {logIn ? 'Guest' : 'Log in'}
             </Button>
           ]}
         />
@@ -206,7 +282,4 @@ const mapDispatchToProps = {
   auth
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Auth);
+export default connect(mapStateToProps, mapDispatchToProps)(Auth);
