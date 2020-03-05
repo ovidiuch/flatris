@@ -2,7 +2,24 @@
 
 import admin from 'firebase-admin';
 
+import type { Account } from 'shared/types/db';
 import type { Stats, DailyStats } from 'shared/types/state';
+
+export async function getAccountByEmail(
+  email: string
+): Promise<null | Account> {
+  const db = getDb();
+  if (!db) {
+    return null;
+  } else {
+    const ref = db
+      .ref('accounts')
+      .orderByChild('email')
+      .equalTo(email);
+    const res = await ref.once('value');
+    return res.val();
+  }
+}
 
 export async function getStats(): Promise<Stats> {
   const db = getDb();
