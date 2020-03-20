@@ -11,7 +11,6 @@ import {
   insertSession,
   insertGame
 } from './db';
-import { rollbar } from './rollbar';
 import {
   getStats,
   getDailyStats,
@@ -71,7 +70,6 @@ export function addRoutes(app: express$Application) {
 
         res.json(game);
       } catch (err) {
-        rollbar.error(err);
         res.sendStatus(400);
       }
     } catch (err) {
@@ -95,7 +93,6 @@ export function addRoutes(app: express$Application) {
         res.json(backfillRes);
       }
     } catch (err) {
-      rollbar.error(err);
       res.sendStatus(400);
     }
   });
@@ -125,7 +122,6 @@ export function addRoutes(app: express$Application) {
       res.cookie('sessionId', session.id);
       res.json(user);
     } catch (err) {
-      rollbar.error(err);
       res.sendStatus(400);
     }
   });

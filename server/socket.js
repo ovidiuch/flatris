@@ -18,7 +18,6 @@ import {
   incrementActionRotate,
   incrementGameTime
 } from './firebase';
-import { rollbar } from './rollbar';
 
 import type { GameId, Game } from 'shared/types/state';
 import type { GameAction } from 'shared/types/actions';
@@ -100,8 +99,6 @@ export function attachSocket(server: net$Server) {
           // trigger hundreds of game-sync events at once.
           if (!gameSync[syncId]) {
             gameSync[syncId] = true;
-
-            rollbar.error(err, { action });
 
             // Sync client state with server state. This happens when one client
             // goes offline for a while and then goes back online. Upon
