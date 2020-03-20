@@ -11,3 +11,15 @@
 Thanks [@paulgergely](https://twitter.com/paulgergely) for the initial flat design!
 
 Also see [elm-flatris](https://github.com/w0rm/elm-flatris).
+
+
+## Setup and running
+
+```
+npm install
+npm test
+npm run-script build
+npm start
+```
+
+Go to http://localhost:3000
