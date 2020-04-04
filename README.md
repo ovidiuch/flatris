@@ -16,10 +16,10 @@ Also see [elm-flatris](https://github.com/w0rm/elm-flatris).
 ## Setup and running
 
 ```
-npm install
-npm test
-npm run-script build
-npm start
+yarn install
+yarn test
+yarn build
+yarn start
 ```
 
 Go to http://localhost:3000
