@@ -11,6 +11,7 @@
     "lint": "eslint '**/*.js'",
     "format": "prettier --write '**/*.{js,css}' '!**/{flow-typed,.next}/**'",
     "test": "flow && yarn lint && jest --maxWorkers=4",
+    "test:visual": "jest --no-cache --config jest.visual.config.js",
     "test:watch": "jest --watch",
     "cosmos": "cosmos --config web/cosmos.config.json",
     "cosmos:export": "cosmos-export --config web/cosmos.config.json",

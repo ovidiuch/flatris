@@ -35,6 +35,7 @@ module.exports = {
         '.eslintrc.js',
         'babel.config.js',
         'jest.config.js',
+        'jest.visual.config.js',
         'jest.framework-setup.js',
         'web/next.config.js',
         'server/**/*.js'
