@@ -10,9 +10,22 @@ fixtures.forEach(fixture => {
   const { playgroundUrl, rendererUrl, relativeFilePath, treePath } = fixture;
   const snapshotId = treePath.join('-');
 
+  if (
+    // Ignore fixtures that animate on load
+    snapshotId.startsWith('effects-') ||
+    snapshotId.startsWith('FlatrisGame-') ||
+    snapshotId.startsWith('Loading-') ||
+    snapshotId.startsWith('pages-Dashboard-') ||
+    snapshotId === 'Stats-update'
+  )
+    return;
+
   it(`matches snapshot for ${relativeFilePath}`, async () => {
     await page.goto(rendererUrl, { waitUntil: 'load' });
-    await delay(1000);
+
+    // Wait for fade in transition to finish
+    await delay(500);
+
     const element = await page.$('#root');
 
     if (element === null) {
