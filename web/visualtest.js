@@ -4,7 +4,7 @@ import { toMatchImageSnapshot } from 'jest-image-snapshot';
 expect.extend({ toMatchImageSnapshot });
 
 const cosmosConfig = getCosmosConfigAtPath(require.resolve('./cosmos.config'));
-const fixtures = getFixtures2({ cosmosConfig });
+const fixtures = getFixtures2(cosmosConfig);
 
 fixtures.forEach(fixture => {
   const { playgroundUrl, rendererUrl, relativeFilePath, treePath } = fixture;

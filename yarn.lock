@@ -8697,10 +8697,10 @@ react-cosmos-shared2@^5.2.0-alpha.7:
     react-is "^16.13.1"
     socket.io-client "2.2.0"
 
-react-cosmos@^5.2.0-alpha.7:
-  version "5.2.0-alpha.7"
-  resolved "https://registry.yarnpkg.com/react-cosmos/-/react-cosmos-5.2.0-alpha.7.tgz#a3bdeca1799eda48d480cfea610949e87ca83362"
-  integrity sha512-mqHScqdYLDhJoCeOchu+ktUppVZ2DmQl1NH7ih52+q8rUPFNEzQqpY6qHV7gINfKn5huIW+1dG/zB6fD+WHIHw==
+react-cosmos@^5.2.0-alpha.8:
+  version "5.2.0-alpha.8"
+  resolved "https://registry.yarnpkg.com/react-cosmos/-/react-cosmos-5.2.0-alpha.8.tgz#13b6ff3990498d69ba18eede97e1bbcbac2b1f64"
+  integrity sha512-crIpI1K+EV+dU5iNGGsPX5jGVrW5znkzaU6ANfct5R1dGgyeFII7aVfSBToCPadpWczFftjKmxQQU9rHwmcZ2g==
   dependencies:
     "@skidding/launch-editor" "^2.2.3"
     "@skidding/webpack-hot-middleware" "^2.25.0"
