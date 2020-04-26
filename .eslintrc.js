@@ -9,7 +9,8 @@ module.exports = {
   plugins: ['react', 'flowtype'],
   env: {
     es6: true,
-    'shared-node-browser': true
+    'shared-node-browser': true,
+    jest: true
   },
   settings: {
     'import/resolver': {
@@ -18,7 +19,11 @@ module.exports = {
   },
   globals: {
     global: true,
-    process: true
+    process: true,
+    page: true,
+    browser: true,
+    context: true,
+    jestPuppeteer: true
   },
   rules: {
     'no-console': 'off',
