@@ -95,7 +95,6 @@ export default class Error extends Component<Props> {
                 position: relative;
                 height: calc(100% / 11 * 2);
                 margin: 1em 0;
-                font-size: 1.1em;
               }
             `}</style>
           </Fragment>

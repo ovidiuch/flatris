@@ -1,8 +1,8 @@
 // @flow
 
 import React from 'react';
-import Button from './Button';
-import { getPointerDownEvent, getPointerUpEvent } from '../utils/events';
+import { getPointerDownEvent, getPointerUpEvent } from '../../utils/events';
+import Button from '../Button';
 
 import type { Node } from 'react';
 

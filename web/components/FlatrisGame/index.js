@@ -407,7 +407,6 @@ class FlatrisGame extends Component<Props, LocalState> {
             left: calc(100% / 10 * 5);
             width: calc(100% / 10 * 4);
             height: calc(100% / 20 * 2);
-            font-size: 1.1em;
             opacity: 0.5;
             transition: opacity 0.5s;
           }

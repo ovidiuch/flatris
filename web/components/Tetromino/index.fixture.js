@@ -13,12 +13,33 @@ export default {
   'T shape': <Tetromino color={COLORS.T} grid={SHAPES.T} />,
   'Z shape': <Tetromino color={COLORS.Z} grid={SHAPES.Z} />,
   'Z shape rotated 1': (
-    <Tetromino color={COLORS.Z} grid={[[0, 0, 1], [0, 1, 1], [0, 1, 0]]} />
+    <Tetromino
+      color={COLORS.Z}
+      grid={[
+        [0, 0, 1],
+        [0, 1, 1],
+        [0, 1, 0]
+      ]}
+    />
   ),
   'Z shape rotated 2': (
-    <Tetromino color={COLORS.Z} grid={[[0, 0, 0], [1, 1, 0], [0, 1, 1]]} />
+    <Tetromino
+      color={COLORS.Z}
+      grid={[
+        [0, 0, 0],
+        [1, 1, 0],
+        [0, 1, 1]
+      ]}
+    />
   ),
   'Z shape rotated 3': (
-    <Tetromino color={COLORS.Z} grid={[[0, 1, 0], [1, 1, 0], [1, 0, 0]]} />
+    <Tetromino
+      color={COLORS.Z}
+      grid={[
+        [0, 1, 0],
+        [1, 1, 0],
+        [1, 0, 0]
+      ]}
+    />
   )
 };

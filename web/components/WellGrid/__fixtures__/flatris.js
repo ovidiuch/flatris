@@ -2,6 +2,7 @@
 // @flow
 
 import React from 'react';
+import { GameContainerMock } from '../../../mocks/GameContainerMock';
 import WellGrid from '../../WellGrid';
 
 const grid = [
@@ -182,4 +183,8 @@ const grid = [
   ]
 ];
 
-export default <WellGrid grid={grid} blocksCleared={[]} blocksPending={[]} />;
+export default (
+  <GameContainerMock cols={23} rows={7}>
+    <WellGrid grid={grid} blocksCleared={[]} blocksPending={[]} />
+  </GameContainerMock>
+);

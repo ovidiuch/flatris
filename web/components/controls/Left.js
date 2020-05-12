@@ -1,7 +1,7 @@
 // @flow
 
 import React from 'react';
-import PointerButton from '../PointerButton';
+import PointerButton from './PointerButton';
 
 type Props = {
   onPress: Function

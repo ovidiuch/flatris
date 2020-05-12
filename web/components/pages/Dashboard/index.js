@@ -190,7 +190,7 @@ class Dashboard extends Component<Props, LocalState> {
               href="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfB66-8K8gWrj-Mo9sVYqKSgzTwCekXkMlL0zcBdKcSDH6IFA/viewform"
               target="_blank"
             >
-              <Button bgColor={COLORS.T}>A penny for your thoughts</Button>
+              <Button bgColor={COLORS.T}>Feedback</Button>
             </a>
           </div>
           <div className="header">
@@ -205,7 +205,7 @@ class Dashboard extends Component<Props, LocalState> {
                   href="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfB66-8K8gWrj-Mo9sVYqKSgzTwCekXkMlL0zcBdKcSDH6IFA/viewform"
                   target="_blank"
                 >
-                  <Button bgColor={COLORS.T}>A penny for your thoughts</Button>
+                  <Button bgColor={COLORS.T}>Feedback</Button>
                 </a>
               </div>
               <div className="view-source">
@@ -267,10 +267,10 @@ class Dashboard extends Component<Props, LocalState> {
             .large-feedback-button {
               display: none;
               position: relative;
-              min-width: 340px;
+              min-width: 160px;
               height: 60px;
             }
-            @media (max-width: 809px) {
+            @media (max-width: 629px) {
               .large-feedback-button {
                 display: block;
               }
@@ -291,13 +291,13 @@ class Dashboard extends Component<Props, LocalState> {
             .small-feedback-button {
               display: none;
               position: relative;
-              width: 340px;
+              width: 160px;
               height: 60px;
               margin-right: 20px;
               line-height: 60px;
               text-align: center;
             }
-            @media (min-width: 810px) {
+            @media (min-width: 630px) {
               .small-feedback-button {
                 display: block;
               }

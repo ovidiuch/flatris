@@ -5,22 +5,18 @@ import { COLORS } from 'shared/constants/tetromino';
 import Button from '.';
 
 export default {
-  primary: (
-    <Button onClick={() => console.log('Yay! Button clicked-ed!')}>
-      Press or be pressed
-    </Button>
-  ),
+  primary: <Button onClick={() => console.log('onClick')}>Enter</Button>,
 
-  'primary disabled': <Button disabled>No chance amigo</Button>,
+  'primary disabled': <Button disabled>Enter</Button>,
 
   secondary: (
     <Button
       bgColor="#fff"
       color="#34495f"
       colorDisabled="rgba(52, 73, 95, 0.6)"
-      onClick={() => console.log('Yay! Button clicked-ed!')}
+      onClick={() => console.log('onClick')}
     >
-      Press me will you
+      Watch
     </Button>
   ),
 
@@ -31,16 +27,13 @@ export default {
       color="#34495f"
       colorDisabled="rgba(52, 73, 95, 0.6)"
     >
-      Press me will you
+      Watch
     </Button>
   ),
 
   'feedback form': (
-    <Button
-      bgColor={COLORS.T}
-      onClick={() => console.log('Yay! Button clicked-ed!')}
-    >
-      Help make Flatris better
+    <Button bgColor={COLORS.T} onClick={() => console.log('onClick')}>
+      Form
     </Button>
   )
 };

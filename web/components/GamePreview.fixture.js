@@ -9,25 +9,12 @@ import GamePreview from './GamePreview';
 const user = getSampleUser();
 const game = getBlankGame({ id: 'dce6b11e', user });
 
-export default {
-  default: (
-    <GameContainerMock>
-      <GamePreview
-        curUser={user}
-        game={game}
-        onSelectP2={() => console.log('Select P2')}
-      />
-    </GameContainerMock>
-  ),
-
-  'with footer': (
-    <GameContainerMock>
-      <GamePreview
-        curUser={user}
-        game={game}
-        onSelectP2={() => console.log('Select P2')}
-        showFooter={true}
-      />
-    </GameContainerMock>
-  )
-};
+export default (
+  <GameContainerMock>
+    <GamePreview
+      curUser={user}
+      game={game}
+      onSelectP2={() => console.log('Select P2')}
+    />
+  </GameContainerMock>
+);

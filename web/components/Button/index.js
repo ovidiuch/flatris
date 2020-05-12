@@ -43,7 +43,7 @@ export default function Button({
           color: ${color};
           font-family: -apple-system, BlinkMacSystemFont, Ubuntu,
             'Helvetica Neue', sans-serif;
-          font-size: 1.1em;
+          font-size: 1.2em;
           font-weight: 600;
           text-transform: uppercase;
           outline: none;

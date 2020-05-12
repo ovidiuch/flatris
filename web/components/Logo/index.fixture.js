@@ -3,4 +3,7 @@
 import React from 'react';
 import Logo from '.';
 
-export default <Logo />;
+export default {
+  dark: <Logo />,
+  light: <Logo color="#ecf0f1" />
+};
