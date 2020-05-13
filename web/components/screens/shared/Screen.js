@@ -1,7 +1,7 @@
 // @flow
 
 import React, { Component } from 'react';
-import FadeIn from '../../effects/FadeIn';
+import FadeIn from '../../shared/effects/FadeIn';
 
 import type { Node } from 'react';
 

@@ -1,8 +1,8 @@
 // @flow
 
-import React, { Fragment, Component } from 'react';
-import Button from '../../Button';
-import CopyGameLinkButton from '../../CopyGameLinkButton';
+import React, { Component, Fragment } from 'react';
+import Button from '../../shared/Button';
+import CopyGameLinkButton from '../shared/CopyGameLinkButton';
 import Screen from '../shared/Screen';
 
 import type { GameId } from 'shared/types/state';

@@ -11,7 +11,7 @@ import { SocketProvider } from '../components/socket/SocketProvider';
 import Title from '../components/Title';
 import Layout from '../components/Layout';
 import CurGameOfElse from '../components/CurGameOfElse';
-import FlatrisGame from '../components/FlatrisGame';
+import FlatrisGame from '../components/FlatrisGame/FlatrisGame';
 import Error from '../components/pages/Error';
 
 type Props = {

@@ -5,7 +5,7 @@ import { getBlankGame } from 'shared/reducers/game';
 import { getSampleUser } from '../../../../utils/test-helpers';
 import { FlatrisReduxMock } from '../../../../mocks/ReduxMock';
 import { SocketProviderMock } from '../../../../mocks/SocketProviderMock';
-import Dashboard from '..';
+import Dashboard from '../Dashboard';
 
 const user = getSampleUser();
 const game = getBlankGame({ id: 'dce6b11e', user });

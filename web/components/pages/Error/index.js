@@ -1,11 +1,11 @@
 // @flow
 
-import React, { Fragment, Component } from 'react';
 import Link from 'next/link';
-import Title from '../../Title';
-import Button from '../../Button';
-import CopyButton from '../../CopyButton';
+import React, { Component, Fragment } from 'react';
 import Screen from '../../screens/shared/Screen';
+import Button from '../../shared/Button';
+import CopyButton from '../../shared/CopyButton';
+import Title from '../../Title';
 import GameFrame from '../GameFrame';
 
 import type { ComponentError } from 'shared/types/error';
