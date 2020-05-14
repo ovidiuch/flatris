@@ -10,10 +10,9 @@
   "scripts": {
     "lint": "eslint '**/*.js'",
     "format": "prettier --write '**/*.{js,css}' '!**/{flow-typed,.next}/**'",
-    "test": "flow && yarn lint && yarn test:unit && yarn test:visual",
-    "test:unit": "jest --maxWorkers=4",
-    "test:visual": "jest --no-cache --config jest.visual.config.js",
+    "test": "flow && yarn lint && jest --maxWorkers=4",
     "test:watch": "jest --watch",
+    "test:visual": "jest --no-cache --config jest.visual.config.js",
     "cosmos": "cosmos --config web/cosmos.config.json",
     "cosmos:export": "cosmos-export --config web/cosmos.config.json",
     "dev:client": "babel-node server/start-dev-client.js",
