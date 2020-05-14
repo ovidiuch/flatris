@@ -9,6 +9,7 @@ jobs:
           NODE_ENV: development
     steps:
       - checkout
+      - run: yarn install
       - run: yarn flow
       - run: yarn lint
       - run: yarn test:unit --maxWorkers=2
