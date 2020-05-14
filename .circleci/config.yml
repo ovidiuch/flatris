@@ -2,7 +2,7 @@ version: 2.1
 orbs:
   puppeteer: threetreeslight/puppeteer@0.1.2
 jobs:
-  build-and-test:
+  test:
     executor:
       name: node/default
     steps:
@@ -17,6 +17,6 @@ jobs:
                 background: true
             - run: yarn test:visual --maxWorkers=2
 workflows:
-  build-and-test:
+  test:
     jobs:
-      - build-and-test
+      - test
