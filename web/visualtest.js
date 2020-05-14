@@ -1,43 +1,62 @@
-import { getCosmosConfigAtPath, getFixtures2 } from 'react-cosmos';
 import { toMatchImageSnapshot } from 'jest-image-snapshot';
+import { getCosmosConfigAtPath, getFixtures2 } from 'react-cosmos';
 
 expect.extend({ toMatchImageSnapshot });
 
 const cosmosConfig = getCosmosConfigAtPath(require.resolve('./cosmos.config'));
 const fixtures = getFixtures2(cosmosConfig);
 
+// These fixtures animate on load and aren't reliable to diff visually
+const ignoreMatch = ['Dashboard-Stats-update', 'Loading'];
+
+const fluidWidthMatch = [
+  'pages-Dashboard-game',
+  'pages-Dashboard-no-games',
+  'pages-Dashboard-own-game'
+];
+
+const defaultViewport = { width: 800, height: 600 };
+
+const loadDelay = 600;
+
 fixtures.forEach(fixture => {
   const { playgroundUrl, rendererUrl, relativeFilePath, treePath } = fixture;
   const snapshotId = treePath.join('-');
 
-  if (
-    // Ignore fixtures that animate on load
-    snapshotId.startsWith('effects-') ||
-    snapshotId.startsWith('FlatrisGame-') ||
-    snapshotId.startsWith('Loading-') ||
-    snapshotId.startsWith('pages-Dashboard-') ||
-    snapshotId === 'Stats-update'
-  )
-    return;
+  if (ignoreMatch.some(m => snapshotId.indexOf(m) !== -1)) return;
 
   it(`matches snapshot for ${relativeFilePath}`, async () => {
+    await page.setViewport(defaultViewport);
     await page.goto(rendererUrl, { waitUntil: 'load' });
 
-    // Wait for fade in transition to finish
-    await delay(500);
+    if (!fluidWidthMatch.some(m => snapshotId.indexOf(m) !== -1))
+      await page.evaluate(() => {
+        // eslint-disable-next-line no-undef
+        document.querySelector('#root').style.position = 'absolute';
+      });
+
+    // Wait for fade in transitions to finish
+    await delay(loadDelay);
 
     const element = await page.$('#root');
-
     if (element === null) {
       console.warn(`No snapshot for fixture: ${playgroundUrl}`);
       return;
     }
 
     const boundingBox = await element.boundingBox();
-    // Take a screenshot of the entire window if the root element has 0 height,
-    // which happens if the root component uses position: absolute.
-    const clip = boundingBox.height > 0 ? boundingBox : getFullPageClip(page);
-    const image = await page.screenshot({ clip });
+
+    // Resize the window to match the content, unless the content has 0 height,
+    // in which case screenshot the entire viewport
+    if (boundingBox.height > 0)
+      await page.setViewport({
+        width: Math.ceil(boundingBox.width),
+        height: Math.ceil(boundingBox.height)
+      });
+
+    const image = await page.screenshot({
+      clip: getFullPageClip(page.viewport())
+    });
 
     expect(image).toMatchImageSnapshot({
       customSnapshotIdentifier: snapshotId,
@@ -48,11 +67,6 @@ fixtures.forEach(fixture => {
 
 const delay = t => new Promise(resolve => setTimeout(resolve, t));
 
-function getFullPageClip(page) {
-  return {
-    x: 0,
-    y: 0,
-    width: page.viewport().width,
-    height: page.viewport().height
-  };
+function getFullPageClip({ width, height }) {
+  return { x: 0, y: 0, width, height };
 }
