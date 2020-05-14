@@ -9,6 +9,7 @@ jobs:
           NODE_ENV: development
     steps:
       - checkout
+      - puppeteer/install
       - run: yarn install
       - run: yarn flow
       - run: yarn lint
