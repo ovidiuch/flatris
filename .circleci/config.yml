@@ -3,20 +3,20 @@ orbs:
   puppeteer: threetreeslight/puppeteer@0.1.2
 jobs:
   test:
-    executor:
-      name: puppeteer/default
+    docker:
+      - image: circleci/node:12
+      environment:
+        NODE_ENV: development
     steps:
       - checkout
-      - puppeteer/with-cache:
-          steps:
-            - run: yarn flow
-            - run: yarn lint
-            - run: yarn test:unit --maxWorkers=2
-            - run:
-                command: yarn cosmos
-                background: true
-            - run: yarn test:visual --maxWorkers=2
+      - run: yarn flow
+      - run: yarn lint
+      - run: yarn test:unit --maxWorkers=2
+      - run:
+          command: yarn cosmos
+          background: true
+      - run: yarn test:visual --maxWorkers=2
 workflows:
-  test:
+  flatris:
     jobs:
       - test
