@@ -17,6 +17,7 @@ const fluidWidthMatch = [
 
 const defaultViewport = { width: 800, height: 600 };
 
+// Load transitions take up to 0.5s
 const loadDelay = 600;
 
 fixtures.forEach(fixture => {
