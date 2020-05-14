@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  node: circleci/node@1.1.6
+  puppeteer: threetreeslight/puppeteer@0.1.2
 jobs:
   build-and-test:
     executor:
@@ -9,12 +9,13 @@ jobs:
       - checkout
       - node/with-cache:
           steps:
-            - run: yarn install
-            - run: yarn test
+            - run: yarn flow
+            - run: yarn lint
+            - run: yarn test:unit --maxWorkers=2
             - run:
                 command: yarn cosmos
                 background: true
-            - run: yarn test:visual
+            - run: yarn test:visual --maxWorkers=2
 workflows:
   build-and-test:
     jobs:
