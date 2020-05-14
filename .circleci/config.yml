@@ -12,7 +12,7 @@ jobs:
       - run: yarn install
       - run: yarn flow
       - run: yarn lint
-      - run: yarn test:unit --maxWorkers=2
+      - run: yarn test --maxWorkers=2
       - run:
           command: yarn cosmos
           background: true
