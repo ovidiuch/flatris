@@ -5,8 +5,8 @@ jobs:
   test:
     docker:
       - image: circleci/node:12
-      environment:
-        NODE_ENV: development
+        environment:
+          NODE_ENV: development
     steps:
       - checkout
       - run: yarn flow
