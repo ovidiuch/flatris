@@ -3,7 +3,10 @@
 import React from 'react';
 import Document, { Head, Main, NextScript } from 'next/document';
 
-const { NODE_ENV, ROLLBAR_POST_CLIENT_ITEM_ACCESS_TOKEN } = process.env;
+const {
+  NODE_ENV = 'development',
+  ROLLBAR_POST_CLIENT_ITEM_ACCESS_TOKEN = ''
+} = process.env;
 
 export default class MyDocument extends Document {
   render() {

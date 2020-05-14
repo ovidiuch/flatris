@@ -25,7 +25,7 @@ class Stats extends Component<Props, LocalState> {
     if (stats !== prevStats) {
       let statsDiff = this.state.statsDiff;
 
-      Object.keys(stats).forEach((stat: $Keys<StatsType>) => {
+      Object.keys(stats).forEach((stat: string) => {
         const diff = stats[stat] - prevStats[stat];
 
         if (diff > 0) {

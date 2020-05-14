@@ -20,15 +20,14 @@ export default function Button({
   bgColor = '#34495f',
   color = '#fff',
   colorDisabled = 'rgba(255, 255, 255, 0.6)',
-  hoverEffect = true,
-  ...rest
+  hoverEffect = true
 }: Props) {
   const classes = classNames('button', {
     'hover-button': hoverEffect
   });
 
   return (
-    <button type={type} className={classes} {...rest}>
+    <button type={type} className={classes}>
       {children}
       <style jsx>{`
         .button {

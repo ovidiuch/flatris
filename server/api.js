@@ -23,7 +23,7 @@ import type { User } from 'shared/types/state';
 import type { BackfillRequest, BackfillResponse } from 'shared/types/api';
 import type { SessionId } from './db';
 
-export function addRoutes(app: express$Application) {
+export function addRoutes(app: express$Application<>) {
   app.get('/dashboard', async (req: express$Request, res: express$Response) => {
     try {
       res.json({

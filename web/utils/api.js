@@ -19,7 +19,7 @@ import type { BackfillRequest, BackfillResponse } from 'shared/types/api';
 
 // NOTE: This method is strictly called on the server side
 export async function addCurUserToState(
-  req: http$IncomingMessage,
+  req: http$IncomingMessage<>,
   store: Store<State, Action>
 ) {
   const { sessionId } = cookie.parse(req.headers.cookie || '');
