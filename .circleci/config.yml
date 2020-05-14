@@ -4,10 +4,10 @@ orbs:
 jobs:
   test:
     executor:
-      name: node/default
+      name: puppeteer/default
     steps:
       - checkout
-      - node/with-cache:
+      - puppeteer/with-cache:
           steps:
             - run: yarn flow
             - run: yarn lint
