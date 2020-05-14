@@ -18,6 +18,8 @@ jobs:
           command: yarn cosmos
           background: true
       - run: yarn test:visual --maxWorkers=2
+      - store_artifacts:
+          path: web/__image_snapshots__/__diff_output__
 workflows:
   flatris:
     jobs:
