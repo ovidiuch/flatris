@@ -8,6 +8,7 @@ import type { Node } from 'react';
 type Props = {
   type?: 'button' | 'submit' | 'reset',
   children: Node,
+  disabled?: boolean,
   bgColor?: string,
   color?: string,
   colorDisabled?: string,
@@ -17,6 +18,7 @@ type Props = {
 export default function Button({
   type = 'button',
   children,
+  disabled = false,
   bgColor = '#34495f',
   color = '#fff',
   colorDisabled = 'rgba(255, 255, 255, 0.6)',
@@ -27,7 +29,7 @@ export default function Button({
   });
 
   return (
-    <button type={type} className={classes}>
+    <button type={type} disabled={disabled} className={classes}>
       {children}
       <style jsx>{`
         .button {
