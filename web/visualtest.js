@@ -4,6 +4,9 @@ import { getCosmosConfigAtPath, getFixtures2 } from 'react-cosmos';
 expect.extend({ toMatchImageSnapshot });
 
 const cosmosConfig = getCosmosConfigAtPath(require.resolve('./cosmos.config'));
+if (process.env.COSMOS_HOSTNAME)
+  cosmosConfig.hostname = process.env.COSMOS_HOSTNAME;
+
 const fixtures = getFixtures2(cosmosConfig);
 
 // These fixtures animate on load and aren't reliable to diff visually

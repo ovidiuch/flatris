@@ -34,6 +34,7 @@ module.exports = {
       files: [
         '.eslintrc.js',
         'babel.config.js',
+        'jest-puppeteer.config.js',
         'jest.config.js',
         'jest.visual.config.js',
         'jest.framework-setup.js',
