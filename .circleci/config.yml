@@ -1,16 +1,11 @@
 version: 2.1
-orbs:
-  puppeteer: threetreeslight/puppeteer@0.1.2
 jobs:
   test:
     docker:
-      - image: circleci/node:12
-        environment:
-          NODE_ENV: development
+      - image: buildkite/puppeteer:v3.0.4
     steps:
       - checkout
-      - puppeteer/install
-      - run: yarn install
+      - run: yarn --frozen-lockfile
       - run: yarn flow
       - run: yarn lint
       - run: yarn test --maxWorkers=2

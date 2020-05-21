@@ -9,8 +9,13 @@ if (process.env.COSMOS_HOSTNAME)
 
 const fixtures = getFixtures2(cosmosConfig);
 
-// These fixtures animate on load and aren't reliable to diff visually
-const ignoreMatch = ['Dashboard-Stats-update', 'Loading'];
+const ignoreMatch = [
+  // These fixtures animate on load and aren't reliable to diff visually
+  'Dashboard-Stats-update',
+  'Loading',
+  // ¯\_(ツ)_/¯ doesn't render properly in Docker
+  'pages-Error-not-found-diff'
+];
 
 const fluidWidthMatch = [
   'pages-Dashboard-game',
@@ -64,7 +69,7 @@ fixtures.forEach(fixture => {
 
     expect(image).toMatchImageSnapshot({
       customSnapshotIdentifier: snapshotId,
-      failureThreshold: 0.03
+      failureThreshold: 0.01
     });
   });
 });
