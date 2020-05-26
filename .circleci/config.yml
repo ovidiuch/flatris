@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   test:
     docker:
-      - image: ubuntu-1604
+      - image: circleci/node:latest
     steps:
       - checkout
       - run: git lfs pull
