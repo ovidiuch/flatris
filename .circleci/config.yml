@@ -2,10 +2,10 @@ version: 2.1
 jobs:
   test:
     docker:
-      - image: circleci/node:12
+      - image: cimg/base:2020.01
     steps:
       - checkout
-      - run: git lfs ls-files
+      - run: git lfs pull
       - run: yarn --frozen-lockfile
       - run: yarn flow
       - run: yarn lint
