@@ -5,9 +5,15 @@ jobs:
       - image: buildkite/puppeteer:v3.0.4
     steps:
       - checkout
+      - run:
+          name: Git LFS (install Git Large File Storage)
+          command: |
+            mkdir -p ~/.ssh
+            ssh-keyscan -H github.com >> ~/.ssh/known_hosts
+            ssh git@github.com git-lfs-authenticate "${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}" download
+            git lfs pull
+            lfs ls-files
       - run: yarn --frozen-lockfile
-      - run: bash /root/project/scripts/install-git-lfs.sh
-      - run: git lfs fetch && git lfs ls-files
       - run: yarn flow
       - run: yarn lint
       - run: yarn test --maxWorkers=2
