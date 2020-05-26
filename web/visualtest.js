@@ -12,9 +12,7 @@ const fixtures = getFixtures2(cosmosConfig);
 const ignoreMatch = [
   // These fixtures animate on load and aren't reliable to diff visually
   'Dashboard-Stats-update',
-  'Loading',
-  // ¯\_(ツ)_/¯ doesn't render properly in Docker
-  'pages-Error-not-found-diff'
+  'Loading'
 ];
 
 // Manually whitelist fixtures
