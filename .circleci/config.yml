@@ -4,9 +4,9 @@ jobs:
     docker:
       - image: buildkite/puppeteer:v3.0.4
     steps:
-      - run: bash /root/project/scripts/install-git-lfs.sh
       - checkout
       - run: yarn --frozen-lockfile
+      - run: bash /root/project/scripts/install-git-lfs.sh
       - run: yarn flow
       - run: yarn lint
       - run: yarn test --maxWorkers=2
