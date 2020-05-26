@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   test:
     docker:
-      - image: ubuntu-1604:201903-01
+      - image: ubuntu-1604
     steps:
       - checkout
       - run: git lfs pull
