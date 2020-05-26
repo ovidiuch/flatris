@@ -4,9 +4,8 @@ jobs:
     docker:
       - image: circleci/node:latest
     steps:
+      - run: curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash && sudo apt-get install git-lfs
       - checkout
-      - run: bash ./scripts/install-git-lfs.sh
-      - run: git lfs pull
       - run: yarn --frozen-lockfile
       - run: yarn flow
       - run: yarn lint
