@@ -4,6 +4,13 @@ jobs:
     docker:
       - image: circleci/node:latest
     steps:
+      - run:
+          name: Git LFS (install Git Large File Storage)
+          command: |
+            mkdir -p ~/.ssh
+            ssh-keyscan -H github.com >> ~/.ssh/known_hosts
+            ssh git@github.com git-lfs-authenticate "${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}" download
+            git lfs pull
       - checkout
       - run: git lfs pull
       - run: yarn --frozen-lockfile
