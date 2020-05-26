@@ -17,6 +17,9 @@ const ignoreMatch = [
   'pages-Error-not-found-diff'
 ];
 
+// Manually whitelist fixtures
+const onlyMatch = /.*/;
+
 const fluidWidthMatch = [
   'pages-Dashboard-game',
   'pages-Dashboard-no-games',
@@ -33,6 +36,8 @@ fixtures.forEach(fixture => {
   const snapshotId = treePath.join('-');
 
   if (ignoreMatch.some(m => snapshotId.indexOf(m) !== -1)) return;
+
+  if (!snapshotId.match(onlyMatch)) return;
 
   it(`matches snapshot for ${relativeFilePath}`, async () => {
     await page.setViewport(defaultViewport);
