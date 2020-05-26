@@ -7,6 +7,7 @@ jobs:
       - checkout
       - run: yarn --frozen-lockfile
       - run: bash /root/project/scripts/install-git-lfs.sh
+      - run: git lfs fetch && git lfs ls-files
       - run: yarn flow
       - run: yarn lint
       - run: yarn test --maxWorkers=2
