@@ -5,6 +5,7 @@ import { getPointerDownEvent, getPointerUpEvent } from '../../../utils/events';
 import Button from '../../shared/Button';
 
 import type { Node } from 'react';
+import type { ButtonProps } from '../../shared/Button';
 
 type Props = {
   children: Node,
@@ -21,17 +22,11 @@ export default function PointerButton({
 }: Props) {
   const pointerDownEvent = getPointerDownEvent();
   const pointerUpEvent = getPointerUpEvent();
-  let props = {
-    ...rest
-  };
+  const props: $Shape<ButtonProps> = { ...rest };
 
   if (!rest.disabled) {
-    if (pointerDownEvent) {
-      props = { ...props, [pointerDownEvent]: onPress };
-    }
-    if (onRelease && pointerUpEvent) {
-      props = { ...props, [pointerUpEvent]: onRelease };
-    }
+    if (pointerDownEvent) props[pointerDownEvent] = onPress;
+    if (onRelease && pointerUpEvent) props[pointerUpEvent] = onRelease;
   }
 
   return <Button {...props}>{children}</Button>;

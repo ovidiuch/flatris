@@ -4,7 +4,7 @@ export function isMobileDevice() {
   return getWindow() && 'ontouchstart' in getWindow();
 }
 
-export function getPointerDownEvent(): ?string {
+export function getPointerDownEvent() {
   // SSR
   if (!getWindow()) {
     return null;
@@ -13,7 +13,7 @@ export function getPointerDownEvent(): ?string {
   return isMobileDevice() ? 'onTouchStart' : 'onMouseDown';
 }
 
-export function getPointerUpEvent(): ?string {
+export function getPointerUpEvent() {
   // SSR
   if (!getWindow()) {
     return null;

@@ -5,31 +5,36 @@ import React from 'react';
 
 import type { Node } from 'react';
 
-type Props = {
+export type ButtonProps = {|
   type?: 'button' | 'submit' | 'reset',
   children: Node,
   disabled?: boolean,
   bgColor?: string,
   color?: string,
   colorDisabled?: string,
-  hoverEffect?: boolean
-};
+  hoverEffect?: boolean,
+  onClick?: Function,
+  onMouseDown?: Function,
+  onMouseUp?: Function,
+  onTouchStart?: Function,
+  onTouchEnd?: Function
+|};
 
 export default function Button({
   type = 'button',
   children,
-  disabled = false,
   bgColor = '#34495f',
   color = '#fff',
   colorDisabled = 'rgba(255, 255, 255, 0.6)',
-  hoverEffect = true
-}: Props) {
+  hoverEffect = true,
+  ...rest
+}: ButtonProps) {
   const classes = classNames('button', {
     'hover-button': hoverEffect
   });
 
   return (
-    <button type={type} disabled={disabled} className={classes}>
+    <button type={type} className={classes} {...rest}>
       {children}
       <style jsx>{`
         .button {
