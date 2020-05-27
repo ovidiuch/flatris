@@ -11,8 +11,8 @@ jobs:
         node: [10, 12, 14]
     steps:
       - uses: actions/setup-node@v1
-          with:
-            node-version: ${{ matrix.node }}
+        with:
+          node-version: ${{ matrix.node }}
       - name: Git checkout
         uses: actions/checkout@v2
       - uses: borales/actions-yarn@v2.0.0
