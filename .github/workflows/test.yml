@@ -23,5 +23,5 @@ jobs:
       - run: yarn test:visual:check
       - uses: actions/upload-artifact@v1
         with:
-          name: visual regression diff
-          path: web/__image_snapshots__/__diff_output__
+          name: snapshots
+          path: web/__image_snapshots__
