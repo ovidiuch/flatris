@@ -18,6 +18,6 @@ jobs:
       - uses: sergioramos/yarn-actions/install@v6
         with:
           frozen-lockfile: true
-      - run: yarn flow
+      - run: yarn flow check
       - run: yarn lint
       - run: yarn test --maxWorkers=2
