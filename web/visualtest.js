@@ -43,7 +43,6 @@ fixtures.forEach(fixture => {
 
     if (!fluidWidthMatch.some(m => snapshotId.indexOf(m) !== -1))
       await page.evaluate(() => {
-        // eslint-disable-next-line no-undef
         document.querySelector('#root').style.position = 'absolute';
       });
 
@@ -52,7 +51,7 @@ fixtures.forEach(fixture => {
 
     const element = await page.$('#root');
     if (element === null) {
-      console.warn(`No snapshot for fixture: ${playgroundUrl}`);
+      console.error(`No snapshot for fixture: ${playgroundUrl}`);
       return;
     }
 
@@ -67,7 +66,7 @@ fixtures.forEach(fixture => {
       });
 
     const image = await page.screenshot({
-      clip: getFullPageClip(page.viewport())
+      clip: getFullPageClip()
     });
 
     expect(image).toMatchImageSnapshot({
@@ -79,6 +78,7 @@ fixtures.forEach(fixture => {
 
 const delay = t => new Promise(resolve => setTimeout(resolve, t));
 
-function getFullPageClip({ width, height }) {
+function getFullPageClip() {
+  const { width, height } = page.viewport();
   return { x: 0, y: 0, width, height };
 }

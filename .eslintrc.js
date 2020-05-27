@@ -63,7 +63,11 @@ module.exports = {
       }
     },
     {
-      files: ['**/__fixtures__/**/*.js']
+      files: ['web/visualtest.js'],
+      env: {
+        browser: true,
+        node: true
+      }
     }
   ]
 };
