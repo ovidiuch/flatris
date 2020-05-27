@@ -10,8 +10,9 @@ jobs:
         os: [ubuntu-18.04]
         node: [10, 12, 14]
     steps:
-      - name: Git checkout
         uses: actions/checkout@v2
+        with:
+          lfs: true
       - uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node }}
