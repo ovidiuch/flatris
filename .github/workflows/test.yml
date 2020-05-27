@@ -19,3 +19,8 @@ jobs:
       - run: yarn flow check
       - run: yarn lint
       - run: yarn test --maxWorkers=2
+      - run: yarn test:visual:check
+      - uses: actions/upload-artifact@v1
+        with:
+          name: visual regression diff
+          path: web/__image_snapshots__/__diff_output__
