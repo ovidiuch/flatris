@@ -1,0 +1,23 @@
+name: Flatris rulez
+on: [push]
+
+jobs:
+  test:
+    name: Test
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: ubuntu-18.04
+        node: [10, 12, 14]
+    steps:
+      - uses: actions/setup-node@v1
+          with:
+            node-version: ${{ matrix.node }}
+      - name: Git checkout
+        uses: actions/checkout@v2
+      - uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: install --frozen-lockfile
+      - run: yarn flow
+      - run: yarn lint
+      - run: yarn test --maxWorkers=2
