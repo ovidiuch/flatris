@@ -10,14 +10,12 @@ jobs:
         os: [ubuntu-18.04]
         node: [10, 12, 14]
     steps:
+      - name: Git checkout
+        uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node }}
-      - name: Git checkout
-        uses: actions/checkout@v2
-      - uses: sergioramos/yarn-actions/install@v6
-        with:
-          frozen-lockfile: true
+      - run: yarn --frozen-lockfile
       - run: yarn flow check
       - run: yarn lint
       - run: yarn test --maxWorkers=2
