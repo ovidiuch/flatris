@@ -1,7 +1,6 @@
 // @flow
 
 import React from 'react';
-import GameContainer from '../components/GameContainer';
 
 const MAX_COLS = 16;
 const MAX_ROWS = 20;
@@ -20,16 +19,17 @@ export function GameContainerMock({
   backgroundColor = '#fff'
 }: Props) {
   return (
-    <GameContainer>
-      <div className="inner-container">{children}</div>
+    <div className="container">
+      {children}
       <style jsx>{`
-        .inner-container {
-          position: absolute;
-          width: calc(100% / ${MAX_COLS} * ${cols});
-          height: calc(100% / ${MAX_ROWS} * ${rows});
+        .container {
+          position: relative;
+          width: ${cols * 32}px;
+          height: ${rows * 32}px;
+          font-size: 19px;
           background-color: ${backgroundColor};
         }
       `}</style>
-    </GameContainer>
+    </div>
   );
 }

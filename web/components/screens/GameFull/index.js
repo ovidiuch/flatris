@@ -2,7 +2,7 @@
 
 import React, { Fragment, Component } from 'react';
 import Link from 'next/link';
-import Button from '../../Button';
+import Button from '../../shared/Button';
 import Screen from '../shared/Screen';
 
 type Props = {

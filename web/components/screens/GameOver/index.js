@@ -2,8 +2,8 @@
 
 import React, { Fragment, Component } from 'react';
 import { getCurPlayer, getOtherPlayer } from 'shared/reducers/game';
-import Button from '../../Button';
-import Shake from '../../effects/Shake';
+import Shake from '../../shared/effects/Shake';
+import Button from '../../shared/Button';
 import Invite from '../Invite';
 import Screen from '../shared/Screen';
 

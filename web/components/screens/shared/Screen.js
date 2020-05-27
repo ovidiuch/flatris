@@ -1,7 +1,7 @@
 // @flow
 
 import React, { Component } from 'react';
-import FadeIn from '../../effects/FadeIn';
+import FadeIn from '../../shared/effects/FadeIn';
 
 import type { Node } from 'react';
 
@@ -92,7 +92,6 @@ export default class Screen extends Component<Props> {
             left: 0;
             right: 0;
             height: calc(100% / 20 * 2);
-            font-size: 1.1em;
           }
 
           .actions .button {

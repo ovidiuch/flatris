@@ -8,7 +8,7 @@ import { loadDashboard, stripGameEffects } from '../actions/global';
 import { addCurUserToState, getDashboard } from '../utils/api';
 import { SocketProvider } from '../components/socket/SocketProvider';
 import Layout from '../components/Layout';
-import Dashboard from '../components/pages/Dashboard';
+import Dashboard from '../components/pages/Dashboard/Dashboard';
 
 type Props = {};
 

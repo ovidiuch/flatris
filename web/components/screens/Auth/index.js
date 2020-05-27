@@ -1,18 +1,18 @@
 // @flow
 
-import React, { Fragment, Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
-import { auth } from '../../../actions/global';
 import { MAX_NAME_LENGTH } from 'shared/constants/user';
+import { auth } from '../../../actions/global';
 import { createUserSession } from '../../../utils/api';
-import Button from '../../Button';
+import Button from '../../shared/Button';
 import FlatrisIntro from '../onboarding/FlatrisIntro';
+import HowToPlay from '../onboarding/HowToPlay';
 import Multiplayer from '../onboarding/Multiplayer';
 import ZeroSum from '../onboarding/ZeroSum';
-import HowToPlay from '../onboarding/HowToPlay';
 import Screen from '../shared/Screen';
 
-import type { User, State } from 'shared/types/state';
+import type { State, User } from 'shared/types/state';
 
 type Props = {
   jsReady: boolean,
@@ -206,7 +206,4 @@ const mapDispatchToProps = {
   auth
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Auth);
+export default connect(mapStateToProps, mapDispatchToProps)(Auth);

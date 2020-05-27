@@ -9,7 +9,8 @@ module.exports = {
   plugins: ['react', 'flowtype'],
   env: {
     es6: true,
-    'shared-node-browser': true
+    'shared-node-browser': true,
+    jest: true
   },
   settings: {
     'import/resolver': {
@@ -18,7 +19,11 @@ module.exports = {
   },
   globals: {
     global: true,
-    process: true
+    process: true,
+    page: true,
+    browser: true,
+    context: true,
+    jestPuppeteer: true
   },
   rules: {
     'no-console': 'off',
@@ -29,7 +34,9 @@ module.exports = {
       files: [
         '.eslintrc.js',
         'babel.config.js',
+        'jest-puppeteer.config.js',
         'jest.config.js',
+        'jest.visual.config.js',
         'jest.framework-setup.js',
         'web/next.config.js',
         'server/**/*.js'
@@ -56,7 +63,11 @@ module.exports = {
       }
     },
     {
-      files: ['**/__fixtures__/**/*.js']
+      files: ['web/visualtest.js'],
+      env: {
+        browser: true,
+        node: true
+      }
     }
   ]
 };

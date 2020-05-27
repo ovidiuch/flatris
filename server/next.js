@@ -5,7 +5,7 @@ import { join } from 'path';
 import { startServer } from './http';
 
 export async function startNextApp(
-  app: express$Application,
+  app: express$Application<>,
   server: net$Server
 ) {
   const dev = process.env.NODE_ENV !== 'production';
