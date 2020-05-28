@@ -1,4 +1,4 @@
-name: Flatris rulez
+name: tests
 on: [push]
 
 jobs:
