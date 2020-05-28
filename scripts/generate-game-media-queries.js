@@ -37,7 +37,7 @@ function getLandscapeQuery({ height }) {
 
   const cond = getMediaQueryCond({
     width: widthWithControls,
-    height
+    height,
   });
   const body = getLandscapeRules({ width, height: gameHeight });
 
@@ -96,7 +96,7 @@ function getMediaQueryCond({ width, height }) {
 function getPortraitSize(i) {
   return {
     width: i * GAME_COLS,
-    height: i * (GAME_ROWS + CONTROL_BLOCKS)
+    height: i * (GAME_ROWS + CONTROL_BLOCKS),
   };
 }
 

@@ -8,7 +8,7 @@ const user = { id: 'mock', name: 'Treznik' };
 const player = {
   ...getBlankPlayer('mock', user),
   score: 355,
-  lines: 5
+  lines: 5,
 };
 
 export default (

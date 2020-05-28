@@ -12,14 +12,14 @@ type Props = {
   wins: ?number,
   isPlayer1: boolean,
   showReadyState: boolean,
-  onSelect?: Function
+  onSelect?: Function,
 };
 
 export default class PlayerInfo extends Component<Props> {
   renderMissingPlayer() {
     const { isPlayer1, onSelect } = this.props;
     const classes = classNames('player-info', {
-      selectable: Boolean(onSelect)
+      selectable: Boolean(onSelect),
     });
 
     return (

@@ -9,6 +9,6 @@ export const rollbar = new Rollbar({
   verbose: true,
   reportLevel: 'info',
   payload: {
-    environment: process.env.NODE_ENV
-  }
+    environment: process.env.NODE_ENV,
+  },
 });

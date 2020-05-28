@@ -14,5 +14,5 @@ export default {
     <GameContainerMock cols={6} rows={4}>
       <Logo color="#ecf0f1" />
     </GameContainerMock>
-  )
+  ),
 };

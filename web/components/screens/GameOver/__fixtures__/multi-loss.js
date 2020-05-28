@@ -5,7 +5,7 @@ import { getSampleUser, getSampleUser2 } from '../../../../utils/test-helpers';
 import {
   getBlankGame,
   addUserToGame,
-  updatePlayer
+  updatePlayer,
 } from 'shared/reducers/game';
 import GameOver from '..';
 
@@ -15,11 +15,11 @@ let game = getBlankGame({ id: 'd2f', user: user1 });
 game = addUserToGame(game, user2);
 game = updatePlayer(game, user1.id, {
   status: 'LOST',
-  losses: 5
+  losses: 5,
 });
 game = updatePlayer(game, user2.id, {
   status: 'WON',
-  losses: 7
+  losses: 7,
 });
 
 export default (

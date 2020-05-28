@@ -9,6 +9,6 @@ export function getValidUser(user: mixed): User {
 
   return {
     id: user.id,
-    name: user.name
+    name: user.name,
   };
 }

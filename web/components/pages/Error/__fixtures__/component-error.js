@@ -21,7 +21,7 @@ export default (
   in WrappedCmp (created by Container)
   in AppContainer (created by Container)
   in Container (created by App)
-  in App`
+  in App`,
     }}
   />
 );

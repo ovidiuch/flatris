@@ -10,5 +10,5 @@ export default {
 
   disabled: (
     <GameFull disabled={true} onWatch={() => console.log('Just watch')} />
-  )
+  ),
 };

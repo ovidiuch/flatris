@@ -9,14 +9,14 @@ type Props = {
   children: React$Node,
   cols?: number,
   rows?: number,
-  backgroundColor?: string
+  backgroundColor?: string,
 };
 
 export function GameContainerMock({
   children,
   cols = MAX_COLS,
   rows = MAX_ROWS,
-  backgroundColor = '#fff'
+  backgroundColor = '#fff',
 }: Props) {
   return (
     <div className="container">

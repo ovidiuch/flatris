@@ -14,12 +14,12 @@ import type { UnauthAction } from 'shared/types/actions';
 
 type Props = {
   curUser: ?User,
-  unauth: () => UnauthAction
+  unauth: () => UnauthAction,
 };
 
 type LocalState = {
   requireAuth: boolean,
-  pendingCreate: boolean
+  pendingCreate: boolean,
 };
 
 class NewGame extends Component<Props, LocalState> {
@@ -28,7 +28,7 @@ class NewGame extends Component<Props, LocalState> {
 
     this.state = {
       requireAuth: !props.curUser,
-      pendingCreate: false
+      pendingCreate: false,
     };
   }
 
@@ -46,7 +46,7 @@ class NewGame extends Component<Props, LocalState> {
       // server deploy (which flushes all user sessions)
       this.setState({
         requireAuth: true,
-        pendingCreate: false
+        pendingCreate: false,
       });
     }
   }
@@ -89,14 +89,11 @@ async function createAndOpenGame() {
 }
 
 const mapStateToProps = ({ curUser }: State): $Shape<Props> => ({
-  curUser
+  curUser,
 });
 
 const mapDispatchToProps = {
-  unauth
+  unauth,
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(NewGame);
+export default connect(mapStateToProps, mapDispatchToProps)(NewGame);

@@ -7,7 +7,7 @@ import Screen from '../shared/Screen';
 
 type Props = {
   disabled: boolean,
-  onWatch: Function
+  onWatch: Function,
 };
 
 export default class GameFull extends Component<Props> {
@@ -42,7 +42,7 @@ export default class GameFull extends Component<Props> {
             onClick={onWatch}
           >
             Watch
-          </Button>
+          </Button>,
         ]}
       />
     );

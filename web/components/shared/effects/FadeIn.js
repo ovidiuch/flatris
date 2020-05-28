@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 import type { Node } from 'react';
 
 type Props = {
-  children: ?Node
+  children: ?Node,
 };
 
 export default class FadeIn extends Component<Props> {

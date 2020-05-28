@@ -10,5 +10,5 @@ export default {
 
   disabled: (
     <Invite disabled={true} gameId="1337" onPlay={() => console.log('Play')} />
-  )
+  ),
 };

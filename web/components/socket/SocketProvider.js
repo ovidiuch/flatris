@@ -14,7 +14,7 @@ import {
   startBackfill,
   endBackfill,
   queueGameAction,
-  updateStats
+  updateStats,
 } from '../../actions/global';
 
 import type { Node } from 'react';
@@ -23,13 +23,13 @@ import type {
   Game,
   BackfillId,
   Stats,
-  State
+  State,
 } from 'shared/types/state';
 import type {
   JoinGameAction,
   GameAction,
   ThunkAction,
-  Dispatch
+  Dispatch,
 } from 'shared/types/actions';
 import type { RoomId } from 'shared/types/api';
 import type { OnBackfillCompleteArgs } from '../../utils/backfill';
@@ -47,12 +47,12 @@ const {
   onGameSync,
   offGameSync,
   onStatsUpdate,
-  offStatsUpdate
+  offStatsUpdate,
 } = getSocket();
 
 type Props = {
   children: Node,
-  store: { getState: () => State, dispatch: Dispatch }
+  store: { getState: () => State, dispatch: Dispatch },
 };
 
 export class SocketProvider extends Component<Props> {
@@ -61,7 +61,7 @@ export class SocketProvider extends Component<Props> {
     keepGameAlive: func.isRequired,
     broadcastGameAction: func.isRequired,
     onGameKeepAlive: func.isRequired,
-    offGameKeepAlive: func.isRequired
+    offGameKeepAlive: func.isRequired,
   };
 
   pendingBackfills: { [gameId: GameId]: BackfillId } = {};
@@ -73,7 +73,7 @@ export class SocketProvider extends Component<Props> {
       keepGameAlive: keepGameAlive,
       broadcastGameAction: this.handleBroadcastGameAction,
       onGameKeepAlive: onGameKeepAlive,
-      offGameKeepAlive: offGameKeepAlive
+      offGameKeepAlive: offGameKeepAlive,
     };
   }
 
@@ -215,7 +215,7 @@ export class SocketProvider extends Component<Props> {
   handleBackfillComplete = ({
     gameId,
     backfillId,
-    backfillRes
+    backfillRes,
   }: OnBackfillCompleteArgs) => {
     if (!this.pendingBackfills[gameId]) {
       console.warn(`Game id for completed backfill missing`);
@@ -273,7 +273,7 @@ export class SocketProvider extends Component<Props> {
         game,
         backfillRes,
         queuedActions,
-        sortedActions
+        sortedActions,
       });
     }
   };
@@ -299,7 +299,7 @@ export class SocketProvider extends Component<Props> {
     // actions will return a GameAction type $FlowFixMe
     const resAction: GameAction = dispatch(action);
     const {
-      payload: { gameId }
+      payload: { gameId },
     } = resAction;
 
     // COOL: Don't broacast actions that don't alter the state (ie. MOVE_RIGHT

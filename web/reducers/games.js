@@ -26,7 +26,7 @@ export function gamesReducer(
 
       return {
         ...state,
-        [game.id]: stripGameEffects(game)
+        [game.id]: stripGameEffects(game),
       };
     }
 
@@ -67,7 +67,7 @@ export function gamesReducer(
 
       return {
         ...state,
-        [gameId]: gameReducer(state[gameId], action)
+        [gameId]: gameReducer(state[gameId], action),
       };
     }
 
@@ -80,7 +80,7 @@ function getEffectlessGames(games: Games): Games {
   return Object.keys(games).reduce((acc, gameId) => {
     return {
       ...acc,
-      [gameId]: stripGameEffects(games[gameId])
+      [gameId]: stripGameEffects(games[gameId]),
     };
   }, {});
 }

@@ -10,18 +10,18 @@ type Props = {
   copyText: string,
   defaultLabel: string,
   successLabel: string,
-  errorLabel: string
+  errorLabel: string,
 };
 
 type LocalState = {
-  copyStatus: null | 'success' | 'error'
+  copyStatus: null | 'success' | 'error',
 };
 
 export default class CopyButton extends Component<Props, LocalState> {
   clipboard: ?typeof Clipboard;
 
   state = {
-    copyStatus: null
+    copyStatus: null,
   };
 
   componentWillUnmount() {
@@ -42,13 +42,13 @@ export default class CopyButton extends Component<Props, LocalState> {
 
   handleCopySuccess = () => {
     this.setState({
-      copyStatus: 'success'
+      copyStatus: 'success',
     });
   };
 
   handleCopyError = () => {
     this.setState({
-      copyStatus: 'error'
+      copyStatus: 'error',
     });
   };
 
@@ -58,7 +58,7 @@ export default class CopyButton extends Component<Props, LocalState> {
       copyText,
       defaultLabel,
       successLabel,
-      errorLabel
+      errorLabel,
     } = this.props;
     const { copyStatus } = this.state;
 

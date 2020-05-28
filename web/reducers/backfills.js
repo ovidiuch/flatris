@@ -19,8 +19,8 @@ export function backfillsReducer(
         ...state,
         [gameId]: {
           backfillId,
-          queuedActions: []
-        }
+          queuedActions: [],
+        },
       };
     }
 
@@ -52,8 +52,8 @@ export function backfillsReducer(
         ...state,
         [gameId]: {
           backfillId,
-          queuedActions: [...queuedActions, queuedAction]
-        }
+          queuedActions: [...queuedActions, queuedAction],
+        },
       };
     }
 

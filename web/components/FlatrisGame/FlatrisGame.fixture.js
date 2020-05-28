@@ -14,9 +14,9 @@ const state = {
   jsReady: true,
   curUser: user,
   games: {
-    [game.id]: game
+    [game.id]: game,
   },
-  curGame: game.id
+  curGame: game.id,
 };
 
 export default (

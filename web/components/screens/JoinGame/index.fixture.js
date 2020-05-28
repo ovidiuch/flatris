@@ -18,5 +18,5 @@ export default {
       onWatch={() => console.log('Just watch')}
       onJoin={() => console.log('Join game')}
     />
-  )
+  ),
 };

@@ -27,6 +27,6 @@ export function getInitialPositionForTetromino(
 
   return {
     x: Math.round(gridCols / 2) - Math.round(grid[0].length / 2),
-    y: -2
+    y: -2,
   };
 }

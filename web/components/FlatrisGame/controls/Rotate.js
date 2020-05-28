@@ -4,7 +4,7 @@ import React from 'react';
 import PointerButton from './PointerButton';
 
 type Props = {
-  onPress: Function
+  onPress: Function,
 };
 
 export default function Rotate({ onPress, ...rest }: Props) {

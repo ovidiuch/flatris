@@ -8,13 +8,13 @@ import type { TetrominoGrid } from 'shared/types/state';
 
 type Props = {
   color: string,
-  grid: TetrominoGrid
+  grid: TetrominoGrid,
 };
 
 export default class Tetromino extends Component<Props> {
   static propTypes = {
     color: PropTypes.string.isRequired,
-    grid: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)).isRequired
+    grid: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)).isRequired,
   };
 
   /**
@@ -35,7 +35,7 @@ export default class Tetromino extends Component<Props> {
               key={`${row}-${col}`}
               style={{
                 top: `${row * 25}%`,
-                left: `${col * 25}%`
+                left: `${col * 25}%`,
               }}
             >
               <SquareBlock color={this.props.color} />

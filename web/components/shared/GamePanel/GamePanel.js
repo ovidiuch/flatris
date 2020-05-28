@@ -9,19 +9,19 @@ import PlayerInfo from './PlayerInfo';
 import type {
   User,
   Game,
-  Tetromino as TetrominoType
+  Tetromino as TetrominoType,
 } from 'shared/types/state';
 
 type Props = {
   curUser: ?User,
   game: ?Game,
   onSelectP2?: Function,
-  showFooter?: boolean
+  showFooter?: boolean,
 };
 
 export default class GamePanel extends Component<Props> {
   static defaultProps = {
-    showFooter: false
+    showFooter: false,
   };
 
   /**

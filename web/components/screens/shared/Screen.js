@@ -8,12 +8,12 @@ import type { Node } from 'react';
 type Props = {
   title: Node,
   message: Node,
-  actions: Array<Node>
+  actions: Array<Node>,
 };
 
 export default class Screen extends Component<Props> {
   static defaultProps = {
-    actions: []
+    actions: [],
   };
 
   render() {

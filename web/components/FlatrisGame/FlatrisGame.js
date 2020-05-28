@@ -10,7 +10,7 @@ import {
   getCurPlayer,
   getOtherPlayer,
   getPlayer,
-  isPlayer
+  isPlayer,
 } from 'shared/reducers/game';
 import {
   appendPendingBlocks,
@@ -23,7 +23,7 @@ import {
   ping,
   playerPause,
   playerReady,
-  rotate
+  rotate,
 } from '../../actions/game';
 import { cancelGameFrame, runGameFrame } from '../../actions/game-frame';
 import { DOWN, KEY_DELAY, LEFT, RIGHT, SPACE, UP } from '../../constants/keys';
@@ -67,19 +67,19 @@ type Props = {
   enableAcceleration: typeof enableAcceleration,
   disableAcceleration: typeof disableAcceleration,
   appendPendingBlocks: typeof appendPendingBlocks,
-  ping: typeof ping
+  ping: typeof ping,
 };
 
 type LocalState = {
   isWatching: boolean,
-  isMobile: boolean
+  isMobile: boolean,
 };
 
 // NOTE: This component will crash if state.curGame isn't populated!
 class FlatrisGame extends Component<Props, LocalState> {
   state = {
     isWatching: false,
-    isMobile: false
+    isMobile: false,
   };
 
   keepAliveTimeout: ?TimeoutID;
@@ -97,7 +97,7 @@ class FlatrisGame extends Component<Props, LocalState> {
 
     if (isMobileDevice()) {
       this.setState({
-        isMobile: true
+        isMobile: true,
       });
     }
 
@@ -190,13 +190,13 @@ class FlatrisGame extends Component<Props, LocalState> {
 
   handleWatch = () => {
     this.setState({
-      isWatching: true
+      isWatching: true,
     });
   };
 
   handleMenu = () => {
     this.setState({
-      isWatching: false
+      isWatching: false,
     });
   };
 
@@ -464,12 +464,12 @@ const mapStateToProps = (state: State): $Shape<Props> => {
     jsReady: jsReady,
     curUser: curUser,
     game: getCurGame(state),
-    backfills
+    backfills,
   };
 };
 
 const mapDispatchToProps = {
-  runGameFrame
+  runGameFrame,
 };
 
 const syncActions = {
@@ -483,7 +483,7 @@ const syncActions = {
   enableAcceleration,
   disableAcceleration,
   appendPendingBlocks,
-  ping
+  ping,
 };
 
 export default connect(

@@ -35,5 +35,5 @@ export default {
     <Button bgColor={COLORS.T} onClick={() => console.log('onClick')}>
       Form
     </Button>
-  )
+  ),
 };

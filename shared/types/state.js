@@ -20,7 +20,7 @@ export type UserId = string;
 
 export type User = {
   id: UserId,
-  name: string
+  name: string,
 };
 
 export type PlayerStatus = 'PENDING' | 'READY' | 'PAUSE' | 'WON' | 'LOST';
@@ -50,7 +50,7 @@ export type Player = {
   flashYay: ?FlashSuffix,
   flashNay: ?FlashSuffix,
   quake: ?QuakeSuffix,
-  ping: ?number
+  ping: ?number,
 };
 
 export type GameId = string;
@@ -58,22 +58,22 @@ export type GameId = string;
 export type Game = {
   id: GameId,
   players: Array<Player>,
-  dropFrames: number
+  dropFrames: number,
 };
 
 export type Games = {
-  [id: GameId]: Game
+  [id: GameId]: Game,
 };
 
 export type BackfillId = number;
 
 export type Backfill = {
   backfillId: BackfillId,
-  queuedActions: Array<GameAction>
+  queuedActions: Array<GameAction>,
 };
 
 export type Backfills = {
-  [gameId: GameId]: Backfill
+  [gameId: GameId]: Backfill,
 };
 
 export type Stats = {
@@ -83,11 +83,11 @@ export type Stats = {
   actionRotate: number,
   games: number,
   lines: number,
-  seconds: number
+  seconds: number,
 };
 
 export type DailyStats = {
-  [day: string]: number
+  [day: string]: number,
 };
 
 export type State = {
@@ -96,5 +96,5 @@ export type State = {
   games: Games,
   curGame: ?GameId,
   backfills: Backfills,
-  stats: Stats
+  stats: Stats,
 };

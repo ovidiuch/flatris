@@ -10,7 +10,7 @@ import type { GameId } from 'shared/types/state';
 type Props = {
   disabled: boolean,
   gameId: GameId,
-  onPlay: Function
+  onPlay: Function,
 };
 
 export default class NewGame extends Component<Props> {
@@ -51,7 +51,7 @@ export default class NewGame extends Component<Props> {
         actions={[
           <Button disabled={disabled} onClick={onPlay}>
             Play
-          </Button>
+          </Button>,
         ]}
       />
     );

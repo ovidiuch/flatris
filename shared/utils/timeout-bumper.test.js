@@ -20,15 +20,15 @@ test('handlers are called sequentially', () => {
   const { bumpTimeout } = createTimeoutBumper(
     {
       handler: handler1,
-      timeout: TIMEOUT1
+      timeout: TIMEOUT1,
     },
     {
       handler: handler2,
-      timeout: TIMEOUT2
+      timeout: TIMEOUT2,
     },
     {
       handler: handler3,
-      timeout: TIMEOUT3
+      timeout: TIMEOUT3,
     }
   );
 
@@ -71,15 +71,15 @@ test('handlers are not called while bumping', () => {
   const { bumpTimeout } = createTimeoutBumper(
     {
       handler: handler1,
-      timeout: TIMEOUT1
+      timeout: TIMEOUT1,
     },
     {
       handler: handler2,
-      timeout: TIMEOUT2
+      timeout: TIMEOUT2,
     },
     {
       handler: handler3,
-      timeout: TIMEOUT3
+      timeout: TIMEOUT3,
     }
   );
 
@@ -130,15 +130,15 @@ test('handlers are canceled', () => {
   const { bumpTimeout, cancelAllTimeouts } = createTimeoutBumper(
     {
       handler: handler1,
-      timeout: TIMEOUT1
+      timeout: TIMEOUT1,
     },
     {
       handler: handler2,
-      timeout: TIMEOUT2
+      timeout: TIMEOUT2,
     },
     {
       handler: handler3,
-      timeout: TIMEOUT3
+      timeout: TIMEOUT3,
     }
   );
 

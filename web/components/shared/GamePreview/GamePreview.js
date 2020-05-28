@@ -15,12 +15,12 @@ type Props = {
   game: Game,
   screen?: Node,
   onSelectP2?: Function,
-  showFooter?: boolean
+  showFooter?: boolean,
 };
 
 class GamePreview extends Component<Props> {
   static defaultProps = {
-    showFooter: false
+    showFooter: false,
   };
 
   render() {
@@ -85,7 +85,7 @@ class GamePreview extends Component<Props> {
       blocksPending,
       activeTetromino,
       activeTetrominoGrid,
-      activeTetrominoPosition
+      activeTetrominoPosition,
     } = player;
 
     return (

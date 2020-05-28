@@ -13,7 +13,7 @@ type Props = {
   disabled: boolean,
   curUser: User,
   game: Game,
-  onRestart: Function
+  onRestart: Function,
 };
 
 export default class GameOver extends Component<Props> {
@@ -35,7 +35,7 @@ export default class GameOver extends Component<Props> {
             <Button disabled={disabled} onClick={onRestart}>
               Again
             </Button>
-          </Shake>
+          </Shake>,
         ]}
       />
     );

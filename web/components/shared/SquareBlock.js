@@ -19,7 +19,7 @@ const SquareBlock = ({ color }) => (
 );
 
 SquareBlock.propTypes = {
-  color: PropTypes.string.isRequired
+  color: PropTypes.string.isRequired,
 };
 
 export default SquareBlock;

@@ -22,5 +22,5 @@ export default {
         <NewGame />
       </SocketProviderMock>
     </FlatrisReduxMock>
-  )
+  ),
 };

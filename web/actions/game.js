@@ -11,7 +11,7 @@ import type {
   Action,
   ThunkAction,
   Dispatch,
-  GetState
+  GetState,
 } from 'shared/types/actions';
 
 export function joinGame(gameId: GameId, user: User): JoinGameAction {
@@ -22,8 +22,8 @@ export function joinGame(gameId: GameId, user: User): JoinGameAction {
       prevActionId: 0,
       userId: user.id,
       gameId,
-      user
-    }
+      user,
+    },
   };
 }
 
@@ -34,8 +34,8 @@ export function playerReady(): ThunkAction {
       actionId,
       prevActionId,
       userId,
-      gameId
-    }
+      gameId,
+    },
   }));
 }
 
@@ -46,8 +46,8 @@ export function playerPause(): ThunkAction {
       actionId,
       prevActionId,
       userId,
-      gameId
-    }
+      gameId,
+    },
   }));
 }
 
@@ -59,8 +59,8 @@ export function drop(rows: number): ThunkAction {
       prevActionId,
       userId,
       gameId,
-      rows
-    }
+      rows,
+    },
   }));
 }
 
@@ -71,8 +71,8 @@ export function moveLeft(): ThunkAction {
       actionId,
       prevActionId,
       userId,
-      gameId
-    }
+      gameId,
+    },
   }));
 }
 
@@ -83,8 +83,8 @@ export function moveRight(): ThunkAction {
       actionId,
       prevActionId,
       userId,
-      gameId
-    }
+      gameId,
+    },
   }));
 }
 
@@ -95,8 +95,8 @@ export function rotate(): ThunkAction {
       actionId,
       prevActionId,
       userId,
-      gameId
-    }
+      gameId,
+    },
   }));
 }
 
@@ -107,8 +107,8 @@ export function enableAcceleration(): ThunkAction {
       actionId,
       prevActionId,
       userId,
-      gameId
-    }
+      gameId,
+    },
   }));
 }
 
@@ -119,8 +119,8 @@ export function disableAcceleration(): ThunkAction {
       actionId,
       prevActionId,
       userId,
-      gameId
-    }
+      gameId,
+    },
   }));
 }
 
@@ -131,8 +131,8 @@ export function appendPendingBlocks(): ThunkAction {
       actionId,
       prevActionId,
       userId,
-      gameId
-    }
+      gameId,
+    },
   }));
 }
 
@@ -144,8 +144,8 @@ export function ping(): ThunkAction {
       prevActionId,
       userId,
       gameId,
-      time: Date.now()
-    }
+      time: Date.now(),
+    },
   }));
 }
 
@@ -153,7 +153,7 @@ type GameActionDecorator = ({
   actionId: ActionId,
   prevActionId: ActionId,
   gameId: GameId,
-  userId: UserId
+  userId: UserId,
 }) => Action;
 
 function decorateGameAction(fn: GameActionDecorator): ThunkAction {

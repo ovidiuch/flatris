@@ -6,7 +6,7 @@ import type { Node } from 'react';
 
 type Props = {
   time: ?number,
-  children: Node
+  children: Node,
 };
 
 export default class Shake extends Component<Props> {

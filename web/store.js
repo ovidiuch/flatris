@@ -3,7 +3,7 @@
 import {
   createStore as createReduxStore,
   applyMiddleware,
-  combineReducers
+  combineReducers,
 } from 'redux';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
@@ -24,7 +24,7 @@ const rootReducer = combineReducers({
   games: gamesReducer,
   curGame: curGameReducer,
   backfills: backfillsReducer,
-  stats: statsReducer
+  stats: statsReducer,
 });
 
 export type FlatrisReduxStore = Store<State, Action>;

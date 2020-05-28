@@ -17,7 +17,7 @@ export type ButtonProps = {|
   onMouseDown?: Function,
   onMouseUp?: Function,
   onTouchStart?: Function,
-  onTouchEnd?: Function
+  onTouchEnd?: Function,
 |};
 
 export default function Button({
@@ -30,7 +30,7 @@ export default function Button({
   ...rest
 }: ButtonProps) {
   const classes = classNames('button', {
-    'hover-button': hoverEffect
+    'hover-button': hoverEffect,
   });
 
   return (

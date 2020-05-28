@@ -9,14 +9,14 @@ import {
   activeGames,
   insertUser,
   insertSession,
-  insertGame
+  insertGame,
 } from './db';
 import { rollbar } from './rollbar';
 import {
   getStats,
   getDailyStats,
   incrementUserCount,
-  incrementGameCount
+  incrementGameCount,
 } from './firebase';
 
 import type { User } from 'shared/types/state';
@@ -30,7 +30,7 @@ export function addRoutes(app: express$Application<>) {
         // NOTE: This is returned as an array instead of map in order to allow
         // sorting in the future
         games: activeGames.map(gameId => games[gameId]),
-        stats: await getStats()
+        stats: await getStats(),
       });
     } catch (err) {
       res.sendStatus(500);
@@ -42,7 +42,7 @@ export function addRoutes(app: express$Application<>) {
     async (req: express$Request, res: express$Response) => {
       try {
         res.json({
-          days: await getDailyStats()
+          days: await getDailyStats(),
         });
       } catch (err) {
         res.sendStatus(500);
@@ -136,7 +136,7 @@ export function addRoutes(app: express$Application<>) {
     if (gameId && games[gameId]) {
       res.json({
         game: games[gameId],
-        actions: gameActions[gameId]
+        actions: gameActions[gameId],
       });
     } else {
       res.sendStatus(404);
@@ -184,9 +184,9 @@ function extractBackfillRequest(req: mixed): BackfillRequest {
 
       return {
         userId,
-        from
+        from,
       };
-    })
+    }),
   };
 }
 

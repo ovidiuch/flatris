@@ -2,5 +2,5 @@
 
 export type ComponentError = {
   message: string,
-  stack: string
+  stack: string,
 };

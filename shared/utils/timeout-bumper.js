@@ -2,7 +2,7 @@
 
 type TimeoutConfig = {
   handler: (id: string) => mixed,
-  timeout: number
+  timeout: number,
 };
 
 export function createTimeoutBumper(...configs: Array<TimeoutConfig>) {
@@ -50,6 +50,6 @@ export function createTimeoutBumper(...configs: Array<TimeoutConfig>) {
 
   return {
     bumpTimeout,
-    cancelAllTimeouts
+    cancelAllTimeouts,
   };
 }
