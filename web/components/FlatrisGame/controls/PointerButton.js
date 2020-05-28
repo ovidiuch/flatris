@@ -11,7 +11,7 @@ type Props = {
   children: Node,
   disabled?: boolean,
   onPress: Function,
-  onRelease?: Function
+  onRelease?: Function,
 };
 
 export default function PointerButton({

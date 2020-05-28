@@ -42,5 +42,5 @@ export default {
       curPlayer={{ ...curPlayer, ping: 1234 }}
       onPing={() => console.log(`Ping!`)}
     />
-  )
+  ),
 };

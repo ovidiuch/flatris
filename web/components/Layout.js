@@ -15,16 +15,16 @@ import type { ComponentError } from 'shared/types/error';
 type Props = {
   jsReady: boolean,
   children: Node,
-  jsLoad: () => Action
+  jsLoad: () => Action,
 };
 
 type LocalState = {
-  error: ?ComponentError
+  error: ?ComponentError,
 };
 
 class Layout extends Component<Props, LocalState> {
   state = {
-    error: null
+    error: null,
   };
 
   componentDidMount() {
@@ -41,8 +41,8 @@ class Layout extends Component<Props, LocalState> {
     this.setState({
       error: {
         message: error.toString(),
-        stack: componentStack
-      }
+        stack: componentStack,
+      },
     });
   }
 
@@ -51,7 +51,7 @@ class Layout extends Component<Props, LocalState> {
     const { error } = this.state;
 
     const layoutClasses = classNames('layout', {
-      'layout-static': !jsReady
+      'layout-static': !jsReady,
     });
 
     return (
@@ -150,11 +150,8 @@ function mapStateToProps({ jsReady }: State): $Shape<Props> {
 
 function mapDispatchToProps(dispatch: Dispatch): $Shape<Props> {
   return {
-    jsLoad: () => dispatch({ type: 'JS_LOAD' })
+    jsLoad: () => dispatch({ type: 'JS_LOAD' }),
   };
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Layout);
+export default connect(mapStateToProps, mapDispatchToProps)(Layout);

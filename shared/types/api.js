@@ -9,11 +9,11 @@ export type BackfillRequest = {
   gameId: GameId,
   players: Array<{
     userId: UserId,
-    from: number
-  }>
+    from: number,
+  }>,
 };
 
 export type BackfillResponse = {
   gameId: GameId,
-  actions: Array<GameAction>
+  actions: Array<GameAction>,
 };

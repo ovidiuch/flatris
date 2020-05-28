@@ -10,7 +10,7 @@ import type {
   Position2d,
   Tetromino,
   TetrominoGrid,
-  WellGrid
+  WellGrid,
 } from 'shared/types/state';
 
 type Props = {
@@ -19,7 +19,7 @@ type Props = {
   blocksPending: WellGrid,
   activeTetromino: Tetromino,
   activeTetrominoGrid: TetrominoGrid,
-  activeTetrominoPosition: Position2d
+  activeTetrominoPosition: Position2d,
 };
 
 class Well extends Component<Props> {
@@ -57,7 +57,7 @@ class Well extends Component<Props> {
 
     return {
       top: `${(100 / rows) * y}%`,
-      left: `${(100 / cols) * x}%`
+      left: `${(100 / cols) * x}%`,
     };
   }
 
@@ -67,7 +67,7 @@ class Well extends Component<Props> {
       blocksCleared,
       blocksPending,
       activeTetromino,
-      activeTetrominoGrid
+      activeTetrominoGrid,
     } = this.props;
 
     return (

@@ -7,7 +7,7 @@ import {
   moveRight,
   rotate,
   enableAcceleration,
-  disableAcceleration
+  disableAcceleration,
 } from '../../../actions/game';
 import { withSocket } from '../../socket/SocketConnect';
 import { isPlayer, allPlayersReady } from 'shared/reducers/game';
@@ -28,7 +28,7 @@ type Props = {
   moveRight: typeof moveRight,
   rotate: typeof rotate,
   enableAcceleration: typeof enableAcceleration,
-  disableAcceleration: typeof disableAcceleration
+  disableAcceleration: typeof disableAcceleration,
 };
 
 class LandscapeControls extends Component<Props> {
@@ -115,7 +115,7 @@ const mapStateToProps = (state: State): $Shape<Props> => {
   return {
     curUser,
     game: getCurGame(state),
-    backfills
+    backfills,
   };
 };
 
@@ -124,7 +124,7 @@ const syncActions = {
   moveRight,
   rotate,
   enableAcceleration,
-  disableAcceleration
+  disableAcceleration,
 };
 
 export default connect(mapStateToProps)(

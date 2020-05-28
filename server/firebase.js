@@ -14,7 +14,7 @@ export async function getStats(): Promise<Stats> {
       actionRotate: 0,
       games: 0,
       lines: 0,
-      seconds: 0
+      seconds: 0,
     };
   } else {
     const ref = db.ref('counts');
@@ -110,7 +110,7 @@ function getDb() {
   if (!db) {
     admin.initializeApp({
       credential: admin.credential.cert(cert),
-      databaseURL: 'https://flatris-forever.firebaseio.com'
+      databaseURL: 'https://flatris-forever.firebaseio.com',
     });
 
     db = admin.database();
@@ -153,7 +153,7 @@ function prepareStats(rawStats) {
     games,
     lines,
     seconds,
-    turns
+    turns,
   } = rawStats;
 
   return {
@@ -163,7 +163,7 @@ function prepareStats(rawStats) {
     actionRotate,
     games: games + turns,
     lines,
-    seconds
+    seconds,
   };
 }
 

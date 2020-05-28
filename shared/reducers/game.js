@@ -6,12 +6,12 @@ import {
   WELL_COLS,
   DROP_FRAMES_DEFAULT,
   DROP_FRAMES_DECREMENT,
-  LINE_CLEAR_BONUSES
+  LINE_CLEAR_BONUSES,
 } from '../constants/grid';
 import { SHAPES, COLORS } from '../constants/tetromino';
 import {
   getNextTetromino,
-  getInitialPositionForTetromino
+  getInitialPositionForTetromino,
 } from '../utils/tetromino';
 import {
   generateEmptyGrid,
@@ -25,7 +25,7 @@ import {
   getBlocksFromGridRows,
   overrideBlockIds,
   appendBlocksToGrid,
-  getNextCellId
+  getNextCellId,
 } from '../utils/grid';
 
 import type {
@@ -36,7 +36,7 @@ import type {
   GameId,
   Game,
   FlashSuffix,
-  QuakeSuffix
+  QuakeSuffix,
 } from '../types/state';
 import type { ActionId, GameAction } from '../types/actions';
 
@@ -64,7 +64,7 @@ export function gameReducer(state: void | Game, action: GameAction): Game {
       // Stop player1's game when player2 arrives
       status: 'PENDING',
       // Previous losses are irrelevant to 1vs1 game
-      losses: 0
+      losses: 0,
     });
 
     return bumpActionId(addUserToGame(game, user), userId, actionId);
@@ -120,9 +120,9 @@ export function gameJoinedReducer(state: Game, action: GameAction): Game {
           ...game,
           players: players.map(player => ({
             ...player,
-            ...getBlankPlayerRound({ gameId: id, round })
+            ...getBlankPlayerRound({ gameId: id, round }),
           })),
-          dropFrames: DROP_FRAMES_DEFAULT
+          dropFrames: DROP_FRAMES_DEFAULT,
         };
       }
 
@@ -147,7 +147,7 @@ export function gameJoinedReducer(state: Game, action: GameAction): Game {
         activeTetrominoPosition,
         dropAcceleration,
         flashYay,
-        quake
+        quake,
       } = player;
 
       if (player.status === 'LOST') {
@@ -172,13 +172,13 @@ export function gameJoinedReducer(state: Game, action: GameAction): Game {
       // Drop active Tetromino until it hits something
       let newPosition = {
         x: activeTetrominoPosition.x,
-        y: activeTetrominoPosition.y + rows
+        y: activeTetrominoPosition.y + rows,
       };
 
       // New active Tetromino position is available, uneventful path
       if (isPositionAvailable(grid, activeTetrominoGrid, newPosition)) {
         return updatePlayer(state, userId, {
-          activeTetrominoPosition: newPosition
+          activeTetrominoPosition: newPosition,
         });
       }
 
@@ -210,9 +210,9 @@ export function gameJoinedReducer(state: Game, action: GameAction): Game {
 
             return {
               ...player,
-              ...newAttrs
+              ...newAttrs,
             };
-          })
+          }),
         };
       }
 
@@ -236,7 +236,7 @@ export function gameJoinedReducer(state: Game, action: GameAction): Game {
         // Clear acceleration after dropping Tetromino. Sometimes the key
         // events would misbehave and acceleration would remain on even after
         // releasing DOWN key
-        dropAcceleration: false
+        dropAcceleration: false,
       });
 
       if (!hasLines(newGrid)) {
@@ -251,7 +251,7 @@ export function gameJoinedReducer(state: Game, action: GameAction): Game {
         flashYay: altFlashClass(flashYay),
         quake: dropAcceleration
           ? altQuakeClass(quake, rowsCleared.length)
-          : null
+          : null,
       });
       newState = rewardClearedBlocks(newState, userId);
 
@@ -267,7 +267,7 @@ export function gameJoinedReducer(state: Game, action: GameAction): Game {
         grid,
         blocksPending,
         activeTetrominoGrid,
-        activeTetrominoPosition
+        activeTetrominoPosition,
       } = player;
 
       // XXX: The appended blocks might result in trimming existing blocks, by
@@ -285,7 +285,7 @@ export function gameJoinedReducer(state: Game, action: GameAction): Game {
       ) {
         return updatePlayer(state, userId, {
           grid: newGrid,
-          blocksPending: []
+          blocksPending: [],
         });
       }
 
@@ -304,7 +304,7 @@ export function gameJoinedReducer(state: Game, action: GameAction): Game {
         // if the game is over or not
         grid: newGrid,
         blocksPending: [],
-        activeTetrominoPosition: newPosition
+        activeTetrominoPosition: newPosition,
       });
     }
 
@@ -315,7 +315,7 @@ export function gameJoinedReducer(state: Game, action: GameAction): Game {
       const { grid, activeTetrominoGrid, activeTetrominoPosition } = player;
       const newPosition = {
         ...activeTetrominoPosition,
-        x: activeTetrominoPosition.x + direction
+        x: activeTetrominoPosition.x + direction,
       };
 
       // Attempting to move the Tetromino outside the Well bounds or over landed
@@ -325,7 +325,7 @@ export function gameJoinedReducer(state: Game, action: GameAction): Game {
       }
 
       return updatePlayer(state, userId, {
-        activeTetrominoPosition: newPosition
+        activeTetrominoPosition: newPosition,
       });
     }
 
@@ -350,7 +350,7 @@ export function gameJoinedReducer(state: Game, action: GameAction): Game {
 
       return updatePlayer(state, userId, {
         activeTetrominoGrid: newGrid,
-        activeTetrominoPosition: newPosition
+        activeTetrominoPosition: newPosition,
       });
     }
 
@@ -362,7 +362,7 @@ export function gameJoinedReducer(state: Game, action: GameAction): Game {
       }
 
       return updatePlayer(state, userId, {
-        dropAcceleration: true
+        dropAcceleration: true,
       });
     }
 
@@ -374,7 +374,7 @@ export function gameJoinedReducer(state: Game, action: GameAction): Game {
       }
 
       return updatePlayer(state, userId, {
-        dropAcceleration: false
+        dropAcceleration: false,
       });
     }
 
@@ -382,7 +382,7 @@ export function gameJoinedReducer(state: Game, action: GameAction): Game {
       const { time } = action.payload;
 
       return updatePlayer(state, userId, {
-        ping: time
+        ping: time,
       });
     }
 
@@ -394,16 +394,16 @@ export function gameJoinedReducer(state: Game, action: GameAction): Game {
 export function getBlankGame({
   id,
   user,
-  dropFrames = DROP_FRAMES_DEFAULT
+  dropFrames = DROP_FRAMES_DEFAULT,
 }: {
   id: GameId,
   user: User,
-  dropFrames?: number
+  dropFrames?: number,
 }): Game {
   return {
     id,
     players: [getBlankPlayer(id, user)],
-    dropFrames
+    dropFrames,
   };
 }
 
@@ -413,18 +413,18 @@ export function getBlankPlayer(gameId: GameId, user: User): Player {
     lastActionId: 0,
     status: 'PENDING',
     losses: 0,
-    ...getBlankPlayerRound({ gameId })
+    ...getBlankPlayerRound({ gameId }),
   };
 }
 
 export function getBlankPlayerRound({
   gameId,
   round = 0,
-  drops = 0
+  drops = 0,
 }: {
   gameId: GameId,
   round?: number,
-  drops?: number
+  drops?: number,
 } = {}) {
   return {
     drops: 0,
@@ -435,18 +435,18 @@ export function getBlankPlayerRound({
     blocksPending: [],
     ...getNextPlayerTetromino({ gameId, round, drops }),
     dropAcceleration: false,
-    ...getBlankPlayerEffects()
+    ...getBlankPlayerEffects(),
   };
 }
 
 export function getNextPlayerTetromino({
   gameId,
   round = 0,
-  drops = 0
+  drops = 0,
 }: {
   gameId: GameId,
   round?: number,
-  drops?: number
+  drops?: number,
 } = {}) {
   // Generate random Tetromino sequence per game round
   const roundId = (parseInt(gameId, 16) * (round + 1)).toString(16);
@@ -459,7 +459,7 @@ export function getNextPlayerTetromino({
       activeTetromino,
       WELL_COLS
     ),
-    nextTetromino: getNextTetromino(roundId, drops + 1)
+    nextTetromino: getNextTetromino(roundId, drops + 1),
   };
 }
 
@@ -469,8 +469,8 @@ export function stripGameEffects(game: Game): Game {
     players: game.players.map(player => ({
       ...player,
       // Strip effects to avoid running them on page load
-      ...getBlankPlayerEffects()
-    }))
+      ...getBlankPlayerEffects(),
+    })),
   };
 }
 
@@ -523,7 +523,7 @@ export function addUserToGame(game: Game, user: User): Game {
 
   return {
     ...game,
-    players: [...players, getBlankPlayer(id, user)]
+    players: [...players, getBlankPlayer(id, user)],
   };
 }
 
@@ -541,8 +541,8 @@ export function updatePlayer(
     players: [
       ...players.slice(0, playerIndex),
       { ...player, ...attrs },
-      ...players.slice(playerIndex + 1)
-    ]
+      ...players.slice(playerIndex + 1),
+    ],
   };
 }
 
@@ -585,12 +585,12 @@ function rewardClearedBlocks(game: Game, userId: UserId): Game {
   return {
     ...updatePlayer(game, userId, {
       score: score + points,
-      lines: lines + blocksCleared.length
+      lines: lines + blocksCleared.length,
     }),
     // Increase speed whenever a line is cleared (fast game)
     dropFrames: blocksCleared.length
       ? dropFrames - DROP_FRAMES_DECREMENT
-      : dropFrames
+      : dropFrames,
   };
 }
 
@@ -618,7 +618,7 @@ function sendClearedBlocksToEnemy(
 
   return updatePlayer(game, enemy.user.id, {
     blocksPending: [...enemy.blocksPending, ...blocksPending],
-    flashNay: altFlashClass(flashNay)
+    flashNay: altFlashClass(flashNay),
   });
 }
 
@@ -646,7 +646,7 @@ function getBlankPlayerEffects() {
     flashYay: null,
     flashNay: null,
     quake: null,
-    ping: null
+    ping: null,
   };
 }
 

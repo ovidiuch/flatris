@@ -8,7 +8,7 @@ import type { GameId } from 'shared/types/state';
 
 type Props = {
   disabled: boolean,
-  gameId: GameId
+  gameId: GameId,
 };
 
 export default class CopyGameLinkButton extends Component<Props> {

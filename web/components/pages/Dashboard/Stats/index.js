@@ -5,18 +5,18 @@ import React, { Component } from 'react';
 import type { Stats as StatsType } from 'shared/types/state';
 
 type Props = {
-  stats: StatsType
+  stats: StatsType,
 };
 
 type LocalState = {
   statsDiff: {
-    [stat: $Keys<StatsType>]: [number, number] // [diff, updatedAt]
-  }
+    [stat: $Keys<StatsType>]: [number, number], // [diff, updatedAt]
+  },
 };
 
 class Stats extends Component<Props, LocalState> {
   state = {
-    statsDiff: {}
+    statsDiff: {},
   };
 
   componentDidUpdate({ stats: prevStats }: Props) {
@@ -31,13 +31,13 @@ class Stats extends Component<Props, LocalState> {
         if (diff > 0) {
           statsDiff = {
             ...statsDiff,
-            [stat]: [diff, Date.now()]
+            [stat]: [diff, Date.now()],
           };
         }
       });
 
       this.setState({
-        statsDiff
+        statsDiff,
       });
     }
   }

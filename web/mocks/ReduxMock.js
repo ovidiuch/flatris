@@ -9,7 +9,7 @@ import type { State } from 'shared/types/state';
 
 type Props = {
   children: Node,
-  initialState: $Shape<State>
+  initialState: $Shape<State>,
 };
 
 export function FlatrisReduxMock({ children, initialState }: Props) {

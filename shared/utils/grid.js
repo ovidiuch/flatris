@@ -5,7 +5,7 @@ import type {
   WellGrid,
   TetrominoGrid,
   Position2d,
-  Player
+  Player,
 } from '../types/state';
 
 export function generateEmptyGrid(rows: number, cols: number): WellGrid {
@@ -41,7 +41,7 @@ export function getExactPosition({ x, y }: Position2d) {
   // with each frame
   return {
     x: Math.floor(x),
-    y: Math.floor(y)
+    y: Math.floor(y),
   };
 }
 
@@ -150,7 +150,7 @@ export function clearLines(
   grid: WellGrid
 ): {
   clearedGrid: WellGrid,
-  rowsCleared: Array<number>
+  rowsCleared: Array<number>,
 } {
   /**
    * Clear all rows that form a complete line, from one left to right, inside
@@ -182,7 +182,7 @@ export function clearLines(
 
   return {
     clearedGrid,
-    rowsCleared
+    rowsCleared,
   };
 }
 
@@ -216,7 +216,7 @@ export function fitTetrominoPositionInWellBounds(
 
   return {
     x: newX,
-    y
+    y,
   };
 }
 

@@ -88,6 +88,6 @@ export function getSocket() {
     onGameSync,
     offGameSync,
     onStatsUpdate,
-    offStatsUpdate
+    offStatsUpdate,
   };
 }

@@ -15,7 +15,7 @@ import FlatrisGame from '../components/FlatrisGame/FlatrisGame';
 import Error from '../components/pages/Error';
 
 type Props = {
-  statusCode: false | number
+  statusCode: false | number,
 };
 
 class JoinPage extends Component<Props> {
@@ -56,7 +56,7 @@ class JoinPage extends Component<Props> {
     dispatch(openGame(gameId));
 
     return {
-      statusCode: false
+      statusCode: false,
     };
   }
 

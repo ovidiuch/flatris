@@ -8,21 +8,21 @@ import type { User } from 'shared/types/state';
 export function getSampleUser(): User {
   return {
     id: '99bba208',
-    name: 'Tig'
+    name: 'Tig',
   };
 }
 
 export function getSampleUser2(): User {
   return {
     id: '018ac29a',
-    name: 'Louie'
+    name: 'Louie',
   };
 }
 
 export function getSampleUser3(): User {
   return {
     id: '12b3ef',
-    name: 'Bill'
+    name: 'Bill',
   };
 }
 

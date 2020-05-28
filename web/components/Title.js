@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import Head from 'next/head';
 
 type Props = {
-  children: string
+  children: string,
 };
 
 export default class Title extends Component<Props> {

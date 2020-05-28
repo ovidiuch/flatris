@@ -14,5 +14,5 @@ export default {
 
   disabled: (
     <NewGame disabled gameId="1337" onPlay={() => console.log('Play!')} />
-  )
+  ),
 };

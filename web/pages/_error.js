@@ -7,14 +7,14 @@ import Layout from '../components/Layout';
 import Error from '../components/pages/Error';
 
 type Props = {
-  statusCode: ?number
+  statusCode: ?number,
 };
 
 type InitialProps = {
   res?: http$ServerResponse,
   err?: {
-    statusCode: number
-  }
+    statusCode: number,
+  },
 };
 
 export class ErrorPage extends Component<Props> {

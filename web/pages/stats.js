@@ -9,7 +9,7 @@ import Layout from '../components/Layout';
 import type { DailyStats } from 'shared/types/state';
 
 type Props = {
-  days: DailyStats
+  days: DailyStats,
 };
 
 class StatsPage extends Component<Props> {
@@ -137,9 +137,5 @@ function getDescWeeks(ascDays, counts) {
 function getWeekDayDate(day) {
   const date = new Date(day);
   // Remove week day
-  return date
-    .toDateString()
-    .split(' ')
-    .slice(1)
-    .join(' ');
+  return date.toDateString().split(' ').slice(1).join(' ');
 }

@@ -10,7 +10,7 @@ import type { Player } from 'shared/types/state';
 type Props = {
   disabled: boolean,
   otherPlayer: Player,
-  onReady: Function
+  onReady: Function,
 };
 
 export default class GetReady extends Component<Props> {
@@ -37,7 +37,7 @@ export default class GetReady extends Component<Props> {
             <Button disabled={disabled} onClick={onReady}>
               Ready
             </Button>
-          </Shake>
+          </Shake>,
         ]}
       />
     );

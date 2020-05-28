@@ -6,7 +6,7 @@ import Screen from '../../shared/Screen';
 
 type Props = {
   disabled: boolean,
-  onNext: Function
+  onNext: Function,
 };
 
 export default class HowToPlay extends Component<Props> {
@@ -42,7 +42,7 @@ export default class HowToPlay extends Component<Props> {
         actions={[
           <Button disabled={disabled} onClick={onNext}>
             Got it
-          </Button>
+          </Button>,
         ]}
       />
     );

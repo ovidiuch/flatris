@@ -9,7 +9,7 @@ const player = {
   ...getBlankPlayer('mock', user),
   status: 'READY',
   score: 1337,
-  lines: 30
+  lines: 30,
 };
 
 export default (

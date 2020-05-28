@@ -10,11 +10,11 @@ type Props = {
   children: Node,
   games: Games,
   curGame: ?GameId,
-  else: () => mixed
+  else: () => mixed,
 };
 
 type LocalState = {
-  elseTriggered: boolean
+  elseTriggered: boolean,
 };
 
 // The purpose of this component is to ensure the child component is only
@@ -26,7 +26,7 @@ type LocalState = {
 // however, we can safely redirect to / when this happens.
 class CurGameOfElse extends Component<Props, LocalState> {
   state = {
-    elseTriggered: false
+    elseTriggered: false,
   };
 
   componentDidMount() {
@@ -54,7 +54,7 @@ function hasCurGame({ games, curGame }: Props) {
 
 const mapStateToProps = ({ games, curGame }: State): $Shape<Props> => ({
   games,
-  curGame
+  curGame,
 });
 
 export default connect(mapStateToProps)(CurGameOfElse);

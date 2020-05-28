@@ -7,7 +7,7 @@ import type { Player } from 'shared/types/state';
 
 type Props = {
   player: ?Player,
-  children: ?Node
+  children: ?Node,
 };
 
 class Flash extends Component<Props> {

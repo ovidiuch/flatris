@@ -6,7 +6,7 @@ import type { Node } from 'react';
 
 type Props = {
   children: Node,
-  outer?: Node
+  outer?: Node,
 };
 
 const GameContainer = ({ children, outer }: Props) => {

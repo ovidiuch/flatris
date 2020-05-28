@@ -5,7 +5,7 @@ import Button from '../../../shared/Button';
 import Screen from '../../shared/Screen';
 
 type Props = {
-  onNext: Function
+  onNext: Function,
 };
 
 export default class Multiplayer extends Component<Props> {

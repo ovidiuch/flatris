@@ -47,5 +47,5 @@ export default {
         errorLabel="Copy failed :("
       />
     </StateMock>
-  )
+  ),
 };

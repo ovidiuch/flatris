@@ -24,7 +24,7 @@ import type {
   Games,
   State,
   Stats as StatsType,
-  User
+  User,
 } from 'shared/types/state';
 
 const TRANSITION_TIMEOUT = 550; // CSS transition takes 500ms (added 50ms buffer)
@@ -38,12 +38,12 @@ type Props = {
   onGameKeepAlive: (handler: (gameId: GameId) => void) => mixed,
   offGameKeepAlive: (handler: (gameId: GameId) => void) => mixed,
   closeGame: () => mixed,
-  removeGame: (gameId: GameId) => mixed
+  removeGame: (gameId: GameId) => mixed,
 };
 
 type LocalState = {
   gamesCopy: Games,
-  added: Array<GameId>
+  added: Array<GameId>,
 };
 
 class Dashboard extends Component<Props, LocalState> {
@@ -57,14 +57,14 @@ class Dashboard extends Component<Props, LocalState> {
 
     this.state = {
       gamesCopy: props.games,
-      added: []
+      added: [],
     };
 
     // We're tracking game activity here because this is also the (only)
     // component that subscribes to `global` (all game rooms)
     const { bumpTimeout, cancelAllTimeouts } = createTimeoutBumper({
       handler: this.handleInactiveGame,
-      timeout: GAME_INACTIVE_TIMEOUT
+      timeout: GAME_INACTIVE_TIMEOUT,
     });
 
     this.bumpInactiveTimeout = bumpTimeout;
@@ -77,7 +77,7 @@ class Dashboard extends Component<Props, LocalState> {
       curGame,
       subscribe,
       onGameKeepAlive,
-      closeGame
+      closeGame,
     } = this.props;
 
     subscribe('global');
@@ -106,7 +106,7 @@ class Dashboard extends Component<Props, LocalState> {
       const newState = {
         // Keep current games as well as just-removed games in state
         gamesCopy: { ...gamesCopy, ...games },
-        added: [...added, ...justAdded]
+        added: [...added, ...justAdded],
       };
 
       this.setState(newState, () => {
@@ -138,13 +138,13 @@ class Dashboard extends Component<Props, LocalState> {
 
   scheduleClearAdded = this.createTransClearScheduler((gameId: GameId) => {
     this.setState({
-      added: without(this.state.added, gameId)
+      added: without(this.state.added, gameId),
     });
   });
 
   scheduleClearRemoved = this.createTransClearScheduler((gameId: GameId) => {
     this.setState({
-      gamesCopy: omit(this.state.gamesCopy, gameId)
+      gamesCopy: omit(this.state.gamesCopy, gameId),
     });
   });
 
@@ -347,7 +347,7 @@ class Dashboard extends Component<Props, LocalState> {
           const { id } = game;
           const classes = classNames('game-preview', {
             'game-added': added.indexOf(id) !== -1,
-            'game-removed': !this.props.games[id]
+            'game-removed': !this.props.games[id],
           });
 
           return (
@@ -415,13 +415,13 @@ function mapStateToProps({
   curUser,
   games,
   curGame,
-  stats
+  stats,
 }: State): $Shape<Props> {
   return {
     curUser,
     games,
     curGame,
-    stats
+    stats,
   };
 }
 

@@ -12,24 +12,24 @@ import type { Player } from 'shared/types/state';
 type Props = {
   disabled: boolean,
   curPlayer: Player,
-  onPing: Function
+  onPing: Function,
 };
 
 type LocalState = {
-  isOtherPlayerIdle: boolean
+  isOtherPlayerIdle: boolean,
 };
 
 export default class WaitingForOther extends Component<Props, LocalState> {
   timeoutId: ?TimeoutID;
 
   state = {
-    isOtherPlayerIdle: false
+    isOtherPlayerIdle: false,
   };
 
   componentDidMount() {
     this.timeoutId = setTimeout(() => {
       this.setState({
-        isOtherPlayerIdle: true
+        isOtherPlayerIdle: true,
       });
     }, 30000);
   }
@@ -77,7 +77,7 @@ export default class WaitingForOther extends Component<Props, LocalState> {
             <Button disabled={disabled} onClick={onPing}>
               Ping
             </Button>
-          </Shake>
+          </Shake>,
         ]}
       />
     );

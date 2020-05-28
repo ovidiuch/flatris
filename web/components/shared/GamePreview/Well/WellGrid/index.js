@@ -5,13 +5,13 @@ import SquareBlock from '../../../SquareBlock';
 
 import type {
   WellGrid as WellGridType,
-  WellGridItem
+  WellGridItem,
 } from 'shared/types/state';
 
 type Props = {
   grid: WellGridType,
   blocksCleared: WellGridType,
-  blocksPending: WellGridType
+  blocksPending: WellGridType,
 };
 
 class WellGrid extends Component<Props> {
@@ -41,7 +41,7 @@ class WellGrid extends Component<Props> {
           width: `${widthPercent}%`,
           height: `${heightPercent}%`,
           top: `${row * heightPercent}%`,
-          left: `${col * widthPercent}%`
+          left: `${col * widthPercent}%`,
         }}
       >
         <SquareBlock color={block[1]} />

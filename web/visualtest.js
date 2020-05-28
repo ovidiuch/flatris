@@ -12,7 +12,7 @@ const fixtures = getFixtures2(cosmosConfig);
 const ignoreMatch = [
   // These fixtures animate on load and aren't reliable to diff visually
   'Dashboard-Stats-update',
-  'Loading'
+  'Loading',
 ];
 
 // Manually whitelist fixtures
@@ -21,7 +21,7 @@ const onlyMatch = /.*/;
 const fluidWidthMatch = [
   'pages-Dashboard-game',
   'pages-Dashboard-no-games',
-  'pages-Dashboard-own-game'
+  'pages-Dashboard-own-game',
 ];
 
 const defaultViewport = { width: 800, height: 600 };
@@ -62,16 +62,16 @@ fixtures.forEach(fixture => {
     if (boundingBox.height > 0)
       await page.setViewport({
         width: Math.ceil(boundingBox.width),
-        height: Math.ceil(boundingBox.height)
+        height: Math.ceil(boundingBox.height),
       });
 
     const image = await page.screenshot({
-      clip: getFullPageClip()
+      clip: getFullPageClip(),
     });
 
     expect(image).toMatchImageSnapshot({
       customSnapshotIdentifier: snapshotId,
-      failureThreshold: 0.01
+      failureThreshold: 0.01,
     });
   });
 });

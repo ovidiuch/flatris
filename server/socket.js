@@ -5,7 +5,7 @@ import { omit, difference } from 'lodash';
 import { gameReducer, getPlayer } from 'shared/reducers/game';
 import {
   ACTION_STATS_FLUSH_INTERVAL,
-  ACTION_STATS_FLUSH_DELAY
+  ACTION_STATS_FLUSH_DELAY,
 } from 'shared/constants/timeouts';
 import { games, saveGameAction, bumpActiveGame } from './db';
 import {
@@ -16,7 +16,7 @@ import {
   incrementActionRight,
   incrementActionAcc,
   incrementActionRotate,
-  incrementGameTime
+  incrementGameTime,
 } from './firebase';
 import { rollbar } from './rollbar';
 
@@ -123,7 +123,7 @@ export function attachSocket(server: net$Server) {
 }
 
 const gameSync: {
-  [id: string]: true
+  [id: string]: true,
 } = {};
 
 let pendingLeftCount = 0;

@@ -16,7 +16,7 @@ import type { State, User } from 'shared/types/state';
 
 type Props = {
   jsReady: boolean,
-  auth: typeof auth
+  auth: typeof auth,
 };
 
 type OnboardingStep = 'intro' | '1vs1' | '0sum' | 'howto';
@@ -26,14 +26,14 @@ type LocalState = {
   pendingAuth: boolean,
   user: ?User,
   onboardingStep: OnboardingStep,
-  hasSubmitted: boolean
+  hasSubmitted: boolean,
 };
 
 const ONBOARDING_SCREENS = {
   intro: FlatrisIntro,
   '1vs1': Multiplayer,
   '0sum': ZeroSum,
-  howto: HowToPlay
+  howto: HowToPlay,
 };
 
 const ONBOARDING_STEPS = Object.keys(ONBOARDING_SCREENS);
@@ -46,7 +46,7 @@ class Auth extends Component<Props, LocalState> {
     pendingAuth: false,
     user: null,
     onboardingStep: 'intro',
-    hasSubmitted: false
+    hasSubmitted: false,
   };
 
   componentDidUpdate(prevProps) {
@@ -68,7 +68,7 @@ class Auth extends Component<Props, LocalState> {
 
   handleNameChange = e => {
     this.setState({
-      name: e.target.value
+      name: e.target.value,
     });
   };
 
@@ -78,7 +78,7 @@ class Auth extends Component<Props, LocalState> {
     const { name } = this.state;
     if (name) {
       this.setState({
-        pendingAuth: true
+        pendingAuth: true,
       });
 
       const user = await createUserSession(name);
@@ -87,7 +87,7 @@ class Auth extends Component<Props, LocalState> {
       // user seems the onboarding screen
       this.setState({
         pendingAuth: false,
-        user
+        user,
       });
     }
   };
@@ -105,11 +105,11 @@ class Auth extends Component<Props, LocalState> {
 
     if (nextStep) {
       this.setState({
-        onboardingStep: nextStep
+        onboardingStep: nextStep,
       });
     } else {
       this.setState({
-        hasSubmitted: true
+        hasSubmitted: true,
       });
 
       auth(user);
@@ -123,7 +123,7 @@ class Auth extends Component<Props, LocalState> {
       pendingAuth,
       user,
       onboardingStep,
-      hasSubmitted
+      hasSubmitted,
     } = this.state;
 
     // Greet user with onboarding after they authenticate
@@ -164,7 +164,7 @@ class Auth extends Component<Props, LocalState> {
           actions={[
             <Button type="submit" disabled={!jsReady || !name || pendingAuth}>
               Enter
-            </Button>
+            </Button>,
           ]}
         />
         <style jsx>{`
@@ -203,7 +203,7 @@ function mapStateToProps({ jsReady }: State): $Shape<Props> {
 }
 
 const mapDispatchToProps = {
-  auth
+  auth,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Auth);

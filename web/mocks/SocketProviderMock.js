@@ -9,7 +9,7 @@ import type { Action, ThunkAction } from 'shared/types/actions';
 
 type SocketProviderProps = {
   children: Node,
-  dispatch: (Action | ThunkAction) => Action
+  dispatch: (Action | ThunkAction) => Action,
 };
 
 class SocketProvider extends Component<SocketProviderProps> {
@@ -18,7 +18,7 @@ class SocketProvider extends Component<SocketProviderProps> {
     keepGameAlive: func.isRequired,
     broadcastGameAction: func.isRequired,
     onGameKeepAlive: func.isRequired,
-    offGameKeepAlive: func.isRequired
+    offGameKeepAlive: func.isRequired,
   };
 
   getChildContext() {
@@ -27,7 +27,7 @@ class SocketProvider extends Component<SocketProviderProps> {
       keepGameAlive: this.handleKeepGameAlive,
       broadcastGameAction: this.handleBroadcastGameAction,
       onGameKeepAlive: this.handleOnGameKeepAlive,
-      offGameKeepAlive: this.handleOffGameKeepAlive
+      offGameKeepAlive: this.handleOffGameKeepAlive,
     };
   }
 

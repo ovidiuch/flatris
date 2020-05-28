@@ -10,7 +10,7 @@ const initialState = {
   actionRotate: 0,
   games: 0,
   lines: 0,
-  seconds: 0
+  seconds: 0,
 };
 
 export function statsReducer(

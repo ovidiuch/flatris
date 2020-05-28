@@ -15,7 +15,7 @@ export default (
     initialState={{
       jsReady: true,
       curUser: user,
-      games: { [game.id]: game }
+      games: { [game.id]: game },
     }}
   >
     <SocketProviderMock>

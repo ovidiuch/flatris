@@ -8,7 +8,7 @@ import type { Player } from 'shared/types/state';
 type Props = {
   player1: ?Player,
   player2: ?Player,
-  children: ?Node
+  children: ?Node,
 };
 
 class Quake extends Component<Props> {

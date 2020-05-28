@@ -31,5 +31,5 @@ export default {
       otherPlayer={{ ...otherPlayer, ping: 1234 }}
       onReady={() => console.log('Ready!')}
     />
-  )
+  ),
 };

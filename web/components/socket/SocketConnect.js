@@ -11,20 +11,20 @@ type Props = {};
 export function withSocket(
   CompType: ComponentType<*>,
   syncActions: {
-    [propName: string]: (...args: any) => JoinGameAction | ThunkAction
+    [propName: string]: (...args: any) => JoinGameAction | ThunkAction,
   } = {}
 ) {
   class SocketConnect extends Component<Props> {
-    static displayName = `SocketConnect(${CompType.displayName ||
-      CompType.name ||
-      'UnnamedComponent'})`;
+    static displayName = `SocketConnect(${
+      CompType.displayName || CompType.name || 'UnnamedComponent'
+    })`;
 
     static contextTypes = {
       subscribe: func.isRequired,
       keepGameAlive: func.isRequired,
       broadcastGameAction: func.isRequired,
       onGameKeepAlive: func.isRequired,
-      offGameKeepAlive: func.isRequired
+      offGameKeepAlive: func.isRequired,
     };
 
     createActionHandler = (actionName: string) => async (...args: any) => {
@@ -39,7 +39,7 @@ export function withSocket(
       return Object.keys(syncActions).reduce((acc, actionName) => {
         return {
           ...acc,
-          [actionName]: this.createActionHandler(actionName)
+          [actionName]: this.createActionHandler(actionName),
         };
       }, {});
     }

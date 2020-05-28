@@ -10,7 +10,7 @@ let lastBackfillId: BackfillId = 0;
 export type OnBackfillCompleteArgs = {
   gameId: GameId,
   backfillId: BackfillId,
-  backfillRes: ?BackfillResponse
+  backfillRes: ?BackfillResponse,
 };
 
 export function requestBackfill(
@@ -41,7 +41,7 @@ function getBackfillReq(game: Game): BackfillRequest {
     gameId: game.id,
     players: game.players.map(p => ({
       userId: p.user.id,
-      from: p.lastActionId
-    }))
+      from: p.lastActionId,
+    })),
   };
 }

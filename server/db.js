@@ -6,7 +6,7 @@ import { getBlankGame } from 'shared/reducers/game';
 import { MAX_NAME_LENGTH } from 'shared/constants/user';
 import {
   GAME_INACTIVE_TIMEOUT,
-  GAME_EXPIRE_TIMEOUT
+  GAME_EXPIRE_TIMEOUT,
 } from 'shared/constants/timeouts';
 import { createTimeoutBumper } from 'shared/utils/timeout-bumper';
 
@@ -31,11 +31,11 @@ export let activeGames: ActiveGames = [];
 export const { bumpTimeout } = createTimeoutBumper(
   {
     handler: handleInactiveGame,
-    timeout: GAME_INACTIVE_TIMEOUT
+    timeout: GAME_INACTIVE_TIMEOUT,
   },
   {
     handler: handleExpiredGame,
-    timeout: GAME_EXPIRE_TIMEOUT
+    timeout: GAME_EXPIRE_TIMEOUT,
   }
 );
 

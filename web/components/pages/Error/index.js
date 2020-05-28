@@ -12,7 +12,7 @@ import type { ComponentError } from 'shared/types/error';
 
 type Props = {
   statusCode?: number,
-  error?: ComponentError
+  error?: ComponentError,
 };
 
 export default class Error extends Component<Props> {
@@ -44,7 +44,7 @@ export default class Error extends Component<Props> {
         actions={[
           <Link href="/">
             <Button>Home</Button>
-          </Link>
+          </Link>,
         ]}
       />
     );
@@ -102,7 +102,7 @@ export default class Error extends Component<Props> {
         actions={[
           <Link href="/">
             <Button>Home</Button>
-          </Link>
+          </Link>,
         ]}
       />
     );

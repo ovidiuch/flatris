@@ -5,7 +5,7 @@ import { SHAPES } from 'shared/constants/tetromino';
 import Tetromino from '../../../shared/Tetromino';
 
 type Props = {
-  color?: string
+  color?: string,
 };
 
 export default function Logo({ color = '#34495f' }: Props) {

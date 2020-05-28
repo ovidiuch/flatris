@@ -15,7 +15,7 @@ const server = http.createServer(app);
 attachSocket(server);
 
 // CORS
-app.use(function(req: express$Request, res: express$Response, next) {
+app.use(function (req: express$Request, res: express$Response, next) {
   res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
   res.header('Access-Control-Allow-Credentials', 'true');
   res.header(

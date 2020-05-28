@@ -12,7 +12,7 @@ import type {
   Game,
   Stats,
   DailyStats,
-  State
+  State,
 } from 'shared/types/state';
 import type { Action } from 'shared/types/actions';
 import type { BackfillRequest, BackfillResponse } from 'shared/types/api';
@@ -27,8 +27,8 @@ export async function addCurUserToState(
     try {
       const res = await fetchJson('/auth', {
         headers: {
-          cookie: `sessionId=${sessionId}`
-        }
+          cookie: `sessionId=${sessionId}`,
+        },
       });
       const user = getValidUser(res);
       store.dispatch(auth(user));
@@ -44,7 +44,7 @@ export async function createUserSession(userName: string): Promise<User> {
 
 export async function getDashboard(): Promise<{
   games: Array<Game>,
-  stats: Stats
+  stats: Stats,
 }> {
   return fetchJson(`/dashboard`);
 }
@@ -96,9 +96,9 @@ function fetchPost(urlPath: string, body: Object = {}): Promise<any> {
     method: 'POST',
     credentials: 'include',
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
     },
-    body: JSON.stringify(body)
+    body: JSON.stringify(body),
   });
 }
 
