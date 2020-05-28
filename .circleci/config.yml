@@ -8,7 +8,7 @@ jobs:
       - run: curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash && apt-get install -y git-lfs
       - checkout
       - run: yarn --frozen-lockfile
-      - run: yarn flow
+      - run: yarn flow check
       - run: yarn lint
       - run: yarn test --maxWorkers=2
       - run:
