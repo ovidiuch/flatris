@@ -75,7 +75,6 @@
     "jest-puppeteer": "^4.4.0",
     "nodemon": "^2.0.4",
     "prettier": "^2.0.5",
-    "puppeteer": "^3.1.0",
     "react-cosmos": "^5.3.0",
     "react-cosmos-redux": "^2.0.0",
     "react-test-renderer": "^16.12.0",
