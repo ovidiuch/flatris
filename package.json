@@ -14,15 +14,15 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:visual": "jest --no-cache --config jest.visual.config.js",
-    "test:visual:check": "docker-compose run --rm regression \"npx wait-on http://cosmos:5000 && COSMOS_HOSTNAME=cosmos yarn test:visual\"",
-    "test:visual:update": "docker-compose run --rm regression \"npx wait-on http://cosmos:5000 && COSMOS_HOSTNAME=cosmos yarn test:visual -u\"",
+    "test:visual:check": "docker-compose -f docker-compose-visual.yml run --rm regression \"npx wait-on http://cosmos:5000 && COSMOS_HOSTNAME=cosmos yarn test:visual\"",
+    "test:visual:update": "docker-compose -f docker-compose-visual.yml run --rm regression \"npx wait-on http://cosmos:5000 && COSMOS_HOSTNAME=cosmos yarn test:visual -u\"",
     "cosmos": "cosmos --config web/cosmos.config.json",
     "cosmos:export": "cosmos-export --config web/cosmos.config.json",
     "dev:client": "babel-node server/start-dev-client.js",
     "dev:server": "babel-node server/start-dev-server.js",
     "dev:server:watch": "nodemon server/start-dev-server.js  --exec babel-node",
-    "build": "next build web",
-    "start": "babel-node server/start-prod.js"
+    "build": "env-cmd next build web",
+    "start": "env-cmd babel-node server/start-prod.js"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -59,6 +59,7 @@
     "babel-loader": "^8.0.6",
     "babel-plugin-module-resolver": "^4.0.0",
     "css-loader": "^3.4.2",
+    "env-cmd": "^10.1.0",
     "eslint": "^7.1.0",
     "eslint-import-resolver-babel-module": "^5.1.2",
     "eslint-plugin-babel": "^5.3.0",
