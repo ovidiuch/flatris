@@ -7,5 +7,5 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-.env
-.env.prod
+.env.js
+.env.prod.js
