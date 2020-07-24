@@ -197,3 +197,6 @@ CHORES
 UX
 
 - [ ] Reconnect when focusing idle tab (https://github.com/socketio/socket.io-client/issues/1067)
+
+Testing:
+Thats very interesting, I cannot modify the readme.md, so now this will be the file for the changesgit add
