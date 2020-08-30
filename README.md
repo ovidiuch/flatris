@@ -12,4 +12,6 @@ Thanks [@paulgergely](https://twitter.com/paulgergely) for the initial flat desi
 
 Also see [elm-flatris](https://github.com/w0rm/elm-flatris).
 
-This is a test edit for Flatris Readme by Prasanthi
+This is a test edit for Flatris Readme by Prasanthi.
+
+This is second set of changes pushed into Git from Visual Studio.
