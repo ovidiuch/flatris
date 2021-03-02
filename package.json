@@ -21,7 +21,7 @@
     "dev:client": "babel-node server/start-dev-client.js",
     "dev:server": "babel-node server/start-dev-server.js",
     "dev:server:watch": "nodemon server/start-dev-server.js  --exec babel-node",
-    "build": "env-cmd next build web",
+    "build": "env-cmd -f next build web",
     "start": "env-cmd babel-node server/start-prod.js"
   },
   "dependencies": {
