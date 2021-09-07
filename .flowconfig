@@ -1,0 +1,16 @@
+[ignore]
+.*/node_modules/config-chain/test/broken.json
+.*/node_modules/npmconf/test/fixtures/package.json
+.*/node_modules/grpc/node_modules/protobufjs/src/bower.json
+
+[include]
+
+[libs]
+flow-typed
+
+[lints]
+
+[options]
+module.name_mapper='^shared' ->'<PROJECT_ROOT>/shared'
+
+[strict]

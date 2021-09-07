@@ -1,0 +1,11 @@
+node_modules
+cosmos-export
+.next
+firebase-service-account.json
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+.env.js
+.env.prod.js
