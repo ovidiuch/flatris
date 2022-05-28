@@ -11,3 +11,11 @@
 Thanks [@paulgergely](https://twitter.com/paulgergely) for the initial flat design!
 
 Also see [elm-flatris](https://github.com/w0rm/elm-flatris).
+
+Test change1
+
+Test change2
+
+Test change3
+
+Test change 4
