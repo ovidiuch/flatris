@@ -1,0 +1,23 @@
+version: 2.1
+jobs:
+  test:
+    docker:
+      - image: buildkite/puppeteer:v3.0.4
+    steps:
+      - run: apt-get update && apt-get install -y curl
+      - run: curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash && apt-get install -y git-lfs
+      - checkout
+      - run: yarn --frozen-lockfile
+      - run: yarn flow check
+      - run: yarn lint
+      - run: yarn test --maxWorkers=2
+      - run:
+          command: yarn cosmos
+          background: true
+      - run: yarn test:visual --maxWorkers=2
+      - store_artifacts:
+          path: web/__image_snapshots__/__diff_output__
+workflows:
+  flatris:
+    jobs:
+      - test
