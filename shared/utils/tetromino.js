@@ -8,9 +8,21 @@ import type { Tetromino, Position2d, GameId } from '../types/state';
 export function getNextTetromino(gameId: GameId, nth: number): Tetromino {
   // $FlowFixMe
   const tetrominos: Tetromino[] = Object.keys(SHAPES);
-  const randNum = crc32(gameId + nth);
+  const subnth = (nth % tetrominos.length)
+  var randNum = crc32(gameId + (nth - subnth)/tetrominos.length);
 
-  return tetrominos[Math.abs(randNum) % tetrominos.length];
+  var positions = Array.from(Array(tetrominos.length).keys());
+  var m = positions.length, i;
+  while (m) {
+      var x = Math.sin(randNum) * 10000; 
+      i = Math.floor((x - Math.floor(x)) * m--);
+      // [positions[m], positions[i]] = [positions[i], positions[m]];
+      var temp = positions[i];
+      positions[i] = positions[m];
+      positions[m] = temp;
+      ++randNum        
+  }
+  return tetrominos[positions[subnth]];
 }
 
 export function getInitialPositionForTetromino(
