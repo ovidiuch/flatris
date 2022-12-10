@@ -31,7 +31,7 @@
     "cookie": "^0.4.0",
     "cookie-parser": "^1.4.4",
     "crc-32": "^1.2.0",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "firebase-admin": "^8.12.1",
     "isomorphic-unfetch": "^3.0.0",
     "lodash": "^4.17.15",
