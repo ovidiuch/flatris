@@ -4,7 +4,7 @@ const GAME_COLS = 16;
 const GAME_ROWS = 20;
 const CONTROL_BLOCKS = 4;
 const MIN_BLOCK_SIZE = 5;
-const MAX_BLOCK_SIZE = 100;
+const MAX_BLOCK_SIZE = 50;
 
 let query = ``;
 
