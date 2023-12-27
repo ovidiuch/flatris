@@ -12,6 +12,4 @@ Thanks [@paulgergely](https://twitter.com/paulgergely) for the initial flat desi
 
 Also see [elm-flatris](https://github.com/w0rm/elm-flatris).
 
-#Hello, Welcome to GITHUB.COM
-
-#Checking chnages from GITHUB.COM
+Also see (https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.freepik.com%2Ffree-photos-vectors%2Fbackground&psig=AOvVaw26y15SgrdFSI5tvqQdabXC&ust=1703758358700000&source=images&cd=vfe&ved=0CBQQjhxqFwoTCIidhNGwr4MDFQAAAAAdAAAAABAI)
