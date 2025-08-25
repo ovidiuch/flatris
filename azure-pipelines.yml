@@ -1,0 +1,24 @@
+# Node.js with React
+# Build a Node.js project that uses React.
+
+trigger:
+- master
+
+pool:
+  name: 'SelfHostedAgents'  # Name of self-hosted agent pool
+  demands:
+    - agent.os -equals Linux  # Optional: enforce OS type
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '20.x'
+  displayName: 'Install Node.js'
+
+- script: |
+    npm install --legacy-peer-deps
+    AZP_URL=$(AZP_URL) AZP_TOKEN=$(AZP_TOKEN) AZP_POOL=$(AZP_POOL) npm run build
+  displayName: 'Install dependencies and build'
+    # Run build using inline environment variables
+    AZP_URL=$(AZP_URL) AZP_TOKEN=$(AZP_TOKEN) AZP_POOL=$(AZP_POOL) npm run build
+  displayName: 'Install, resolve dependencies, and build'
